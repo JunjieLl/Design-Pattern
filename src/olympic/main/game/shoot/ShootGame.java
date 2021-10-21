@@ -21,6 +21,7 @@ public class ShootGame implements Game {
 
     @Override
     public void start() {
+        System.out.println("classname: (ShootGame) method: (start) action: (桥接模式中运动员参与比赛) ");
         athlete.participate(this);
         /// game detail to do
     }

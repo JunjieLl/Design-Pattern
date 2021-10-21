@@ -13,7 +13,7 @@ class IndividualShootAthlete implements Athlete {
 
     @Override
     public void participate(Game game) {
-        System.out.println("classname: (IndividualShootAthlete) method: (participate) action: (装饰器模式中个人运射击动员参与比赛) ");
+        System.out.println("classname: (IndividualShootAthlete) method: (participate) action: (装饰器模式中个人射击运动员参与比赛) ");
         individualAthlete.participate(game);
     }
 }

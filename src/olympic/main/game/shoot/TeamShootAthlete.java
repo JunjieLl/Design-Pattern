@@ -12,13 +12,13 @@ public class TeamShootAthlete implements Athlete {
 
     @Override
     public void participate(Game game) {
-        System.out.println("classname: (TeamShootAthlete) method: (participate) action: (装饰器模式中团队射击动员参与比赛) ");
+        System.out.println("classname: (TeamShootAthlete) method: (participate) action: (装饰器模式中团队射击运动员参与比赛) ");
         teamAthlete.participate(game);
     }
 
     @Override
     public void addChild(Athlete athlete) {
-        System.out.println("classname: (TeamShootAthlete) method: (participate) action: (装饰器模式中团队运射击动员添加队员) ");
+        System.out.println("classname: (TeamShootAthlete) method: (participate) action: (装饰器模式中团队运射击运动员添加队员) ");
         teamAthlete.addChild(athlete);
     }
 }
