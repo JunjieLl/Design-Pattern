@@ -7,4 +7,4 @@ Hello World
 * [飞书文档](https://z4339ho5by.feishu.cn/docs/doccnP37bnWWCmLcosw0CMAwkmf)
 
 * 任务包括类图（飞书中，见上）、代码、以及文档（飞书中，见上），填在对应目录中（目录结构周三中午前给出）。
-* 代码写在main包里面。
+* 目录结构参考项目内命名方式。
