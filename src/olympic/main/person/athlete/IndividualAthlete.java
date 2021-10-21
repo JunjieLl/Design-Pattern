@@ -5,7 +5,7 @@ import olympic.main.person.Person;
 
 /**
  *
- * 个人射击运动员
+ * 个人运动员
  */
 public class IndividualAthlete extends Person implements Athlete {
     public IndividualAthlete(String name, String gender) {

@@ -12,6 +12,16 @@ public interface Athlete {
     default public void addChild(Athlete athlete) {
         throw new UnsupportedOperationException();
     }
+
+    /**
+     * 设计模式：工厂函数
+     * @param name 运动员姓名
+     * @param gender 运动员性别
+     * @return 运动员
+     */
+    public static Athlete AthleteFactory(String name, String gender) {
+        return new IndividualAthlete(name, gender);
+    }
 }
 
 
