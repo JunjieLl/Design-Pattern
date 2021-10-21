@@ -2,7 +2,7 @@ package olympic.main.game.shoot;
 
 
 import olympic.main.game.Game;
-import olympic.main.person.Athlete;
+import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.IndividualAthlete;
 
 /**
