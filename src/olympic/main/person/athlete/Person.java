@@ -1,4 +1,4 @@
-package olympic.main.person;
+package olympic.main.person.athlete;
 
 public abstract class Person {
     protected String name;

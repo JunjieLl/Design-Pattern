@@ -1,6 +1,7 @@
-package olympic.main.person;
+package olympic.main.person.athlete;
 
 import olympic.main.game.Game;
+import olympic.main.person.Athlete;
 
 /**
  * 设计模式：桥接模式

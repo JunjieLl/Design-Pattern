@@ -1,6 +1,7 @@
-package olympic.main.person;
+package olympic.main.person.athlete;
 
 import olympic.main.game.Game;
+import olympic.main.person.Athlete;
 
 import java.util.ArrayList;
 import java.util.List;
