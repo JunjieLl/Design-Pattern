@@ -1,4 +1,4 @@
-package director.olympic;
+package olympic.scene;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package director.olympic;
+package olympic.scene;
 
 /**
  *复写play方法以实现场景的播放

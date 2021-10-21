@@ -1,4 +1,4 @@
-package director.olympic;
+package olympic.scene;
 
 /**
  * 导演
