@@ -1,7 +1,5 @@
 package olympic.main.game.diving;
 
-import java.util.Random;
-
 public class PreliminaryContest implements Contest {
 
     private Contest nextContest;
