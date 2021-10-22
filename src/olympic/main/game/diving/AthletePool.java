@@ -6,9 +6,11 @@ import java.util.Objects;
 
 public class AthletePool {
     private final LinkedList<Athlete> pool;
+    private final Strategy strategy;
 
-    public AthletePool() {
+    public AthletePool(Strategy strategy) {
         this.pool = new LinkedList<>();
+        this.strategy = strategy;
     }
 
     public int getSize() {
@@ -28,6 +30,10 @@ public class AthletePool {
         this.pool.add(object);
     }
 
+    public Strategy getStrategy(){
+        return this.strategy;
+    }
+
     public void sort(String game) {
         Collections.sort(pool);
         for (int i = 0; i < pool.size(); i++) {
@@ -45,8 +51,8 @@ public class AthletePool {
         }
     }
 
-    public void eliminate(int num){
-        while(pool.size()>num){
+    public void eliminate(int num) {
+        while (pool.size() > num) {
             pool.pollLast();
         }
     }
