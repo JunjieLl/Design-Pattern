@@ -1,11 +1,13 @@
 package olympic.main.game.diving;
 
 public class Athlete implements Comparable<Object> {
-    private final String name;
+    private String name;
     private double preliminaryScore;
     private double semiFinalScore;
     private double finalScore;
     private double curScore;
+
+    Athlete(){}
 
     Athlete(String name) {
         this.preliminaryScore = 0.0;
