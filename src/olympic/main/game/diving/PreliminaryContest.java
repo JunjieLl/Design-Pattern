@@ -7,7 +7,7 @@ public class PreliminaryContest implements Contest {
     private Contest nextContest;
 
     public void process(AthletePool athletePool){
-        for (int i = 1; i < 7; i++) {
+        for (int i = 1; i <= athletePool.getStrategy().getCycleNumber(); i++) {
             System.out.println("第" + i + "轮比赛开始！");
             for (int j = 0; j < athletePool.getSize(); j++) {
                 Athlete curAthlete = athletePool.appear();

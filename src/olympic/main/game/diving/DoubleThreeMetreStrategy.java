@@ -6,9 +6,11 @@ import java.util.Random;
 
 public class DoubleThreeMetreStrategy implements Strategy{
     public ArrayList<Double> scores;
+    private final int cycleNumber;
 
     DoubleThreeMetreStrategy(){
         scores = new ArrayList<Double>();
+        cycleNumber = 5;
     }
 
     public double decideScore(){
@@ -36,5 +38,9 @@ public class DoubleThreeMetreStrategy implements Strategy{
         score= score / 5 * 3 * difficulty;
         scores.clear();
         return score;
+    }
+
+    public int getCycleNumber(){
+        return this.cycleNumber;
     }
 }

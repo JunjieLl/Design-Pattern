@@ -5,10 +5,12 @@ import java.util.Collections;
 import java.util.Random;
 
 public class DoubleTenMetreStrategy implements Strategy{//5
-    public ArrayList<Double> scores;
+    private final ArrayList<Double> scores;
+    private final int cycleNumber;
 
     DoubleTenMetreStrategy(){
         scores = new ArrayList<Double>();
+        cycleNumber = 5;
     }
 
     public double decideScore(){
@@ -36,5 +38,9 @@ public class DoubleTenMetreStrategy implements Strategy{//5
         score= score / 5 * 3 * difficulty;
         scores.clear();
         return score;
+    }
+
+    public int getCycleNumber(){
+        return this.cycleNumber;
     }
 }
