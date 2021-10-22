@@ -2,9 +2,10 @@ package olympic.main.game.diving;
 
 public class Test {
     public static void main(String[] args) {
-        System.out.println("下面进行的是跳水比赛，请各位运动员做好入场准备");
-        Strategy strategy = new DoubleTenMetreStrategy();
-        AthletePool athletePool = new AthletePool(strategy);//可以调整不同的策略，来适应不同的比赛
+        String context = "下面进行的是双人三米板跳水比赛，请各位运动员做好入场准备";
+        System.out.println(context);
+        AbstractNode strategyNode = new PeopleNumberNode();
+        AthletePool athletePool = new AthletePool(strategyNode.interpret(context));//可以调整不同的策略，来适应不同的比赛
         for (int i = 0; i < 64; i+=2) {//测试加入
             Athlete athlete1 = new Athlete("ljj" + i);
             Athlete athlete2 = new Athlete("ljj" + (i+1));
