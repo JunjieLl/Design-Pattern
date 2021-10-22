@@ -2,14 +2,14 @@ package olympic.main.game.diving;
 
 import java.util.ArrayList;
 
-public class DoubleAthlete extends Athlete implements Comparable<Object>{
+public class DoubleAthlete extends Athlete implements Comparable<Object> {
     private final ArrayList<Athlete> doubleAthletes;
 
-    DoubleAthlete(){
-        doubleAthletes=new ArrayList<>();
+    DoubleAthlete() {
+        doubleAthletes = new ArrayList<>();
     }
 
-    public void addAthlete(Athlete newAthlete){
+    public void addAthlete(Athlete newAthlete) {
         doubleAthletes.add(newAthlete);
     }
 
@@ -43,16 +43,15 @@ public class DoubleAthlete extends Athlete implements Comparable<Object>{
 
     @Override
     public double getCurScore() {
-        if(doubleAthletes != null){
+        if (doubleAthletes != null) {
             return doubleAthletes.get(0).getCurScore();
-        }
-        else{
+        } else {
             return 0;
         }
     }
 
     @Override
-    public void clearCurScore(){
+    public void clearCurScore() {
         for (Athlete doubleAthlete : doubleAthletes) {
             doubleAthlete.clearCurScore();
         }
@@ -64,6 +63,7 @@ public class DoubleAthlete extends Athlete implements Comparable<Object>{
         for (Athlete doubleAthlete : doubleAthletes) {
             doubleName.append(doubleAthlete.getName()).append("和");
         }
+        doubleName.deleteCharAt(doubleName.length() - 1);
         doubleName.append("双人组合");
         return doubleName.toString();
     }

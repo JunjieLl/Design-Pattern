@@ -6,7 +6,7 @@ public class Test {
         System.out.println(context);
         AbstractNode strategyNode = new PeopleNumberNode();
         AthletePool athletePool = new AthletePool(strategyNode.interpret(context));//可以调整不同的策略，来适应不同的比赛
-        for (int i = 0; i < 64; i+=2) {//测试加入
+        for (int i = 0; i < 64; i+=2) {//测试加入,目前怎么加入还是不知道，需要与赛前组沟通
             Athlete athlete1 = new Athlete("ljj" + i);
             Athlete athlete2 = new Athlete("ljj" + (i+1));
             DoubleAthlete athletes =new DoubleAthlete();
