@@ -1,4 +1,11 @@
 Hello World
+成员：阮辰伟
+任务：
+1. 尿检
+2. 志愿者分配
+3. 确认参赛名单
+4. 运动员与裁判介绍
+
 
 * 注释：javadoc模式
 * [命名规则](https://cloud.tencent.com/developer/article/1584463)
