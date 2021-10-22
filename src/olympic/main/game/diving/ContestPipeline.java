@@ -1,6 +1,6 @@
 package olympic.main.game.diving;
 
-public class ContestPipeline {
+public class ContestPipeline implements AbstractPipeline{
     private final Contest firstContest;
     private Contest lastContest;
 
@@ -9,12 +9,12 @@ public class ContestPipeline {
         this.lastContest = contest;
     }
 
-    void addContest(Contest newContest) {
+    public void addContest(Contest newContest) {
         lastContest.setNext(newContest);
         lastContest = newContest;
     }
 
-    void startGame(AthletePool athletePool) {
+    public void startGame(AthletePool athletePool) {
         firstContest.takePlace(athletePool);
     }
 }

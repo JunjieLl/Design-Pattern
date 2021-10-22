@@ -33,7 +33,7 @@ public class AthletePool {
         for (int i = 0; i < pool.size(); i++) {
             Athlete curAthlete = pool.get(i);
             double score = pool.get(i).getCurScore();
-            System.out.printf(" 第%d名 %s : %.2f\n", i + 1, curAthlete.getName(), score);
+            System.out.printf(" 第%d名 %s : %.3f\n", i + 1, curAthlete.getName(), score);
             if (Objects.equals(game, "预赛")) {
                 curAthlete.setPreliminaryScore(score);
             } else if (Objects.equals(game, "半决赛")) {

@@ -11,9 +11,9 @@ public class FinalContest implements Contest{
             System.out.println("第" + i + "轮比赛开始！");
             for (int j = 0; j < athletePool.getSize(); j++) {
                 Athlete curAthlete = athletePool.appear();
-                int score = r.nextInt(10000);
-                System.out.println(curAthlete.getName() + "的第" + i + "轮分数为" + (double)score/10);
-                curAthlete.addScore((double)score/10);
+                int score = r.nextInt(100000);
+                System.out.println(curAthlete.getName() + "的第" + i + "轮分数为" + (double)score/1000);
+                curAthlete.addScore((double)score/1000);
                 athletePool.disappear();
             }
             System.out.println("第" + i + "轮结束。");
