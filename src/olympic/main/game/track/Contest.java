@@ -3,15 +3,15 @@ package olympic.main.game.track;
 import olympic.main.person.athlete.Athlete;
 
 /**
- * 使用了桥接模式
+ * 使用了桥接模式,作为桥接模式的抽象化者
+ * Contest指的是比赛类
  */
 public class Contest {
     private ContestImpl contestImpl;
-    private Athlete[] athletes;
 
-    public Contest(ContestImpl contestImpl, Athlete[] athlete) {
+
+    public Contest(ContestImpl contestImpl) {
         this.contestImpl = contestImpl;
-        this.athletes = athletes;
     }
 
     public void start() {
