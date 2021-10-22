@@ -26,8 +26,8 @@ public class Director {
 
     /**
      * 设计模式： Template Method
-     *
-     * @param scene 切换到下一场景
+     * 切换到下一场景
+     * @param scene 下一个场景
      */
     public void nextScene(Scene scene) {
         System.out.println("classname: (Director) method: (nextScene) action: (切换到下一场景) ");
