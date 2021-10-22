@@ -6,6 +6,7 @@ public class SemiFinals implements Contest{
 
     private Contest nextContest;
 
+    @Override
     public void process(AthletePool athletePool){
         for (int i = 1; i <= athletePool.getStrategy().getCycleNumber(); i++) {
             System.out.println("第" + i + "轮比赛开始！");
@@ -20,6 +21,7 @@ public class SemiFinals implements Contest{
         }
     }
 
+    @Override
     public void takePlace(AthletePool athletePool) {
         System.out.println("半决赛正式开始！");
         process(athletePool);
@@ -32,6 +34,7 @@ public class SemiFinals implements Contest{
         }
     }
 
+    @Override
     public void setNext(Contest contest){
         this.nextContest=contest;
     }

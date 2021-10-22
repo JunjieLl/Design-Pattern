@@ -9,11 +9,13 @@ public class ContestPipeline implements AbstractPipeline{
         this.lastContest = contest;
     }
 
+    @Override
     public void addContest(Contest newContest) {
         lastContest.setNext(newContest);
         lastContest = newContest;
     }
 
+    @Override
     public void startGame(AthletePool athletePool) {
         firstContest.takePlace(athletePool);
     }

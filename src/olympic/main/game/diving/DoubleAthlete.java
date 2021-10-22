@@ -13,30 +13,35 @@ public class DoubleAthlete extends Athlete implements Comparable<Object>{
         doubleAthletes.add(newAthlete);
     }
 
+    @Override
     public void addScore(double score) {
         for (Athlete doubleAthlete : doubleAthletes) {
             doubleAthlete.addScore(score);
         }
     }
 
+    @Override
     public void setPreliminaryScore(double score) {
         for (Athlete doubleAthlete : doubleAthletes) {
             doubleAthlete.setPreliminaryScore(score);
         }
     }
 
+    @Override
     public void setSemiFinalScore(double score) {
         for (Athlete doubleAthlete : doubleAthletes) {
             doubleAthlete.setSemiFinalScore(score);
         }
     }
 
+    @Override
     public void setFinalScore(double score) {
         for (Athlete doubleAthlete : doubleAthletes) {
             doubleAthlete.setFinalScore(score);
         }
     }
 
+    @Override
     public double getCurScore() {
         if(doubleAthletes != null){
             return doubleAthletes.get(0).getCurScore();
@@ -46,12 +51,14 @@ public class DoubleAthlete extends Athlete implements Comparable<Object>{
         }
     }
 
+    @Override
     public void clearCurScore(){
         for (Athlete doubleAthlete : doubleAthletes) {
             doubleAthlete.clearCurScore();
         }
     }
 
+    @Override
     public String getName() {
         StringBuilder doubleName = new StringBuilder();
         for (Athlete doubleAthlete : doubleAthletes) {

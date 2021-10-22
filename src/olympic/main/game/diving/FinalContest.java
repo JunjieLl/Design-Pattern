@@ -4,6 +4,7 @@ public class FinalContest implements Contest{
 
     private Contest nextContest = null;
 
+    @Override
     public void process(AthletePool athletePool){
         for (int i = 1; i <= athletePool.getStrategy().getCycleNumber(); i++) {
             System.out.println("第" + i + "轮比赛开始！");
@@ -18,6 +19,7 @@ public class FinalContest implements Contest{
         }
     }
 
+    @Override
     public void takePlace(AthletePool athletePool) {
         System.out.println("决赛正式开始！");
         process(athletePool);
@@ -29,6 +31,7 @@ public class FinalContest implements Contest{
         }
     }
 
+    @Override
     public void setNext(Contest contest){
         this.nextContest=contest;
     }

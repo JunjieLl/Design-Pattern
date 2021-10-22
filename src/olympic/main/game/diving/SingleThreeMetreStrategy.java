@@ -13,6 +13,7 @@ public class SingleThreeMetreStrategy implements Strategy{
         cycleNumber = 6;
     }
 
+    @Override
     public double decideScore(){
         Random r = new Random();
         for(int i=0;i<7;i++){
@@ -25,6 +26,7 @@ public class SingleThreeMetreStrategy implements Strategy{
         return score;
     }
 
+    @Override
     public int getCycleNumber(){
         return this.cycleNumber;
     }

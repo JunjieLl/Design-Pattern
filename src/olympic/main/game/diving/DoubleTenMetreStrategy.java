@@ -13,6 +13,7 @@ public class DoubleTenMetreStrategy implements Strategy{//5
         cycleNumber = 5;
     }
 
+    @Override
     public double decideScore(){
         Random r = new Random();
         double score=0.0;
@@ -40,6 +41,7 @@ public class DoubleTenMetreStrategy implements Strategy{//5
         return score;
     }
 
+    @Override
     public int getCycleNumber(){
         return this.cycleNumber;
     }
