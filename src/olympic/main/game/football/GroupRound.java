@@ -50,6 +50,7 @@ public class GroupRound extends Round{
                 FootballTeam t = teams.get(4 * g + i);
                 ranking.add(new ScoreEntry(t, scores[t.getId()], goalDifferences[t.getId()], goals[t.getId()]));
             }
+            System.out.println("\n【小组赛积分榜】");
             Collections.sort(ranking, (o1, o2) -> {
                 if (o1.score > o2.score) {
                     return 1;

@@ -1,9 +1,6 @@
 package olympic.main.game.football;
 
 import olympic.main.game.Game;
-import olympic.main.person.athlete.TeamAthlete;
-
-import java.util.Random;
 
 /**
  * Observer 模式
@@ -23,7 +20,7 @@ public abstract class FootballGame extends Game {
 
     @Override
     public void start() {
-        System.out.println("足球赛事" + team1.getNation() + " vs " + team2.getNation());
+        System.out.println("\n【足球赛事】" + team1.getNation() + " vs " + team2.getNation());
         System.out.println("比赛开始");
     }
 

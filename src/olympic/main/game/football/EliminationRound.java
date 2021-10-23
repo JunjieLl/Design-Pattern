@@ -5,7 +5,15 @@ import olympic.main.game.ScheduleIterator;
 import java.util.ArrayList;
 
 public class EliminationRound extends Round implements Observer{
+    String name = null;
     private ArrayList<FootballTeam> advancedTeams = new ArrayList<>();
+
+    public EliminationRound() {
+    }
+
+    public EliminationRound(String name) {
+        this.name = name;
+    }
 
     @Override
     public ArrayList<FootballTeam> play(ArrayList<FootballTeam> teams) {
@@ -14,6 +22,10 @@ public class EliminationRound extends Round implements Observer{
             g.setObserver(this);
             schedule.addGame(g);
 
+        }
+
+        if (name != null) {
+            System.out.println("\n【" + name + "】");
         }
 
         ScheduleIterator it = schedule.iterator();

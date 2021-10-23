@@ -1,7 +1,5 @@
 package olympic.main.game.football;
 
-import olympic.main.game.ScheduleIterator;
-
 import java.util.ArrayList;
 
 /**
