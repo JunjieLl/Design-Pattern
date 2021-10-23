@@ -5,7 +5,5 @@ public interface QuestionStrategy {
 
     String getQuestion();
 
-    default boolean haveQuestion() {
-        return false;
-    }
+    boolean haveQuestion();
 }

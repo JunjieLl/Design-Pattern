@@ -3,6 +3,7 @@ package olympic.main.person.interview;
 import olympic.main.person.Person;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public abstract class Interviewee extends Person implements Listener {
     private final ArrayList<Listener> listeners = new ArrayList<>();
@@ -24,14 +25,22 @@ public abstract class Interviewee extends Person implements Listener {
     }
 
     public String answerQuestion(String content) {
-        String answer = this.name + "回答问题：" + content;
-        notifyListeners(answer);
-        return answer;
+        return this.name + "回答问题：" + content;
     }
 
     public void notifyListeners(String content) {
         for (Listener o : listeners) {
             o.update(content);
         }
+    }
+
+    public ArrayList<String> makeSpeech() {
+        Random random = new Random();
+        int talkNum = random.nextInt(10) + 1;
+        ArrayList<String> speech = new ArrayList<>();
+        for (int i = 0; i < talkNum; i++) {
+            speech.add("讲话" + i);
+        }
+        return speech;
     }
 }

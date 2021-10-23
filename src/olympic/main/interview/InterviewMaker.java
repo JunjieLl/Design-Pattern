@@ -31,6 +31,7 @@ public class InterviewMaker {
             if (!historyQuestions.contains(currentQuestion)) {
                 System.out.println(currentInterviewer.getName() + "问问题：" + currentQuestion);
                 String currentAnswer = interviewee.answerQuestion(currentQuestion);
+                interviewee.notifyListeners(currentAnswer);
                 System.out.println(currentAnswer);
                 historyQuestions.add(currentQuestion);
                 var reportBuilder = currentInterviewer.getReportBuilder();

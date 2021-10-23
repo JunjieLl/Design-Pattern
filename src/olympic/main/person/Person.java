@@ -11,4 +11,8 @@ public abstract class Person {
         this.name = name;
         this.gender = gender;
     }
+
+    public String getName() {
+        return this.name;
+    }
 }
