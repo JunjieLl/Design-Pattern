@@ -12,7 +12,7 @@ import java.util.Random;
 public abstract class FootballGame extends Game {
 
     private FootballTeam team1, team2;
-    protected int score1, score2;
+    protected int score1, score2, penaltyScore1, penaltyScore2;
     protected Observer observer = null;
 
     public FootballGame(FootballTeam team1, FootballTeam team2) {
@@ -34,6 +34,7 @@ public abstract class FootballGame extends Game {
 
     @Override
     public void play() {
+        start();
         // 随机产生比分
         generateResult();
         notifyObserver();
@@ -59,5 +60,13 @@ public abstract class FootballGame extends Game {
 
     public void notifyObserver() {
         observer.update(this);
+    }
+
+    public int getPenaltyScore1() {
+        return penaltyScore1;
+    }
+
+    public int getPenaltyScore2() {
+        return penaltyScore2;
     }
 }

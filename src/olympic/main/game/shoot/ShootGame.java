@@ -14,6 +14,11 @@ public class ShootGame extends Game {
         return "射击比赛";
     }
 
+    @Override
+    public void play() {
+
+    }
+
     /**
      * 团体和个人是两种行为
      */

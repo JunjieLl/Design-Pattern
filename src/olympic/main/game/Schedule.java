@@ -9,7 +9,7 @@ import java.util.ListIterator;
  * Iterator模式
  */
 public class Schedule implements Aggregate{
-    protected ArrayList<Game> schedule;
+    protected ArrayList<Game> schedule = new ArrayList<>();
 
     public void addGame(Game game) {
         schedule.add(game);

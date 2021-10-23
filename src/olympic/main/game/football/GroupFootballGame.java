@@ -10,7 +10,7 @@ public class GroupFootballGame extends FootballGame{
 
     @Override
     public void generateResult() {
-        Random r = new Random(1);
+        Random r = new Random();
         score1 = r.nextInt(10);
         score2 = r.nextInt(10);
         System.out.println("比赛结束，比分为" + score1 + "-" + score2);
