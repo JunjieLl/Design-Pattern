@@ -8,7 +8,7 @@ import olympic.main.person.athlete.TeamAthlete;
  * 设计模式：装饰器模式
  */
 public class TeamShootAthlete implements Athlete {
-    private TeamAthlete teamAthlete = new TeamAthlete();
+    private TeamAthlete teamAthlete = new TeamAthlete(null);
 
     @Override
     public void participate(Game game) {

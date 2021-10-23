@@ -3,12 +3,14 @@ package olympic.main.game;
 /**
  * 比赛类接口，比赛中可能有子比赛
  */
-public interface Game {
-    public void start();
+public abstract class Game {
+    public abstract void start();
 
-    default public void addChild(Game game) {
+    public void addChild(Game game) {
         throw new UnsupportedOperationException();
     }
 
-    public String getName();
+    public abstract String getName();
+
+    public abstract void play();
 }

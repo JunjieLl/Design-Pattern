@@ -11,7 +11,11 @@ import java.util.List;
  */
 public class TeamAthlete implements Athlete {
     private List<Athlete> athletes = new ArrayList<>();
+    private String nation;
 
+    public TeamAthlete(String nation) {
+        this.nation = nation;
+    }
     /**
      * 复合模式
      * @param game
@@ -22,6 +26,10 @@ public class TeamAthlete implements Athlete {
         for (Athlete athlete : athletes) {
             athlete.participate(game);
         }
+    }
+
+    public String getNation() {
+        return this.nation;
     }
 
     @Override

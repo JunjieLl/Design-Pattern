@@ -8,7 +8,7 @@ import olympic.main.person.athlete.Athlete;
  * 设计模式：桥接模式
  * 设计比赛
  */
-public class ShootGame implements Game {
+public class ShootGame extends Game {
     @Override
     public String getName() {
         return "射击比赛";
