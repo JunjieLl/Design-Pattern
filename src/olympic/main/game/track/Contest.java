@@ -18,16 +18,14 @@ public class Contest {
         contestImpl.start();
     }
 
-    public void getParticipants() {
-        contestImpl.getParticipants();
-    }
+
 
     public void getResult() {
         contestImpl.getResult();
     }
 
     public final void display() {
-        getParticipants();
+
         start();
         getResult();
     }

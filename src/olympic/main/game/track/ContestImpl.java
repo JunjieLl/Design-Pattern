@@ -15,6 +15,8 @@ public abstract class ContestImpl {
     public  void start(){
         
     }
-    public abstract void getParticipants();
+
+
+
     public abstract void getResult();
 }

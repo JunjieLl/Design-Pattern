@@ -14,9 +14,7 @@ public class Final extends ContestImpl{
     public void start(){
 
     }
-    public  void getParticipants(){
 
-    }
     public  void getResult(){
 
     }

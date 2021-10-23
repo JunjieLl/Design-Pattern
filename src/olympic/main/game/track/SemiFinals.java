@@ -13,9 +13,7 @@ public class SemiFinals  extends ContestImpl{
     public void start(){
 
     }
-    public  void getParticipants(){
 
-    }
     public  void getResult(){
 
     }
