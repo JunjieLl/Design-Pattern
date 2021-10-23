@@ -37,10 +37,10 @@ public class ScoreBoard implements Observer{
             score[id2] += 3;
         }
 
-        this.goalDifference[id1] = score1 - score2;
-        this.goalDifference[id2] = score2 - score1;
-        this.goal[id1] = score1;
-        this.goal[id2] = score2;
+        this.goalDifference[id1] += score1 - score2;
+        this.goalDifference[id2] += score2 - score1;
+        this.goal[id1] += score1;
+        this.goal[id2] += score2;
     }
 
     public int[] getScore() {
