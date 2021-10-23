@@ -25,6 +25,7 @@ public class Contest {
     }
 
     public final void display() {
+        System.out.println("classname: (Contest) method: (display) action: (Bridge method模式中运动员参与比赛) ");
 
         start();
         getResult();

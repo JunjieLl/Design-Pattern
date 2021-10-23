@@ -17,12 +17,8 @@ public class Relays extends TrackGame {
     @Override
     public void start() {
         System.out.println("classname: (TrackGame) method: (start) action: (template method模式中运动员参与接力比赛) ");
-        Contest contest1=new Contest(new Prelude(athletes));
-
-        Contest contest3=new Contest(new Final(athletes));
-
-        contest1.display();
-        contest1.display();
+        ContestDirector contestDirector=new ContestDirector(2,athletes);
+        contestDirector.construct();
         for(Athlete athlete:athletes) {
             athlete.participate(this);
         }

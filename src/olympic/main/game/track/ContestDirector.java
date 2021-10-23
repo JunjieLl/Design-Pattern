@@ -22,6 +22,7 @@ public class ContestDirector {
     }
 
     public void construct(){
+        System.out.println("classname: (ContestDirector) method: (construct) action: (Builder method模式中运动员参与比赛) ");
         if(rounds==1){
             Contest contest3=new Contest(new Final(athletes));
             contest3.display();
