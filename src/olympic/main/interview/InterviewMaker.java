@@ -68,7 +68,7 @@ public class InterviewMaker {
         System.out.println("赛后采访结束\n");
     }
 
-    public static Interviewer pickOneInterviewer(ArrayList<Interviewer> interviewers) {
+    private static Interviewer pickOneInterviewer(ArrayList<Interviewer> interviewers) {
         boolean haveQuestion = false;
         for (Interviewer interviewer :
                 interviewers) {

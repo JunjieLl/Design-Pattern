@@ -22,6 +22,7 @@ public interface Athlete {
     public static Athlete AthleteFactory(String name, String gender) {
         return new IndividualAthlete(name, gender);
     }
+
 }
 
 

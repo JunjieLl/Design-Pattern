@@ -22,6 +22,6 @@ public class NewspaperBuilder extends ReportBuilder {
 
     @Override
     public void close() {
-        report = report + interviewerName + "报道" + '\n' + '\n';
+        report = report + interviewerName + "报道" + '\n';
     }
 }
