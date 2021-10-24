@@ -5,7 +5,7 @@ import olympic.main.person.athlete.TeamAthlete;
 
 public class FootballTeam extends TeamAthlete {
 
-    private int id;   // 组内的ID
+    private int id;
 
     public FootballTeam(String nation, int id) {
         super(nation);

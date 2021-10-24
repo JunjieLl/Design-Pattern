@@ -44,28 +44,29 @@ public class GroupRound extends Round{
 
         ArrayList<FootballTeam> tmp = new ArrayList<>();   // 晋级名单
 
+        System.out.println("\n【小组赛积分榜】");
         for (int g = 0; g < 4; g++) {
             ArrayList<ScoreEntry> ranking = new ArrayList<>();
             for (int i = 0; i < 4; i++) {
                 FootballTeam t = teams.get(4 * g + i);
                 ranking.add(new ScoreEntry(t, scores[t.getId()], goalDifferences[t.getId()], goals[t.getId()]));
             }
-            System.out.println("\n【小组赛积分榜】");
+
             Collections.sort(ranking, (o1, o2) -> {
                 if (o1.score > o2.score) {
-                    return 1;
-                } else if (o1.score < o2.score) {
                     return -1;
+                } else if (o1.score < o2.score) {
+                    return 1;
                 } else {
                     if (o1.goalDifference > o2.goalDifference) {
-                        return 1;
-                    } else if (o1.goalDifference < o2.goalDifference) {
                         return -1;
+                    } else if (o1.goalDifference < o2.goalDifference) {
+                        return 1;
                     } else {
                         if (o1.goal > o2.goal) {
-                            return 1;
-                        } else if (o1.goal < o2.goal) {
                             return -1;
+                        } else if (o1.goal < o2.goal) {
+                            return 1;
                         } else {
                             return 0;
                         }
