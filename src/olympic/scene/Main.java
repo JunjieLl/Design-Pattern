@@ -1,6 +1,6 @@
 package olympic.scene;
 
-import olympic.main.game.Test;
+import olympic.main.game.football.Test;
 
 public class Main {
     public static void main(String[] args) {

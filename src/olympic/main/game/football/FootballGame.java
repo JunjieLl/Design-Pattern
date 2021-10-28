@@ -1,6 +1,7 @@
 package olympic.main.game.football;
 
 import olympic.main.game.Game;
+import olympic.main.person.athlete.footballathlete.FootballTeam;
 
 /**
  * Observer 模式

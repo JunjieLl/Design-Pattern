@@ -1,5 +1,7 @@
 package olympic.main.game.football;
 
+import olympic.main.person.athlete.footballathlete.FootballTeam;
+
 import java.util.Random;
 
 public class EliminationFootballGame extends FootballGame{

@@ -1,5 +1,6 @@
-package olympic.main.game.football;
+package olympic.main.person.athlete.footballathlete;
 
+import olympic.main.game.Game;
 import olympic.main.person.athlete.TeamAthlete;
 
 
@@ -14,5 +15,10 @@ public class FootballTeam extends TeamAthlete {
 
     public int getId() {
         return id;
+    }
+
+    @Override
+    public void participate(Game game) {
+
     }
 }

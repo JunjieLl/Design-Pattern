@@ -1,8 +1,11 @@
 package olympic.main.game.football;
 
+import olympic.main.person.athlete.footballathlete.FootballTeam;
+
 import java.util.ArrayList;
 
 /**
+ * 一轮比赛
  * Pipeline模式
  * 相当于Valve
  */

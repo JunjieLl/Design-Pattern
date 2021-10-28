@@ -1,6 +1,7 @@
 package olympic.main.game.football;
 
 import olympic.main.game.ScheduleIterator;
+import olympic.main.person.athlete.footballathlete.FootballTeam;
 
 import java.util.ArrayList;
 
