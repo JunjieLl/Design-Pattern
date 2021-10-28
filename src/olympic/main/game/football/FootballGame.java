@@ -18,8 +18,7 @@ public abstract class FootballGame extends Game {
         this.score1 = this.score2 = 0;
     }
 
-    @Override
-    public void start() {
+    public void begin() {
         System.out.println("\n【足球赛事】" + team1.getNation() + " vs " + team2.getNation());
         System.out.println("比赛开始");
     }
@@ -30,8 +29,8 @@ public abstract class FootballGame extends Game {
     }
 
     @Override
-    public void play() {
-        start();
+    public void start() {
+        begin();
         // 随机产生比分
         generateResult();
         notifyObserver();

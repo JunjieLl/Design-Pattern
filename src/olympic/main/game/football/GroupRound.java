@@ -23,7 +23,7 @@ public class GroupRound extends Round{
         // 进行所有比赛
         ScheduleIterator it = schedule.iterator();
         while (it.hasNext()) {
-            it.next().play();
+            it.next().start();
         }
 
         int[] scores = scoreBoard.getScore();

@@ -30,7 +30,7 @@ public class EliminationRound extends Round implements Observer{
 
         ScheduleIterator it = schedule.iterator();
         while (it.hasNext()) {
-            it.next().play();
+            it.next().start();
         }
 
         return advancedTeams;
