@@ -74,7 +74,10 @@ public class PersonFactory {
                 if(a==0){
                     //这是团队比赛
                 }else{
-                    //这是单人比赛
+                    //这是单人比赛\
+//                    for(int j=0;j<a;j++){
+//                        hMap.get(i).add(new IndividualAthlete("Junjie Zhai"+j,"China"));
+//                    }
                 }
 
             }
