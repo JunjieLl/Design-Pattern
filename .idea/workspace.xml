@@ -5,25 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72d23930-82ae-4f09-9d5b-70ef237d09c9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/olympic/main/game/Aggregate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/olympic/main/game/Iterator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/olympic/main/game/Schedule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/olympic/main/game/ScheduleIterator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/olympic/main/game/football/EliminationFootballGame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/olympic/main/game/football/EliminationRound.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/olympic/main/game/football/FootballGame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/olympic/main/game/football/FootballGameManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/olympic/main/game/football/FootballSchedule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/olympic/main/game/football/GroupFootballGame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/olympic/main/game/football/GroupRound.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/olympic/main/game/football/Observer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/olympic/main/game/football/Round.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/olympic/main/game/football/ScoreBoard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/olympic/main/game/football/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021_10_23_11_16__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021_10_23_11_16__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021_10_23_12_01__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021_10_23_12_01__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021_10_23_12_40__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021_10_23_12_40__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021_10_23_12_40__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021_10_23_12_40__Changes_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/olympic/main/person/athlete/footballathlete/FootballTeam.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
