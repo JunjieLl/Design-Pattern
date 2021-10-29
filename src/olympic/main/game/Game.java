@@ -7,7 +7,13 @@ import java.util.List;
 
 public abstract class Game {
     protected List<Athlete> athleteList = new ArrayList<>();
-    public Game(List<Athlete> athleteList){
+    public Game(String name,List<Athlete> athleteList){
         this.athleteList=athleteList;
+    }
+    abstract public void start();
+    protected String name;
+
+    public String getName() {
+        return name;
     }
 }
