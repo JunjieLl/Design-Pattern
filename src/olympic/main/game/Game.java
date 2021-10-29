@@ -1,4 +1,4 @@
-package olympic.main.person.game;
+package olympic.main.game;
 
 import olympic.main.person.athlete.Athlete;
 
