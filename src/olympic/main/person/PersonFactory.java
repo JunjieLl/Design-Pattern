@@ -11,10 +11,19 @@ import java.util.*;
 public class PersonFactory {
 
     private static PersonFactory singleton = new PersonFactory();
+
+    /**
+     * PersonFactory是单例的私有构造函数
+     */
     private PersonFactory() {
         System.out.println("classname: (PersonFactory) method: (PersonFactory) action: (singleton method模式中生成所有人员) ");
         this.springUtil();
     }
+
+    /**
+     * 返回一个工厂单例
+     * @return PersonFactory 返回一个工厂单例
+     */
     public static PersonFactory getInstance() {
         return singleton;
     }
