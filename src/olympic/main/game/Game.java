@@ -6,8 +6,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Game {
-    protected List<Athlete> athleteList = new ArrayList<>();
+    protected List<Athlete> athletes = new ArrayList<>();
     public Game(List<Athlete> athleteList){
-        this.athleteList=athleteList;
+        this.athletes=athleteList;
+    }
+    abstract public void start();
+    protected String name;
+
+    public String getName() {
+        return name;
     }
 }
