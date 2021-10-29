@@ -39,6 +39,8 @@ public class ContestDirector {
             Contest contest2=new Contest(new SemiFinals(athletes));
             contest2.display();
             Contest contest3=new Contest(new Final(athletes));
+
+
             contest3.display();
         }
 
