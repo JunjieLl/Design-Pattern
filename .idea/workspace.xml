@@ -5,16 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72d23930-82ae-4f09-9d5b-70ef237d09c9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/track/Contest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/track/ContestDirector.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/track/ContestImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/track/Final.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/track/MaInTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/track/Prelude.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/track/Relays.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/track/SemiFinals.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/track/Sprints.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/track/TrackGame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021_10_23_11_16__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021_10_23_11_16__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021_10_23_12_01__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021_10_23_12_01__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021_10_23_12_40__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021_10_23_12_40__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021_10_23_12_40__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021_10_23_12_40__Changes_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/olympic/main/person/PersonFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/main/person/PersonFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +54,15 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/olympic/main/game" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="olympic.main.game.track.MaInTest" />
+      <module name="Design-Pattern" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
