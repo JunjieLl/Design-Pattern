@@ -10,6 +10,6 @@ public class Main {
                 System.out.println("奥林匹克运动会开始了！");
             }
         });
-        new Test().start();
+        Test.start();
     }
 }

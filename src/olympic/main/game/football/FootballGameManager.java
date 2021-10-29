@@ -1,5 +1,6 @@
 package olympic.main.game.football;
 
+import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.footballathlete.FootballTeam;
 
 import java.util.ArrayList;
@@ -25,6 +26,10 @@ public class FootballGameManager {
     public Round setFirst(Round first) {
         this.first = first;
         return this.first;
+    }
+
+    public void initTeam(ArrayList<Athlete> teamList) {
+        
     }
 
     public void start() {
