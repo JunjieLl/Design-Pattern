@@ -1,0 +1,16 @@
+Index: src/olympic/main/game/football/GetAdvancedTeams.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/olympic/main/game/football/GetAdvancedTeams.java b/src/olympic/main/game/football/GetAdvancedTeams.java
+new file mode 100644
+--- /dev/null	
++++ b/src/olympic/main/game/football/GetAdvancedTeams.java	
+@@ -0,0 +1,6 @@
++package olympic.main.game.football;
++
++/**
++ * Strategy模式
++ */
++
