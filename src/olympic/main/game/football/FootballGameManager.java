@@ -29,7 +29,9 @@ public class FootballGameManager {
     }
 
     public void initTeam(ArrayList<Athlete> teamList) {
-        
+        for (int i = 0; i < 16; i++) {
+            teams.add(new FootballTeam("Team" + i, i));
+        }
     }
 
     public void start() {
