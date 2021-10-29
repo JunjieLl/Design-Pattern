@@ -16,8 +16,7 @@ public class MaInTest {
         Marathon marathon=new Marathon(runners2);
         marathon.start();
 
-        PersonFactory personFactory=new PersonFactory();
-        personFactory.springUtil();
+        PersonFactory personFactory=PersonFactory.getInstance();
 
     }
 }
