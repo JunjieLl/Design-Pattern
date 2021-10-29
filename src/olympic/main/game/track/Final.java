@@ -11,7 +11,7 @@ import java.util.List;
  * Final是决赛，如果没有多次比赛就作为第一次
  */
 public class Final extends ContestImpl{
-    Final(Athlete[] athletes) {
+    Final(List<Athlete> athletes) {
         super(athletes);
         gameType="决赛";
     }
@@ -39,6 +39,6 @@ public class Final extends ContestImpl{
      * 得到初赛的成果
      */
     public  void getResult(){
-        rank(Arrays.asList(athletes));
+        rank(athletes);
     }
 }

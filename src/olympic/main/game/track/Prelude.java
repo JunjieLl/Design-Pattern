@@ -12,7 +12,7 @@ import java.util.List;
  * Prelude是初赛
  */
 public class Prelude extends ContestImpl{
-    Prelude(Athlete[] athletes) {
+    Prelude(List<Athlete> athletes) {
         super(athletes);
         gameType="初赛";
     }

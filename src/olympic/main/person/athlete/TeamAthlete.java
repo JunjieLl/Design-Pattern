@@ -15,13 +15,21 @@ public abstract class TeamAthlete implements Athlete {
      */
     protected List<IndividualAthlete> athleteList = new ArrayList<>();
     protected String nation;
+    protected String name;
 
     public TeamAthlete(String nation) {
         this.nation = nation;
     }
+    public TeamAthlete(String nation,String name) {
+        this.nation = nation;
+        this.name = name;
+    }
 
     public String getNation() {
         return nation;
+    }
+    public String getName() {
+        return name;
     }
 
     /**
