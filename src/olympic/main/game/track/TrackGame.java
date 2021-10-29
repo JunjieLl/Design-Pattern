@@ -17,13 +17,7 @@ public abstract  class TrackGame extends Game{
         this.athletes = athletes;
     }
 
-    @Override
-    public void start() {
-        System.out.println("classname: (TrackGame) method: (start) action: (template method模式中运动员参与赛跑比赛) ");
-        for (Athlete athlete : athletes) {
-            athlete.participate(this);
-        }
-        /// game detail to do
-    }
+
+
 
 }
