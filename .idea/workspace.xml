@@ -5,11 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72d23930-82ae-4f09-9d5b-70ef237d09c9" name="Changes" comment="">
-<<<<<<< HEAD
-      <change afterPath="$PROJECT_DIR$/src/olympic/main/person/athlete/footballathlete/FootballTeam.java" afterDir="false" />
-=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/olympic/main/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/main/game/Game.java" afterDir="false" />
->>>>>>> 771a8766f624949f3b30a7b61177db4fa5755524
+      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/football/FootballGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/main/game/football/FootballGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/football/FootballGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/main/game/football/FootballGameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/football/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/main/game/football/FootballStarter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/track/TrackGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/main/game/track/TrackGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/olympic/main/person/athlete/TeamAthlete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/main/person/athlete/TeamAthlete.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/olympic/main/person/athlete/footballathlete/FootballTeam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/main/person/athlete/footballathlete/FootballTeam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/olympic/scene/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/scene/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,14 +28,6 @@
     </option>
   </component>
   <component name="Git.Settings">
-<<<<<<< HEAD
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
-=======
->>>>>>> 771a8766f624949f3b30a7b61177db4fa5755524
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
@@ -42,13 +38,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
-<<<<<<< HEAD
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
-=======
-  <component name="ProjectId" id="20BXJcyPMIO9RZuho0ljk5ig2vK" />
->>>>>>> 771a8766f624949f3b30a7b61177db4fa5755524
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -68,15 +60,6 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/olympic/main/game" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="olympic.main.game.track.MaInTest" />
-      <module name="Design-Pattern" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="RunManager">
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
@@ -114,11 +97,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-<<<<<<< HEAD
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-=======
->>>>>>> 771a8766f624949f3b30a7b61177db4fa5755524
   </component>
 </project>

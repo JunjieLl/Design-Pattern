@@ -1,6 +1,7 @@
 package olympic.main.game.football;
 
 import olympic.main.person.athlete.Athlete;
+import olympic.main.person.athlete.TeamAthlete;
 import olympic.main.person.athlete.footballathlete.FootballTeam;
 
 import java.util.ArrayList;
@@ -28,18 +29,14 @@ public class FootballGameManager {
         return this.first;
     }
 
-    public void initTeam(ArrayList<Athlete> teamList) {
+    public void initTeam(ArrayList<TeamAthlete> teamList) {
         for (int i = 0; i < 16; i++) {
-            teams.add(new FootballTeam("Team" + i, i));
+            TeamAthlete team = teamList.get(i);
+            teams.add(new FootballTeam(team.getName(), team.getNation(), team.getAthleteList(), i));
         }
     }
 
     public void start() {
-        // 生成参赛名单
-        for (int i = 0; i < 16; i++) {
-            teams.add(new FootballTeam("Team" + i, i));
-        }
-
         Round r = this.first;
         while (r != null) {
             teams = r.play(teams);

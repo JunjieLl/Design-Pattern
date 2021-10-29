@@ -14,6 +14,7 @@ public abstract class FootballGame extends Game {
     protected Observer observer = null;
 
     public FootballGame(FootballTeam team1, FootballTeam team2) {
+        super();
         this.team1 = team1;
         this.team2 = team2;
         this.score1 = this.score2 = 0;

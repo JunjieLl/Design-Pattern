@@ -10,4 +10,8 @@ public class TeamAthlete extends Athlete{
         super(name,nation);
         this.athleteList=athleteList;
     }
+
+    public List<Athlete> getAthleteList() {
+        return athleteList;
+    }
 }

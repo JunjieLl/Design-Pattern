@@ -11,9 +11,10 @@ import java.util.List;
  * 使用template method设计模式
  * TrackGame是田径比赛的径赛
  */
-public abstract  class TrackGame extends Game{
+public abstract class TrackGame extends Game{
 
     public TrackGame(List<Athlete> athletes) {
+        super();
         this.athletes = athletes;
     }
 
