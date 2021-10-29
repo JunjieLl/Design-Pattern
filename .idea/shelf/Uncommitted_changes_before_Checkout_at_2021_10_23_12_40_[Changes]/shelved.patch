@@ -1,0 +1,14 @@
+Index: src/olympic/main/game/football/ScoreBoard.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package olympic.main.game.football;\r\n\r\n/**小组赛积分榜\r\n * 模式: Observer\r\n */\r\npublic class ScoreBoard implements Observer{\r\n\r\n    private static ScoreBoard singleton = new ScoreBoard();\r\n    private int[][] score;\r\n    private int[][] goalDifference;\r\n    private int[][] goal;\r\n\r\n    public static ScoreBoard getInstance() {\r\n        return singleton;\r\n    }\r\n\r\n    private ScoreBoard() {\r\n        this.score = new int[4][4];\r\n        this.goalDifference = new int[4][4];\r\n        this.goal = new int[4][4];\r\n    }\r\n    @Override\r\n    public void update(FootballGame game) {\r\n        int score1 = game.getScore1(), score2 = game.getScore2();\r\n        int group = game.getTeam1().getGroup();\r\n        int id1 = game.getTeam1().getId(), id2 = game.getTeam2().getId();\r\n        if (score1 > score2) {\r\n            // Team1胜，积3分\r\n            score[group][id1] += 3;\r\n        }\r\n        else if (score1 == score2) {\r\n            // 平局，各积1分\r\n            score[group][id1]++;\r\n            score[group][id2]++;\r\n        }\r\n        else {\r\n            // Team2胜，积3分\r\n            score[group][id2] += 3;\r\n        }\r\n\r\n        this.goalDifference[group][id1] = score1 - score2;\r\n        this.goalDifference[group][id2] = score2 - score1;\r\n        this.goal[group][id1] = score1;\r\n        this.goal[group][id2] = score2;\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/src/olympic/main/game/football/ScoreBoard.java b/src/olympic/main/game/football/ScoreBoard.java
+--- a/src/olympic/main/game/football/ScoreBoard.java	
++++ b/src/olympic/main/game/football/ScoreBoard.java	
+@@ -43,4 +43,5 @@
+         this.goal[group][id1] = score1;
+         this.goal[group][id2] = score2;
+     }
++
+ }
