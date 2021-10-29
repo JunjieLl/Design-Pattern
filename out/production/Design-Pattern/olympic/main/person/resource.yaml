@@ -1,0 +1,40 @@
+Person:
+  Athlete:
+    TrackAthlete:
+      single:
+        number: 32
+      team:
+        number:32
+        members:2
+      nation:1
+    DivingAthlete:
+      single:
+        number: 32
+      team:
+        number:32
+        members:2
+      nation:
+        number:2
+    FootballAthlete:
+      team:
+        number:16
+        members:20
+      nation:1
+    PingpongAthlete:
+      single:
+        number: 32
+      team:
+        number:32
+        members:2
+      nation:
+        number:2
+- Relays
+- Sprints
+- Marathon
+- Diving
+- Football
+- Pingpong
+
+
+
+
