@@ -6,26 +6,37 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 设计模式：复合模式
+ *
  * 团体射击运动员
  */
-public class TeamAthlete implements Athlete {
-    private List<Athlete> athletes = new ArrayList<>();
-
+public abstract class TeamAthlete implements Athlete {
     /**
-     * 复合模式
-     * @param game
+     * list每一个元素为一个个人运动员
      */
-    @Override
-    public void participate(Game game) {
-        System.out.println("classname: (TeamAthlete) method: (participate) action: (复合模式中团体运动员参与比赛) ");
-        for (Athlete athlete : athletes) {
-            athlete.participate(game);
-        }
+    protected List<IndividualAthlete> athleteList = new ArrayList<>();
+    protected String nation;
+    protected String name;
+
+    public TeamAthlete(String nation) {
+        this.nation = nation;
+    }
+    public TeamAthlete(String nation,String name) {
+        this.nation = nation;
+        this.name = name;
     }
 
-    @Override
-    public void addChild(Athlete athlete) {
-        athletes.add(athlete);
+    public String getNation() {
+        return nation;
+    }
+    public String getName() {
+        return name;
+    }
+
+    /**
+     *
+     * @return 返回团队运动员列表
+     */
+    public List<IndividualAthlete> getAthleteList(){
+        return athleteList;
     }
 }

@@ -4,24 +4,14 @@ import olympic.main.game.Game;
 
 
 /**
- * 运动员接口，运动员可能作为团体Composite
+ * 运动员接口
  */
 public interface Athlete {
-    public void participate(Game game);
-
-    default public void addChild(Athlete athlete) {
-        throw new UnsupportedOperationException();
-    }
-
     /**
-     * 设计模式：工厂函数
-     * @param name 运动员姓名
-     * @param gender 运动员性别
-     * @return 运动员
+     * 运动员参与比赛
+     * @param game 具体的比赛
      */
-    public static Athlete AthleteFactory(String name, String gender) {
-        return new IndividualAthlete(name, gender);
-    }
+    public void participate(Game game);
 }
 
 
