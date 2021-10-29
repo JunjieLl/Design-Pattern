@@ -2,20 +2,21 @@ package olympic.main.game.track;
 
 import olympic.main.person.athlete.Athlete;
 
+import java.util.List;
+
 /**
  * 使用Builder设计模式
  * 作为Director,使用Contest的API来生成实例，不依赖于什么比赛
  */
 public class ContestDirector {
     public Integer rounds;
-    Athlete[]  athletes;
-
+    List<Athlete> athletes;
     /**
      *
      * @param rounds 一共有几轮比赛
      * @param athletes 所有参加比赛的运动员
      */
-    public ContestDirector(int rounds, Athlete[]athletes){
+    public ContestDirector(int rounds,List<Athlete>athletes){
         this.rounds=rounds;
         this.athletes=athletes;
 

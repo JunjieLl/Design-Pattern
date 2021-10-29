@@ -10,7 +10,7 @@ import java.util.List;
  * SemiFinals是半决赛
  */
 public class SemiFinals  extends ContestImpl{
-    SemiFinals(Athlete[] athletes) {
+    SemiFinals(List<Athlete> athletes) {
         super(athletes);
         gameType="半决赛";
     }

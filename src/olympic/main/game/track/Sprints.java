@@ -1,6 +1,9 @@
 package olympic.main.game.track;
 
 import olympic.main.person.athlete.Athlete;
+
+import java.util.List;
+
 /**
  * 使用template method设计模式
  * Sprints是田径比赛的冲刺跑
@@ -8,7 +11,7 @@ import olympic.main.person.athlete.Athlete;
 public class Sprints extends TrackGame {
 
 
-    public Sprints(Athlete[] athletes) {
+    public Sprints(List<Athlete> athletes) {
         super(athletes);
     }
 
@@ -17,9 +20,9 @@ public class Sprints extends TrackGame {
         System.out.println("classname: (TrackGame) method: (start) action: (template method模式中运动员参与冲刺比赛) ");
        ContestDirector contestDirector=new ContestDirector(3,athletes);
        contestDirector.construct();
-        for(Athlete athlete:athletes){
-            athlete.participate(this);
-        }
+//        for(Athlete athlete:athletes){
+//            athlete.participate(this);
+//        }
     }
 
     public String getName(){

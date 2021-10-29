@@ -11,10 +11,10 @@ import java.util.List;
  * ContestImpl是比赛的抽象类
  */
 public abstract class ContestImpl {
-    public Athlete[] athletes;
+    public List<Athlete> athletes;
     public String gameType;
 
-    ContestImpl(Athlete[] athletes){
+    ContestImpl(List<Athlete> athletes){
         this.athletes=athletes;
 
     }
@@ -37,13 +37,14 @@ public abstract class ContestImpl {
     public List<List<Athlete>> group(){
         List<List<Athlete>> rows =  new ArrayList<>();
 
-        if(athletes.length>8){
+
+        if(athletes.size()>8){
             int i=0;
-            while(i<athletes.length){
+            while(i<athletes.size()){
                 List<Athlete> cols =  new  ArrayList<>();
                 int  j =  0 ;
-                while(j<8&&i+j<athletes.length){
-                    cols.add(athletes[j++]);
+                while(j<8&&i+j<athletes.size()){
+                    cols.add(athletes.get(j++));
                 }
                 i+=j;
                 rows.add(cols);
@@ -51,7 +52,7 @@ public abstract class ContestImpl {
 
         }
         else{
-            rows.add(Arrays.asList(athletes));
+            rows.add(athletes);
         }
         return rows;
     }
