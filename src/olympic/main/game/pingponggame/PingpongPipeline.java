@@ -15,11 +15,11 @@ public class PingpongPipeline extends Game {
     private PingpongFilter firstGame;
     private PingpongFilter lastGame;
 
-    public PingpongPipeline(String name,List<Athlete> athleteList) {
-        super(name,athleteList);
+    public PingpongPipeline(String name, List<Athlete> athleteList) {
+        super(name, athleteList);
 //        Double temp = Math.log(athleteList.size())/Math.log(2);
 //        Integer filterNum = temp.intValue();
-        if (athleteList.size() == 32){
+        if (athleteList.size() == 32) {
             addFilter(new PingpongFilter("32进16"));
         }
         addFilter(new PingpongFilter("16进8"));
@@ -39,10 +39,10 @@ public class PingpongPipeline extends Game {
     }
 
     public void addFilter(PingpongFilter filter) {
-        if (firstGame == null){
+        if (firstGame == null) {
             firstGame = filter;
             lastGame = filter;
-        }else{
+        } else {
             lastGame.setNextFliter(filter);
             lastGame = filter;
         }
@@ -50,16 +50,15 @@ public class PingpongPipeline extends Game {
 
     /**
      * 季军赛
-     * @return 胜者
      */
-    public Athlete ThirdGame(){
+    public void ThirdGame(){
         List<Athlete> thirdGameathletes = new ArrayList<>();
         for (Athlete athlete:athletes){
             if (athlete.getRank("半决赛") == 2){
                 thirdGameathletes.add(athlete);
             }
         }
-        thirdGame
+//        PingpongFilter third
     }
 
 
@@ -77,16 +76,16 @@ public class PingpongPipeline extends Game {
                 break;
             }
         }
-        for (Athlete athlete:athletes){
-            if (athlete.getRank("决赛") == 2){
-                System.out.println("亚军 "+athlete.getName());
+        for (Athlete athlete : athletes) {
+            if (athlete.getRank("决赛") == 2) {
+                System.out.println("亚军 " + athlete.getName());
                 break;
             }
         }
         System.out.print("季军 ");
-        for (Athlete athlete:athletes){
-            if (athlete.getRank("半决赛") == 2){
-                System.out.print(athlete.getName()+" ");
+        for (Athlete athlete : athletes) {
+            if (athlete.getRank("半决赛") == 2) {
+                System.out.print(athlete.getName() + " ");
             }
         }
         System.out.println("");
