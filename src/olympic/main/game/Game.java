@@ -7,8 +7,9 @@ import java.util.List;
 
 public abstract class Game {
     protected List<Athlete> athletes = new ArrayList<>();
-    public Game(List<Athlete> athleteList){
+    public Game(String name,List<Athlete> athleteList){
         this.athletes=athleteList;
+        this.name = name;
     }
 
     public Game(){}

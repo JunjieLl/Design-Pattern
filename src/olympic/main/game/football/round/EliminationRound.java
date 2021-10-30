@@ -1,6 +1,10 @@
-package olympic.main.game.football;
+package olympic.main.game.football.round;
 
 import olympic.main.game.ScheduleIterator;
+import olympic.main.game.football.EliminationFootballGame;
+import olympic.main.game.football.FootballGame;
+import olympic.main.game.football.Observer;
+import olympic.main.game.football.round.Round;
 import olympic.main.person.athlete.footballathlete.FootballTeam;
 
 import java.util.ArrayList;
@@ -9,7 +13,7 @@ import java.util.List;
 /**
  * 淘汰赛的一轮
  */
-public class EliminationRound extends Round implements Observer{
+public class EliminationRound extends Round implements Observer {
     String name = null;
     private List<FootballTeam> advancedTeams = new ArrayList<>();
 

@@ -12,13 +12,13 @@ public class EliminationFootballGame extends FootballGame{
     @Override
     public void generateResult() {
         Random r = new Random();
-        score1 = r.nextInt(10);
-        score2 = r.nextInt(10);
+        score1 = r.nextInt(5);
+        score2 = r.nextInt(5);
         if (score1 == score2) {
             System.out.println("90分钟内双方打平，比分为" + score1 + "-" + score2);
             System.out.println("进入加时赛");
-            score1 += r.nextInt(5);
-            score2 += r.nextInt(5);
+            score1 += r.nextInt(3);
+            score2 += r.nextInt(3);
             if (score1 == score2) {
                 System.out.println("120分钟内双方打平，比分为" + score1 + "-" + score2);
                 System.out.println("进入点球决胜阶段");

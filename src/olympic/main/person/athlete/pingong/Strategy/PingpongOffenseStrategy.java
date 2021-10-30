@@ -24,7 +24,7 @@ public class PingpongOffenseStrategy implements Strategy {
     @Override
     public Boolean playWith(Athlete oppoent){
         if (Mode.getShowDetail()) {
-            System.out.println("classname: (OffenseStrategy) method: (playWith) action: (策略模式中选手运用攻击策略进行比赛) ");
+            System.out.println("classname: (PingpongOffenseStrategy) method: (playWith) action: (策略模式中选手运用攻击策略) ");
         }
         ballState = random.nextInt(100);
         offense = random.nextInt(100)< offenseProb;
