@@ -39,12 +39,6 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src" />
-    </key>
-  </component>
   <component name="RunManager">
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="olympic.main.game.pingponggame.Test" />
@@ -55,6 +49,19 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Design-Pattern" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Design-Pattern" />
+      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -72,9 +79,9 @@
       <created>1635556905772</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1635559125069</updated>
-      <workItem from="1635559130175" duration="49000" />
-      <workItem from="1635559189675" duration="624000" />
+      <updated>1635556905772</updated>
+      <workItem from="1635556907464" duration="186000" />
+      <workItem from="1635557106447" duration="2430000" />
     </task>
     <servers />
   </component>

@@ -3,6 +3,7 @@ package olympic.main.person;
 import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.TeamAthlete;
 import olympic.main.person.athlete.divingathlete.DivingAthlete;
+import olympic.main.person.athlete.divingathlete.DivingTeam;
 import olympic.main.person.athlete.footballathlete.FootballTeam;
 import olympic.main.person.athlete.pingong.PingpongAthlete;
 import olympic.main.person.athlete.pingong.PingpongTeam;
@@ -54,6 +55,7 @@ public class PersonFactory {
      * @return List<Athlete> 运动员列表
      */
     public  List<Athlete> getAthletes(String name){
+        List<Athlete> a=hMap.get(name);
         return hMap.get(name);
     }
 
@@ -66,18 +68,18 @@ public class PersonFactory {
             InputStream in = new BufferedInputStream(new FileInputStream("./src/olympic/main/person/message.properties"));
             this.prop.load(in);     ///加载属性列表
             Iterator<String> it = this.prop.stringPropertyNames().iterator();
-//            for(Object key:prop.keySet()){
-//                    System.out.print(key+":");
-//                    System.out.println(prop.get(key));
-//                }
 
             gamesName= Arrays.asList(((String) this.prop.get("AllGames")).split(","));
 
             for(String i:gamesName){
-                int a=(int)this.prop.get(i+"Athlete.single.number");
-                int b=(int)this.prop.get(i+"Athlete.team.number");
-                int c=(int)this.prop.get(i+"Athlete.single.member");
-                int d=(int)this.prop.get(i+"Athlete.single.per");
+
+                String a1=this.prop.get(i+"Athlete.single.number").toString().trim();
+                int a=Integer.parseInt(a1.trim());
+                int b=Integer.parseInt( this.prop.get(i+"Athlete.team.number").toString().trim());
+                int c=Integer.parseInt( this.prop.get(i+"Athlete.team.member").toString().trim());
+                int d=Integer.parseInt(this.prop.get(i+"Athlete.per").toString().trim());
+
+
                 List<Athlete> team=new ArrayList<Athlete>();
                 List<Athlete> athleteList=new ArrayList<Athlete>();
                 switch (i){
@@ -110,7 +112,7 @@ public class PersonFactory {
                         for(int j=0;j<b;j++){
                             athleteList.clear();
                             for(int k=0;k<c;k++){
-                                athleteList.add(new TrackAthlete("Junjie Zhai"+j,"China"));
+                                athleteList.add(new DivingAthlete("Junjie Zhai"+j,"China"));
                             }
                             team.add(new DivingTeam("美国一队","美国",athleteList));
                         }
@@ -129,7 +131,7 @@ public class PersonFactory {
                     case "Pingpong":
                         athleteList.clear();
                         for(int j=0;j<a;j++){
-                            athleteList.add(new TrackAthlete("Junjie Zhai"+j,"China"));
+                            athleteList.add(new PingpongAthlete("Junjie Zhai"+j,"China"));
                         }
                         hMap.put(i,athleteList);
                         break;

@@ -14,10 +14,8 @@ public abstract class Game {
     public Game() {
 
     }
-
     abstract public void start();
     protected String name;
-
     public String getName() {
         return name;
     }
