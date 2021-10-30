@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ce12389-fc88-4adf-b424-e77ca66ab0c5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/football/EliminationFootballGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/main/game/football/EliminationFootballGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/football/EliminationRound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/main/game/football/round/EliminationRound.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/football/FootballGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/main/game/football/FootballGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/football/FootballGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/main/game/football/FootballGameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/football/FootballStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/main/game/football/FootballStarter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/football/GroupFootballGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/main/game/football/GroupFootballGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/football/GroupRound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/main/game/football/round/GroupRound.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/football/Round.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/main/game/football/round/Round.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,10 +47,15 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="olympic.main.game.football" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="olympic.main.game.pingponggame.Test" />
-      <module name="newbranch" />
+      <option name="MAIN_CLASS_NAME" value="olympic.scene.Main" />
+      <module name="Design-Pattern" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="olympic.main.game.pingponggame.*" />

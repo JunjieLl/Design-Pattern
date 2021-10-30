@@ -1,6 +1,6 @@
 package olympic.main.game.football;
 
-import olympic.main.person.athlete.TeamAthlete;
+import olympic.main.game.football.round.Round;
 import olympic.main.person.athlete.footballathlete.FootballTeam;
 
 import java.util.ArrayList;
@@ -15,6 +15,9 @@ public class FootballGameManager {
 
     public static FootballGameManager getInstance() {
         return singleton;
+    }
+
+    private FootballGameManager() {
     }
 
     private List<FootballTeam> teams = new ArrayList<>();

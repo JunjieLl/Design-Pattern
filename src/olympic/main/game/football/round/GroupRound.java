@@ -1,6 +1,9 @@
-package olympic.main.game.football;
+package olympic.main.game.football.round;
 
 import olympic.main.game.ScheduleIterator;
+import olympic.main.game.football.GroupFootballGame;
+import olympic.main.game.football.ScoreBoard;
+import olympic.main.game.football.round.Round;
 import olympic.main.person.athlete.footballathlete.FootballTeam;
 
 import java.util.ArrayList;
@@ -11,7 +14,7 @@ import java.util.List;
  * 小组赛
  * 调用play打完所有小组赛并生成晋级名单
  */
-public class GroupRound extends Round{
+public class GroupRound extends Round {
 
     // 小组赛积分榜
     ScoreBoard scoreBoard = ScoreBoard.getInstance();
