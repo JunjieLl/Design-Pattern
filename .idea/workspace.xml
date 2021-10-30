@@ -36,14 +36,23 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunManager">
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="olympic.main.game.pingponggame.Test" />
       <module name="Design-Pattern" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="olympic.main.game.pingponggame.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+        <pattern>
+          <option name="PATTERN" value="*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -66,7 +75,7 @@
       <option name="presentableId" value="Default" />
       <updated>1635556905772</updated>
       <workItem from="1635556907464" duration="186000" />
-      <workItem from="1635557106447" duration="9696000" />
+      <workItem from="1635557106447" duration="7774000" />
     </task>
     <servers />
   </component>
