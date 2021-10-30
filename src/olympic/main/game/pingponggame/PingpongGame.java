@@ -32,6 +32,9 @@ public class PingpongGame {
         result.put(athlete, 0);
     }
 
+    /**
+     * 对外接口，开始比赛
+     */
     public void start() {
         List<Athlete> athletes = new ArrayList<>(result.keySet());
         System.out.println(athletes.get(0).getName() + " vs " + athletes.get(1).getName());
@@ -59,6 +62,7 @@ public class PingpongGame {
         }
         ((Athlete)result.keySet().toArray()[winner]).setRank(name,1);
         ((Athlete)result.keySet().toArray()[1-winner]).setRank(name,2);
+
         System.out.println("===================================================");
         System.out.print("【本局结束】");
         System.out.print("比分"+result.values().toArray()[0]+":"+result.values().toArray()[1]+" ");

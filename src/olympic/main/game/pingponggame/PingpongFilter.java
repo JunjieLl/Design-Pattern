@@ -46,12 +46,16 @@ public class PingpongFilter {
         }
     }
 
+    /**
+     * 对外接口，开始比赛
+     */
     public void start() {
         System.out.println("【"+name+"开始了!"+"】\n");
         for (PingpongGame game : games) {
             System.out.println(  "【"+name+"第"+(games.indexOf(game)+1)+"场】开始了");
             game.start();
         }
+
         // 过滤出晋级的运动员交给下一轮比赛
         if (nextFliter != null) {
             List<Athlete> nextFilterAthletes = new ArrayList<>();

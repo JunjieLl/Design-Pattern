@@ -23,6 +23,7 @@ public class PingpongPipeline extends Game {
         addFilter(new PingpongFilter("16进8"));
         addFilter(new PingpongFilter("四分之一决赛"));
         addFilter(new PingpongFilter("半决赛"));
+        addFilter(new PingpongFilter("季军赛"));
         addFilter(new PingpongFilter("决赛"));
         firstGame.setAthletes(athletes);
     }
@@ -49,8 +50,10 @@ public class PingpongPipeline extends Game {
     @Override
     public void start() {
         System.out.println("【"+name+"开始】");
-        firstGame.start();
 
+        firstGame.start();  // 管道模式的开始比赛，实际上整个
+
+        // 打印比赛接口
         System.out.println("【"+name+"结果】");
         for (Athlete athlete:athletes){
             if (athlete.getRank("决赛") == 1){

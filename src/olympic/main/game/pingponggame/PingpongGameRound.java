@@ -39,6 +39,10 @@ class PingpongGameRound {
         result.put(athlete, 0);
     }
 
+    /**
+     * 对外接口，开始比赛
+     * @return 获胜的运动员
+     */
     public Athlete start() {
         while (Math.max((Integer) result.values().toArray()[0], (Integer) result.values().toArray()[1]) < 11 || Math.abs((Integer) result.values().toArray()[0] - (Integer) result.values().toArray()[1]) < 2) {
             startOneRound();
