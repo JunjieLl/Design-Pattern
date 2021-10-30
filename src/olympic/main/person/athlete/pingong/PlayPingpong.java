@@ -1,6 +1,5 @@
 package olympic.main.person.athlete.pingong;
 
-import olympic.main.game.pingponggame.Mode;
 import olympic.main.person.athlete.Athlete;
 
 public interface PlayPingpong {

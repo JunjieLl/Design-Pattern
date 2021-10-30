@@ -1,6 +1,5 @@
 package olympic.main.person.athlete.footballathlete;
 
-import olympic.main.game.Game;
 import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.TeamAthlete;
 

@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="83b6db21-f571-49a7-a2e0-d5b4e135be95" name="Changes" comment="" />
+    <list default="true" id="d2a64cbe-d77c-4950-8573-ba128efc57cd" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-        <option value="Interface" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -26,7 +18,7 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="ProjectId" id="20AmsXoQOntn3utMBiLUWfWJOGJ" />
+  <component name="ProjectId" id="20CmNZ0yGJgitaCpTJva9c1FeWD" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -35,22 +27,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/olympic/main/person/athlete/pingong/Strategy" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\Learning\21-22-1\DesignPattern\master\Design-Pattern\src\olympic\main\person\athlete\pingong\Strategy" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="olympic.main.game.pingponggame" />
-      <recent name="olympic.main.person.athlete.pingong.Strategy" />
-      <recent name="olympic.main.person.athlete.pingong" />
-    </key>
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="olympic.main.game.pingponggame.Test" />
-      <module name="Design-Pattern" />
+      <module name="newbranch" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="olympic.main.game.pingponggame.*" />
@@ -70,64 +52,17 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="83b6db21-f571-49a7-a2e0-d5b4e135be95" name="Changes" comment="" />
-      <created>1635495975362</created>
+      <changelist id="d2a64cbe-d77c-4950-8573-ba128efc57cd" name="Changes" comment="" />
+      <created>1635556905772</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1635495975362</updated>
-      <workItem from="1635495977335" duration="1377000" />
-      <workItem from="1635515742936" duration="1508000" />
-      <workItem from="1635517428503" duration="97000" />
-      <workItem from="1635517542677" duration="6936000" />
+      <updated>1635556905772</updated>
+      <workItem from="1635556907464" duration="186000" />
+      <workItem from="1635557106447" duration="1554000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/olympic/main/game" />
-    </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="olympic.scene.Main" />
-      <module name="Design-Pattern" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
-  <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="72d23930-82ae-4f09-9d5b-70ef237d09c9" name="Changes" comment="" />
-      <created>1635517256892</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1635517256892</updated>
-      <workItem from="1635517260759" duration="814000" />
-      <workItem from="1635518890976" duration="33000" />
-    </task>
-    <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

@@ -1,6 +1,5 @@
 package olympic.main.game.track;
 
-import olympic.main.game.Game;
 import olympic.main.person.athlete.Athlete;
 
 import java.util.List;
