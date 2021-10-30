@@ -8,11 +8,18 @@ import java.util.List;
 
 public class FootballTeam extends TeamAthlete {
 
+    private static int uid = 0;
+
+    private static int generateId() {
+        ++uid;
+        return uid;
+    }
+
     private int id;
 
     public FootballTeam(String name, String nation, List<Athlete> athleteList) {
         super(name, nation, athleteList);
-        this.id = id;
+        this.id = generateId();
     }
 
     public int getId() {
