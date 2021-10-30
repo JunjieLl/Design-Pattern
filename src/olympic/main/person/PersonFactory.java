@@ -15,6 +15,7 @@ import java.util.*;
 
 /**
  * PersonFactory 作为singleton 生成所有人员
+ *  Prototype 备份read Only 的list
  */
 public class PersonFactory {
 
@@ -105,9 +106,6 @@ public class PersonFactory {
 
         return name;
     }
-//    private List<String> getMessage(){
-//
-//    }
 
     /**
      * 从配置文件中读取所有参赛人员信息，持久化生成人员
@@ -133,14 +131,14 @@ public class PersonFactory {
 
                 Athlete tempNameAthlete;
                 List<Athlete> team=new ArrayList<Athlete>();
-                List<Athlete> athleteList=new ArrayList<Athlete>();
+                List<Athlete> athleteList;
                 Message message;
                 List<Message> messages;
 
                 switch (i){
                     case "Relays":
                         for(int j=0;j<b;j++){
-                            athleteList.clear();
+                            athleteList=new ArrayList<>();
                             messages=nameFactory.getMessageList(c);
                             for(int k=0;k<c;k++){
                                 tempNameAthlete=new TrackAthlete(messages.get(k).name,messages.get(k).nation);
@@ -153,7 +151,7 @@ public class PersonFactory {
                         break;
                     case "Sprints":
                     case "Marathon":
-                        athleteList.clear();
+                        athleteList=new ArrayList<>();
                         for(int j=0;j<a;j++){
                             message= nameFactory.getMessage();
                             tempNameAthlete=new TrackAthlete(message.name, message.nation);
@@ -163,7 +161,7 @@ public class PersonFactory {
                         hMap.put(i,athleteList);
                         break;
                     case "Diving":
-                        athleteList.clear();
+                        athleteList=new ArrayList<>();
                         for(int j=0;j<a;j++){
                             message= nameFactory.getMessage();
                             tempNameAthlete=new DivingAthlete(message.name, message.nation);
@@ -174,7 +172,7 @@ public class PersonFactory {
                         break;
                     case "DivingTeam":
                         for(int j=0;j<b;j++){
-                            athleteList.clear();
+                            athleteList=new ArrayList<>();
                             messages=nameFactory.getMessageList(c);
                             for(int k=0;k<c;k++){
                                 tempNameAthlete=new DivingAthlete(messages.get(k).name,messages.get(k).nation);
@@ -188,7 +186,7 @@ public class PersonFactory {
                         break;
                     case "FootballTeam":
                         for(int j=0;j<b;j++){
-                            athleteList.clear();
+                            athleteList=new ArrayList<>();
                             messages=nameFactory.getMessageList(c);
                             for(int k=0;k<c;k++){
                                 tempNameAthlete=new TrackAthlete(messages.get(k).name,messages.get(k).nation);
@@ -201,7 +199,7 @@ public class PersonFactory {
                         hMap.put(i,team);
                         break;
                     case "Pingpong":
-                        athleteList.clear();
+                        athleteList=new ArrayList<>();
                         for(int j=0;j<a;j++){
                             message= nameFactory.getMessage();
                             tempNameAthlete=new PingpongAthlete(message.name, message.nation);
@@ -212,7 +210,7 @@ public class PersonFactory {
                         break;
                     case "PingpongTeam":
                         for(int j=0;j<b;j++){
-                            athleteList.clear();
+                            athleteList=new ArrayList<>();
                             messages=nameFactory.getMessageList(c);
                             for(int k=0;k<c;k++){
                                 tempNameAthlete=new PingpongAthlete(messages.get(k).name,messages.get(k).nation);
