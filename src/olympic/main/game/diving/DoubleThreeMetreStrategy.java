@@ -7,11 +7,10 @@ import java.util.Random;
 /**
  * 策略模式下双人三米板规则
  */
-public class DoubleThreeMetreStrategy implements Strategy{
-    public ArrayList<Double> scores;
-    private final int cycleNumber;
+public class DoubleThreeMetreStrategy extends Strategy{
 
     DoubleThreeMetreStrategy(){
+        name="跳水双人三米跳板";
         scores = new ArrayList<>();
         cycleNumber = 5;
     }

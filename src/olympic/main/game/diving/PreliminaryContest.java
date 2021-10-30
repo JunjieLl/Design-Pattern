@@ -30,7 +30,7 @@ public class PreliminaryContest extends DivingGame {
      */
     @Override
     public void start(){
-        System.out.println("预赛正式开始！");
+        System.out.println("\n【"+athletePool.getStrategy().getName()+" 预赛】");
         for (int i = 1; i <= athletePool.getStrategy().getCycleNumber(); i++) {
             System.out.println("第" + i + "轮比赛开始！");
             for (int j = 0; j < athletePool.getSize(); j++) {

@@ -15,7 +15,6 @@ public class ContestPipeline implements AbstractPipeline{
     ContestPipeline(String context, List<Athlete> list) {
         AbstractNode strategyNode = new PeopleNumberNode();
         this.athletePool = new AthletePool(strategyNode.interpret(context), list);
-        System.out.println("sssssssssssssss"+list.size());
     }
 
     /**

@@ -7,12 +7,11 @@ import java.util.Random;
 /**
  * 策略模式下双人十米台规则
  */
-public class DoubleTenMetreStrategy implements Strategy{
-    private final ArrayList<Double> scores;
-    private final int cycleNumber;
+public class DoubleTenMetreStrategy extends Strategy{
 
     DoubleTenMetreStrategy(){
-        scores = new ArrayList<Double>();
+        name="跳水双人十米跳台";
+        scores = new ArrayList<>();
         cycleNumber = 5;
     }
 

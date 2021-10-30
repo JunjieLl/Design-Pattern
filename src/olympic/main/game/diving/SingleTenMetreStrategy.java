@@ -7,12 +7,11 @@ import java.util.Random;
 /**
  *策略模式中单人十米台规则
  */
-public class SingleTenMetreStrategy implements Strategy{
-    public ArrayList<Double> scores;
-    private final int cycleNumber;
+public class SingleTenMetreStrategy extends Strategy{
 
     SingleTenMetreStrategy(){
-        scores = new ArrayList<Double>();
+        name="跳水单人十米跳台";
+        scores = new ArrayList<>();
         cycleNumber = 6;
     }
 

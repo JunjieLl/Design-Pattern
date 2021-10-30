@@ -7,12 +7,11 @@ import java.util.Random;
 /**
  * 策略模式下单人三米板规则
  */
-public class SingleThreeMetreStrategy implements Strategy{
-    public ArrayList<Double> scores;
-    private final int cycleNumber;
+public class SingleThreeMetreStrategy extends Strategy{
 
     SingleThreeMetreStrategy(){
-        scores = new ArrayList<Double>();
+        name="跳水单人三米跳板";
+        scores = new ArrayList<>();
         cycleNumber = 6;
     }
 

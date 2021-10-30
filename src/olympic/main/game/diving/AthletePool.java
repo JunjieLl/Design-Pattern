@@ -7,6 +7,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+
+import olympic.main.person.PersonFactory;
 import olympic.main.person.athlete.Athlete;
 
 import java.util.*;
