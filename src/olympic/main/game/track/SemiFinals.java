@@ -34,6 +34,7 @@ public class SemiFinals  extends ContestImpl{
 
             if(i>=4){
                 System.out.println(i+1+"\t"+runners.get(i).getName()+"\t"+"否"+"\t");
+                this.athletes.remove(runners.get(i));
             }else{
                 System.out.println(i+1+"\t"+runners.get(i).getName()+"\t"+"是"+"\t");
             }
