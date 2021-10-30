@@ -17,8 +17,8 @@ public class AthletePool {
     private final Map<Athlete, Double> allScore = new HashMap<>();
     private List<Map.Entry<Athlete, Double>> list;
 
-    public AthletePool(Strategy strategy, LinkedList<Athlete> athleteList) {
-        this.pool = athleteList;
+    public AthletePool(Strategy strategy, List<Athlete> athleteList) {
+        this.pool = new LinkedList<>(athleteList);
         for (Athlete athlete : pool) {
             this.allScore.put(athlete, 0.0);
         }
