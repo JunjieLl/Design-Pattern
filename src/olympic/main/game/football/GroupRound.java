@@ -5,12 +5,13 @@ import olympic.main.person.athlete.footballathlete.FootballTeam;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class GroupRound extends Round{
 
     ScoreBoard scoreBoard = ScoreBoard.getInstance();
     @Override
-    public ArrayList<FootballTeam> play(ArrayList<FootballTeam> teams) {
+    public List<FootballTeam> play(List<FootballTeam> teams) {
         // 打乱顺序，分组
         Collections.shuffle(teams);
         for (int g = 0; g < 4; g++) {
@@ -43,11 +44,11 @@ public class GroupRound extends Round{
             }
         }
 
-        ArrayList<FootballTeam> tmp = new ArrayList<>();   // 晋级名单
+        List<FootballTeam> tmp = new ArrayList<>();   // 晋级名单
 
         System.out.println("\n【小组赛积分榜】");
         for (int g = 0; g < 4; g++) {
-            ArrayList<ScoreEntry> ranking = new ArrayList<>();
+            List<ScoreEntry> ranking = new ArrayList<>();
             for (int i = 0; i < 4; i++) {
                 FootballTeam t = teams.get(4 * g + i);
                 ranking.add(new ScoreEntry(t, scores[t.getId()], goalDifferences[t.getId()], goals[t.getId()]));
