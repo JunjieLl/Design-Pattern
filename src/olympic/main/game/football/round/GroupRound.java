@@ -1,15 +1,29 @@
-package olympic.main.game.football;
+package olympic.main.game.football.round;
 
 import olympic.main.game.ScheduleIterator;
+import olympic.main.game.football.GroupFootballGame;
+import olympic.main.game.football.ScoreBoard;
+import olympic.main.game.football.round.Round;
 import olympic.main.person.athlete.footballathlete.FootballTeam;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class GroupRound extends Round{
+/**
+ * 小组赛
+ * 调用play打完所有小组赛并生成晋级名单
+ */
+public class GroupRound extends Round {
 
+    // 小组赛积分榜
     ScoreBoard scoreBoard = ScoreBoard.getInstance();
+
+    /**
+     * 进行所有小组赛并生成晋级名单
+     * @param teams 所有参赛球队的列表
+     * @return 晋级球队列表
+     */
     @Override
     public List<FootballTeam> play(List<FootballTeam> teams) {
         // 打乱顺序，分组
@@ -32,7 +46,7 @@ public class GroupRound extends Round{
         int[] goalDifferences = scoreBoard.getGoalDifference();
         int[] goals = scoreBoard.getGoal();
 
-        // 对各组球队进行排名
+        // 内部类，用于对各组球队进行排名
         class ScoreEntry{
             public FootballTeam team;
             public int score, goalDifference, goal;
@@ -44,8 +58,9 @@ public class GroupRound extends Round{
             }
         }
 
-        List<FootballTeam> tmp = new ArrayList<>();   // 晋级名单
+        List<FootballTeam> tmp = new ArrayList<>();  // 晋级名单
 
+        // 打印小组赛积分榜
         System.out.println("\n【小组赛积分榜】");
         for (int g = 0; g < 4; g++) {
             List<ScoreEntry> ranking = new ArrayList<>();
@@ -84,8 +99,8 @@ public class GroupRound extends Round{
             tmp.add(ranking.get(1).team);
         }
 
-        ArrayList<FootballTeam> advancedTeams = new ArrayList<>();   // 晋级名单
-        // 第一名与第二名比赛
+        ArrayList<FootballTeam> advancedTeams = new ArrayList<>();   // 重新排序的晋级名单
+        // 四分之一决赛是小组第一名与另一小组第二名比赛，因此需要对晋级球队重新排序以便生成后续赛程
         int k = 0;
         while (k + 3 < tmp.size()) {
             advancedTeams.add(tmp.get(k + 0));

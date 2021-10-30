@@ -1,12 +1,19 @@
-package olympic.main.game.football;
+package olympic.main.game.football.round;
 
 import olympic.main.game.ScheduleIterator;
+import olympic.main.game.football.EliminationFootballGame;
+import olympic.main.game.football.FootballGame;
+import olympic.main.game.football.Observer;
+import olympic.main.game.football.round.Round;
 import olympic.main.person.athlete.footballathlete.FootballTeam;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class EliminationRound extends Round implements Observer{
+/**
+ * 淘汰赛的一轮
+ */
+public class EliminationRound extends Round implements Observer {
     String name = null;
     private List<FootballTeam> advancedTeams = new ArrayList<>();
 
@@ -14,6 +21,11 @@ public class EliminationRound extends Round implements Observer{
         this.name = name;
     }
 
+    /**
+     * 进行本轮所有比赛并生成晋级名单
+     * @param teams 上一轮的晋级球队
+     * @return 晋级球队列表
+     */
     @Override
     public List<FootballTeam> play(List<FootballTeam> teams) {
         for (int i = 0; i < teams.size(); i += 2) {

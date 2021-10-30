@@ -1,6 +1,6 @@
 package olympic.main.game.football;
 
-import olympic.main.person.athlete.TeamAthlete;
+import olympic.main.game.football.round.Round;
 import olympic.main.person.athlete.footballathlete.FootballTeam;
 
 import java.util.ArrayList;
@@ -17,6 +17,9 @@ public class FootballGameManager {
         return singleton;
     }
 
+    private FootballGameManager() {
+    }
+
     private List<FootballTeam> teams = new ArrayList<>();
     private Round first = null;
 
@@ -29,12 +32,16 @@ public class FootballGameManager {
         return this.first;
     }
 
-    public void initTeam(List<TeamAthlete> teamList) {
-        for (int i = 0; i < 16; i++) {
-            TeamAthlete team = teamList.get(i);
-            teams.add(new FootballTeam(team.getName(), team.getNation(), team.getAthleteList()));
-        }
+    public void setTeams(List<FootballTeam> teams) {
+        this.teams = teams;
     }
+
+//    public void initTeam(List<TeamAthlete> teamList) {
+//        for (int i = 0; i < 16; i++) {
+//            TeamAthlete team = teamList.get(i);
+//            teams.add(new FootballTeam(team.getName(), team.getNation(), team.getAthleteList()));
+//        }
+//    }
 
     public void start() {
         Round r = this.first;
