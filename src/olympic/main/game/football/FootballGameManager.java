@@ -31,7 +31,7 @@ public class FootballGameManager {
     public void initTeam(ArrayList<TeamAthlete> teamList) {
         for (int i = 0; i < 16; i++) {
             TeamAthlete team = teamList.get(i);
-            teams.add(new FootballTeam(team.getName(), team.getNation(), team.getAthleteList(), i));
+//            teams.add(new FootballTeam(team.getName(), team.getNation(), team.getAthleteList(), i));
         }
     }
 

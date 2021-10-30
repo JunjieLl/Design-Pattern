@@ -34,7 +34,7 @@ public class Prelude extends ContestImpl{
         for(int i=0;i<size;i++){
 
             if(i>=4){
-                System.out.println(i+1+"\t"+"姓名"+"\t"+"时间"+"\t"+"否");
+                System.out.println(i+1+"\t"+runners.get(i).getName()+"\t"+"时间"+"\t"+"否");
             }else{
                 System.out.println(i+1+"\t"+"姓名"+"\t"+"时间"+"\t"+"是");
             }

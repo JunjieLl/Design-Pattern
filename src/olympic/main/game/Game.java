@@ -1,5 +1,7 @@
 package olympic.main.game;
 
+
+
 import olympic.main.person.athlete.Athlete;
 
 import java.util.ArrayList;
@@ -11,11 +13,8 @@ public abstract class Game {
         this.athletes=athleteList;
     }
 
-    public Game() {
 
-    }
 
-    abstract public void start();
     protected String name;
 
     public String getName() {

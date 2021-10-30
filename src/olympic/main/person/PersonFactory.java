@@ -3,6 +3,7 @@ package olympic.main.person;
 import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.TeamAthlete;
 import olympic.main.person.athlete.divingathlete.DivingAthlete;
+import olympic.main.person.athlete.divingathlete.DivingTeam;
 import olympic.main.person.athlete.footballathlete.FootballTeam;
 import olympic.main.person.athlete.pingong.PingpongAthlete;
 import olympic.main.person.athlete.pingong.PingpongTeam;
@@ -66,18 +67,16 @@ public class PersonFactory {
             InputStream in = new BufferedInputStream(new FileInputStream("./src/olympic/main/person/message.properties"));
             this.prop.load(in);     ///加载属性列表
             Iterator<String> it = this.prop.stringPropertyNames().iterator();
-//            for(Object key:prop.keySet()){
-//                    System.out.print(key+":");
-//                    System.out.println(prop.get(key));
-//                }
 
             gamesName= Arrays.asList(((String) this.prop.get("AllGames")).split(","));
 
             for(String i:gamesName){
-                int a=(int)this.prop.get(i+"Athlete.single.number");
-                int b=(int)this.prop.get(i+"Athlete.team.number");
-                int c=(int)this.prop.get(i+"Athlete.single.member");
-                int d=(int)this.prop.get(i+"Athlete.single.per");
+
+                int a=Integer.parseInt( (String)this.prop.get(i+"Athlete.single.number"));
+                int b=Integer.parseInt((String) this.prop.get(i+"Athlete.team.number"));
+                int c=Integer.parseInt((String) this.prop.get(i+"Athlete.single.member"));
+                int d=Integer.parseInt((String) this.prop.get(i+"Athlete.single.per"));
+
                 List<Athlete> team=new ArrayList<Athlete>();
                 List<Athlete> athleteList=new ArrayList<Athlete>();
                 switch (i){
@@ -110,7 +109,7 @@ public class PersonFactory {
                         for(int j=0;j<b;j++){
                             athleteList.clear();
                             for(int k=0;k<c;k++){
-                                athleteList.add(new TrackAthlete("Junjie Zhai"+j,"China"));
+                                athleteList.add(new DivingAthlete("Junjie Zhai"+j,"China"));
                             }
                             team.add(new DivingTeam("美国一队","美国",athleteList));
                         }
@@ -129,7 +128,7 @@ public class PersonFactory {
                     case "Pingpong":
                         athleteList.clear();
                         for(int j=0;j<a;j++){
-                            athleteList.add(new TrackAthlete("Junjie Zhai"+j,"China"));
+                            athleteList.add(new PingpongAthlete("Junjie Zhai"+j,"China"));
                         }
                         hMap.put(i,athleteList);
                         break;

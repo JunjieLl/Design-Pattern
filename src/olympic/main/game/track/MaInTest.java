@@ -8,10 +8,10 @@ import java.util.List;
 
 public class MaInTest {
     public static void main(String[] args) {
-        List<Athlete>  runners= Arrays.asList(new Athlete[32]);
+        List<Athlete>  runners= PersonFactory.getInstance().getAthletes("Realys");
         List<Athlete>  runners2= Arrays.asList(new Athlete[8]);
 
-        Relays relays=new Relays(runners);
+        Relays relays=new Relays(PersonFactory.getInstance().getAthletes("Realys"));
         relays.start();
         Marathon marathon=new Marathon(runners2);
         marathon.start();
