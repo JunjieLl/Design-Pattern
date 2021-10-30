@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="72d23930-82ae-4f09-9d5b-70ef237d09c9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/main/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/football/FootballGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/main/game/football/FootballGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/football/FootballGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/main/game/football/FootballGameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/football/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/main/game/football/FootballStarter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/track/TrackGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/main/game/track/TrackGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/person/athlete/TeamAthlete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/main/person/athlete/TeamAthlete.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/person/athlete/footballathlete/FootballTeam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/main/person/athlete/footballathlete/FootballTeam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/scene/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/scene/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="83b6db21-f571-49a7-a2e0-d5b4e135be95" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,34 +11,79 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="localRepository" value="$MAVEN_REPOSITORY$" />
-        <option name="userSettingsFile" value="$USER_HOME$/.m2/settings.xml" />
-      </MavenGeneralSettings>
-    </option>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="20AmsXoQOntn3utMBiLUWfWJOGJ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/olympic/main/person/athlete/pingong/Strategy" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\Learning\21-22-1\DesignPattern\master\Design-Pattern\src\olympic\main\person\athlete\pingong\Strategy" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="olympic.main.game.pingponggame" />
+      <recent name="olympic.main.person.athlete.pingong.Strategy" />
+      <recent name="olympic.main.person.athlete.pingong" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="olympic.main.game.pingponggame.Test" />
+      <module name="Design-Pattern" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="olympic.main.game.pingponggame.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="83b6db21-f571-49a7-a2e0-d5b4e135be95" name="Changes" comment="" />
+      <created>1635495975362</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1635495975362</updated>
+      <workItem from="1635495977335" duration="1377000" />
+      <workItem from="1635515742936" duration="1508000" />
+      <workItem from="1635517428503" duration="97000" />
+      <workItem from="1635517542677" duration="6936000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
