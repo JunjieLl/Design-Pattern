@@ -2,6 +2,7 @@ package olympic.main.person.athlete;
 
 import olympic.main.game.Game;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +10,7 @@ import java.util.List;
  *
  * 团体射击运动员
  */
-public abstract class TeamAthlete implements Athlete {
+public class TeamAthlete implements Athlete {
     /**
      * list每一个元素为一个个人运动员
      */
@@ -24,10 +25,15 @@ public abstract class TeamAthlete implements Athlete {
         this.nation = nation;
         this.name = name;
     }
-
+    
+    public void addChild(IndividualAthlete athlete) {
+        athleteList.add(athlete);
+    }
+    
     public String getNation() {
         return nation;
     }
+    
     public String getName() {
         return name;
     }
@@ -38,5 +44,10 @@ public abstract class TeamAthlete implements Athlete {
      */
     public List<IndividualAthlete> getAthleteList(){
         return athleteList;
+    }
+    
+    @Override
+    public void participate(Game game) throws Exception {
+        throw new Exception("请指定具体比赛");
     }
 }
