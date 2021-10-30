@@ -14,5 +14,6 @@ public class Main {
         //new CeremonyScene("LI JUNKIE","LI JEJUNE","JIE LION").play();
         //new ChoreHandlingScene().play();
         //new ReviewQScene().play();
+        new PingpongGameScene().play();
     }
 }

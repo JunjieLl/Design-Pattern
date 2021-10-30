@@ -24,5 +24,4 @@ public class GroupFootballGame extends FootballGame{
         score2 = r.nextInt(5);
         System.out.println("比赛结束，比分为" + score1 + "-" + score2);
     }
-
 }
