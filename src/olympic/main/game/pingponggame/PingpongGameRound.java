@@ -15,6 +15,9 @@ class PingpongGameRound {
 
     private HashMap<Athlete, Integer> result = new HashMap<>();
 
+    /**
+     * 比赛的一轮
+     */
     private void startOneRound( ) {
         List<Athlete> athletes = new ArrayList<>(result.keySet());
         if (Mode.getShowDetail()) {
@@ -32,16 +35,15 @@ class PingpongGameRound {
         result.replace(athletes.get(winner), result.get(athletes.get(winner)) + 1);
     }
 
-
     public void addAthlete(Athlete athlete) {
         result.put(athlete, 0);
     }
-
 
     public Athlete start() {
         while (Math.max((Integer) result.values().toArray()[0], (Integer) result.values().toArray()[1]) < 11 || Math.abs((Integer) result.values().toArray()[0] - (Integer) result.values().toArray()[1]) < 2) {
             startOneRound();
         }
+
         System.out.println("【比分】 "+result.values().toArray()[0]+" : "+result.values().toArray()[1]);
         if ((Integer) result.values().toArray()[0] > (Integer) result.values().toArray()[1]) {
             return (Athlete) result.keySet().toArray()[0];
