@@ -5,95 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ce12389-fc88-4adf-b424-e77ca66ab0c5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Design-Pattern.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Design-Pattern.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/Aggregate.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/Game.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/Iterator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/Schedule.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/ScheduleIterator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/football/EliminationFootballGame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/football/EliminationRound.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/football/FootballGame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/football/FootballGameManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/football/FootballSchedule.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/football/FootballStarter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/football/GroupFootballGame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/football/GroupRound$1ScoreEntry.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/football/GroupRound.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/football/Observer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/football/Round.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/football/ScoreBoard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/track/Contest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/track/ContestDirector.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/track/ContestImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/track/Final.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/track/MaInTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/track/Marathon.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/track/Prelude.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/track/Relays.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/track/SemiFinals.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/track/Sprints.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/track/TrackGame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/person/PersonFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/person/athlete/Athlete.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/person/athlete/IndividualAthlete.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/person/athlete/TeamAthlete.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/person/athlete/footballathlete/FootballTeam.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/scene/Director.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/scene/Main$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/scene/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/scene/Scene.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/Aggregate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/Game.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/Iterator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/Schedule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/ScheduleIterator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/football/EliminationFootballGame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/football/EliminationRound.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/football/FootballGame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/football/FootballGameManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/football/FootballSchedule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/football/FootballStarter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/football/GroupFootballGame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/football/GroupRound.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/football/Observer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/football/Round.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/football/ScoreBoard.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/pingponggame/Mode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/pingponggame/PingpongGame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/pingponggame/PingpongGameRound.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/pingponggame/Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/track/Contest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/track/ContestDirector.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/track/ContestImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/track/Final.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/track/MaInTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/track/Marathon.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/track/Prelude.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/track/Relays.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/track/SemiFinals.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/track/Sprints.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/track/TrackGame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/person/PersonFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/person/athlete/Athlete.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/person/athlete/IndividualAthlete.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/person/athlete/TeamAthlete.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/person/athlete/footballathlete/FootballTeam.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/person/athlete/pingong/CallBack.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/person/athlete/pingong/PingpongAthlete.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/person/athlete/pingong/PingpongTeam.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/person/athlete/pingong/PlayPingpong.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/person/athlete/pingong/Strategy/PingpongIndividualDefendStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/person/athlete/pingong/Strategy/PingpongIndividualOffenseStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/person/athlete/pingong/Strategy/Strategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/person/message.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/scene/Director.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/scene/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/scene/Scene.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,6 +38,12 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -134,7 +53,7 @@
       <option name="presentableId" value="Default" />
       <updated>1635559125069</updated>
       <workItem from="1635559130175" duration="49000" />
-      <workItem from="1635559189675" duration="356000" />
+      <workItem from="1635559189675" duration="624000" />
     </task>
     <servers />
   </component>
