@@ -112,7 +112,7 @@ public class PersonFactory {
     /**
      * 从配置文件中读取所有参赛人员信息，持久化生成人员
      */
-    private void springUtil(){
+    public void springUtil(){
         //首先 名字工厂
         NameFactory nameFactory=new NameFactory();
         try {
