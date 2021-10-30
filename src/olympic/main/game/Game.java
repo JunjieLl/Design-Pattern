@@ -10,4 +10,6 @@ public abstract class Game {
     public Game(List<Athlete> athleteList){
         this.athleteList=athleteList;
     }
+    public Game(){}
+    public abstract void start();
 }
