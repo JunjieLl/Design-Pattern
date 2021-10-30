@@ -39,6 +39,7 @@ public class PingpongTeam extends TeamAthlete implements CallBack,PlayPingpong{
      */
     private Strategy strategy;
 
+    @Override
     public Integer getCapacity() {
         return capacity;
     }
@@ -77,7 +78,7 @@ public class PingpongTeam extends TeamAthlete implements CallBack,PlayPingpong{
         if (Mode.getShowDetail()) {
             System.out.println("classname: (PingpongAthlete) method: (call) action: (回调模式中选手运用回调函数进行对打) ");
         }
-        return this.playWith((PingpongAthlete)oppoent);
+        return this.playWith(oppoent);
     }
 
 }

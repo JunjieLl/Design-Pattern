@@ -47,15 +47,15 @@ public class PingpongGame {
         if ((Integer) result.values().toArray()[0] > (Integer) result.values().toArray()[1]) {
 //            winner = (IndividualAthlete) result.keySet().toArray()[0];
             winner = 0;
-            ((IndividualAthlete)result.keySet().toArray()[0]).setRank(name,0);
+            ((Athlete)result.keySet().toArray()[0]).setRank(name,0);
         } else {
 //            winner = (IndividualAthlete) result.keySet().toArray()[1];
             winner = 1;
-            ((IndividualAthlete)result.keySet().toArray()[0]).setRank(name,1);
+            ((Athlete)result.keySet().toArray()[0]).setRank(name,1);
         }
-        ((IndividualAthlete)result.keySet().toArray()[winner]).setRank(name,0);
-        ((IndividualAthlete)result.keySet().toArray()[1-winner]).setRank(name,1);
+        ((Athlete)result.keySet().toArray()[winner]).setRank(name,0);
+        ((Athlete)result.keySet().toArray()[1-winner]).setRank(name,1);
         System.out.println("比分"+result.values().toArray()[0]+" : "+result.values().toArray()[1]);
-        System.out.println(((IndividualAthlete)result.keySet().toArray()[winner]).getName()+" 赢了");
+        System.out.println(((Athlete)result.keySet().toArray()[winner]).getName()+" 赢了");
     }
 }

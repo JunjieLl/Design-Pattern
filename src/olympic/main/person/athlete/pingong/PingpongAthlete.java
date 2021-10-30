@@ -38,6 +38,7 @@ public class PingpongAthlete extends IndividualAthlete implements CallBack,PlayP
      */
     private Strategy strategy;
 
+    @Override
     public Integer getCapacity() {
         return capacity;
     }

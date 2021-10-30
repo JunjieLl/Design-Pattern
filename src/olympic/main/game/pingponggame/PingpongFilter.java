@@ -11,7 +11,7 @@ public class PingpongFilter {
 
     private List<Athlete> athletes;
 
-    private List<PingpongGame> games;
+    private List<PingpongGame> games = new ArrayList<>();
 
     private PingpongFilter nextFliter;
 
@@ -31,10 +31,10 @@ public class PingpongFilter {
 
     private void addGame(){
         for (int i=0;i<athletes.size()/2;i++){
-            PingpongGame game = new PingpongGame();
-            game.setName(this.name);
+            PingpongGame game = new PingpongGame(this.name);
             game.addAthlete(athletes.get(2*i));
             game.addAthlete(athletes.get(2*i+1));
+            games.add(game);
         }
     }
 
@@ -58,6 +58,7 @@ public class PingpongFilter {
 
 
     public void start() {
+        System.out.println("【"+name+"】"+" 开始了！");
         for (PingpongGame game : games) {
             game.start();
         }

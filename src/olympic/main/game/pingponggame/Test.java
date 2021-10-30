@@ -1,7 +1,11 @@
 package olympic.main.game.pingponggame;
 
+import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.pingong.PingpongAthlete;
+import olympic.main.person.athlete.pingong.PingpongTeam;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Test {
@@ -12,15 +16,34 @@ public class Test {
         //接受String类型
         Mode.setShowDetail(input.next().equals("true"));
 
-        PingpongAthlete athlete1 = new PingpongAthlete("张继科","中国");
-        PingpongAthlete athlete2 = new PingpongAthlete("翟陈浩","中国");
+        List<Athlete> athletes = new ArrayList<>();
 
-        PingpongGame game = new PingpongGame();
+        List<Athlete> teams = new ArrayList<>();
 
-        game.addAthlete(athlete1);
-        game.addAthlete(athlete2);
+        for (int i=0;i<32;i++){
+            athletes.add(new PingpongAthlete("张继科"+i,"中国"));
+        }
 
-        game.start();
+
+
+        for (int i=0;i<16;i++){
+            List<Athlete> athleteList = new ArrayList<>();
+            athleteList.add(athletes.get(i*2));
+            athleteList.add(athletes.get(i+2+1));
+            teams.add(new PingpongTeam("中国队"+i,"中国",athleteList));
+        }
+
+
+        PingpongPipeline gameIndividual = new PingpongPipeline(athletes);
+        PingpongPipeline gameTeam = new PingpongPipeline(teams);
+
+//        gameIndividual.start();
+        gameTeam.start();
+
+//        PingpongGame game = new PingpongGame();
+
+//        game.addAthlete(athlete1);
+//        game.addAthlete(athlete2);
 
     }
 

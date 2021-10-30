@@ -12,8 +12,6 @@ public class PingpongPipeline extends Game {
     private PingpongFilter firstGame;
     private PingpongFilter lastGame;
 
-    private List<Athlete> athletes;
-
     public PingpongPipeline(List<Athlete> athleteList) {
         super(athleteList);
 //        Double temp = Math.log(athleteList.size())/Math.log(2);
@@ -25,6 +23,7 @@ public class PingpongPipeline extends Game {
         addFilter(new PingpongFilter("四分之一决赛"));
         addFilter(new PingpongFilter("半决赛"));
         addFilter(new PingpongFilter("决赛"));
+        firstGame.setAthletes(athletes);
     }
 
     public void addFilter(PingpongFilter filter) {
