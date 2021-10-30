@@ -12,7 +12,7 @@ public class DoubleThreeMetreStrategy implements Strategy{
     private final int cycleNumber;
 
     DoubleThreeMetreStrategy(){
-        scores = new ArrayList<Double>();
+        scores = new ArrayList<>();
         cycleNumber = 5;
     }
 
