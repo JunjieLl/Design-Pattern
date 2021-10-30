@@ -2,7 +2,6 @@ package olympic.scene;
 
 import olympic.main.PreCompetitionSystem.PreCompetitionSystemFacade;
 import olympic.main.game.diving.ContestPipeline;
-import olympic.main.person.PersonFactory;
 
 public class DivingGameScene implements Scene{
     private final String game;
