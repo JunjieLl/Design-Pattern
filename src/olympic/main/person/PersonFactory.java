@@ -2,6 +2,7 @@ package olympic.main.person;
 
 import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.TeamAthlete;
+import olympic.main.person.athlete.divingathlete.DivingAthlete;
 import olympic.main.person.athlete.footballathlete.FootballTeam;
 import olympic.main.person.athlete.pingong.PingpongAthlete;
 import olympic.main.person.athlete.pingong.PingpongTeam;
@@ -82,7 +83,7 @@ public class PersonFactory {
                 switch (i){
                     case "Relays":
                         for(int j=0;j<b;j++){
-                            List<Athlete> athleteList=new ArrayList<Athlete>();
+                            athleteList.clear();
                             for(int k=0;k<c;k++){
                                 athleteList.add(new TrackAthlete("Junjie Zhai"+j,"China"));
                             }
@@ -92,14 +93,14 @@ public class PersonFactory {
                         break;
                     case "Sprints":
                     case "Marathon":
-                        List<Athlete> athleteList=new ArrayList<Athlete>();
+                        athleteList.clear();
                         for(int j=0;j<a;j++){
                             athleteList.add(new TrackAthlete("Junjie Zhai"+j,"China"));
                         }
                         hMap.put(i,athleteList);
                         break;
                     case "Diving":
-                        List<Athlete> athleteList=new ArrayList<Athlete>();
+                        athleteList.clear();
                         for(int j=0;j<a;j++){
                             athleteList.add(new DivingAthlete("Junjie Zhai"+j,"China"));
                         }
@@ -107,7 +108,7 @@ public class PersonFactory {
                         break;
                     case "DivingTeam":
                         for(int j=0;j<b;j++){
-                            List<Athlete> athleteList=new ArrayList<Athlete>();
+                            athleteList.clear();
                             for(int k=0;k<c;k++){
                                 athleteList.add(new TrackAthlete("Junjie Zhai"+j,"China"));
                             }
@@ -117,7 +118,7 @@ public class PersonFactory {
                         break;
                     case "FootballTeam":
                         for(int j=0;j<b;j++){
-                            List<Athlete> athleteList=new ArrayList<Athlete>();
+                            athleteList.clear();
                             for(int k=0;k<c;k++){
                                 athleteList.add(new TrackAthlete("Junjie Zhai"+j,"China"));
                             }
@@ -126,7 +127,7 @@ public class PersonFactory {
                         hMap.put(i,team);
                         break;
                     case "Pingpong":
-                        List<Athlete> athleteList=new ArrayList<Athlete>();
+                        athleteList.clear();
                         for(int j=0;j<a;j++){
                             athleteList.add(new TrackAthlete("Junjie Zhai"+j,"China"));
                         }
@@ -134,7 +135,7 @@ public class PersonFactory {
                         break;
                     case "PingpongTeam":
                         for(int j=0;j<b;j++){
-                            List<Athlete> athleteList=new ArrayList<Athlete>();
+                            athleteList.clear();
                             for(int k=0;k<c;k++){
                                 athleteList.add(new PingpongAthlete("Junjie Zhai"+j,"China"));
                             }
