@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ce12389-fc88-4adf-b424-e77ca66ab0c5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/person/athlete/divingathlete/DoubleDivingAthlete.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/main/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/football/FootballGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/main/game/football/FootballGameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/track/Final.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/main/game/track/Final.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/olympic/main/game/track/MaInTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/main/game/track/MaInTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/olympic/main/game/track/Prelude.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/main/game/track/Prelude.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/track/SemiFinals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/main/game/track/SemiFinals.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/olympic/main/person/PersonFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/main/person/PersonFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/olympic/main/person/message.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/main/person/message.properties" afterDir="false" />
     </list>
@@ -103,8 +100,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/olympic/main/person/PersonFactory.java</url>
-          <line>75</line>
-          <option name="timeStamp" value="9" />
+          <line>95</line>
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

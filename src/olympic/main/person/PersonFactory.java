@@ -55,6 +55,7 @@ public class PersonFactory {
      * @return List<Athlete> 运动员列表
      */
     public  List<Athlete> getAthletes(String name){
+        List<Athlete> a=hMap.get(name);
         return hMap.get(name);
     }
 
@@ -72,10 +73,12 @@ public class PersonFactory {
 
             for(String i:gamesName){
 
-                int a=Integer.parseInt( (String)this.prop.get(i+"Athlete.single.number"));
-                int b=Integer.parseInt((String) this.prop.get(i+"Athlete.team.number"));
-                int c=Integer.parseInt((String) this.prop.get(i+"Athlete.single.member"));
-                int d=Integer.parseInt((String) this.prop.get(i+"Athlete.single.per"));
+                String a1=this.prop.get(i+"Athlete.single.number").toString().trim();
+                int a=Integer.parseInt(a1.trim());
+                int b=Integer.parseInt( this.prop.get(i+"Athlete.team.number").toString().trim());
+                int c=Integer.parseInt( this.prop.get(i+"Athlete.team.member").toString().trim());
+                int d=Integer.parseInt(this.prop.get(i+"Athlete.per").toString().trim());
+
 
                 List<Athlete> team=new ArrayList<Athlete>();
                 List<Athlete> athleteList=new ArrayList<Athlete>();

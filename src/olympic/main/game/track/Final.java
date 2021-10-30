@@ -26,11 +26,14 @@ public class Final extends ContestImpl{
 //            System.out.print("目前没有他的名字"+temp+" ");
 //        }
         System.out.println("【决赛排名榜】");
-        System.out.println("排名\t姓名\t时间");
+        System.out.println("排名\t姓名\t时间\t");
         Collections.shuffle(runners);
         for(int i=0;i<size;i++){
-            System.out.println(i+1+"\t"+"姓名"+"\t"+"时间"+"\t");
+            System.out.println(i+1+"\t"+runners.get(i).getName()+"\t"+"时间"+"\t");
         }
+
+
+
         System.out.println("\n");
     }
 
