@@ -2,6 +2,7 @@ package olympic.main.game.football;
 
 import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.TeamAthlete;
+import olympic.main.person.athlete.footballathlete.FootballTeam;
 
 import java.util.ArrayList;
 
@@ -13,12 +14,12 @@ public class FootballStarter {
 
     public static void start() {
         FootballGameManager footballGameManager = FootballGameManager.getInstance();
-        ArrayList<TeamAthlete> teamList = new ArrayList<>();
+        ArrayList<FootballTeam> teamList = new ArrayList<>();
         for (int i = 0; i < 16; i++) {
-            teamList.add(new TeamAthlete("Team" + i, "Nation" + i, new ArrayList<Athlete>()));
+            teamList.add(new FootballTeam("Team" + i, "Nation" + i, new ArrayList<Athlete>()));
         }
         // TODO: 替换为从配置文件中读入参赛球队
-        footballGameManager.initTeam(teamList);
+        footballGameManager.setTeams(teamList);
         footballGameManager.setFirst(new GroupRound()).setNext(new EliminationRound("四分之一决赛")).setNext(new EliminationRound("半决赛")).setNext(new EliminationRound("决赛"));
         footballGameManager.start();
     }
