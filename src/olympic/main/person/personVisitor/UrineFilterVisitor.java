@@ -8,9 +8,10 @@ import olympic.main.person.athleteList.TeamAthleteList;
 
 import java.util.ArrayList;
 
-public class UrineFilterVisitor extends Visitor {
+public class UrineFilterVisitor extends FilterVisitor {
 	@Override
-	public ArrayList<IndividualAthlete> visit(IndividualAthleteList individualAthleteList) {
+	public ArrayList<IndividualAthlete> visit(IndividualAthleteList individualAthleteList
+			, String game) {
 		ArrayList<IndividualAthlete> finalAthleteList = new ArrayList<>();
 		System.out.println("**********************************************************");
 		int count = 0;
@@ -21,6 +22,7 @@ public class UrineFilterVisitor extends Visitor {
 			else {
 				System.out.println("* 运动员" + athlete.getName() + "被检测出使用兴奋剂，参赛资格作废。");
 				count+=1;
+				athlete.setRank(game,-1);
 			}
 		}
 		if(count==0)
@@ -32,7 +34,7 @@ public class UrineFilterVisitor extends Visitor {
 	}
 	
 	@Override
-	public ArrayList<TeamAthlete> visit(TeamAthleteList teamAthleteList) {
+	public ArrayList<TeamAthlete> visit(TeamAthleteList teamAthleteList, String game) {
 		ArrayList<TeamAthlete> finalTeam = new ArrayList<>();
 		System.out.println("**********************************************************");
 		for (TeamAthlete team : teamAthleteList.getAthletes()) {
@@ -44,6 +46,7 @@ public class UrineFilterVisitor extends Visitor {
 				if (!((IndividualAthlete)athlete).getUrineTestResult(0)) {
 					flag = false;
 				} else {
+					athlete.setRank(game,-1);
 				}
 			}
 			if (flag) {

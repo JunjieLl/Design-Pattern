@@ -4,15 +4,21 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
-public class SingleThreeMetreStrategy implements Strategy{
-    public ArrayList<Double> scores;
-    private final int cycleNumber;
+/**
+ * 策略模式下单人三米板规则
+ */
+public class SingleThreeMetreStrategy extends Strategy{
 
     SingleThreeMetreStrategy(){
-        scores = new ArrayList<Double>();
+        name="跳水单人三米跳板";
+        scores = new ArrayList<>();
         cycleNumber = 6;
     }
 
+    /**
+     * 通过当前策略来决定分数的算法
+     * @return score 返回算出的分数
+     */
     @Override
     public double decideScore(){
         Random r = new Random();

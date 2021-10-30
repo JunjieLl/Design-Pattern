@@ -1,6 +1,14 @@
 package olympic.main.game.diving;
 
-public interface Strategy {
-    double decideScore();
-    int getCycleNumber();
+import java.util.ArrayList;
+
+public abstract class Strategy {
+    protected String name;
+    protected ArrayList<Double> scores;
+    protected int cycleNumber;
+    abstract double decideScore();
+    abstract int getCycleNumber();
+    public String getName(){
+        return name;
+    }
 }

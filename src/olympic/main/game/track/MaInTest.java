@@ -14,7 +14,6 @@ public class MaInTest {
         Marathon marathon=new Marathon(PersonFactory.getInstance().getAthletes("Marathon"));
         marathon.start();
 
-        PersonFactory personFactory=PersonFactory.getInstance();
 
     }
 }
