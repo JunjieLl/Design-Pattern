@@ -46,6 +46,10 @@ public class EliminationRound extends Round implements Observer {
         return advancedTeams;
     }
 
+    /**
+     * 根据比赛结果更新晋级名单
+     * @param game 结束的比赛
+     */
     @Override
     public void update(FootballGame game) {
         if (game.getScore1() > game.getScore2()) {

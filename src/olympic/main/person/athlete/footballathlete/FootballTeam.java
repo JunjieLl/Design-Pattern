@@ -3,6 +3,7 @@ package olympic.main.person.athlete.footballathlete;
 import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.TeamAthlete;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -28,4 +29,8 @@ public class FootballTeam extends TeamAthlete {
     public void setId(int id) {
         this.id = id;
     }
+
+//    public static FootballTeam convertFromAthlete(Athlete athlete) {
+//        return new FootballTeam(athlete.getName(), athlete.getNation(), new ArrayList<>());
+//    }
 }
