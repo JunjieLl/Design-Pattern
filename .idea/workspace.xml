@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d075afba-7340-46ff-a0e3-f4516694a563" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/main/game/Game.java" afterDir="false" />
+    <list default="true" id="d2a64cbe-d77c-4950-8573-ba128efc57cd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/olympic/main/person/PersonFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/main/person/PersonFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
