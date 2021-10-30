@@ -14,13 +14,10 @@ public abstract class Game {
     public Game() {
 
     }
-
     abstract public void start();
     protected String name;
-
     public String getName() {
         return name;
     }
-    public Game(){}
-    public abstract void start();
+
 }
