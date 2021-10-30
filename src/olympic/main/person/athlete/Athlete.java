@@ -1,15 +1,15 @@
 package olympic.main.person.athlete;
 
+import olympic.main.person.interview.Interviewee;
+import olympic.main.person.interview.Listener;
+
 import java.util.HashMap;
 
-public abstract class Athlete {
-    protected String name;
-    protected String nation;
+public abstract class Athlete extends Interviewee implements Listener {
     protected HashMap<String, Integer> rank = new HashMap<>();
 
     public Athlete(String name, String nation) {
-        this.name = name;
-        this.nation = nation;
+        super(name,nation);
     }
 
     public String getName() {
