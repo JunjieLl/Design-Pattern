@@ -21,6 +21,5 @@ public abstract class Game {
     public String getName() {
         return name;
     }
-    public Game(){}
-    public abstract void start();
+    
 }
