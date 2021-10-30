@@ -35,8 +35,10 @@ public class SemiFinals extends DivingGame {
             System.out.println("【第" + i + "轮】");
             for (int j = 0; j < athletePool.getSize(); j++) {
                 Athlete curDivingAthlete = athletePool.appear();
-                double score = athletePool.getStrategy().decideScore();;
-                System.out.printf("来自\t%-19s\t的%-10s\t" +"第" + i + "轮分数为\t" + "%.3f\n",curDivingAthlete.getNation(),curDivingAthlete.getName(), score);
+                double score = athletePool.getStrategy().decideScore();
+                if(athletePool.getDetail()) {
+                    System.out.printf("来自\t%-19s\t的%-10s\t" + "第" + i + "轮分数为\t" + "%.3f\n", curDivingAthlete.getNation(), curDivingAthlete.getName(), score);
+                }
                 athletePool.addScore(curDivingAthlete,score);
                 athletePool.disappear();
             }
