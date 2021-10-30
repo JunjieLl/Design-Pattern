@@ -8,5 +8,6 @@ public class Main {
         new ReviewQScene().play();
 
         new PingpongGameScene().play();
+        new FootballScene().play();
     }
 }
