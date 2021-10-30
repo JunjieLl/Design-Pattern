@@ -28,6 +28,7 @@ public class EliminationRound extends Round implements Observer {
      */
     @Override
     public List<FootballTeam> play(List<FootballTeam> teams) {
+        System.out.println("classname: (EliminationRound) method: (play) action: (进行足球淘汰赛) ");
         for (int i = 0; i < teams.size(); i += 2) {
             EliminationFootballGame g = new EliminationFootballGame(teams.get(i), teams.get(i + 1));
             g.setObserver(this);
