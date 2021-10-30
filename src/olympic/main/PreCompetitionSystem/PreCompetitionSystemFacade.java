@@ -81,7 +81,7 @@ public class PreCompetitionSystemFacade {
 		System.out.println("【最后，为该场比赛分配志愿者以协助比赛顺利进行】");
 		pressEnterToContinue();
 		VolunteerList volunteerList=VolunteerList.getInstance();
-		volunteerList.allocateVolunteer(20 + (int) (Math.random() * 10));
+		volunteerList.allocateVolunteer(15 + (int) (Math.random() * 10));
 		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 		printlnNRowSpace(2);
 		
@@ -143,7 +143,7 @@ public class PreCompetitionSystemFacade {
 	
 	public static void main(String[] args) {
 		PreCompetitionSystemFacade preCompetitionSystemFacade = new PreCompetitionSystemFacade();
-		preCompetitionSystemFacade.preCompetitionSystemFacade("DivingTeam");
+		preCompetitionSystemFacade.preCompetitionSystemFacade("Diving");
 	}
 	
 	ArrayList<IndividualAthlete> getAllIndividualAthlete(String gameName) {
