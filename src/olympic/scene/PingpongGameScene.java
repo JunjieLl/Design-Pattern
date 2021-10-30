@@ -18,8 +18,6 @@ public class PingpongGameScene implements Scene{
 
     @Override
     public void play() {
-        PersonFactory.getInstance().springUtil();
-
         PreCompetitionSystemFacade pre = new PreCompetitionSystemFacade();
 
         System.out.println("【乒乓球Scene】请选择是否展示细节，输入true展示细节，输入其他不展示");
