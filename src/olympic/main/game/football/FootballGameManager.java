@@ -4,6 +4,7 @@ import olympic.main.person.athlete.TeamAthlete;
 import olympic.main.person.athlete.footballathlete.FootballTeam;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Singleton模式
@@ -16,7 +17,7 @@ public class FootballGameManager {
         return singleton;
     }
 
-    private ArrayList<FootballTeam> teams = new ArrayList<>();
+    private List<FootballTeam> teams = new ArrayList<>();
     private Round first = null;
 
     public Round getFirst() {
@@ -28,12 +29,16 @@ public class FootballGameManager {
         return this.first;
     }
 
-    public void initTeam(ArrayList<TeamAthlete> teamList) {
-        for (int i = 0; i < 16; i++) {
-            TeamAthlete team = teamList.get(i);
-            teams.add(new FootballTeam(team.getName(), team.getNation(), team.getAthleteList(), i));
-        }
+    public void setTeams(List<FootballTeam> teams) {
+        this.teams = teams;
     }
+
+//    public void initTeam(List<TeamAthlete> teamList) {
+//        for (int i = 0; i < 16; i++) {
+//            TeamAthlete team = teamList.get(i);
+//            teams.add(new FootballTeam(team.getName(), team.getNation(), team.getAthleteList()));
+//        }
+//    }
 
     public void start() {
         Round r = this.first;
