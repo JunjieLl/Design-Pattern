@@ -8,27 +8,44 @@ import olympic.main.person.athlete.pingong.PlayPingpong;
 
 import java.util.Random;
 
+
+/**
+ * 防守策略
+ */
 public class PingpongDefendStrategy implements Strategy {
 
+    /**
+     * 归属者，运动员
+     */
     private Athlete ownerAthlete;
 
     private Random random = new Random();
 
+    /**
+     * 球的状态，用于模拟能不能接到球
+     */
     private Integer ballState;
 
+    /**
+     * 用于模拟攻击或防守
+     */
     private Boolean offense;
 
+    /**
+     * 攻击概率
+     */
     private Integer offenseProb;
 
     @Override
     public Boolean playWith(Athlete oppoent){
-
         if (Mode.getShowDetail()) {
             System.out.println("classname: (PingpongDefendStrategy) method: (playWith) action: (策略模式中"+oppoent.getName()+"运用防御策略进行比赛) ");
         }
+
         offenseProb = 30;
         ballState = random.nextInt(100);
         offense = random.nextInt(100)< offenseProb;
+
         if (ballState< ((PlayPingpong)ownerAthlete).getCapacity()){
             if (Mode.getShowDetail()) {
                 System.out.println(ownerAthlete.getName() + " 击球" + (offense ? " 进攻" : " 防守"));
