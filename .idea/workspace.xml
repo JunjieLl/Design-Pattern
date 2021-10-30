@@ -10,6 +10,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -39,7 +40,7 @@
   <component name="RunManager">
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="olympic.main.game.pingponggame.Test" />
-      <module name="newbranch" />
+      <module name="Design-Pattern" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="olympic.main.game.pingponggame.*" />
@@ -65,7 +66,7 @@
       <option name="presentableId" value="Default" />
       <updated>1635556905772</updated>
       <workItem from="1635556907464" duration="186000" />
-      <workItem from="1635557106447" duration="2430000" />
+      <workItem from="1635557106447" duration="7774000" />
     </task>
     <servers />
   </component>

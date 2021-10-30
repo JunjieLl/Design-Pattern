@@ -10,7 +10,13 @@ import java.util.List;
 public class PingpongGame {
     private String name;
 
+    private PingpongGame nextGame;
+
     private HashMap<Athlete, Integer> result = new HashMap<>();
+
+    public PingpongGame(String name) {
+        this.name = name;
+    }
 
     public void addAthlete(Athlete athlete) {
         result.put(athlete, 0);
@@ -20,8 +26,8 @@ public class PingpongGame {
         this.name = name;
     }
 
-    public String getName() {
-        return name;
+    public void setNextGame(PingpongGame nextGame) {
+        this.nextGame = nextGame;
     }
 
     public void start() {

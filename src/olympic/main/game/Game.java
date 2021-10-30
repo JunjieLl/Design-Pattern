@@ -11,11 +11,7 @@ public abstract class Game {
         this.athletes=athleteList;
     }
 
-    public Game() {
 
-    }
-
-    abstract public void start();
     protected String name;
 
     public String getName() {
