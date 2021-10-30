@@ -2,6 +2,7 @@ package olympic.main.person;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
 
@@ -662,6 +663,7 @@ public class NameFactory {
             "墨" ,  "年" , "爱" , "阳" , "佟",
             "第五" , "言" , "福"
     };
+    private HashSet<String> sites = new HashSet<String>();
 
 
     private Random random=new Random();
@@ -701,20 +703,42 @@ public class NameFactory {
         return sBuilder.toString();
     }
 
+    /**
+     * 返回一个不会重复的英语名字
+     * @return
+     */
     private String getEnglishName() {
         int i = random.nextInt(namesEn.length);//[0,n)
+        while(sites.contains(namesEn[i])){
+            i = random.nextInt(namesEn.length);
+        }
+        sites.add(namesEn[i]);
         return namesEn[i];
+    }
+
+    /**
+     * 返回一个不会重复的中文名字
+     */
+    private String getChineseName() {
+         String name= insideFirstName()+insideSimpleLastName();
+        while(sites.contains(name)){
+            name= insideFirstName()+insideSimpleLastName();
+        }
+        sites.add(name);
+        return name;
     }
 
     /**
      * @return 全名
      */
-
     public Message getMessage() {
         Message message=new Message();
         int i = random.nextInt(nation.length);//[0,n)
         message.nation=nation[i];
-        if(i<=5)message.name= insideFirstName()+insideSimpleLastName();
+        if(i<=5){
+            message.name=insideFirstName()+insideSimpleLastName();
+
+        }
         else{
             message.name=getEnglishName();
         }
@@ -725,7 +749,8 @@ public class NameFactory {
         List<Message> messages=new ArrayList<>();
         int i = random.nextInt(nation.length);//[0,n)
         for(int j=0;j<n;j++){
-           if(i<=5) messages.add(new Message(insideFirstName()+insideSimpleLastName(),nation[i]));
+           if(i<=5){
+               messages.add(new Message(insideFirstName()+insideSimpleLastName(),nation[i]));}
            else{
                messages.add(new Message(getEnglishName(),nation[i]));
            }

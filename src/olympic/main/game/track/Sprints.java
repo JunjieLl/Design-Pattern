@@ -21,6 +21,10 @@ public class Sprints extends TrackGame {
         System.out.println("classname: (TrackGame) method: (start) action: (template method模式中运动员参与冲刺比赛) ");
        ContestDirector contestDirector=new ContestDirector(3,athletes);
        contestDirector.construct();
+
+        for(int i=0;i<athletes.size();i++){
+            athletes.get(i).setRank("Sprints",i+1);
+        }
     }
 
     public String getName(){
