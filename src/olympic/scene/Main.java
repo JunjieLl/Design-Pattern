@@ -1,7 +1,5 @@
 package olympic.scene;
 
-
-
 public class Main {
     public static void main(String[] args) {
         Director.getInstance().nextScene(new Scene() {
@@ -16,5 +14,6 @@ public class Main {
         //new CeremonyScene("LI JUNJIE","LI JIEJUN","JIE LIJUN").play();
         //new ChoreHandlingScene().play();
         //new ReviewQScene().play();
+        new PingpongGameScene().play();
     }
 }
