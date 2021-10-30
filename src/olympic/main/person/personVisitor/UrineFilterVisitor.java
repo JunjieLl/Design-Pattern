@@ -52,6 +52,7 @@ public class UrineFilterVisitor extends Visitor {
 			} else {
 				System.out.println("* 队伍中有人使用兴奋剂，该队伍参赛资格作废");
 			}
+			System.out.println();
 		}
 		System.out.println("**********************************************************");
 		return finalTeam;
