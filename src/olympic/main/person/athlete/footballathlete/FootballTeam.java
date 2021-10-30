@@ -20,7 +20,6 @@ public class FootballTeam extends TeamAthlete {
     public FootballTeam(String name, String nation, List<Athlete> athleteList) {
         super(name, nation, athleteList);
         this.id = generateId();
-        System.out.println("Football Team Constructor Called. id = "+this.id);
     }
 
     public int getId() {
