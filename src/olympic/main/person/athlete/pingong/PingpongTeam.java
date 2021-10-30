@@ -76,7 +76,7 @@ public class PingpongTeam extends TeamAthlete implements CallBack,PlayPingpong{
     @Override
     public Boolean call(Athlete oppoent) {
         if (Mode.getShowDetail()) {
-            System.out.println("classname: (PingpongAthlete) method: (call) action: (回调模式中选手运用回调函数进行对打) ");
+            System.out.println("classname: (PingpongAthlete) method: (call) action: (回调模式中"+oppoent.getName()+"运用回调函数进行对打) ");
         }
         return this.playWith(oppoent);
     }
