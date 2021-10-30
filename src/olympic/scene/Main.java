@@ -10,8 +10,9 @@ public class Main {
                 System.out.println("奥林匹克运动会开始了！");
             }
         });
-        FootballStarter.start();
-
+        //FootballStarter.start();
+        Scene divingGame=new DivingGameScene();
+        divingGame.play();
         //new CeremonyScene("LI JUNJIE","LI JIEJUN","JIE LIJUN").play();
         //new ChoreHandlingScene().play();
         //new ReviewQScene().play();

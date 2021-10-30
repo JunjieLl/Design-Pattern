@@ -12,7 +12,7 @@ public class ContestPipeline implements AbstractPipeline{
     private DivingGame lastDivingGame;
     private final AthletePool athletePool;
 
-    ContestPipeline(String context, List<Athlete> list) {
+    public ContestPipeline(String context, List<Athlete> list) {
         AbstractNode strategyNode = new PeopleNumberNode();
         this.athletePool = new AthletePool(strategyNode.interpret(context), list);
     }
