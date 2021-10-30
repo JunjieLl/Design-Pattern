@@ -32,7 +32,6 @@ class PingpongGameRound {
         result.replace(athletes.get(winner), result.get(athletes.get(winner)) + 1);
     }
 
-
     public void addAthlete(Athlete athlete) {
         result.put(athlete, 0);
     }
