@@ -49,6 +49,7 @@ public class FinalContest extends DivingGame {
         System.out.println("【决赛积分榜】");
         athletePool.getResult("决赛");
         System.out.println("让我们恭喜最后获奖的运动员！");
+        new CeremonyScene(athletePool.gotoCeremony(3)).play();
     }
 
     /**

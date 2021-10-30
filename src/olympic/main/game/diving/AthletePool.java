@@ -28,6 +28,9 @@ public class AthletePool {
      */
     private final Strategy strategy;
 
+    /**
+     * 选择是否要展示细节
+     */
     private boolean viewDetail = false;
 
     /**
@@ -129,6 +132,9 @@ public class AthletePool {
         list.clear();
     }
 
+    /**
+     * 设置是否展示细节
+     */
     public void showDetail() {
         System.out.println("【跳水Scene】请选择是否展示细节，输入true展示细节，输入其他不展示:");
         Scanner input = new Scanner(System.in);
@@ -139,5 +145,18 @@ public class AthletePool {
 
     public boolean getDetail(){
         return this.viewDetail;
+    }
+
+    /**
+     * 获取要颁奖的人
+     * @param num 参加颁奖的人数
+     * @return winner 参加颁奖的运动员的列表
+     */
+    public List<Athlete> gotoCeremony(int num){
+        List<Athlete> winner=new ArrayList<>();
+        for(int i=0;i<num;i++) {
+            winner.add(list.get(i).getKey());
+        }
+        return winner;
     }
 }
