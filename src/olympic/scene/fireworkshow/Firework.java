@@ -1,4 +1,4 @@
-package ceremony.fireworkshow;
+package olympic.scene.fireworkshow;
 
 class Firework extends Show {
     public void operation(){

@@ -1,4 +1,7 @@
-package ceremony.enterarena;
+package olympic.scene.enterarena;
+
+
+import olympic.main.person.PersonFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +13,12 @@ import java.util.List;
 
 public class EnterLightPattern {
     public static void main(String[] args) {
+        PersonFactory personFactory=PersonFactory.getInstance();
+        System.out.println(personFactory.getAthletes("Relays"));
+
+        List<Person> allAthletes=new ArrayList<>();
+
+
         Teams allTeam=new Teams("全体国家代表队");
 
         Teams americaTeam = new Teams("美国队");

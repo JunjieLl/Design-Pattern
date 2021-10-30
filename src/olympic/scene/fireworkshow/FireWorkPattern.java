@@ -1,4 +1,4 @@
-package ceremony.fireworkshow;
+package olympic.scene.fireworkshow;
 import java.util.Scanner;
 
 public class FireWorkPattern {

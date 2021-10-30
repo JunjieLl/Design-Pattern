@@ -1,4 +1,4 @@
-package ceremony.translate;
+package olympic.scene.translate;
 
 import java.util.Scanner;
 

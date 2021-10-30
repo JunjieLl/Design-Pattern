@@ -1,4 +1,4 @@
-package ceremony.fireworkshow;
+package olympic.scene.fireworkshow;
 
 
 class AircraftShow extends Decorator {

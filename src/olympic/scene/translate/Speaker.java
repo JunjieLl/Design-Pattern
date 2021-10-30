@@ -1,4 +1,4 @@
-package ceremony.translate;
+package olympic.scene.translate;
 
 class Speaker{
     public String speak(){

@@ -1,4 +1,4 @@
-package ceremony.translate;
+package olympic.scene.translate;
 
 class SpanishAdapter implements Translator{
     private Speaker speaker;
