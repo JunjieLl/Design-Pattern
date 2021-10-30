@@ -16,6 +16,7 @@ import olympic.main.person.volunteer.state.GreenhandState;
 import olympic.main.person.volunteer.state.State;
 
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class PreCompetitionSystemFacade {
@@ -36,28 +37,32 @@ public class PreCompetitionSystemFacade {
 		}
 		printlnNRowSpace(1);
 		
-		System.out.println("首先生成尿检的检察官");
+		System.out.println("【首先生成尿检的检察官】");
+		pressEnterToContinue();
 		printlnNRowEllipsis(3);
-		System.out.println("检察官生成完成");
+		System.out.println("【检察官生成完成】");
 		printlnNRowSpace(2);
 		
-		System.out.println("开始分配监察官");
+		System.out.println("【开始分配监察官】");
+		pressEnterToContinue();
 		printlnNRowEllipsis(3);
-		System.out.println("检察官分配完成");
+		System.out.println("【检察官分配完成】");
 		printlnNRowSpace(2);
 		
-		System.out.println("接下来为运动员尿检环节");
+		System.out.println("【接下来为运动员尿检环节】");
+		pressEnterToContinue();
 		athletes.accept(new UrineVisitor());
-		System.out.println("尿检结束");
+		System.out.println("【尿检结束】");
 		printlnNRowSpace(2);
 		
-		System.out.println("所有运动员填写《兴奋剂检查记录单》和《兴奋剂检查传送单》");
+		System.out.println("【所有运动员填写《兴奋剂检查记录单》和《兴奋剂检查传送单》】");
+		pressEnterToContinue();
 		printlnNRowEllipsis(3);
-		System.out.println("运动员填写完成");
+		System.out.println("【运动员填写完成】");
 		printlnNRowSpace(2);
 		
-		System.out.println("接下来根据初步尿检结果评价参赛资格");
-
+		System.out.println("【接下来根据初步尿检结果评价参赛资格】");
+		pressEnterToContinue();
 		UrineFilterVisitor urineFilterVisitor = new UrineFilterVisitor();
 		if (isTeamNumber(gameName)) {
 			athletes = new TeamAthleteList(urineFilterVisitor.visit(
@@ -68,16 +73,18 @@ public class PreCompetitionSystemFacade {
 			athletes = new IndividualAthleteList(urineFilterVisitor.visit(
 					(IndividualAthleteList) athletes));
 		}
-		System.out.println("筛选结束，剩下的人有资格参加比赛");
+		System.out.println("【筛选结束，剩下的人有资格参加比赛】");
 		printlnNRowSpace(2);
 		
-		System.out.println("接下来进行确认参赛名单环节，参赛人员如下：");
+		System.out.println("【接下来进行确认参赛名单环节，参赛人员如下：】");
+		pressEnterToContinue();
 		athletes.accept(new ConfirmEntryListVisitor());
 		printlnNRowSpace(2);
 		
-		System.out.println("最后，为该场比赛分配志愿者以协助比赛顺利进行");
+		System.out.println("【最后，为该场比赛分配志愿者以协助比赛顺利进行】");
+		pressEnterToContinue();
 		VolunteerList volunteerList=VolunteerList.getInstance();
-		volunteerList.allocateVolunteer(50);
+		volunteerList.allocateVolunteer(45 + (int) (Math.random() * 10));
 		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 		printlnNRowSpace(2);
 		
@@ -96,7 +103,14 @@ public class PreCompetitionSystemFacade {
 		return res;
 	}
 	
-	
+	private void pressEnterToContinue(){
+		System.out.print("按下回车继续:");
+		try {
+			System.in.read();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 	
 	private Boolean isTeamNumber(String game) {
 		switch (game) {
