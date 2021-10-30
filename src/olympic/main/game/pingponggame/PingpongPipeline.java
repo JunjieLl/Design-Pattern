@@ -50,9 +50,8 @@ public class PingpongPipeline extends Game {
 
     /**
      * 季军赛
-     * @return 胜者
      */
-    public Athlete ThirdGame(){
+    public void ThirdGame(){
         List<Athlete> thirdGameathletes = new ArrayList<>();
         for (Athlete athlete:athletes){
             if (athlete.getRank("半决赛") == 2){
