@@ -50,9 +50,9 @@ public class PingpongFilter {
      * 对外接口，开始比赛
      */
     public void start() {
-        System.out.println("【"+name+"开始了!"+"】\n");
+        System.out.println("【" + name + "开始了!" + "】\n");
         for (PingpongGame game : games) {
-            System.out.println(  "【"+name+"第"+(games.indexOf(game)+1)+"场】开始了");
+            System.out.println("【" + name + "第" + (games.indexOf(game) + 1) + "场】开始了");
             game.start();
         }
 
