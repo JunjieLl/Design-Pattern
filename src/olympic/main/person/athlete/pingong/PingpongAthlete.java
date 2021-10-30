@@ -9,17 +9,17 @@ import olympic.main.person.athlete.pingong.Strategy.Strategy;
 
 import java.util.Random;
 
-public class PingpongAthlete extends IndividualAthlete implements CallBack,PlayPingpong{
+public class PingpongAthlete extends IndividualAthlete implements CallBack, PlayPingpong {
     public PingpongAthlete(String name, String nation) {
         super(name, nation);
-        if (random.nextInt()%2==0){
+        if (random.nextInt() % 2 == 0) {
             this.strategy = new PingpongOffenseStrategy();
             strategy.setOwnerAthlete(this);
-        }else{
+        } else {
             this.strategy = new PingpongDefendStrategy();
             strategy.setOwnerAthlete(this);
         }
-        this.capacity = random.nextInt(10)+90;
+        this.capacity = random.nextInt(10) + 90;
     }
 
     /**
@@ -49,11 +49,12 @@ public class PingpongAthlete extends IndividualAthlete implements CallBack,PlayP
 
     /**
      * 与Oppoend进行对打
+     *
      * @param oppoent 对手
      * @return 是否击中球，没有击中球就输了这一小轮
      */
     @Override
-    public Boolean playWith(Athlete oppoent){
+    public Boolean playWith(Athlete oppoent) {
         return strategy.playWith(oppoent);
     }
 
@@ -61,7 +62,7 @@ public class PingpongAthlete extends IndividualAthlete implements CallBack,PlayP
      * 发球
      */
     @Override
-    public void serve(){
+    public void serve() {
         if (Mode.getShowDetail()) {
             System.out.println(this.getName() + " 发乒乓球");
         }
@@ -69,6 +70,7 @@ public class PingpongAthlete extends IndividualAthlete implements CallBack,PlayP
 
     /**
      * 回调函数，用于对打
+     *
      * @param oppoent
      * @return 是否击中球，没有击中球就输了这一小轮
      */
@@ -77,6 +79,6 @@ public class PingpongAthlete extends IndividualAthlete implements CallBack,PlayP
         if (Mode.getShowDetail()) {
             System.out.println("classname: (PingpongAthlete) method: (call) action: (回调模式中选手运用回调函数进行对打) ");
         }
-        return this.playWith((PingpongAthlete)oppoent);
+        return this.playWith((PingpongAthlete) oppoent);
     }
 }

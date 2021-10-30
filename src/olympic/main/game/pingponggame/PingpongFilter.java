@@ -28,24 +28,24 @@ public class PingpongFilter {
         this.nextFliter = nextFliter;
     }
 
-    private void addGame(){
-        for (int i=0;i<athletes.size()/2;i++){
+    private void addGame() {
+        for (int i = 0; i < athletes.size() / 2; i++) {
             PingpongGame game = new PingpongGame(this.name);
-            game.addAthlete(athletes.get(2*i));
-            game.addAthlete(athletes.get(2*i+1));
+            game.addAthlete(athletes.get(2 * i));
+            game.addAthlete(athletes.get(2 * i + 1));
             games.add(game);
         }
     }
 
-    public void setAthletes(List<Athlete> athletes){
+    public void setAthletes(List<Athlete> athletes) {
         this.athletes = athletes;
         addGame();
     }
 
     public void start() {
-        System.out.println("【"+name+"开始了!"+"】\n");
+        System.out.println("【" + name + "开始了!" + "】\n");
         for (PingpongGame game : games) {
-            System.out.println(  "【"+name+"第"+(games.indexOf(game)+1)+"场】开始了");
+            System.out.println("【" + name + "第" + (games.indexOf(game) + 1) + "场】开始了");
             game.start();
         }
         if (nextFliter != null) {
