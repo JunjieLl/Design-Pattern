@@ -15,7 +15,6 @@ public abstract class ContestImpl {
 
     ContestImpl(List<Athlete> athletes){
         this.athletes=athletes;
-
     }
 
     /**
