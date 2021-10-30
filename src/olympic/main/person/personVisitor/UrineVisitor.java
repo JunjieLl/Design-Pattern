@@ -21,7 +21,7 @@ public class UrineVisitor extends Visitor{
 		int count = 0;
 		for (IndividualAthlete athlete : individualAthletes) {
 			count += 1;
-			System.out.print("- 运动员"+athlete.getName()+"完成尿检。");
+			System.out.print("- 运动员"+athlete.getName() + "完成尿检。");
 			athlete.setUrineTestProcurator();
 			athlete.getUrineTestProcurator().check();
 			try {

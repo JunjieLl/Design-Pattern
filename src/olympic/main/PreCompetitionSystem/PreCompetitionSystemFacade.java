@@ -61,14 +61,14 @@ public class PreCompetitionSystemFacade {
 		System.out.println("【接下来根据初步尿检结果评价参赛资格】");
 		pressEnterToContinue();
 		UrineFilterVisitor urineFilterVisitor = new UrineFilterVisitor();
-		if (isTeamNumber(gameName)) {
-			athletes = new TeamAthleteList(urineFilterVisitor.visit(
-					(TeamAthleteList) athletes));
-			
-		} else {
-
-			athletes = new IndividualAthleteList(urineFilterVisitor.visit(
-					(IndividualAthleteList) athletes));
+		if(canFilter(gameName)) {
+			if (isTeamNumber(gameName)) {
+				athletes = new TeamAthleteList(urineFilterVisitor.visit((TeamAthleteList) athletes, gameName));
+				
+			} else {
+				
+				athletes = new IndividualAthleteList(urineFilterVisitor.visit((IndividualAthleteList) athletes, gameName));
+			}
 		}
 		System.out.println("【筛选结束，剩下的人有资格参加比赛】");
 		printlnNRowSpace(2);
@@ -95,6 +95,15 @@ public class PreCompetitionSystemFacade {
 		}
 	}
 	
+	private boolean canFilter(String gameName){
+		if("FootballTeam".equals(gameName)||
+				"Pingpong".equals(gameName)||"PingpongTeam".equals(gameName))
+		{
+			return false;
+		}
+		return true;
+	}
+	
 	private ArrayList<Athlete> teamAthleteConvertToAthlete(ArrayList<TeamAthlete> teamAthletes){
 		ArrayList<Athlete> res = new ArrayList<>(teamAthletes);
 		return res;
@@ -110,13 +119,7 @@ public class PreCompetitionSystemFacade {
 	}
 	
 	private Boolean isTeamNumber(String game) {
-		return switch (game) {
-			case "PingpongTeam" -> true;
-			case "FootballTeam" -> true;
-			case "DivingTeam" -> true;
-			case "Relays" -> true;
-			default -> false;
-		};
+		return "PingpongTeam".equals(game) || "FootballTeam".equals(game) || "DivingTeam".equals(game) || "Relays".equals(game);
 	}
 	
 	private String intToString(int num, int space){
@@ -143,7 +146,7 @@ public class PreCompetitionSystemFacade {
 	
 	public static void main(String[] args) {
 		PreCompetitionSystemFacade preCompetitionSystemFacade = new PreCompetitionSystemFacade();
-		preCompetitionSystemFacade.preCompetitionSystemFacade("DivingTeam");
+		preCompetitionSystemFacade.preCompetitionSystemFacade("Pingpong");
 	}
 	
 	ArrayList<IndividualAthlete> getAllIndividualAthlete(String gameName) {
