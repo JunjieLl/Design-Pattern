@@ -1,9 +1,6 @@
 package olympic.main.game;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.ListIterator;
 
 /**
  * Iterator模式
