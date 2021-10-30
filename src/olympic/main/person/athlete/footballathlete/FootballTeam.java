@@ -11,7 +11,7 @@ public class FootballTeam extends TeamAthlete {
 
     private int id;
 
-    public FootballTeam(String name, String nation, List<Athlete> athleteList, int id) {
+    public FootballTeam(String name, String nation, List<Athlete> athleteList) {
         super(name, nation, athleteList);
         this.id = id;
     }
