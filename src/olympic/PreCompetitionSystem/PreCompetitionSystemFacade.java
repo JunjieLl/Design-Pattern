@@ -43,7 +43,7 @@ public class PreCompetitionSystemFacade {
 		System.out.println("【检察官生成完成】");
 		printlnNRowSpace(2);
 		
-		System.out.println("【开始分配监察官】");
+		System.out.println("【开始分配检察官】");
 		pressEnterToContinue();
 		printlnNRowEllipsis(3);
 		System.out.println("【检察官分配完成】");
@@ -84,7 +84,7 @@ public class PreCompetitionSystemFacade {
 		System.out.println("【最后，为该场比赛分配志愿者以协助比赛顺利进行】");
 		pressEnterToContinue();
 		VolunteerList volunteerList=VolunteerList.getInstance();
-		volunteerList.allocateVolunteer(45 + (int) (Math.random() * 10));
+		volunteerList.allocateVolunteer(25 + (int) (Math.random() * 10));
 		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 		printlnNRowSpace(2);
 		
