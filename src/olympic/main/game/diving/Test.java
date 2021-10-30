@@ -2,7 +2,7 @@ package olympic.main.game.diving;
 
 import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.divingathlete.DivingAthlete;
-import olympic.main.person.athlete.divingathlete.DoubleDivingAthlete;
+import olympic.main.person.athlete.divingathlete.DivingTeam;
 
 import java.util.LinkedList;
 
@@ -22,7 +22,7 @@ public class Test {
 //            DivingAthlete divingAthlete2 = new DivingAthlete("ljj" + (i+1),"中国");
 //            list.add(divingAthlete1);
 //            list.add(divingAthlete2);
-//            DoubleDivingAthlete athletes =new DoubleDivingAthlete(i+"组","中国",list);
+//              DivingTeam athletes =new DivingTeam(i+"组","中国",list);
 //            allMember.add(athletes);
 //        }
         ContestPipeline divingGame=new ContestPipeline(context,allMember);

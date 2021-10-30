@@ -5,9 +5,9 @@ import olympic.main.person.athlete.TeamAthlete;
 
 import java.util.List;
 
-public class DoubleDivingAthlete extends TeamAthlete {
+public class DivingTeam extends TeamAthlete {
 
-    public DoubleDivingAthlete(String name, String nation, List<Athlete> athleteList) {
+    public DivingTeam(String name, String nation, List<Athlete> athleteList) {
         super(name,nation,athleteList);
         System.out.println(nation + "组合" + name + "已经入场");
     }
