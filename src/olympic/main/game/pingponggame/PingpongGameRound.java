@@ -12,11 +12,11 @@ import java.util.Random;
 
 class PingpongGameRound {
 
-    private String name;
+//    private String name;
 
     private HashMap<Athlete, Integer> result = new HashMap<>();
 
-    private Game nextGame;
+//    private Game nextGame;
 
     private void startOneRound( ) {
         List<Athlete> athletes = new ArrayList<>(result.keySet());
@@ -41,19 +41,20 @@ class PingpongGameRound {
         result.put(athlete, 0);
     }
 
-    public void setNextGame(Game nextGame) {
-        this.nextGame = nextGame;
-    }
+//    public void setNextGame(Game nextGame) {
+//        this.nextGame = nextGame;
+//    }
 
-    public String getName() {
-        return name;
-    }
+//    public String getName() {
+//        return name;
+//    }
 
     public Athlete start() {
-        System.out.println("classname: (PingpongCame) method: (start) action: (乒乓球比赛一局开始) ");
+//        System.out.println("classname: (PingpongCame) method: (start) action: (乒乓球比赛一局开始) ");
         while (Math.max((Integer) result.values().toArray()[0], (Integer) result.values().toArray()[1]) < 11 || Math.abs((Integer) result.values().toArray()[0] - (Integer) result.values().toArray()[1]) < 2) {
             startOneRound();
         }
+        System.out.println("【比分】 "+result.values().toArray()[0]+" : "+result.values().toArray()[1]);
         if ((Integer) result.values().toArray()[0] > (Integer) result.values().toArray()[1]) {
             return (Athlete) result.keySet().toArray()[0];
         } else {

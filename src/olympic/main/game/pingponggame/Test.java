@@ -24,8 +24,6 @@ public class Test {
             athletes.add(new PingpongAthlete("张继科"+i,"中国"));
         }
 
-
-
         for (int i=0;i<16;i++){
             List<Athlete> athleteList = new ArrayList<>();
             athleteList.add(athletes.get(i*2));
@@ -34,16 +32,10 @@ public class Test {
         }
 
 
-        PingpongPipeline gameIndividual = new PingpongPipeline(athletes);
-        PingpongPipeline gameTeam = new PingpongPipeline(teams);
+        PingpongPipeline gameIndividual = new PingpongPipeline("乒乓球男单",athletes);
+        PingpongPipeline gameTeam = new PingpongPipeline("乒乓球混双",teams);
 
-//        gameIndividual.start();
         gameTeam.start();
-
-//        PingpongGame game = new PingpongGame();
-
-//        game.addAthlete(athlete1);
-//        game.addAthlete(athlete2);
 
     }
 

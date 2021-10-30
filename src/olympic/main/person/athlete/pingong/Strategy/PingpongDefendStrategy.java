@@ -24,7 +24,7 @@ public class PingpongDefendStrategy implements Strategy {
     public Boolean playWith(Athlete oppoent){
 
         if (Mode.getShowDetail()) {
-            System.out.println("classname: (DefendStrategy) method: (playWith) action: (策略模式中选手运用防御策略进行比赛) ");
+            System.out.println("classname: (PingpongDefendStrategy) method: (playWith) action: (策略模式中"+oppoent.getName()+"运用防御策略进行比赛) ");
         }
         offenseProb = 30;
         ballState = random.nextInt(100);
