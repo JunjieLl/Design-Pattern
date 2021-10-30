@@ -1,7 +1,5 @@
 package olympic.main.game.pingponggame;
 
-
-import olympic.main.game.Game;
 import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.pingong.PlayPingpong;
 
@@ -10,13 +8,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * 乒乓球比赛的一轮（比pingponggame更细的粒度）
+ */
 class PingpongGameRound {
 
-//    private String name;
-
     private HashMap<Athlete, Integer> result = new HashMap<>();
-
-//    private Game nextGame;
 
     private void startOneRound( ) {
         List<Athlete> athletes = new ArrayList<>(result.keySet());
@@ -32,7 +29,6 @@ class PingpongGameRound {
         if (Mode.getShowDetail()) {
             System.out.println("本轮结束," + athletes.get(winner).getName() + "赢了");
         }
-//        result.get(athletes.get(winner)) = result.get(winner) + 1;
         result.replace(athletes.get(winner), result.get(athletes.get(winner)) + 1);
     }
 
@@ -41,16 +37,8 @@ class PingpongGameRound {
         result.put(athlete, 0);
     }
 
-//    public void setNextGame(Game nextGame) {
-//        this.nextGame = nextGame;
-//    }
-
-//    public String getName() {
-//        return name;
-//    }
 
     public Athlete start() {
-//        System.out.println("classname: (PingpongCame) method: (start) action: (乒乓球比赛一局开始) ");
         while (Math.max((Integer) result.values().toArray()[0], (Integer) result.values().toArray()[1]) < 11 || Math.abs((Integer) result.values().toArray()[0] - (Integer) result.values().toArray()[1]) < 2) {
             startOneRound();
         }

@@ -7,7 +7,8 @@ import java.util.List;
 
 
 /**
- * 管道模式中的阀门
+ * 管道的阀门
+ * 可以实例化为 乒乓球男单预赛、乒乓球男单复赛、乒乓球男单决赛
  */
 public class PingpongFilter {
     private String name;

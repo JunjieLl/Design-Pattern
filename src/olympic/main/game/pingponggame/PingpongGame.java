@@ -1,16 +1,17 @@
 package olympic.main.game.pingponggame;
 
 import olympic.main.person.athlete.Athlete;
-import olympic.main.person.athlete.IndividualAthlete;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class PingpongGame {
-    private String name;
 
-    private PingpongGame nextGame;
+/**
+ * 一场乒乓球比赛，可以实例化为半决赛第一场、半决赛第二场
+ */
+public class PingpongGame {
+
+    private String name;
 
     private HashMap<Athlete, Integer> result = new HashMap<>();
 
@@ -24,10 +25,6 @@ public class PingpongGame {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public void setNextGame(PingpongGame nextGame) {
-        this.nextGame = nextGame;
     }
 
     public void start() {
