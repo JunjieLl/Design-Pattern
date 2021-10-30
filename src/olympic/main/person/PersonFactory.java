@@ -41,6 +41,8 @@ public class PersonFactory {
     private List<String> gamesName;
     private HashMap< String, List<Athlete>> hMap =
             new HashMap< String, List<Athlete>>();
+    private HashMap< String, Athlete> nameMap =
+            new HashMap< String, Athlete>();
 
     /**
      * 获得所有比赛名字
@@ -52,13 +54,23 @@ public class PersonFactory {
 
     /**
      * 获得运动员列表
-     * @param name 运动员名字
+     * @param game 比赛
      * @return List<Athlete> 运动员列表
      */
-    public  List<Athlete> getAthletes(String name){
-        List<Athlete> a=hMap.get(name);
-        return hMap.get(name);
+    public  List<Athlete> getAthletes(String game){
+        List<Athlete> a=hMap.get(game);
+        return hMap.get(game);
     }
+
+    /**
+     * 通过名字获取运动员
+     * @param name
+     * @return 运动员
+     */
+    public Athlete getAthleteByName(String name){
+        return nameMap.get(name);
+    }
+
     private String getName() {
         Random random = new Random();
         String[] Surname = {"赵", "钱", "孙", "李", "周", "吴", "郑", "王", "冯", "陈", "褚", "卫", "蒋", "沈", "韩", "杨", "朱", "秦", "尤", "许",
@@ -100,7 +112,7 @@ public class PersonFactory {
     /**
      * 从配置文件中读取所有参赛人员信息，持久化生成人员
      */
-    public  void springUtil(){
+    public void springUtil(){
         //首先 名字工厂
         NameFactory nameFactory=new NameFactory();
         try {
@@ -119,7 +131,7 @@ public class PersonFactory {
                 int c=Integer.parseInt( this.prop.get(i+"Athlete.team.member").toString().trim());
                 int d=Integer.parseInt(this.prop.get(i+"Athlete.per").toString().trim());
 
-
+                Athlete tempNameAthlete;
                 List<Athlete> team=new ArrayList<Athlete>();
                 List<Athlete> athleteList=new ArrayList<Athlete>();
                 Message message;
@@ -131,7 +143,9 @@ public class PersonFactory {
                             athleteList.clear();
                             messages=nameFactory.getMessageList(c);
                             for(int k=0;k<c;k++){
-                                athleteList.add(new TrackAthlete(messages.get(k).name,messages.get(k).nation));
+                                tempNameAthlete=new TrackAthlete(messages.get(k).name,messages.get(k).nation);
+                                athleteList.add(tempNameAthlete);
+                                nameMap.put(messages.get(k).name,tempNameAthlete);
                             }
                             team.add(new TrackTeam(messages.get(0).nation,messages.get(0).nation,athleteList));
                         }
@@ -142,7 +156,9 @@ public class PersonFactory {
                         athleteList.clear();
                         for(int j=0;j<a;j++){
                             message= nameFactory.getMessage();
-                            athleteList.add(new TrackAthlete(message.name, message.nation));
+                            tempNameAthlete=new TrackAthlete(message.name, message.nation);
+                            athleteList.add(tempNameAthlete);
+                            nameMap.put(message.name,tempNameAthlete);
                         }
                         hMap.put(i,athleteList);
                         break;
@@ -150,7 +166,9 @@ public class PersonFactory {
                         athleteList.clear();
                         for(int j=0;j<a;j++){
                             message= nameFactory.getMessage();
-                            athleteList.add(new DivingAthlete(message.name, message.nation));
+                            tempNameAthlete=new DivingAthlete(message.name, message.nation);
+                            athleteList.add(tempNameAthlete);
+                            nameMap.put(message.name,tempNameAthlete);
                         }
                         hMap.put(i,athleteList);
                         break;
@@ -159,7 +177,10 @@ public class PersonFactory {
                             athleteList.clear();
                             messages=nameFactory.getMessageList(c);
                             for(int k=0;k<c;k++){
-                                athleteList.add(new DivingAthlete(messages.get(k).name,messages.get(k).nation));
+                                tempNameAthlete=new DivingAthlete(messages.get(k).name,messages.get(k).nation);
+                                athleteList.add(tempNameAthlete);
+                                nameMap.put(messages.get(k).name,tempNameAthlete);
+
                             }
                             team.add(new DivingTeam(messages.get(0).nation,messages.get(0).nation,athleteList));
                         }
@@ -170,7 +191,10 @@ public class PersonFactory {
                             athleteList.clear();
                             messages=nameFactory.getMessageList(c);
                             for(int k=0;k<c;k++){
-                                athleteList.add(new TrackAthlete(messages.get(k).name,messages.get(k).nation));
+                                tempNameAthlete=new TrackAthlete(messages.get(k).name,messages.get(k).nation);
+                                athleteList.add(tempNameAthlete);
+                                nameMap.put(messages.get(k).name,tempNameAthlete);
+
                             }
                             team.add(new FootballTeam(messages.get(0).nation,messages.get(0).nation,athleteList));
                         }
@@ -180,7 +204,9 @@ public class PersonFactory {
                         athleteList.clear();
                         for(int j=0;j<a;j++){
                             message= nameFactory.getMessage();
-                            athleteList.add(new PingpongAthlete(message.name, message.nation));
+                            tempNameAthlete=new PingpongAthlete(message.name, message.nation);
+                            athleteList.add(tempNameAthlete);
+                            nameMap.put(message.name,tempNameAthlete);
                         }
                         hMap.put(i,athleteList);
                         break;
@@ -189,7 +215,10 @@ public class PersonFactory {
                             athleteList.clear();
                             messages=nameFactory.getMessageList(c);
                             for(int k=0;k<c;k++){
-                                athleteList.add(new PingpongAthlete(messages.get(k).name,messages.get(k).nation));
+                                tempNameAthlete=new PingpongAthlete(messages.get(k).name,messages.get(k).nation);
+                                athleteList.add(tempNameAthlete);
+                                nameMap.put(messages.get(k).name,tempNameAthlete);
+
                             }
                             team.add(new PingpongTeam(messages.get(0).nation,messages.get(0).nation,athleteList));
                         }
