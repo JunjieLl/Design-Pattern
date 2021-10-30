@@ -8,16 +8,31 @@ import olympic.main.person.athlete.pingong.PlayPingpong;
 
 import java.util.Random;
 
+/**
+ * 攻击策略
+ */
 public class PingpongOffenseStrategy implements Strategy {
 
+    /**
+     * 归属者，运动员
+     */
     private Athlete ownerAthlete;
 
     private Random random = new Random();
 
+    /**
+     * 球的状态，用于模拟能不能接到球
+     */
     private Integer ballState;
 
+    /**
+     * 用于模拟攻击或防守
+     */
     private Boolean offense;
 
+    /**
+     * 攻击概率
+     */
     private Integer offenseProb = 70;
 
 
