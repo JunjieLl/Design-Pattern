@@ -19,17 +19,27 @@ import java.util.List;
 public class PreCompetitionSystemFacade {
 	private int teamNum = 0;
 	
+	private PreCompetitionSystemFacade(){
+	
+	}
+	
+	final static PreCompetitionSystemFacade singleton = new PreCompetitionSystemFacade();
+	
+	public static PreCompetitionSystemFacade getInstance(){
+		return singleton;
+	}
+	
 	public ArrayList<Athlete> preCompetitionSystemFacade(String gameName) {
-		
-		System.out.println("接下来进行" + gameName + "比赛的赛前准备环节");
 		AthleteList athletes;
 		if (isTeamNumber(gameName)) {
-			System.out.println("该项目为组队项目");
 			athletes = new TeamAthleteList(getAllTeam(gameName));
+			System.out.println("【接下来进行" + gameName + "比赛的赛前准备环节】");
+			System.out.println("【该项目为组队项目】");
 
 		} else {
 			athletes = new IndividualAthleteList(getAllIndividualAthlete(gameName));
-			System.out.println("该项目为个人项目");
+			System.out.println("【接下来进行" + gameName + "比赛的赛前准备环节】");
+			System.out.println("【该项目为个人项目】");
 
 		}
 		printlnNRowSpace(1);
@@ -84,6 +94,8 @@ public class PreCompetitionSystemFacade {
 		volunteerList.allocateVolunteer(15 + (int) (Math.random() * 10));
 		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 		printlnNRowSpace(2);
+		
+		System.out.println("【赛前准备结束】");
 		
 		if (isTeamNumber(gameName)) {
 			ArrayList<Athlete> res = new ArrayList<>(((TeamAthleteList) athletes).getAthletes());

@@ -9,7 +9,8 @@ public class Main {
             }
         });
         //FootballStarter.start();
-        Scene divingGame=new DivingGameScene();
+
+        Scene divingGame=new DivingGameScene("单人三米");
         divingGame.play();
         //new CeremonyScene("LI JUNJIE","LI JIEJUN","JIE LIJUN").play();
         //new ChoreHandlingScene().play();

@@ -43,6 +43,7 @@ public class ContestPipeline implements AbstractPipeline{
         this.addContest(preliminaryContest);
         this.addContest(semiFinalContest);
         this.addContest(finalContest);
+        athletePool.showDetail();
         firstDivingGame.takePlace(athletePool);
     }
 }

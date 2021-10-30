@@ -2,6 +2,7 @@ package olympic.scene.enterarena;
 
 
 import olympic.main.person.PersonFactory;
+import olympic.main.person.athlete.Athlete;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,9 +15,10 @@ import java.util.List;
 public class EnterLightPattern {
     public static void main(String[] args) {
         PersonFactory personFactory=PersonFactory.getInstance();
-        System.out.println(personFactory.getAthletes("Relays"));
+        System.out.println(personFactory.getAthleteByNation("中国"));
 
-        List<Person> allAthletes=new ArrayList<>();
+        List<Athlete> chinaList = PersonFactory.getInstance().getAthleteByNation("中国");
+        List<Athlete> mengguList = PersonFactory.getInstance().getAthleteByNation("蒙古");
 
 
         Teams allTeam=new Teams("全体国家代表队");
@@ -79,6 +81,8 @@ public class EnterLightPattern {
             TeamPerson person=(TeamPerson) it.next();
             System.out.println("现在向我们走来的的是"+person.getName()+"，欢迎运动员们入场。");
         }
+
+
 
     }
 }

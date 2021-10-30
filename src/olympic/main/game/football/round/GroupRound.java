@@ -26,6 +26,8 @@ public class GroupRound extends Round {
      */
     @Override
     public List<FootballTeam> play(List<FootballTeam> teams) {
+        System.out.println("classname: (GroupRound) method: (play) action: (进行足球小组赛) ");
+        System.out.println("\n【小组赛】");
         // 打乱顺序，分组
         Collections.shuffle(teams);
         for (int g = 0; g < 4; g++) {
@@ -91,9 +93,9 @@ public class GroupRound extends Round {
                 }
             });
             System.out.println("\nGroup " + (g + 1));
-            System.out.println("排名\t球队\t积分\t净胜球\t进球");
+            System.out.println("排名\t球队                 \t积分\t\t净胜球\t进球");
             for (int i = 0; i < 4; i++) {
-                System.out.println("" + (i + 1) + "\t" + ranking.get(i).team.getNation() + "\t" + ranking.get(i).score + "\t" + ranking.get(i).goalDifference + "\t" + ranking.get(i).goal);
+                System.out.printf("%d\t%-19s\t%d\t\t%d\t\t%d\n", i + 1, ranking.get(i).team.getNation(), ranking.get(i).score, ranking.get(i).goalDifference, ranking.get(i).goal);
             }
             tmp.add(ranking.get(0).team);
             tmp.add(ranking.get(1).team);

@@ -2,6 +2,7 @@ package olympic.main.game.pingponggame;
 
 import olympic.main.game.Game;
 import olympic.main.person.athlete.Athlete;
+import olympic.scene.CeremonyScene;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,8 +18,7 @@ public class PingpongPipeline extends Game {
 
     public PingpongPipeline(String name, List<Athlete> athleteList) {
         super(name, athleteList);
-//        Double temp = Math.log(athleteList.size())/Math.log(2);
-//        Integer filterNum = temp.intValue();
+
         if (athleteList.size() == 32) {
             addFilter(new PingpongFilter("32进16"));
         }
@@ -50,7 +50,7 @@ public class PingpongPipeline extends Game {
 
     /**
      * 季军赛
-     * @return 胜者
+     * @return 返回季军
      */
     public Athlete ThirdGame(){
         List<Athlete> thirdGameathletes = new ArrayList<>();
@@ -59,7 +59,15 @@ public class PingpongPipeline extends Game {
                 thirdGameathletes.add(athlete);
             }
         }
-        thirdGame
+        PingpongFilter thirdGame = new PingpongFilter("季军赛");
+        thirdGame.setAthletes(thirdGameathletes);
+        thirdGame.start();
+        for (Athlete athlete:athletes){
+            if (athlete.getRank("季军赛") == 1){
+                return athlete;
+            }
+        }
+        return null;
     }
 
 
@@ -67,28 +75,24 @@ public class PingpongPipeline extends Game {
     public void start() {
         System.out.println("【"+name+"开始】");
 
-        firstGame.start();  // 管道模式的开始比赛，实际上整个
+        firstGame.start();  // 管道模式的开始比赛，实际上跑了整个比赛
 
-        // 打印比赛接口
-        System.out.println("【"+name+"结果】");
+        List<Athlete> topThreeAthletes = new ArrayList<>();
+
+        // 打印比赛结果
         for (Athlete athlete:athletes){
             if (athlete.getRank("决赛") == 1){
-                System.out.println("冠军 "+athlete.getName());
+                topThreeAthletes.add(athlete);
                 break;
             }
         }
         for (Athlete athlete : athletes) {
             if (athlete.getRank("决赛") == 2) {
-                System.out.println("亚军 " + athlete.getName());
+                topThreeAthletes.add(athlete);
                 break;
             }
         }
-        System.out.print("季军 ");
-        for (Athlete athlete : athletes) {
-            if (athlete.getRank("半决赛") == 2) {
-                System.out.print(athlete.getName() + " ");
-            }
-        }
-        System.out.println("");
+        topThreeAthletes.add(ThirdGame());
+        new CeremonyScene(topThreeAthletes).play();
     }
 }

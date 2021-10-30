@@ -1,8 +1,11 @@
 package olympic.main.person;
 
-public class Person {
+import java.util.ArrayList;
+
+public abstract class Person {
     protected String name;
     protected String nation;
+    protected ArrayList<String> memory = new ArrayList<>();
 
     protected Person(String name, String nation) {
         this.name = name;

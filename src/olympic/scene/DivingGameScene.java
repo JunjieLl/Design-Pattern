@@ -1,13 +1,19 @@
 package olympic.scene;
 
+import olympic.main.PreCompetitionSystem.PreCompetitionSystemFacade;
 import olympic.main.game.diving.ContestPipeline;
-import olympic.main.person.PersonFactory;
 
 public class DivingGameScene implements Scene{
+    private final String game;
+
+    public DivingGameScene(String game){
+        this.game=game;
+    }
+
     @Override
     public void play(){
-        String context = "下面进行的是单人十米板跳水比赛";
-        ContestPipeline divingGame=new ContestPipeline(context, PersonFactory.getInstance().getAthletes("Diving"));
+
+        ContestPipeline divingGame=new ContestPipeline(game,PreCompetitionSystemFacade.getInstance().preCompetitionSystemFacade("Diving"));
         divingGame.start();
     }
 }

@@ -14,4 +14,9 @@ public abstract class TeamAthlete extends Athlete{
     public List<Athlete> getAthleteList() {
         return athleteList;
     }
+
+    @Override
+    public void update(String content) {
+
+    }
 }
