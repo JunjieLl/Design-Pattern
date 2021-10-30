@@ -3,7 +3,6 @@ package olympic.main.game.pingponggame;
 
 import olympic.main.game.Game;
 import olympic.main.person.athlete.Athlete;
-import olympic.main.person.athlete.pingong.PingpongAthlete;
 import olympic.main.person.athlete.pingong.PlayPingpong;
 
 import java.util.ArrayList;

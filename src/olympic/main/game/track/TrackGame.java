@@ -2,8 +2,6 @@ package olympic.main.game.track;
 
 import olympic.main.game.Game;
 import olympic.main.person.athlete.Athlete;
-import olympic.main.person.athlete.TeamAthlete;
-import olympic.main.game.track.ContestImpl;
 
 import java.util.List;
 
