@@ -1,5 +1,6 @@
 package olympic.main.game.pingponggame;
 
+import olympic.main.person.PersonFactory;
 import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.pingong.PingpongAthlete;
 import olympic.main.person.athlete.pingong.PingpongTeam;
