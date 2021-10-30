@@ -11,10 +11,28 @@ import olympic.main.person.athlete.Athlete;
 
 import java.util.*;
 
+/**
+ * 包含跳水比赛运动员的对象池
+ */
 public class AthletePool {
+    /**
+     * 包含跳水运动员的列表
+     */
     private final LinkedList<Athlete> pool;
+
+    /**
+     * 跳水比赛选择的策略
+     */
     private final Strategy strategy;
+
+    /**
+     * 保存每位运动员正在进行轮次的分数
+     */
     private final Map<Athlete, Double> allScore = new HashMap<>();
+
+    /**
+     * 将分数与运动员的映射关系按照分数进行排序后保存
+     */
     private List<Map.Entry<Athlete, Double>> list;
 
     public AthletePool(Strategy strategy, LinkedList<Athlete> athleteList) {
@@ -33,23 +51,43 @@ public class AthletePool {
         this.pool.add(object);
     }
 
+    /**
+     * 更新一位运动员的分数
+     * @param object 要修改分数的运动员
+     * @param score 要增加的分数
+     */
     public void addScore(Athlete object , double score) {
         this.allScore.put(object,this.allScore.get(object) + score);
     }
 
+    /**
+     * 运动员出场
+     * @return Athlete 当前即将出场的运动员
+     */
     public Athlete appear() {
         return this.pool.getFirst();
     }
 
+    /**
+     * 运动员退场
+     */
     public void disappear() {
         Athlete object = this.pool.poll();
         this.pool.add(object);
     }
 
+    /**
+     * 获取当前比赛的评分策略
+     * @return Strategy 当前评分策略
+     */
     public Strategy getStrategy(){
         return this.strategy;
     }
 
+    /**
+     * 获取本场比赛结果
+     * @param game 本次比赛名字
+     */
     public void getResult(String game) {
         list = new ArrayList<Map.Entry<Athlete, Double>>(allScore.entrySet());
         list.sort(new Comparator<Entry<Athlete, Double>>() {
@@ -65,6 +103,10 @@ public class AthletePool {
         }
     }
 
+    /**
+     * 淘汰运动员
+     * @param num 淘汰后剩余运动员数量
+     */
     public void eliminate(int num) {
         pool.clear();
         allScore.clear();

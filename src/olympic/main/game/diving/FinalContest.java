@@ -2,12 +2,22 @@ package olympic.main.game.diving;
 
 import olympic.main.person.athlete.Athlete;
 
+/**
+ * 跳水决赛
+ */
 public class FinalContest extends DivingGame {
 
+    /**
+     * 管道模式中下一轮比赛
+     */
     private DivingGame nextContest = null;
     private AthletePool athletePool = null;
 
 
+    /**
+     *获取管道模式中上一轮比赛的结果
+     * @param athletePool 包含该轮比赛人员的对象池
+     */
     public void takePlace(AthletePool athletePool) {
         this.athletePool=athletePool;
         start();
@@ -16,6 +26,9 @@ public class FinalContest extends DivingGame {
         }
     }
 
+    /**
+     * 开始本轮比赛
+     */
     @Override
     public void start(){
         System.out.println("决赛正式开始！");
@@ -35,7 +48,10 @@ public class FinalContest extends DivingGame {
         System.out.println("让我们恭喜最后获奖的运动员！");
     }
 
-
+    /**
+     * 获取下一轮比赛
+     * @param divingGame 下一轮比赛
+     */
     public void setNext(DivingGame contest){
         this.nextContest=contest;
     }

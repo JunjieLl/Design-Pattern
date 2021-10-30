@@ -1,5 +1,8 @@
 package olympic.main.game.diving;
 
+/**
+ * 策略模式下的终结符，用来确定比赛中的起跳高度
+ */
 public class DoublePeopleNode implements AbstractNode{
     @Override
     public Strategy interpret(String context){

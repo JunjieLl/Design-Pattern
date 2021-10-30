@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
+/**
+ *策略模式中单人十米台规则
+ */
 public class SingleTenMetreStrategy implements Strategy{
     public ArrayList<Double> scores;
     private final int cycleNumber;
@@ -13,6 +16,10 @@ public class SingleTenMetreStrategy implements Strategy{
         cycleNumber = 6;
     }
 
+    /**
+     * 通过当前策略来决定分数的算法
+     * @return score 返回算出的分数
+     */
     @Override
     public double decideScore(){
         Random r = new Random();
