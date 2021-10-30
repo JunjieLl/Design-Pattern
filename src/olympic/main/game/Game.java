@@ -11,7 +11,6 @@ public abstract class Game {
         this.athletes=athleteList;
     }
 
-    public Game() {
 
     }
     abstract public void start();

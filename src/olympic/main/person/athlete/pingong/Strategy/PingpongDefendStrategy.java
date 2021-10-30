@@ -6,7 +6,7 @@ import olympic.main.person.athlete.pingong.PingpongAthlete;
 
 import java.util.Random;
 
-public class PingpongIndividualDefendStrategy implements Strategy {
+public class PingpongDefendStrategy implements Strategy {
 
     private PingpongAthlete ownerAthlete;
 

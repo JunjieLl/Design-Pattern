@@ -29,12 +29,16 @@ public class FootballGameManager {
         return this.first;
     }
 
-    public void initTeam(List<TeamAthlete> teamList) {
-        for (int i = 0; i < 16; i++) {
-            TeamAthlete team = teamList.get(i);
-            teams.add(new FootballTeam(team.getName(), team.getNation(), team.getAthleteList()));
-        }
+    public void setTeams(List<FootballTeam> teams) {
+        this.teams = teams;
     }
+
+//    public void initTeam(List<TeamAthlete> teamList) {
+//        for (int i = 0; i < 16; i++) {
+//            TeamAthlete team = teamList.get(i);
+//            teams.add(new FootballTeam(team.getName(), team.getNation(), team.getAthleteList()));
+//        }
+//    }
 
     public void start() {
         Round r = this.first;

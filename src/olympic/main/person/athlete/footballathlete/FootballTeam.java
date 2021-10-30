@@ -11,8 +11,7 @@ public class FootballTeam extends TeamAthlete {
     private static int uid = 0;
 
     private static int generateId() {
-        ++uid;
-        return uid;
+        return uid++;
     }
 
     private int id;
