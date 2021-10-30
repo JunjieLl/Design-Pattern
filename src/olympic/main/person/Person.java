@@ -1,11 +1,19 @@
 package olympic.main.person;
 
-public abstract class Person {
+public class Person {
     protected String name;
-    protected String gender;
+    protected String nation;
 
-    protected Person(String name, String gender) {
+    protected Person(String name, String nation) {
         this.name = name;
-        this.gender = gender;
+        this.nation = nation;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getNation() {
+        return nation;
     }
 }

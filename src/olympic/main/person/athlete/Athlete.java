@@ -1,28 +1,30 @@
 package olympic.main.person.athlete;
 
-import olympic.main.game.Game;
+import olympic.main.person.interview.Interviewee;
+import olympic.main.person.interview.Listener;
 
+import java.util.HashMap;
 
-/**
- * 运动员接口，运动员可能作为团体Composite
- */
-public interface Athlete {
-    public void participate(Game game);
+public abstract class Athlete extends Interviewee implements Listener {
+    protected HashMap<String, Integer> rank = new HashMap<>();
 
-    default public void addChild(Athlete athlete) {
-        throw new UnsupportedOperationException();
+    public Athlete(String name, String nation) {
+        super(name,nation);
     }
 
-    /**
-     * 设计模式：工厂函数
-     * @param name 运动员姓名
-     * @param gender 运动员性别
-     * @return 运动员
-     */
-    public static Athlete AthleteFactory(String name, String gender) {
-        return new IndividualAthlete(name, gender);
+    public String getName() {
+        return name;
+    }
+
+    public String getNation() {
+        return nation;
+    }
+
+    public Integer getRank(String game) {
+        return rank.getOrDefault(game, 0);
+    }
+
+    public void setRank(String game, Integer rank) {
+        this.rank.put(game, rank);
     }
 }
-
-
-
