@@ -1,6 +1,7 @@
 package olympic.main.game.football;
 
 import olympic.main.game.football.round.Round;
+import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.footballathlete.FootballTeam;
 
 import java.util.ArrayList;
@@ -21,7 +22,7 @@ public class FootballGameManager {
     }
 
     private List<FootballTeam> teams = new ArrayList<>();
-    private Round first = null;
+    private Round first = null;   // 第一段管道
 
     public Round getFirst() {
         return this.first;
@@ -32,17 +33,19 @@ public class FootballGameManager {
         return this.first;
     }
 
-    public void setTeams(List<FootballTeam> teams) {
-        this.teams = teams;
+    /**
+     * 传入所有参赛球队
+     * @param teams 所有参赛球队的列表
+     */
+    public void setTeams(List<Athlete> teams) {
+        for (int i = 0; i < 16; ++i) {
+            this.teams.add((FootballTeam)(teams.get(i)));
+        }
     }
 
-//    public void initTeam(List<TeamAthlete> teamList) {
-//        for (int i = 0; i < 16; i++) {
-//            TeamAthlete team = teamList.get(i);
-//            teams.add(new FootballTeam(team.getName(), team.getNation(), team.getAthleteList()));
-//        }
-//    }
-
+    /**
+     * 依次进行所有轮次的比赛
+     */
     public void start() {
         Round r = this.first;
         while (r != null) {

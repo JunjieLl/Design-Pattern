@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class ContestDirector {
     public Integer rounds;
-    List<Athlete> athletes=new ArrayList<>();
+    List<Athlete> athletes;
     /**
      *
      * @param rounds 一共有几轮比赛
@@ -19,9 +19,7 @@ public class ContestDirector {
      */
     public ContestDirector(int rounds,List<Athlete>athletes){
         this.rounds=rounds;
-        for(Athlete runner:athletes){
-            this.athletes.add(runner);
-        }
+        this.athletes=athletes;
 
     }
 
@@ -44,6 +42,7 @@ public class ContestDirector {
             Contest contest3=new Contest(new Final(athletes));
             contest3.display();
         }
+
 
 
     }

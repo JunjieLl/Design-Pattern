@@ -4,17 +4,23 @@ import olympic.main.person.athlete.Athlete;
 
 import java.util.List;
 
+/**
+ * 进行跳水比赛的管道
+ */
 public class ContestPipeline implements AbstractPipeline{
     private DivingGame firstDivingGame;
     private DivingGame lastDivingGame;
     private final AthletePool athletePool;
 
-    ContestPipeline(String context, List<Athlete> list) {
+    public ContestPipeline(String context, List<Athlete> list) {
         AbstractNode strategyNode = new PeopleNumberNode();
         this.athletePool = new AthletePool(strategyNode.interpret(context), list);
-        System.out.println("sssssssssssssss"+list.size());
     }
 
+    /**
+     * 添加管道中的阀门（比赛）
+     * @param newDivingGame 新的阀门（比赛）
+     */
     @Override
     public void addContest(DivingGame newDivingGame) {
         if(firstDivingGame == null){
@@ -25,6 +31,9 @@ public class ContestPipeline implements AbstractPipeline{
         this.lastDivingGame = newDivingGame;
     }
 
+    /**
+     * 开始整场比赛
+     */
     @Override
     public void start() {
         System.out.println("选手入场完毕,马上开始比赛！");

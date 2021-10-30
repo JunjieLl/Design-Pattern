@@ -1,5 +1,8 @@
 package olympic.main.game.diving;
 
+/**
+ * 策略模式下的非终结符，用来判断一组运动员人数
+ */
 public class PeopleNumberNode implements AbstractNode{
     @Override
     public Strategy interpret(String context){
