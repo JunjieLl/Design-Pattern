@@ -3,6 +3,7 @@ package olympic.main.person.athlete.footballathlete;
 import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.TeamAthlete;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -19,6 +20,7 @@ public class FootballTeam extends TeamAthlete {
     public FootballTeam(String name, String nation, List<Athlete> athleteList) {
         super(name, nation, athleteList);
         this.id = generateId();
+        System.out.println("Football Team Constructor Called. id = "+this.id);
     }
 
     public int getId() {
@@ -28,4 +30,8 @@ public class FootballTeam extends TeamAthlete {
     public void setId(int id) {
         this.id = id;
     }
+
+//    public static FootballTeam convertFromAthlete(Athlete athlete) {
+//        return new FootballTeam(athlete.getName(), athlete.getNation(), new ArrayList<>());
+//    }
 }
