@@ -18,7 +18,7 @@ public class PingpongGameScene implements Scene{
     public void play() {
         PersonFactory.getInstance().springUtil();
 
-        System.out.println("请选择是否展示细节，输入true展示细节，输入其他不展示");
+        System.out.println("【乒乓球Scene】请选择是否展示细节，输入true展示细节，输入其他不展示");
         Scanner input=new Scanner(System.in);
         //接受String类型
         Mode.setShowDetail(input.next().equals("true"));

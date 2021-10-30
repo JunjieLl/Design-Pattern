@@ -6,6 +6,8 @@ public class Main {
 
         new ChoreHandlingScene().play();
         new ReviewQScene().play();
+
+        new PingpongGameScene().play();
         new FootballScene().play();
     }
 }
