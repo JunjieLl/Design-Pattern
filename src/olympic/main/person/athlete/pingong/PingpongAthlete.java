@@ -10,7 +10,7 @@ import olympic.main.person.athlete.pingong.Strategy.Strategy;
 import java.util.Random;
 
 public class PingpongAthlete extends IndividualAthlete implements CallBack,PlayPingpong{
-    public PingpongAthlete(String name, String nation,Integer capacity) {
+    public PingpongAthlete(String name, String nation) {
         super(name, nation);
         this.capacity = capacity;
         if (random.nextInt()%2==0){
@@ -20,6 +20,7 @@ public class PingpongAthlete extends IndividualAthlete implements CallBack,PlayP
             this.strategy = new PingpongIndividualDefendStrategy();
             strategy.setOwnerAthlete(this);
         }
+        this.capacity = random.nextInt(10)+90;
     }
 
     /**
