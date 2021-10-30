@@ -59,7 +59,7 @@ public class PingpongPipeline extends Game {
                 thirdGameathletes.add(athlete);
             }
         }
-        thirdGame
+//        PingpongFilter third
     }
 
 
