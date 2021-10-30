@@ -2,6 +2,8 @@ package olympic.main.game.pingponggame;
 
 import olympic.main.game.Game;
 import olympic.main.person.athlete.Athlete;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -23,7 +25,6 @@ public class PingpongPipeline extends Game {
         addFilter(new PingpongFilter("16进8"));
         addFilter(new PingpongFilter("四分之一决赛"));
         addFilter(new PingpongFilter("半决赛"));
-        addFilter(new PingpongFilter("季军赛"));
         addFilter(new PingpongFilter("决赛"));
         firstGame.setAthletes(athletes);
     }
@@ -46,6 +47,21 @@ public class PingpongPipeline extends Game {
             lastGame = filter;
         }
     }
+
+    /**
+     * 季军赛
+     * @return 胜者
+     */
+    public Athlete ThirdGame(){
+        List<Athlete> thirdGameathletes = new ArrayList<>();
+        for (Athlete athlete:athletes){
+            if (athlete.getRank("半决赛") == 2){
+                thirdGameathletes.add(athlete);
+            }
+        }
+        thirdGame
+    }
+
 
     @Override
     public void start() {
