@@ -12,8 +12,8 @@ public class DivingGameScene implements Scene{
 
     @Override
     public void play(){
-        PreCompetitionSystemFacade pre = new PreCompetitionSystemFacade();
-        ContestPipeline divingGame=new ContestPipeline(game, pre.preCompetitionSystemFacade("Diving"));
+
+        ContestPipeline divingGame=new ContestPipeline(game,PreCompetitionSystemFacade.getInstance().preCompetitionSystemFacade("Diving"));
         divingGame.start();
     }
 }

@@ -19,9 +19,7 @@ public class FootballScene implements Scene {
     public void play() {
         System.out.println("classname: (FootballScene) method: (play) action: (足球比赛开始) ");
         FootballGameManager footballGameManager = FootballGameManager.getInstance();  // Singleton获取实例
-        List<Athlete> teamList = PersonFactory.getInstance().getAthletes("FootballTeam");   // 获取所有参赛球队
-        footballGameManager.setTeams(teamList);
-        new PreCompetitionSystemFacade().preCompetitionSystemFacade("FootballTeam");   // 赛前准备
+        footballGameManager.setTeams(PreCompetitionSystemFacade.getInstance().preCompetitionSystemFacade("FootballTeam"));
         footballGameManager.setFirst(new GroupRound()).setNext(new EliminationRound("四分之一决赛")).setNext(new EliminationRound("半决赛")).setNext(new EliminationRound("决赛"));  // 各轮比赛连接成管道
         footballGameManager.start();
     }
