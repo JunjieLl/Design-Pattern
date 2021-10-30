@@ -2,6 +2,7 @@ package olympic.main.game.track;
 
 import olympic.main.person.athlete.Athlete;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -10,7 +11,7 @@ import java.util.List;
  */
 public class ContestDirector {
     public Integer rounds;
-    List<Athlete> athletes;
+    List<Athlete> athletes=new ArrayList<>();
     /**
      *
      * @param rounds 一共有几轮比赛
@@ -18,7 +19,9 @@ public class ContestDirector {
      */
     public ContestDirector(int rounds,List<Athlete>athletes){
         this.rounds=rounds;
-        this.athletes=athletes;
+        for(Athlete runner:athletes){
+            this.athletes.add(runner);
+        }
 
     }
 

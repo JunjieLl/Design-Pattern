@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
-public class DoubleTenMetreStrategy implements Strategy{//5
+public class DoubleTenMetreStrategy implements Strategy{
     private final ArrayList<Double> scores;
     private final int cycleNumber;
 

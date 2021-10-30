@@ -1,8 +1,10 @@
 package olympic.main.game.football;
 
+import olympic.main.game.football.round.Round;
 import olympic.main.person.athlete.footballathlete.FootballTeam;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Singleton模式
@@ -15,7 +17,10 @@ public class FootballGameManager {
         return singleton;
     }
 
-    private ArrayList<FootballTeam> teams = new ArrayList<>();
+    private FootballGameManager() {
+    }
+
+    private List<FootballTeam> teams = new ArrayList<>();
     private Round first = null;
 
     public Round getFirst() {
@@ -27,12 +32,18 @@ public class FootballGameManager {
         return this.first;
     }
 
-    public void start() {
-        // 生成参赛名单
-        for (int i = 0; i < 16; i++) {
-            teams.add(new FootballTeam("Team" + i, i));
-        }
+    public void setTeams(List<FootballTeam> teams) {
+        this.teams = teams;
+    }
 
+//    public void initTeam(List<TeamAthlete> teamList) {
+//        for (int i = 0; i < 16; i++) {
+//            TeamAthlete team = teamList.get(i);
+//            teams.add(new FootballTeam(team.getName(), team.getNation(), team.getAthleteList()));
+//        }
+//    }
+
+    public void start() {
         Round r = this.first;
         while (r != null) {
             teams = r.play(teams);

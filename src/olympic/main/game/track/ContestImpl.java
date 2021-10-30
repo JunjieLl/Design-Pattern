@@ -3,7 +3,6 @@ package olympic.main.game.track;
 import olympic.main.person.athlete.Athlete;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -16,7 +15,6 @@ public abstract class ContestImpl {
 
     ContestImpl(List<Athlete> athletes){
         this.athletes=athletes;
-
     }
 
     /**

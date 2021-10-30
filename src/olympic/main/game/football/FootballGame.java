@@ -1,7 +1,10 @@
 package olympic.main.game.football;
 
 import olympic.main.game.Game;
+import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.footballathlete.FootballTeam;
+
+import java.util.List;
 
 /**
  * Observer 模式
@@ -14,6 +17,7 @@ public abstract class FootballGame extends Game {
     protected Observer observer = null;
 
     public FootballGame(FootballTeam team1, FootballTeam team2) {
+        super();
         this.team1 = team1;
         this.team2 = team2;
         this.score1 = this.score2 = 0;

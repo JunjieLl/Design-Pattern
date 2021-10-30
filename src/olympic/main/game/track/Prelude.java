@@ -2,8 +2,6 @@ package olympic.main.game.track;
 
 import olympic.main.person.athlete.Athlete;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -31,14 +29,16 @@ public class Prelude extends ContestImpl{
 //        }
         System.out.println("【初赛排名榜】");
         System.out.println("Group "+(group+1)+"\n" +
-                "排名\t姓名\t时间\t晋级");
-                Collections.shuffle(runners);
+                "排名\t姓名\t晋级\t");
+        Collections.shuffle(runners);
         for(int i=0;i<size;i++){
-
             if(i>=4){
-                System.out.println(i+1+"\t"+"姓名"+"\t"+"时间"+"\t"+"否");
+                System.out.println(i+1+"\t"+runners.get(i).getName()+"\t"+"否"+"\t");
+                this.athletes.remove(runners.get(i));
             }else{
-                System.out.println(i+1+"\t"+"姓名"+"\t"+"时间"+"\t"+"是");
+                System.out.println(i+1+"\t"+runners.get(i).getName()+"\t"+"是"+"\t");
+
+
             }
         }
         System.out.println("\n");

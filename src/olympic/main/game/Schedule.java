@@ -1,15 +1,13 @@
 package olympic.main.game;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
-import java.util.ListIterator;
 
 /**
  * Iterator模式
  */
 public class Schedule implements Aggregate{
-    protected ArrayList<Game> schedule = new ArrayList<>();
+    protected List<Game> schedule = new ArrayList<>();
 
     public void addGame(Game game) {
         schedule.add(game);
