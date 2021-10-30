@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d2a64cbe-d77c-4950-8573-ba128efc57cd" name="Changes" comment="">
+    <list default="true" id="1ce12389-fc88-4adf-b424-e77ca66ab0c5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/football/EliminationRound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/main/game/football/EliminationRound.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/football/FootballGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/main/game/football/FootballGameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/football/FootballStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/main/game/football/FootballStarter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/football/GroupRound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/main/game/football/GroupRound.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/person/athlete/footballathlete/FootballTeam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/main/person/athlete/footballathlete/FootballTeam.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +69,6 @@
       <updated>1635556905772</updated>
       <workItem from="1635556907464" duration="186000" />
       <workItem from="1635557106447" duration="2430000" />
-      <workItem from="1635563193701" duration="1618000" />
     </task>
     <servers />
   </component>
