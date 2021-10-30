@@ -1,8 +1,8 @@
-package olympic.main.game.football;
+package olympic.main.game.football.round;
 
+import olympic.main.game.football.FootballSchedule;
 import olympic.main.person.athlete.footballathlete.FootballTeam;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

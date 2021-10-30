@@ -5,6 +5,11 @@ import olympic.main.person.athlete.Athlete;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * 管道的阀门
+ * 可以实例化为 乒乓球男单预赛、乒乓球男单复赛、乒乓球男单决赛
+ */
 public class PingpongFilter {
     private String name;
 //    private String lastGameName;
@@ -22,12 +27,6 @@ public class PingpongFilter {
     public void setNextFliter(PingpongFilter nextFliter) {
         this.nextFliter = nextFliter;
     }
-//
-//    public PingpongFilter(String name, String lastGameName) {
-//        this.name = name;
-//        this.lastGameName = lastGameName;
-//    }
-
 
     private void addGame(){
         for (int i=0;i<athletes.size()/2;i++){
@@ -38,34 +37,21 @@ public class PingpongFilter {
         }
     }
 
-//    public void setAthletes(List<Athlete> athletes) {
-//        if (this.lastGameName == null){
-//            this.athletes = athletes;
-//        }else{
-//            for (Athlete athlete:athletes){
-//                if (athlete.getRank(lastGameName)==0){   //上一场获胜的运动员
-//                    this.athletes.add(athlete);
-//                }
-//            }
-//        }
-//        addGame();
-//    }
-
     public void setAthletes(List<Athlete> athletes){
         this.athletes = athletes;
         addGame();
     }
 
-
     public void start() {
-        System.out.println("【"+name+"】"+" 开始了！");
+        System.out.println("【"+name+"开始了!"+"】\n");
         for (PingpongGame game : games) {
+            System.out.println(  "【"+name+"第"+(games.indexOf(game)+1)+"场】开始了");
             game.start();
         }
         if (nextFliter != null) {
             List<Athlete> nextFilterAthletes = new ArrayList<>();
             for (Athlete athlete : athletes) {
-                if (athlete.getRank(name) == 0) {   //上一场获胜的运动员
+                if (athlete.getRank(name) == 1) {   //上一场获胜的运动员
                     nextFilterAthletes.add(athlete);
                 }
             }
