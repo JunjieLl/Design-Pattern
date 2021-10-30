@@ -8,8 +8,8 @@ import java.util.Random;
 public abstract class Interviewee extends Person implements Listener {
     private final ArrayList<Listener> listeners = new ArrayList<>();
 
-    protected Interviewee(String name, String gender) {
-        super(name,nation);
+    protected Interviewee(String name, String nation) {
+        super(name, nation);
     }
 
     public ArrayList<Listener> getListeners() {

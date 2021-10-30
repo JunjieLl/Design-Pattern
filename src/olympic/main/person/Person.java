@@ -19,8 +19,4 @@ public abstract class Person {
     public String getNation() {
         return nation;
     }
-
-    public String getName() {
-        return this.name;
-    }
 }

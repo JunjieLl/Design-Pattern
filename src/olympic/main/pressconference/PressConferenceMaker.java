@@ -1,6 +1,7 @@
 package olympic.main.pressconference;
 
 import olympic.main.person.athlete.IndividualAthlete;
+import olympic.main.person.athlete.track.TrackAthlete;
 import olympic.main.person.interview.Interviewee;
 import olympic.main.person.interview.Interviewer;
 import olympic.main.pressconference.questionstrategy.PressConferenceStrategy;
@@ -42,7 +43,7 @@ public class PressConferenceMaker {
 
     public static void main(String[] args) {
         System.out.println("新闻发布会开始：");
-        Interviewee interviewee = new IndividualAthlete("Manxin Xu", "male");
+        Interviewee interviewee = new TrackAthlete("Manxin Xu", "male");
         ArrayList<Interviewer> interviewers = new ArrayList<>();
         interviewers.add(new Interviewer("Junjie Li", "male", new PressConferenceStrategy()));
         interviewers.add(new Interviewer("Chenhao Zhai", "male", new PressConferenceStrategy()));
