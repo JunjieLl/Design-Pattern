@@ -2,6 +2,8 @@ package olympic.main.game.pingponggame;
 
 import olympic.main.game.Game;
 import olympic.main.person.athlete.Athlete;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -46,10 +48,28 @@ public class PingpongPipeline extends Game {
         }
     }
 
+    /**
+     * 季军赛
+     * @return 胜者
+     */
+    public Athlete ThirdGame(){
+        List<Athlete> thirdGameathletes = new ArrayList<>();
+        for (Athlete athlete:athletes){
+            if (athlete.getRank("半决赛") == 2){
+                thirdGameathletes.add(athlete);
+            }
+        }
+        thirdGame
+    }
+
+
     @Override
     public void start() {
         System.out.println("【"+name+"开始】");
-        firstGame.start();
+
+        firstGame.start();  // 管道模式的开始比赛，实际上整个
+
+        // 打印比赛接口
         System.out.println("【"+name+"结果】");
         for (Athlete athlete:athletes){
             if (athlete.getRank("决赛") == 1){

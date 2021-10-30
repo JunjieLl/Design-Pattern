@@ -20,6 +20,10 @@ public class Marathon extends TrackGame{
         ContestDirector contestDirector=new ContestDirector(1,athletes);
         contestDirector.construct();
 
+        for(int i=0;i<athletes.size();i++){
+            athletes.get(i).setRank("Marathon",i+1);
+        }
+
     }
 
 
