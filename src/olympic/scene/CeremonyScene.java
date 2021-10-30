@@ -1,8 +1,11 @@
 package olympic.scene;
 
+import olympic.main.person.athlete.Athlete;
 import olympic.main.postgame.award_ceremony.*;
 import olympic.main.postgame.award_ceremony.prototype_framework.Manager;
 import olympic.scene.*;
+
+import java.util.List;
 
 /**
  * 颁奖仪式的场景.
@@ -17,6 +20,12 @@ public class CeremonyScene implements Scene {
         this.goldPlayer = gold;
         this.silverPlayer = silver;
         this.bronzePlayer = bronze;
+    }
+
+    public CeremonyScene(List<Athlete> athletes){
+        this.goldPlayer = athletes.get(0).getName() + " " + athletes.get(0).getNation();
+        this.silverPlayer = athletes.get(1).getName() + " " + athletes.get(1).getNation();
+        this.bronzePlayer = athletes.get(2).getName() + " " + athletes.get(2).getNation();
     }
 
     @Override
