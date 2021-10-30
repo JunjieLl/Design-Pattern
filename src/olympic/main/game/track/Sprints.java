@@ -17,17 +17,17 @@ public class Sprints extends TrackGame {
 
     @Override
     public void start() {
-        System.out.println("【"+getName()+"】");
+        System.out.println("【" + getName() + "】");
         System.out.println("classname: (TrackGame) method: (start) action: (template method模式中运动员参与冲刺比赛) ");
-       ContestDirector contestDirector=new ContestDirector(3,athletes);
-       contestDirector.construct();
+        ContestDirector contestDirector = new ContestDirector(3, athletes);
+        contestDirector.construct();
 
-        for(int i=0;i<athletes.size();i++){
-            athletes.get(i).setRank("Sprints",i+1);
+        for (int i = 0; i < athletes.size(); i++) {
+            athletes.get(i).setRank("Sprints", i + 1);
         }
     }
 
-    public String getName(){
+    public String getName() {
         return "冲刺比赛";
     }
 }

@@ -10,7 +10,6 @@ import java.util.List;
 public class Marathon extends TrackGame{
     public Marathon(List<Athlete> athletes) {
         super(athletes);
-
     }
 
     @Override
@@ -23,10 +22,7 @@ public class Marathon extends TrackGame{
         for(int i=0;i<athletes.size();i++){
             athletes.get(i).setRank("Marathon",i+1);
         }
-
     }
-
-
 
     public String getName(){
         return "马拉松比赛";
