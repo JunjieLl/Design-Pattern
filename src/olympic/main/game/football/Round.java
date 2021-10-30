@@ -3,6 +3,7 @@ package olympic.main.game.football;
 import olympic.main.person.athlete.footballathlete.FootballTeam;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 一轮比赛
@@ -13,7 +14,7 @@ public abstract class Round {
     protected FootballSchedule schedule = new FootballSchedule();
     private Round next = null;
 
-    public abstract ArrayList<FootballTeam> play(ArrayList<FootballTeam> teams);
+    public abstract List<FootballTeam> play(List<FootballTeam> teams);
 
     public Round getNext() {
         return next;

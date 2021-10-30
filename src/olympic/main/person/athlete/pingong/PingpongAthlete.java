@@ -3,14 +3,24 @@ package olympic.main.person.athlete.pingong;
 import olympic.main.game.pingponggame.Mode;
 import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.IndividualAthlete;
+import olympic.main.person.athlete.pingong.Strategy.PingpongIndividualDefendStrategy;
+import olympic.main.person.athlete.pingong.Strategy.PingpongIndividualOffenseStrategy;
 import olympic.main.person.athlete.pingong.Strategy.Strategy;
 
 import java.util.Random;
 
 public class PingpongAthlete extends IndividualAthlete implements CallBack,PlayPingpong{
-    public PingpongAthlete(String name, String nation,Integer capacity) {
+    public PingpongAthlete(String name, String nation) {
         super(name, nation);
         this.capacity = capacity;
+        if (random.nextInt()%2==0){
+            this.strategy = new PingpongIndividualOffenseStrategy();
+            strategy.setOwnerAthlete(this);
+        }else{
+            this.strategy = new PingpongIndividualDefendStrategy();
+            strategy.setOwnerAthlete(this);
+        }
+        this.capacity = random.nextInt(10)+90;
     }
 
     /**
