@@ -1,6 +1,7 @@
 ### idea
 # config
 .idea
+*.iml
 
 ### Java
 # Compiled class file
