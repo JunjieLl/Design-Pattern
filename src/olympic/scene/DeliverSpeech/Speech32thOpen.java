@@ -37,4 +37,11 @@ class Speech32thOpen extends DeliverSpeech {  //具体子类
     String refereeRepre() {
         return "Amazon";
     }
+    /* 修改后的
+    public Chairman OOCP = getObject("武藤敏郎") ;
+    public Chairman IOCP = getObject("武藤敏郎") ;
+    public Chairman HP = getObject("武藤敏郎") ;
+    public Athlete athleteRepre = getObject("苏炳添");
+    public refereeRepre coachRepre = getObject("Amazon");
+     */
 }
