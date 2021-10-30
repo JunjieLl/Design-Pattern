@@ -3,7 +3,30 @@
   <component name="ChangeListManager">
     <list default="true" id="d2a64cbe-d77c-4950-8573-ba128efc57cd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/main/game/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/diving/AbstractNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/diving/AbstractPipeline.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/diving/AthletePool$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/diving/AthletePool.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/diving/ContestPipeline.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/diving/DivingGame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/diving/DoublePeopleNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/diving/DoubleTenMetreStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/diving/DoubleThreeMetreStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/diving/FinalContest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/diving/PeopleNumberNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/diving/PreliminaryContest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/diving/SemiFinals.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/diving/SinglePeopleNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/diving/SingleTenMetreStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/diving/SingleThreeMetreStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/diving/Strategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/game/diving/Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/person/athlete/divingathlete/DivingAthlete.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Design-Pattern/olympic/main/person/message.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/newbranch/olympic/main/person/message.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/diving/AthletePool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/main/game/diving/AthletePool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/diving/ContestPipeline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/main/game/diving/ContestPipeline.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/olympic/main/game/diving/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/olympic/main/game/diving/Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,11 +61,27 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Test (1)">
+    <configuration name="Test (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="olympic.main.game.diving.Test" />
+      <module name="Design-Pattern" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="olympic.main.game.diving.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="olympic.main.game.pingponggame.Test" />
-      <module name="newbranch" />
+      <module name="Design-Pattern" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="olympic.main.game.pingponggame.*" />
@@ -68,6 +107,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test (1)" />
         <item itemvalue="Application.Test" />
       </list>
     </recent_temporary>
@@ -99,5 +139,16 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/olympic/main/person/PersonFactory.java</url>
+          <line>110</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

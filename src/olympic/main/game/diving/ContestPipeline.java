@@ -2,16 +2,17 @@ package olympic.main.game.diving;
 
 import olympic.main.person.athlete.Athlete;
 
-import java.util.LinkedList;
+import java.util.List;
 
 public class ContestPipeline implements AbstractPipeline{
     private DivingGame firstDivingGame;
     private DivingGame lastDivingGame;
     private final AthletePool athletePool;
 
-    ContestPipeline(String context, LinkedList<Athlete> list) {
+    ContestPipeline(String context, List<Athlete> list) {
         AbstractNode strategyNode = new PeopleNumberNode();
         this.athletePool = new AthletePool(strategyNode.interpret(context), list);
+        System.out.println("sssssssssssssss"+list.size());
     }
 
     @Override
