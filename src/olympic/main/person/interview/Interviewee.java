@@ -9,7 +9,7 @@ public abstract class Interviewee extends Person implements Listener {
     private final ArrayList<Listener> listeners = new ArrayList<>();
 
     protected Interviewee(String name, String gender) {
-        super(name, gender);
+        super(name,nation);
     }
 
     public ArrayList<Listener> getListeners() {

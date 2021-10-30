@@ -1,14 +1,23 @@
 package olympic.main.game;
 
-/**
- * 比赛类接口，比赛中可能有子比赛
- */
-public interface Game {
-    public void start();
+import olympic.main.person.athlete.Athlete;
 
-    default public void addChild(Game game) {
-        throw new UnsupportedOperationException();
+import java.util.ArrayList;
+import java.util.List;
+
+public abstract class Game {
+    protected List<Athlete> athletes = new ArrayList<>();
+    public Game(String name,List<Athlete> athleteList){
+        this.athletes=athleteList;
+        this.name = name;
     }
 
-    public String getName();
+    public Game(){}
+
+    abstract public void start();
+    protected String name;
+    public String getName() {
+        return name;
+    }
+
 }
