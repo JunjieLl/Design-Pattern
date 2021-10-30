@@ -50,6 +50,7 @@ public class PingpongPipeline extends Game {
     public void start() {
         System.out.println("【"+name+"开始】");
         firstGame.start();
+
         System.out.println("【"+name+"结果】");
         for (Athlete athlete:athletes){
             if (athlete.getRank("决赛") == 1){
