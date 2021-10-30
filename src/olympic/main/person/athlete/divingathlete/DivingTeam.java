@@ -12,6 +12,5 @@ public class DivingTeam extends TeamAthlete {
 
     public DivingTeam(String name, String nation, List<Athlete> athleteList) {
         super(name,nation,athleteList);
-        System.out.println(nation + "组合" + name + "已经入场");
     }
 }
