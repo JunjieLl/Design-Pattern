@@ -3,14 +3,6 @@ package olympic.scene;
 import olympic.main.PreCompetitionSystem.PreCompetitionSystemFacade;
 import olympic.main.game.pingponggame.Mode;
 import olympic.main.game.pingponggame.PingpongPipeline;
-import olympic.main.person.PersonFactory;
-import olympic.main.person.athlete.Athlete;
-import olympic.main.person.athlete.pingong.PingpongAthlete;
-import olympic.main.person.athlete.pingong.PingpongTeam;
-
-import java.lang.ref.PhantomReference;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class PingpongGameScene implements Scene{
@@ -26,9 +18,10 @@ public class PingpongGameScene implements Scene{
         Mode.setShowDetail(input.next().equals("true"));
 
         PingpongPipeline gameIndividual = new PingpongPipeline("乒乓球单人赛",pre.preCompetitionSystemFacade("Pingpong"));
-        PingpongPipeline gameTeam = new PingpongPipeline("乒乓球混双",PersonFactory.getInstance().getAthletes("PingpongTeam"));
-
         gameIndividual.start();
+
+        PingpongPipeline gameTeam = new PingpongPipeline("乒乓球混双",pre.preCompetitionSystemFacade("PingpongTeam"));
         gameTeam.start();
+
     }
 }
