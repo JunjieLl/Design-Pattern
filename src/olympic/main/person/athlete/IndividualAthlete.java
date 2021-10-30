@@ -46,5 +46,9 @@ public abstract class IndividualAthlete extends Athlete {
     public UrineTestProcurator getUrineTestProcurator() {
         return urineTestProcurator;
     }
-    
+
+    @Override
+    public void update(String content) {
+        
+    }
 }
