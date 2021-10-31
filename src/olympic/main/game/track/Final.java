@@ -1,6 +1,7 @@
 package olympic.main.game.track;
 
 import olympic.main.person.athlete.Athlete;
+import olympic.scene.CeremonyScene;
 
 import java.util.Collections;
 import java.util.List;
@@ -43,5 +44,7 @@ public class Final extends ContestImpl{
      */
     public  void getResult(){
         rank(athletes);
+        CeremonyScene ceremonyScene=new CeremonyScene(athletes);
+        ceremonyScene.play();
     }
 }
