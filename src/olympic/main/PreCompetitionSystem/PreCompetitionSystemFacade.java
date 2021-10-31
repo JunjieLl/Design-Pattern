@@ -155,6 +155,8 @@ public class PreCompetitionSystemFacade {
 	public static void main(String[] args) {
 		PreCompetitionSystemFacade preCompetitionSystemFacade = new PreCompetitionSystemFacade();
 		preCompetitionSystemFacade.preCompetitionSystemFacade("Diving");
+		preCompetitionSystemFacade.preCompetitionSystemFacade("Relays");
+		preCompetitionSystemFacade.preCompetitionSystemFacade("Sprints");
 	}
 	
 	ArrayList<IndividualAthlete> getAllIndividualAthlete(String gameName) {

@@ -75,7 +75,7 @@ public class UrineFilterVisitor extends FilterVisitor {
 		if (count == 0) {
 			System.out.println("	^ 所有队伍均未使用兴奋剂");
 		} else {
-			System.out.println("	^ 共有" + count + "个队伍使用了兴奋剂，被取消了比赛资格毒");
+			System.out.println("	^ 共有" + count + "个队伍使用了兴奋剂，被取消了比赛资格");
 		}
 		System.out.println("	**********************************************************");
 		return finalTeam;
