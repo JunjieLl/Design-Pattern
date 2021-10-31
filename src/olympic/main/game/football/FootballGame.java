@@ -13,7 +13,7 @@ import java.util.List;
 public abstract class FootballGame extends Game {
 
     private FootballTeam team1, team2;
-    protected int score1, score2, penaltyScore1, penaltyScore2;
+    protected int score1, score2;
     protected Observer observer = null;
 
     public FootballGame(FootballTeam team1, FootballTeam team2) {
@@ -24,7 +24,7 @@ public abstract class FootballGame extends Game {
     }
 
     public void begin() {
-        System.out.println("\n【足球赛事】" + team1.getNation() + " vs " + team2.getNation());
+        System.out.println("\n【足球赛事】" + team1.getName() + " vs " + team2.getName());
         System.out.println("比赛开始");
     }
 
@@ -63,13 +63,5 @@ public abstract class FootballGame extends Game {
         if (observer != null) {
             observer.update(this);
         }
-    }
-
-    public int getPenaltyScore1() {
-        return penaltyScore1;
-    }
-
-    public int getPenaltyScore2() {
-        return penaltyScore2;
     }
 }

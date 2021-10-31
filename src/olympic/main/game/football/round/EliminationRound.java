@@ -53,14 +53,15 @@ public class EliminationRound extends Round implements Observer {
      */
     @Override
     public void update(FootballGame game) {
-        if (game.getScore1() > game.getScore2()) {
-            advancedTeams.add(game.getTeam1());
-        } else if (game.getScore1() < game.getScore2()) {
-            advancedTeams.add(game.getTeam2());
-        } else if (game.getPenaltyScore1() > game.getPenaltyScore2()) {
-            advancedTeams.add(game.getTeam1());
+        EliminationFootballGame e = (EliminationFootballGame) game;
+        if (e.getScore1() > e.getScore2()) {
+            advancedTeams.add(e.getTeam1());
+        } else if (e.getScore1() < e.getScore2()) {
+            advancedTeams.add(e.getTeam2());
+        } else if (e.getPenaltyScore1() > e.getPenaltyScore2()) {
+            advancedTeams.add(e.getTeam1());
         } else {
-            advancedTeams.add(game.getTeam2());
+            advancedTeams.add(e.getTeam2());
         }
     }
 }
