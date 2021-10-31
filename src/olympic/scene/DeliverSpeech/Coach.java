@@ -2,10 +2,10 @@ package olympic.scene.DeliverSpeech;
 
 import olympic.main.person.Person;
 
-class Coach extends Person implements Speech{
+public class Coach extends Person implements Speech{
 
 
-    protected Coach(String name, String nation) {
+    public Coach(String name, String nation) {
         super(name, nation);
     }
 
