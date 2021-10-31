@@ -1,57 +1,51 @@
 package olympic.scene.MonitorSite;
-
-import java.util.ArrayList;
-import java.util.List;
-
-// 发起人，监视器
-class MonitorController {
+/**
+ * 设计模式：命令模式
+ * 命令调用者：显示屏幕遥控器
+ */
+public class MonitorController {
 
     private Command currentCommand;
 
-    public void setCommand(Command com) {
+    public void switchCommand(Command com) {
+        /**
+         * currentCommand：当前命令
+         * 具体的命令实现
+         */
         currentCommand = com;
+        com.execute();
     }
+
     public Command getCommand() {
         return currentCommand;
     }
+    /**
+     * 设计模式：备忘录模式、命令模式
+     * 创建备忘条目
+     * @param num 检查场地的序号
+     * @param mt 监视屏幕(receiver)
+     * @return command
+     */
     public Command createMemento(int num,Monitor mt){
-        Command mycommand = new CCTV1Command(mt);
+        Command mycommand = new Site1Command(mt);
         switch(num){
-            case 1:mycommand = new CCTV1Command(mt);break;
-            case 2:mycommand = new CCTV2Command(mt);break;
-            case 3:mycommand = new CCTV3Command(mt);break;
-            case 4:mycommand = new CCTV4Command(mt);break;
-            case 5:mycommand = new CCTV5Command(mt);break;
-            case 6:mycommand = new CCTV6Command(mt);break;
+            case 1:mycommand = new Site1Command(mt);break;
+            case 2:mycommand = new Site2Command(mt);break;
+            case 3:mycommand = new Site3Command(mt);break;
+            case 4:mycommand = new Site4Command(mt);break;
+            case 5:mycommand = new Site5Command(mt);break;
             default:{};break;
         }
+
         return mycommand;
     }
+    /**
+     * 设计模式：备忘录模式
+     * 恢复备忘条目
+     * @param p command
+     */
     public void restoreMemento(Command p){
-        setCommand(p.getCommand());
-    }
-
-    //播放记录
-    List<Command> historyCommand = new ArrayList<Command>();
-
-    //切换卫视
-    public void switchCommand(Command command) {
-        historyCommand.add(command);
-        command.execute();
-    }
-
-    //遥控器返回命令
-    public void back() {
-        if (historyCommand.isEmpty()) {
-            return;
-        }
-        int size = historyCommand.size();
-        int preIndex = size-2<=0?0:size-2;
-
-        //获取上一个播放某卫视的命令
-        Command preCommand = historyCommand.remove(preIndex);
-
-        preCommand.execute();
+        switchCommand(p.getCommand());
     }
 
 }
