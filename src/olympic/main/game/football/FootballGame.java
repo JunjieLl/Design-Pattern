@@ -1,7 +1,10 @@
 package olympic.main.game.football;
 
 import olympic.main.game.Game;
+import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.footballathlete.FootballTeam;
+
+import java.util.List;
 
 /**
  * Observer 模式
@@ -10,17 +13,18 @@ import olympic.main.person.athlete.footballathlete.FootballTeam;
 public abstract class FootballGame extends Game {
 
     private FootballTeam team1, team2;
-    protected int score1, score2, penaltyScore1, penaltyScore2;
+    protected int score1, score2;
     protected Observer observer = null;
 
     public FootballGame(FootballTeam team1, FootballTeam team2) {
+        super();
         this.team1 = team1;
         this.team2 = team2;
         this.score1 = this.score2 = 0;
     }
 
     public void begin() {
-        System.out.println("\n【足球赛事】" + team1.getNation() + " vs " + team2.getNation());
+        System.out.println("\n【足球赛事】" + team1.getName() + " vs " + team2.getName());
         System.out.println("比赛开始");
     }
 
@@ -56,14 +60,8 @@ public abstract class FootballGame extends Game {
     }
 
     public void notifyObserver() {
-        observer.update(this);
-    }
-
-    public int getPenaltyScore1() {
-        return penaltyScore1;
-    }
-
-    public int getPenaltyScore2() {
-        return penaltyScore2;
+        if (observer != null) {
+            observer.update(this);
+        }
     }
 }

@@ -4,15 +4,22 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
-public class DoubleTenMetreStrategy implements Strategy{//5
-    private final ArrayList<Double> scores;
-    private final int cycleNumber;
+/**
+ * 策略模式下双人十米台规则
+ */
+public class DoubleTenMetreStrategy extends Strategy{
 
     DoubleTenMetreStrategy(){
-        scores = new ArrayList<Double>();
+        name="跳水双人十米跳台";
+        scores = new ArrayList<>();
         cycleNumber = 5;
+        showStrategy("DoubleThreeMetreStrategy");
     }
 
+    /**
+     * 通过当前策略来决定分数的算法
+     * @return score 返回算出的分数
+     */
     @Override
     public double decideScore(){
         Random r = new Random();
@@ -41,6 +48,10 @@ public class DoubleTenMetreStrategy implements Strategy{//5
         return score;
     }
 
+    /**
+     * 获取该策略下一场比赛要进行的轮次
+     * @return cycleNumber 要进行的轮次
+     */
     @Override
     public int getCycleNumber(){
         return this.cycleNumber;

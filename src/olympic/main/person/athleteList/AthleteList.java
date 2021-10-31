@@ -1,14 +1,15 @@
 package olympic.main.person.athleteList;
 
-import olympic.main.person.Person;
-import olympic.main.person.athlete.IndividualAthlete;
-import olympic.main.person.athlete.TeamAthlete;
 import olympic.main.person.personVisitor.Visitor;
 
-import java.util.ArrayList;
-
+/**
+ * 运动员列表的抽象接口
+ */
 public interface AthleteList {
-
-	public void accept(Visitor v);
+	/**
+	 * 用于接收一个Visitor访问类
+	 * @param v 一个访问器，用于访问该类，对该类做操作
+	 */
+	void accept(Visitor v);
 	
 }

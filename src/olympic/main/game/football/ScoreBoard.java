@@ -19,6 +19,11 @@ public class ScoreBoard implements Observer{
         this.goalDifference = new int[16];
         this.goal = new int[16];
     }
+
+    /**
+     * 根据比赛结果更新积分榜
+     * @param game 完成的比赛
+     */
     @Override
     public void update(FootballGame game) {
         int score1 = game.getScore1(), score2 = game.getScore2();

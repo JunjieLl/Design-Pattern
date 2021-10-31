@@ -1,9 +1,12 @@
 package olympic.main.game.football;
 
+import olympic.main.game.football.round.Round;
 import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.footballathlete.FootballTeam;
+import olympic.scene.CeremonyScene;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Singleton模式
@@ -16,8 +19,11 @@ public class FootballGameManager {
         return singleton;
     }
 
-    private ArrayList<FootballTeam> teams = new ArrayList<>();
-    private Round first = null;
+    private FootballGameManager() {
+    }
+
+    private List<FootballTeam> teams = new ArrayList<>();
+    private Round first = null;   // 第一段管道
 
     public Round getFirst() {
         return this.first;
@@ -28,22 +34,70 @@ public class FootballGameManager {
         return this.first;
     }
 
-    public void initTeam(ArrayList<Athlete> teamList) {
-        
+    /**
+     * 传入所有参赛球队
+     * @param teams 所有参赛球队的列表
+     */
+    public void setTeams(List<Athlete> teams) {
+        for (int i = 0; i < 16; ++i) {
+            this.teams.add((FootballTeam)(teams.get(i)));
+        }
     }
 
+    /**
+     * 依次进行所有轮次的比赛
+     */
     public void start() {
-        // 生成参赛名单
-        for (int i = 0; i < 16; i++) {
-            teams.add(new FootballTeam("Team" + i, i));
-        }
-
         Round r = this.first;
+        int rank = teams.size();
+        List<FootballTeam> advancedTeams = teams;
         while (r != null) {
-            teams = r.play(teams);
+            // 为每支球队写入排名，晋级后更新排名
+            for (int i = 0; i < advancedTeams.size(); ++i) {
+                advancedTeams.get(i).setRank("FootballTeam", rank);
+            }
+            rank /= 2;
+            advancedTeams = r.play(advancedTeams);
             r = r.getNext();
         }
 
-        System.out.println("足球比赛冠军为" + teams.get(0).getNation());
+        advancedTeams.get(0).setRank("FootballTeam", rank);
+
+        ArrayList<Athlete> topThreeAthletes = new ArrayList<>();  // 前3名
+        topThreeAthletes.add(null);
+        topThreeAthletes.add(null);
+        topThreeAthletes.add(null);
+
+        ArrayList<FootballTeam> tmp = new ArrayList<>();  // 需要打季军赛的2支球队
+
+        for (int i = 0; i < teams.size(); ++i) {
+            int k = teams.get(i).getRank("FootballTeam");
+            if (k == 4) {
+                tmp.add(teams.get(i));
+            } else if (k < 4) {
+                topThreeAthletes.set(k - 1, teams.get(i));
+            }
+        }
+
+        // 季军赛
+        System.out.println("\n【季军赛】");
+        EliminationFootballGame thirdPlaceGame = new EliminationFootballGame(tmp.get(0), tmp.get(1));
+        thirdPlaceGame.start();
+
+        if (thirdPlaceGame.getScore1() > thirdPlaceGame.getScore2()) {
+            thirdPlaceGame.getTeam1().setRank("FootballTeam", 3);
+            topThreeAthletes.set(2, thirdPlaceGame.getTeam1());
+        } else if (thirdPlaceGame.getScore1() < thirdPlaceGame.getScore2()) {
+            thirdPlaceGame.getTeam2().setRank("FootballTeam", 3);
+            topThreeAthletes.set(2, thirdPlaceGame.getTeam2());
+        } else if (thirdPlaceGame.getPenaltyScore1() > thirdPlaceGame.getPenaltyScore2()) {
+            thirdPlaceGame.getTeam1().setRank("FootballTeam", 3);
+            topThreeAthletes.set(2, thirdPlaceGame.getTeam1());
+        } else {
+            thirdPlaceGame.getTeam2().setRank("FootballTeam", 3);
+            topThreeAthletes.set(2, thirdPlaceGame.getTeam2());
+        }
+
+        new CeremonyScene(topThreeAthletes).play();
     }
 }

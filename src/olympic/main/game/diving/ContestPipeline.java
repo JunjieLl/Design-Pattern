@@ -1,22 +1,52 @@
 package olympic.main.game.diving;
 
-public class ContestPipeline implements AbstractPipeline{
-    private final Contest firstContest;
-    private Contest lastContest;
+import olympic.main.game.AbstractPipeline;
+import olympic.main.game.Valve;
+import olympic.main.person.athlete.Athlete;
 
-    ContestPipeline(Contest contest) {
-        this.firstContest = contest;
-        this.lastContest = contest;
+import java.util.List;
+
+/**
+ * 进行跳水比赛的管道
+ */
+public class ContestPipeline implements AbstractPipeline {
+    private Valve firstDivingGame;
+    private Valve lastDivingGame;
+    private final AthletePool athletePool;
+
+    public ContestPipeline(String context, List<Athlete> list) {
+        AbstractNode strategyNode = new PeopleNumberNode();
+
+        this.athletePool = new AthletePool(strategyNode.interpret(context), list);
     }
 
+    /**
+     * 添加管道中的阀门（比赛）
+     * @param newDivingGame 新的阀门（比赛）
+     */
     @Override
-    public void addContest(Contest newContest) {
-        lastContest.setNext(newContest);
-        lastContest = newContest;
+    public void addContest(Valve newDivingGame) {
+        if(firstDivingGame == null){
+            this.firstDivingGame = newDivingGame;
+        }else {
+            lastDivingGame.setNext(newDivingGame);
+        }
+        this.lastDivingGame = newDivingGame;
     }
 
+    /**
+     * 开始整场比赛
+     */
     @Override
-    public void startGame(AthletePool athletePool) {
-        firstContest.takePlace(athletePool);
+    public void start() {
+        System.out.println("选手入场完毕,马上开始比赛！");
+        DivingGame preliminaryContest=new PreliminaryContest();
+        DivingGame semiFinalContest=new SemiFinals();
+        DivingGame finalContest=new FinalContest();
+        this.addContest(preliminaryContest);
+        this.addContest(semiFinalContest);
+        this.addContest(finalContest);
+        athletePool.showDetail();
+        ((DivingGame)firstDivingGame).takePlace(athletePool);
     }
 }

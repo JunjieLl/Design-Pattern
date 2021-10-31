@@ -10,6 +10,10 @@ import java.util.List;
  * SemiFinals是半决赛
  */
 public class SemiFinals  extends ContestImpl{
+    /**
+     *SemiFinals构造方法
+     * @param athletes 运动员列表
+     */
     SemiFinals(List<Athlete> athletes) {
         super(athletes);
         gameType="半决赛";
@@ -28,14 +32,15 @@ public class SemiFinals  extends ContestImpl{
 //        }
         System.out.println("【半决赛赛排名榜】");
         System.out.println("Group "+(group+1)+"\n" +
-                "排名\t姓名\t时间\t晋级");
+                "排名\t姓名\t晋级\t");
         Collections.shuffle(runners);
         for(int i=0;i<size;i++){
 
             if(i>=4){
-                System.out.println(i+1+"\t"+"姓名"+"\t"+"时间"+"\t"+"否");
+                System.out.println(i+1+"\t"+runners.get(i).getName()+"\t"+"否"+"\t");
+                this.athletes.remove(runners.get(i));
             }else{
-                System.out.println(i+1+"\t"+"姓名"+"\t"+"时间"+"\t"+"是");
+                System.out.println(i+1+"\t"+runners.get(i).getName()+"\t"+"是"+"\t");
             }
         }
         System.out.println("\n");
