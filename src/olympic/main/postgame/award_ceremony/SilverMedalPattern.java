@@ -32,7 +32,9 @@ public class SilverMedalPattern implements MedalProduct {
                                 ),
                                 '$')
                 );
+        System.out.println("\033[1;37m");
         medalPattern.show();
+        System.out.println("\033[0m \n");
     }
 
     public MedalProduct createClone(){

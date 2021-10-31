@@ -5,17 +5,17 @@ public class UrineBottle {
 	private Boolean isPositive;
 	
 	public UrineBottle(char c) throws Exception {
-		int num = (int) (Math.random() * 100);
+		double num =  (Math.random() * 100);
 		isPositive = false;
 		if (c == 'A') {
 			urineBottles = c;
-			if (num < 5) {
+			if (num < 2) {
 				isPositive = true;
 			}
 		}
 		else if (c == 'B') {
 			urineBottles = c;
-			if (num < 8) {
+			if (num < 5) {
 				isPositive = true;
 			}
 		}

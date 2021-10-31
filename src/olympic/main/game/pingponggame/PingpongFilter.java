@@ -12,29 +12,23 @@ import java.util.List;
  */
 public class PingpongFilter {
     private String name;
-//    private String lastGameName;
 
     private List<Athlete> athletes;
 
+    /**
+     * 包含的比赛
+     * 比如预赛会有很多场比赛
+     */
     private List<PingpongGame> games = new ArrayList<>();
 
-    private PingpongFilter nextFliter;
+    private PingpongFilter nextFilter;
 
     public PingpongFilter(String name) {
         this.name = name;
     }
 
-    public void setNextFliter(PingpongFilter nextFliter) {
-        this.nextFliter = nextFliter;
-    }
-
-    private void addGame(){
-        for (int i=0;i<athletes.size()/2;i++){
-            PingpongGame game = new PingpongGame(this.name);
-            game.addAthlete(athletes.get(2*i));
-            game.addAthlete(athletes.get(2*i+1));
-            games.add(game);
-        }
+    public void setNextFilter(PingpongFilter nextFilter) {
+        this.nextFilter = nextFilter;
     }
 
     public void setAthletes(List<Athlete> athletes){
@@ -42,21 +36,36 @@ public class PingpongFilter {
         addGame();
     }
 
+    private void addGame(){
+        for (int i=0;i<athletes.size()/2;i++){
+            PingpongGame game = new PingpongGame(this.name);
+            // 为比赛添加运动员
+            game.addAthlete(athletes.get(2*i));
+            game.addAthlete(athletes.get(2*i+1));
+            games.add(game);
+        }
+    }
+
+    /**
+     * 对外接口，开始比赛
+     */
     public void start() {
-        System.out.println("【"+name+"开始了!"+"】\n");
+        System.out.println("【" + name + "开始了!" + "】\n");
         for (PingpongGame game : games) {
-            System.out.println(  "【"+name+"第"+(games.indexOf(game)+1)+"场】开始了");
+            System.out.println("【" + name + "第" + (games.indexOf(game) + 1) + "场】开始了");
             game.start();
         }
-        if (nextFliter != null) {
+
+        // 过滤出晋级的运动员交给下一轮比赛
+        if (nextFilter != null) {
             List<Athlete> nextFilterAthletes = new ArrayList<>();
             for (Athlete athlete : athletes) {
                 if (athlete.getRank(name) == 1) {   //上一场获胜的运动员
                     nextFilterAthletes.add(athlete);
                 }
             }
-            nextFliter.setAthletes(nextFilterAthletes);
-            nextFliter.start();
+            nextFilter.setAthletes(nextFilterAthletes);
+            nextFilter.start();
         }
     }
 }

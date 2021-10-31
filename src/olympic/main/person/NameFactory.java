@@ -1,16 +1,145 @@
 package olympic.main.person;
 
 import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 /**
  * 为运动员随机生成姓名
  */
 public class NameFactory {
+    static  String[] lastNameEn={
+            " Wu",
+            " Yang",
+            " Zhang",
+            " Luo",
+            " Admirind",
+            " Aerum",
+            " Akvum",
+            " Ambrofaltkhawsen",
+            " Ameblo",
+            " Amik",
+            " Amomian",
+            " Arbar",
+            " Barbarkor",
+            " Bier",
+            " Bird",
+            " Biterlif",
+            " Bondno",
+            " Bravul",
+            " Burlu",
+            " Butik",
+            " Celum",
+            " Chener",
+            " Chipen",
+            " Delolmo",
+            " Devum",
+            " Domet",
+            " Ehhum",
+            " Emilan",
+            " Enhhoran",
+            " Esper",
+            " Estrum",
+            " Fajrer",
+            " Famili",
+            " Fesanan",
+            " Filopator",
+            " Fiskan",
+            " Flugil",
+            " Garan",
+            " Geralan",
+            " Gimik",
+            " Glaving",
+            " Grinhilt",
+            " Gust",
+            " Gharden",
+            " Hakil",
+            " Hark",
+            " Haska",
+            " Heldan",
+            " Herb",
+            " Homar",
+            " Horbek",
+            " Hhorum",
+            " Inkuj",
+            " Interes",
+            " Irlan",
+            " Ivens",
+            " Jablich",
+            " Jagu",
+            " Jarum",
+            " Junul",
+            " Jhurnal",
+            " Kamino",
+            " Kandeling",
+            " Kanjas",
+            " Karlan",
+            " Klub",
+            " Kodlar",
+            " Korjas",
+            " Kovert",
+            " Kradan",
+            " Kredeblo",
+            " Kruf",
+            " Kudril",
+            " Kuirej",
+            " Kunul",
+            " Kuvan",
+            " Kvarop",
+            " Laget",
+            " Lamris",
+            " Land",
+            " Libret",
+            " Loghej",
+            " Lumstel",
+            " Makavel",
+            " Maksipes",
+            " Marban",
+            " Marist",
+            " Marsaus",
+            " Marum",
+            " Mehhkaprad",
+            " Memorind",
+            " Montum",
+            " Montril",
+            " Nakan",
+            " Nomum",
+            " Oktoped",
+            " Ostum",
+            " Paner",
+            " Panum",
+            " Pentium",
+            " Pentrist",
+            " Pepian",
+            " Pilk",
+            " Piruj",
+            " Pluming",
+            " Plumuj",
+            " Pluver",
+            " Pomuj",
+            " Preghej",
+            " Pulver",
+            " Rafnil",
+            " Ralfan",
+            " Rastagan",
+            " Razil",
+            " Regnestrum",
+            " Regum",
+            " Richul",
+            " Rukspin",
+            " Sabler",
+            " Saghulo",
+            " Sagum",
+            " Saist",
+            " Skatol",
+            " Stelum",};
 
         static String[] namesEn = {
+                "Chenhao",
+                "Junjie",
+                "Yuqing",
+                "Yang",
+                "Manxin",
+                "Baiyi",
                 "Aaron",
                 "Abel",
                 "Abraham",
@@ -581,13 +710,15 @@ public class NameFactory {
                 "Vita",
                 "Vivian"
         };
-
+    /**
+     * 国家枚举
+     */
     static String[] nation={
-            "中国","蒙古","朝鲜","韩国","日本","菲律宾","越南","老挝","缅甸","泰国","马来西亚","新加坡","印度尼西亚",
-           "尼泊尔","印度","巴基斯坦","斯里兰卡",
-            "哈萨克斯坦","塔吉克斯坦","乌兹别克斯坦","伊拉克","约旦","黎巴嫩","以色列","巴勒斯坦","沙特阿拉伯",
-            "爱沙尼亚","白俄罗斯","俄罗斯","波兰","捷克","斯洛伐克","匈牙利","德国","奥地利","瑞士","英国","爱尔兰",
-            "荷兰","比利时","卢森堡","法国","马耳他","西班牙","葡萄牙","美国","澳大利亚","新西兰"
+            "CHN","MGL","PRK","KOR","JPN","PHI","VIE","LAO","MYA","THA","MAL","SGP","IHO",
+           "NEP","IND","PAK","SRI",
+            "KAZ","TJK","UZB","IRQ","JOR","LBN","ISR","PLE","KSA",
+            "EST","BLR","RUS","POL","CZE","SVK","HUN","GER","AUT","SUI","GBR","IRL",
+            "NED","BEL","LUX","FRA","MLT","ESP","POR","USA","AUS","NZL"
 };
     static String[] firstNameInside = {
             "赵" , "钱" , "孙" , "李" , "周" , "吴" , "郑" , "王",
@@ -649,8 +780,7 @@ public class NameFactory {
             "公孙" , "仲孙" , "轩辕" , "令狐",
             "锺离" , "宇文" , "长孙" , "慕容",
             "鲜于" , "闾丘" , "司徒" , "司空",
-            "丌官" , "司寇" , "仉" , "督" , "子车",
-            "颛孙" , "端木" , "巫马" , "公西",
+            "端木" , "巫马" , "公西",
             "漆雕" , "乐正" ,  "公良",
             "拓拔" , "夹谷" , "宰父" , "谷梁",
             "晋" , "楚" , "阎" , "法" , "汝" ,  "涂" , "钦",
@@ -662,8 +792,18 @@ public class NameFactory {
             "墨" ,  "年" , "爱" , "阳" , "佟",
             "第五" , "言" , "福"
     };
+    /**
+     * 名字set
+     */
+    private HashSet<String> sites = new HashSet<String>();
+    /**
+     * 国家队set
+     */
+    private HashSet<String> nationSites = new HashSet<String>();
 
-
+    /**
+     * random种子
+     */
     private Random random=new Random();
 
     /**
@@ -680,6 +820,13 @@ public class NameFactory {
      * @return 随机生成一个汉字
      */
     private String insideSimpleLastName(){
+        String[] black= {"阳婉","俊吉","空心","千一","紫玉","利兴","程颢","玉清","英文","橙味"};
+        int blackNum=random.nextInt(13);
+        if(blackNum==0){
+            return black[random.nextInt(10)];
+
+        }
+
         int hight,low;//二进制的高低位
         Random random= new Random();
         StringBuilder sBuilder = new StringBuilder();
@@ -690,8 +837,8 @@ public class NameFactory {
             hight = 176+random.nextInt(39);
             low = 161+random.nextInt(93);
             byte[]han = new byte[2];
-            han[0]= new Integer(hight).byteValue();
-            han[1]= new Integer(low).byteValue();
+            han[0]= Integer.valueOf(hight).byteValue();
+            han[1]= Integer.valueOf(low).byteValue();
             try {
                 sBuilder.append(new String(han,"gbk"));
             } catch (UnsupportedEncodingException e) {
@@ -701,40 +848,115 @@ public class NameFactory {
         return sBuilder.toString();
     }
 
+    /**
+     * 返回一个不会重复的英语名字
+     * @return 英文名
+     */
     private String getEnglishName() {
         int i = random.nextInt(namesEn.length);//[0,n)
-        return namesEn[i];
+        int j=random.nextInt(lastNameEn.length);
+        while(sites.contains(namesEn[i]+lastNameEn[j])){
+            i = random.nextInt(namesEn.length);
+            j=random.nextInt(lastNameEn.length);
+        }
+        sites.add(namesEn[i]+lastNameEn[j]);
+        return namesEn[i]+lastNameEn[j];
     }
 
     /**
+     * 返回一个不会重复的中文名字
+     */
+    private String getChineseName() {
+         String name= insideFirstName()+insideSimpleLastName();
+        while(sites.contains(name)){
+            name= insideFirstName()+insideSimpleLastName();
+        }
+        sites.add(name);
+        return name;
+    }
+
+    /**
+     * 随机返回国家、姓名
      * @return 全名
      */
-
     public Message getMessage() {
         Message message=new Message();
         int i = random.nextInt(nation.length);//[0,n)
         message.nation=nation[i];
-        if(i<=5)message.name= insideFirstName()+insideSimpleLastName();
+        if(i<=5){
+            message.name=getChineseName();
+
+        }
         else{
             message.name=getEnglishName();
         }
         return message;
     }
-
+    /**
+     * 取得一个队的运动员信息
+     *
+     * @param n 队中运动员数量
+     * @return 运动员信息列表
+     */
     public List<Message> getMessageList(int n) {
         List<Message> messages=new ArrayList<>();
         int i = random.nextInt(nation.length);//[0,n)
-        for(int j=0;j<n;j++){
-           if(i<=5) messages.add(new Message(insideFirstName()+insideSimpleLastName(),nation[i]));
-           else{
-               messages.add(new Message(getEnglishName(),nation[i]));
-           }
+        int num = 1;
+        // 国家几队
+        while (nationSites.contains(nation[i] + num + "队")) {
+            num++;
         }
+        nationSites.add(nation[i] + num + "队");
+        //为该国家队添加队员
+        for (int j = 0; j < n; j++) {
+            if (i <= 5) {
+                messages.add(new Message(getChineseName(), nation[i]));
+            } else {
+                messages.add(new Message(getEnglishName(), nation[i]));
+            }
+        }
+        messages.add(new Message(nation[i]+num+"队",nation[i]));
         return messages;
     }
 
 }
 
+
+
+//    private String getName() {
+//        Random random = new Random();
+//        String[] Surname = {"赵", "钱", "孙", "李", "周", "吴", "郑", "王", "冯", "陈", "褚", "卫", "蒋", "沈", "韩", "杨", "朱", "秦", "尤", "许",
+//                "何", "吕", "施", "张", "孔", "曹", "严", "华", "金", "魏", "陶", "姜", "戚", "谢", "邹", "喻", "柏", "水", "窦", "章", "云", "苏", "潘", "葛", "奚", "范", "彭", "郎",
+//                "鲁", "韦", "昌", "马", "苗", "凤", "花", "方", "俞", "任", "袁", "柳", "酆", "鲍", "史", "唐", "费", "廉", "岑", "薛", "雷", "贺", "倪", "汤", "滕", "殷",
+//                "罗", "毕", "郝", "邬", "安", "常", "乐", "于", "时", "傅", "皮", "卞", "齐", "康", "伍", "余", "元", "卜", "顾", "孟", "平", "黄", "和",
+//                "穆", "萧", "尹", "姚", "邵", "湛", "汪", "祁", "毛", "禹", "狄", "米", "贝", "明", "臧", "计", "伏", "成", "戴", "谈", "宋", "茅", "庞", "熊", "纪", "舒",
+//                "屈", "项", "祝", "董", "梁", "杜", "阮", "蓝", "闵", "席", "季"};
+//        String girl = "秀娟英华慧巧美娜静淑惠珠翠雅芝玉萍红娥玲芬芳燕彩春菊兰凤洁梅琳素云莲真环雪荣爱妹霞香月莺媛艳瑞凡佳嘉琼勤珍贞莉桂娣叶璧璐娅琦晶妍茜秋珊莎锦黛青倩婷姣婉娴瑾颖露瑶怡婵雁蓓纨仪荷丹蓉眉君琴蕊薇菁梦岚苑婕馨瑗琰韵融园艺咏卿聪澜纯毓悦昭冰爽琬茗羽希宁欣飘育滢馥筠柔竹霭凝晓欢霄枫芸菲寒伊亚宜可姬舒影荔枝思丽 ";
+//        String boy = "伟刚勇毅俊峰强军平保东文辉力明永健世广志义兴良海山仁波宁贵福生龙元全国胜学祥才发武新利清飞彬富顺信子杰涛昌成康星光天达安岩中茂进林有坚和彪博诚先敬震振壮会思群豪心邦承乐绍功松善厚庆磊民友裕河哲江超浩亮政谦亨奇固之轮翰朗伯宏言若鸣朋斌梁栋维启克伦翔旭鹏泽晨辰士以建家致树炎德行时泰盛雄琛钧冠策腾楠榕风航弘";
+//        int index = random.nextInt(Surname.length - 1);
+//        String name = Surname[index]; //获得一个随机的姓氏
+//        int i = random.nextInt(3);//可以根据这个数设置产生的男女比例
+//        if(i==2){
+//            int j = random.nextInt(girl.length()-2);
+//            if (j % 2 == 0) {
+//                name = "女-" + name + girl.substring(j, j + 2);
+//            } else {
+//                name = "女-" + name + girl.substring(j, j + 1);
+//            }
+//
+//        }
+//        else{
+//            int j = random.nextInt(girl.length()-2);
+//            if (j % 2 == 0) {
+//                name = "男-" + name + boy.substring(j, j + 2);
+//            } else {
+//                name = "男-" + name + boy.substring(j, j + 1);
+//            }
+//
+//        }
+//
+//        return name;
+//    }
 
 
 

@@ -47,4 +47,22 @@ public abstract class IndividualAthlete extends Athlete {
         return urineTestProcurator;
     }
     
+    double isNovelCoronavirus = -1;
+    
+    public boolean getIsNovelCoronavirus(){
+        if(isNovelCoronavirus == -1){
+            isNovelCoronavirus =  (Math.random() * 100);
+        }
+        return isNovelCoronavirus < 3;
+    }
+
+    @Override
+    public void update(String content) {
+        
+    }
+
+    @Override
+    public void passFire() {
+        System.out.println("现在正在传递圣火的是来自"+nation+"的"+name+",现在他将火炬传递给了下一位圣火传递者。");
+    }
 }
