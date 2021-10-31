@@ -8,11 +8,17 @@ import java.util.List;
  * Marathon是田径比赛的马拉松
  */
 public class Marathon extends TrackGame{
+    /**
+     *Marathon构造方法
+     * @param athletes 运动员列表
+     */
     public Marathon(List<Athlete> athletes) {
         super(athletes);
 
     }
-
+    /**
+     * start 方法是比赛开始
+     */
     @Override
     public void start() {
         System.out.println("【"+getName()+"】");
@@ -25,9 +31,16 @@ public class Marathon extends TrackGame{
         }
 
     }
+<<<<<<< Updated upstream
 
 
 
+=======
+    /**
+     * 获取比赛名称
+     * @return 比赛名称
+     */
+>>>>>>> Stashed changes
     public String getName(){
         return "马拉松比赛";
     }

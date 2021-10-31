@@ -10,11 +10,17 @@ import java.util.List;
  */
 public class Sprints extends TrackGame {
 
-
+    /**
+     *Sprints构造方法
+     * @param athletes 运动员列表
+     */
     public Sprints(List<Athlete> athletes) {
         super(athletes);
     }
 
+    /**
+     * start 方法是比赛开始
+     */
     @Override
     public void start() {
         System.out.println("【"+getName()+"】");
@@ -27,7 +33,15 @@ public class Sprints extends TrackGame {
         }
     }
 
+<<<<<<< Updated upstream
     public String getName(){
+=======
+    /**
+     * 获取比赛名称
+     * @return 比赛名称
+     */
+    public String getName() {
+>>>>>>> Stashed changes
         return "冲刺比赛";
     }
 }
