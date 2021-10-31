@@ -23,9 +23,9 @@ public class CeremonyScene implements Scene {
     }
 
     public CeremonyScene(List<Athlete> athletes){
-        this.goldPlayer = athletes.get(0).getName() + " " + athletes.get(0).getNation();
-        this.silverPlayer = athletes.get(1).getName() + " " + athletes.get(1).getNation();
-        this.bronzePlayer = athletes.get(2).getName() + " " + athletes.get(2).getNation();
+        this.goldPlayer = athletes.get(0).getName() + ", TEAM " + athletes.get(0).getNation();
+        this.silverPlayer = athletes.get(1).getName() + ", TEAM " + athletes.get(1).getNation();
+        this.bronzePlayer = athletes.get(2).getName() + ", TEAM " + athletes.get(2).getNation();
     }
 
     @Override
@@ -53,7 +53,7 @@ public class CeremonyScene implements Scene {
         System.out.println("我们由衷祝贺以下这些选手：");
         
         Manager manager = new Manager();
-        MedalPresenting medalPresenting = new MedalPresenting(manager, goldPlayer, silverPlayer, bronzePlayer);
+        new MedalPresenting(manager, goldPlayer, silverPlayer, bronzePlayer);
         System.out.println("请全体起立，升国旗，奏国歌");
         System.out.println("本场颁奖仪式已经结束，请有序离场，并带好您的随身物品。");
     }
