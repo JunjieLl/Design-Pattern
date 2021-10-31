@@ -3,19 +3,19 @@ package olympic.scene;
 import olympic.main.interview.InterviewMaker;
 import olympic.main.person.interview.*;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class InterviewScene implements Scene {
-    private final Interviewee interviewee;
-    private final ArrayList<Interviewer> interviewers;
+    private final List<Interviewee> interviewees;
+    private final List<Interviewer> interviewers;
 
-    InterviewScene(Interviewee interviewee, ArrayList<Interviewer> interviewers) {
-        this.interviewee = interviewee;
+    InterviewScene(List<Interviewee> interviewee, List<Interviewer> interviewers) {
+        this.interviewees = interviewee;
         this.interviewers = interviewers;
     }
 
     @Override
     public void play() {
-        InterviewMaker.makeInterview(interviewee, interviewers);
+        InterviewMaker.makeInterview(interviewees, interviewers);
     }
 }
