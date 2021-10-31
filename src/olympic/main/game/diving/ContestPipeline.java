@@ -1,5 +1,7 @@
 package olympic.main.game.diving;
 
+import olympic.main.drawlots.PaperDrawLotsImpl;
+import olympic.main.drawlots.RandomDrawLots;
 import olympic.main.game.AbstractPipeline;
 import olympic.main.game.Valve;
 import olympic.main.person.athlete.Athlete;
@@ -16,8 +18,9 @@ public class ContestPipeline implements AbstractPipeline {
 
     public ContestPipeline(String context, List<Athlete> list) {
         AbstractNode strategyNode = new PeopleNumberNode();
-
-        this.athletePool = new AthletePool(strategyNode.interpret(context), list);
+        RandomDrawLots drawLots = new RandomDrawLots(list, new PaperDrawLotsImpl(), 1, true);
+        List<Athlete> randomSortedAthletes = drawLots.randomDrawLots();
+        this.athletePool = new AthletePool(strategyNode.interpret(context), randomSortedAthletes);
     }
 
     /**
