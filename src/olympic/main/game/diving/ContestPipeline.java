@@ -1,5 +1,7 @@
 package olympic.main.game.diving;
 
+import olympic.main.game.AbstractPipeline;
+import olympic.main.game.Valve;
 import olympic.main.person.athlete.Athlete;
 
 import java.util.List;
@@ -7,13 +9,14 @@ import java.util.List;
 /**
  * 进行跳水比赛的管道
  */
-public class ContestPipeline implements AbstractPipeline{
-    private DivingGame firstDivingGame;
-    private DivingGame lastDivingGame;
+public class ContestPipeline implements AbstractPipeline {
+    private Valve firstDivingGame;
+    private Valve lastDivingGame;
     private final AthletePool athletePool;
 
     public ContestPipeline(String context, List<Athlete> list) {
         AbstractNode strategyNode = new PeopleNumberNode();
+
         this.athletePool = new AthletePool(strategyNode.interpret(context), list);
     }
 
@@ -22,7 +25,7 @@ public class ContestPipeline implements AbstractPipeline{
      * @param newDivingGame 新的阀门（比赛）
      */
     @Override
-    public void addContest(DivingGame newDivingGame) {
+    public void addContest(Valve newDivingGame) {
         if(firstDivingGame == null){
             this.firstDivingGame = newDivingGame;
         }else {
@@ -44,6 +47,6 @@ public class ContestPipeline implements AbstractPipeline{
         this.addContest(semiFinalContest);
         this.addContest(finalContest);
         athletePool.showDetail();
-        firstDivingGame.takePlace(athletePool);
+        ((DivingGame)firstDivingGame).takePlace(athletePool);
     }
 }

@@ -10,7 +10,7 @@ public class ExpertState implements State {
 	/**
 	 * 有工作经验的志愿者状态的单例
 	 */
-	private static ExpertState singleton = new ExpertState();
+	private static final ExpertState singleton = new ExpertState();
 	
 	/**
 	 * 志愿者状态的构造函数，使用到了单例模式，是一个私有的构造函数

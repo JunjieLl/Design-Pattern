@@ -47,15 +47,14 @@ public class VolunteerList {
 	/**
 	 * 给定一个志愿者列表以及需要的志愿者人数，选择具体的志愿者
 	 * @param num 预期需要的志愿者人数
-	 * @return 被选中参加志愿活动的志愿者
 	 */
-	public ArrayList<Volunteer> allocateVolunteer(int num) {
+	public void allocateVolunteer(int num) {
 		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 		System.out.println("> 协助该场比赛的志愿者预期有" + num + "人，他们分别为：");
 		ArrayList<Volunteer> volunteersSelect = new ArrayList<>();
 		int tempNum = num;
 		int tempAll = allCount;
-		for (; count < allCount; ) {
+		while (count < allCount) {
 			count = (count + 1) % allCount;
 			tempAll -= 1;
 			if (volunteers.get(count).allocateWork()) {
@@ -66,13 +65,12 @@ public class VolunteerList {
 				break;
 			}
 		}
-		for (int i = 0; i < volunteersSelect.size(); i++) {
-			System.out.print("> " + volunteersSelect.get(i).getName());
-			volunteersSelect.get(i).changeStateToExpert();
+		for (Volunteer volunteer : volunteersSelect) {
+			System.out.print("> " + volunteer.getName());
+			volunteer.changeStateToExpert();
 		}
 		int gap = tempNum - volunteersSelect.size();
 		System.out.println("> 协助该场比赛的志愿者人数实际为" + volunteersSelect.size() +
 				"人。与预期相差" + gap + "人");
-		return volunteersSelect;
 	}
 }

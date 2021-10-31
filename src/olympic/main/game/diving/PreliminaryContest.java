@@ -1,5 +1,6 @@
 package olympic.main.game.diving;
 
+import olympic.main.game.Valve;
 import olympic.main.person.athlete.Athlete;
 
 /**
@@ -56,7 +57,8 @@ public class PreliminaryContest extends DivingGame {
      * @param divingGame 下一轮比赛
      */
     @Override
-    public void setNext(DivingGame divingGame){
-        this.nextDivingGame = divingGame;
+    public Valve setNext(Valve divingGame){
+        this.nextDivingGame = (DivingGame)divingGame;
+        return null;
     }
 }

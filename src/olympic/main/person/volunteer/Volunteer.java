@@ -27,12 +27,12 @@ public class Volunteer extends Person {
 	/**
 	 * 志愿者的英语水平
 	 */
-	private double englishLevel =  Math.random() * 10;
+	private final double englishLevel =  Math.random() * 10;
 	
 	/**
 	 * 志愿者的体力水平
 	 */
-	private double physicalPower  =  Math.random() * 10;
+	private final double physicalPower  =  Math.random() * 10;
 	
 	/**
 	 * 志愿者的是否有时间
@@ -52,6 +52,7 @@ public class Volunteer extends Person {
 		}else{
 			System.out.print("，本次志愿活动并非该志愿者的第一次志愿活动。本次活动结束后，" +
 					"该志愿者的状态不改变。");
+			setHaveTime();
 		}
 		System.out.println();
 	}
@@ -94,5 +95,12 @@ public class Volunteer extends Person {
 	 */
 	public double getHaveTime() {
 		return haveTime;
+	}
+	
+	/**
+	 * 设置志愿者拥有的时间
+	 */
+	public void setHaveTime() {
+		this.haveTime = Math.random() * 10;
 	}
 }
