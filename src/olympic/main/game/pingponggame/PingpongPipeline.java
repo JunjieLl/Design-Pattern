@@ -43,7 +43,7 @@ public class PingpongPipeline extends Game {
             firstGame = filter;
             lastGame = filter;
         } else {
-            lastGame.setNextFliter(filter);
+            lastGame.setNextFilter(filter);
             lastGame = filter;
         }
     }
@@ -53,14 +53,14 @@ public class PingpongPipeline extends Game {
      * @return 返回季军
      */
     public Athlete ThirdGame(){
-        List<Athlete> thirdGameathletes = new ArrayList<>();
+        List<Athlete> thirdGameAthletes = new ArrayList<>();
         for (Athlete athlete:athletes){
             if (athlete.getRank("半决赛") == 2){
-                thirdGameathletes.add(athlete);
+                thirdGameAthletes.add(athlete);
             }
         }
         PingpongFilter thirdGame = new PingpongFilter("季军赛");
-        thirdGame.setAthletes(thirdGameathletes);
+        thirdGame.setAthletes(thirdGameAthletes);
         thirdGame.start();
         for (Athlete athlete:athletes){
             if (athlete.getRank("季军赛") == 1){

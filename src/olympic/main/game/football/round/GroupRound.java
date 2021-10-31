@@ -93,9 +93,9 @@ public class GroupRound extends Round {
                 }
             });
             System.out.println("\nGroup " + (g + 1));
-            System.out.println("排名\t球队                 \t积分\t\t净胜球\t进球");
+            System.out.println("排名\t球队\t\t积分\t\t净胜球\t进球");
             for (int i = 0; i < 4; i++) {
-                System.out.printf("%d\t%-19s\t%d\t\t%d\t\t%d\n", i + 1, ranking.get(i).team.getNation(), ranking.get(i).score, ranking.get(i).goalDifference, ranking.get(i).goal);
+                System.out.printf("%d\t%s\t\t%d\t\t%d\t\t%d\n", i + 1, ranking.get(i).team.getNation(), ranking.get(i).score, ranking.get(i).goalDifference, ranking.get(i).goal);
             }
             tmp.add(ranking.get(0).team);
             tmp.add(ranking.get(1).team);
