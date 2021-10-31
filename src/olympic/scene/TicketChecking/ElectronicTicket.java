@@ -1,6 +1,6 @@
-package olympic.scene.TicketCheckinig;
+package olympic.scene.TicketChecking;
 
-class ElectronicTicket implements TicketChecking{
+public class ElectronicTicket implements TicketChecking{
 
     public void checkMethod() {
         System.out.println("classname:(ElectronicTicket) method:(checkMethod) action:(使用电子检票口)");

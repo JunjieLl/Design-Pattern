@@ -22,4 +22,6 @@ public abstract class FilterVisitor {
 		}
 		return str.toString();
 	}
+	
+	public abstract String getFilterName();
 }

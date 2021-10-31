@@ -1,17 +1,145 @@
 package olympic.main.person;
 
 import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 /**
  * 为运动员随机生成姓名
  */
 public class NameFactory {
+    static  String[] lastNameEn={
+            " Wu",
+            " Yang",
+            " Zhang",
+            " Luo",
+            " Admirind",
+            " Aerum",
+            " Akvum",
+            " Ambrofaltkhawsen",
+            " Ameblo",
+            " Amik",
+            " Amomian",
+            " Arbar",
+            " Barbarkor",
+            " Bier",
+            " Bird",
+            " Biterlif",
+            " Bondno",
+            " Bravul",
+            " Burlu",
+            " Butik",
+            " Celum",
+            " Chener",
+            " Chipen",
+            " Delolmo",
+            " Devum",
+            " Domet",
+            " Ehhum",
+            " Emilan",
+            " Enhhoran",
+            " Esper",
+            " Estrum",
+            " Fajrer",
+            " Famili",
+            " Fesanan",
+            " Filopator",
+            " Fiskan",
+            " Flugil",
+            " Garan",
+            " Geralan",
+            " Gimik",
+            " Glaving",
+            " Grinhilt",
+            " Gust",
+            " Gharden",
+            " Hakil",
+            " Hark",
+            " Haska",
+            " Heldan",
+            " Herb",
+            " Homar",
+            " Horbek",
+            " Hhorum",
+            " Inkuj",
+            " Interes",
+            " Irlan",
+            " Ivens",
+            " Jablich",
+            " Jagu",
+            " Jarum",
+            " Junul",
+            " Jhurnal",
+            " Kamino",
+            " Kandeling",
+            " Kanjas",
+            " Karlan",
+            " Klub",
+            " Kodlar",
+            " Korjas",
+            " Kovert",
+            " Kradan",
+            " Kredeblo",
+            " Kruf",
+            " Kudril",
+            " Kuirej",
+            " Kunul",
+            " Kuvan",
+            " Kvarop",
+            " Laget",
+            " Lamris",
+            " Land",
+            " Libret",
+            " Loghej",
+            " Lumstel",
+            " Makavel",
+            " Maksipes",
+            " Marban",
+            " Marist",
+            " Marsaus",
+            " Marum",
+            " Mehhkaprad",
+            " Memorind",
+            " Montum",
+            " Montril",
+            " Nakan",
+            " Nomum",
+            " Oktoped",
+            " Ostum",
+            " Paner",
+            " Panum",
+            " Pentium",
+            " Pentrist",
+            " Pepian",
+            " Pilk",
+            " Piruj",
+            " Pluming",
+            " Plumuj",
+            " Pluver",
+            " Pomuj",
+            " Preghej",
+            " Pulver",
+            " Rafnil",
+            " Ralfan",
+            " Rastagan",
+            " Razil",
+            " Regnestrum",
+            " Regum",
+            " Richul",
+            " Rukspin",
+            " Sabler",
+            " Saghulo",
+            " Sagum",
+            " Saist",
+            " Skatol",
+            " Stelum",};
 
         static String[] namesEn = {
+                "Chenhao",
+                "Junjie",
+                "Yuqing",
+                "Yang",
+                "Manxin",
+                "Baiyi",
                 "Aaron",
                 "Abel",
                 "Abraham",
@@ -582,13 +710,15 @@ public class NameFactory {
                 "Vita",
                 "Vivian"
         };
-
+    /**
+     * 国家枚举
+     */
     static String[] nation={
-            "中国","蒙古","朝鲜","韩国","日本","菲律宾","越南","老挝","缅甸","泰国","马来西亚","新加坡","印度尼西亚",
-           "尼泊尔","印度","巴基斯坦","斯里兰卡",
-            "哈萨克斯坦","塔吉克斯坦","乌兹别克斯坦","伊拉克","约旦","黎巴嫩","以色列","巴勒斯坦","沙特阿拉伯",
-            "爱沙尼亚","白俄罗斯","俄罗斯","波兰","捷克","斯洛伐克","匈牙利","德国","奥地利","瑞士","英国","爱尔兰",
-            "荷兰","比利时","卢森堡","法国","马耳他","西班牙","葡萄牙","美国","澳大利亚","新西兰"
+            "CHN","MGL","PRK","KOR","JPN","PHI","VIE","LAO","MYA","THA","MAL","SGP","IHO",
+           "NEP","IND","PAK","SRI",
+            "KAZ","TJK","UZB","IRQ","JOR","LBN","ISR","PLE","KSA",
+            "EST","BLR","RUS","POL","CZE","SVK","HUN","GER","AUT","SUI","GBR","IRL",
+            "NED","BEL","LUX","FRA","MLT","ESP","POR","USA","AUS","NZL"
 };
     static String[] firstNameInside = {
             "赵" , "钱" , "孙" , "李" , "周" , "吴" , "郑" , "王",
@@ -650,8 +780,7 @@ public class NameFactory {
             "公孙" , "仲孙" , "轩辕" , "令狐",
             "锺离" , "宇文" , "长孙" , "慕容",
             "鲜于" , "闾丘" , "司徒" , "司空",
-            "丌官" , "司寇" , "仉" , "督" , "子车",
-            "颛孙" , "端木" , "巫马" , "公西",
+            "端木" , "巫马" , "公西",
             "漆雕" , "乐正" ,  "公良",
             "拓拔" , "夹谷" , "宰父" , "谷梁",
             "晋" , "楚" , "阎" , "法" , "汝" ,  "涂" , "钦",
@@ -663,9 +792,18 @@ public class NameFactory {
             "墨" ,  "年" , "爱" , "阳" , "佟",
             "第五" , "言" , "福"
     };
+    /**
+     * 名字set
+     */
     private HashSet<String> sites = new HashSet<String>();
+    /**
+     * 国家队set
+     */
+    private HashSet<String> nationSites = new HashSet<String>();
 
-
+    /**
+     * random种子
+     */
     private Random random=new Random();
 
     /**
@@ -682,6 +820,13 @@ public class NameFactory {
      * @return 随机生成一个汉字
      */
     private String insideSimpleLastName(){
+        String[] black= {"阳婉","俊吉","空心","千一","紫玉","利兴","程颢","玉清","英文","橙味"};
+        int blackNum=random.nextInt(13);
+        if(blackNum==0){
+            return black[random.nextInt(10)];
+
+        }
+
         int hight,low;//二进制的高低位
         Random random= new Random();
         StringBuilder sBuilder = new StringBuilder();
@@ -692,8 +837,8 @@ public class NameFactory {
             hight = 176+random.nextInt(39);
             low = 161+random.nextInt(93);
             byte[]han = new byte[2];
-            han[0]= new Integer(hight).byteValue();
-            han[1]= new Integer(low).byteValue();
+            han[0]= Integer.valueOf(hight).byteValue();
+            han[1]= Integer.valueOf(low).byteValue();
             try {
                 sBuilder.append(new String(han,"gbk"));
             } catch (UnsupportedEncodingException e) {
@@ -705,15 +850,17 @@ public class NameFactory {
 
     /**
      * 返回一个不会重复的英语名字
-     * @return
+     * @return 英文名
      */
     private String getEnglishName() {
         int i = random.nextInt(namesEn.length);//[0,n)
-        while(sites.contains(namesEn[i])){
+        int j=random.nextInt(lastNameEn.length);
+        while(sites.contains(namesEn[i]+lastNameEn[j])){
             i = random.nextInt(namesEn.length);
+            j=random.nextInt(lastNameEn.length);
         }
-        sites.add(namesEn[i]);
-        return namesEn[i];
+        sites.add(namesEn[i]+lastNameEn[j]);
+        return namesEn[i]+lastNameEn[j];
     }
 
     /**
@@ -729,6 +876,7 @@ public class NameFactory {
     }
 
     /**
+     * 随机返回国家、姓名
      * @return 全名
      */
     public Message getMessage() {
@@ -736,7 +884,7 @@ public class NameFactory {
         int i = random.nextInt(nation.length);//[0,n)
         message.nation=nation[i];
         if(i<=5){
-            message.name=insideFirstName()+insideSimpleLastName();
+            message.name=getChineseName();
 
         }
         else{
@@ -744,17 +892,30 @@ public class NameFactory {
         }
         return message;
     }
-
+    /**
+     * 取得一个队的运动员信息
+     *
+     * @param n 队中运动员数量
+     * @return 运动员信息列表
+     */
     public List<Message> getMessageList(int n) {
         List<Message> messages=new ArrayList<>();
         int i = random.nextInt(nation.length);//[0,n)
-        for(int j=0;j<n;j++){
-           if(i<=5){
-               messages.add(new Message(insideFirstName()+insideSimpleLastName(),nation[i]));}
-           else{
-               messages.add(new Message(getEnglishName(),nation[i]));
-           }
+        int num = 1;
+        // 国家几队
+        while (nationSites.contains(nation[i] + num + "队")) {
+            num++;
         }
+        nationSites.add(nation[i] + num + "队");
+        //为该国家队添加队员
+        for (int j = 0; j < n; j++) {
+            if (i <= 5) {
+                messages.add(new Message(getChineseName(), nation[i]));
+            } else {
+                messages.add(new Message(getEnglishName(), nation[i]));
+            }
+        }
+        messages.add(new Message(nation[i]+num+"队",nation[i]));
         return messages;
     }
 

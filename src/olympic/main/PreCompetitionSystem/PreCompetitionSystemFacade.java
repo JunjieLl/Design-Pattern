@@ -10,6 +10,7 @@ import olympic.main.person.athleteList.TeamAthleteList;
 import olympic.main.person.personVisitor.ConfirmEntryListVisitor;
 import olympic.main.person.personVisitor.UrineFilterVisitor;
 import olympic.main.person.personVisitor.UrineVisitor;
+import olympic.main.person.personVisitor.VisitFilterChain.FilterManager;
 import olympic.main.person.volunteer.VolunteerList;
 
 import java.io.IOException;
@@ -68,16 +69,15 @@ public class PreCompetitionSystemFacade {
 		System.out.println("【运动员填写完成】");
 		printlnNRowSpace(2);
 		
-		System.out.println("【接下来根据初步尿检结果评价参赛资格】");
-		pressEnterToContinue();
-		UrineFilterVisitor urineFilterVisitor = new UrineFilterVisitor();
+		System.out.println("【接下来根据初步运动员身体状况（是否感染新冠病毒）以及尿检结果评价参赛资格】");
+		FilterManager filterManager=new FilterManager();
 		if(canFilter(gameName)) {
 			if (isTeamNumber(gameName)) {
-				athletes = new TeamAthleteList(urineFilterVisitor.visit((TeamAthleteList) athletes, gameName));
+				athletes = new TeamAthleteList(filterManager.visit((TeamAthleteList) athletes, gameName));
 				
 			} else {
 				
-				athletes = new IndividualAthleteList(urineFilterVisitor.visit((IndividualAthleteList) athletes, gameName));
+				athletes = new IndividualAthleteList(filterManager.visit((IndividualAthleteList) athletes, gameName));
 			}
 		}
 		System.out.println("【筛选结束，剩下的人有资格参加比赛】");
@@ -92,6 +92,7 @@ public class PreCompetitionSystemFacade {
 		pressEnterToContinue();
 		VolunteerList volunteerList=VolunteerList.getInstance();
 		volunteerList.allocateVolunteer(15 + (int) (Math.random() * 10));
+		System.out.println();
 		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 		printlnNRowSpace(2);
 		
@@ -114,11 +115,6 @@ public class PreCompetitionSystemFacade {
 			return false;
 		}
 		return true;
-	}
-	
-	private ArrayList<Athlete> teamAthleteConvertToAthlete(ArrayList<TeamAthlete> teamAthletes){
-		ArrayList<Athlete> res = new ArrayList<>(teamAthletes);
-		return res;
 	}
 	
 	private void pressEnterToContinue(){
@@ -158,7 +154,7 @@ public class PreCompetitionSystemFacade {
 	
 	public static void main(String[] args) {
 		PreCompetitionSystemFacade preCompetitionSystemFacade = new PreCompetitionSystemFacade();
-		preCompetitionSystemFacade.preCompetitionSystemFacade("Pingpong");
+		preCompetitionSystemFacade.preCompetitionSystemFacade("Diving");
 	}
 	
 	ArrayList<IndividualAthlete> getAllIndividualAthlete(String gameName) {

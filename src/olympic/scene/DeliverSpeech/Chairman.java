@@ -1,8 +1,16 @@
 package olympic.scene.DeliverSpeech;
 
-//public class Chairman extends Person implements
-abstract class Chairman implements Speech{
+import olympic.main.person.Person;
 
-    public abstract void speech();
+public class Chairman extends Person implements Speech{
+
+    public Chairman(String name, String nation) {
+        super(name, nation);
+    }
+//abstract class Chairman implements Speech{
+
+    public void speech() {
+        System.out.println("我是"+this.name);
+    }
 
 }

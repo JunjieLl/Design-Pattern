@@ -1,14 +1,22 @@
 package olympic.scene.MonitorSite;
-
+/**
+ * 设计模式：命令模式
+ * 命令类
+ */
 public abstract class Command {
-    //命令接收者：监视器
+    /**
+     * 设计模式：命令模式
+     * 命令接收者：监视器
+     */
     protected Monitor monitor;
-
     public Command(Monitor monitor) {
         this.monitor = monitor;
     }
 
-    //命令执行
+    /**
+     * 设计模式：命令模式
+     * 命令执行函数
+     */
     abstract void execute();
 
     public Command getCommand(){
@@ -16,75 +24,71 @@ public abstract class Command {
     }
 
 }
+/**
+ * 检查1号场地的命令
+ */
 
-//播放cctv1的命令
-class CCTV1Command extends Command {
-    public CCTV1Command(Monitor monitor) {
+class Site1Command extends Command {
+    public Site1Command(Monitor monitor) {
         super(monitor);
     }
 
     @Override
     void execute() {
-        monitor.playCctv1();
+        monitor.playSite1();
     }
 }
-
-//播放cctv2的命令
-class CCTV2Command extends Command {
-    public CCTV2Command(Monitor monitor) {
+/**
+ * 检查2号场地的命令
+ */
+class Site2Command extends Command {
+    public Site2Command(Monitor monitor) {
         super(monitor);
     }
 
     @Override
     void execute() {
-        monitor.playCctv2();
+        monitor.playSite2();
     }
 }
 
-//播放cctv3的命令
-class CCTV3Command extends Command {
-    public CCTV3Command(Monitor monitor) {
+/**
+ * 检查3号场地的命令
+ */
+class Site3Command extends Command {
+    public Site3Command(Monitor monitor) {
         super(monitor);
     }
 
     @Override
     void execute() {
-        monitor.playCctv3();
+        monitor.playSite3();
     }
 }
-
-//播放cctv4的命令
-class CCTV4Command extends Command {
-    public CCTV4Command(Monitor monitor) {
+/**
+ * 检查4号场地的命令
+ */
+class Site4Command extends Command {
+    public Site4Command(Monitor monitor) {
         super(monitor);
     }
 
     @Override
     void execute() {
-        monitor.playCctv4();
+        monitor.playSite4();
     }
 }
-
-//播放cctv5的命令
-class CCTV5Command extends Command {
-    public CCTV5Command(Monitor monitor) {
+/**
+ * 检查5号场地的命令
+ */
+class Site5Command extends Command {
+    public Site5Command(Monitor monitor) {
         super(monitor);
     }
 
     @Override
     void execute() {
-        monitor.playCctv5();
+        monitor.playSite5();
     }
 }
 
-//播放cctv6的命令
-class CCTV6Command extends Command {
-    public CCTV6Command(Monitor monitor) {
-        super(monitor);
-    }
-
-    @Override
-    void execute() {
-        monitor.playCctv6();
-    }
-}

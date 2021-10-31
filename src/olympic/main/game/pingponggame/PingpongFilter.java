@@ -21,14 +21,14 @@ public class PingpongFilter {
      */
     private List<PingpongGame> games = new ArrayList<>();
 
-    private PingpongFilter nextFliter;
+    private PingpongFilter nextFilter;
 
     public PingpongFilter(String name) {
         this.name = name;
     }
 
-    public void setNextFliter(PingpongFilter nextFliter) {
-        this.nextFliter = nextFliter;
+    public void setNextFilter(PingpongFilter nextFilter) {
+        this.nextFilter = nextFilter;
     }
 
     public void setAthletes(List<Athlete> athletes){
@@ -57,15 +57,15 @@ public class PingpongFilter {
         }
 
         // 过滤出晋级的运动员交给下一轮比赛
-        if (nextFliter != null) {
+        if (nextFilter != null) {
             List<Athlete> nextFilterAthletes = new ArrayList<>();
             for (Athlete athlete : athletes) {
                 if (athlete.getRank(name) == 1) {   //上一场获胜的运动员
                     nextFilterAthletes.add(athlete);
                 }
             }
-            nextFliter.setAthletes(nextFilterAthletes);
-            nextFliter.start();
+            nextFilter.setAthletes(nextFilterAthletes);
+            nextFilter.start();
         }
     }
 }

@@ -28,6 +28,9 @@ public class AthletePool {
      */
     private final Strategy strategy;
 
+    /**
+     * 选择是否要展示细节
+     */
     private boolean viewDetail = false;
 
     /**
@@ -41,6 +44,7 @@ public class AthletePool {
     private List<Map.Entry<Athlete, Double>> list;
 
     public AthletePool(Strategy strategy, List<Athlete> athleteList) {
+        System.out.println("classname: (AthletePool) method: (AthletePool) action: (对象池模式下获取参加比赛的运动员) ");
         this.pool = new LinkedList<>(athleteList);
         for (Athlete athlete : pool) {
             this.allScore.put(athlete, 0.0);
@@ -48,10 +52,18 @@ public class AthletePool {
         this.strategy = strategy;
     }
 
+    /**
+     * 获取对象池中的运动员/组合数量
+     * @return 对象池中的运动员/组合数量
+     */
     public int getSize() {
         return this.pool.size();
     }
 
+    /**
+     * 在对象池中加入运动员
+     * @param object 要添加的运动员
+     */
     public void add(Athlete object) {
         this.pool.add(object);
     }
@@ -129,6 +141,9 @@ public class AthletePool {
         list.clear();
     }
 
+    /**
+     * 设置是否展示细节
+     */
     public void showDetail() {
         System.out.println("【跳水Scene】请选择是否展示细节，输入true展示细节，输入其他不展示:");
         Scanner input = new Scanner(System.in);
@@ -137,7 +152,24 @@ public class AthletePool {
         }
     }
 
+    /**
+     * 获取是否展示细节指令
+     * @return viewDetail 是否展示细节指令
+     */
     public boolean getDetail(){
         return this.viewDetail;
+    }
+
+    /**
+     * 获取要颁奖的人
+     * @param num 参加颁奖的人数
+     * @return winner 参加颁奖的运动员的列表
+     */
+    public List<Athlete> gotoCeremony(int num){
+        List<Athlete> winner=new ArrayList<>();
+        for(int i=0;i<num;i++) {
+            winner.add(list.get(i).getKey());
+        }
+        return winner;
     }
 }

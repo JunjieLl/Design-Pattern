@@ -22,4 +22,8 @@ public class TeamAthleteList implements AthleteList {
 	public ArrayList<TeamAthlete> getAthletes() {
 		return athletes;
 	}
+	
+	public void setAthletes(ArrayList<TeamAthlete> athletes) {
+		this.athletes = athletes;
+	}
 }

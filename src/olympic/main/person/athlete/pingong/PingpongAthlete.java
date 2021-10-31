@@ -19,7 +19,11 @@ public class PingpongAthlete extends IndividualAthlete implements CallBack, Play
             this.strategy = new PingpongDefendStrategy();
             strategy.setOwnerAthlete(this);
         }
-        this.capacity = random.nextInt(10) + 90;
+        if (nation=="CHN"){
+            capacity = 99;
+        }else{
+            capacity = random.nextInt(8) + 90;
+        }
     }
 
     /**

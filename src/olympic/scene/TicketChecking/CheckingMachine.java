@@ -1,6 +1,6 @@
-package olympic.scene.TicketCheckinig;
+package olympic.scene.TicketChecking;
 
-class CheckingMachine{
+public class CheckingMachine{
     private TicketChecking strategy;
 
     /**

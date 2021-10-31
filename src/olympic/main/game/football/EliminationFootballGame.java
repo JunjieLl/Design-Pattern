@@ -8,6 +8,7 @@ import java.util.Random;
  * 淘汰赛
  */
 public class EliminationFootballGame extends FootballGame{
+    private int penaltyScore1, penaltyScore2;
     public EliminationFootballGame(FootballTeam team1, FootballTeam team2) {
         super(team1, team2);
     }
@@ -42,8 +43,6 @@ public class EliminationFootballGame extends FootballGame{
         else {
             System.out.println("比赛结束，比分为" + score1 + "-" + score2);
         }
-        this.getTeam1().setRank("FootballTeam", score1);
-        this.getTeam2().setRank("FootballTeam", score2);
     }
 
     /**
@@ -52,5 +51,13 @@ public class EliminationFootballGame extends FootballGame{
      */
     public void setObserver(Observer o) {
         this.observer = o;
+    }
+
+    public int getPenaltyScore1() {
+        return penaltyScore1;
+    }
+
+    public int getPenaltyScore2() {
+        return penaltyScore2;
     }
 }

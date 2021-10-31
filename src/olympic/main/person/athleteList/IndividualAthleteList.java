@@ -21,4 +21,7 @@ public class IndividualAthleteList implements AthleteList {
 		return athletes;
 	}
 	
+	public void setAthletes(ArrayList<IndividualAthlete> athletes) {
+		this.athletes = athletes;
+	}
 }

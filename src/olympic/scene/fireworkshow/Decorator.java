@@ -1,6 +1,6 @@
 package olympic.scene.fireworkshow;
 
-abstract class Decorator extends Show {
+abstract public class Decorator extends Show {
     protected Show show;
 
     public Decorator(Show show) {

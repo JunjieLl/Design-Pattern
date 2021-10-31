@@ -14,6 +14,14 @@ public class TitleDisplay extends Display{
      * @param msg 添加的文字.
      */
     public void add(String msg){
+        if(msg.getBytes().length!=msg.length()){
+            int numChineseChar = (msg.getBytes().length - msg.length())/2;
+            StringBuffer sb = new StringBuffer();
+            //sb.append(spaces(numChineseChar));
+            sb.append(msg);
+            sb.append(spaces(numChineseChar*2));
+            msg=sb.toString();
+        }
         body.add(msg);
         updateColumn(msg);
     }
@@ -49,14 +57,35 @@ public class TitleDisplay extends Display{
      */
     private void updateColumn(String msg)
     {
-        if(msg.getBytes().length>columns)
-        {
-            columns = msg.getBytes().length;
+        if(msg.getBytes().length==msg.length()){
+            if(msg.getBytes().length>columns){
+                columns = msg.getBytes().length;
+            }
+            for(int row = 0; row<body.size();row++){
+                int fills = columns - ((String)body.get(row)).getBytes().length;
+                if (fills > 0){
+                    body.set(row, body.get(row) + spaces(fills));
+                }
+            }
         }
-        for(int row = 0; row<body.size();row++){
-            int fills = columns - ((String)body.get(row)).getBytes().length;
-            if (fills > 0){
-                body.set(row, body.get(row) + spaces(fills));
+        else{
+            if(msg.getBytes().length+(msg.getBytes().length-msg.length())>columns){
+                columns = msg.getBytes().length-(msg.getBytes().length-msg.length());
+            }
+            for(int row = 0; row<body.size();row++){
+                if(((String)body.get(row)).getBytes().length == ((String)body.get(row)).length()){
+                    int fills = columns - ((String)body.get(row)).getBytes().length;
+                    if (fills > 0){
+                        body.set(row, body.get(row) + spaces(fills));
+                    }
+                }else{
+                    int fills = columns - ( ((String)body.get(row)).getBytes().length + (((String)body.get(row)).getBytes().length - ((String)body.get(row)).length()) );
+                    if (fills > 0){
+                        body.set(row, body.get(row) + spaces(fills));
+                    }
+                }
+
+
             }
         }
     }
