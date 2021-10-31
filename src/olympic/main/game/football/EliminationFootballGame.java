@@ -42,6 +42,8 @@ public class EliminationFootballGame extends FootballGame{
         else {
             System.out.println("比赛结束，比分为" + score1 + "-" + score2);
         }
+        this.getTeam1().setRank("FootballTeam", score1);
+        this.getTeam2().setRank("FootballTeam", score2);
     }
 
     /**

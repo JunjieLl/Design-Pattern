@@ -1,8 +1,10 @@
 package olympic.scene.enterarena;
 
 
+import olympic.main.game.football.FootballGameManager;
 import olympic.main.person.PersonFactory;
 import olympic.main.person.athlete.Athlete;
+import olympic.main.person.athlete.TeamAthlete;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,208 +16,88 @@ import java.util.List;
 
 public class EnterLightPattern {
     public static void main(String[] args) {
-        PersonFactory personFactory=PersonFactory.getInstance();
-        System.out.println(personFactory.getAthleteByNation("中国"));
+        EnterManager enterManager = EnterManager.getInstance();
 
-        List<Athlete> chinaList = PersonFactory.getInstance().getAthleteByNation("中国");
-        List<Athlete> mengguList = PersonFactory.getInstance().getAthleteByNation("蒙古");
-
-
-        Teams allTeam=new Teams("全体国家代表队");
-
-        Teams americaTeam = new Teams("美国队");
-        Teams chinaTeam = new Teams("中国队");
-        Teams fireTeam=new Teams("圣火队");
-        Teams pingpangTeam=new Teams("乒乓球队");
-
-        Person tom = new Person("Tom");
-        Person harry = new Person("Harry");
-        Person liuXiang = new Person("刘翔");
-        Person maLong = new Person("马龙");
-        Person zhangJike = new Person("张继科");
-        Person p1=new Person("传递者一");
-        Person p2=new Person("传递者二");
-        Person p3=new Person("传递者三");
-
-        americaTeam.add(tom);
-        americaTeam.add(harry);
-        chinaTeam.add(liuXiang);
-        chinaTeam.add(maLong);
-        fireTeam.add(p1);
-        fireTeam.add(p2);
-        fireTeam.add(p3);
-        allTeam.add(americaTeam);
-        allTeam.add(chinaTeam);
-
-        pingpangTeam.add(maLong);
-        pingpangTeam.add(zhangJike);
+        TeamAthlete chinaList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation("中国"), "中国");
+        TeamAthlete koreaList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation("韩国"), "韩国");
+        TeamAthlete japanList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation("日本"), "日本");
+        TeamAthlete thailandList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation("泰国"), "泰国");
+        TeamAthlete malaysiaList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation("马来西亚"), "马来西亚");
+        TeamAthlete singaporeList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation("新加坡"), "新加坡");
+        TeamAthlete russiaList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation("俄罗斯"), "俄罗斯");
+        TeamAthlete polandList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation("波兰"), "波兰");
+        TeamAthlete czechList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation("捷克"), "捷克");
+        TeamAthlete germanyList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation("德国"), "德国");
+        TeamAthlete austriaList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation("奥地利"), "奥地利");
+        TeamAthlete switzerlandList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation("瑞士"), "瑞士");
+        TeamAthlete englandList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation("英国"), "英国");
+        TeamAthlete hollandList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation("荷兰"), "荷兰");
+        TeamAthlete frenchList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation("法国"), "法国");
+        TeamAthlete spainList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation("西班牙"), "西班牙");TeamAthlete americaList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation("美国"), "美国");
+        TeamAthlete australiaList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation("澳大利亚"), "澳大利亚");
 
 
-        TeamIterator it= (TeamIterator) americaTeam.iterator();
-        System.out.println("classname:(TeamPerson) method:(getName) action:(返回人物姓名)");
-        System.out.println("*美国队员*");
-        while(it.hasNext()){
-            TeamPerson person=(TeamPerson) it.next();
-            System.out.println(person.getName());
-
+        if(chinaList.getNumber()>0) {
+            enterManager.setTeams(chinaList);
         }
-        it= (TeamIterator) chinaTeam.iterator();
-        System.out.println("*中国队员*");
-        while(it.hasNext()){
-            TeamPerson person=(TeamPerson) it.next();
-            System.out.println(person.getName());
+        if(koreaList.getNumber()>0) {
+            enterManager.setTeams(koreaList);
+        }
+        if(japanList.getNumber()>0) {
+            enterManager.setTeams(japanList);
+        }
+        if(thailandList.getNumber()>0) {
+            enterManager.setTeams(thailandList);
+        }
+        if(malaysiaList.getNumber()>0) {
+            enterManager.setTeams(malaysiaList);
+        }
+        if(singaporeList.getNumber()>0) {
+            enterManager.setTeams(singaporeList);
+        }
+        if(russiaList.getNumber()>0) {
+            enterManager.setTeams(russiaList);
+        }
+        if(polandList.getNumber()>0) {
+            enterManager.setTeams(polandList);
+        }
+        if(czechList.getNumber()>0) {
+            enterManager.setTeams(czechList);
+        }
+        if(germanyList.getNumber()>0) {
+            enterManager.setTeams(germanyList);
+        }
+        if(austriaList.getNumber()>0) {
+            enterManager.setTeams(austriaList);
+        }
+        if(switzerlandList.getNumber()>0) {
+            enterManager.setTeams(switzerlandList);
+        }
+        if(englandList.getNumber()>0) {
+            enterManager.setTeams(englandList);
+        }
+        if(hollandList.getNumber()>0) {
+            enterManager.setTeams(hollandList);
+        }
+        if(frenchList.getNumber()>0) {
+            enterManager.setTeams(frenchList);
+        }
+        if(spainList.getNumber()>0) {
+            enterManager.setTeams(spainList);
+        }
+        if(americaList.getNumber()>0) {
+            enterManager.setTeams(americaList);
+        }
+        if(australiaList.getNumber()>0) {
+            enterManager.setTeams(australiaList);
+        }
+        EnterIterator et = enterManager.iterator();
+        while(et.hasNext()) {
+            TeamAthlete myList=et.next();
+            System.out.println("现在向我们走来的是"+myList.getNation()+"队，让我们欢迎他们！");
         }
 
-        it= (TeamIterator) fireTeam.iterator();
-        System.out.println("*护送圣火*");
-        System.out.println("三位传递者代表入场，并在指定位置等候");
-        while(it.hasNext()){
-            TeamPerson person=(TeamPerson) it.next();
-            System.out.println(person.getName()+person.passFire());
-        }
-        System.out.println("最后一位传递者点燃圣火");
 
-        it= (TeamIterator)  allTeam.iterator();
-        System.out.println("*入场仪式*");
-        while(it.hasNext()){
-            TeamPerson person=(TeamPerson) it.next();
-            System.out.println("现在向我们走来的的是"+person.getName()+"，欢迎运动员们入场。");
-        }
-
-
-
-    }
-}
-
-
-abstract class TeamPerson {
-    public  String name;
-
-    public TeamPerson(String name){
-        this.name = name;
-    }
-    /***
-     * 设计模式：迭代器模式
-     * 获得队员姓名
-     * @return name
-     */
-    public String getName() {
-        return name;
-    }
-
-    /***
-     * 设计模式：迭代器模式
-     * @return 传递使者的动作
-     */
-    public String passFire(){
-        return("向下一名使者传递圣火");
-    }
-
-
-    public abstract void display();
-}
-
-class Teams extends TeamPerson implements Aggregate{
-    private List<TeamPerson> olympicATeam;
-
-    public Teams(String name){
-        super(name);
-        olympicATeam = new ArrayList<TeamPerson>();
-    }
-
-    /***
-     * 模式：组合模式
-     * 为队伍添加、删除队员
-     * @param person
-     */
-
-    public void add(TeamPerson person){
-        olympicATeam.add(person);
-    }
-
-    public void remove(TeamPerson person){
-        olympicATeam.remove(person);
-    }
-
-    public void display() {
-        for(TeamPerson person : olympicATeam){
-            person.display();
-        }
-    }
-
-    public int getLength() {
-        return olympicATeam.size();
-    }
-    /***
-     * 模式：迭代器模式
-     * @param index
-     * @return 指定位置的队员
-     */
-    public TeamPerson getPersonAt(int index) {
-        return olympicATeam.get(index);
-    }
-
-    public TeamIterator iterator() {
-        return new PersonIterator(this);
-    }
-
-}
-
-class Person extends TeamPerson{
-    public Person(String name) {
-        super(name);
-    }
-    public void display() {
-
-        System.out.println("classname:(Person) methods:(display) action:(人物姓名："
-        +name+")");
-//        System.out.println("这是：" + super.getName());
-    }
-}
-
-
-interface Aggregate{
-    public abstract TeamIterator iterator();
-}
-
-interface TeamIterator{
-    /**
-     * 设计模式：迭代器模式
-     * 检测list中是否还有下一个
-     * @return boolean
-     */
-    public abstract boolean hasNext();
-
-    /**
-     * 设计模式：迭代器模式
-     * 获取下一个对象
-     * @return person
-     */
-    public abstract Object next();
-}
-
-class PersonIterator implements TeamIterator {
-
-    private Teams team;
-    private int index;
-
-    public PersonIterator(Teams team) {
-        this.team = team;
-        this.index = 0;
-    }
-
-    public boolean hasNext() {
-        if (index < team.getLength()) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public Object next() {
-        TeamPerson person = team.getPersonAt(index);
-        index++;
-        return person;
     }
 }
 
