@@ -29,14 +29,11 @@ public class ContestDirector {
 
     }
 
-<<<<<<< Updated upstream
-    public void construct(){
-=======
+
     /**
      * builder模式中的导演类，开始构建builder
      */
     public void construct() {
->>>>>>> Stashed changes
         System.out.println("classname: (ContestDirector) method: (construct) action: (Builder method模式中运动员参与比赛) ");
         if(rounds==1){
             Contest contest3=new Contest(new Final(athletes));
@@ -44,12 +41,7 @@ public class ContestDirector {
         }else if(rounds==2){
             Contest contest1=new Contest(new Prelude(athletes));
             contest1.display();
-<<<<<<< Updated upstream
-            Contest contest3=new Contest(new Final(athletes));
-
-=======
             Contest contest3 = new Contest(new Final(athletes));
->>>>>>> Stashed changes
             contest3.display();
         }else{
             Contest contest1=new Contest(new Prelude(athletes));
@@ -59,11 +51,5 @@ public class ContestDirector {
             Contest contest3=new Contest(new Final(athletes));
             contest3.display();
         }
-<<<<<<< Updated upstream
-
-
-
-=======
->>>>>>> Stashed changes
     }
 }

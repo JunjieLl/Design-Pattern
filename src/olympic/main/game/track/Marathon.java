@@ -31,16 +31,11 @@ public class Marathon extends TrackGame{
         }
 
     }
-<<<<<<< Updated upstream
 
-
-
-=======
     /**
      * 获取比赛名称
      * @return 比赛名称
      */
->>>>>>> Stashed changes
     public String getName(){
         return "马拉松比赛";
     }

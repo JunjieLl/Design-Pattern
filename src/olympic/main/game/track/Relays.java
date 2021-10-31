@@ -31,18 +31,12 @@ public class Relays extends TrackGame {
             athletes.get(i).setRank("Relays",i+1);
         }
     }
-<<<<<<< Updated upstream
 
-
-
-    public String getName(){
-=======
     /**
      * 获取比赛名称
      * @return 比赛名称
      */
     public String getName() {
->>>>>>> Stashed changes
         return "接力比赛";
     }
 }
