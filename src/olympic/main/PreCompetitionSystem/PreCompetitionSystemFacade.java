@@ -85,6 +85,7 @@ public class PreCompetitionSystemFacade {
 		
 		System.out.println("【接下来进行确认参赛名单环节，参赛人员如下：】");
 		pressEnterToContinue();
+		System.out.println();
 		athletes.accept(new ConfirmEntryListVisitor());
 		printlnNRowSpace(2);
 		
@@ -92,6 +93,7 @@ public class PreCompetitionSystemFacade {
 		pressEnterToContinue();
 		VolunteerList volunteerList=VolunteerList.getInstance();
 		volunteerList.allocateVolunteer(15 + (int) (Math.random() * 10));
+		System.out.println();
 		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 		printlnNRowSpace(2);
 		
@@ -158,7 +160,7 @@ public class PreCompetitionSystemFacade {
 	
 	public static void main(String[] args) {
 		PreCompetitionSystemFacade preCompetitionSystemFacade = new PreCompetitionSystemFacade();
-		preCompetitionSystemFacade.preCompetitionSystemFacade("Hurdling");
+		preCompetitionSystemFacade.preCompetitionSystemFacade("Relays");
 	}
 	
 	ArrayList<IndividualAthlete> getAllIndividualAthlete(String gameName) {

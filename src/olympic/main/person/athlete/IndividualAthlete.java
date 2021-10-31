@@ -47,13 +47,13 @@ public abstract class IndividualAthlete extends Athlete {
         return urineTestProcurator;
     }
     
-    int isNovelCoronavirus = -1;
+    double isNovelCoronavirus = -1;
     
     public boolean getIsNovelCoronavirus(){
         if(isNovelCoronavirus == -1){
-            isNovelCoronavirus = (int) (Math.random() * 100);
+            isNovelCoronavirus =  (Math.random() * 100);
         }
-        return isNovelCoronavirus < 5;
+        return isNovelCoronavirus < 3;
     }
 
     @Override
