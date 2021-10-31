@@ -43,11 +43,11 @@ public class PressConferenceMaker {
 
     public static void main(String[] args) {
         System.out.println("新闻发布会开始：");
-        Interviewee interviewee = new TrackAthlete("Manxin Xu", "male");
+        Interviewee interviewee = new TrackAthlete("徐满心", "中国");
         ArrayList<Interviewer> interviewers = new ArrayList<>();
-        interviewers.add(new Interviewer("Junjie Li", "male", new PressConferenceStrategy()));
-        interviewers.add(new Interviewer("Chenhao Zhai", "male", new PressConferenceStrategy()));
-        interviewers.add(new Interviewer("Even", "female", new PressConferenceStrategy()));
+        interviewers.add(new Interviewer("Junjie Li", "美国", new PressConferenceStrategy()));
+        interviewers.add(new Interviewer("Chenhao Zhai", "英国", new PressConferenceStrategy()));
+        interviewers.add(new Interviewer("Even", "法国", new PressConferenceStrategy()));
         makePressConference(interviewee, interviewers, 10);
         System.out.println("新闻发布会结束\n");
     }
