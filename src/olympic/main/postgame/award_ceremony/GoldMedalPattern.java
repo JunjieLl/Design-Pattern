@@ -33,7 +33,9 @@ public class GoldMedalPattern implements MedalProduct {
                                 ),
                                 '@')
                 );
+        System.out.println("\033[1;33m");
         medalPattern.show();
+        System.out.println("\033[0m \n");
     }
 
     public MedalProduct createClone(){
