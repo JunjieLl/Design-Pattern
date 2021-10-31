@@ -13,6 +13,7 @@ public class DoubleTenMetreStrategy extends Strategy{
         name="跳水双人十米跳台";
         scores = new ArrayList<>();
         cycleNumber = 5;
+        showStrategy("DoubleThreeMetreStrategy");
     }
 
     /**
@@ -47,6 +48,10 @@ public class DoubleTenMetreStrategy extends Strategy{
         return score;
     }
 
+    /**
+     * 获取该策略下一场比赛要进行的轮次
+     * @return cycleNumber 要进行的轮次
+     */
     @Override
     public int getCycleNumber(){
         return this.cycleNumber;
