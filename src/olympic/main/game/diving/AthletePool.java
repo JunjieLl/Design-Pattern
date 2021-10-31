@@ -44,6 +44,7 @@ public class AthletePool {
     private List<Map.Entry<Athlete, Double>> list;
 
     public AthletePool(Strategy strategy, List<Athlete> athleteList) {
+        System.out.println("classname: (AthletePool) method: (AthletePool) action: (对象池模式下获取参加比赛的运动员) ");
         this.pool = new LinkedList<>(athleteList);
         for (Athlete athlete : pool) {
             this.allScore.put(athlete, 0.0);

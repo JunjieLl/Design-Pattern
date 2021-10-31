@@ -32,7 +32,8 @@ public class FinalContest extends DivingGame {
      */
     @Override
     public void start(){
-        System.out.println("\n【"+athletePool.getStrategy().getName()+" 决赛】");
+        System.out.println("\nclassname: (FinalContest) method: (start) action: (管道模式下开始决赛) ");
+        System.out.println("【"+athletePool.getStrategy().getName()+" 决赛】");
         for (int i = 1; i <= athletePool.getStrategy().getCycleNumber(); i++) {
             System.out.println("【第" + i + "轮】");
             for (int j = 0; j < athletePool.getSize(); j++) {

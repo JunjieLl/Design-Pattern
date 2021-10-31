@@ -13,6 +13,7 @@ public class DoubleThreeMetreStrategy extends Strategy{
         name="跳水双人三米跳板";
         scores = new ArrayList<>();
         cycleNumber = 5;
+        showStrategy("DoubleThreeMetreStrategy");
     }
 
     /**

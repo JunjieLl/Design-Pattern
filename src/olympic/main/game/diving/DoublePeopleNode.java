@@ -13,10 +13,10 @@ public class DoublePeopleNode implements AbstractNode{
     @Override
     public Strategy interpret(String context){
         if(context.contains("三米")){
-            System.out.println("\n本次比赛使用【三米板双人】规则");
+            System.out.println("本次比赛使用【三米板双人】规则");
             return new DoubleThreeMetreStrategy();
         }else if(context.contains("十米")){
-            System.out.println("\n本次比赛使用【十米台双人】规则");
+            System.out.println("本次比赛使用【十米台双人】规则");
             return new DoubleTenMetreStrategy();
         }
         return null;

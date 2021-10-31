@@ -13,6 +13,7 @@ public class SingleTenMetreStrategy extends Strategy{
         name="跳水单人十米跳台";
         scores = new ArrayList<>();
         cycleNumber = 6;
+        showStrategy("SingleTenMetreStrategy");
     }
 
     /**
