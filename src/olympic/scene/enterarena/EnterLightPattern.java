@@ -22,60 +22,14 @@ public class EnterLightPattern {
         String[] country=new String[48];
         country= PersonFactory.getInstance().getNations().toArray(new String[0]);
 
-        for(int i=0;i<48;i++)
+        for(int i=0;i<10;i++)
         {
-            if(i%3==0)
-            {
-                TeamAthlete tempList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation(country[i]),country[i]);
-                    if (tempList.getNumber() > 0) {
-                        enterManager.setTeams(tempList);
-                        if(i%6==0)
-                        { torchBarer.addMember(tempList.getFirstAthlete());}
-                   }
-//            switch (country[i]){
-//                case "CHN":
-//                    TeamAthlete tempList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation(country[i]),country[i]);
-//                    if (tempList.getNumber() > 0) {
-//                        enterManager.setTeams(tempList);
-//                        torchBarer.addMember(tempList.getFirstAthlete());
-//                    }
-//                    break;
-//                case "KOR":
-//                    tempList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation(country[i]),country[i]);
-//                    if (tempList.getNumber() > 0) {
-//                        enterManager.setTeams(tempList);
-//                        torchBarer.addMember(tempList.getFirstAthlete());
-//                    }
-//                    break;
-//                case "USA":
-//                    tempList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation(country[i]),country[i]);
-//                    if (tempList.getNumber() > 0) {
-//                        enterManager.setTeams(tempList);
-//                        torchBarer.addMember(tempList.getFirstAthlete());
-//                    }
-//                    break;
-//                case "JPN":
-//                    tempList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation(country[i]),country[i]);
-//                    if (tempList.getNumber() > 0) {
-//                        enterManager.setTeams(tempList);
-//                        torchBarer.addMember(tempList.getFirstAthlete());
-//                    }
-//                    break;
-//                case "FRA":
-//                    tempList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation(country[i]),country[i]);
-//                    if (tempList.getNumber() > 0) {
-//                        enterManager.setTeams(tempList);
-//                        torchBarer.addMember(tempList.getFirstAthlete());
-//                    }
-//                    break;
-//                case "GER":
-//                    tempList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation(country[i]),country[i]);
-//                    if (tempList.getNumber() > 0) {
-//                        enterManager.setTeams(tempList);
-//                        torchBarer.addMember(tempList.getFirstAthlete());
-//                    }
-//                    break;
+            int ran= 0+(int)(Math.random()*(47-0+1));
 
+            TeamAthlete tempList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation(country[ran]),country[ran]);
+            if (tempList.getNumber() > 0) {
+                enterManager.setTeams(tempList);
+                torchBarer.addMember(tempList.getFirstAthlete());
             }
 
         };
