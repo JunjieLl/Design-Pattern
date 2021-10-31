@@ -1,6 +1,6 @@
 package olympic.scene.translate;
 
-class SpanishAdapter implements Translator{
+public class SpanishAdapter implements Translator{
     private Speaker speaker;
     public SpanishAdapter(Speaker speaker){
         this.speaker =speaker;

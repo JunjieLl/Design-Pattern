@@ -2,7 +2,7 @@ package olympic.scene.fireworkshow;
 
 import java.util.Scanner;
 
-class LightShow extends Decorator {
+public class LightShow extends Decorator {
     public LightShow(Show show){
         super(show);
     }
