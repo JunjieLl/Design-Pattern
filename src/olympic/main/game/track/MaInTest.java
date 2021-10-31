@@ -13,7 +13,8 @@ public class MaInTest {
         relays.start();
         Marathon marathon=new Marathon(PersonFactory.getInstance().getAthletes("Marathon"));
         marathon.start();
-
+        Hurdling track=new Hurdling(PersonFactory.getInstance().getAthletes("Hurdling"));
+        track.start();
 
     }
 }
