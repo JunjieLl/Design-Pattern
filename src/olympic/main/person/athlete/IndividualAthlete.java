@@ -12,7 +12,7 @@ public abstract class IndividualAthlete extends Athlete implements Speech {
         super(name, nation);
     }
     
-    private ArrayList<UrineBottle> urineBottles = new ArrayList<>();
+    private final ArrayList<UrineBottle> urineBottles = new ArrayList<>();
     
     public void addUrineBottle(char c) throws Exception {
         if (urineBottles.size() < 2) {
@@ -24,10 +24,6 @@ public abstract class IndividualAthlete extends Athlete implements Speech {
     
     public void setUrineTestStrategy(int num, int urineTestStrategy) {
         urineBottles.get(num).setUrineTestStrategy(urineTestStrategy);
-    }
-    
-    public UrineBottle getUrineBottle(int num) {
-        return urineBottles.get(num);
     }
     
     public Boolean getUrineTestResult(int num){

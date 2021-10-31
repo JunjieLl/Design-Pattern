@@ -12,7 +12,7 @@ public class TeamAthleteList implements AthleteList {
 	/**
 	 * 运动员队伍列表
 	 */
-	private ArrayList<TeamAthlete> athletes = null;
+	private ArrayList<TeamAthlete> athletes;
 	
 	/**
 	 * 设置该类的运动员队伍数组

@@ -32,9 +32,7 @@ public class UrineVisitor extends Visitor{
 	 * @param individualAthletes 个人运动员列表类
 	 */
 	public void individualAthleteUrineTest(ArrayList<IndividualAthlete> individualAthletes){
-		int count = 0;
 		for (IndividualAthlete athlete : individualAthletes) {
-			count += 1;
 			System.out.print("- 运动员"+athlete.getName() + "完成尿检。");
 			athlete.setUrineTestProcurator();
 			athlete.getUrineTestProcurator().check();

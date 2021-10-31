@@ -7,7 +7,7 @@ public class UrineBottle {
 	/**
 	 * 尿样瓶的名称（只能为‘A’或者‘B’）
 	 */
-	private char urineBottles;
+	private final char urineBottles;
 	
 	/**
 	 * 该尿样是否为阳性

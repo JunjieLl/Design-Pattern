@@ -10,12 +10,7 @@ public class UrineTestProcuratorReal extends UrineTestProcurator {
 	/**
 	 * 尿检检察员等级
 	 */
-	private String grade;
-	
-	/**
-	 * 尿检检察员等级必须为gradeList中的一个
-	 */
-	private final ArrayList<String> gradeList = new ArrayList<>(Arrays.asList("初级", "中级", "副高级", "高级"));
+	private final String grade;
 	
 	/**
 	 * 尿检检察员真实类的构造函数
@@ -25,6 +20,10 @@ public class UrineTestProcuratorReal extends UrineTestProcurator {
 	protected UrineTestProcuratorReal(String name, String nation) {
 		super(name, nation);
 		int num = (int) (Math.random() * 4);
+		/*
+		  尿检检察员等级必须为gradeList中的一个
+		 */
+		ArrayList<String> gradeList = new ArrayList<>(Arrays.asList("初级", "中级", "副高级", "高级"));
 		grade = gradeList.get(num);
 	}
 	
