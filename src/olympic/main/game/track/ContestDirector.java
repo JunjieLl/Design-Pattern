@@ -22,6 +22,10 @@ public class ContestDirector {
         this.athletes = athletes;
     }
 
+
+    /**
+     * builder模式中的导演类，开始构建builder
+     */
     public void construct() {
         System.out.println("classname: (ContestDirector) method: (construct) action: (Builder method模式中运动员参与比赛) ");
         if (rounds == 1) {
@@ -31,7 +35,6 @@ public class ContestDirector {
             Contest contest1 = new Contest(new Prelude(athletes));
             contest1.display();
             Contest contest3 = new Contest(new Final(athletes));
-
             contest3.display();
         } else {
             Contest contest1 = new Contest(new Prelude(athletes));
@@ -41,7 +44,5 @@ public class ContestDirector {
             Contest contest3 = new Contest(new Final(athletes));
             contest3.display();
         }
-
-
     }
 }

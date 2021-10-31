@@ -24,6 +24,10 @@ public class Marathon extends TrackGame{
         }
     }
 
+    /**
+     * 获取比赛名称
+     * @return 比赛名称
+     */
     public String getName(){
         return "马拉松比赛";
     }
