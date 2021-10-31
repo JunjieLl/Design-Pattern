@@ -46,6 +46,15 @@ public abstract class IndividualAthlete extends Athlete {
     public UrineTestProcurator getUrineTestProcurator() {
         return urineTestProcurator;
     }
+    
+    int isNovelCoronavirus = -1;
+    
+    public boolean getIsNovelCoronavirus(){
+        if(isNovelCoronavirus == -1){
+            isNovelCoronavirus = (int) (Math.random() * 100);
+        }
+        return isNovelCoronavirus < 5;
+    }
 
     @Override
     public void update(String content) {

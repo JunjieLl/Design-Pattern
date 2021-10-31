@@ -12,6 +12,7 @@ public class Main {
 
         Scene divingGame=new DivingGameScene("单人三米");
         divingGame.play();
+        new FootballScene().play();
         //new CeremonyScene("LI JUNJIE","LI JIEJUN","JIE LIJUN").play();
         //new ChoreHandlingScene().play();
         //new ReviewQScene().play();
