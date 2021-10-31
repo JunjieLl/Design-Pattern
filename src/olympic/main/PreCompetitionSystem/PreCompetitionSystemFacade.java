@@ -85,7 +85,6 @@ public class PreCompetitionSystemFacade {
 		
 		System.out.println("【接下来进行确认参赛名单环节，参赛人员如下：】");
 		pressEnterToContinue();
-		System.out.println();
 		athletes.accept(new ConfirmEntryListVisitor());
 		printlnNRowSpace(2);
 		
@@ -116,11 +115,6 @@ public class PreCompetitionSystemFacade {
 			return false;
 		}
 		return true;
-	}
-	
-	private ArrayList<Athlete> teamAthleteConvertToAthlete(ArrayList<TeamAthlete> teamAthletes){
-		ArrayList<Athlete> res = new ArrayList<>(teamAthletes);
-		return res;
 	}
 	
 	private void pressEnterToContinue(){
@@ -160,7 +154,7 @@ public class PreCompetitionSystemFacade {
 	
 	public static void main(String[] args) {
 		PreCompetitionSystemFacade preCompetitionSystemFacade = new PreCompetitionSystemFacade();
-		preCompetitionSystemFacade.preCompetitionSystemFacade("Relays");
+		preCompetitionSystemFacade.preCompetitionSystemFacade("Diving");
 	}
 	
 	ArrayList<IndividualAthlete> getAllIndividualAthlete(String gameName) {

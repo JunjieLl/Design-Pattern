@@ -16,7 +16,7 @@ public class ConfirmEntryListVisitor extends Visitor {
 		int count = 0;
 		for (Person athlete : individualAthleteList.getAthletes()) {
 			count += 1;
-			System.out.println("+ 第" + intToString(count,3) + "位运动员的名字是" + athlete.getName() + "，来自" + athlete.getNation() + "队");
+			System.out.println("+ 第" + intToString(count,3) + "位运动员的名字是" + athlete.getName() + "，来自" + athlete.getNation());
 		}
 		System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++");
 		return individualAthleteList.getAthletes();
@@ -26,9 +26,11 @@ public class ConfirmEntryListVisitor extends Visitor {
 	public ArrayList<TeamAthlete> visit(TeamAthleteList teamAthleteList) {
 		System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++");
 		System.out.println("共有"+teamAthleteList.getAthletes().size()+"个队伍参加该比赛");
+		int countTeam = 0;
 		for (TeamAthlete team : teamAthleteList.getAthletes()) {
+			countTeam += 1;
 			int count = 0;
-			System.out.println("+ 现在出场的是" + team.getNation() + "队");
+			System.out.println("+ 第"+countTeam+"出场的队伍是" + team.getName()+ "，来自"+team.getNation());
 			for (Person athlete : team.getAthleteList()) {
 				count += 1;
 				System.out.println("+     该队第" + intToString(count,3) + "位运动员的名字是" + athlete.getName());
