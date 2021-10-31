@@ -3,6 +3,7 @@ package olympic.scene.enterarena;
 import olympic.main.game.Aggregate;
 import olympic.main.game.football.FootballGameManager;
 import olympic.main.person.athlete.Athlete;
+import olympic.main.person.athlete.TeamAthlete;
 import olympic.main.person.athlete.footballathlete.FootballTeam;
 
 import java.util.ArrayList;
@@ -14,9 +15,9 @@ public class EnterManager implements Aggregate {
     public static EnterManager getInstance() {
         return singleton;
     }
-    private ArrayList<EnterTeam> allteams = new ArrayList<>();
+    private List<TeamAthlete> allteams = new ArrayList<>();
 
-    public void setTeams(EnterTeam teams) {
+    public void setTeams(TeamAthlete teams) {
         allteams.add(teams);
     }
 
@@ -25,7 +26,7 @@ public class EnterManager implements Aggregate {
         return allteams.size();
     }
 
-    public EnterTeam getTeamAt(int index)
+    public TeamAthlete getTeamAt(int index)
     {
         return allteams.get(index);
     }
