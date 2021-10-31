@@ -10,6 +10,126 @@ import java.util.Random;
  * 为运动员随机生成姓名
  */
 public class NameFactory {
+    static  String[] lastNameEn={" Admirind",
+            " Aerum",
+            " Akvum",
+            " Ambrofaltkhawsen",
+            " Ameblo",
+            " Amik",
+            " Amomian",
+            " Arbar",
+            " Barbarkor",
+            " Bier",
+            " Bird",
+            " Biterlif",
+            " Bondno",
+            " Bravul",
+            " Burlu",
+            " Butik",
+            " Celum",
+            " Chener",
+            " Chipen",
+            " Delolmo",
+            " Devum",
+            " Domet",
+            " Ehhum",
+            " Emilan",
+            " Enhhoran",
+            " Esper",
+            " Estrum",
+            " Fajrer",
+            " Famili",
+            " Fesanan",
+            " Filopator",
+            " Fiskan",
+            " Flugil",
+            " Garan",
+            " Geralan",
+            " Gimik",
+            " Glaving",
+            " Grinhilt",
+            " Gust",
+            " Gharden",
+            " Hakil",
+            " Hark",
+            " Haska",
+            " Heldan",
+            " Herb",
+            " Homar",
+            " Horbek",
+            " Hhorum",
+            " Inkuj",
+            " Interes",
+            " Irlan",
+            " Ivens",
+            " Jablich",
+            " Jagu",
+            " Jarum",
+            " Junul",
+            " Jhurnal",
+            " Kamino",
+            " Kandeling",
+            " Kanjas",
+            " Karlan",
+            " Klub",
+            " Kodlar",
+            " Korjas",
+            " Kovert",
+            " Kradan",
+            " Kredeblo",
+            " Kruf",
+            " Kudril",
+            " Kuirej",
+            " Kunul",
+            " Kuvan",
+            " Kvarop",
+            " Laget",
+            " Lamris",
+            " Land",
+            " Libret",
+            " Loghej",
+            " Lumstel",
+            " Makavel",
+            " Maksipes",
+            " Marban",
+            " Marist",
+            " Marsaus",
+            " Marum",
+            " Mehhkaprad",
+            " Memorind",
+            " Montum",
+            " Montril",
+            " Nakan",
+            " Nomum",
+            " Oktoped",
+            " Ostum",
+            " Paner",
+            " Panum",
+            " Pentium",
+            " Pentrist",
+            " Pepian",
+            " Pilk",
+            " Piruj",
+            " Pluming",
+            " Plumuj",
+            " Pluver",
+            " Pomuj",
+            " Preghej",
+            " Pulver",
+            " Rafnil",
+            " Ralfan",
+            " Rastagan",
+            " Razil",
+            " Regnestrum",
+            " Regum",
+            " Richul",
+            " Rukspin",
+            " Sabler",
+            " Saghulo",
+            " Sagum",
+            " Saist",
+            " Skatol",
+            " Stelum",};
 
         static String[] namesEn = {
                 "Aaron",
@@ -664,6 +784,7 @@ public class NameFactory {
             "第五" , "言" , "福"
     };
     private HashSet<String> sites = new HashSet<String>();
+    private HashSet<String> nationSites = new HashSet<String>();
 
 
     private Random random=new Random();
@@ -692,8 +813,8 @@ public class NameFactory {
             hight = 176+random.nextInt(39);
             low = 161+random.nextInt(93);
             byte[]han = new byte[2];
-            han[0]= new Integer(hight).byteValue();
-            han[1]= new Integer(low).byteValue();
+            han[0]= Integer.valueOf(hight).byteValue();
+            han[1]= Integer.valueOf(low).byteValue();
             try {
                 sBuilder.append(new String(han,"gbk"));
             } catch (UnsupportedEncodingException e) {
@@ -705,15 +826,17 @@ public class NameFactory {
 
     /**
      * 返回一个不会重复的英语名字
-     * @return
+     * @return 英文名
      */
     private String getEnglishName() {
         int i = random.nextInt(namesEn.length);//[0,n)
-        while(sites.contains(namesEn[i])){
+        int j=random.nextInt(lastNameEn.length);
+        while(sites.contains(namesEn[i]+lastNameEn[j])){
             i = random.nextInt(namesEn.length);
+            j=random.nextInt(lastNameEn.length);
         }
-        sites.add(namesEn[i]);
-        return namesEn[i];
+        sites.add(namesEn[i]+lastNameEn[j]);
+        return namesEn[i]+lastNameEn[j];
     }
 
     /**
@@ -736,7 +859,7 @@ public class NameFactory {
         int i = random.nextInt(nation.length);//[0,n)
         message.nation=nation[i];
         if(i<=5){
-            message.name=insideFirstName()+insideSimpleLastName();
+            message.name=getChineseName();
 
         }
         else{
@@ -748,13 +871,19 @@ public class NameFactory {
     public List<Message> getMessageList(int n) {
         List<Message> messages=new ArrayList<>();
         int i = random.nextInt(nation.length);//[0,n)
+        int num=1;
+        while(nationSites.contains(nation[i]+num+"队")){
+            num++;
+        }
+        nationSites.add(nation[i]+num+"队");
         for(int j=0;j<n;j++){
            if(i<=5){
-               messages.add(new Message(insideFirstName()+insideSimpleLastName(),nation[i]));}
+               messages.add(new Message(getChineseName(),nation[i]));}
            else{
                messages.add(new Message(getEnglishName(),nation[i]));
            }
         }
+        messages.add(new Message(nation[i]+num+"队",nation[i]));
         return messages;
     }
 

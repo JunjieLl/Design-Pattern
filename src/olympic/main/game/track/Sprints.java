@@ -27,6 +27,11 @@ public class Sprints extends TrackGame {
         }
     }
 
+
+    /**
+     * 获取比赛名称
+     * @return 比赛名称
+     */
     public String getName() {
         return "冲刺比赛";
     }
