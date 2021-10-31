@@ -10,17 +10,17 @@ public class Interviewer extends Person implements Listener {
     protected QuestionStrategy questionStrategy = new PreInterviewStrategy();
     protected ReportBuilder reportBuilder;
 
-    public Interviewer(String name, String gender) {
-        super(name, gender);
+    public Interviewer(String name, String nation) {
+        super(name, nation);
     }
 
-    public Interviewer(String name, String gender, QuestionStrategy questionStrategy) {
-        this(name, gender);
+    public Interviewer(String name, String nation, QuestionStrategy questionStrategy) {
+        this(name, nation);
         this.questionStrategy = questionStrategy;
     }
 
-    public Interviewer(String name, String gender, QuestionStrategy questionStrategy, ReportBuilder reportBuilder) {
-        this(name, gender, questionStrategy);
+    public Interviewer(String name, String nation, QuestionStrategy questionStrategy, ReportBuilder reportBuilder) {
+        this(name, nation, questionStrategy);
         this.reportBuilder = reportBuilder;
     }
 

@@ -61,6 +61,7 @@ public class CeremonyScene implements Scene {
         System.out.println("请全体起立，升国旗，奏国歌");
         System.out.println("本场颁奖仪式已经结束，请有序离场，并带好您的随身物品。");
         MedalTable.getInstance().printMedalTable();
+        System.out.println("\n");
     }
 
 }

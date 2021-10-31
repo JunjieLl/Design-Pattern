@@ -1,6 +1,6 @@
 package olympic.scene.DeliverSpeech;
 import olympic.main.person.athlete.Athlete;
-import olympic.main.person.athlete.AthleteRepre;
+import olympic.main.person.athlete.IndividualAthlete;
 
 abstract class DeliverSpeech {  //抽象类
     /**
@@ -14,7 +14,7 @@ abstract class DeliverSpeech {  //抽象类
     public Chairman OOCP;
     public Chairman IOCP;
     public Chairman HP;
-    public AthleteRepre athleteRepre;
+    public IndividualAthlete athleteRepre;
     public Coach coachRepre;
 
     public abstract boolean isOpen();

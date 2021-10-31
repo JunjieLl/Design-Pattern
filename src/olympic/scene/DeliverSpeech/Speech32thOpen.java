@@ -2,6 +2,8 @@ package olympic.scene.DeliverSpeech;
 
 import olympic.main.person.athlete.Athlete;
 import olympic.main.person.PersonFactory;
+import olympic.main.person.athlete.IndividualAthlete;
+import olympic.main.person.athlete.TeamAthlete;
 
 public class Speech32thOpen extends DeliverSpeech {  //具体子类
     @Override
@@ -9,20 +11,6 @@ public class Speech32thOpen extends DeliverSpeech {  //具体子类
         return "32";
     }
 
-//    @Override
-//    String OOCP() {
-//        return "武藤敏郎";
-//    }
-//
-//    @Override
-//    String IOCP() {
-//        return "托马斯·巴赫";
-//    }
-//
-//    @Override
-//    String HP() {
-//        return "岸田文雄";
-//    }
     /**
      * 设置其为开幕式
      */
@@ -30,21 +18,12 @@ public class Speech32thOpen extends DeliverSpeech {  //具体子类
     public boolean isOpen() {
         return true;
     }
-//
-//    @Override
-//    String athleteRepre() {
-//        return "苏炳添";
-//    }
-//
-//    @Override
-//    String refereeRepre() {
-//        return "Amazon";
-//    }
 
-//    public Chairman OOCP = getObject("武藤敏郎") ;
-//    public Chairman IOCP = getObject("武藤敏郎") ;
-//    public Chairman HP = getObject("武藤敏郎") ;
-//    public Athlete athleteRepre = getAthleteByName("苏炳添");
-//    public refereeRepre coachRepre = getObject("Amazon");
+//    Chairman OOCP = getObject("武藤敏郎") ;
+//    Chairman IOCP = getObject("武藤敏郎") ;
+//    Chairman HP = getObject("武藤敏郎") ;
+//    TeamAthlete tempList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation("CHN"),"CHN");
+//    public Athlete athleteRepre=tempList.getFirstAthlete();
+//    Coach coachRepre = getObject("Amazon");
 
 }
