@@ -10,12 +10,12 @@ public class UrineTestStrategyFactory {
 	/**
 	 * 策略模式的对象池，用于存储策略、共享对象
 	 */
-	private HashMap<Integer, UrineTestStrategy> pool = new HashMap<Integer, UrineTestStrategy>();
+	private final HashMap<Integer, UrineTestStrategy> pool = new HashMap<>();
 	
 	/**
 	 * 空策略对象，当用户想要的尿检策略不存在时会返回该值
 	 */
-	private UrineTestStrategy nullStrategy = new NullUrineTestTechnologyStrategy();
+	private final UrineTestStrategy nullStrategy = new NullUrineTestTechnologyStrategy();
 	
 	/**
 	 * 尿检策略工厂的单例，用于保证所有类共享一个尿检策略工厂

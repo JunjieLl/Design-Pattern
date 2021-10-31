@@ -10,7 +10,7 @@ public class UrineTestProcuratorFactory {
 	/**
 	 * 尿检检察员的对象池，用于生成整数（用于生成检察员的姓名）与尿检检察员的一一对应
 	 */
-	private HashMap<Integer, UrineTestProcurator> pool = new HashMap<Integer, UrineTestProcurator>();
+	private final HashMap<Integer, UrineTestProcurator> pool = new HashMap<>();
 	
 	/**
 	 * 尿检检察员生成工厂的单例

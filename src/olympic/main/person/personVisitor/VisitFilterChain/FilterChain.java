@@ -17,7 +17,7 @@ public class FilterChain extends FilterVisitor{
 	/**
 	 * 过滤器链，存储了多个过滤器
 	 */
-	private ArrayList<FilterVisitor> filters= new ArrayList<>();
+	private final ArrayList<FilterVisitor> filters= new ArrayList<>();
 	
 	/**
 	 * 添加过滤器

@@ -12,7 +12,7 @@ public class IndividualAthleteList implements AthleteList {
 	/**
 	 * 个人运动员的数组
 	 */
-	private ArrayList<IndividualAthlete> athletes = null;
+	private ArrayList<IndividualAthlete> athletes;
 	
 	/**
 	 * 运动员列表类类的构造函数
