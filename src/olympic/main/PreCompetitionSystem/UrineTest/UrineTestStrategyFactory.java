@@ -2,6 +2,7 @@ package olympic.main.PreCompetitionSystem.UrineTest;
 
 import java.util.HashMap;
 
+
 public class UrineTestStrategyFactory {
 	private HashMap<Integer, UrineTestStrategy> pool = new HashMap<Integer, UrineTestStrategy>();
 	private UrineTestStrategy nullStrategy = new NullUrineTestTechnologyStrategy();
