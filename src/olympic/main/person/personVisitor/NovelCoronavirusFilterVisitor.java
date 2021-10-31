@@ -8,7 +8,17 @@ import olympic.main.person.athleteList.TeamAthleteList;
 
 import java.util.ArrayList;
 
+/**
+ * 新冠病毒过滤器，用于过滤感染新冠病毒的队伍或者运动员
+ * 涉及了过滤器模式以及访问者模式
+ */
 public class NovelCoronavirusFilterVisitor extends FilterVisitor{
+	/**
+	 * 用于选择出选择出没有感染新冠病毒的运动员
+	 * @param individualAthleteList 个人运动员列表类
+	 * @param game 当场比赛的比赛名
+	 * @return 没有感染新冠病毒的个人运动员数组
+	 */
 	@Override
 	public ArrayList<IndividualAthlete> visit(IndividualAthleteList individualAthleteList
 			, String game) {
@@ -37,6 +47,12 @@ public class NovelCoronavirusFilterVisitor extends FilterVisitor{
 		return finalAthleteList;
 	}
 	
+	/**
+	 * 用于选择出没有感染新冠病毒的运动员队伍数组
+	 * @param teamAthleteList 运动员队伍列表类
+	 * @param game 当场比赛的比赛名
+	 * @return 没有感染新冠病毒的运动员队伍数组
+	 */
 	@Override
 	public ArrayList<TeamAthlete> visit(TeamAthleteList teamAthleteList, String game) {
 		ArrayList<TeamAthlete> finalTeam = new ArrayList<>();
@@ -73,6 +89,10 @@ public class NovelCoronavirusFilterVisitor extends FilterVisitor{
 		return finalTeam;
 	}
 	
+	/**
+	 * 获取该过滤器的名字
+	 * @return 该过滤器的名称
+	 */
 	@Override
 	public String getFilterName() {
 		return "	【1. 现在进行运动员新冠病毒的检测】";

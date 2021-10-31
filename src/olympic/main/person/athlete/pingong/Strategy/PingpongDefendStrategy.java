@@ -29,12 +29,12 @@ public class PingpongDefendStrategy implements Strategy {
     /**
      * 用于模拟攻击或防守
      */
-    private Boolean offense;
+//    private Boolean offense;
 
     /**
      * 攻击概率
      */
-    private Integer offenseProb;
+//    private Integer offenseProb;
 
     @Override
     public Boolean playWith(Athlete oppoent){
@@ -42,13 +42,10 @@ public class PingpongDefendStrategy implements Strategy {
             System.out.println("classname: (PingpongDefendStrategy) method: (playWith) action: (策略模式中"+oppoent.getName()+"运用防御策略进行比赛) ");
         }
 
-        offenseProb = 30;
-        offense = random.nextInt(100)< offenseProb;
-
         // 随机生成球的状态（击球难度)
         if (random.nextInt(100) < ((PlayPingpong)ownerAthlete).getCapacity()){
             if (Mode.getShowDetail()) {
-                System.out.println(ownerAthlete.getName() + " 击球" + (offense ? " 进攻" : " 防守"));
+                System.out.println(ownerAthlete.getName() + " 击球" + (random.nextInt(100)< 30 ? " 进攻" : " 防守"));
             }
             return !((CallBack)oppoent).call(ownerAthlete);
         }else{

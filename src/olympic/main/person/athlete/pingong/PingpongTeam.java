@@ -84,5 +84,4 @@ public class PingpongTeam extends TeamAthlete implements CallBack,PlayPingpong{
         }
         return this.playWith(oppoent);
     }
-
 }

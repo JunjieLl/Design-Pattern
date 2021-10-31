@@ -53,7 +53,6 @@ public class PingpongAthlete extends IndividualAthlete implements CallBack, Play
 
     /**
      * 与Oppoend进行对打
-     *
      * @param oppoent 对手
      * @return 是否击中球，没有击中球就输了这一小轮
      */

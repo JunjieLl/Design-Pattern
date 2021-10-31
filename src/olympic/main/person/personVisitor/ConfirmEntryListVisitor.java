@@ -8,7 +8,16 @@ import olympic.main.person.athleteList.TeamAthleteList;
 
 import java.util.ArrayList;
 
+/**
+ * 确认参赛名单的访问者类
+ * 涉及了访问者模式
+ */
 public class ConfirmEntryListVisitor extends Visitor {
+	/**
+	 * 个人运动员列表类的访问函数，用于确认参加比赛的个人运动员
+	 * @param individualAthleteList 个人运动员列表类
+	 * @return 参加比赛的运动员组成的个人运动员数组
+	 */
 	@Override
 	public ArrayList<IndividualAthlete> visit(IndividualAthleteList individualAthleteList) {
 		System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++");
@@ -22,6 +31,11 @@ public class ConfirmEntryListVisitor extends Visitor {
 		return individualAthleteList.getAthletes();
 	}
 	
+	/**
+	 * 运动员队伍列表类的访问函数，用于确认参加比赛的运动员队伍
+	 * @param teamAthleteList 运动员队伍列表类
+	 * @return 参加比赛的运动员队伍组成的运动员队伍数组
+	 */
 	@Override
 	public ArrayList<TeamAthlete> visit(TeamAthleteList teamAthleteList) {
 		System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++");
