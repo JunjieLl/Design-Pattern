@@ -5,7 +5,7 @@ public class Message {
         this.name=name;
         this.nation=nation;
     }
-    public Message(){};
+    public Message(){};  
     public String name;
     public String nation;
 }
