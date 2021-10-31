@@ -10,6 +10,10 @@ import java.util.List;
  * SemiFinals是半决赛
  */
 public class SemiFinals  extends ContestImpl{
+    /**
+     *SemiFinals构造方法
+     * @param athletes 运动员列表
+     */
     SemiFinals(List<Athlete> athletes) {
         super(athletes);
         gameType="半决赛";

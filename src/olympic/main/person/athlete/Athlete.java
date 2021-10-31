@@ -1,11 +1,12 @@
 package olympic.main.person.athlete;
 
+import olympic.main.person.athlete.torchbarer.TorchBarer;
 import olympic.main.person.interview.Interviewee;
 import olympic.main.person.interview.Listener;
 
 import java.util.HashMap;
 
-public abstract class Athlete extends Interviewee implements Listener {
+public abstract class Athlete extends Interviewee implements Listener, TorchBarer {
     protected HashMap<String, Integer> rank = new HashMap<>();
 
     public Athlete(String name, String nation) {
@@ -27,4 +28,7 @@ public abstract class Athlete extends Interviewee implements Listener {
     public void setRank(String game, Integer rank) {
         this.rank.put(game, rank);
     }
+
+    
+
 }

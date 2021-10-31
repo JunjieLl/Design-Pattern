@@ -4,11 +4,19 @@ import olympic.main.person.athlete.footballathlete.FootballTeam;
 
 import java.util.Random;
 
+/**
+ * 淘汰赛
+ */
 public class EliminationFootballGame extends FootballGame{
+    private int penaltyScore1, penaltyScore2;
     public EliminationFootballGame(FootballTeam team1, FootballTeam team2) {
         super(team1, team2);
     }
 
+    /**
+     * 随机生成比赛结果
+     * 若90分钟内为平局，则进行加时赛；若仍为平局，则互射点球决胜
+     */
     @Override
     public void generateResult() {
         Random r = new Random();
@@ -37,7 +45,19 @@ public class EliminationFootballGame extends FootballGame{
         }
     }
 
+    /**
+     * 设置观察者
+     * @param o 观察者
+     */
     public void setObserver(Observer o) {
         this.observer = o;
+    }
+
+    public int getPenaltyScore1() {
+        return penaltyScore1;
+    }
+
+    public int getPenaltyScore2() {
+        return penaltyScore2;
     }
 }

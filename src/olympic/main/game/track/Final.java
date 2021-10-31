@@ -1,6 +1,7 @@
 package olympic.main.game.track;
 
 import olympic.main.person.athlete.Athlete;
+import olympic.scene.CeremonyScene;
 
 import java.util.Collections;
 import java.util.List;
@@ -10,6 +11,10 @@ import java.util.List;
  * Final是决赛，如果没有多次比赛就作为第一次
  */
 public class Final extends ContestImpl{
+    /**
+     *Final构造方法
+     * @param athletes 运动员列表
+     */
     Final(List<Athlete> athletes) {
         super(athletes);
         gameType="决赛";
@@ -35,9 +40,11 @@ public class Final extends ContestImpl{
     }
 
     /**
-     * 得到初赛的成果
+     * 得到决赛的成果
      */
     public  void getResult(){
         rank(athletes);
+        CeremonyScene ceremonyScene=new CeremonyScene(athletes);
+        ceremonyScene.play();
     }
 }
