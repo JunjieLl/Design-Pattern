@@ -42,7 +42,7 @@ public abstract class ContestImpl {
                 List<Athlete> cols =  new  ArrayList<>();
                 int  j =  0 ;
                 while(j<8&&i+j<athletes.size()){
-                    cols.add(athletes.get(j++));
+                    cols.add(athletes.get(i+j++));
                 }
                 i+=j;
                 rows.add(cols);
