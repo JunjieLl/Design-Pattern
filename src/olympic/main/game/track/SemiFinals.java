@@ -10,6 +10,10 @@ import java.util.List;
  * SemiFinals是半决赛
  */
 public class SemiFinals  extends ContestImpl{
+    /**
+     *SemiFinals构造方法
+     * @param athletes 运动员列表
+     */
     SemiFinals(List<Athlete> athletes) {
         super(athletes);
         gameType="半决赛";
@@ -21,13 +25,9 @@ public class SemiFinals  extends ContestImpl{
      * @param group 第几场小组赛
      */
     private void rank(List<Athlete> runners,int group){
-//        System.out.println("现在上场的运动员有：");
         int size=runners.size();
-//        for(Athlete temp : runners){
-//            System.out.print("目前没有他的名字"+temp+" ");
-//        }
-        System.out.println("【半决赛赛排名榜】");
-        System.out.println("Group "+(group+1)+"\n" +
+
+        System.out.println("【半决赛赛排名榜】\nGroup "+(group+1)+"\n" +
                 "排名\t姓名\t晋级\t");
         Collections.shuffle(runners);
         for(int i=0;i<size;i++){
