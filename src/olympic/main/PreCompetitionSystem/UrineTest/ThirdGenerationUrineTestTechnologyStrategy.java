@@ -5,4 +5,9 @@ public class ThirdGenerationUrineTestTechnologyStrategy implements UrineTestStra
 	public void urineTest() {
 		System.out.println("采用第3代尿检技术，着重检测化学类兴奋剂。");
 	}
+	
+	@Override
+	public boolean isNil() {
+		return false;
+	}
 }
