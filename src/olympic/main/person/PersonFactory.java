@@ -44,6 +44,10 @@ public class PersonFactory {
      */
     private List<String> gamesName;
     /**
+     * 所有国家的名字,不能重复
+     */
+    private List<String> nations=new ArrayList<>();
+    /**
      * 比赛和人员的映射表
      */
     private HashMap< String, List<Athlete>> hMap =
@@ -65,6 +69,14 @@ public class PersonFactory {
      */
     public  List<String> getNames(){
         return gamesName;
+    }
+
+    /**
+     * 获得所有比赛名字
+     * @return List<String> 比赛名字
+     */
+    public  List<String> getNations(){
+        return nations;
     }
 
     /**
@@ -93,7 +105,14 @@ public class PersonFactory {
     public List<Athlete> getAthleteByNation(String nation){
         return nationMap.get(nation);
     }
+
+    /**
+     * 把运动员和国籍做一个映射
+     * @param nation 国家
+     * @param athlete 名字
+     */
     private void addNationMap(String nation,Athlete athlete){
+        if(!nations.contains(nation))nations.add(nation);
         if(nationMap.containsKey(nation)){
             nationMap.get(nation).add(athlete);
         }else{
