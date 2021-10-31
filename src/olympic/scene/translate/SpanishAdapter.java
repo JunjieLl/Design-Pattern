@@ -5,6 +5,11 @@ public class SpanishAdapter implements Translator{
     public SpanishAdapter(Speaker speaker){
         this.speaker =speaker;
     }
+
+    /**
+     * 设计模式：适配器模式
+     * 接口重写为西班牙语翻译
+     */
     @Override
     public void translate() {
         String result = speaker.speak();
