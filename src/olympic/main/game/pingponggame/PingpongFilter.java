@@ -1,5 +1,7 @@
 package olympic.main.game.pingponggame;
 
+import olympic.main.drawlots.PaperDrawLotsImpl;
+import olympic.main.drawlots.RandomDrawLots;
 import olympic.main.game.Game;
 import olympic.main.person.athlete.Athlete;
 
@@ -33,7 +35,8 @@ public class PingpongFilter extends Game {
     }
 
     public void setAthletes(List<Athlete> athletes){
-        this.athletes = athletes;
+        RandomDrawLots drawLots = new RandomDrawLots(athletes, new PaperDrawLotsImpl(), 2, true);
+        this.athletes = drawLots.randomDrawLots();
         addGame();
     }
 
