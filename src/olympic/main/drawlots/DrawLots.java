@@ -15,20 +15,23 @@ public class DrawLots {
     List<Athlete> athletes;
     private final DrawLotsImpl impl;
     private final int groupSize;
+    protected final boolean showDetail;
 
     /**
      * 创建抽签类
      *
-     * @param athletes  需要抽签的运动员列表
-     * @param impl      抽签形式，支持的形式：
-     *                  1. PaperDrawLotsImpl（纸质版）
-     *                  2. ElectronicDrawLotsImpl（电子版）
-     * @param groupSize 每个小组的运动员/团队数
+     * @param athletes   需要抽签的运动员列表
+     * @param impl       抽签形式，支持的形式：
+     *                   1. PaperDrawLotsImpl（纸质版）
+     *                   2. ElectronicDrawLotsImpl（电子版）
+     * @param groupSize  每个小组的运动员/团队数
+     * @param showDetail 是否打印详细抽签信息
      */
-    public DrawLots(List<Athlete> athletes, DrawLotsImpl impl, int groupSize) {
+    public DrawLots(List<Athlete> athletes, DrawLotsImpl impl, int groupSize, boolean showDetail) {
         this.athletes = athletes;
         this.impl = impl;
         this.groupSize = groupSize;
+        this.showDetail = showDetail;
     }
 
     /**
@@ -51,8 +54,12 @@ public class DrawLots {
      * @return 抽签完毕后排好序的athlete列表
      */
     public List<Athlete> drawLot() {
-        drawLotsStart();
-        drawLotsEnd();
+        if (showDetail) {
+            drawLotsStart();
+        }
+        if (showDetail) {
+            drawLotsEnd();
+        }
         return athletes;
     }
 
@@ -70,11 +77,11 @@ public class DrawLots {
         List<Athlete> athletes = personFactory.getAthletes(gameName);
 
         // 随机抽签test
-        RandomDrawLots drawLots = new RandomDrawLots(athletes, new PaperDrawLotsImpl(), 1);
+        RandomDrawLots drawLots = new RandomDrawLots(athletes, new PaperDrawLotsImpl(), 2, false);
         List<Athlete> randomSortedAthletes = drawLots.randomDrawLots();
 
         // 固定次序抽签test
-        FixedDrawLots fixedDrawLots = new FixedDrawLots(randomSortedAthletes, new ElectronicDrawLotsImpl(), 1);
+        FixedDrawLots fixedDrawLots = new FixedDrawLots(randomSortedAthletes, new ElectronicDrawLotsImpl(), 1, true);
         List<Integer> orders = List.of(2, 1, 3, 4, 5, 6, 7, 8, 9, 14, 12, 13, 17, 0, 11, 10, 15, 16);
         List<Athlete> fixedSortedAthletes = fixedDrawLots.fixedDrawLots(orders);
     }
