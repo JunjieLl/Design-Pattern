@@ -8,7 +8,6 @@ import olympic.main.person.athleteList.AthleteList;
 import olympic.main.person.athleteList.IndividualAthleteList;
 import olympic.main.person.athleteList.TeamAthleteList;
 import olympic.main.person.personVisitor.ConfirmEntryListVisitor;
-import olympic.main.person.personVisitor.UrineFilterVisitor;
 import olympic.main.person.personVisitor.UrineVisitor;
 import olympic.main.person.personVisitor.VisitFilterChain.FilterManager;
 import olympic.main.person.volunteer.VolunteerList;
@@ -68,7 +67,8 @@ public class PreCompetitionSystemFacade {
 		
 		System.out.println("【首先生成尿检的检察员】");
 		pressEnterToContinue();
-		printlnNRowEllipsis(3);
+		printlnNRowEllipsis(2);
+		printlnNRowEllipsis(1);
 		System.out.println("【检察员生成完成】");
 		printlnNRowSpace(2);
 		
@@ -94,10 +94,12 @@ public class PreCompetitionSystemFacade {
 		FilterManager filterManager=new FilterManager();
 		if(canFilter(gameName)) {
 			if (isTeamNumber(gameName)) {
+				assert athletes instanceof TeamAthleteList;
 				athletes = new TeamAthleteList(filterManager.visit((TeamAthleteList) athletes, gameName));
 				
 			} else {
 				
+				assert athletes instanceof IndividualAthleteList;
 				athletes = new IndividualAthleteList(filterManager.visit((IndividualAthleteList) athletes, gameName));
 			}
 		}
@@ -120,12 +122,12 @@ public class PreCompetitionSystemFacade {
 		System.out.println("【赛前准备结束】");
 		
 		if (isTeamNumber(gameName)) {
-			ArrayList<Athlete> res = new ArrayList<>(((TeamAthleteList) athletes).getAthletes());
-			return res;
+			assert athletes instanceof TeamAthleteList;
+			return new ArrayList<>(((TeamAthleteList) athletes).getAthletes());
 			
 		} else {
-			ArrayList<Athlete> res = new ArrayList<>(((IndividualAthleteList) athletes).getAthletes());
-			return res;
+			assert athletes instanceof IndividualAthleteList;
+			return new ArrayList<>(((IndividualAthleteList) athletes).getAthletes());
 		}
 	}
 	
@@ -135,12 +137,7 @@ public class PreCompetitionSystemFacade {
 	 * @return 是否能对比赛gameName使用过滤器
 	 */
 	private boolean canFilter(String gameName){
-		if("FootballTeam".equals(gameName)||
-				"Pingpong".equals(gameName)||"PingpongTeam".equals(gameName))
-		{
-			return false;
-		}
-		return true;
+		return !"FootballTeam".equals(gameName) && !"Pingpong".equals(gameName) && !"PingpongTeam".equals(gameName);
 	}
 	
 	/**
