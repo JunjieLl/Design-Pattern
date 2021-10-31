@@ -16,11 +16,9 @@ public class InterviewMaker {
 
     }
 
-    public static void makeInterview(ArrayList<Interviewee> interviewees, ArrayList<Interviewer> interviewers) {
-        for (Interviewee interviewee : interviewees) {
-            for (Interviewer interviewer : interviewers) {
-                interviewee.addListener(interviewer);
-            }
+    public static void makeInterview(Interviewee interviewee, ArrayList<Interviewer> interviewers) {
+        for (Interviewer interviewer : interviewers) {
+            interviewee.addListener(interviewer);
         }
         for (Interviewer interviewer : interviewers) {
             var reportBuilder = interviewer.getReportBuilder();
