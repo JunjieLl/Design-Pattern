@@ -30,6 +30,20 @@ public class MedalTable {
         }
     }
 
+    public void penalty(String countryCode, int rank){
+        for(int i=0;i<countries.size();i++){
+            if(countries.get(i).getCountryCode()==countryCode){
+                if(rank ==1){
+                    countries.get(i).goldMinusOne();
+                }else if(rank==2){
+                    countries.get(i).silverMinusOne();
+                }else if(rank==3){
+                    countries.get(i).bronzePlusOne();
+                }
+            }
+        }
+    }
+
     public void addGold(String countryCode){
         for(Country country: countries){
             if(country.getCountryCode()==countryCode){

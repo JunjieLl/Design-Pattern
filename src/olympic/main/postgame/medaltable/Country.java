@@ -103,6 +103,18 @@ public class Country implements Comparable{
     public void bronzePlusOne() {
         this.bronzeMedalNum += 1;
     }
+
+    public void goldMinusOne() {
+        this.goldMedalNum -= 1;
+    }
+
+    public void silverMinusOne() {
+        this.silverMedalNum -= 1;
+    }
+
+    public void bronzeMinusOne() {
+        this.bronzeMedalNum -= 1;
+    }
 }
 
 

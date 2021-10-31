@@ -1,5 +1,7 @@
 package olympic.scene;
 
+import olympic.main.person.athlete.Athlete;
+
 public class Main {
     public static void main(String[] args) {
         Director.getInstance().nextScene(new Scene() {
@@ -10,12 +12,19 @@ public class Main {
         });
         //FootballStarter.start();
 
-//        Scene divingGame=new DivingGameScene("单人三米");
-//        divingGame.play();
-//        new FootballScene().play();
+        Scene divingGame=new DivingGameScene("单人三米");
+        divingGame.play();
+        new FootballScene().play();
         //new CeremonyScene("LI JUNJIE","LI JIEJUN","JIE LIJUN").play();
         //new ChoreHandlingScene().play();
         //new ReviewQScene().play();
+        new TrackGameScene("Marathon").play();
+        new TrackGameScene("Sprints").play();
+        new TrackGameScene("Hurdling").play();
+        new TrackGameScene("Relays").play();
         new PingpongGameScene().play();
+        new ReviewQScene().play();
+
+
     }
 }
