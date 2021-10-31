@@ -15,6 +15,9 @@ public class TeamAthlete extends Athlete{
         super("无名",nation);
         this.athleteList=athleteList;
     }
+    public TeamAthlete(String nation){
+        super("无名",nation);
+    }
 
     public List<Athlete> getAthleteList() {
         return athleteList;
@@ -29,6 +32,14 @@ public class TeamAthlete extends Athlete{
         for(Athlete athlete:athleteList){
             athlete.passFire();
         }
+    }
+
+    public Athlete getFirstAthlete(){
+        return athleteList.get(0);
+    }
+
+    public void addMember(Athlete athlete){
+        athleteList.add(athlete);
     }
 
     public int getNumber()

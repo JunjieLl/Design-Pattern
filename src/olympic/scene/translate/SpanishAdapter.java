@@ -8,7 +8,7 @@ class SpanishAdapter implements Translator{
     @Override
     public void translate() {
         String result = speaker.speak();
-        String spanishResult="主持人说话内容为："+result+"\n"+"正在转换为西班牙语翻译...";
+        String spanishResult="主持人说话内容为：Bienvenidos a los Juegos Olímpicos";
         System.out.println(spanishResult);
     }
 }

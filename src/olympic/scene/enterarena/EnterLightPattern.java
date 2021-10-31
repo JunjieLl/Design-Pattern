@@ -26,9 +26,7 @@ public class EnterLightPattern {
         TeamAthlete singaporeList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation("新加坡"), "新加坡");
         TeamAthlete russiaList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation("俄罗斯"), "俄罗斯");
         TeamAthlete polandList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation("波兰"), "波兰");
-        TeamAthlete czechList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation("捷克"), "捷克");
         TeamAthlete germanyList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation("德国"), "德国");
-        TeamAthlete austriaList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation("奥地利"), "奥地利");
         TeamAthlete switzerlandList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation("瑞士"), "瑞士");
         TeamAthlete englandList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation("英国"), "英国");
         TeamAthlete hollandList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation("荷兰"), "荷兰");
@@ -36,15 +34,19 @@ public class EnterLightPattern {
         TeamAthlete spainList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation("西班牙"), "西班牙");TeamAthlete americaList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation("美国"), "美国");
         TeamAthlete australiaList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation("澳大利亚"), "澳大利亚");
 
+        TeamAthlete torchBarer=new TeamAthlete("火炬传递队");
 
         if(chinaList.getNumber()>0) {
             enterManager.setTeams(chinaList);
+            torchBarer.addMember(chinaList.getFirstAthlete());
         }
         if(koreaList.getNumber()>0) {
             enterManager.setTeams(koreaList);
+            torchBarer.addMember(koreaList.getFirstAthlete());
         }
         if(japanList.getNumber()>0) {
             enterManager.setTeams(japanList);
+            torchBarer.addMember(japanList.getFirstAthlete());
         }
         if(thailandList.getNumber()>0) {
             enterManager.setTeams(thailandList);
@@ -61,14 +63,8 @@ public class EnterLightPattern {
         if(polandList.getNumber()>0) {
             enterManager.setTeams(polandList);
         }
-        if(czechList.getNumber()>0) {
-            enterManager.setTeams(czechList);
-        }
         if(germanyList.getNumber()>0) {
             enterManager.setTeams(germanyList);
-        }
-        if(austriaList.getNumber()>0) {
-            enterManager.setTeams(austriaList);
         }
         if(switzerlandList.getNumber()>0) {
             enterManager.setTeams(switzerlandList);
@@ -97,6 +93,7 @@ public class EnterLightPattern {
             System.out.println("现在向我们走来的是"+myList.getNation()+"队，让我们欢迎他们！");
         }
 
+        torchBarer.passFire();
 
     }
 }

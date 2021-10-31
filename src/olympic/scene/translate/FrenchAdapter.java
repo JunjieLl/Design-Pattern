@@ -8,7 +8,7 @@ class FrenchAdapter implements Translator{
     @Override
     public void translate() {
         String result = speaker.speak();
-        String frenchResult="主持人说话内容为："+result+"\n"+"正在转换为法语翻译...";
+        String frenchResult="主持人说话内容为：Bienvenue aux Jeux olympiques!";
         System.out.println(frenchResult);
     }
 }
