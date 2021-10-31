@@ -5,6 +5,11 @@ public class FrenchAdapter implements Translator{
     public FrenchAdapter(Speaker speaker){
         this.speaker =speaker;
     }
+
+    /**
+     * 设计模式：适配器模式
+     * 接口重写为法语翻译
+     */
     @Override
     public void translate() {
         String result = speaker.speak();

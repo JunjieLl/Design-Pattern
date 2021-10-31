@@ -17,6 +17,10 @@ public class EnterManager implements Aggregate {
     }
     private List<TeamAthlete> allteams = new ArrayList<>();
 
+    /**
+     * 添加成员
+     * @param teams
+     */
     public void setTeams(TeamAthlete teams) {
         allteams.add(teams);
     }
