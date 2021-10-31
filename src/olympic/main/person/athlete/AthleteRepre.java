@@ -11,4 +11,14 @@ public class AthleteRepre extends Athlete implements Speech {
     public void speech() {
 
     }
+
+    @Override
+    public void passFire() {
+
+    }
+
+    @Override
+    public void update(String content) {
+
+    }
 }
