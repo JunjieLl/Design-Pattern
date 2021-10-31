@@ -702,7 +702,9 @@ public class NameFactory {
                 "Vita",
                 "Vivian"
         };
-
+    /**
+     * 国家枚举
+     */
     static String[] nation={
             "CHN","MGL","PRK","KOR","JPN","PHI","VIE","LAO","MYA","THA","MAL","SGP","IHO",
            "NEP","IND","PAK","SRI",
@@ -783,10 +785,18 @@ public class NameFactory {
             "墨" ,  "年" , "爱" , "阳" , "佟",
             "第五" , "言" , "福"
     };
+    /**
+     * 名字set
+     */
     private HashSet<String> sites = new HashSet<String>();
+    /**
+     * 国家队set
+     */
     private HashSet<String> nationSites = new HashSet<String>();
 
-
+    /**
+     * random种子
+     */
     private Random random=new Random();
 
     /**
@@ -867,7 +877,12 @@ public class NameFactory {
         }
         return message;
     }
-
+    /**
+     * 取得一个队的运动员信息
+     *
+     * @param n 队中运动员数量
+     * @return 运动员信息列表
+     */
     public List<Message> getMessageList(int n) {
         List<Message> messages=new ArrayList<>();
         int i = random.nextInt(nation.length);//[0,n)
