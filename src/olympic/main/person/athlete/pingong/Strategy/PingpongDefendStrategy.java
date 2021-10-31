@@ -24,7 +24,7 @@ public class PingpongDefendStrategy implements Strategy {
     /**
      * 球的状态，用于模拟能不能接到球
      */
-    private Integer ballState;
+//    private Integer ballState;
 
     /**
      * 用于模拟攻击或防守
@@ -43,10 +43,10 @@ public class PingpongDefendStrategy implements Strategy {
         }
 
         offenseProb = 30;
-        ballState = random.nextInt(100);
         offense = random.nextInt(100)< offenseProb;
 
-        if (ballState< ((PlayPingpong)ownerAthlete).getCapacity()){
+        // 随机生成球的状态（击球难度)
+        if (random.nextInt(100) < ((PlayPingpong)ownerAthlete).getCapacity()){
             if (Mode.getShowDetail()) {
                 System.out.println(ownerAthlete.getName() + " 击球" + (offense ? " 进攻" : " 防守"));
             }
