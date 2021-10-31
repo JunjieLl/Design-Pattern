@@ -10,10 +10,6 @@ import java.util.List;
  * Final是决赛，如果没有多次比赛就作为第一次
  */
 public class Final extends ContestImpl{
-    /**
-     *Final构造方法
-     * @param athletes 运动员列表
-     */
     Final(List<Athlete> athletes) {
         super(athletes);
         gameType="决赛";
@@ -32,11 +28,14 @@ public class Final extends ContestImpl{
         for(int i=0;i<size;i++){
             System.out.println(i+1+"\t"+runners.get(i).getName()+"\t");
         }
+
+
+
         System.out.println("\n");
     }
 
     /**
-     * 得到决赛赛的成果
+     * 得到初赛的成果
      */
     public  void getResult(){
         rank(athletes);

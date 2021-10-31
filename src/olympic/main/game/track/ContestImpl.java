@@ -10,19 +10,9 @@ import java.util.List;
  * ContestImpl是比赛的抽象类
  */
 public abstract class ContestImpl {
-    /**
-     * 运动员列表
-     */
     public List<Athlete> athletes;
-    /**
-     * 比赛类型，初赛，复赛或者决赛
-     */
     public String gameType;
 
-    /**
-     * ContestImpl的构造方法
-     * @param athletes 运动员列表
-     */
     ContestImpl(List<Athlete> athletes){
         this.athletes=athletes;
     }
@@ -44,17 +34,20 @@ public abstract class ContestImpl {
      */
     public List<List<Athlete>> group(){
         List<List<Athlete>> rows =  new ArrayList<>();
+
+
         if(athletes.size()>8){
             int i=0;
             while(i<athletes.size()){
                 List<Athlete> cols =  new  ArrayList<>();
                 int  j =  0 ;
                 while(j<8&&i+j<athletes.size()){
-                    cols.add(athletes.get(i+j++));
+                    cols.add(athletes.get(j++));
                 }
                 i+=j;
                 rows.add(cols);
             }
+
         }
         else{
             rows.add(athletes);

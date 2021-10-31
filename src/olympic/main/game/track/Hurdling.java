@@ -9,17 +9,12 @@ import java.util.List;
  * Hurdling是田径比赛的跨栏
  */
 public class Hurdling extends TrackGame {
-    /**
-     *Hurdling构造方法
-     * @param athletes 运动员列表
-     */
+
     public Hurdling(List<Athlete> athletes) {
         super(athletes);
 
     }
-    /**
-     * start 方法是比赛开始
-     */
+
     @Override
     public void start() {
         System.out.println("【"+getName()+"】");
@@ -31,10 +26,7 @@ public class Hurdling extends TrackGame {
             athletes.get(i).setRank("Hurdling",i+1);
         }
     }
-    /**
-     * 获取比赛名称
-     * @return 比赛名称
-     */
+
     public String getName(){
         return "跨栏比赛";
     }

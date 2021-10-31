@@ -1,6 +1,7 @@
 package olympic.main.person;
 
 import olympic.main.person.athlete.Athlete;
+import olympic.main.person.athlete.TeamAthlete;
 import olympic.main.person.athlete.divingathlete.DivingAthlete;
 import olympic.main.person.athlete.divingathlete.DivingTeam;
 import olympic.main.person.athlete.footballathlete.FootballTeam;
@@ -17,9 +18,7 @@ import java.util.*;
  *  Prototype 备份read Only 的list
  */
 public class PersonFactory {
-    /**
-     * PersonFactory 实例
-     */
+
     private static PersonFactory singleton = new PersonFactory();
 
     /**
@@ -39,25 +38,14 @@ public class PersonFactory {
     }
 
 
-    /**
-     * 所有比赛的名字
-     */
+    private  Properties prop = new Properties();
     private List<String> gamesName;
-    /**
-     * 比赛和人员的映射表
-     */
     private HashMap< String, List<Athlete>> hMap =
-            new HashMap<>();
-    /**
-     * 名字和人员的映射表
-     */
+            new HashMap< String, List<Athlete>>();
     private HashMap< String, Athlete> nameMap =
-            new HashMap< >();
-    /**
-     * 国家和人员的映射表
-     */
+            new HashMap< String, Athlete>();
     private HashMap< String, List<Athlete>> nationMap =
-            new HashMap<>();
+            new HashMap< String, List<Athlete>>();
 
     /**
      * 获得所有比赛名字
@@ -73,12 +61,13 @@ public class PersonFactory {
      * @return List<Athlete> 运动员列表
      */
     public  List<Athlete> getAthletes(String game){
+        List<Athlete> a=hMap.get(game);
         return hMap.get(game);
     }
 
     /**
      * 通过名字获取运动员
-     * @param name 运动员名字
+     * @param name
      * @return 运动员
      */
     public Athlete getAthleteByName(String name){
@@ -87,7 +76,7 @@ public class PersonFactory {
 
     /**
      * 通过国家获取运动员
-     * @param nation 国家
+     * @param nation
      * @return 运动员列表
      */
     public List<Athlete> getAthleteByNation(String nation){
@@ -112,21 +101,23 @@ public class PersonFactory {
         //首先 名字工厂
         NameFactory nameFactory=new NameFactory();
         try {
-            Properties prop = new Properties();
-            InputStream in = new BufferedInputStream(new FileInputStream("./src/olympic/main/person/message.properties"));
-            prop.load(in);     ///加载属性列表
 
-            gamesName= Arrays.asList(((String)prop.get("AllGames")).split(","));
+            InputStream in = new BufferedInputStream(new FileInputStream("./src/olympic/main/person/message.properties"));
+            this.prop.load(in);     ///加载属性列表
+            Iterator<String> it = this.prop.stringPropertyNames().iterator();
+
+            gamesName= Arrays.asList(((String) this.prop.get("AllGames")).split(","));
 
             for(String i:gamesName){
 
-                String a1=prop.get(i+"Athlete.single.number").toString().trim();
+                String a1=this.prop.get(i+"Athlete.single.number").toString().trim();
                 int a=Integer.parseInt(a1.trim());
-                int b=Integer.parseInt( prop.get(i+"Athlete.team.number").toString().trim());
-                int c=Integer.parseInt( prop.get(i+"Athlete.team.member").toString().trim());
+                int b=Integer.parseInt( this.prop.get(i+"Athlete.team.number").toString().trim());
+                int c=Integer.parseInt( this.prop.get(i+"Athlete.team.member").toString().trim());
+                int d=Integer.parseInt(this.prop.get(i+"Athlete.per").toString().trim());
 
                 Athlete tempNameAthlete;
-                List<Athlete> team=new ArrayList<>();
+                List<Athlete> team=new ArrayList<Athlete>();
                 List<Athlete> athleteList;
                 Message message;
                 List<Message> messages;
