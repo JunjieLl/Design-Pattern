@@ -6,13 +6,11 @@ public class FireWorkPattern {
         Show myshow = new Firework ();
         myshow.operation();
 
+        Decorator myfirework = new LightShow(myshow);
+        myfirework.operation();
 
-            Decorator myfirework = new LightShow(myshow);
-            myfirework.operation();
-
-
-            Decorator myairwork = new AircraftShow(myshow);
-            myairwork.operation();
+        Decorator myairwork = new AircraftShow(myshow);
+        myairwork.operation();
 
     }
 }

@@ -5,6 +5,11 @@ public class EnglishAdapter implements Translator{
     public EnglishAdapter(Speaker speaker){
         this.speaker =speaker;
     }
+
+    /**
+     * 设计模式：适配器模式
+     * 接口重写为英文翻译
+     */
     @Override
     public void translate() {
         String result = speaker.speak();
