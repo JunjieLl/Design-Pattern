@@ -1,7 +1,16 @@
 package olympic.scene.DeliverSpeech;
 
-abstract class Coach implements Speech{
+import olympic.main.person.Person;
 
-    public abstract void speech();
+public class Coach extends Person implements Speech{
+
+
+    public Coach(String name, String nation) {
+        super(name, nation);
+    }
+
+    public void speech() {
+        System.out.println("我是"+this.name);
+    }
 
 }

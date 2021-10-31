@@ -4,7 +4,6 @@ import olympic.main.interview.builder.InternetReportBuilder;
 import olympic.main.interview.builder.NewspaperBuilder;
 import olympic.main.interview.questionstrategy.PreInterviewStrategy;
 import olympic.main.interview.questionstrategy.AfterInterviewStrategy;
-import olympic.main.person.athlete.IndividualAthlete;
 import olympic.main.person.athlete.track.TrackAthlete;
 import olympic.main.person.interview.Interviewee;
 import olympic.main.person.interview.Interviewer;
@@ -51,20 +50,20 @@ public class InterviewMaker {
 
     public static void main(String[] args) {
         System.out.println("赛前采访开始：");
-        Interviewee preInterviewee = new TrackAthlete("Manxin Xu", "male");
+        Interviewee preInterviewee = new TrackAthlete("徐满心", "中国");
         ArrayList<Interviewer> beforeInterviewers = new ArrayList<>();
-        beforeInterviewers.add(new Interviewer("Junjie Li", "male", new PreInterviewStrategy(), new NewspaperBuilder("Junjie Li", "Manxin Xu")));
-        beforeInterviewers.add(new Interviewer("Chenhao Zhai", "male", new PreInterviewStrategy(), new InternetReportBuilder("Chenhao Zhai", "Manxin Xu")));
-        beforeInterviewers.add(new Interviewer("Even", "female", new PreInterviewStrategy(), new InternetReportBuilder("Even", "Manxin Xu")));
+        beforeInterviewers.add(new Interviewer("Junjie Li", "美国", new PreInterviewStrategy(), new NewspaperBuilder("Junjie Li", "Manxin Xu")));
+        beforeInterviewers.add(new Interviewer("Chenhao Zhai", "英国", new PreInterviewStrategy(), new InternetReportBuilder("Chenhao Zhai", "Manxin Xu")));
+        beforeInterviewers.add(new Interviewer("Even", "法国", new PreInterviewStrategy(), new InternetReportBuilder("Even", "Manxin Xu")));
         makeInterview(preInterviewee, beforeInterviewers);
         System.out.println("赛前采访结束\n");
 
         System.out.println("赛后采访开始：");
-        Interviewee afterInterviewee = new TrackAthlete("Manxin Xu", "male");
+        Interviewee afterInterviewee = new TrackAthlete("徐满心", "中国");
         ArrayList<Interviewer> afterInterviewers = new ArrayList<>();
-        afterInterviewers.add(new Interviewer("YangWanting Wu", "female", new AfterInterviewStrategy(), new InternetReportBuilder("YangWanting Wu", "Manxin Xu")));
-        afterInterviewers.add(new Interviewer("Ziyu Zhao", "male", new AfterInterviewStrategy(), new InternetReportBuilder("Ziyu Zhao", "Manxin Xu")));
-        afterInterviewers.add(new Interviewer("Lixin Luo", "male", new AfterInterviewStrategy(), new InternetReportBuilder("Lixin Luo", "Manxin Xu")));
+        afterInterviewers.add(new Interviewer("YangWanting Wu", "美国", new AfterInterviewStrategy(), new InternetReportBuilder("YangWanting Wu", "Manxin Xu")));
+        afterInterviewers.add(new Interviewer("Ziyu Zhao", "英国", new AfterInterviewStrategy(), new InternetReportBuilder("Ziyu Zhao", "Manxin Xu")));
+        afterInterviewers.add(new Interviewer("Lixin Luo", "法国", new AfterInterviewStrategy(), new InternetReportBuilder("Lixin Luo", "Manxin Xu")));
         makeInterview(afterInterviewee, afterInterviewers);
         System.out.println("赛后采访结束\n");
     }

@@ -1,6 +1,6 @@
 package olympic.scene.ProtectionFactory;
 
-class ProtectionFactory {
+public class ProtectionFactory {
 
     /**
      * 商品数量

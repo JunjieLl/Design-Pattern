@@ -45,16 +45,16 @@ public class PreCompetitionSystemFacade {
 		}
 		printlnNRowSpace(1);
 		
-		System.out.println("【首先生成尿检的检察官】");
+		System.out.println("【首先生成尿检的检察员】");
 		pressEnterToContinue();
 		printlnNRowEllipsis(3);
-		System.out.println("【检察官生成完成】");
+		System.out.println("【检察员生成完成】");
 		printlnNRowSpace(2);
 		
-		System.out.println("【开始分配监察官】");
+		System.out.println("【开始分配监察员】");
 		pressEnterToContinue();
 		printlnNRowEllipsis(3);
-		System.out.println("【检察官分配完成】");
+		System.out.println("【检察员分配完成】");
 		printlnNRowSpace(2);
 		
 		System.out.println("【接下来为运动员尿检环节】");
@@ -92,6 +92,7 @@ public class PreCompetitionSystemFacade {
 		pressEnterToContinue();
 		VolunteerList volunteerList=VolunteerList.getInstance();
 		volunteerList.allocateVolunteer(15 + (int) (Math.random() * 10));
+		System.out.println();
 		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 		printlnNRowSpace(2);
 		
@@ -114,11 +115,6 @@ public class PreCompetitionSystemFacade {
 			return false;
 		}
 		return true;
-	}
-	
-	private ArrayList<Athlete> teamAthleteConvertToAthlete(ArrayList<TeamAthlete> teamAthletes){
-		ArrayList<Athlete> res = new ArrayList<>(teamAthletes);
-		return res;
 	}
 	
 	private void pressEnterToContinue(){
@@ -158,7 +154,7 @@ public class PreCompetitionSystemFacade {
 	
 	public static void main(String[] args) {
 		PreCompetitionSystemFacade preCompetitionSystemFacade = new PreCompetitionSystemFacade();
-		preCompetitionSystemFacade.preCompetitionSystemFacade("Hurdling");
+		preCompetitionSystemFacade.preCompetitionSystemFacade("Diving");
 	}
 	
 	ArrayList<IndividualAthlete> getAllIndividualAthlete(String gameName) {

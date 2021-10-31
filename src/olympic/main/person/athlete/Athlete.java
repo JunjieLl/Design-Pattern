@@ -29,6 +29,6 @@ public abstract class Athlete extends Interviewee implements Listener, TorchBare
         this.rank.put(game, rank);
     }
 
-
+    
 
 }

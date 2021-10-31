@@ -1,8 +1,18 @@
-package olympic.scene.TicketCheckinig;
-import java.util.Scanner;
+package olympic.scene;
 
-public class Test {
-    public static void main(String[] args) {
+import olympic.scene.TicketChecking.CheckingMachine;
+import olympic.scene.TicketChecking.ElectronicTicket;
+import olympic.scene.TicketChecking.PaperTicket;
+import olympic.scene.TicketChecking.TicketChecking;
+
+import java.util.Scanner;
+/**
+ * 设计模式：策略模式
+ * 入场检票
+ */
+public class TicketCheckingScene implements Scene{
+    @Override
+    public void play() {
         CheckingMachine c=new CheckingMachine();
         while(true) {
             System.out.println("请输入您的票类：(1:电子票，2:纸质票)");
