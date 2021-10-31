@@ -11,12 +11,13 @@ public class FixedDrawLots extends DrawLots {
     /**
      * 创建指定次序抽签类
      *
-     * @param athletes  需要抽签的运动员列表
-     * @param impl      抽签形式
-     * @param groupSize 每个小组的运动员/团队数
+     * @param athletes   需要抽签的运动员列表
+     * @param impl       抽签形式
+     * @param groupSize  每个小组的运动员/团队数
+     * @param showDetail 是否打印详细抽签信息
      */
-    public FixedDrawLots(List<Athlete> athletes, DrawLotsImpl impl, int groupSize) {
-        super(athletes, impl, groupSize);
+    public FixedDrawLots(List<Athlete> athletes, DrawLotsImpl impl, int groupSize, boolean showDetail) {
+        super(athletes, impl, groupSize, showDetail);
     }
 
     /**
@@ -26,7 +27,9 @@ public class FixedDrawLots extends DrawLots {
      * @return 排好序的运动员列表
      */
     public List<Athlete> fixedDrawLots(List<Integer> orders) {
-        drawLotsStart();
+        if (showDetail) {
+            drawLotsStart();
+        }
         if (orders.size() != athletes.size()) {
             return null;
         }
@@ -42,7 +45,9 @@ public class FixedDrawLots extends DrawLots {
             sortedAthleteList.add(athletes.get(order));
         }
         athletes = sortedAthleteList;
-        drawLotsEnd();
+        if (showDetail) {
+            drawLotsEnd();
+        }
         return athletes;
     }
 }
