@@ -45,16 +45,16 @@ public class PreCompetitionSystemFacade {
 		}
 		printlnNRowSpace(1);
 		
-		System.out.println("【首先生成尿检的检察官】");
+		System.out.println("【首先生成尿检的检察员】");
 		pressEnterToContinue();
 		printlnNRowEllipsis(3);
-		System.out.println("【检察官生成完成】");
+		System.out.println("【检察员生成完成】");
 		printlnNRowSpace(2);
 		
-		System.out.println("【开始分配监察官】");
+		System.out.println("【开始分配监察员】");
 		pressEnterToContinue();
 		printlnNRowEllipsis(3);
-		System.out.println("【检察官分配完成】");
+		System.out.println("【检察员分配完成】");
 		printlnNRowSpace(2);
 		
 		System.out.println("【接下来为运动员尿检环节】");
