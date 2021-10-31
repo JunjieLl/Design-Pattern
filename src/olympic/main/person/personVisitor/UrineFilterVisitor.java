@@ -38,7 +38,7 @@ public class UrineFilterVisitor extends FilterVisitor {
 		int count = 0;
 		System.out.println("	**********************************************************");
 		for (TeamAthlete team : teamAthleteList.getAthletes()) {
-			System.out.println("	* 现在接受检查的队伍来自" + team.getNation());
+			System.out.println("	* 现在接受检查的队伍来自" + team.getNation()+"，队伍名为"+team.getName());
 			boolean flag = true;
 			for (Athlete athlete : team.getAthleteList()) {
 				

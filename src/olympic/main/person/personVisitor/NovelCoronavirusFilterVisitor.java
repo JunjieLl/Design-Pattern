@@ -43,7 +43,7 @@ public class NovelCoronavirusFilterVisitor extends FilterVisitor{
 		System.out.println("	^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
 		int count = 0;
 		for (TeamAthlete team : teamAthleteList.getAthletes()) {
-			System.out.println("	^ 现在接受检查的队伍来自" + team.getNation());
+			System.out.println("	^ 现在接受检查的队伍来自" + team.getNation()+"，队伍名为"+team.getName());
 			boolean flag = true;
 			for (Athlete athlete : team.getAthleteList()) {
 				

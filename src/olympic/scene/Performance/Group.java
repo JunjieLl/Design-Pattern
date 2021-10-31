@@ -1,9 +1,8 @@
 package olympic.scene.Performance;
-
 /**
  * 观察者：表演组
  */
-class Group implements Observer{
+public class Group implements Observer{
     private int order;
     private String title;
     /**

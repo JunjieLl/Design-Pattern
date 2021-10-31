@@ -1,6 +1,6 @@
-package olympic.scene.TicketCheckinig;
+package olympic.scene.TicketChecking;
 
-class PaperTicket implements TicketChecking{
+public class PaperTicket implements TicketChecking{
     public void checkMethod() {
         System.out.println("classname:(PaperTicket) method:(checkMethod) action:(使用纸质检票口)");
     }

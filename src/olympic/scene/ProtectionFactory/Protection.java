@@ -4,7 +4,7 @@ package olympic.scene.ProtectionFactory;
  * 设计模式：简单工厂模式
  * 防疫品类
  */
-abstract class Protection{
+public abstract class Protection{
     protected ProtectionFactory factory;
     /**
      * 设计模式：简单工厂模式

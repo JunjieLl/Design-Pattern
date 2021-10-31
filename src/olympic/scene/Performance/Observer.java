@@ -1,6 +1,6 @@
 package olympic.scene.Performance;
 
-interface Observer
+public interface Observer
 {
     /**
      * 设计模式：观察者模式

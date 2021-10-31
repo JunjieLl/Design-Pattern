@@ -1,13 +1,20 @@
-package olympic.scene.MonitorSite;
-import java.util.Scanner;
+package olympic.scene;
 
+import olympic.scene.MonitorSite.Command;
+import olympic.scene.MonitorSite.CommandStack;
+import olympic.scene.MonitorSite.Monitor;
+import olympic.scene.MonitorSite.MonitorController;
+
+import java.util.Scanner;
 /**
  * 设计模式：命令模式、备忘录模式
- * 检查场地
+ * 场地回检
  */
 
-public class Test {
-    public static void main(String[] args) {
+
+public class MonitorSiteScene implements Scene{
+    @Override
+    public void play() {
         /**
          * 创建监视器、遥控器、栈
          */
@@ -53,5 +60,4 @@ public class Test {
         }
         System.out.println("检查场地完毕！");
     }
-
 }

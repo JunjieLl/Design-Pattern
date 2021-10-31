@@ -8,6 +8,8 @@ import olympic.scene.translate.Speaker;
 import java.util.Scanner;
 
 public class TranslateScene implements Scene{
+
+
     @Override
     public void play() {
         Speaker a = new Speaker();
@@ -35,4 +37,10 @@ public class TranslateScene implements Scene{
             }
         }
     }
+
+//    public static void main(String[] args) {
+//        TranslateScene translateScene=new TranslateScene();
+//        translateScene.play();
+//
+//    }
 }
