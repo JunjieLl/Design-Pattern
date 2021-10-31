@@ -664,6 +664,7 @@ public class NameFactory {
             "第五" , "言" , "福"
     };
     private HashSet<String> sites = new HashSet<String>();
+    private HashSet<String> nationSites = new HashSet<String>();
 
 
     private Random random=new Random();
@@ -692,8 +693,8 @@ public class NameFactory {
             hight = 176+random.nextInt(39);
             low = 161+random.nextInt(93);
             byte[]han = new byte[2];
-            han[0]= new Integer(hight).byteValue();
-            han[1]= new Integer(low).byteValue();
+            han[0]= Integer.valueOf(hight).byteValue();
+            han[1]= Integer.valueOf(low).byteValue();
             try {
                 sBuilder.append(new String(han,"gbk"));
             } catch (UnsupportedEncodingException e) {
@@ -705,7 +706,7 @@ public class NameFactory {
 
     /**
      * 返回一个不会重复的英语名字
-     * @return
+     * @return 英文名
      */
     private String getEnglishName() {
         int i = random.nextInt(namesEn.length);//[0,n)
@@ -736,7 +737,7 @@ public class NameFactory {
         int i = random.nextInt(nation.length);//[0,n)
         message.nation=nation[i];
         if(i<=5){
-            message.name=insideFirstName()+insideSimpleLastName();
+            message.name=getChineseName();
 
         }
         else{
@@ -748,13 +749,19 @@ public class NameFactory {
     public List<Message> getMessageList(int n) {
         List<Message> messages=new ArrayList<>();
         int i = random.nextInt(nation.length);//[0,n)
+        int num=1;
+        while(nationSites.contains(nation[i]+num+"队")){
+            num++;
+        }
+        nationSites.add(nation[i]+num+"队");
         for(int j=0;j<n;j++){
            if(i<=5){
-               messages.add(new Message(insideFirstName()+insideSimpleLastName(),nation[i]));}
+               messages.add(new Message(getChineseName(),nation[i]));}
            else{
                messages.add(new Message(getEnglishName(),nation[i]));
            }
         }
+        messages.add(new Message(nation[i]+num+"队",nation[i]));
         return messages;
     }
 

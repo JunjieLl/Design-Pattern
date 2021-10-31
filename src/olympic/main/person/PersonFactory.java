@@ -133,11 +133,12 @@ public class PersonFactory {
                                 nameMap.put(messages.get(k).name,tempNameAthlete);
                                 addNationMap(messages.get(k).nation,tempNameAthlete);
                             }
-                            team.add(new TrackTeam(messages.get(0).nation,messages.get(0).nation,athleteList));
+                            team.add(new TrackTeam(messages.get(c).name,messages.get(0).nation,athleteList));
                         }
                         hMap.put(i,team);
                         break;
                     case "Sprints":
+                    case "Hurdling":
                     case "Marathon":
                         athleteList=new ArrayList<>();
                         for(int j=0;j<a;j++){
@@ -171,7 +172,7 @@ public class PersonFactory {
                                 addNationMap(messages.get(k).nation,tempNameAthlete);
 
                             }
-                            team.add(new DivingTeam(messages.get(0).nation,messages.get(0).nation,athleteList));
+                            team.add(new DivingTeam(messages.get(c).name,messages.get(0).nation,athleteList));
                         }
                         hMap.put(i,team);
                         break;
@@ -186,7 +187,7 @@ public class PersonFactory {
                                 addNationMap(messages.get(k).nation,tempNameAthlete);
 
                             }
-                            team.add(new FootballTeam(messages.get(0).nation,messages.get(0).nation,athleteList));
+                            team.add(new FootballTeam(messages.get(c).name,messages.get(0).nation,athleteList));
                         }
                         hMap.put(i,team);
                         break;
@@ -212,7 +213,7 @@ public class PersonFactory {
                                 addNationMap(messages.get(k).nation,tempNameAthlete);
 
                             }
-                            team.add(new PingpongTeam(messages.get(0).nation,messages.get(0).nation,athleteList));
+                            team.add(new PingpongTeam(messages.get(c).name,messages.get(0).nation,athleteList));
                         }
                         hMap.put(i,team);
                         break;

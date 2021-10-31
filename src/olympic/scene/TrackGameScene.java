@@ -1,10 +1,7 @@
 package olympic.scene;
 
 import olympic.main.game.diving.ContestPipeline;
-import olympic.main.game.track.Marathon;
-import olympic.main.game.track.Relays;
-import olympic.main.game.track.Sprints;
-import olympic.main.game.track.TrackGame;
+import olympic.main.game.track.*;
 import olympic.main.person.PersonFactory;
 
 public class TrackGameScene implements Scene{
@@ -20,10 +17,13 @@ public class TrackGameScene implements Scene{
                  track=new Relays(PersonFactory.getInstance().getAthletes("Relays"));
                 break;
             case "Marathon":
-                 track=new Marathon(PersonFactory.getInstance().getAthletes("Relays"));
+                 track=new Marathon(PersonFactory.getInstance().getAthletes("Marathon"));
                 break;
             case "Sprints":
-                 track=new Sprints(PersonFactory.getInstance().getAthletes("Relays"));
+                 track=new Sprints(PersonFactory.getInstance().getAthletes("Sprints"));
+                break;
+            case "Hurdling":
+                track=new Hurdling(PersonFactory.getInstance().getAthletes("Hurdling"));
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + game);
