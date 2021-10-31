@@ -27,7 +27,6 @@ abstract class Observable
     /**
      * 设计模式：观察者模式
      * 通知观察者
-     * @param observer
      */
     public abstract void notifyObserver();
 }

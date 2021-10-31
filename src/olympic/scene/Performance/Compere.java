@@ -5,7 +5,7 @@ import java.util.Iterator;
 /**
  * 被观察者：主持人
  */
-class Compere extends Observable
+public class Compere extends Observable
 {
     private int programNum;
     public int getProgramNum(){

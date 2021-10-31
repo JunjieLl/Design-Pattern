@@ -1,5 +1,5 @@
 package olympic.scene.DeliverSpeech;
 
-interface Speech {
+public interface Speech {
     void speech();
 }

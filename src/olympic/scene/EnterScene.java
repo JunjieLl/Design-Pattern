@@ -6,7 +6,6 @@ import olympic.scene.enterarena.EnterIterator;
 import olympic.scene.enterarena.EnterManager;
 
 public class EnterScene implements Scene {
-
     @Override
     public void play() {
         EnterManager enterManager = EnterManager.getInstance();
@@ -37,6 +36,8 @@ public class EnterScene implements Scene {
         System.out.println("最后一位使者点燃了奥运圣火！");
     }
 
-
-
+//    public static void main(String[] args) {
+//        EnterScene enterScene=new EnterScene();
+//        enterScene.play();
+//    }
 }
