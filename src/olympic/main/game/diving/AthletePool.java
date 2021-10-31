@@ -51,10 +51,18 @@ public class AthletePool {
         this.strategy = strategy;
     }
 
+    /**
+     * 获取对象池中的运动员/组合数量
+     * @return 对象池中的运动员/组合数量
+     */
     public int getSize() {
         return this.pool.size();
     }
 
+    /**
+     * 在对象池中加入运动员
+     * @param object 要添加的运动员
+     */
     public void add(Athlete object) {
         this.pool.add(object);
     }
@@ -143,6 +151,10 @@ public class AthletePool {
         }
     }
 
+    /**
+     * 获取是否展示细节指令
+     * @return viewDetail 是否展示细节指令
+     */
     public boolean getDetail(){
         return this.viewDetail;
     }
