@@ -10,7 +10,13 @@ import java.util.List;
  * 作为Director,使用Contest的API来生成实例，不依赖于什么比赛
  */
 public class ContestDirector {
+    /**
+     * 比赛轮次
+     */
     public Integer rounds;
+    /**
+     * 运动员列表
+     */
     List<Athlete> athletes;
 
     /**
