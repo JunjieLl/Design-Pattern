@@ -60,7 +60,9 @@ public abstract class FootballGame extends Game {
     }
 
     public void notifyObserver() {
-        observer.update(this);
+        if (observer != null) {
+            observer.update(this);
+        }
     }
 
     public int getPenaltyScore1() {

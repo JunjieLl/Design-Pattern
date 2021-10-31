@@ -1,22 +1,19 @@
-package olympic.scene.fireworkshow;
-import java.util.Scanner;
+package olympic.scene;
 
-public class FireWorkPattern {
-    public static void main(String[] args){
-        Show myshow = new Firework ();
+import olympic.scene.fireworkshow.*;
+
+public class FireworkScene implements Scene{
+    @Override
+    public void play() {
+        Show myshow = new Firework();
         myshow.operation();
+
 
         Decorator myfirework = new LightShow(myshow);
         myfirework.operation();
 
+
         Decorator myairwork = new AircraftShow(myshow);
         myairwork.operation();
-
     }
 }
-
-
-
-
-
-
