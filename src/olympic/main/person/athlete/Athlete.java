@@ -10,7 +10,7 @@ public abstract class Athlete extends Interviewee implements Listener, TorchBare
     protected HashMap<String, Integer> rank = new HashMap<>();
 
     public Athlete(String name, String nation) {
-        super(name,nation);
+        super(name, nation);
     }
 
     public String getName() {
@@ -28,7 +28,5 @@ public abstract class Athlete extends Interviewee implements Listener, TorchBare
     public void setRank(String game, Integer rank) {
         this.rank.put(game, rank);
     }
-
-    
 
 }

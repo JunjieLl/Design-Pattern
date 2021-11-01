@@ -2,10 +2,11 @@ package olympic.main.person.interview;
 
 import olympic.main.person.Person;
 
-import java.util.ArrayList;
+import java.util.*;
 import java.util.Random;
 
 public abstract class Interviewee extends Person implements Listener {
+    public final static String STOP_WORD = "不想回答这个问题";
     private final ArrayList<Listener> listeners = new ArrayList<>();
 
     protected Interviewee(String name, String nation) {
@@ -25,7 +26,13 @@ public abstract class Interviewee extends Person implements Listener {
     }
 
     public String answerQuestion(String content) {
-        return this.name + "回答问题：" + content;
+        Random random = new Random();
+        int stopNum = random.nextInt(10);
+        if (stopNum == 0) {
+            return STOP_WORD;
+        } else {
+            return content;
+        }
     }
 
     public void notifyListeners(String content) {
@@ -34,10 +41,10 @@ public abstract class Interviewee extends Person implements Listener {
         }
     }
 
-    public ArrayList<String> makeSpeech() {
+    public List<String> makeSpeech() {
         Random random = new Random();
         int talkNum = random.nextInt(10) + 1;
-        ArrayList<String> speech = new ArrayList<>();
+        List<String> speech = new ArrayList<>();
         for (int i = 0; i < talkNum; i++) {
             speech.add("讲话" + i);
         }
