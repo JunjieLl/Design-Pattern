@@ -9,9 +9,9 @@ import java.util.ArrayList;
  * 具体的仲裁者，继承自仲裁者接口.
  */
 public class ReviewMediatorConcrete implements ReviewMediator{
-    private ReviewColleagueEvidence rcecidence;
+    private ReviewColleagueEvidence rcevidence;
     private ReviewColleagueInvestigation rcinvestigate;
-    private ReviewColleagueEvaluation rcevauluate;
+    private ReviewColleagueEvaluation rcevaluate;
     private Athlete badAthlete;
     private String targetGame;
     private int round;
@@ -26,12 +26,12 @@ public class ReviewMediatorConcrete implements ReviewMediator{
 
     @Override
     public void createColleagues() {
-        rcecidence = new ReviewColleagueEvidence();
+        rcevidence = new ReviewColleagueEvidence();
         rcinvestigate = new ReviewColleagueInvestigation();
-        rcevauluate = new ReviewColleagueEvaluation();
-        rcecidence.setMediator(this);
+        rcevaluate = new ReviewColleagueEvaluation();
+        rcevidence.setMediator(this);
         rcinvestigate.setMediator(this);
-        rcevauluate.setMediator(this);
+        rcevaluate.setMediator(this);
     }
 
     /**
@@ -45,16 +45,16 @@ public class ReviewMediatorConcrete implements ReviewMediator{
             rcinvestigate.conductInvestigation();
         } else if (event == "IC"){
             System.out.println("【调查管理员】已收到调查结果，正在安排评估小组讨论评估。");
-            rcevauluate.conductEvalution();
+            rcevaluate.conductEvalution();
         } else if (event == "INIT") {
             System.out.println("【调查管理员】本委员会即将对在 "+ targetGame +" 比赛中，该运动员："+ badAthlete.getName() + "的违纪检察");
             System.out.println("【调查管理员】比赛获奖资质调查已经启动，已经向取证小组发送指令。");
-            rcecidence.collectEvidence();
+            rcevidence.collectEvidence();
         } else if (event == "RNG"){
             round+=1;
             if(round<2){
                 System.out.println("【调查管理员】正在安排取证小组进行新一轮取证。");
-                rcecidence.collectEvidence();
+                rcevidence.collectEvidence();
             }
             else{
                 System.out.println("【调查管理员】根据我们掌握的证据、严谨的调查和审慎的评估，在 "+ targetGame +" 比赛中，该运动员：");
@@ -67,8 +67,10 @@ public class ReviewMediatorConcrete implements ReviewMediator{
 
                 if (PingpongDiving.contains(targetGame)) {
                     MedalTable.getInstance().penalty(badAthlete.getNation(), badAthlete.getRank("决赛"));
+                    badAthlete.setRank("决赛",-1);
                 } else{
                     MedalTable.getInstance().penalty(badAthlete.getNation(), badAthlete.getRank(targetGame));
+                    badAthlete.setRank(targetGame,-1);
                 }
 
                 MedalTable.getInstance().printMedalTable();
