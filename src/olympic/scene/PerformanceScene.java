@@ -19,6 +19,7 @@ public class PerformanceScene implements Scene{
         cp.add(group_2);
         cp.add(group_3);
         cp.setProgramNum(1);
+        cp.setProgramNum(2);
         cp.setProgramNum(3);
     }
 }
