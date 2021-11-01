@@ -16,14 +16,16 @@ public class IndividualAthleteList implements AthleteList {
 	
 	/**
 	 * 运动员列表类类的构造函数
+	 *
 	 * @param athletes 用于初始化个人运动员数组的数据
 	 */
-	public IndividualAthleteList(ArrayList<IndividualAthlete> athletes){
+	public IndividualAthleteList(ArrayList<IndividualAthlete> athletes) {
 		this.athletes = athletes;
 	}
 	
 	/**
 	 * 用于接收一个访问器的函数
+	 *
 	 * @param v 一个访问器，用于访问该类，对该类做操作
 	 */
 	@Override
@@ -33,14 +35,16 @@ public class IndividualAthleteList implements AthleteList {
 	
 	/**
 	 * 获取该类保存的个人运动员的数组
+	 *
 	 * @return 该类保存的个人运动员数组
 	 */
-	public ArrayList<IndividualAthlete> getAthletes(){
+	public ArrayList<IndividualAthlete> getAthletes() {
 		return athletes;
 	}
 	
 	/**
 	 * 设置该类的个人运动员数组
+	 *
 	 * @param athletes 用于设置个人运动员数组的数据
 	 */
 	public void setAthletes(ArrayList<IndividualAthlete> athletes) {

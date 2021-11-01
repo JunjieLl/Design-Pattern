@@ -14,7 +14,8 @@ public class UrineTestProcuratorReal extends UrineTestProcurator {
 	
 	/**
 	 * 尿检检察员真实类的构造函数
-	 * @param name 尿检检察员的姓名
+	 *
+	 * @param name   尿检检察员的姓名
 	 * @param nation 尿检检察员的国籍
 	 */
 	protected UrineTestProcuratorReal(String name, String nation) {
