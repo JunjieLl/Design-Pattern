@@ -24,7 +24,7 @@ public class PreCompetitionSystemFacade {
 	/**
 	 * 视窗类的构造函数，是一个私有类，这是单例模式的一部分
 	 */
-	private PreCompetitionSystemFacade(){
+	private PreCompetitionSystemFacade() {
 	
 	}
 	
@@ -36,7 +36,7 @@ public class PreCompetitionSystemFacade {
 	/**
 	 * 获取赛前准备视窗的实例
 	 */
-	public static PreCompetitionSystemFacade getInstance(){
+	public static PreCompetitionSystemFacade getInstance() {
 		return singleton;
 	}
 	
@@ -44,7 +44,7 @@ public class PreCompetitionSystemFacade {
 	 * 赛前准备的总流程，赛前准备流程为：生成尿检的检察员->分配监察员->运动员尿检
 	 * ->运动员填写《兴奋剂检查记录单》和《兴奋剂检查传送单》->检测运动员是否感染了新冠病毒
 	 * ->检测运动员是否感染了新冠病毒->确认参赛名单->分配志愿者
-	 *
+	 * <p>
 	 * 我把赛前比赛繁杂的流程总结到了这个类中，方便其他队友的调用
 	 *
 	 * @param gameName 比赛名
@@ -56,12 +56,12 @@ public class PreCompetitionSystemFacade {
 			athletes = new TeamAthleteList(getAllTeam(gameName));
 			System.out.println("【接下来进行" + gameName + "比赛的赛前准备环节】");
 			System.out.println("【该项目为组队项目】");
-
+			
 		} else {
 			athletes = new IndividualAthleteList(getAllIndividualAthlete(gameName));
 			System.out.println("【接下来进行" + gameName + "比赛的赛前准备环节】");
 			System.out.println("【该项目为个人项目】");
-
+			
 		}
 		printlnNRowSpace(1);
 		
@@ -91,8 +91,8 @@ public class PreCompetitionSystemFacade {
 		printlnNRowSpace(2);
 		
 		System.out.println("【接下来根据初步运动员身体状况（是否感染新冠病毒）以及尿检结果评价参赛资格】");
-		FilterManager filterManager=new FilterManager();
-		if(canFilter(gameName)) {
+		FilterManager filterManager = new FilterManager();
+		if (canFilter(gameName)) {
 			if (isTeamNumber(gameName)) {
 				assert athletes instanceof TeamAthleteList;
 				athletes = new TeamAthleteList(filterManager.visit((TeamAthleteList) athletes, gameName));
@@ -113,7 +113,7 @@ public class PreCompetitionSystemFacade {
 		
 		System.out.println("【最后，为该场比赛分配志愿者以协助比赛顺利进行】");
 		pressEnterToContinue();
-		VolunteerList volunteerList=VolunteerList.getInstance();
+		VolunteerList volunteerList = VolunteerList.getInstance();
 		volunteerList.allocateVolunteer(15 + (int) (Math.random() * 10));
 		System.out.println();
 		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
@@ -133,17 +133,18 @@ public class PreCompetitionSystemFacade {
 	
 	/**
 	 * 判断是否能对一个比赛使用过滤器
+	 *
 	 * @param gameName 比赛名
 	 * @return 是否能对比赛gameName使用过滤器
 	 */
-	private boolean canFilter(String gameName){
+	private boolean canFilter(String gameName) {
 		return !"FootballTeam".equals(gameName) && !"Pingpong".equals(gameName) && !"PingpongTeam".equals(gameName);
 	}
 	
 	/**
 	 * 为运行中的程序提供一个停顿，当用户输入回车时继续程序
 	 */
-	private void pressEnterToContinue(){
+	private void pressEnterToContinue() {
 		System.out.print("按下回车继续:");
 		try {
 			System.in.read();
@@ -154,6 +155,7 @@ public class PreCompetitionSystemFacade {
 	
 	/**
 	 * 判断输入的比赛是组队模式的比赛还是单人模式的比赛
+	 *
 	 * @param game 比赛名
 	 * @return 如果输入的比赛是组队模式，返回true，反之返回false
 	 */
@@ -163,26 +165,29 @@ public class PreCompetitionSystemFacade {
 	
 	/**
 	 * 输出num行的...
+	 *
 	 * @param num 输出"..."的行数
 	 */
-	private void printlnNRowEllipsis(int num){
-		for(int i=0;i<num;i++){
+	private void printlnNRowEllipsis(int num) {
+		for (int i = 0; i < num; i++) {
 			System.out.println("...");
 		}
 	}
 	
 	/**
 	 * 输出num行的空格
+	 *
 	 * @param num 输出空格的行数
 	 */
-	private void printlnNRowSpace(int num){
-		for(int i=0;i<num;i++){
+	private void printlnNRowSpace(int num) {
+		for (int i = 0; i < num; i++) {
 			System.out.println();
 		}
 	}
 	
 	/**
 	 * 赛前子系统的测试函数
+	 *
 	 * @param args 程序的输入参数
 	 */
 	public static void main(String[] args) {
@@ -194,14 +199,15 @@ public class PreCompetitionSystemFacade {
 	
 	/**
 	 * 获取某一个个人比赛的所有运动员
+	 *
 	 * @param gameName 输入比赛名
 	 * @return 某一个人比赛的所有运动员（个人比赛）
 	 */
 	ArrayList<IndividualAthlete> getAllIndividualAthlete(String gameName) {
-		PersonFactory personFactory= PersonFactory.getInstance();
-		ArrayList<Athlete> a = (ArrayList<Athlete>)personFactory.getAthletes(gameName);
+		PersonFactory personFactory = PersonFactory.getInstance();
+		ArrayList<Athlete> a = (ArrayList<Athlete>) personFactory.getAthletes(gameName);
 		ArrayList<IndividualAthlete> res = new ArrayList<>();
-		for (Athlete athlete:a){
+		for (Athlete athlete : a) {
 			res.add((IndividualAthlete) athlete);
 		}
 		return res;
@@ -209,14 +215,15 @@ public class PreCompetitionSystemFacade {
 	
 	/**
 	 * 获取一个比赛的所有队伍
+	 *
 	 * @param gameName 输入比赛名
 	 * @return 某比赛的所有队伍（团队比赛）
 	 */
 	ArrayList<TeamAthlete> getAllTeam(String gameName) {
-		PersonFactory personFactory= PersonFactory.getInstance();
+		PersonFactory personFactory = PersonFactory.getInstance();
 		List<Athlete> a = personFactory.getAthletes(gameName);
 		ArrayList<TeamAthlete> res = new ArrayList<>();
-		for (Athlete athlete:a){
+		for (Athlete athlete : a) {
 			res.add((TeamAthlete) athlete);
 		}
 		return res;

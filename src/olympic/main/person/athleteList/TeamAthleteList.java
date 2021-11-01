@@ -16,14 +16,16 @@ public class TeamAthleteList implements AthleteList {
 	
 	/**
 	 * 设置该类的运动员队伍数组
+	 *
 	 * @param athletes 用于初始话队伍数组的数据
 	 */
-	public TeamAthleteList(ArrayList<TeamAthlete> athletes){
+	public TeamAthleteList(ArrayList<TeamAthlete> athletes) {
 		this.athletes = athletes;
 	}
 	
 	/**
 	 * 用于接收一个访问器的函数
+	 *
 	 * @param v 一个访问器，用于访问该类，对该类做操作
 	 */
 	@Override
@@ -34,6 +36,7 @@ public class TeamAthleteList implements AthleteList {
 	
 	/**
 	 * 获取该类保存的运动员队伍数组
+	 *
 	 * @return 该类保存的运动员队伍
 	 */
 	public ArrayList<TeamAthlete> getAthletes() {
@@ -42,6 +45,7 @@ public class TeamAthleteList implements AthleteList {
 	
 	/**
 	 * 设置该类的队伍数组
+	 *
 	 * @param athletes 用于设置运动员队伍数组的数据
 	 */
 	public void setAthletes(ArrayList<TeamAthlete> athletes) {
