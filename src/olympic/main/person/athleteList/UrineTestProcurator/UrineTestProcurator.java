@@ -8,7 +8,8 @@ import olympic.main.person.Person;
 public abstract class UrineTestProcurator extends Person {
 	/**
 	 * 尿检检察员的构造函数
-	 * @param name 检察员姓名
+	 *
+	 * @param name   检察员姓名
 	 * @param nation 检察员国家
 	 */
 	protected UrineTestProcurator(String name, String nation) {

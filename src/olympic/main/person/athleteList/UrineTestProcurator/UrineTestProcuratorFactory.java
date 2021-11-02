@@ -10,7 +10,7 @@ public class UrineTestProcuratorFactory {
 	/**
 	 * 尿检检察员的对象池，用于生成整数（用于生成检察员的姓名）与尿检检察员的一一对应
 	 */
-	private HashMap<Integer, UrineTestProcurator> pool = new HashMap<Integer, UrineTestProcurator>();
+	private final HashMap<Integer, UrineTestProcurator> pool = new HashMap<>();
 	
 	/**
 	 * 尿检检察员生成工厂的单例
@@ -26,6 +26,7 @@ public class UrineTestProcuratorFactory {
 	
 	/**
 	 * 获取尿检检察员生成工厂
+	 *
 	 * @return 尿检检察员生成工厂
 	 */
 	public static UrineTestProcuratorFactory getInstance() {
@@ -35,6 +36,7 @@ public class UrineTestProcuratorFactory {
 	/**
 	 * 根据一个整数获取尿检检察员，如果对象池中有这个检察员，则返回这个检察员。如果没有这个检察员，
 	 * 则根绝输入的number生成一个检察员，并存入对象池中
+	 *
 	 * @param number 用于获取或者生成检察院的关键字
 	 * @return 根据输入的number获取的检察员
 	 */
@@ -42,13 +44,12 @@ public class UrineTestProcuratorFactory {
 		UrineTestProcurator urineTestProcurator = pool.get(number);
 		if (urineTestProcurator == null) {
 			if (number < 26) {
-				urineTestProcurator = new UrineTestProcuratorProxy("检察员"
-						+ ((char)('A' + number)),"");
+				urineTestProcurator = new UrineTestProcuratorProxy("检察员" + ((char) ('A' + number)), "");
 			} else {
-				urineTestProcurator = new UrineTestProcuratorProxy("检察员" +
-						((Integer)(number+1)).toString(),"");
+				urineTestProcurator = new UrineTestProcuratorProxy("检察员" + ((Integer) (number + 1)).toString(), "");
 			}
 			pool.put(number, urineTestProcurator);
-		} return urineTestProcurator;
+		}
+		return urineTestProcurator;
 	}
 }

@@ -7,9 +7,9 @@ import java.util.Random;
 /**
  * 淘汰赛
  */
-public class EliminationFootballGame extends FootballGame{
+public class EliminationFootballMatch extends FootballMatch {
     private int penaltyScore1, penaltyScore2;
-    public EliminationFootballGame(FootballTeam team1, FootballTeam team2) {
+    public EliminationFootballMatch(FootballTeam team1, FootballTeam team2) {
         super(team1, team2);
     }
 

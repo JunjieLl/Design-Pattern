@@ -1,10 +1,9 @@
 package olympic.main.game.football.round;
 
-import olympic.main.game.ScheduleIterator;
-import olympic.main.game.football.EliminationFootballGame;
-import olympic.main.game.football.FootballGame;
+import olympic.main.game.football.ScheduleIterator;
+import olympic.main.game.football.EliminationFootballMatch;
+import olympic.main.game.football.FootballMatch;
 import olympic.main.game.football.Observer;
-import olympic.main.game.football.round.Round;
 import olympic.main.person.athlete.footballathlete.FootballTeam;
 
 import java.util.ArrayList;
@@ -14,25 +13,23 @@ import java.util.List;
  * 淘汰赛的一轮
  */
 public class EliminationRound extends Round implements Observer {
-    String name = null;
-    private List<FootballTeam> advancedTeams = new ArrayList<>();
+    private String name = null;
 
     public EliminationRound(String name) {
         this.name = name;
     }
 
     /**
-     * 进行本轮所有比赛并生成晋级名单
-     * @param teams 上一轮的晋级球队
-     * @return 晋级球队列表
+     * 进行本轮所有比赛
      */
     @Override
-    public List<FootballTeam> play(List<FootballTeam> teams) {
+    public void start() {
+        advancedTeams.clear();
         System.out.println("classname: (EliminationRound) method: (play) action: (进行足球淘汰赛) ");
         for (int i = 0; i < teams.size(); i += 2) {
-            EliminationFootballGame g = new EliminationFootballGame(teams.get(i), teams.get(i + 1));
+            EliminationFootballMatch g = new EliminationFootballMatch(teams.get(i), teams.get(i + 1));
             g.setObserver(this);
-            schedule.addGame(g);
+            schedule.addMatch(g);
         }
 
         if (name != null) {
@@ -41,10 +38,8 @@ public class EliminationRound extends Round implements Observer {
 
         ScheduleIterator it = schedule.iterator();
         while (it.hasNext()) {
-            it.next().start();
+            it.next().play();
         }
-
-        return advancedTeams;
     }
 
     /**
@@ -52,8 +47,8 @@ public class EliminationRound extends Round implements Observer {
      * @param game 结束的比赛
      */
     @Override
-    public void update(FootballGame game) {
-        EliminationFootballGame e = (EliminationFootballGame) game;
+    public void update(FootballMatch game) {
+        EliminationFootballMatch e = (EliminationFootballMatch) game;
         if (e.getScore1() > e.getScore2()) {
             advancedTeams.add(e.getTeam1());
         } else if (e.getScore1() < e.getScore2()) {
@@ -64,4 +59,5 @@ public class EliminationRound extends Round implements Observer {
             advancedTeams.add(e.getTeam2());
         }
     }
+
 }

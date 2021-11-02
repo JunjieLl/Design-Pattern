@@ -25,7 +25,7 @@ public class ScoreBoard implements Observer{
      * @param game 完成的比赛
      */
     @Override
-    public void update(FootballGame game) {
+    public void update(FootballMatch game) {
         int score1 = game.getScore1(), score2 = game.getScore2();
         int id1 = game.getTeam1().getId(), id2 = game.getTeam2().getId();
         if (score1 > score2) {

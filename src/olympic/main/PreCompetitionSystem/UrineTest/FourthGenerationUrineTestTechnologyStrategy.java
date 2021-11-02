@@ -4,7 +4,7 @@ package olympic.main.PreCompetitionSystem.UrineTest;
  * 第四代尿检技术
  * 使用了策略模式
  */
-public class FourthGenerationUrineTestTechnologyStrategy implements UrineTestStrategy{
+public class FourthGenerationUrineTestTechnologyStrategy implements UrineTestStrategy {
 	/**
 	 * 第四代尿检技术的具体尿检方式（着重检测生物类分子）
 	 */
@@ -15,6 +15,7 @@ public class FourthGenerationUrineTestTechnologyStrategy implements UrineTestStr
 	
 	/**
 	 * 检测该尿检策略是否为空对象
+	 *
 	 * @return 因为该尿检策略不为空对象，所以返回false
 	 */
 	@Override

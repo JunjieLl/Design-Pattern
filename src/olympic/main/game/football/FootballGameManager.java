@@ -1,5 +1,7 @@
 package olympic.main.game.football;
 
+import olympic.main.game.AbstractPipeline;
+import olympic.main.game.Valve;
 import olympic.main.game.football.round.Round;
 import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.footballathlete.FootballTeam;
@@ -10,9 +12,9 @@ import java.util.List;
 
 /**
  * Singleton模式
- * Pipeline模式 相当于Pipeline类
+ * Pipeline模式
  */
-public class FootballGameManager {
+public class FootballGameManager implements AbstractPipeline {
     private static FootballGameManager singleton = new FootballGameManager();
 
     public static FootballGameManager getInstance() {
@@ -44,6 +46,15 @@ public class FootballGameManager {
         }
     }
 
+    @Override
+    public void addContest(Valve newGame) {
+        Round r = this.first;
+        while (r.getNext() != null) {
+            r = r.getNext();
+        }
+        r.setNext(newGame);
+    }
+
     /**
      * 依次进行所有轮次的比赛
      */
@@ -57,7 +68,9 @@ public class FootballGameManager {
                 advancedTeams.get(i).setRank("FootballTeam", rank);
             }
             rank /= 2;
-            advancedTeams = r.play(advancedTeams);
+            r.setTeams(advancedTeams);
+            r.start();
+            advancedTeams = r.getAdvancedTeams();
             r = r.getNext();
         }
 
@@ -81,8 +94,8 @@ public class FootballGameManager {
 
         // 季军赛
         System.out.println("\n【季军赛】");
-        EliminationFootballGame thirdPlaceGame = new EliminationFootballGame(tmp.get(0), tmp.get(1));
-        thirdPlaceGame.start();
+        EliminationFootballMatch thirdPlaceGame = new EliminationFootballMatch(tmp.get(0), tmp.get(1));
+        thirdPlaceGame.play();
 
         if (thirdPlaceGame.getScore1() > thirdPlaceGame.getScore2()) {
             thirdPlaceGame.getTeam1().setRank("FootballTeam", 3);

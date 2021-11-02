@@ -38,7 +38,7 @@ public class MedalTable {
                 }else if(rank==2){
                     countries.get(i).silverMinusOne();
                 }else if(rank==3){
-                    countries.get(i).bronzePlusOne();
+                    countries.get(i).bronzeMinusOne();
                 }
             }
         }

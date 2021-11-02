@@ -3,7 +3,6 @@ package olympic.main.drawlots;
 import olympic.main.person.PersonFactory;
 import olympic.main.person.athlete.Athlete;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,9 +11,26 @@ import java.util.List;
  * 1. Bridge
  */
 public class DrawLots {
-    List<Athlete> athletes;
+    /**
+     * 需要抽签的运动员列表
+     */
+    protected List<Athlete> athletes;
+
+    /**
+     * 抽签形式，支持的形式：
+     * 1. PaperDrawLotsImpl（纸质版）
+     * 2. ElectronicDrawLotsImpl（电子版）
+     */
     private final DrawLotsImpl impl;
+
+    /**
+     * 每个小组的运动员/团队数
+     */
     private final int groupSize;
+
+    /**
+     * 是否打印详细抽签信息
+     */
     protected final boolean showDetail;
 
     /**

@@ -10,9 +10,24 @@ import java.util.List;
  * 1. Bridge
  */
 public abstract class DrawLotsImpl {
+    /**
+     * 分隔符长度{@value}
+     */
     protected static final int SEPARATOR_LENGTH = 70;
+
+    /**
+     * 开头与结尾缩进长度{@value}
+     */
     protected static final int START_END_SEPARATOR_LENGTH = DrawLotsImpl.SEPARATOR_LENGTH / 2 - 7;
+
+    /**
+     * 抽签前缩进长度{@value}
+     */
     protected static final int BEFORE_SEPARATOR_LENGTH = DrawLotsImpl.SEPARATOR_LENGTH / 2 - 10;
+
+    /**
+     * 抽签结果缩进长度{@value}
+     */
     protected static final int RESULT_SEPARATOR_LENGTH = DrawLotsImpl.SEPARATOR_LENGTH / 2 - 5;
 
     /**

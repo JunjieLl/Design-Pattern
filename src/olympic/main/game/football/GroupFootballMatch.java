@@ -7,8 +7,8 @@ import java.util.Random;
 /**
  * 足球小组赛
  */
-public class GroupFootballGame extends FootballGame{
-    public GroupFootballGame(FootballTeam team1, FootballTeam team2) {
+public class GroupFootballMatch extends FootballMatch {
+    public GroupFootballMatch(FootballTeam team1, FootballTeam team2) {
         super(team1, team2);
         this.observer = ScoreBoard.getInstance();
     }

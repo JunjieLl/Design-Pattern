@@ -12,13 +12,12 @@ public class Main {
 //        new FootballScene().play();
         //new CeremonyScene("LI JUNJIE","LI JIEJUN","JIE LIJUN").play();
         //new ChoreHandlingScene().play();
-        //new ReviewQScene().play();
-//        new TrackGameScene("Marathon").play();
-//        new TrackGameScene("Sprints").play();
-//        new TrackGameScene("Hurdling").play();
-//        new TrackGameScene("Relays").play();
+        new TrackGameScene("Marathon").play();
+        new TrackGameScene("Sprints").play();
+        new TrackGameScene("Hurdling").play();
+        new TrackGameScene("Relays").play();
         new PingpongGameScene().play();
-        new ReviewQScene().play();
+        //new ReviewQScene().play();
 
 
     }
