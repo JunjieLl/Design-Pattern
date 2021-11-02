@@ -118,9 +118,9 @@ public class AthletePool {
                 return o2.getValue().compareTo(o1.getValue());
             }
         });
-        System.out.printf("排名\t\t%-13s\t%-10s\n", "姓名", "分数");
+        System.out.printf("排名\t\t%-16s\t%-10s\n", "姓名", "分数");
         for (int i = 0; i < list.size(); i++) {
-            System.out.printf("第%d名\t%-13s\t%.3f\n", i + 1, list.get(i).getKey().getName(), list.get(i).getValue());
+            System.out.printf("第%d名\t%-16s\t%.3f\n", i + 1, list.get(i).getKey().getName(), list.get(i).getValue());
             list.get(i).getKey().setRank(game, i + 1);
         }
     }

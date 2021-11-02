@@ -39,7 +39,7 @@ public class PreliminaryContest extends DivingGame {
                 Athlete curDivingAthlete = athletePool.appear();
                 double score = athletePool.getStrategy().decideScore();
                 if(athletePool.getDetail()) {
-                    System.out.printf("来自\t%-19s\t的%-10s\t" + "第" + i + "轮分数为\t" + "%.3f\n", curDivingAthlete.getNation(), curDivingAthlete.getName(), score);
+                    System.out.printf("来自\t%-3s\t的%-15s\t" + "第" + i + "轮分数为\t" + "%.3f\n", curDivingAthlete.getNation(), curDivingAthlete.getName(), score);
                 }
                 athletePool.addScore(curDivingAthlete,score);
                 athletePool.disappear();
