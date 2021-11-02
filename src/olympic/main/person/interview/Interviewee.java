@@ -7,7 +7,7 @@ import java.util.Random;
 import java.util.regex.Pattern;
 
 public abstract class Interviewee extends Person implements Listener {
-    public static final String STOP_WORD = "不想回答这个问题";
+    public static final String STOP_WORD = "不想回答这个问题。";
     private static final String pressConferencePattern = ".*发起提问.*";
 
     private final List<Listener> listeners = new ArrayList<>();

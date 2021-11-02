@@ -1,13 +1,13 @@
 package olympic.main.person.interview;
 
 import olympic.main.interview.builder.ReportBuilder;
-import olympic.main.interview.questionstrategy.PreInterviewStrategy;
+import olympic.main.interview.questionstrategy.PreInterviewAthleteStrategy;
 import olympic.main.interview.questionstrategy.QuestionStrategy;
 import olympic.main.person.Person;
 
 public class Interviewer extends Person implements Listener {
 
-    protected QuestionStrategy questionStrategy = new PreInterviewStrategy();
+    protected QuestionStrategy questionStrategy = new PreInterviewAthleteStrategy();
     protected ReportBuilder reportBuilder;
 
     public Interviewer(String name, String nation) {
