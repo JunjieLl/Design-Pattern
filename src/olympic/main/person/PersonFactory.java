@@ -1,8 +1,6 @@
 package olympic.main.person;
 
 import olympic.main.person.athlete.Athlete;
-import olympic.main.person.athlete.IndividualAthlete;
-import olympic.main.person.athlete.TeamAthlete;
 import olympic.main.person.athlete.divingathlete.DivingAthlete;
 import olympic.main.person.athlete.divingathlete.DivingTeam;
 import olympic.main.person.athlete.footballathlete.FootballTeam;
@@ -10,8 +8,9 @@ import olympic.main.person.athlete.pingong.PingpongAthlete;
 import olympic.main.person.athlete.pingong.PingpongTeam;
 import olympic.main.person.athlete.track.TrackAthlete;
 import olympic.main.person.athlete.track.TrackTeam;
-import olympic.scene.DeliverSpeech.Chairman;
-import olympic.scene.DeliverSpeech.Coach;
+import olympic.main.opening.deliverSpeech.Chairman;
+import olympic.main.opening.deliverSpeech.Coach;
+import olympic.main.person.interview.Interviewer;
 
 
 import java.io.*;
@@ -137,23 +136,47 @@ public class PersonFactory {
         }
         return chairmanList;
     }
+
+    /**
+     * 取得唯一的教练
+     * @return 教练
+     */
     public Coach getCoach(){
-        Message message = nameFactory.getMessage();
-        Coach coach = new Coach(message.name, message.nation);
-        coachHashMap.put(message.name, coach);
-        return coach;
+        return this.coach;
+    }
+
+    /**
+     * 取得100个 采访者
+     * @return 采访者列表
+     */
+    private List<Interviewer> getInterviews(){
+
+        return this.interviewers;
+
     }
 
     private HashMap<String, Chairman> chairmanHashMap = new HashMap<>();
 
-    private HashMap<String, Coach> coachHashMap = new HashMap<>();
+    private Coach coach;
     private NameFactory nameFactory = new NameFactory();
+    private List<Interviewer> interviewers;
 
     /**
      * 从配置文件中读取所有参赛人员信息，持久化生成人员
      */
     public void springUtil() {
         //首先 名字工厂
+        //生成教练
+        Message message ;
+        message=nameFactory.getMessage();
+        this.coach = new Coach(message.name, message.nation);
+       //生成采访者
+        this.interviewers=new ArrayList<Interviewer>();
+        for(int i=0;i<100;i++){
+            message = nameFactory.getMessage();//100
+            this.interviewers.add(new Interviewer(message.name, message.nation));
+        }
+
 
         try {
 
@@ -174,7 +197,6 @@ public class PersonFactory {
                 Athlete tempNameAthlete;
                 List<Athlete> team = new ArrayList<>();
                 List<Athlete> athleteList;
-                Message message;
                 List<Message> messages;
 
                 switch (i) {
@@ -277,4 +299,6 @@ public class PersonFactory {
             System.out.println(e);
         }
     }
+
+
 }

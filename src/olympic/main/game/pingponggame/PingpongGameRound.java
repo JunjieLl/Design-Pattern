@@ -1,6 +1,7 @@
 package olympic.main.game.pingponggame;
 
 import olympic.main.person.athlete.Athlete;
+import olympic.main.person.athlete.pingong.CallBack;
 import olympic.main.person.athlete.pingong.PlayPingpong;
 
 import java.util.ArrayList;
@@ -27,7 +28,7 @@ class PingpongGameRound {
         //可以添加决定发球的方式（如抽签）
         Integer server = new Random().nextInt(2);
         ((PlayPingpong)athletes.get(server)).serve();
-        Boolean win = ((PlayPingpong)athletes.get((server + 1) % 2)).playWith(athletes.get(server));
+        Boolean win = ((PlayPingpong)athletes.get((server + 1) % 2)).playWith((CallBack) athletes.get(server));
         Integer winner = (win ? ((server + 1) % 2) : server);
         if (Mode.getShowDetail()) {
             System.out.println("本轮结束," + athletes.get(winner).getName() + "赢了");

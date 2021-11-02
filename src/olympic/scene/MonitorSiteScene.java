@@ -1,9 +1,9 @@
 package olympic.scene;
 
-import olympic.scene.MonitorSite.Command;
-import olympic.scene.MonitorSite.CommandStack;
-import olympic.scene.MonitorSite.Monitor;
-import olympic.scene.MonitorSite.MonitorController;
+import olympic.main.postgame.monitor_site.Command;
+import olympic.main.postgame.monitor_site.CommandStack;
+import olympic.main.postgame.monitor_site.Monitor;
+import olympic.main.postgame.monitor_site.MonitorController;
 
 import java.util.Scanner;
 /**

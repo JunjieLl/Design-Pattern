@@ -1,5 +1,7 @@
 package olympic.main.game.track;
 
+import olympic.main.drawlots.PaperDrawLotsImpl;
+import olympic.main.drawlots.RandomDrawLots;
 import olympic.main.person.athlete.Athlete;
 import olympic.scene.CeremonyScene;
 
@@ -26,10 +28,13 @@ public class Final extends ContestImpl{
      */
     private void rank(List<Athlete> runners){
         int size=runners.size();
-
+//        RandomDrawLots drawLots = new RandomDrawLots(runners, new PaperDrawLotsImpl(), 1);
+//        runners = drawLots.randomDrawLots();
         System.out.println("【决赛排名榜】");
         System.out.println("排名\t姓名\t");
         Collections.shuffle(runners);
+
+
         for(int i=0;i<size;i++){
             System.out.println(i+1+"\t"+runners.get(i).getName()+"\t");
         }

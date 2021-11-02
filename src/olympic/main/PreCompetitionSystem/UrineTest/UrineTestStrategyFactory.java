@@ -31,6 +31,7 @@ public class UrineTestStrategyFactory {
 	
 	/**
 	 * 获取尿检策略工厂单例
+	 *
 	 * @return 尿检策略工厂单例
 	 */
 	public static UrineTestStrategyFactory getInstance() {
@@ -39,19 +40,19 @@ public class UrineTestStrategyFactory {
 	
 	/**
 	 * 根据输入的数字获取具体的尿检策略，如果不存在该尿检策略则返回空尿检策略
+	 *
 	 * @param number 需要第几代尿检策略
 	 * @return 所需要的尿检策略
 	 */
 	public synchronized UrineTestStrategy getUrineTestStrategy(int number) {
-		if(number!=3 && number !=4){
+		if (number != 3 && number != 4) {
 			return nullStrategy;
 		}
 		UrineTestStrategy urineTestStrategy = pool.get(number);
 		if (urineTestStrategy == null) {
 			if (number == 3) {
 				urineTestStrategy = new ThirdGenerationUrineTestTechnologyStrategy();
-			}
-			else {
+			} else {
 				urineTestStrategy = new FourthGenerationUrineTestTechnologyStrategy();
 			}
 			pool.put(number, urineTestStrategy);

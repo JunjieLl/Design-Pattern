@@ -1,6 +1,6 @@
 package olympic.scene;
 
-import olympic.scene.fireworkshow.*;
+import olympic.main.opening.fireworkshow.*;
 
 public class FireworkScene implements Scene{
     @Override

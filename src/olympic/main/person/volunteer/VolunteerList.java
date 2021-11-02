@@ -38,6 +38,7 @@ public class VolunteerList {
 	
 	/**
 	 * 获取志愿者列表类
+	 *
 	 * @return 志愿者列表类
 	 */
 	public static VolunteerList getInstance() {
@@ -46,6 +47,7 @@ public class VolunteerList {
 	
 	/**
 	 * 给定一个志愿者列表以及需要的志愿者人数，选择具体的志愿者
+	 *
 	 * @param num 预期需要的志愿者人数
 	 */
 	public void allocateVolunteer(int num) {
@@ -70,7 +72,6 @@ public class VolunteerList {
 			volunteer.changeStateToExpert();
 		}
 		int gap = tempNum - volunteersSelect.size();
-		System.out.println("> 协助该场比赛的志愿者人数实际为" + volunteersSelect.size() +
-				"人。与预期相差" + gap + "人");
+		System.out.println("> 协助该场比赛的志愿者人数实际为" + volunteersSelect.size() + "人。与预期相差" + gap + "人");
 	}
 }

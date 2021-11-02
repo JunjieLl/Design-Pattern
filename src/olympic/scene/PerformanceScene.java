@@ -1,8 +1,8 @@
 package olympic.scene;
 
-import olympic.scene.Performance.Compere;
-import olympic.scene.Performance.Group;
-import olympic.scene.Performance.Observer;
+import olympic.main.opening.performance.Compere;
+import olympic.main.opening.performance.Group;
+import olympic.main.opening.performance.Observer;
 
 /**
  * 设计模式：观察者模式、迭代器模式
@@ -19,6 +19,10 @@ public class PerformanceScene implements Scene{
         cp.add(group_2);
         cp.add(group_3);
         cp.setProgramNum(1);
+        System.out.println("-----------------------------");
+        cp.setProgramNum(2);
+        System.out.println("-----------------------------");
         cp.setProgramNum(3);
+        System.out.println("-----------------------------");
     }
 }

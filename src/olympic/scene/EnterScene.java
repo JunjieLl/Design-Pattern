@@ -2,8 +2,8 @@ package olympic.scene;
 
 import olympic.main.person.PersonFactory;
 import olympic.main.person.athlete.TeamAthlete;
-import olympic.scene.enterarena.EnterIterator;
-import olympic.scene.enterarena.EnterManager;
+import olympic.main.opening.enterarena.EnterIterator;
+import olympic.main.opening.enterarena.EnterManager;
 
 public class EnterScene implements Scene {
     @Override

@@ -1,9 +1,9 @@
 package olympic.scene;
 
-import olympic.scene.translate.EnglishAdapter;
-import olympic.scene.translate.FrenchAdapter;
-import olympic.scene.translate.SpanishAdapter;
-import olympic.scene.translate.Speaker;
+import olympic.main.opening.translate.EnglishAdapter;
+import olympic.main.opening.translate.FrenchAdapter;
+import olympic.main.opening.translate.SpanishAdapter;
+import olympic.main.opening.translate.Speaker;
 
 import java.util.Scanner;
 

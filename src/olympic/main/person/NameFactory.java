@@ -1,5 +1,7 @@
 package olympic.main.person;
 
+import olympic.main.person.interview.Interviewer;
+
 import java.io.UnsupportedEncodingException;
 import java.util.*;
 
@@ -918,6 +920,7 @@ public class NameFactory {
         messages.add(new Message(nation[i]+num+"队",nation[i]));
         return messages;
     }
+
 
 }
 

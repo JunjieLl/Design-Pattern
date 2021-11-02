@@ -4,6 +4,9 @@ import olympic.main.person.athlete.Athlete;
 
 import java.util.List;
 
+/**
+ * 纸质抽签实现
+ */
 public class PaperDrawLotsImpl extends DrawLotsImpl {
     /**
      * 抽签开始前输出抽签实现形式，以及参与抽签的运动员或团队（纸质抽签）

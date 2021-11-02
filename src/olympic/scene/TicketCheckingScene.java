@@ -1,9 +1,9 @@
 package olympic.scene;
 
-import olympic.scene.TicketChecking.CheckingMachine;
-import olympic.scene.TicketChecking.ElectronicTicket;
-import olympic.scene.TicketChecking.PaperTicket;
-import olympic.scene.TicketChecking.TicketChecking;
+import olympic.main.opening.ticketChecking.CheckingMachine;
+import olympic.main.opening.ticketChecking.ElectronicTicket;
+import olympic.main.opening.ticketChecking.PaperTicket;
+import olympic.main.opening.ticketChecking.TicketChecking;
 
 import java.util.Scanner;
 /**
