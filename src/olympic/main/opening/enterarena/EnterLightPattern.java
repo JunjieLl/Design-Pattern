@@ -1,13 +1,16 @@
-package olympic.scene;
+package olympic.main.opening.enterarena;
+
 
 import olympic.main.person.PersonFactory;
 import olympic.main.person.athlete.TeamAthlete;
-import olympic.main.opening.enterarena.EnterIterator;
-import olympic.main.opening.enterarena.EnterManager;
 
-public class EnterScene implements Scene {
-    @Override
-    public void play() {
+/***
+ * 两支国家队：美国队、中国队；每支队伍两名队员
+ * 一支护送奥运圣火队伍：传递者一、二、三
+ */
+
+public class EnterLightPattern {
+    public static void main(String[] args) {
         EnterManager enterManager = EnterManager.getInstance();
         TeamAthlete torchBarer=new TeamAthlete("火炬传递队");
 
@@ -34,10 +37,6 @@ public class EnterScene implements Scene {
         System.out.println('\n');
         torchBarer.passFire();
         System.out.println("最后一位使者点燃了奥运圣火！");
-    }
 
-//    public static void main(String[] args) {
-//        EnterScene enterScene=new EnterScene();
-//        enterScene.play();
-//    }
+    }
 }

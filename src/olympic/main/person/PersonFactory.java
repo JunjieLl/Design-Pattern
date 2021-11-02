@@ -1,8 +1,6 @@
 package olympic.main.person;
 
 import olympic.main.person.athlete.Athlete;
-import olympic.main.person.athlete.IndividualAthlete;
-import olympic.main.person.athlete.TeamAthlete;
 import olympic.main.person.athlete.divingathlete.DivingAthlete;
 import olympic.main.person.athlete.divingathlete.DivingTeam;
 import olympic.main.person.athlete.footballathlete.FootballTeam;
@@ -10,8 +8,8 @@ import olympic.main.person.athlete.pingong.PingpongAthlete;
 import olympic.main.person.athlete.pingong.PingpongTeam;
 import olympic.main.person.athlete.track.TrackAthlete;
 import olympic.main.person.athlete.track.TrackTeam;
-import olympic.scene.DeliverSpeech.Chairman;
-import olympic.scene.DeliverSpeech.Coach;
+import olympic.main.opening.deliverSpeech.Chairman;
+import olympic.main.opening.deliverSpeech.Coach;
 
 
 import java.io.*;

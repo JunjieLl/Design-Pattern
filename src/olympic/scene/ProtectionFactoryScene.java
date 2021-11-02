@@ -1,7 +1,6 @@
 package olympic.scene;
 
-import olympic.scene.ProtectionFactory.Protection;
-import olympic.scene.ProtectionFactory.ProtectionFactory;
+import olympic.main.opening.protectionFactory.ProtectionFactory;
 
 import java.util.Scanner;
 
