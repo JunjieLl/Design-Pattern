@@ -1,20 +1,13 @@
-package olympic.scene;
-
-import olympic.main.postgame.monitor_site.Command;
-import olympic.main.postgame.monitor_site.CommandStack;
-import olympic.main.postgame.monitor_site.Monitor;
-import olympic.main.postgame.monitor_site.MonitorController;
-
+package olympic.main.postgame.monitor_site;
 import java.util.Scanner;
+
 /**
  * 设计模式：命令模式、备忘录模式
- * 场地回检
+ * 检查场地
  */
 
-
-public class MonitorSiteScene implements Scene{
-    @Override
-    public void play() {
+public class Test {
+    public static void main(String[] args) {
         /**
          * 创建监视器、遥控器、栈
          */
@@ -60,4 +53,5 @@ public class MonitorSiteScene implements Scene{
         }
         System.out.println("检查场地完毕！");
     }
+
 }

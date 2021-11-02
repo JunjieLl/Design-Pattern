@@ -1,17 +1,10 @@
-package olympic.scene;
-
-import olympic.main.opening.translate.EnglishAdapter;
-import olympic.main.opening.translate.FrenchAdapter;
-import olympic.main.opening.translate.SpanishAdapter;
-import olympic.main.opening.translate.Speaker;
+package olympic.main.opening.translate;
 
 import java.util.Scanner;
 
-public class TranslateScene implements Scene{
+public class TransLatePattern {
+    public static void main(String[] args) {
 
-
-    @Override
-    public void play() {
         Speaker a = new Speaker();
         System.out.println("请问您是否需要外文翻译[是/否]？");
         Scanner sc = new Scanner(System.in);
@@ -37,10 +30,8 @@ public class TranslateScene implements Scene{
             }
         }
     }
-
-//    public static void main(String[] args) {
-//        TranslateScene translateScene=new TranslateScene();
-//        translateScene.play();
-//
-//    }
 }
+
+
+
+
