@@ -59,5 +59,6 @@ public class MonitorSiteScene implements Scene{
             key = sc.next();
         }
         System.out.println("检查场地完毕！");
+
     }
 }
