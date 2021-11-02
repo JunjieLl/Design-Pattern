@@ -29,6 +29,7 @@ public abstract class PressConferenceMaker {
      * @param maxQuestionNum 最大问题数
      */
     public static void makePressConference(Interviewee interviewee, List<Interviewer> interviewers, List<? extends Listener> audience, int maxQuestionNum) {
+        // 添加采访者、听众
         for (Interviewer interviewer : interviewers) {
             interviewee.addListener(interviewer);
         }
@@ -36,14 +37,20 @@ public abstract class PressConferenceMaker {
             interviewee.addListener(listener);
         }
         List<String> speech = interviewee.makeSpeech();
+
+        // 发言人发表讲话
         for (String talk : speech) {
             System.out.println(interviewee.getName() + "发表" + talk);
             interviewee.notifyListeners(talk);
         }
+
+        // 创建Stopper作为Observer
         Stopper stopper = new Stopper("宅尘浩", "中国", maxQuestionNum);
         interviewee.addListener(stopper);
+
+        // 随机抽取记者轮流提问，直到达到提问数量上限，或者记者无问题可问
         int askedNum = 0;
-        while (!stopper.shouldStop() && !notesEmpty(interviewers)) {
+        while (stopper.shouldContinue() && !notesEmpty(interviewers)) {
             Random random = new Random();
             int randomIndex = random.nextInt(interviewers.size());
             while (!interviewers.get(randomIndex).haveQuestion()) {
@@ -83,6 +90,7 @@ public abstract class PressConferenceMaker {
 
     /**
      * 判断采访者笔记是否为空（无问题可问）
+     *
      * @param interviewers 采访者列表
      * @return 采访笔记是否为空
      */

@@ -53,7 +53,7 @@ public abstract class InterviewMaker {
 
         // 随机抽取记者轮流提问，直到达到提问数量上限或者记者无问题可问
         Interviewer currentInterviewer = pickOneInterviewer(interviewers);
-        while (!stopper.shouldStop() && currentInterviewer != null) {
+        while (stopper.shouldContinue() && currentInterviewer != null) {
             String currentQuestion = currentInterviewer.ask();
             if (!historyQuestions.contains(currentQuestion)) {
                 System.out.println(currentInterviewer.getName() + "问问题：" + currentQuestion);
