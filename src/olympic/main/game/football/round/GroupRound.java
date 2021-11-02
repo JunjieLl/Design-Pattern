@@ -1,9 +1,8 @@
 package olympic.main.game.football.round;
 
-import olympic.main.game.ScheduleIterator;
-import olympic.main.game.football.GroupFootballGame;
+import olympic.main.game.football.ScheduleIterator;
+import olympic.main.game.football.GroupFootballMatch;
 import olympic.main.game.football.ScoreBoard;
-import olympic.main.game.football.round.Round;
 import olympic.main.person.athlete.footballathlete.FootballTeam;
 
 import java.util.ArrayList;
@@ -21,11 +20,10 @@ public class GroupRound extends Round {
 
     /**
      * 进行所有小组赛并生成晋级名单
-     * @param teams 所有参赛球队的列表
-     * @return 晋级球队列表
      */
     @Override
-    public List<FootballTeam> play(List<FootballTeam> teams) {
+    public void start() {
+        advancedTeams.clear();
         System.out.println("classname: (GroupRound) method: (play) action: (进行足球小组赛) ");
         System.out.println("\n【小组赛】");
         // 打乱顺序，分组
@@ -33,7 +31,7 @@ public class GroupRound extends Round {
         for (int g = 0; g < 4; g++) {
             for (int i = 0; i < 4; i++) {
                 for (int j = i + 1; j < 4; j++) {
-                    schedule.addGame(new GroupFootballGame(teams.get(4 * g + i), teams.get(4 * g + j)));
+                    schedule.addMatch(new GroupFootballMatch(teams.get(4 * g + i), teams.get(4 * g + j)));
                 }
             }
         }
@@ -41,7 +39,7 @@ public class GroupRound extends Round {
         // 进行所有比赛
         ScheduleIterator it = schedule.iterator();
         while (it.hasNext()) {
-            it.next().start();
+            it.next().play();
         }
 
         int[] scores = scoreBoard.getScore();
@@ -101,7 +99,6 @@ public class GroupRound extends Round {
             tmp.add(ranking.get(1).team);
         }
 
-        ArrayList<FootballTeam> advancedTeams = new ArrayList<>();   // 重新排序的晋级名单
         // 四分之一决赛是小组第一名与另一小组第二名比赛，因此需要对晋级球队重新排序以便生成后续赛程
         int k = 0;
         while (k + 3 < tmp.size()) {
@@ -111,6 +108,6 @@ public class GroupRound extends Round {
             advancedTeams.add(tmp.get(k + 2));
             k += 4;
         }
-        return advancedTeams;
     }
+
 }

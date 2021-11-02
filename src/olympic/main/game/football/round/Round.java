@@ -1,8 +1,12 @@
 package olympic.main.game.football.round;
 
-import olympic.main.game.football.FootballSchedule;
+import olympic.main.game.Game;
+import olympic.main.game.Valve;
+import olympic.main.game.football.FootballMatch;
+import olympic.main.game.football.Schedule;
 import olympic.main.person.athlete.footballathlete.FootballTeam;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -10,18 +14,31 @@ import java.util.List;
  * Pipeline模式
  * 相当于Valve
  */
-public abstract class Round {
-    protected FootballSchedule schedule = new FootballSchedule();
+public abstract class Round extends Valve {
     private Round next = null;
+    protected Schedule schedule = new Schedule();
+    protected List<FootballTeam> teams = null;
+    protected List<FootballTeam> advancedTeams = new ArrayList<>();
 
-    public abstract List<FootballTeam> play(List<FootballTeam> teams);
-
-    public Round getNext() {
-        return next;
+    public void setTeams(List<FootballTeam> teams) {
+        this.teams = teams;
     }
 
-    public Round setNext(Round round) {
-        next = round;
+    public List<FootballTeam> getAdvancedTeams() {
+        return this.advancedTeams;
+    }
+
+    @Override
+    public Valve setNext(Valve valve) {
+            next = (Round)valve;
+            return next;
+    }
+
+    /**
+     * 获取下一轮比赛
+     * @return 下一轮比赛
+     */
+    public Round getNext() {
         return next;
     }
 }

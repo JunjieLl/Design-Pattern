@@ -10,13 +10,13 @@ import java.util.List;
  * Observer 模式
  * Template Method 模式
  */
-public abstract class FootballGame extends Game {
+public abstract class FootballMatch {
 
     private FootballTeam team1, team2;
     protected int score1, score2;
     protected Observer observer = null;
 
-    public FootballGame(FootballTeam team1, FootballTeam team2) {
+    public FootballMatch(FootballTeam team1, FootballTeam team2) {
         super();
         this.team1 = team1;
         this.team2 = team2;
@@ -28,13 +28,7 @@ public abstract class FootballGame extends Game {
         System.out.println("比赛开始");
     }
 
-    @Override
-    public String getName() {
-        return null;
-    }
-
-    @Override
-    public void start() {
+    public void play() {
         begin();
         // 随机产生比分
         generateResult();
