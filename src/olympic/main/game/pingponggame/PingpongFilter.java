@@ -3,6 +3,7 @@ package olympic.main.game.pingponggame;
 import olympic.main.drawlots.PaperDrawLotsImpl;
 import olympic.main.drawlots.RandomDrawLots;
 import olympic.main.game.Game;
+import olympic.main.game.Valve;
 import olympic.main.person.athlete.Athlete;
 
 import java.util.ArrayList;
@@ -13,7 +14,7 @@ import java.util.List;
  * 管道的阀门
  * 可以实例化为 乒乓球男单预赛、乒乓球男单复赛、乒乓球男单决赛
  */
-public class PingpongFilter extends Game {
+public class PingpongFilter extends Valve {
 //    private String name;
 //
 //    private List<Athlete> athletes;
@@ -30,9 +31,9 @@ public class PingpongFilter extends Game {
         this.name = name;
     }
 
-    public void setNextFilter(PingpongFilter nextFilter) {
-        this.nextFilter = nextFilter;
-    }
+//    public void setNextFilter(PingpongFilter nextFilter) {
+//        this.nextFilter = nextFilter;
+//    }
 
     public void setAthletes(List<Athlete> athletes){
         RandomDrawLots drawLots = new RandomDrawLots(athletes, new PaperDrawLotsImpl(), 2, true);
@@ -48,6 +49,12 @@ public class PingpongFilter extends Game {
             game.addAthlete(athletes.get(2*i+1));
             games.add(game);
         }
+    }
+
+    @Override
+    public Valve setNext(Valve valve) {
+        this.nextFilter = (PingpongFilter)valve;
+        return this;
     }
 
     /**

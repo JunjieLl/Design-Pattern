@@ -3,13 +3,13 @@ package olympic.main.person.athlete.pingong;
 import olympic.main.game.pingponggame.Mode;
 import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.IndividualAthlete;
-import olympic.main.person.athlete.pingong.Strategy.PingpongDefendStrategy;
-import olympic.main.person.athlete.pingong.Strategy.PingpongOffenseStrategy;
-import olympic.main.person.athlete.pingong.Strategy.Strategy;
+import olympic.main.person.athlete.pingong.strategy.PingpongDefendStrategy;
+import olympic.main.person.athlete.pingong.strategy.PingpongOffenseStrategy;
+import olympic.main.person.athlete.pingong.strategy.Strategy;
 
 import java.util.Random;
 
-public class PingpongAthlete extends IndividualAthlete implements CallBack, PlayPingpong {
+public class PingpongAthlete extends IndividualAthlete implements PlayPingpong {
     public PingpongAthlete(String name, String nation) {
         super(name, nation);
         if (random.nextInt() % 2 == 0) {
@@ -57,7 +57,7 @@ public class PingpongAthlete extends IndividualAthlete implements CallBack, Play
      * @return 是否击中球，没有击中球就输了这一小轮
      */
     @Override
-    public Boolean playWith(Athlete oppoent) {
+    public Boolean playWith(CallBack oppoent) {
         return strategy.playWith(oppoent);
     }
 
@@ -78,7 +78,7 @@ public class PingpongAthlete extends IndividualAthlete implements CallBack, Play
      * @return 是否击中球，没有击中球就输了这一小轮
      */
     @Override
-    public Boolean call(Athlete oppoent) {
+    public Boolean call(CallBack oppoent) {
         if (Mode.getShowDetail()) {
             System.out.println("classname: (PingpongAthlete) method: (call) action: (回调模式中选手运用回调函数进行对打) ");
         }

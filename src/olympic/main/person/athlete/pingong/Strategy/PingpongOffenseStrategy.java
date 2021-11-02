@@ -1,9 +1,8 @@
-package olympic.main.person.athlete.pingong.Strategy;
+package olympic.main.person.athlete.pingong.strategy;
 
 import olympic.main.game.pingponggame.Mode;
 import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.pingong.CallBack;
-import olympic.main.person.athlete.pingong.PingpongAthlete;
 import olympic.main.person.athlete.pingong.PlayPingpong;
 
 import java.util.Random;
@@ -37,7 +36,7 @@ public class PingpongOffenseStrategy implements Strategy {
 
 
     @Override
-    public Boolean playWith(Athlete oppoent) {
+    public Boolean playWith(CallBack oppoent) {
         if (Mode.getShowDetail()) {
             System.out.println("classname: (PingpongOffenseStrategy) method: (playWith) action: (策略模式中选手运用攻击策略) ");
         }
@@ -45,7 +44,7 @@ public class PingpongOffenseStrategy implements Strategy {
             if (Mode.getShowDetail()) {
                 System.out.println(ownerAthlete.getName() + " 击球" + (random.nextInt(100) < 70 ? " 进攻" : " 防守"));
             }
-            return !((CallBack) oppoent).call(ownerAthlete);
+            return !oppoent.call((CallBack) ownerAthlete);
         } else {
             if (Mode.getShowDetail()) {
                 System.out.println(ownerAthlete.getName() + " 接球失败");
