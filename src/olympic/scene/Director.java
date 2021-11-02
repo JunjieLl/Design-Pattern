@@ -33,4 +33,9 @@ public class Director {
         System.out.println("classname: (Director) method: (nextScene) action: (切换到下一场景) ");
         scene.play();
     }
+
+
+//    private Integer state
+
+
 }
