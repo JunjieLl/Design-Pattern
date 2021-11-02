@@ -1,5 +1,8 @@
 package olympic.main.game.pingponggame;
 
+import olympic.main.drawlots.PaperDrawLotsImpl;
+import olympic.main.drawlots.RandomDrawLots;
+import olympic.main.game.Game;
 import olympic.main.person.athlete.Athlete;
 
 import java.util.ArrayList;
@@ -10,10 +13,10 @@ import java.util.List;
  * 管道的阀门
  * 可以实例化为 乒乓球男单预赛、乒乓球男单复赛、乒乓球男单决赛
  */
-public class PingpongFilter {
-    private String name;
-
-    private List<Athlete> athletes;
+public class PingpongFilter extends Game {
+//    private String name;
+//
+//    private List<Athlete> athletes;
 
     /**
      * 包含的比赛
@@ -32,7 +35,8 @@ public class PingpongFilter {
     }
 
     public void setAthletes(List<Athlete> athletes){
-        this.athletes = athletes;
+        RandomDrawLots drawLots = new RandomDrawLots(athletes, new PaperDrawLotsImpl(), 2, true);
+        this.athletes = drawLots.randomDrawLots();
         addGame();
     }
 
@@ -49,6 +53,7 @@ public class PingpongFilter {
     /**
      * 对外接口，开始比赛
      */
+    @Override
     public void start() {
         System.out.println("【" + name + "开始了!" + "】\n");
         for (PingpongGame game : games) {

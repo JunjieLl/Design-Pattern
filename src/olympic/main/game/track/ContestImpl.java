@@ -13,11 +13,11 @@ public abstract class ContestImpl {
     /**
      * 运动员列表
      */
-    public List<Athlete> athletes;
+    protected List<Athlete> athletes;
     /**
      * 比赛类型，初赛，复赛或者决赛
      */
-    public String gameType;
+    protected String gameType;
     /**
      * ContestImpl的构造方法
      * @param athletes 运动员列表
@@ -41,7 +41,7 @@ public abstract class ContestImpl {
     /**
      * 分组，每组最多8人,
      */
-    public List<List<Athlete>> group(){
+    protected List<List<Athlete>> group(){
         List<List<Athlete>> rows =  new ArrayList<>();
 
 

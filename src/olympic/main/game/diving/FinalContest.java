@@ -1,5 +1,6 @@
 package olympic.main.game.diving;
 
+import olympic.main.game.Valve;
 import olympic.main.person.athlete.Athlete;
 import olympic.scene.CeremonyScene;
 
@@ -11,7 +12,7 @@ public class FinalContest extends DivingGame {
     /**
      * 管道模式中下一轮比赛
      */
-    private DivingGame nextContest = null;
+    private DivingGame nextDivingGame = null;
     private AthletePool athletePool = null;
 
 
@@ -22,8 +23,8 @@ public class FinalContest extends DivingGame {
     public void takePlace(AthletePool athletePool) {
         this.athletePool=athletePool;
         start();
-        if (this.nextContest != null) {
-            this.nextContest.takePlace(this.athletePool);
+        if (this.nextDivingGame != null) {
+            this.nextDivingGame.takePlace(this.athletePool);
         }
     }
 
@@ -55,9 +56,11 @@ public class FinalContest extends DivingGame {
 
     /**
      * 获取下一轮比赛
-     * @param contest 下一轮比赛
+     * @param divingGame 下一轮比赛
      */
-    public void setNext(DivingGame contest){
-        this.nextContest=contest;
+    @Override
+    public Valve setNext(Valve divingGame){
+        this.nextDivingGame = (DivingGame)divingGame;
+        return null;
     }
 }
