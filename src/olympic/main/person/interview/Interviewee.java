@@ -4,16 +4,19 @@ import olympic.main.person.Person;
 
 import java.util.*;
 import java.util.Random;
+import java.util.regex.Pattern;
 
 public abstract class Interviewee extends Person implements Listener {
-    public final static String STOP_WORD = "不想回答这个问题";
-    private final ArrayList<Listener> listeners = new ArrayList<>();
+    public static final String STOP_WORD = "不想回答这个问题";
+    private static final String pressConferencePattern = ".*发起提问.*";
+
+    private final List<Listener> listeners = new ArrayList<>();
 
     protected Interviewee(String name, String nation) {
         super(name, nation);
     }
 
-    public ArrayList<Listener> getListeners() {
+    public List<Listener> getListeners() {
         return listeners;
     }
 
@@ -30,10 +33,21 @@ public abstract class Interviewee extends Person implements Listener {
         int stopNum = random.nextInt(10);
         if (stopNum == 0) {
             return STOP_WORD;
+        } else if (Pattern.matches(pressConferencePattern, content)) {
+            return "\"对问题的回答\"";
         } else {
-            return content;
+            return pickOneAnswer(content);
         }
     }
+
+    public String pickOneAnswer(String content) {
+        List<String> answers = getAnswers(content);
+        Random random = new Random();
+        int randomIndex = random.nextInt(answers.size());
+        return answers.get(randomIndex);
+    }
+
+    public abstract List<String> getAnswers(String content);
 
     public void notifyListeners(String content) {
         for (Listener o : listeners) {
