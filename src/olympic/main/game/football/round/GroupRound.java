@@ -16,7 +16,7 @@ import java.util.List;
 public class GroupRound extends Round {
 
     // 小组赛积分榜
-    ScoreBoard scoreBoard = ScoreBoard.getInstance();
+    private ScoreBoard scoreBoard = ScoreBoard.getInstance();
 
     /**
      * 进行所有小组赛并生成晋级名单

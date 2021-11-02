@@ -13,7 +13,7 @@ import java.util.List;
  * 淘汰赛的一轮
  */
 public class EliminationRound extends Round implements Observer {
-    String name = null;
+    private String name = null;
 
     public EliminationRound(String name) {
         this.name = name;
