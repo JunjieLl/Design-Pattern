@@ -6,7 +6,17 @@ import olympic.main.game.pingponggame.PingpongPipeline;
 import java.util.Scanner;
 
 public class PingpongGameScene implements Scene{
+    public PingpongGameScene(String name) {
+        if (name == "乒乓球单人赛"){
+            pingpongPipeline = new PingpongPipeline("乒乓球单人赛",
+                    PreCompetitionSystemFacade.getInstance().preCompetitionSystemFacade("Pingpong"));
+        }else{
+            pingpongPipeline = new PingpongPipeline("乒乓球混双",
+                    PreCompetitionSystemFacade.getInstance().preCompetitionSystemFacade("PingpongTeam"));
+        }
+    }
 
+    private PingpongPipeline pingpongPipeline;
 
     @Override
     public void play() {
@@ -16,13 +26,7 @@ public class PingpongGameScene implements Scene{
         //接受String类型
         Mode.setShowDetail(input.next().equals("true"));
 
-        PingpongPipeline gameIndividual = new PingpongPipeline("乒乓球单人赛",
-                PreCompetitionSystemFacade.getInstance().preCompetitionSystemFacade("Pingpong"));
-        gameIndividual.start();
-
-        PingpongPipeline gameTeam = new PingpongPipeline("乒乓球混双",
-                PreCompetitionSystemFacade.getInstance().preCompetitionSystemFacade("PingpongTeam"));
-        gameTeam.start();
+        pingpongPipeline.start();
 
     }
 }
