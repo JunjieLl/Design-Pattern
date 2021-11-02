@@ -1,7 +1,7 @@
 package olympic.scene;
 
 import olympic.main.PreCompetitionSystem.PreCompetitionSystemFacade;
-import olympic.main.game.diving.ContestPipeline;
+import olympic.main.game.diving.DivingPipeline;
 
 public class DivingGameScene implements Scene{
     private final String game;
@@ -13,7 +13,7 @@ public class DivingGameScene implements Scene{
     @Override
     public void play(){
 
-        ContestPipeline divingGame=new ContestPipeline(game,PreCompetitionSystemFacade.getInstance().preCompetitionSystemFacade("Diving"));
+        DivingPipeline divingGame=new DivingPipeline(game,PreCompetitionSystemFacade.getInstance().preCompetitionSystemFacade("Diving"));
         divingGame.start();
     }
 }

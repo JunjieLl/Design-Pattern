@@ -1,9 +1,7 @@
 package olympic.scene;
 
 import olympic.main.PreCompetitionSystem.PreCompetitionSystemFacade;
-import olympic.main.game.diving.ContestPipeline;
 import olympic.main.game.track.*;
-import olympic.main.person.PersonFactory;
 
 /**
  * 田径比赛场景

@@ -11,12 +11,12 @@ import java.util.List;
 /**
  * 进行跳水比赛的管道
  */
-public class ContestPipeline implements AbstractPipeline {
+public class DivingPipeline implements AbstractPipeline {
     private Valve firstDivingGame;
     private Valve lastDivingGame;
     private final AthletePool athletePool;
 
-    public ContestPipeline(String context, List<Athlete> list) {
+    public DivingPipeline(String context, List<Athlete> list) {
         AbstractNode strategyNode = new PeopleNumberNode();
         RandomDrawLots drawLots = new RandomDrawLots(list, new PaperDrawLotsImpl(), 1, true);
         List<Athlete> randomSortedAthletes = drawLots.randomDrawLots();
