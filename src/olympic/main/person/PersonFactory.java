@@ -57,6 +57,8 @@ public class PersonFactory {
             new HashMap<String, Athlete>();
     private HashMap<String, List<Athlete>> nationMap =
             new HashMap<String, List<Athlete>>();
+    private HashMap<String, List<String>> catalogueMap =
+            new HashMap<String, List<String>>();
 
     /**
      * 获得所有比赛名字
@@ -183,16 +185,21 @@ public class PersonFactory {
             InputStream in = new BufferedInputStream(new FileInputStream("./src/olympic/main/person/message.properties"));
             this.prop.load(in);     ///加载属性列表
             Iterator<String> it = this.prop.stringPropertyNames().iterator();
-
+            //生成所有比赛
             gamesName = Arrays.asList(((String) this.prop.get("AllGames")).split(","));
-
+            //生成所有比赛小项目
+            List<String> catalogue=Arrays.asList(((String) this.prop.get("BigGameClass")).split(","));
+            for(String i:catalogue){
+                catalogueMap.put(i,Arrays.asList(((String) this.prop.get("BigGameClass."+i)).split(",")));
+            }
+            //生成人员
             for (String i : gamesName) {
 
                 String a1 = this.prop.get(i + "Athlete.single.number").toString().trim();
                 int a = Integer.parseInt(a1.trim());
                 int b = Integer.parseInt(this.prop.get(i + "Athlete.team.number").toString().trim());
                 int c = Integer.parseInt(this.prop.get(i + "Athlete.team.member").toString().trim());
-                int d = Integer.parseInt(this.prop.get(i + "Athlete.per").toString().trim());
+
 
                 Athlete tempNameAthlete;
                 List<Athlete> team = new ArrayList<>();
@@ -215,6 +222,10 @@ public class PersonFactory {
                         hMap.put(i, team);
                         break;
                     case "Sprints":
+                    case "Breaststroke":
+                    case "Freestyle":
+                    case "Backstroke":
+                    case "Butterflystroke":
                     case "Hurdling":
                     case "Marathon":
                         athleteList = new ArrayList<>();
@@ -227,7 +238,9 @@ public class PersonFactory {
                         }
                         hMap.put(i, athleteList);
                         break;
-                    case "Diving":
+
+                    case "Ten-Meter-Board-Diving":
+                    case "Three-Meter-Board-Diving":
                         athleteList = new ArrayList<>();
                         for (int j = 0; j < a; j++) {
                             message = nameFactory.getMessage();
@@ -238,7 +251,8 @@ public class PersonFactory {
                         }
                         hMap.put(i, athleteList);
                         break;
-                    case "DivingTeam":
+                    case "Three-Meter-Board-DivingTeam":
+                    case "Ten-Meter-Board-DivingTeam":
                         for (int j = 0; j < b; j++) {
                             athleteList = new ArrayList<>();
                             messages = nameFactory.getMessageList(c);

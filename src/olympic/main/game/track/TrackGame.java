@@ -19,7 +19,4 @@ public abstract class TrackGame extends Game{
         this.athletes = athletes;
     }
 
-
-
-
 }
