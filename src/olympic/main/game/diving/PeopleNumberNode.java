@@ -12,10 +12,10 @@ public class PeopleNumberNode implements AbstractNode{
     @Override
     public Strategy interpret(String context){
         System.out.println("classname: (PeopleNumberNode) method: (interpret) action: (解释器模式下获取比赛要用的评分规则) ");
-        if(context.contains("双人")){
+        if(context.contains("Board-DivingTeam")){
             AbstractNode next =new DoublePeopleNode();
             return next.interpret(context);
-        }else if(context.contains("单人")){
+        }else if(context.contains("Board-Diving")){
             AbstractNode next =new SinglePeopleNode();
             return next.interpret(context);
         }

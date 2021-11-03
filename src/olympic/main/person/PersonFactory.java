@@ -106,6 +106,7 @@ public class PersonFactory {
      * @return 运动员列表
      */
     public List<Athlete> getAthleteByNation(String nation) {
+        List<Athlete> A=nationMap.get(nation);
         return nationMap.get(nation);
     }
 
