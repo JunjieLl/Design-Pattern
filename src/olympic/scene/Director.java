@@ -43,7 +43,7 @@ public class Director {
 
     private List<String> gameNames;
 
-    private Map<String,List<String>> games = new HashMap<>();
+    private Map<String, List<String>> games = new HashMap<>();
 
 
     /**

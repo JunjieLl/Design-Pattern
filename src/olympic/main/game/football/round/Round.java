@@ -30,12 +30,13 @@ public abstract class Round extends Valve {
 
     @Override
     public Valve setNext(Valve valve) {
-            next = (Round)valve;
-            return next;
+        next = (Round) valve;
+        return next;
     }
 
     /**
      * 获取下一轮比赛
+     *
      * @return 下一轮比赛
      */
     public Round getNext() {

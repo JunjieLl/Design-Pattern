@@ -5,5 +5,6 @@ package olympic.main.postgame.chores;
  */
 public abstract class ChoreVisitor {
     public abstract void visit(ChoreComposite choreComposite);
+
     public abstract void visit(ChoreLeaf choreLeaf);
 }

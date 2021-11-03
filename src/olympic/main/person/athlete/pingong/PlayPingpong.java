@@ -7,10 +7,11 @@ import java.security.PublicKey;
 /**
  * Pingpongathlete和PingpongTeam继承
  */
-public interface PlayPingpong extends CallBack{
+public interface PlayPingpong extends CallBack {
 
     /**
      * 对打
+     *
      * @param oppoent 对手
      * @return 是否打赢
      */
@@ -23,6 +24,7 @@ public interface PlayPingpong extends CallBack{
 
     /**
      * 返回运动员的实力
+     *
      * @return
      */
     public Integer getCapacity();

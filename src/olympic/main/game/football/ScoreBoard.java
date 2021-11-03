@@ -1,9 +1,10 @@
 package olympic.main.game.football;
 
-/**小组赛积分榜
+/**
+ * 小组赛积分榜
  * 模式: Observer
  */
-public class ScoreBoard implements Observer{
+public class ScoreBoard implements Observer {
 
     private static ScoreBoard singleton = new ScoreBoard();
     private int[] score;
@@ -22,6 +23,7 @@ public class ScoreBoard implements Observer{
 
     /**
      * 根据比赛结果更新积分榜
+     *
      * @param game 完成的比赛
      */
     @Override
@@ -31,13 +33,11 @@ public class ScoreBoard implements Observer{
         if (score1 > score2) {
             // Team1胜，积3分
             score[id1] += 3;
-        }
-        else if (score1 == score2) {
+        } else if (score1 == score2) {
             // 平局，各积1分
             score[id1]++;
             score[id2]++;
-        }
-        else {
+        } else {
             // Team2胜，积3分
             score[id2] += 3;
         }

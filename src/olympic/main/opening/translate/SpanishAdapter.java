@@ -1,9 +1,10 @@
 package olympic.main.opening.translate;
 
-public class SpanishAdapter implements Translator{
+public class SpanishAdapter implements Translator {
     private Speaker speaker;
-    public SpanishAdapter(Speaker speaker){
-        this.speaker =speaker;
+
+    public SpanishAdapter(Speaker speaker) {
+        this.speaker = speaker;
     }
 
     /**
@@ -13,7 +14,7 @@ public class SpanishAdapter implements Translator{
     @Override
     public void translate() {
         String result = speaker.speak();
-        String spanishResult="主持人说话内容为：Bienvenidos a los Juegos Olímpicos";
+        String spanishResult = "主持人说话内容为：Bienvenidos a los Juegos Olímpicos";
         System.out.println(spanishResult);
     }
 }

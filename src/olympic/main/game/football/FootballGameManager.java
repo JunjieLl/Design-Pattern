@@ -38,11 +38,12 @@ public class FootballGameManager implements AbstractPipeline {
 
     /**
      * 传入所有参赛球队
+     *
      * @param teams 所有参赛球队的列表
      */
     public void setTeams(List<Athlete> teams) {
         for (int i = 0; i < 16; ++i) {
-            this.teams.add((FootballTeam)(teams.get(i)));
+            this.teams.add((FootballTeam) (teams.get(i)));
         }
     }
 

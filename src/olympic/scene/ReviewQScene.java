@@ -25,7 +25,7 @@ public class ReviewQScene implements Scene {
             }
         }
 
-        String[] individuals = {"Marathon","Hurdling","Diving","Sprints","Pingpong"};
+        String[] individuals = {"Marathon", "Hurdling", "Diving", "Sprints", "Pingpong"};
         int currentGameIndex = new Random().nextInt(individuals.length);
         List<Athlete> reviewee = PersonFactory.getInstance().getAthletes(individuals[currentGameIndex]);
 

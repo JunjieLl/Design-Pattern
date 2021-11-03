@@ -5,11 +5,14 @@ package olympic.main.postgame.award_ceremony.medal_decorator;
  */
 public abstract class Display {
     public abstract int getColumns();
+
     public abstract int getRows();
+
     public abstract String getRowText(int row);
-    public final void show(){
+
+    public final void show() {
         System.out.println("\nclassname: (Display) method: (show) action: (展示装饰好的奖牌) ");
-        for(int i=0;i<getRows();i++){
+        for (int i = 0; i < getRows(); i++) {
             System.out.println(getRowText(i));
         }
     }

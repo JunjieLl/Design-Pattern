@@ -1,10 +1,10 @@
 package olympic.main.opening.protectionFactory;
 
-class Mask extends Protection{
+class Mask extends Protection {
 
     @Override
-    public void get(int num){
+    public void get(int num) {
         factory.setMask_num(num);
-        System.out.println("classname: (Mask) method: (get) action: (已获取口罩"+num+"个)");
+        System.out.println("classname: (Mask) method: (get) action: (已获取口罩" + num + "个)");
     }
 }

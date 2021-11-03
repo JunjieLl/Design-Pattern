@@ -9,6 +9,7 @@ import java.util.Random;
  */
 public class EliminationFootballMatch extends FootballMatch {
     private int penaltyScore1, penaltyScore2;
+
     public EliminationFootballMatch(FootballTeam team1, FootballTeam team2) {
         super(team1, team2);
     }
@@ -35,18 +36,17 @@ public class EliminationFootballMatch extends FootballMatch {
                     penaltyScore2 += r.nextInt(5);
                 }
                 System.out.println("比赛结束，点球比分为" + penaltyScore1 + "-" + penaltyScore2);
-            }
-            else {
+            } else {
                 System.out.println("比赛结束，比分为" + score1 + "-" + score2);
             }
-        }
-        else {
+        } else {
             System.out.println("比赛结束，比分为" + score1 + "-" + score2);
         }
     }
 
     /**
      * 设置观察者
+     *
      * @param o 观察者
      */
     public void setObserver(Observer o) {

@@ -17,13 +17,13 @@ public class CeremonyScene implements Scene {
     private String silverPlayer;
     private String bronzePlayer;
 
-    public CeremonyScene(String gold, String silver, String bronze){
+    public CeremonyScene(String gold, String silver, String bronze) {
         this.goldPlayer = gold;
         this.silverPlayer = silver;
         this.bronzePlayer = bronze;
     }
 
-    public CeremonyScene(List<Athlete> athletes){
+    public CeremonyScene(List<Athlete> athletes) {
         this.goldPlayer = athletes.get(0).getName() + ", TEAM " + athletes.get(0).getNation();
         this.silverPlayer = athletes.get(1).getName() + ", TEAM " + athletes.get(1).getNation();
         this.bronzePlayer = athletes.get(2).getName() + ", TEAM " + athletes.get(2).getNation();
@@ -55,7 +55,7 @@ public class CeremonyScene implements Scene {
         System.out.println("\nclassname: (CeremonyScene) method: (play) action: (为当前比赛选手颁奖) ");
         System.out.println("欢迎回到颁奖仪式现场。");
         System.out.println("我们由衷祝贺以下这些选手：");
-        
+
         Manager manager = new Manager();
         new MedalPresenting(manager, goldPlayer, silverPlayer, bronzePlayer);
         System.out.println("请全体起立，升国旗，奏国歌");

@@ -5,7 +5,8 @@ package olympic.main.postgame.award_ceremony.factory;
  */
 public abstract class Part {
     protected String name;
-    public Part(String name){
+
+    public Part(String name) {
         this.name = name;
     }
 

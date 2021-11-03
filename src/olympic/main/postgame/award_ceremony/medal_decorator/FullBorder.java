@@ -3,11 +3,11 @@ package olympic.main.postgame.award_ceremony.medal_decorator;
 /**
  * 一种具体的装饰边框，给被装饰物添加上下左右四个方向的花纹.
  */
-public class FullBorder extends Border{
+public class FullBorder extends Border {
     /**
      * @param display 被装饰物.
      */
-    public FullBorder(Display display){
+    public FullBorder(Display display) {
         super(display);
     }
 
@@ -16,7 +16,7 @@ public class FullBorder extends Border{
      */
     @Override
     public int getColumns() {
-        return 1+ display.getColumns()+1;
+        return 1 + display.getColumns() + 1;
     }
 
     /**
@@ -24,7 +24,7 @@ public class FullBorder extends Border{
      */
     @Override
     public int getRows() {
-        return 1+display.getRows()+1;
+        return 1 + display.getRows() + 1;
     }
 
     /**
@@ -33,24 +33,24 @@ public class FullBorder extends Border{
      */
     @Override
     public String getRowText(int row) {
-        if(row==0){
-            return "+" +makeLine('-', display.getColumns()) + "+";
-        }else if(row==display.getRows()+1){
-            return "+" +makeLine('-', display.getColumns()) + "+";
-        }else{
-            return "|"+display.getRowText(row-1)+"|";
+        if (row == 0) {
+            return "+" + makeLine('-', display.getColumns()) + "+";
+        } else if (row == display.getRows() + 1) {
+            return "+" + makeLine('-', display.getColumns()) + "+";
+        } else {
+            return "|" + display.getRowText(row - 1) + "|";
         }
 
     }
 
     /**
-     * @param ch 要重复显示的字符.
+     * @param ch    要重复显示的字符.
      * @param count 重复显示的次数.
      * @return 返回将该字符重复显示指定次数后的字符串.
      */
-    private String makeLine(char ch, int count){
+    private String makeLine(char ch, int count) {
         StringBuffer buf = new StringBuffer();
-        for(int i=0;i<count;i++){
+        for (int i = 0; i < count; i++) {
             buf.append(ch);
         }
         return buf.toString();

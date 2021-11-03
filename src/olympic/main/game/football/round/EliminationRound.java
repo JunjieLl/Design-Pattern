@@ -44,6 +44,7 @@ public class EliminationRound extends Round implements Observer {
 
     /**
      * 根据比赛结果更新晋级名单
+     *
      * @param game 结束的比赛
      */
     @Override

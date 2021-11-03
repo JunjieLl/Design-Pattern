@@ -1,9 +1,10 @@
 package olympic.main.postgame.monitor_site;
+
 /**
  * 设计模式：命令模式
  * 命令接收者：监视器
  */
-public class Monitor{
+public class Monitor {
 
     public void playSite1() {
         System.out.println("classname: (Monitor) method: (playSite1) action: (正在监视1号场地:主会场)");

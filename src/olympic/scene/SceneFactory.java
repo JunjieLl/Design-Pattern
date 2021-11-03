@@ -7,19 +7,22 @@ import olympic.main.game.track.Relays;
 import olympic.main.game.track.Sprints;
 
 public class SceneFactory {
-    private SceneFactory(){};
+    private SceneFactory() {
+    }
+
+    ;
 
     private static SceneFactory instance;
 
-    public static SceneFactory getInstance(){
-        if (instance == null){
+    public static SceneFactory getInstance() {
+        if (instance == null) {
             instance = new SceneFactory();
         }
         return instance;
     }
 
-    public Scene getScene(String name){
-        switch (name){
+    public Scene getScene(String name) {
+        switch (name) {
             case "Relays":
                 return new TrackGameScene("Relays");
             case "Marathon":
