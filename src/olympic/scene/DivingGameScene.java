@@ -13,7 +13,7 @@ public class DivingGameScene implements Scene{
     @Override
     public void play(){
 
-        DivingPipeline divingGame=new DivingPipeline(game,PreCompetitionSystemFacade.getInstance().preCompetitionSystemFacade("Diving"));
+        DivingPipeline divingGame=new DivingPipeline(game,PreCompetitionSystemFacade.getInstance().preCompetitionSystemFacade(game));
         divingGame.start();
     }
 }
