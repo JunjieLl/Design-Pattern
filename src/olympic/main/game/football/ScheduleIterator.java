@@ -5,6 +5,7 @@ import olympic.main.game.Iterator;
 import olympic.main.game.football.Schedule;
 
 /**
+ * 赛程迭代器
  * Iterator模式
  */
 public class ScheduleIterator implements Iterator {
