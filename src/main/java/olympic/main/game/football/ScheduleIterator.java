@@ -11,6 +11,7 @@ import olympic.main.game.football.Schedule;
 public class ScheduleIterator implements Iterator {
     private Schedule schedule;
     private int index;
+
     public ScheduleIterator(Schedule schedule) {
         this.schedule = schedule;
         this.index = 0;
@@ -24,8 +25,7 @@ public class ScheduleIterator implements Iterator {
     public boolean hasNext() {
         if (this.index < schedule.getLength()) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }

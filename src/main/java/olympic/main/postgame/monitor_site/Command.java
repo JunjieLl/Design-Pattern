@@ -1,4 +1,5 @@
 package olympic.main.postgame.monitor_site;
+
 /**
  * 设计模式：命令模式
  * 命令类
@@ -9,6 +10,7 @@ public abstract class Command {
      * 命令接收者：监视器
      */
     protected Monitor monitor;
+
     public Command(Monitor monitor) {
         this.monitor = monitor;
     }
@@ -19,11 +21,12 @@ public abstract class Command {
      */
     abstract void execute();
 
-    public Command getCommand(){
+    public Command getCommand() {
         return this;
     }
 
 }
+
 /**
  * 检查1号场地的命令
  */
@@ -38,6 +41,7 @@ class Site1Command extends Command {
         monitor.playSite1();
     }
 }
+
 /**
  * 检查2号场地的命令
  */
@@ -65,6 +69,7 @@ class Site3Command extends Command {
         monitor.playSite3();
     }
 }
+
 /**
  * 检查4号场地的命令
  */
@@ -78,6 +83,7 @@ class Site4Command extends Command {
         monitor.playSite4();
     }
 }
+
 /**
  * 检查5号场地的命令
  */

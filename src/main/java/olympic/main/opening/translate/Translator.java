@@ -1,6 +1,6 @@
 package olympic.main.opening.translate;
 
 
-interface Translator{
+interface Translator {
     public void translate();
 }

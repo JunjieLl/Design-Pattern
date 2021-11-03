@@ -14,10 +14,11 @@ public class ProtectionFactory {
     /**
      * 单例内部实例化
      */
-    private static ProtectionFactory ourInstance  = new ProtectionFactory();
+    private static ProtectionFactory ourInstance = new ProtectionFactory();
 
     /**
      * 设计模式：单例模式
+     *
      * @return 防疫工厂单例
      */
     public static ProtectionFactory getInstance() {
@@ -36,7 +37,7 @@ public class ProtectionFactory {
     }
 
     public void setMask_num(int mask_num) {
-        this.Mask_num = this.Mask_num-mask_num;
+        this.Mask_num = this.Mask_num - mask_num;
     }
 
     public int getHandSan_num() {
@@ -60,17 +61,19 @@ public class ProtectionFactory {
     }
 
     public void setGlove_num(int glove_num) {
-        this.Glove_num = this.Glove_num-glove_num;
+        this.Glove_num = this.Glove_num - glove_num;
     }
+
     /**
      * 设计模式：简单工厂模式
+     *
      * @param fac
      * @param type
      * @return 防疫品
      */
-    public Protection produce(ProtectionFactory fac,String type){
+    public Protection produce(ProtectionFactory fac, String type) {
         Protection m;
-        switch (type){
+        switch (type) {
             case "Mask":
                 m = new Mask();
                 m.setFactory(fac);

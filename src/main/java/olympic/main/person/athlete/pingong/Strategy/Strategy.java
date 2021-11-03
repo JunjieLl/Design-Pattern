@@ -1,4 +1,4 @@
-package olympic.main.person.athlete.pingong.strategy;
+package olympic.main.person.athlete.pingong.Strategy;
 
 import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.pingong.CallBack;
@@ -8,5 +8,6 @@ import olympic.main.person.athlete.pingong.CallBack;
  */
 public interface Strategy {
     Boolean playWith(CallBack oppoent);
+
     void setOwnerAthlete(Athlete ownerAthlete);
 }

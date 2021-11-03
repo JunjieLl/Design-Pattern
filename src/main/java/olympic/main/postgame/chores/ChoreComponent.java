@@ -5,9 +5,12 @@ package olympic.main.postgame.chores;
  */
 public abstract class ChoreComponent implements ChoreElement {
     public abstract String getName();
+
     public abstract int getRemainTrouble();
+
     protected abstract void printList(String prefix);
-    public String toString(){
-        return getName() + "\t"+"还剩"+getRemainTrouble()+ "件事";
+
+    public String toString() {
+        return getName() + "\t" + "还剩" + getRemainTrouble() + "件事";
     }
 }

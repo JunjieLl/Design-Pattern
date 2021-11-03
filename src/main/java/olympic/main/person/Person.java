@@ -24,4 +24,11 @@ public abstract class Person {
     public List<String> getMemory() {
         return memory;
     }
+
+    /**
+     * 需要雨标记接口配合使用
+     */
+    public void deliverSpeech() {
+        throw new UnsupportedOperationException();
+    }
 }

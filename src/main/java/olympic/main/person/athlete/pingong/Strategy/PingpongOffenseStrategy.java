@@ -1,4 +1,4 @@
-package olympic.main.person.athlete.pingong.strategy;
+package olympic.main.person.athlete.pingong.Strategy;
 
 import olympic.main.game.pingponggame.Mode;
 import olympic.main.person.athlete.Athlete;
@@ -33,8 +33,6 @@ public class PingpongOffenseStrategy implements Strategy {
      * 攻击概率
      */
 //    private Integer offenseProb = 70;
-
-
     @Override
     public Boolean playWith(CallBack oppoent) {
         if (Mode.getShowDetail()) {

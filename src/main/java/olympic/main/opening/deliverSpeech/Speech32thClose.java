@@ -16,9 +16,10 @@ public class Speech32thClose extends DeliverSpeech {   //具体子类
     Chairman OOCP = chairmans.get(0);
     Chairman IOCP = chairmans.get(1);
     Chairman HP = chairmans.get(2);
-    TeamAthlete tempList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation("CHN"),"CHN");
-    public Athlete athleteRepre=tempList.getFirstAthlete();
+    TeamAthlete tempList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation("CHN"), "CHN");
+    public Athlete athleteRepre = tempList.getFirstAthlete();
     Coach coachRepre = PersonFactory.getInstance().getCoach();
+
     @Override
     String time() {
         return "32";
@@ -53,7 +54,6 @@ public class Speech32thClose extends DeliverSpeech {   //具体子类
     String getCoachRepre() {
         return coachRepre.getName();
     }
-
 
 
 }

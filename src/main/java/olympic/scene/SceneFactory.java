@@ -1,21 +1,24 @@
-package olympic.scene;
+package main.java.olympic.scene;
 
 
 
 public class SceneFactory {
-    private SceneFactory(){};
+    private SceneFactory() {
+    }
+
+    ;
 
     private static SceneFactory instance;
 
-    public static SceneFactory getInstance(){
-        if (instance == null){
+    public static SceneFactory getInstance() {
+        if (instance == null) {
             instance = new SceneFactory();
         }
         return instance;
     }
 
-    public Scene getScene(String name){
-        switch (name){
+    public olympic.scene.Scene getScene(String name) {
+        switch (name) {
             case "Relays":
             case "Marathon":
             case "Sprints":
@@ -24,10 +27,10 @@ public class SceneFactory {
             case "Freestyle":
             case "Backstroke":
             case "Butterflystroke":
-                return new TrackGameScene(name);
+                return new olympic.scene.TrackGameScene(name);
             case "Pingpong":
             case "PingpongTeam":
-                return new PingpongGameScene(name);
+                return new olympic.scene.PingpongGameScene(name);
             case "FootballTeam":
                 return new FootballScene();
             case "Three-Meter-Board-Diving":

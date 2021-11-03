@@ -17,11 +17,12 @@ public class FinalContest extends DivingGame {
 
 
     /**
-     *获取管道模式中上一轮比赛的结果
+     * 获取管道模式中上一轮比赛的结果
+     *
      * @param athletePool 包含该轮比赛人员的对象池
      */
     public void takePlace(AthletePool athletePool) {
-        this.athletePool=athletePool;
+        this.athletePool = athletePool;
         start();
         if (this.nextDivingGame != null) {
             this.nextDivingGame.takePlace(this.athletePool);
@@ -32,18 +33,18 @@ public class FinalContest extends DivingGame {
      * 开始本轮比赛
      */
     @Override
-    public void start(){
+    public void start() {
         System.out.println("\nclassname: (FinalContest) method: (start) action: (管道模式下开始决赛) ");
-        System.out.println("【"+athletePool.getStrategy().getName()+" 决赛】");
+        System.out.println("【" + athletePool.getStrategy().getName() + " 决赛】");
         for (int i = 1; i <= athletePool.getStrategy().getCycleNumber(); i++) {
             System.out.println("【第" + i + "轮】");
             for (int j = 0; j < athletePool.getSize(); j++) {
                 Athlete curDivingAthlete = athletePool.appear();
                 double score = athletePool.getStrategy().decideScore();
-                if(athletePool.getDetail()) {
+                if (athletePool.getDetail()) {
                     System.out.printf("来自\t%-3s\t的%-15s\t" + "第" + i + "轮分数为\t" + "%.3f\n", curDivingAthlete.getNation(), curDivingAthlete.getName(), score);
                 }
-                athletePool.addScore(curDivingAthlete,score);
+                athletePool.addScore(curDivingAthlete, score);
                 athletePool.disappear();
             }
             System.out.println("第" + i + "轮结束\n");
@@ -56,11 +57,12 @@ public class FinalContest extends DivingGame {
 
     /**
      * 获取下一轮比赛
+     *
      * @param divingGame 下一轮比赛
      */
     @Override
-    public Valve setNext(Valve divingGame){
-        this.nextDivingGame = (DivingGame)divingGame;
+    public Valve setNext(Valve divingGame) {
+        this.nextDivingGame = (DivingGame) divingGame;
         return null;
     }
 }

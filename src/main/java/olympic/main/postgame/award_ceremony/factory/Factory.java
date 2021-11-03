@@ -21,14 +21,14 @@ public abstract class Factory {
     }
 
     /**
-     * @param name 奖牌部分的名字.
+     * @param name     奖牌部分的名字.
      * @param material 奖牌部分的材料.
      * @return 抽象的奖牌部分.
      */
     public abstract Medal createMedal(String name, String material);
 
     /**
-     * @param name 缎带部分的名字.
+     * @param name  缎带部分的名字.
      * @param color 缎带的颜色.
      * @return 抽象的缎带部分.
      */

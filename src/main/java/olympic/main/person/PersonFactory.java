@@ -127,14 +127,14 @@ public class PersonFactory {
         }
     }
 
-    public List<Chairman> getChairmans(){
+    public List<Chairman> getChairmans() {
         List<Chairman> chairmanList = new ArrayList<>();
         Chairman chairman;
         Message message;
-        for(int i=0;i<3;++i){
+        for (int i = 0; i < 3; ++i) {
             message = nameFactory.getMessage();
             chairman = new Chairman(message.name, message.nation);
-            chairmanHashMap.put(message.name,chairman);
+            chairmanHashMap.put(message.name, chairman);
             chairmanList.add(chairman);
         }
         return chairmanList;
@@ -142,25 +142,28 @@ public class PersonFactory {
 
     /**
      * 取得唯一的教练
+     *
      * @return 教练
      */
-    public Coach getCoach(){
+    public Coach getCoach() {
         return this.coach;
     }
 
     /**
      * 取得唯一的比赛目录结构
+     *
      * @return 比赛目录结构
      */
-    public HashMap<String, List<String>> getCatalogueMap(){
+    public HashMap<String, List<String>> getCatalogueMap() {
         return this.catalogueMap;
     }
 
     /**
      * 取得100个 采访者
+     *
      * @return 采访者列表
      */
-    private List<Interviewer> getInterviews(){
+    private List<Interviewer> getInterviews() {
 
         return this.interviewers;
 
@@ -178,12 +181,12 @@ public class PersonFactory {
     public void springUtil() {
         //首先 名字工厂
         //生成教练
-        Message message ;
-        message=nameFactory.getMessage();
+        Message message;
+        message = nameFactory.getMessage();
         this.coach = new Coach(message.name, message.nation);
-       //生成采访者
-        this.interviewers=new ArrayList<Interviewer>();
-        for(int i=0;i<100;i++){
+        //生成采访者
+        this.interviewers = new ArrayList<Interviewer>();
+        for (int i = 0; i < 100; i++) {
             message = nameFactory.getMessage();//100
             this.interviewers.add(new Interviewer(message.name, message.nation));
         }
@@ -197,9 +200,9 @@ public class PersonFactory {
             //生成所有比赛
             gamesName = Arrays.asList(((String) this.prop.get("AllGames")).split(","));
             //生成所有比赛小项目
-            List<String> catalogue=Arrays.asList(((String) this.prop.get("BigGameClass")).split(","));
-            for(String i:catalogue){
-                catalogueMap.put(i,Arrays.asList(((String) this.prop.get("BigGameClass."+i)).split(",")));
+            List<String> catalogue = Arrays.asList(((String) this.prop.get("BigGameClass")).split(","));
+            for (String i : catalogue) {
+                catalogueMap.put(i, Arrays.asList(((String) this.prop.get("BigGameClass." + i)).split(",")));
             }
             //生成人员
             for (String i : gamesName) {

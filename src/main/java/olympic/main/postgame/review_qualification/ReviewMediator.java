@@ -11,6 +11,7 @@ public interface ReviewMediator {
 
     /**
      * 组员完成工作向仲裁者汇报完成的事件.
+     *
      * @param event 发生的事件
      */
     public abstract void colleagueChanged(String event);

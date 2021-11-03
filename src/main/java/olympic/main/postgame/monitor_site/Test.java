@@ -1,4 +1,5 @@
 package olympic.main.postgame.monitor_site;
+
 import java.util.Scanner;
 
 /**
@@ -20,30 +21,27 @@ public class Test {
         int cur = 1;
         String key = sc.next();
 
-        while(!(key.equals("-1"))&&cur<=6) {
-            if(cur==6&&key.equals("1"))
+        while (!(key.equals("-1")) && cur <= 6) {
+            if (cur == 6 && key.equals("1"))
                 break;
-            if(key.equals("0")) {
+            if (key.equals("0")) {
 
-                if (cur>1) {
+                if (cur > 1) {
                     /**
                      * 恢复状态
                      */
                     teleController.restoreMemento(stack.pop());
-                    if(cur>2)
-                        cur-=1;
-                }
-                else{
+                    if (cur > 2)
+                        cur -= 1;
+                } else {
                     System.out.println("Error:没有上一条命令，输入错误!");
                 }
-            }
-            else if(key.equals("1")){
+            } else if (key.equals("1")) {
                 Command now_command = teleController.createMemento(cur, tv);
                 teleController.switchCommand(now_command);
                 stack.push(now_command);
-                cur+=1;
-            }
-            else{
+                cur += 1;
+            } else {
                 System.out.println("输入错误!请重新输入!");
             }
 

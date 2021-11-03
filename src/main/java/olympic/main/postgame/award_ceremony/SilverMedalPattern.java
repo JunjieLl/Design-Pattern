@@ -4,10 +4,11 @@ import olympic.main.postgame.award_ceremony.prototype_framework.*;
 import olympic.main.postgame.award_ceremony.medal_decorator.*;
 
 public class SilverMedalPattern implements MedalProduct {
-    public SilverMedalPattern(){
+    public SilverMedalPattern() {
         System.out.println("\nclassname: (SilverMedalPattern) method: (SilverMedalPattern) action: (生成银牌的原型) ");
         System.out.println("=====奥林匹克运动会银牌=====");
     }
+
     public void use(String s) {
         TitleDisplay td = new TitleDisplay();
         td.add("TONGJI 2021");
@@ -37,11 +38,11 @@ public class SilverMedalPattern implements MedalProduct {
         System.out.println("\033[0m \n");
     }
 
-    public MedalProduct createClone(){
+    public MedalProduct createClone() {
         MedalProduct p = null;
-        try{
+        try {
             p = (MedalProduct) clone();
-        }catch (CloneNotSupportedException e){
+        } catch (CloneNotSupportedException e) {
             e.printStackTrace();
         }
         return p;

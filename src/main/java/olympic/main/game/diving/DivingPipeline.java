@@ -25,13 +25,14 @@ public class DivingPipeline implements AbstractPipeline {
 
     /**
      * 添加管道中的阀门（比赛）
+     *
      * @param newDivingGame 新的阀门（比赛）
      */
     @Override
     public void addContest(Valve newDivingGame) {
-        if(firstDivingGame == null){
+        if (firstDivingGame == null) {
             this.firstDivingGame = newDivingGame;
-        }else {
+        } else {
             lastDivingGame.setNext(newDivingGame);
         }
         this.lastDivingGame = newDivingGame;
@@ -43,13 +44,13 @@ public class DivingPipeline implements AbstractPipeline {
     @Override
     public void start() {
         System.out.println("选手入场完毕,马上开始比赛！");
-        DivingGame preliminaryContest=new PreliminaryContest();
-        DivingGame semiFinalContest=new SemiFinals();
-        DivingGame finalContest=new FinalContest();
+        DivingGame preliminaryContest = new PreliminaryContest();
+        DivingGame semiFinalContest = new SemiFinals();
+        DivingGame finalContest = new FinalContest();
         this.addContest(preliminaryContest);
         this.addContest(semiFinalContest);
         this.addContest(finalContest);
         athletePool.showDetail();
-        ((DivingGame)firstDivingGame).takePlace(athletePool);
+        ((DivingGame) firstDivingGame).takePlace(athletePool);
     }
 }

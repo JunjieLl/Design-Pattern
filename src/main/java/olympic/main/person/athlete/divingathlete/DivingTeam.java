@@ -11,6 +11,6 @@ import java.util.List;
 public class DivingTeam extends TeamAthlete {
 
     public DivingTeam(String name, String nation, List<Athlete> athleteList) {
-        super(name,nation,athleteList);
+        super(name, nation, athleteList);
     }
 }

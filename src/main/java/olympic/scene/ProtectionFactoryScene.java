@@ -8,7 +8,7 @@ import java.util.Scanner;
  * 设计模式：工厂模式、单例模式
  * 领取防疫物资
  */
-public class ProtectionFactoryScene implements Scene{
+public class ProtectionFactoryScene implements Scene {
     @Override
     public void play() {
         ProtectionFactory factory1 = ProtectionFactory.getInstance();
@@ -41,7 +41,7 @@ public class ProtectionFactoryScene implements Scene{
             System.out.println("是否要继续领取防疫物资？[1:继续,其他:退出]");
             sc = new Scanner(System.in);
             key = sc.next();
-        }while(key.equals("1"));
+        } while (key.equals("1"));
         System.out.println("--------------------防疫物资领取完毕----------------------");
     }
 }
