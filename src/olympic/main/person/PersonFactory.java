@@ -148,6 +148,14 @@ public class PersonFactory {
     }
 
     /**
+     * 取得唯一的比赛目录结构
+     * @return 比赛目录结构
+     */
+    public HashMap<String, List<String>> getCatalogueMap(){
+        return this.catalogueMap;
+    }
+
+    /**
      * 取得100个 采访者
      * @return 采访者列表
      */
