@@ -5,6 +5,7 @@ import olympic.main.opening.fireworkshow.*;
 public class FireworkScene implements Scene{
     @Override
     public void play() {
+
         Show myshow = new Firework();
         myshow.operation();
 
@@ -15,9 +16,9 @@ public class FireworkScene implements Scene{
         myairwork.operation();
     }
 
-//    public static void main(String[] args) {
-//        FireworkScene fireworkScene=new FireworkScene();
-//        fireworkScene.play();
-//    }
+    public static void main(String[] args) {
+        FireworkScene fireworkScene=new FireworkScene();
+        fireworkScene.play();
+    }
 }
 
