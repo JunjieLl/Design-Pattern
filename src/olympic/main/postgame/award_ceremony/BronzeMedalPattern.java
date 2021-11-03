@@ -14,7 +14,7 @@ public class BronzeMedalPattern implements MedalProduct {
         bronzeDisplayBlock.add("颁发铜牌");
         bronzeDisplayBlock.add("这块红色的奖牌上镌刻着比赛中取得第三名选手的名字和代表队。");
         PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
-        printBlockFormat.printFormatMiddleScreen(bronzeDisplayBlock,true);
+        printBlockFormat.printFormatLeftScreen(bronzeDisplayBlock,true);
     }
     public void use(String s) {
 

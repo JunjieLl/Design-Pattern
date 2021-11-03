@@ -14,7 +14,7 @@ public class SilverMedalPattern implements MedalProduct {
         silverDisplayBlock.add("颁发银牌");
         silverDisplayBlock.add("这块银色的奖牌上镌刻着比赛中取得第二名选手的名字和代表队。");
         PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
-        printBlockFormat.printFormatMiddleScreen(silverDisplayBlock,true);
+        printBlockFormat.printFormatLeftScreen(silverDisplayBlock,true);
     }
     public void use(String s) {
         TitleDisplay td = new TitleDisplay();

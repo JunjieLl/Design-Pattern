@@ -26,7 +26,7 @@ public class MedalTable {
     public void printMedalTable(){
         List<String> medalTableDisplayBlock = new ArrayList<String>();
         medalTableDisplayBlock.add("奖牌榜");
-        medalTableDisplayBlock.add(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss a\n").format(new Date(System.currentTimeMillis())));
+        medalTableDisplayBlock.add("时间：" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss a\n").format(new Date(System.currentTimeMillis())));
 
         Collections.sort(countries);
         for(int i=0;i<countries.size();i++){
@@ -34,7 +34,7 @@ public class MedalTable {
         }
 
         PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
-        printBlockFormat.printFormatLeftScreen(medalTableDisplayBlock,true);
+        printBlockFormat.printFormatMiddleScreen(medalTableDisplayBlock,true);
     }
 
     public void penalty(String countryCode, int rank){

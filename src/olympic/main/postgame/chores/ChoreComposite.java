@@ -1,7 +1,10 @@
 package olympic.main.postgame.chores;
 
+import olympic.Utils.PrintBlockFormat;
+
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * 表示组合杂务的类.
@@ -49,8 +52,12 @@ public class ChoreComposite extends ChoreComponent{
      */
     @Override
     public void printList(String prefix) {
-        System.out.println("\nclassname: (ChoreComposite) method: (printList) action: (显示杂务项) ");
-        System.out.println(prefix + "/" + this);
+        List<String> choreCompositePrintBlock = new ArrayList<String>();
+        System.out.println("\nclassname: (ChoreComposite) method: (printList) action: (组合模式显示组合杂务项) ");
+        choreCompositePrintBlock.add("展示当前杂务及其所属");
+        choreCompositePrintBlock.add(prefix + "/" + this);
+        PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
+        printBlockFormat.printFormatLeftScreen(choreCompositePrintBlock,true);
         Iterator it = problemDirectory.iterator();
         while(it.hasNext()){
             ChoreComponent cc = (ChoreComponent) it.next();

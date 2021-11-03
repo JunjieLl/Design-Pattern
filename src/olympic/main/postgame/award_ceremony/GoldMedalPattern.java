@@ -14,7 +14,7 @@ public class GoldMedalPattern implements MedalProduct {
         goldDisplayBlock.add("颁发金牌");
         goldDisplayBlock.add("这块金色的奖牌上镌刻着比赛中取得第一名选手的名字和代表队。");
         PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
-        printBlockFormat.printFormatMiddleScreen(goldDisplayBlock,true);
+        printBlockFormat.printFormatLeftScreen(goldDisplayBlock,true);
     }
     public void use(String s) {
 
