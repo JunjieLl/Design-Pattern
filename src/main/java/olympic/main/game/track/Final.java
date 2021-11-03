@@ -13,20 +13,22 @@ import java.util.List;
  */
 public class Final extends ContestImpl {
     /**
-     *Final构造方法
+     * Final构造方法
+     *
      * @param athletes 运动员列表
      */
     public Final(List<Athlete> athletes) {
         super(athletes);
-        gameType="决赛";
+        gameType = "决赛";
     }
 
     /**
      * 对场上的运动员成绩做一个比较
+     *
      * @param runners 比赛场上运动员们
      */
-    private void rank(List<Athlete> runners){
-        int size=runners.size();
+    private void rank(List<Athlete> runners) {
+        int size = runners.size();
 //        RandomDrawLots drawLots = new RandomDrawLots(runners, new PaperDrawLotsImpl(), 1);
 //        runners = drawLots.randomDrawLots();
         System.out.println("【决赛排名榜】");
@@ -34,10 +36,9 @@ public class Final extends ContestImpl {
         Collections.shuffle(runners);
 
 
-        for(int i=0;i<size;i++){
-            System.out.println(i+1+"\t"+runners.get(i).getName()+"\t");
+        for (int i = 0; i < size; i++) {
+            System.out.println(i + 1 + "\t" + runners.get(i).getName() + "\t");
         }
-
 
 
         System.out.println("\n");
@@ -46,9 +47,9 @@ public class Final extends ContestImpl {
     /**
      * 得到决赛的成果
      */
-    public  void getResult(){
+    public void getResult() {
         rank(athletes);
-        CeremonyScene ceremonyScene=new CeremonyScene(athletes);
+        CeremonyScene ceremonyScene = new CeremonyScene(athletes);
         ceremonyScene.play();
     }
 }
