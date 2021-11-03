@@ -1,10 +1,10 @@
-package olympic.scene;
+package main.java.olympic.scene;
 
-import olympic.main.person.athlete.Athlete;
-import olympic.main.postgame.award_ceremony.*;
+
 import olympic.main.postgame.award_ceremony.prototype_framework.Manager;
 import olympic.main.postgame.medaltable.MedalTable;
-import olympic.scene.*;
+import olympic.scene.Scene;
+
 
 import java.util.List;
 
@@ -23,7 +23,7 @@ public class CeremonyScene implements Scene {
         this.bronzePlayer = bronze;
     }
 
-    public CeremonyScene(List<Athlete> athletes) {
+    public CeremonyScene(List<olympic.main.person.athlete.Athlete> athletes) {
         this.goldPlayer = athletes.get(0).getName() + ", TEAM " + athletes.get(0).getNation();
         this.silverPlayer = athletes.get(1).getName() + ", TEAM " + athletes.get(1).getNation();
         this.bronzePlayer = athletes.get(2).getName() + ", TEAM " + athletes.get(2).getNation();
@@ -45,7 +45,7 @@ public class CeremonyScene implements Scene {
 //        } catch (InterruptedException ex) {
 //            Thread.currentThread().interrupt();
 //        }
-        MedalMaking medalMaking = new MedalMaking();
+        olympic.main.postgame.award_ceremony.MedalMaking medalMaking = new olympic.main.postgame.award_ceremony.MedalMaking();
 //        try {
 //            Thread.sleep(1000);
 //        } catch (InterruptedException ex) {
@@ -57,7 +57,7 @@ public class CeremonyScene implements Scene {
         System.out.println("我们由衷祝贺以下这些选手：");
 
         Manager manager = new Manager();
-        new MedalPresenting(manager, goldPlayer, silverPlayer, bronzePlayer);
+        new olympic.main.postgame.award_ceremony.MedalPresenting(manager, goldPlayer, silverPlayer, bronzePlayer);
         System.out.println("请全体起立，升国旗，奏国歌");
         System.out.println("本场颁奖仪式已经结束，请有序离场，并带好您的随身物品。");
         MedalTable.getInstance().printMedalTable();
