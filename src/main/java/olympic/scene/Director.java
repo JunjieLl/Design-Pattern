@@ -54,11 +54,11 @@ public class Director {
      * 赛前场景顺序执行
      */
     private void startBeforeGameActivities() {
-//        new TicketCheckingScene().play();
-        //new ProtectionFactoryScene().play();
-        //new TranslateScene().play();
-        //new PerformanceScene().play();
-        //new OpenSpeechScene().play();
+//        new TicketCheckingScene().play(); 跳不出来死循环
+        new ProtectionFactoryScene().play();
+        new TranslateScene().play();
+        new PerformanceScene().play();
+        new OpenSpeechScene().play();
         new EnterScene().play();
         new FireworkScene().play();
     }
@@ -79,7 +79,7 @@ public class Director {
      * 比赛，用户选择
      */
     private void startGame() {
-        System.out.println(gameNames.get("Diving").remove("Ten-Meter-Board-Diving"));
+//        System.out.println(gameNames.get("Diving").remove("Ten-Meter-Board-Diving"));
         while (gameNames.size() != 0) {
             System.out.println("可观看的比赛有：");
             for (String name : gameNames.keySet()) {
@@ -102,6 +102,10 @@ public class Director {
                 System.out.println("请输入您想观看的比赛");
                 while (true){
                     String gameName = input.next();
+                    if (!gameNames.get(className).contains(gameName)){
+                        System.out.println("比赛名有误，请重新输入：");
+                        continue;
+                    }
                     Scene scene = SceneFactory.getInstance().getScene(gameName);
                     if (scene != null){
                         scene.play();

@@ -1,10 +1,6 @@
 package olympic.scene;
 
-import olympic.main.PreCompetitionSystem.PreCompetitionSystemFacade;
-import olympic.main.game.track.Hurdling;
-import olympic.main.game.track.Marathon;
-import olympic.main.game.track.Relays;
-import olympic.main.game.track.Sprints;
+
 
 public class SceneFactory {
     private SceneFactory(){};
@@ -34,6 +30,14 @@ public class SceneFactory {
                 return new PingpongGameScene(name);
             case "FootballTeam":
                 return new FootballScene();
+            case "Three-Meter-Board-Diving":
+            case "Ten-Meter-Board-Diving":
+            case "Three-Meter-Board-DivingTeam":
+            case "Ten-Meter-Board-DivingTeam":
+                return new olympic.scene.DivingGameScene(name);
+
+
+
             default:
                 return null;
         }
