@@ -11,7 +11,11 @@ import java.util.*;
  */
 public class Director {
     private Director() {
-        gameNames = new ArrayList<>(PersonFactory.getInstance().getNames());
+//        gameNames = new ArrayList<>(PersonFactory.getInstance().getNames());
+        Map<String,List<String>> tempGameNames = PersonFactory.getInstance().getCatalogueMap();
+        for (String name:tempGameNames.keySet()){
+            gameNames.put(name,new ArrayList<>(tempGameNames.get(name)));
+        }
     }
 
     private static Director director;
@@ -41,9 +45,9 @@ public class Director {
         scene.play();
     }
 
-    private List<String> gameNames;
+//    private List<String> gameNames;
 
-    private Map<String,List<String>> games = new HashMap<>();
+    private Map<String,List<String>> gameNames = new HashMap<>();
 
 
     /**
@@ -75,27 +79,54 @@ public class Director {
      * 比赛，用户选择
      */
     private void startGame() {
+        System.out.println(gameNames.get("Diving").remove("Ten-Meter-Board-Diving"));
         while (gameNames.size() != 0) {
-            System.out.println("未举行的比赛有：");
-            for (String name : gameNames) {
+            System.out.println("可观看的比赛有：");
+            for (String name : gameNames.keySet()) {
                 System.out.println(name);
             }
-            System.out.print("输入您想观看的比赛(输入exit退出)：");
+            System.out.print("输入您想观看的大类(输入exit退出)：");
             Scanner input = new Scanner(System.in);
 
             while (true) {
-                String inputName = input.next();
-                if (inputName.equals("exit")) {
+                String className = input.next();
+                if (className.equals("exit")) {
                     break;
                 }
-                Scene scene = SceneFactory.getInstance().getScene(inputName);
-                if (scene != null) {
-                    scene.play();
-                    gameNames.remove(inputName);
-                    break;
-                } else {
+                List<String> names = gameNames.get(className);
+                if (names != null){
+                    System.out.println(className+"有以下比赛：");
+                    for (String name:names){
+                        System.out.println(name);
+                    }
+                    System.out.println("请输入您想观看的比赛");
+                    while (true){
+                        String gameName = input.next();
+                        Scene scene = SceneFactory.getInstance().getScene(gameName);
+                        if (scene != null){
+                            scene.play();
+                            gameNames.get(className).remove(gameName);
+                            if (gameNames.get(className).size()==0){
+                                gameNames.remove(className);
+                            }
+                            break;
+                        }else{
+                            System.out.println("比赛名有误，请重新输入：");
+                        }
+                    }
+                }else {
                     System.out.print("没有此比赛，请重新选择：");
                 }
+
+
+//                Scene scene = SceneFactory.getInstance().getScene(inputName);
+//                if (scene != null) {
+//                    scene.play();
+//                    gameNames.remove(inputName);
+//                    break;
+//                } else {
+//                    System.out.print("没有此比赛，请重新选择：");
+//                }
             }
         }
     }
