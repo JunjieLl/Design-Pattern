@@ -56,9 +56,8 @@ public class PingpongPipeline implements AbstractPipeline {
 
     /**
      * 季军赛
-     * @return 返回季军
      */
-    private Athlete thirdGame(){
+    public Athlete thirdGame(){
         List<Athlete> thirdGameAthletes = new ArrayList<>();
         for (Athlete athlete:athletes){
             if (athlete.getRank("半决赛") == 2){
@@ -73,6 +72,7 @@ public class PingpongPipeline implements AbstractPipeline {
                 return athlete;
             }
         }
+//        thirdGame
         return null;
     }
 
