@@ -3,17 +3,17 @@ package olympic.main.postgame.chores;
 /**
  * 表示杂务的类.
  */
-public class ChoreLeaf extends ChoreComponent{
+public class ChoreLeaf extends ChoreComponent {
     private String name;
     private int remainTrouble;
     private int parentUnit;
 
     /**
-     * @param name 该项杂务的名称.
+     * @param name          该项杂务的名称.
      * @param remainTrouble 当前杂务剩余的待处理问题.
-     * @param parentUnit 该杂务属于哪个小组的管辖范围.
+     * @param parentUnit    该杂务属于哪个小组的管辖范围.
      */
-    public ChoreLeaf(String name, int remainTrouble, int parentUnit){
+    public ChoreLeaf(String name, int remainTrouble, int parentUnit) {
         this.name = name;
         this.remainTrouble = remainTrouble;
         this.parentUnit = parentUnit;
@@ -39,7 +39,7 @@ public class ChoreLeaf extends ChoreComponent{
         System.out.println(prefix + "/" + this);
     }
 
-    public void accept(ChoreVisitor v){
+    public void accept(ChoreVisitor v) {
         v.visit(this);
     }
 
@@ -47,7 +47,7 @@ public class ChoreLeaf extends ChoreComponent{
         this.remainTrouble = remainTrouble;
     }
 
-    public String toString(){
-        return getName() + "\t"+"还剩"+getRemainTrouble()+ "件事";
+    public String toString() {
+        return getName() + "\t" + "还剩" + getRemainTrouble() + "件事";
     }
 }

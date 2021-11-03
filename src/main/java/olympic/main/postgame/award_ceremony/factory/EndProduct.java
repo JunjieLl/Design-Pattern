@@ -9,7 +9,8 @@ import java.util.ArrayList;
 public abstract class EndProduct {
     protected String productName;
     protected ArrayList content = new ArrayList();
-    public EndProduct(String productName){
+
+    public EndProduct(String productName) {
         this.productName = productName;
     }
 
@@ -17,14 +18,14 @@ public abstract class EndProduct {
     /**
      * @param part 需要添加给产品的零件
      */
-    public void add(Part part){
+    public void add(Part part) {
         content.add(part);
     }
 
     /**
      * 展示产品制作过程的入口.
      */
-    public void present(){
+    public void present() {
         this.makeMedal();
     }
 

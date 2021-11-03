@@ -1,4 +1,5 @@
 package olympic.main.postgame.award_ceremony.olympic_medal_factory;
+
 import olympic.main.postgame.award_ceremony.factory.*;
 
 public class OlympicMedalFactory extends Factory {
@@ -8,7 +9,7 @@ public class OlympicMedalFactory extends Factory {
      * @return 具体的奖牌部分实例.
      */
     @Override
-    public Medal createMedal(String name, String material){
+    public Medal createMedal(String name, String material) {
         return new OlympicMedal(name, material);
     }
 
@@ -18,7 +19,7 @@ public class OlympicMedalFactory extends Factory {
      * @return 具体的缎带.
      */
     @Override
-    public Ribbon createRibbon(String name, String color){
+    public Ribbon createRibbon(String name, String color) {
         return new OlympicRibbon(name, color);
     }
 
@@ -27,7 +28,7 @@ public class OlympicMedalFactory extends Factory {
      * @return 对应的具体金牌产品.
      */
     @Override
-    public EndProduct createEndProduct(String name){
+    public EndProduct createEndProduct(String name) {
         return new OlympicMedalEndProduct(name);
     }
 }

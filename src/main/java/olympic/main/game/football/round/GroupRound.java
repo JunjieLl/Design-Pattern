@@ -47,9 +47,10 @@ public class GroupRound extends Round {
         int[] goals = scoreBoard.getGoal();
 
         // 内部类，用于对各组球队进行排名
-        class ScoreEntry{
+        class ScoreEntry {
             public FootballTeam team;
             public int score, goalDifference, goal;
+
             public ScoreEntry(FootballTeam team, int score, int goalDifference, int goal) {
                 this.team = team;
                 this.score = score;

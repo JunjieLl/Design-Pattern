@@ -5,7 +5,7 @@ import olympic.main.postgame.award_ceremony.factory.*;
 import java.util.Iterator;
 
 public class OlympicMedalEndProduct extends EndProduct {
-    public OlympicMedalEndProduct(String productName){
+    public OlympicMedalEndProduct(String productName) {
         super(productName);
     }
 
@@ -17,7 +17,7 @@ public class OlympicMedalEndProduct extends EndProduct {
         System.out.println("\nclassname: (OlympicMedalEndProduct) method: (makeMedal) action: (展示奥运奖牌的产品) ");
         System.out.println("这是一块完整的奥运奖牌.....");
         Iterator it = content.iterator();
-        while(it.hasNext()){
+        while (it.hasNext()) {
             Part part = (Part) it.next();
             part.makeMedal();
         }

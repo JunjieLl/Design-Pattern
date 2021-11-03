@@ -3,9 +3,9 @@ package olympic.main.person.athlete.pingong;
 import olympic.main.game.pingponggame.Mode;
 import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.IndividualAthlete;
-import olympic.main.person.athlete.pingong.strategy.PingpongDefendStrategy;
-import olympic.main.person.athlete.pingong.strategy.PingpongOffenseStrategy;
-import olympic.main.person.athlete.pingong.strategy.Strategy;
+import olympic.main.person.athlete.pingong.Strategy.PingpongDefendStrategy;
+import olympic.main.person.athlete.pingong.Strategy.PingpongOffenseStrategy;
+import olympic.main.person.athlete.pingong.Strategy.Strategy;
 
 import java.util.Random;
 
@@ -19,9 +19,9 @@ public class PingpongAthlete extends IndividualAthlete implements PlayPingpong {
             this.strategy = new PingpongDefendStrategy();
             strategy.setOwnerAthlete(this);
         }
-        if (nation=="CHN"){
+        if (nation == "CHN") {
             capacity = 99;
-        }else{
+        } else {
             capacity = random.nextInt(8) + 90;
         }
     }
@@ -53,6 +53,7 @@ public class PingpongAthlete extends IndividualAthlete implements PlayPingpong {
 
     /**
      * 与Oppoend进行对打
+     *
      * @param oppoent 对手
      * @return 是否击中球，没有击中球就输了这一小轮
      */

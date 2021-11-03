@@ -1,4 +1,4 @@
-package olympic.main.person.athlete.pingong.strategy;
+package olympic.main.person.athlete.pingong.Strategy;
 
 import olympic.main.game.pingponggame.Mode;
 import olympic.main.person.athlete.Athlete;

@@ -4,10 +4,11 @@ import olympic.main.postgame.award_ceremony.medal_decorator.*;
 import olympic.main.postgame.award_ceremony.prototype_framework.*;
 
 public class GoldMedalPattern implements MedalProduct {
-    public GoldMedalPattern(){
+    public GoldMedalPattern() {
         System.out.println("\nclassname: (GoldMedalPattern) method: (GoldMedalPattern) action: (生成金牌的原型) ");
         System.out.println("=====奥林匹克运动会金牌=====");
     }
+
     public void use(String s) {
 
         TitleDisplay td = new TitleDisplay();
@@ -38,11 +39,11 @@ public class GoldMedalPattern implements MedalProduct {
         System.out.println("\033[0m \n");
     }
 
-    public MedalProduct createClone(){
+    public MedalProduct createClone() {
         MedalProduct p = null;
-        try{
+        try {
             p = (MedalProduct) clone();
-        }catch (CloneNotSupportedException e){
+        } catch (CloneNotSupportedException e) {
             e.printStackTrace();
         }
         return p;

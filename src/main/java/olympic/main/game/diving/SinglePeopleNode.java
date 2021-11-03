@@ -3,9 +3,10 @@ package olympic.main.game.diving;
 /**
  * 策略模式下的终结符，用来确定比赛中的起跳高度
  */
-public class SinglePeopleNode implements AbstractNode{
+public class SinglePeopleNode implements AbstractNode {
     /**
      * 分析语法函数
+     *
      * @param context 要分析的语法
      * @return 要使用的策略
      */

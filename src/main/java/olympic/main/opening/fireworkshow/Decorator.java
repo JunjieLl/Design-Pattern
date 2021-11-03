@@ -6,7 +6,8 @@ abstract public class Decorator extends Show {
     public Decorator(Show show) {
         this.show = show;
     }
-    public void operation(){
+
+    public void operation() {
         show.operation();
     }
 }

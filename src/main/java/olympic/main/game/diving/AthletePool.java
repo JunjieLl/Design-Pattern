@@ -54,6 +54,7 @@ public class AthletePool {
 
     /**
      * 获取对象池中的运动员/组合数量
+     *
      * @return 对象池中的运动员/组合数量
      */
     public int getSize() {
@@ -62,6 +63,7 @@ public class AthletePool {
 
     /**
      * 在对象池中加入运动员
+     *
      * @param object 要添加的运动员
      */
     public void add(Athlete object) {
@@ -154,20 +156,22 @@ public class AthletePool {
 
     /**
      * 获取是否展示细节指令
+     *
      * @return viewDetail 是否展示细节指令
      */
-    public boolean getDetail(){
+    public boolean getDetail() {
         return this.viewDetail;
     }
 
     /**
      * 获取要颁奖的人
+     *
      * @param num 参加颁奖的人数
      * @return winner 参加颁奖的运动员的列表
      */
-    public List<Athlete> gotoCeremony(int num){
-        List<Athlete> winner=new ArrayList<>();
-        for(int i=0;i<num;i++) {
+    public List<Athlete> gotoCeremony(int num) {
+        List<Athlete> winner = new ArrayList<>();
+        for (int i = 0; i < num; i++) {
             winner.add(list.get(i).getKey());
         }
         return winner;

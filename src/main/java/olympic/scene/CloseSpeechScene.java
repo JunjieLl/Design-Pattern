@@ -7,7 +7,7 @@ import olympic.main.opening.deliverSpeech.Speech32thClose;
  * 钩子方法判断函数
  * 闭幕式主席发表演讲
  */
-public class CloseSpeechScene implements Scene{
+public class CloseSpeechScene implements Scene {
     @Override
     public void play() {
         Speech32thClose oly32_1 = new Speech32thClose();

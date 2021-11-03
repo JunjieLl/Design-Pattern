@@ -10,12 +10,12 @@ public class MedalPresenting {
     private String titleBronzeMedal;
 
     /**
-     * @param manager 管理奖牌原型的Manager.
-     * @param titleGoldMedal 金牌获得者、团队名称.
+     * @param manager          管理奖牌原型的Manager.
+     * @param titleGoldMedal   金牌获得者、团队名称.
      * @param titleSilverMedal 银牌获得者、团队名称.
      * @param titleBronzeMedal 铜牌获得者、团队名称.
      */
-    public MedalPresenting(Manager manager, String titleGoldMedal, String titleSilverMedal, String titleBronzeMedal){
+    public MedalPresenting(Manager manager, String titleGoldMedal, String titleSilverMedal, String titleBronzeMedal) {
         this.manager = manager;
         this.titleGoldMedal = titleGoldMedal;
         this.titleSilverMedal = titleSilverMedal;

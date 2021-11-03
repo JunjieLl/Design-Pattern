@@ -2,7 +2,7 @@ package olympic.scene;
 
 import olympic.main.opening.fireworkshow.*;
 
-public class FireworkScene implements Scene{
+public class FireworkScene implements Scene {
     @Override
     public void play() {
 

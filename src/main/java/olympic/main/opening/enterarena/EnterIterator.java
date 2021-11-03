@@ -6,16 +6,17 @@ import olympic.main.person.athlete.TeamAthlete;
 public class EnterIterator implements Iterator {
     private EnterManager list;
     private int index;
+
     public EnterIterator(EnterManager list) {
         this.list = list;
         this.index = 0;
     }
+
     @Override
     public boolean hasNext() {
         if (this.index < list.getLength()) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
