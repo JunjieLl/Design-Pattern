@@ -1,12 +1,11 @@
 package olympic.main.opening.deliverSpeech;
 
 import olympic.main.person.interview.Interviewee;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Coach extends Interviewee {
+public class Coach extends Interviewee implements Speechable {
     private final static Map<String, List<String>> questionsToAnswers = new HashMap<>();
 
     static {
@@ -34,4 +33,9 @@ public class Coach extends Interviewee {
     public void update(String content) {
         memory.add(content);
     }
+    public void deliverSpeech(){
+        System.out.println("大家好，我是Coach"+this.getName()+",我会严格遵循竞赛规则和裁判员纪律！");
+    }
+
+
 }
