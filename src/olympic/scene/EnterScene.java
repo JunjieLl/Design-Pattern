@@ -5,6 +5,8 @@ import olympic.main.person.athlete.TeamAthlete;
 import olympic.main.opening.enterarena.EnterIterator;
 import olympic.main.opening.enterarena.EnterManager;
 
+import java.util.Random;
+
 public class EnterScene implements Scene {
     @Override
     public void play() {
@@ -14,15 +16,15 @@ public class EnterScene implements Scene {
         String[] country=new String[48];
         country= PersonFactory.getInstance().getNations().toArray(new String[0]);
 
-        for(int i=0;i<country.length;i++)
-        {
-            System.out.println(country[i]);
-        }
+//        for(int i=0;i<country.length;i++)
+//        {
+//            System.out.println(country[i]);
+//        }
 
         for(int i=0;i<10;i++)
         {
-            int ran= 0+(int)(Math.random()*(country.length-0+1));
-
+//            int ran= 0+(int)(Math.random()*(country.length-1+1));
+            int ran= new Random().nextInt(country.length);
 
             TeamAthlete tempList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation(country[ran]),country[ran]);
             if (tempList.getNumber() > 0) {

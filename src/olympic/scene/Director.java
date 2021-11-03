@@ -55,10 +55,10 @@ public class Director {
      */
     private void startBeforeGameActivities() {
 //        new TicketCheckingScene().play();
-        new ProtectionFactoryScene().play();
-        new TranslateScene().play();
-        new PerformanceScene().play();
-        new OpenSpeechScene().play();
+        //new ProtectionFactoryScene().play();
+        //new TranslateScene().play();
+        //new PerformanceScene().play();
+        //new OpenSpeechScene().play();
         new EnterScene().play();
         new FireworkScene().play();
     }
@@ -88,35 +88,35 @@ public class Director {
             System.out.print("输入您想观看的大类(输入exit退出)：");
             Scanner input = new Scanner(System.in);
 
-            while (true) {
-                String className = input.next();
-                if (className.equals("exit")) {
-                    break;
+//            while (true) {
+            String className = input.next();
+            if (className.equals("exit")) {
+                break;
+            }
+            List<String> names = gameNames.get(className);
+            if (names != null){
+                System.out.println(className+"有以下比赛：");
+                for (String name:names){
+                    System.out.println(name);
                 }
-                List<String> names = gameNames.get(className);
-                if (names != null){
-                    System.out.println(className+"有以下比赛：");
-                    for (String name:names){
-                        System.out.println(name);
-                    }
-                    System.out.println("请输入您想观看的比赛");
-                    while (true){
-                        String gameName = input.next();
-                        Scene scene = SceneFactory.getInstance().getScene(gameName);
-                        if (scene != null){
-                            scene.play();
-                            gameNames.get(className).remove(gameName);
-                            if (gameNames.get(className).size()==0){
-                                gameNames.remove(className);
-                            }
-                            break;
-                        }else{
-                            System.out.println("比赛名有误，请重新输入：");
+                System.out.println("请输入您想观看的比赛");
+                while (true){
+                    String gameName = input.next();
+                    Scene scene = SceneFactory.getInstance().getScene(gameName);
+                    if (scene != null){
+                        scene.play();
+                        gameNames.get(className).remove(gameName);
+                        if (gameNames.get(className).size()==0){
+                            gameNames.remove(className);
                         }
+                        break;
+                    }else{
+                        System.out.println("比赛名有误，请重新输入：");
                     }
-                }else {
-                    System.out.print("没有此比赛，请重新选择：");
                 }
+            }else {
+                System.out.print("没有此比赛，请重新选择：");
+            }
 
 
 //                Scene scene = SceneFactory.getInstance().getScene(inputName);
@@ -127,7 +127,7 @@ public class Director {
 //                } else {
 //                    System.out.print("没有此比赛，请重新选择：");
 //                }
-            }
+//            }
         }
     }
 
