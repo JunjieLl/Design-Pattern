@@ -1,7 +1,8 @@
 package olympic.main.game.football;
 
 /**小组赛积分榜
- * 模式: Observer
+ * Observer模式
+ * Singleton模式
  */
 public class ScoreBoard implements Observer{
 
@@ -10,6 +11,10 @@ public class ScoreBoard implements Observer{
     private int[] goalDifference;
     private int[] goal;
 
+    /**
+     * 获取单例实例
+     * @return singleton
+     */
     public static ScoreBoard getInstance() {
         return singleton;
     }

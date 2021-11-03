@@ -15,6 +15,11 @@ public class ScheduleIterator implements Iterator {
         this.schedule = schedule;
         this.index = 0;
     }
+
+    /**
+     * 当前位置是否存在下一场比赛
+     * @return boolean
+     */
     @Override
     public boolean hasNext() {
         if (this.index < schedule.getLength()) {
@@ -25,6 +30,10 @@ public class ScheduleIterator implements Iterator {
         }
     }
 
+    /**
+     * 获取当前指向的比赛，迭代器指向下一场比赛
+     * @return 当前指向的比赛
+     */
     @Override
     public FootballMatch next() {
         FootballMatch match = schedule.getGameAt(this.index);

@@ -46,6 +46,10 @@ public class FootballGameManager implements AbstractPipeline {
         }
     }
 
+    /**
+     * 向管道末尾添加比赛
+     * @param newGame
+     */
     @Override
     public void addContest(Valve newGame) {
         Round r = this.first;
