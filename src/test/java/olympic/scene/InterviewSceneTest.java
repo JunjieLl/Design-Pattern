@@ -2,7 +2,7 @@ package olympic.scene;
 
 import olympic.main.interview.builder.InternetReportBuilder;
 import olympic.main.interview.builder.NewspaperBuilder;
-import olympic.main.interview.questionstrategy.PreInterviewAthleteStrategy;
+import olympic.main.interview.questionstrategy.*;
 import olympic.main.opening.deliverSpeech.Coach;
 import olympic.main.person.PersonFactory;
 import olympic.main.person.athlete.track.TrackAthlete;
@@ -30,9 +30,9 @@ class InterviewSceneTest {
         System.out.println("赛前采访开始：");
         Interviewee preInterviewee = new Coach("XMX", "中国");
         List<Interviewer> preInterviewers = new ArrayList<>();
-        preInterviewers.add(new Interviewer("Junjie Li", "美国", new PreInterviewAthleteStrategy(), new NewspaperBuilder("Junjie Li", "Manxin Xu")));
-        preInterviewers.add(new Interviewer("Chenhao Zhai", "英国", new PreInterviewAthleteStrategy(), new InternetReportBuilder("Chenhao Zhai", "Manxin Xu")));
-        preInterviewers.add(new Interviewer("Even", "法国", new PreInterviewAthleteStrategy(), new InternetReportBuilder("Even", "Manxin Xu")));
+        preInterviewers.add(new Interviewer("Junjie Li", "美国", new AfterInterviewCoachStrategy(), new NewspaperBuilder("Junjie Li", "Manxin Xu")));
+        preInterviewers.add(new Interviewer("Chenhao Zhai", "英国", new AfterInterviewCoachStrategy(), new InternetReportBuilder("Chenhao Zhai", "Manxin Xu")));
+        preInterviewers.add(new Interviewer("Even", "法国", new AfterInterviewCoachStrategy(), new InternetReportBuilder("Even", "Manxin Xu")));
 
         // 创建scene，测试play函数
         InterviewScene interviewScene = new InterviewScene(preInterviewee, preInterviewers, audience, 10);
