@@ -1,6 +1,7 @@
 package olympic.main.person.athlete;
 
 import olympic.main.PreCompetitionSystem.UrineTest.UrineBottle;
+import olympic.main.opening.deliverSpeech.Speechable;
 import olympic.main.person.athleteList.UrineTestProcurator.UrineTestProcurator;
 import olympic.main.person.athleteList.UrineTestProcurator.UrineTestProcuratorFactory;
 
@@ -9,7 +10,7 @@ import java.util.ArrayList;
 /**
  * 个人运动员类
  */
-public abstract class IndividualAthlete extends Athlete {
+public abstract class IndividualAthlete extends Athlete implements Speechable {
     /**
      * 个人运动员类的构造函数
      *
@@ -109,6 +110,10 @@ public abstract class IndividualAthlete extends Athlete {
     @Override
     public void passFire() {
         System.out.println("现在正在传递圣火的是来自" + nation + "的" + name + ",现在他将火炬传递给了下一位圣火传递者。");
+    }
+
+    public void deliverSpeech() {
+        System.out.println("大家好，我是Athlete"+this.getName()+",我会遵守比赛规则！");
     }
 
 }
