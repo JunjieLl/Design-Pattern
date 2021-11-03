@@ -1,5 +1,6 @@
 package olympic.main.PreCompetitionSystem;
 
+import olympic.Utils.PrintBlockFormat;
 import olympic.main.person.PersonFactory;
 import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.IndividualAthlete;
@@ -51,18 +52,21 @@ public class PreCompetitionSystemFacade {
 	 * @return 参赛比赛运动员的运动员列表
 	 */
 	public ArrayList<Athlete> preCompetitionSystemFacade(String gameName) {
+		System.out.println("classname: (PreCompetitionSystemFacade) method: (preCompetitionSystemFacade) " + "action: (赛前准备流程，使用了Facade模式以及singleton模式) ");
 		AthleteList athletes;
 		if (isTeamNumber(gameName)) {
 			athletes = new TeamAthleteList(getAllTeam(gameName));
-			System.out.println("【接下来进行" + gameName + "比赛的赛前准备环节】");
-			System.out.println("【该项目为组队项目】");
+			System.out.println("[接下来进行" + gameName + "比赛的赛前准备环节]");
+			System.out.println("[该项目为组队项目]");
 			
 		} else {
 			athletes = new IndividualAthleteList(getAllIndividualAthlete(gameName));
-			System.out.println("【接下来进行" + gameName + "比赛的赛前准备环节】");
-			System.out.println("【该项目为个人项目】");
+			System.out.println("[接下来进行" + gameName + "比赛的赛前准备环节]");
+			System.out.println("[该项目为个人项目]");
 			
 		}
+		printProcedure();
+		
 		printlnNRowSpace(1);
 		
 		System.out.println("【首先生成尿检的检察员】");
@@ -129,6 +133,26 @@ public class PreCompetitionSystemFacade {
 			assert athletes instanceof IndividualAthleteList;
 			return new ArrayList<>(((IndividualAthleteList) athletes).getAthletes());
 		}
+	}
+	
+	/**
+	 * 打印赛前准备的流程以及查看详细输出的提示文字
+	 */
+	private void printProcedure(){
+		List<String> strings = new ArrayList<>();
+		strings.add("赛前准备总流程");
+		strings.add("1. 生成尿检的检察员");
+		strings.add("2. 分配尿检的检察员");
+		strings.add("3. 运动员尿检环节");
+		strings.add("4. 运动员填写《兴奋剂检查记录单》和《兴奋剂检查传送单》");
+		strings.add("5. 新冠病毒结果检验");
+		strings.add("6. 尿检结果检验");
+		strings.add("7. 确认参赛名单");
+		strings.add("8. 分配志愿者");
+		PrintBlockFormat.getPrintFormat().printFormatLeftScreen(strings,true);
+		PrintBlockFormat.getPrintFormat().printFormatLeftScreen(strings,true);
+		PrintBlockFormat.getPrintFormat().printFormatMiddleScreen(strings,true);
+		PrintBlockFormat.getPrintFormat().printFormatMiddleScreen(strings,true);
 	}
 	
 	/**
