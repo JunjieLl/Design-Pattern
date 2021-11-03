@@ -43,6 +43,8 @@ public class Director {
 
     private List<String> gameNames;
 
+    private Map<String,List<String>> games = new HashMap<>();
+
 
     /**
      * 赛前场景顺序执行
@@ -61,7 +63,7 @@ public class Director {
      * 赛后活动顺序
      */
     private void startAfterGameActivities() {
-//        new PressConferenceScene().play();
+//        new PressConferenceScene().play();  //不用在main里面调
 //        new CeremonyScene().play();
         new ChoreHandlingScene().play();
         new MonitorSiteScene().play();
