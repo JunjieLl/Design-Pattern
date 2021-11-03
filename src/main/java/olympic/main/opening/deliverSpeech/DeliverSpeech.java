@@ -1,6 +1,9 @@
 package olympic.main.opening.deliverSpeech;
 
+import olympic.main.person.athlete.IndividualAthlete;
+
 abstract class DeliverSpeech {  //抽象类
+
     /**
      * 设计模式：模板方法模式
      * 钩子方法判断函数
@@ -21,17 +24,21 @@ abstract class DeliverSpeech {  //抽象类
 
         if (isOpen()) {
             System.out.println("运动员代表" + getAthleteRepre() + "进场宣誓");
+            getAthleteRepreSpeech();
             System.out.println("裁判员代表" + getCoachRepre() + "进场宣誓");
-
+            getCoachRepreSpeech();
         }
 
         System.out.println("首先，由本届奥运会组委会主席" + getOOCP() + "讲话");
-
+        getOOCPSpeech();
         System.out.println(getOOCP() + "退场，落座");
         System.out.println("再由国际奥委会主席" + getIOCP() + "讲话");
+        getIOCPSpeech();
         System.out.println(getIOCP() + "退场，落座");
         System.out.println("最后由东道主国家元首" + getHP() + "宣布奥运会" + state);
+        getHPSpeech();
         System.out.println(getHP() + "退场，落座");
+
     }
 
     /**
@@ -68,5 +75,14 @@ abstract class DeliverSpeech {  //抽象类
      * 裁判员代表
      */
     abstract String getCoachRepre();
+
+    abstract void getOOCPSpeech();
+    abstract void getIOCPSpeech();
+    abstract void getHPSpeech();
+    abstract void getAthleteRepreSpeech();
+    abstract void getCoachRepreSpeech();
+
+
+
 }
 

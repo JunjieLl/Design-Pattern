@@ -1,10 +1,6 @@
-package main.java.olympic.scene;
+package olympic.scene;
 
-import olympic.main.PreCompetitionSystem.PreCompetitionSystemFacade;
-import olympic.main.game.track.Hurdling;
-import olympic.main.game.track.Marathon;
-import olympic.main.game.track.Relays;
-import olympic.main.game.track.Sprints;
+
 
 public class SceneFactory {
     private SceneFactory() {
@@ -36,7 +32,15 @@ public class SceneFactory {
             case "PingpongTeam":
                 return new olympic.scene.PingpongGameScene(name);
             case "FootballTeam":
-                return new olympic.scene.FootballScene();
+                return new FootballScene();
+            case "Three-Meter-Board-Diving":
+            case "Ten-Meter-Board-Diving":
+            case "Three-Meter-Board-DivingTeam":
+            case "Ten-Meter-Board-DivingTeam":
+                return new olympic.scene.DivingGameScene(name);
+
+
+
             default:
                 return null;
         }
