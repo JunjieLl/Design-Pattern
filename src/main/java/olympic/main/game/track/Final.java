@@ -1,8 +1,7 @@
 package olympic.main.game.track;
 
-import main.java.olympic.scene.CeremonyScene;
-
 import olympic.main.person.athlete.Athlete;
+import olympic.scene.CeremonyScene;
 
 import java.util.Collections;
 import java.util.List;
