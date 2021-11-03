@@ -3,6 +3,7 @@ package olympic.scene;
 import olympic.main.interview.builder.InternetReportBuilder;
 import olympic.main.interview.builder.NewspaperBuilder;
 import olympic.main.interview.questionstrategy.PreInterviewAthleteStrategy;
+import olympic.main.opening.deliverSpeech.Coach;
 import olympic.main.person.PersonFactory;
 import olympic.main.person.athlete.track.TrackAthlete;
 import olympic.main.person.interview.Interviewee;
@@ -27,7 +28,7 @@ class InterviewSceneTest {
         // 赛前采访
         // 获取被采访者、采访者
         System.out.println("赛前采访开始：");
-        Interviewee preInterviewee = new TrackAthlete("徐满心", "中国");
+        Interviewee preInterviewee = new Coach("XMX", "中国");
         List<Interviewer> preInterviewers = new ArrayList<>();
         preInterviewers.add(new Interviewer("Junjie Li", "美国", new PreInterviewAthleteStrategy(), new NewspaperBuilder("Junjie Li", "Manxin Xu")));
         preInterviewers.add(new Interviewer("Chenhao Zhai", "英国", new PreInterviewAthleteStrategy(), new InternetReportBuilder("Chenhao Zhai", "Manxin Xu")));
