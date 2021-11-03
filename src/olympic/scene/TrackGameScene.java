@@ -28,17 +28,31 @@ public class TrackGameScene implements Scene{
         TrackGame track;
         switch (game){
             case "Relays":
-                 track=new Relays(PreCompetitionSystemFacade.getInstance().preCompetitionSystemFacade("Relays"));
+                 track=new Relays(PreCompetitionSystemFacade.getInstance().preCompetitionSystemFacade(game));
                 break;
             case "Marathon":
-                 track=new Marathon(PreCompetitionSystemFacade.getInstance().preCompetitionSystemFacade("Marathon"));
+                 track=new Marathon(PreCompetitionSystemFacade.getInstance().preCompetitionSystemFacade(game));
                 break;
             case "Sprints":
-                 track=new Sprints(PreCompetitionSystemFacade.getInstance().preCompetitionSystemFacade("Sprints"));
+                 track=new Sprints(PreCompetitionSystemFacade.getInstance().preCompetitionSystemFacade(game));
                 break;
             case "Hurdling":
-                track=new Hurdling(PreCompetitionSystemFacade.getInstance().preCompetitionSystemFacade("Hurdling"));
+                track=new Hurdling(PreCompetitionSystemFacade.getInstance().preCompetitionSystemFacade(game));
                 break;
+
+            case "Breaststroke":
+                track=new Freestyle(PreCompetitionSystemFacade.getInstance().preCompetitionSystemFacade(game));
+                break;
+            case "Freestyle":
+                track=new Freestyle(PreCompetitionSystemFacade.getInstance().preCompetitionSystemFacade(game));
+                break;
+            case "Backstroke":
+                track=new Backstroke(PreCompetitionSystemFacade.getInstance().preCompetitionSystemFacade(game));
+                break;
+            case "Butterflystroke":
+                track=new Butterflystroke(PreCompetitionSystemFacade.getInstance().preCompetitionSystemFacade(game));
+                break;
+
             default:
                 throw new IllegalStateException("Unexpected value: " + game);
         }
