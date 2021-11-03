@@ -1,9 +1,8 @@
 package olympic.main.game.track;
 
-import olympic.main.drawlots.PaperDrawLotsImpl;
-import olympic.main.drawlots.RandomDrawLots;
+import main.java.olympic.scene.CeremonyScene;
+
 import olympic.main.person.athlete.Athlete;
-import olympic.scene.CeremonyScene;
 
 import java.util.Collections;
 import java.util.List;
@@ -12,12 +11,12 @@ import java.util.List;
  * 使用了桥接模式,作为桥接模式的具体实现者
  * Final是决赛，如果没有多次比赛就作为第一次
  */
-public class Final extends ContestImpl{
+public class Final extends ContestImpl {
     /**
      *Final构造方法
      * @param athletes 运动员列表
      */
-    Final(List<Athlete> athletes) {
+    public Final(List<Athlete> athletes) {
         super(athletes);
         gameType="决赛";
     }
