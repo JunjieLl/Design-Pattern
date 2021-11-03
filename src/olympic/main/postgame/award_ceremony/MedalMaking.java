@@ -13,7 +13,7 @@ public class MedalMaking {
 
             Ribbon goldRibbon = factory.createRibbon("金彩祥云丝绸带","金色");
             Ribbon silverRibbon = factory.createRibbon("银灰图腾尼龙带","银色");
-            Ribbon bronzeRibbon = factory.createRibbon("铜光华表麻布带","黄铜色");
+            Ribbon bronzeRibbon = factory.createRibbon("赤光华表麻布带","红色");
 
             EndProduct goldMedalEndProduct = factory.createEndProduct("配金色缎带的奥运金牌");
             EndProduct silverMedalEndProduct = factory.createEndProduct("配银色缎带的奥运银牌");

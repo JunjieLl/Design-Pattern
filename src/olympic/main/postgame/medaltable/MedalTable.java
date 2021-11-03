@@ -1,5 +1,6 @@
 package olympic.main.postgame.medaltable;
 
+import olympic.Utils.PrintBlockFormat;
 import olympic.main.person.PersonFactory;
 
 import java.text.SimpleDateFormat;
@@ -23,11 +24,17 @@ public class MedalTable {
     }
 
     public void printMedalTable(){
-        System.out.println("\n========奖牌榜|Medal Table==========\t"+ new SimpleDateFormat("yyyy-MM-dd HH:mm:ss a").format(new Date(System.currentTimeMillis())));
+        List<String> medalTableDisplayBlock = new ArrayList<String>();
+        medalTableDisplayBlock.add("奖牌榜");
+        medalTableDisplayBlock.add(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss a\n").format(new Date(System.currentTimeMillis())));
+
         Collections.sort(countries);
         for(int i=0;i<countries.size();i++){
-            System.out.println(countries.get(i).toString());
+            medalTableDisplayBlock.add(countries.get(i).toString());
         }
+
+        PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
+        printBlockFormat.printFormatLeftScreen(medalTableDisplayBlock,true);
     }
 
     public void penalty(String countryCode, int rank){

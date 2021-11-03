@@ -1,12 +1,20 @@
 package olympic.main.postgame.award_ceremony;
 
+import olympic.Utils.PrintBlockFormat;
 import olympic.main.postgame.award_ceremony.medal_decorator.*;
 import olympic.main.postgame.award_ceremony.prototype_framework.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class GoldMedalPattern implements MedalProduct {
     public GoldMedalPattern(){
-        System.out.println("\nclassname: (GoldMedalPattern) method: (GoldMedalPattern) action: (生成金牌的原型) ");
-        System.out.println("=====奥林匹克运动会金牌=====");
+        System.out.println("\nclassname: (GoldMedalPattern) method: (GoldMedalPattern) action: (原型模式复刻金牌的样式生成刻字奖牌) \n");
+        List<String> goldDisplayBlock = new ArrayList<String>();
+        goldDisplayBlock.add("颁发金牌");
+        goldDisplayBlock.add("这块金色的奖牌上镌刻着比赛中取得第一名选手的名字和代表队。");
+        PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
+        printBlockFormat.printFormatMiddleScreen(goldDisplayBlock,true);
     }
     public void use(String s) {
 

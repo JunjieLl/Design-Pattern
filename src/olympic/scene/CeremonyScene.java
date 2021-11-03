@@ -1,11 +1,13 @@
 package olympic.scene;
 
+import olympic.Utils.PrintBlockFormat;
 import olympic.main.person.athlete.Athlete;
 import olympic.main.postgame.award_ceremony.*;
 import olympic.main.postgame.award_ceremony.prototype_framework.Manager;
 import olympic.main.postgame.medaltable.MedalTable;
 import olympic.scene.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -36,28 +38,31 @@ public class CeremonyScene implements Scene {
     public void play() {
 
         System.out.println("\nclassname: (CeremonyScene) method: (play) action: (颁奖仪式场景开始) ");
-        System.out.println("【颁奖仪式】");
-        System.out.println("女士们先生们，很荣幸为您呈现本场比赛的颁奖典礼。");
-        System.out.println("在颁奖典礼之前，我们将在奖牌工厂向您展示奥运奖牌的制作过程...");
+        List<String> ceremonyInitPrintBlock = new ArrayList<String>();
+        ceremonyInitPrintBlock.add("颁奖仪式");
+        ceremonyInitPrintBlock.add("女士们先生们，很荣幸为您呈现本场比赛的颁奖典礼。");
+        ceremonyInitPrintBlock.add("在颁奖典礼之前，我们将在奖牌工厂向您展示奥运奖牌的制作过程。");
 
-//        try {
-//            Thread.sleep(1000);
-//        } catch (InterruptedException ex) {
-//            Thread.currentThread().interrupt();
-//        }
-        MedalMaking medalMaking = new MedalMaking();
-//        try {
-//            Thread.sleep(1000);
-//        } catch (InterruptedException ex) {
-//            Thread.currentThread().interrupt();
-//        }
+        PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
+        printBlockFormat.printFormatMiddleScreen(ceremonyInitPrintBlock,true);
 
-        System.out.println("\nclassname: (CeremonyScene) method: (play) action: (为当前比赛选手颁奖) ");
-        System.out.println("欢迎回到颁奖仪式现场。");
-        System.out.println("我们由衷祝贺以下这些选手：");
+        new MedalMaking();
+
+        System.out.println("\nclassname: (CeremonyScene) method: (play) action: (展示奖牌场景) \n");
+
+        List<String> ceremonyPresentPrintBlock = new ArrayList<String>();
+        ceremonyPresentPrintBlock.add("颁发奖牌");
+        ceremonyPresentPrintBlock.add("让我们由衷祝贺奥林匹克奖牌获得者。");
+        printBlockFormat.printFormatMiddleScreen(ceremonyPresentPrintBlock,true);
         
         Manager manager = new Manager();
         new MedalPresenting(manager, goldPlayer, silverPlayer, bronzePlayer);
+
+        List<String> ceremonyEndingPrintBlock = new ArrayList<String>();
+        ceremonyEndingPrintBlock.add("升国旗，奏国歌");
+        ceremonyEndingPrintBlock.add("请全体肃立，升");
+        printBlockFormat.printFormatMiddleScreen(ceremonyEndingPrintBlock,true);
+
         System.out.println("请全体起立，升国旗，奏国歌");
         System.out.println("本场颁奖仪式已经结束，请有序离场，并带好您的随身物品。");
         MedalTable.getInstance().printMedalTable();
