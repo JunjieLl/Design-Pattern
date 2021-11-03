@@ -1,4 +1,4 @@
-package main.java.olympic.scene;
+package olympic.scene;
 
 
 import olympic.main.postgame.award_ceremony.prototype_framework.Manager;

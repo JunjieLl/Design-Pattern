@@ -100,6 +100,7 @@ public class Director {
                     System.out.println(name);
                 }
                 System.out.println("请输入您想观看的比赛");
+
                 while (true){
                     String gameName = input.next();
                     if (!gameNames.get(className).contains(gameName)){
@@ -118,6 +119,7 @@ public class Director {
                         System.out.println("比赛名有误，请重新输入：");
                     }
                 }
+                
             }else {
                 System.out.print("没有此比赛，请重新选择：");
             }
