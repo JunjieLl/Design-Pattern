@@ -28,6 +28,11 @@ public abstract class Round extends Valve {
         return this.advancedTeams;
     }
 
+    /**
+     * 设置下一轮比赛
+     * @param valve 下一轮比赛
+     * @return 下一轮比赛
+     */
     @Override
     public Valve setNext(Valve valve) {
             next = (Round)valve;

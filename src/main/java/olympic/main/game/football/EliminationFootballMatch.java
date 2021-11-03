@@ -53,10 +53,18 @@ public class EliminationFootballMatch extends FootballMatch {
         this.observer = o;
     }
 
+    /**
+     * 获取球队1的点球得分
+     * @return
+     */
     public int getPenaltyScore1() {
         return penaltyScore1;
     }
 
+    /**
+     * 获取球队2的点球得分
+     * @return
+     */
     public int getPenaltyScore2() {
         return penaltyScore2;
     }

@@ -7,6 +7,7 @@ import olympic.main.person.athlete.footballathlete.FootballTeam;
 import java.util.List;
 
 /**
+ * 一场足球比赛
  * Observer 模式
  * Template Method 模式
  */

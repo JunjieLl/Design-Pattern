@@ -30,7 +30,4 @@ public class FootballTeam extends TeamAthlete {
         this.id = id;
     }
 
-//    public static FootballTeam convertFromAthlete(Athlete athlete) {
-//        return new FootballTeam(athlete.getName(), athlete.getNation(), new ArrayList<>());
-//    }
 }

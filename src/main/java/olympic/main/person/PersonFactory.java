@@ -191,7 +191,7 @@ public class PersonFactory {
 
         try {
 
-            InputStream in = new BufferedInputStream(new FileInputStream("./src/olympic/main/person/message.properties"));
+            InputStream in = new BufferedInputStream(new FileInputStream("./src/main/java/olympic/main/person/message.properties"));
             this.prop.load(in);     ///加载属性列表
             Iterator<String> it = this.prop.stringPropertyNames().iterator();
             //生成所有比赛
