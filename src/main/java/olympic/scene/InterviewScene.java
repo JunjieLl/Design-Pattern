@@ -8,18 +8,18 @@ import java.util.*;
 public class InterviewScene implements Scene {
     private final Interviewee interviewee;
     private final List<Interviewer> interviewers;
-    private final List<Listener> audience;
+    private final List<? extends Listener> audience;
     private final int maxQuestionNum;
 
     InterviewScene(Interviewee interviewee, List<Interviewer> interviewers) {
         this(interviewee, interviewers, new ArrayList<>());
     }
 
-    InterviewScene(Interviewee interviewee, List<Interviewer> interviewers, List<Listener> audience) {
+    InterviewScene(Interviewee interviewee, List<Interviewer> interviewers, List<? extends Listener> audience) {
         this(interviewee, interviewers, audience, 10);
     }
 
-    InterviewScene(Interviewee interviewee, List<Interviewer> interviewers, List<Listener> audience, int maxQuestionNum) {
+    InterviewScene(Interviewee interviewee, List<Interviewer> interviewers, List<? extends Listener> audience, int maxQuestionNum) {
         this.interviewee = interviewee;
         this.interviewers = interviewers;
         this.audience = audience;
