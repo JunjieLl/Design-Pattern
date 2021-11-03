@@ -21,24 +21,19 @@ public class SceneFactory {
     public Scene getScene(String name){
         switch (name){
             case "Relays":
-                return new TrackGameScene("Relays");
             case "Marathon":
-                return new TrackGameScene("Marathon");
             case "Sprints":
-                return new TrackGameScene("Sprints");
             case "Hurdling":
-                return new TrackGameScene("Hurdling");
+            case "Breaststroke":
+            case "Freestyle":
+            case "Backstroke":
+            case "Butterflystroke":
+                return new TrackGameScene(name);
             case "Pingpong":
-                return new PingpongGameScene("乒乓球单人赛");
             case "PingpongTeam":
-                return new PingpongGameScene("乒乓球混双");
-            case "Diving":
-                return new DivingGameScene("单人三米");
-            case "DivingTeam":
-                return new DivingGameScene("双人三米");
+                return new PingpongGameScene(name);
             case "FootballTeam":
                 return new FootballScene();
-
             default:
                 return null;
         }

@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class PingpongGameScene implements Scene{
     public PingpongGameScene(String name) {
-        if (name == "乒乓球单人赛"){
+        if (name == "Pingpong"){
             pingpongPipeline = new PingpongPipeline("乒乓球单人赛",
                     PreCompetitionSystemFacade.getInstance().preCompetitionSystemFacade("Pingpong"));
         }else{
