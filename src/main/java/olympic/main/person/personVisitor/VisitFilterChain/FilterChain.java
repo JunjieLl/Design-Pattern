@@ -8,12 +8,24 @@ import olympic.main.person.personVisitor.FilterVisitor;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 过滤器链，保存着多个过滤器，根据特定顺序执行（这里是顺序执行）每个过滤器
  * 是过滤器模式的一部分
  */
 public class FilterChain extends FilterVisitor {
+	
+	/**
+	 * 给出所需要的输出列表
+	 *
+	 * @param num 第num个输出列表对应着第num个过滤链
+	 * @return 第num个filter对应的输出列表
+	 */
+	public List<String> getShowList(int num){
+		return filters.get(num).getStringList();
+	}
+	
 	/**
 	 * 过滤器链，存储了多个过滤器
 	 */
@@ -47,10 +59,11 @@ public class FilterChain extends FilterVisitor {
 	 */
 	@Override
 	public ArrayList<IndividualAthlete> visit(IndividualAthleteList individualAthleteList, String gameName) {
+		System.out.println("classname: (FilterChain) method: (visit) " +
+				"action: (让尿检不合格以及感染新冠病毒的运动员退赛，使用了过滤器模式) ");
 		ArrayList<IndividualAthlete> res = null;
 		for (FilterVisitor filterVisitor : filters) {
-			System.out.println(filterVisitor.getFilterName());
-			pressEnterToContinue();
+
 			res = filterVisitor.visit(individualAthleteList, gameName);
 			individualAthleteList.setAthletes(res);
 			System.out.println();
@@ -67,10 +80,11 @@ public class FilterChain extends FilterVisitor {
 	 */
 	@Override
 	public ArrayList<TeamAthlete> visit(TeamAthleteList teamAthleteList, String gameName) {
+		System.out.println("classname: (FilterChain) method: (visit) " +
+				"action: (让尿检不合格以及感染新冠病毒的运动员退赛，使用了Filter模式) ");
 		ArrayList<TeamAthlete> res = null;
 		for (FilterVisitor filterVisitor : filters) {
-			System.out.println(filterVisitor.getFilterName());
-			pressEnterToContinue();
+
 			res = filterVisitor.visit(teamAthleteList, gameName);
 			teamAthleteList.setAthletes(res);
 			System.out.println();
@@ -78,15 +92,4 @@ public class FilterChain extends FilterVisitor {
 		return res;
 	}
 	
-	/**
-	 * 用于实现停顿功能，需要用户在按下回车后再继续执行程序
-	 */
-	private void pressEnterToContinue() {
-		System.out.print("	按下回车继续:");
-		try {
-			System.in.read();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
 }

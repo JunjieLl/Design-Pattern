@@ -45,9 +45,11 @@ public abstract class IndividualAthlete extends Athlete implements Speechable {
      *
      * @param num               需要修改的尿样瓶下标
      * @param urineTestStrategy 尿检策略
+     * @param isPrint 控制是否输出classname语句
+     * @return 尿检策略的详情
      */
-    public void setUrineTestStrategy(int num, int urineTestStrategy) {
-        urineBottles.get(num).setUrineTestStrategy(urineTestStrategy);
+    public String setUrineTestStrategy(int num, int urineTestStrategy, boolean isPrint) {
+        return urineBottles.get(num).setUrineTestStrategy(urineTestStrategy, isPrint);
     }
 
     /**
@@ -67,19 +69,26 @@ public abstract class IndividualAthlete extends Athlete implements Speechable {
 
     /**
      * 为运动员设置检察员
+     *
+     * @param isPrint 控制是否输出classname语句
      */
-    public void setUrineTestProcurator() {
+    public void setUrineTestProcurator(boolean isPrint) {
         if (urineTestProcurator == null) {
             int num = (int) (Math.random() * 100);
-            UrineTestProcuratorFactory urineTestProcuratorFactory = UrineTestProcuratorFactory.getInstance();
+            UrineTestProcuratorFactory urineTestProcuratorFactory = UrineTestProcuratorFactory.getInstance(isPrint);
             urineTestProcurator = urineTestProcuratorFactory.getUrineTestProcurator(num);
         }
     }
 
     /**
      * 获取该运动员对应的检察员
+<<<<<<< Updated upstream:src/main/java/olympic/main/person/athlete/IndividualAthlete.java
      *
      * @return
+=======
+     * 
+     * @return 尿检检察员
+>>>>>>> Stashed changes:src/olympic/main/person/athlete/IndividualAthlete.java
      */
     public UrineTestProcurator getUrineTestProcurator() {
         return urineTestProcurator;

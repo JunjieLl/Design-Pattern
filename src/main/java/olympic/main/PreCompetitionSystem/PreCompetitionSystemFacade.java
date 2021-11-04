@@ -1,4 +1,4 @@
-package olympic.main.PreCompetitionSystem;
+package main.java.olympic.main.PreCompetitionSystem;
 
 import olympic.Utils.PrintBlockFormat;
 import olympic.main.person.PersonFactory;
