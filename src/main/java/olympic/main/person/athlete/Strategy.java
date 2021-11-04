@@ -1,7 +1,7 @@
-package olympic.main.person.athlete.pingong.Strategy;
+package olympic.main.person.athlete;
 
 import olympic.main.person.athlete.Athlete;
-import olympic.main.person.athlete.pingong.CallBack;
+import olympic.main.person.athlete.CallBack;
 
 /**
  * 打球的策略

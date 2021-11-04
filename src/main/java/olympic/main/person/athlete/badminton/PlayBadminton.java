@@ -1,11 +1,11 @@
-package olympic.main.person.athlete.pingong;
+package olympic.main.person.athlete.badminton;
 
 import olympic.main.person.athlete.CallBack;
 
 /**
  * Pingpongathlete和PingpongTeam继承
  */
-public interface PlayPingpong extends CallBack {
+public interface PlayBadminton extends CallBack {
 
     /**
      * 对打

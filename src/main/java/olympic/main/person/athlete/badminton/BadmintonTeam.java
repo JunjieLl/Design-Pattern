@@ -1,22 +1,24 @@
-package olympic.main.person.athlete.pingong;
+package olympic.main.person.athlete.badminton;
 
 import olympic.main.director.Mode;
+import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.CallBack;
-import olympic.main.person.athlete.IndividualAthlete;
-import olympic.main.person.athlete.pingong.Strategy.PingpongDefendStrategy;
-import olympic.main.person.athlete.pingong.Strategy.PingpongOffenseStrategy;
 import olympic.main.person.athlete.Strategy;
+import olympic.main.person.athlete.TeamAthlete;
+import olympic.main.person.athlete.badminton.Strategy.BadmintonDefendStrategy;
+import olympic.main.person.athlete.badminton.Strategy.BadmintonOffenseStrategy;
 
+import java.util.List;
 import java.util.Random;
 
-public class PingpongAthlete extends IndividualAthlete implements PlayPingpong {
-    public PingpongAthlete(String name, String nation) {
-        super(name, nation);
+public class BadmintonTeam extends TeamAthlete implements PlayBadminton {
+    public BadmintonTeam(String name, String nation, List<Athlete> athleteList) {
+        super(name, nation, athleteList);
         if (random.nextInt() % 2 == 0) {
-            this.strategy = new PingpongOffenseStrategy();
+            this.strategy = new BadmintonOffenseStrategy();
             strategy.setOwnerAthlete(this);
         } else {
-            this.strategy = new PingpongDefendStrategy();
+            this.strategy = new BadmintonDefendStrategy();
             strategy.setOwnerAthlete(this);
         }
         if (nation == "CHN") {
@@ -81,8 +83,9 @@ public class PingpongAthlete extends IndividualAthlete implements PlayPingpong {
     @Override
     public Boolean call(CallBack oppoent) {
         if (Mode.getShowDetail()) {
-            System.out.println("classname: (PingpongAthlete) method: (call) action: (回调模式中选手运用回调函数进行对打) ");
+            System.out.println("classname: (PingpongAthlete) method: (call) action: (回调模式中" + ((Athlete) oppoent).getName() + "运用回调函数进行对打) ");
         }
-        return this.playWith((PingpongAthlete) oppoent);
+        return this.playWith(oppoent);
     }
+
 }
