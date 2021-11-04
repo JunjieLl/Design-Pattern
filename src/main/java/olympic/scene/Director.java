@@ -9,7 +9,7 @@ import java.util.*;
  * 导演
  * 设计模式：Singleton
  */
-public class Director {
+final public class Director {
     private Director() {
 //        gameNames = new ArrayList<>(PersonFactory.getInstance().getNames());
         Map<String, List<String>> tempGameNames = PersonFactory.getInstance().getCatalogueMap();
