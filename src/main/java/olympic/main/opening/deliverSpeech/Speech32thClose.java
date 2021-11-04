@@ -57,7 +57,7 @@ public class Speech32thClose extends DeliverSpeech {   //具体子类
 
     @Override
     /**
-     * 表姐接口模式，用于检查是否能够发言
+     * 标记接口模式，用于检查是否能够发言
      */
     void getOOCPSpeech() {
         if (OOCP instanceof Speechable) {

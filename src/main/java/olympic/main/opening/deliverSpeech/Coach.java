@@ -5,6 +5,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 教练类
+ */
 public class Coach extends Interviewee implements Speechable {
     private final static Map<String, List<String>> questionsToAnswers = new HashMap<>();
 
@@ -33,6 +36,10 @@ public class Coach extends Interviewee implements Speechable {
     public void update(String content) {
         memory.add(content);
     }
+
+    /**
+     * 开/闭幕式发言方法
+     */
     public void deliverSpeech(){
         System.out.println("大家好，我是Coach"+this.getName()+",我会严格遵循竞赛规则和裁判员纪律！");
     }
