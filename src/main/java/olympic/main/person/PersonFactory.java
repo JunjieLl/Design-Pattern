@@ -1,6 +1,8 @@
 package olympic.main.person;
 
 import olympic.main.person.athlete.Athlete;
+import olympic.main.person.athlete.badminton.BadmintonAthlete;
+import olympic.main.person.athlete.badminton.BadmintonTeam;
 import olympic.main.person.athlete.divingathlete.DivingAthlete;
 import olympic.main.person.athlete.divingathlete.DivingTeam;
 import olympic.main.person.athlete.footballathlete.FootballTeam;
@@ -288,6 +290,35 @@ public class PersonFactory {
                         hMap.put(i, team);
                         break;
                     case "FootballTeam":
+                        for (int j = 0; j < b; j++) {
+                            athleteList = new ArrayList<>();
+                            messages = nameFactory.getMessageList(c);
+                            for (int k = 0; k < c; k++) {
+                                tempNameAthlete = new TrackAthlete(messages.get(k).name, messages.get(k).nation);
+                                athleteList.add(tempNameAthlete);
+                                nameMap.put(messages.get(k).name, tempNameAthlete);
+                                addNationMap(messages.get(k).nation, tempNameAthlete);
+                            }
+                            team.add(new FootballTeam(messages.get(c).name, messages.get(0).nation, athleteList));
+                        }
+                        hMap.put(i, team);
+                        break;
+
+                    case "VolleyballTeam":
+                        for (int j = 0; j < b; j++) {
+                            athleteList = new ArrayList<>();
+                            messages = nameFactory.getMessageList(c);
+                            for (int k = 0; k < c; k++) {
+                                tempNameAthlete = new TrackAthlete(messages.get(k).name, messages.get(k).nation);
+                                athleteList.add(tempNameAthlete);
+                                nameMap.put(messages.get(k).name, tempNameAthlete);
+                                addNationMap(messages.get(k).nation, tempNameAthlete);
+                            }
+                            team.add(new FootballTeam(messages.get(c).name, messages.get(0).nation, athleteList));
+                        }
+                        hMap.put(i, team);
+                        break;
+                    case "BasketballTeam":
                         for (int j = 0; j < b; j++) {
                             athleteList = new ArrayList<>();
                             messages = nameFactory.getMessageList(c);
