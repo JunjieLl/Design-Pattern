@@ -1,12 +1,12 @@
-package olympic.main.game.basketball;
+package olympic.main.game.football;
 
 /**小组赛积分榜
  * Observer模式
  * Singleton模式
  */
-public class ScoreBoard implements Observer {
+public class FootballScoreBoard implements Observer {
 
-    private static ScoreBoard singleton = new ScoreBoard();
+    private static FootballScoreBoard singleton = new FootballScoreBoard();
     private int[] score;
     private int[] goalDifference;
     private int[] goal;
@@ -15,14 +15,17 @@ public class ScoreBoard implements Observer {
      * 获取单例实例
      * @return singleton
      */
-    public static ScoreBoard getInstance() {
+    public static FootballScoreBoard getInstance() {
         return singleton;
     }
 
-    private ScoreBoard() {
+    private FootballScoreBoard() {
         this.score = new int[16];
         this.goalDifference = new int[16];
         this.goal = new int[16];
+        for (int i = 0; i < 12; ++i) {
+            score[i] = goalDifference[i] = goal[i] = 0;
+        }
     }
 
     /**
@@ -31,7 +34,7 @@ public class ScoreBoard implements Observer {
      * @param game 完成的比赛
      */
     @Override
-    public void update(BasketballMatch game) {
+    public void update(FootballMatch game) {
         int score1 = game.getScore1(), score2 = game.getScore2();
         int id1 = game.getTeam1().getId(), id2 = game.getTeam2().getId();
         if (score1 > score2) {

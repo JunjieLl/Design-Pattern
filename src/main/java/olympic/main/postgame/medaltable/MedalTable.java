@@ -24,7 +24,7 @@ public class MedalTable {
     }
 
     public void printMedalTable() {
-        System.out.println("\n========奖牌榜|Medal Table==========\t" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss a").format(new Date(System.currentTimeMillis())));
+        System.out.println("\n==========奖牌榜 | Medal Table==========\t" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss a").format(new Date(System.currentTimeMillis())));
         Collections.sort(countries);
         countries.stream().map(Country::toString).forEach(System.out::println);
     }
