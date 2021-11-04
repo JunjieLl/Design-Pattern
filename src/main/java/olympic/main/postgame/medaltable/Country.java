@@ -27,7 +27,7 @@ public class Country implements Comparable<Country> {
             return difference;
         }
 
-        return o.countryCode.compareTo(countryCode);
+        return countryCode.compareTo(o.countryCode);
     }
 
 
