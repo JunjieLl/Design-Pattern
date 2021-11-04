@@ -2,14 +2,19 @@ package olympic.scene;
 
 import olympic.Utils.PrintBlockFormat;
 import olympic.main.interview.InterviewMaker;
+import olympic.main.interview.builder.InternetReportBuilder;
 import olympic.main.interview.builder.NewspaperBuilder;
 import olympic.main.interview.questionstrategy.AfterInterviewAthleteStrategy;
+import olympic.main.interview.questionstrategy.AfterInterviewCoachStrategy;
+import olympic.main.opening.deliverSpeech.Coach;
 import olympic.main.person.PersonFactory;
 import olympic.main.person.athlete.Athlete;
 import olympic.main.person.interview.Interviewer;
 import olympic.main.postgame.award_ceremony.*;
 import olympic.main.postgame.award_ceremony.prototype_framework.Manager;
 import olympic.main.postgame.medaltable.MedalTable;
+import olympic.main.pressconference.PressConferenceMaker;
+import olympic.main.pressconference.questionstrategy.PressConferenceStrategy;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,7 +55,7 @@ public class CeremonyScene implements Scene {
     public void play() {
 
         System.out.println("\nclassname: (CeremonyScene) method: (play) action: (颁奖仪式场景开始) ");
-        List<String> ceremonyInitPrintBlock = new ArrayList<String>();
+        List<String> ceremonyInitPrintBlock = new ArrayList<>();
         ceremonyInitPrintBlock.add("颁奖仪式总流程");
         ceremonyInitPrintBlock.add("1. 展示奖牌制作过程");
         ceremonyInitPrintBlock.add("2. 为获奖者颁发奖牌");
@@ -65,7 +70,7 @@ public class CeremonyScene implements Scene {
 
         System.out.println("\nclassname: (CeremonyScene) method: (play) action: (展示奖牌场景) \n");
 
-        List<String> ceremonyPresentPrintBlock = new ArrayList<String>();
+        List<String> ceremonyPresentPrintBlock = new ArrayList<>();
         ceremonyPresentPrintBlock.add("颁发奖牌");
         ceremonyPresentPrintBlock.add("让我们由衷祝贺奥林匹克奖牌获得者。");
         printBlockFormat.printFormatMiddleScreen(ceremonyPresentPrintBlock,true);
@@ -73,24 +78,116 @@ public class CeremonyScene implements Scene {
         Manager manager = new Manager();
         new MedalPresenting(manager, goldTitle, silverTitle, bronzeTitle);
 
-        List<String> ceremonyEndingPrintBlock = new ArrayList<String>();
+        List<String> ceremonyEndingPrintBlock = new ArrayList<>();
         ceremonyEndingPrintBlock.add("升国旗，奏国歌");
         ceremonyEndingPrintBlock.add("请全体肃立，升"+goldPlayer.getNation()+"国旗，奏"+goldPlayer.getNation()+"国歌。");
-        ceremonyEndingPrintBlock.add("本场颁奖仪式已经结束，以下为您展示最新的奖牌榜。");
+        ceremonyEndingPrintBlock.add("本场颁奖仪式已经结束，以下是赛后采访环节。");
         printBlockFormat.printFormatMiddleScreen(ceremonyEndingPrintBlock,true);
 
-        List<Interviewer> ceremonyInterviewer = PersonFactory.getInstance().getInterviews();
-        List<Interviewer> goldPlayerInterviewer = new ArrayList<Interviewer>();
-        int interviewerIndex = new Random().nextInt(100);
-        Interviewer goldInterview1 = ceremonyInterviewer.get(interviewerIndex);
-        goldInterview1.setStrategy(new AfterInterviewAthleteStrategy());
-        goldInterview1.setReportBuilder(new NewspaperBuilder(goldInterview1.getName(),goldPlayer.getName()));
-        goldPlayerInterviewer.add(goldInterview1);
-        InterviewMaker.makeInterview(goldPlayer, goldPlayerInterviewer, PersonFactory.getInstance().getAthletes("Marathon"),5);
-//再加入对教练的采访
+        List<String> interviewInitPrintBlock = new ArrayList<>();
+        interviewInitPrintBlock.add("赛后采访");
+        interviewInitPrintBlock.add("下面是纸媒和新媒体记者对金牌得主的采访，您可以在采访后看到他们发布的报道。");
+        printBlockFormat.printFormatMiddleScreen(interviewInitPrintBlock,true);
+
+        buildInterview();
+
+        List<String> pcInitPrintBlock = new ArrayList<>();
+        pcInitPrintBlock.add("新闻发布会");
+        pcInitPrintBlock.add("下面是本场比赛的新闻发布会");
+        printBlockFormat.printFormatMiddleScreen(pcInitPrintBlock,true);
+
+        buildPressConference();
+
+        List<String> medalTableInitPrintBlock = new ArrayList<>();
+        medalTableInitPrintBlock.add("奖牌榜");
+        medalTableInitPrintBlock.add("以下是目前的奖牌榜");
+        printBlockFormat.printFormatMiddleScreen(medalTableInitPrintBlock,true);
+
         MedalTable.getInstance().printMedalTable();
         System.out.println("\n");
     }
+
+    private void buildInterview(){
+        List<Interviewer> ceremonyInterviewer = PersonFactory.getInstance().getInterviews();
+        List<Interviewer> goldInterviewers = new ArrayList<Interviewer>();
+        int interviewerIndex = new Random().nextInt(50);
+
+        Interviewer goldInterviewerNewpaper = ceremonyInterviewer.get(interviewerIndex);
+        goldInterviewerNewpaper.setStrategy(new AfterInterviewAthleteStrategy());
+        goldInterviewerNewpaper.setReportBuilder(new NewspaperBuilder(goldInterviewerNewpaper.getName(),goldPlayer.getName()));
+
+        Interviewer goldInterviewerInternet = ceremonyInterviewer.get(interviewerIndex+1);
+        goldInterviewerInternet.setStrategy(new AfterInterviewAthleteStrategy());
+        goldInterviewerInternet.setReportBuilder(new InternetReportBuilder(goldInterviewerInternet.getName(),goldPlayer.getName()));
+
+        goldInterviewers.add(goldInterviewerInternet);
+        goldInterviewers.add(goldInterviewerNewpaper);
+
+        List<String> goldInterviewPrintBlock = new ArrayList<>();
+        goldInterviewPrintBlock.add("金牌获奖者采访");
+        goldInterviewPrintBlock.add("被采访人："+goldPlayer.getName() +" 采访人：纸媒记者"+ goldInterviewerNewpaper.getName()+ "，新媒体记者"+ goldInterviewerInternet.getName());
+
+        PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
+        printBlockFormat.printFormatLeftScreen(goldInterviewPrintBlock,true);
+        InterviewMaker.makeInterview(goldPlayer, goldInterviewers, PersonFactory.getInstance().getAthletes("Marathon"),3);
+
+        Coach intervieweeCoach = PersonFactory.getInstance().getCoach();
+
+        List<Interviewer> coachInterviewers = new ArrayList<Interviewer>();
+        Interviewer coachInterviewerNewspaper = ceremonyInterviewer.get(interviewerIndex+2);
+        coachInterviewerNewspaper.setStrategy(new AfterInterviewCoachStrategy());
+        coachInterviewerNewspaper.setReportBuilder(new NewspaperBuilder(coachInterviewerNewspaper.getName(),intervieweeCoach.getName()));
+
+        Interviewer coachInterviewerInternet = ceremonyInterviewer.get(interviewerIndex+3);
+        coachInterviewerInternet.setStrategy(new AfterInterviewAthleteStrategy());
+        coachInterviewerInternet.setReportBuilder(new InternetReportBuilder(coachInterviewerInternet.getName(),intervieweeCoach.getName()));
+
+        coachInterviewers.add(coachInterviewerInternet);
+        coachInterviewers.add(coachInterviewerNewspaper);
+
+        List<String> coachInterviewPrintBlock = new ArrayList<>();
+        coachInterviewPrintBlock.add("裁判员采访");
+        coachInterviewPrintBlock.add("被采访者："+intervieweeCoach.getName() +" | 采访人：纸媒记者"+ coachInterviewerNewspaper.getName()+ "、新媒体记者"+ coachInterviewerInternet.getName());
+        printBlockFormat.printFormatLeftScreen(coachInterviewPrintBlock,true);
+
+        InterviewMaker.makeInterview(intervieweeCoach, coachInterviewers, PersonFactory.getInstance().getAthletes("Marathon"),10);
+    }
+
+    private void buildPressConference(){
+        List<Interviewer> ceremonyInterviewer = PersonFactory.getInstance().getInterviews();
+        List<Interviewer> pcInterviewers = new ArrayList<>();
+        int interviewerIndex = new Random().nextInt(50);
+
+        Interviewer pcInterviewer_1 = ceremonyInterviewer.get(interviewerIndex);
+        pcInterviewer_1.setStrategy(new PressConferenceStrategy());
+        pcInterviewers.add(pcInterviewer_1);
+
+        Interviewer pcInterviewer_2 = ceremonyInterviewer.get(interviewerIndex+1);
+        pcInterviewer_2.setStrategy(new PressConferenceStrategy());
+        pcInterviewers.add(pcInterviewer_2);
+
+        Interviewer pcInterviewer_3 = ceremonyInterviewer.get(interviewerIndex+2);
+        pcInterviewer_3.setStrategy(new PressConferenceStrategy());
+        pcInterviewers.add(pcInterviewer_3);
+
+        Interviewer pcInterviewer_4 = ceremonyInterviewer.get(interviewerIndex+3);
+        pcInterviewer_4.setStrategy(new PressConferenceStrategy());
+        pcInterviewers.add(pcInterviewer_4);
+
+
+        List<String> coachInterviewPrintBlock = new ArrayList<>();
+        coachInterviewPrintBlock.add("新闻发布会");
+        coachInterviewPrintBlock.add("被提问方："+goldPlayer.getName() );
+        coachInterviewPrintBlock.add("提问人：");
+        coachInterviewPrintBlock.add("1."+pcInterviewer_1.getName()+"，来自 "+pcInterviewer_1.getNation());
+        coachInterviewPrintBlock.add("2."+pcInterviewer_2.getName()+"，来自 "+pcInterviewer_2.getNation());
+        coachInterviewPrintBlock.add("3."+pcInterviewer_3.getName()+"，来自 "+pcInterviewer_3.getNation());
+        coachInterviewPrintBlock.add("4."+pcInterviewer_4.getName()+"，来自 "+pcInterviewer_4.getNation());
+
+        PrintBlockFormat.getPrintFormat().printFormatLeftScreen(coachInterviewPrintBlock,true);
+        PressConferenceMaker.makePressConference(goldPlayer,pcInterviewers,PersonFactory.getInstance().getAthletes("Pingpong"),10 );
+    }
+
 
 }
 
