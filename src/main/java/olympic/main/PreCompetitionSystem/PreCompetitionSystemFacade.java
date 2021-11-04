@@ -228,7 +228,7 @@ public class PreCompetitionSystemFacade {
                 System.out.println("[不提供本环节的详细展示]");
             }
             else if (str.equals("3") || str.equals("5") || str.equals("6") || str.equals("7") || str.equals("8")) {
-                PrintBlockFormat.getPrintFormat().printFormatLeftScreen(showMap.get(new Integer(str)), true);
+                PrintBlockFormat.getPrintFormat().printFormatLeftScreen(showMap.get(Integer.parseInt(str)), true);
             }
             else if(str.equals("help")){
                     printHelp();
