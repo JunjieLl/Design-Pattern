@@ -40,10 +40,10 @@ public class ChoreHandlingScene implements Scene {
 
         printBlockFormat.printFormatMiddleScreen(choreHandlingPrintBlock,true);
         System.out.println("正在利用责任链处理杂务...");
-        Support security = new SecuritySupport("安保小组",1);
-        Support cleaning = new SecuritySupport("保洁小组",2);
-        Support audience = new SecuritySupport("观众辅助小组",3);
-        Support other = new SecuritySupport("机动小组",4);
+        Support security = new SecuritySupport("安保小组");
+        Support cleaning = new CleaningSupport("保洁小组");
+        Support audience = new AudienceSupport("观众辅助小组");
+        Support other = new OtherSupport("机动小组");
 
         //设置责任链.
         audience.setNext(cleaning).setNext(security).setNext(other);

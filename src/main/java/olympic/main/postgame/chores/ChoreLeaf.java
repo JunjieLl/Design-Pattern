@@ -40,7 +40,7 @@ public class ChoreLeaf extends ChoreComponent {
 
     @Override
     protected void printList(String prefix) {
-        List<String> choreLeafPrintBlock = new ArrayList<String>();
+        List<String> choreLeafPrintBlock = new ArrayList<>();
         System.out.println("\nclassname: (ChoreComposite) method: (printList) action: (组合模式显示单个杂务项) ");
         choreLeafPrintBlock.add("展示当前杂务及其所属");
         choreLeafPrintBlock.add(prefix + "/" + this);
@@ -57,6 +57,6 @@ public class ChoreLeaf extends ChoreComponent {
     }
 
     public String toString() {
-        return getName() + "\t" + "还剩" + getRemainTrouble() + "件事";
+        return "【"+getName()+"】" + "\t" + "还剩" + getRemainTrouble() + "件事";
     }
 }
