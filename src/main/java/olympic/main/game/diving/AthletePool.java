@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import olympic.main.person.athlete.Athlete;
-import olympic.scene.Mode;
+import olympic.main.director.Mode;
 
 import java.util.*;
 

@@ -1,4 +1,4 @@
-package olympic.scene;
+package olympic.main.director;
 
 
 /**

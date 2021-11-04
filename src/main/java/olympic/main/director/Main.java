@@ -1,11 +1,6 @@
-package olympic.scene;
-
-import olympic.main.person.PersonFactory;
-import olympic.main.person.athlete.Athlete;
+package olympic.main.director;
 
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {

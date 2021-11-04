@@ -1,6 +1,7 @@
 package olympic.scene;
 
 import olympic.main.PreCompetitionSystem.PreCompetitionSystemFacade;
+import olympic.main.director.Mode;
 import olympic.main.game.pingponggame.PingpongPipeline;
 
 import java.util.Scanner;

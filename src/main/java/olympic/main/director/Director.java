@@ -1,6 +1,7 @@
-package olympic.scene;
+package olympic.main.director;
 
 import olympic.main.person.PersonFactory;
+import olympic.scene.*;
 
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
