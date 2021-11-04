@@ -1,8 +1,8 @@
 package olympic.main.game.basketball.round;
 
 import olympic.main.game.basketball.BasketballMatch;
+import olympic.main.game.basketball.BasketballScoreBoard;
 import olympic.main.game.basketball.ScheduleIterator;
-import olympic.main.game.basketball.ScoreBoard;
 import olympic.main.person.athlete.basketballathlete.BasketballTeam;
 
 import java.util.ArrayList;
@@ -16,7 +16,7 @@ import java.util.List;
 public class GroupRound extends Round {
 
     // 小组赛积分榜
-    private ScoreBoard scoreBoard = ScoreBoard.getInstance();
+    private BasketballScoreBoard scoreBoard = BasketballScoreBoard.getInstance();
 
     /**
      * 进行所有小组赛并生成晋级名单
@@ -43,8 +43,8 @@ public class GroupRound extends Round {
         }
 
         int[] scores = scoreBoard.getScore();
-        int[] gains = scoreBoard.getGoalDifference();
-        int[] losses = scoreBoard.getGoal();
+        int[] gains = scoreBoard.getGain();
+        int[] losses = scoreBoard.getLoss();
 
         // 内部类，用于对各组球队进行排名
         class ScoreEntry {
