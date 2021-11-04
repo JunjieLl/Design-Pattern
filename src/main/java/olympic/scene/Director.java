@@ -84,7 +84,7 @@ final public class Director {
                 System.out.println("比赛名有误，请重新输入：");
                 continue;
             }
-            Scene scene = SceneFactory.getInstance().getScene(gameName);
+            Scene scene = SceneFactory.getScene(gameName);
             if (scene != null) {
                 scene.play();
                 gameNames.get(className).remove(gameName);

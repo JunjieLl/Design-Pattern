@@ -9,8 +9,8 @@ import java.util.Date;
 import java.util.List;
 
 public class MedalTable {
-    private static MedalTable medaltable = new MedalTable();
-    private List<Country> countries = new ArrayList<Country>();
+    private static final MedalTable medaltable = new MedalTable();
+    private final List<Country> countries = new ArrayList<>();
 
     private MedalTable() {
         List<String> nationList = PersonFactory.getInstance().getNations();
@@ -26,20 +26,18 @@ public class MedalTable {
     public void printMedalTable() {
         System.out.println("\n========奖牌榜|Medal Table==========\t" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss a").format(new Date(System.currentTimeMillis())));
         Collections.sort(countries);
-        for (int i = 0; i < countries.size(); i++) {
-            System.out.println(countries.get(i).toString());
-        }
+        countries.stream().map(Country::toString).forEach(System.out::println);
     }
 
     public void penalty(String countryCode, int rank) {
-        for (int i = 0; i < countries.size(); i++) {
-            if (countries.get(i).getCountryCode() == countryCode) {
+        for (Country country : countries) {
+            if (country.getCountryCode().equals(countryCode)) {
                 if (rank == 1) {
-                    countries.get(i).goldMinusOne();
+                    country.goldMinusOne();
                 } else if (rank == 2) {
-                    countries.get(i).silverMinusOne();
+                    country.silverMinusOne();
                 } else if (rank == 3) {
-                    countries.get(i).bronzeMinusOne();
+                    country.bronzeMinusOne();
                 }
             }
         }
@@ -47,7 +45,7 @@ public class MedalTable {
 
     public void addGold(String countryCode) {
         for (Country country : countries) {
-            if (country.getCountryCode() == countryCode) {
+            if (country.getCountryCode().equals(countryCode)) {
                 country.goldPlusOne();
             }
         }
@@ -55,7 +53,7 @@ public class MedalTable {
 
     public void addSilver(String countryCode) {
         for (Country country : countries) {
-            if (country.getCountryCode() == countryCode) {
+            if (country.getCountryCode().equals(countryCode)) {
                 country.silverPlusOne();
             }
         }
@@ -63,7 +61,7 @@ public class MedalTable {
 
     public void addBronze(String countryCode) {
         for (Country country : countries) {
-            if (country.getCountryCode() == countryCode) {
+            if (country.getCountryCode().equals(countryCode)) {
                 country.bronzePlusOne();
             }
         }
