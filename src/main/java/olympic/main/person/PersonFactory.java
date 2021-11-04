@@ -3,6 +3,7 @@ package olympic.main.person;
 import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.badminton.BadmintonAthlete;
 import olympic.main.person.athlete.badminton.BadmintonTeam;
+import olympic.main.person.athlete.basketballathlete.BasketballTeam;
 import olympic.main.person.athlete.divingathlete.DivingAthlete;
 import olympic.main.person.athlete.divingathlete.DivingTeam;
 import olympic.main.person.athlete.footballathlete.FootballTeam;
@@ -314,7 +315,7 @@ public class PersonFactory {
                                 nameMap.put(messages.get(k).name, tempNameAthlete);
                                 addNationMap(messages.get(k).nation, tempNameAthlete);
                             }
-                            team.add(new FootballTeam(messages.get(c).name, messages.get(0).nation, athleteList));
+                            team.add(new BasketballTeam(messages.get(c).name, messages.get(0).nation, athleteList));
                         }
                         hMap.put(i, team);
                         break;
@@ -328,7 +329,7 @@ public class PersonFactory {
                                 nameMap.put(messages.get(k).name, tempNameAthlete);
                                 addNationMap(messages.get(k).nation, tempNameAthlete);
                             }
-                            team.add(new FootballTeam(messages.get(c).name, messages.get(0).nation, athleteList));
+                            team.add(new BasketballTeam(messages.get(c).name, messages.get(0).nation, athleteList));
                         }
                         hMap.put(i, team);
                         break;
