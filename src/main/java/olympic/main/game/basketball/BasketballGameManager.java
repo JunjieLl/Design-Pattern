@@ -99,16 +99,10 @@ public class BasketballGameManager implements AbstractPipeline {
 
         // 季军赛
         System.out.println("\n【季军赛】");
-        EliminationBasketballMatch thirdPlaceGame = new EliminationBasketballMatch(tmp.get(0), tmp.get(1));
+        BasketballMatch thirdPlaceGame = new BasketballMatch(tmp.get(0), tmp.get(1));
         thirdPlaceGame.play();
 
         if (thirdPlaceGame.getScore1() > thirdPlaceGame.getScore2()) {
-            thirdPlaceGame.getTeam1().setRank("BasketballTeam", 3);
-            topThreeAthletes.set(2, thirdPlaceGame.getTeam1());
-        } else if (thirdPlaceGame.getScore1() < thirdPlaceGame.getScore2()) {
-            thirdPlaceGame.getTeam2().setRank("BasketballTeam", 3);
-            topThreeAthletes.set(2, thirdPlaceGame.getTeam2());
-        } else if (thirdPlaceGame.getPenaltyScore1() > thirdPlaceGame.getPenaltyScore2()) {
             thirdPlaceGame.getTeam1().setRank("BasketballTeam", 3);
             topThreeAthletes.set(2, thirdPlaceGame.getTeam1());
         } else {

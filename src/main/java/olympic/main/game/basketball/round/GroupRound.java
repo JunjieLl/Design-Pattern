@@ -1,7 +1,7 @@
 package olympic.main.game.basketball.round;
 
+import olympic.main.game.basketball.BasketballMatch;
 import olympic.main.game.basketball.ScheduleIterator;
-import olympic.main.game.basketball.GroupBasketballMatch;
 import olympic.main.game.basketball.ScoreBoard;
 import olympic.main.person.athlete.basketballathlete.BasketballTeam;
 
@@ -24,14 +24,14 @@ public class GroupRound extends Round {
     @Override
     public void start() {
         advancedTeams.clear();
-        System.out.println("classname: (GroupRound) method: (play) action: (进行足球小组赛) ");
+        System.out.println("classname: (GroupRound) method: (play) action: (进行篮球小组赛) ");
         System.out.println("\n【小组赛】");
         // 打乱顺序，分组
         Collections.shuffle(teams);
         for (int g = 0; g < 4; g++) {
             for (int i = 0; i < 4; i++) {
                 for (int j = i + 1; j < 4; j++) {
-                    schedule.addMatch(new GroupBasketballMatch(teams.get(4 * g + i), teams.get(4 * g + j)));
+                    schedule.addMatch(new BasketballMatch(teams.get(4 * g + i), teams.get(4 * g + j)));
                 }
             }
         }
