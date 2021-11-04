@@ -54,28 +54,58 @@ public class Speech32thClose extends DeliverSpeech {   //具体子类
     String getCoachRepre() {
         return coachRepre.getName();
     }
+
+    @Override
+    /**
+     * 表姐接口模式，用于检查是否能够发言
+     */
     void getOOCPSpeech() {
-        OOCP.deliverSpeech();
+        if (OOCP instanceof Speechable) {
+            OOCP.deliverSpeech();
+        } else {
+            throw new UnSpeachAble();
+        }
     }
 
     @Override
     void getIOCPSpeech() {
-        IOCP.deliverSpeech();
+        if (IOCP instanceof Speechable) {
+            IOCP.deliverSpeech();
+        } else {
+            throw new UnSpeachAble();
+        }
+
+
     }
 
     @Override
     void getHPSpeech() {
-        HP.deliverSpeech();
+        if (HP instanceof Speechable) {
+            HP.deliverSpeech();
+        } else {
+            throw new UnSpeachAble();
+        }
+
     }
 
     @Override
     void getAthleteRepreSpeech() {
-        athleteRepre.deliverSpeech();
+        if (athleteRepre instanceof Speechable) {
+            athleteRepre.deliverSpeech();
+        } else {
+            throw new UnSpeachAble();
+        }
+
     }
 
     @Override
     void getCoachRepreSpeech() {
-        coachRepre.deliverSpeech();
+        if (coachRepre instanceof Speechable) {
+            coachRepre.deliverSpeech();
+        } else {
+            throw new UnSpeachAble();
+        }
+
     }
 
 }
