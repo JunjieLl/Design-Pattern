@@ -1,0 +1,59 @@
+package olympic.main.postgame.award_ceremony;
+
+import olympic.Utils.PrintBlockFormat;
+import olympic.main.postgame.award_ceremony.medal_decorator.*;
+import olympic.main.postgame.award_ceremony.prototype_framework.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class GoldMedalPattern implements MedalProduct {
+    public GoldMedalPattern(){
+        System.out.println("\nclassname: (GoldMedalPattern) method: (GoldMedalPattern) action: (原型模式复刻金牌的样式生成刻字奖牌) \n");
+        List<String> goldDisplayBlock = new ArrayList<String>();
+        goldDisplayBlock.add("颁发金牌");
+        goldDisplayBlock.add("这块金色的奖牌上镌刻着比赛中取得第一名选手的名字和代表队。");
+        PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
+        printBlockFormat.printFormatLeftScreen(goldDisplayBlock,true);
+    }
+
+    public void use(String s) {
+
+        TitleDisplay td = new TitleDisplay();
+        td.add("TONGJI 2021");
+        td.add("GOLD   ");
+        td.add(s);
+        Display medalPattern =
+                new FullBorder(
+                        new SideBorder(
+                                new FullBorder(
+                                        new UpDownBorder(
+                                                new SideBorder(
+                                                        new UpDownBorder(
+                                                                new SideBorder(
+                                                                        td, '*'
+                                                                ),
+                                                                '='
+                                                        ),
+                                                        '|'
+                                                ),
+                                                '/'
+                                        )
+                                ),
+                                '@')
+                );
+        System.out.println("\033[1;33m");
+        medalPattern.show();
+        System.out.println("\033[0m \n");
+    }
+
+    public MedalProduct createClone() {
+        MedalProduct p = null;
+        try {
+            p = (MedalProduct) clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+        return p;
+    }
+}
