@@ -141,6 +141,7 @@ final public class Director {
             System.out.print("输入您想观看的大类(输入exit退出)：");
             String className = input.next();
             if (className.equalsIgnoreCase("exit")) {
+                startRemainingGames();
                 break;
             }
             List<String> names = gameNames.get(className);
