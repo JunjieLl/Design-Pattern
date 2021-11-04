@@ -22,27 +22,29 @@ public class NovelCoronavirusFilterVisitor extends FilterVisitor {
      */
     @Override
     public ArrayList<IndividualAthlete> visit(IndividualAthleteList individualAthleteList, String game) {
+        System.out.println("classname: (NovelCoronavirusFilterVisitor) method: (visit) " +
+                "action: (过滤感染新冠病毒的运动员个人，使用了Visitor模式以及Filter模式) ");
         ArrayList<IndividualAthlete> finalAthleteList = new ArrayList<>();
-        System.out.println("	^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+        stringList.add("新冠病毒检测");
         int count = 0;
         for (IndividualAthlete athlete : individualAthleteList.getAthletes()) {
             if (!athlete.getIsNovelCoronavirus()) {
                 finalAthleteList.add(athlete);
-            } else {
-                System.out.println("	^ 运动员" + athlete.getName() + "被检测出了新冠病毒，取消此次比赛资格。");
+            }
+            else {
+                stringList.add(" 运动员\" + athlete.getName() + \"被检测出了新冠病毒，取消此次比赛资格。");
                 count += 1;
                 athlete.setRank(game, -1);
             }
         }
         if (count == 0) {
-            System.out.println("	^ 所有运动员均未感染新冠病毒");
+            stringList.add(" 所有运动员均未感染新冠病毒");
         } else {
-            System.out.println("	^ 共有" + count + "位运动员感染了新冠病毒，被取消了比赛资格");
+            stringList.add(" 共有" + count + "位运动员感染了新冠病毒，被取消了比赛资格");
         }
-        System.out.println("	^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
         return finalAthleteList;
     }
-
+    
     /**
      * 用于选择出没有感染新冠病毒的运动员队伍数组
      *
@@ -52,14 +54,16 @@ public class NovelCoronavirusFilterVisitor extends FilterVisitor {
      */
     @Override
     public ArrayList<TeamAthlete> visit(TeamAthleteList teamAthleteList, String game) {
+        System.out.println("classname: (NovelCoronavirusFilterVisitor) method: (visit) " +
+                "action: (过滤感染新冠病毒的运动员队伍，使用了Visitor模式以及Filter模式) ");
         ArrayList<TeamAthlete> finalTeam = new ArrayList<>();
-        System.out.println("	^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+        stringList.add("新冠病毒检测");
         int count = 0;
         for (TeamAthlete team : teamAthleteList.getAthletes()) {
-            System.out.println("	^ 现在接受检查的队伍来自" + team.getNation() + "，队伍名为" + team.getName());
+            stringList.add(" 现在接受检查的队伍来自" + team.getNation() + "，队伍名为" + team.getName());
             boolean flag = true;
             for (Athlete athlete : team.getAthleteList()) {
-
+                
                 if (((IndividualAthlete) athlete).getIsNovelCoronavirus()) {
                     flag = false;
                     athlete.setRank(game, -1);
@@ -67,22 +71,23 @@ public class NovelCoronavirusFilterVisitor extends FilterVisitor {
             }
             if (flag) {
                 finalTeam.add(team);
-                System.out.println("	^ 所有队员均未感染新冠病毒");
-            } else {
-                System.out.println("	^ 队伍中有人感染新冠病毒，该队伍参赛资格作废");
+                stringList.add(" 所有队员均未感染新冠病毒");
+            }
+            else {
+                stringList.add(" 队伍中有人感染新冠病毒，该队伍参赛资格作废");
                 count += 1;
             }
-            System.out.println();
+            stringList.add("");
         }
         if (count == 0) {
-            System.out.println("	^ 所有队伍均未感染新冠病毒");
-        } else {
-            System.out.println("	^ 共有" + count + "个队伍感染了新冠病毒，被取消了比赛资格");
+            stringList.add(" 所有队伍均未感染新冠病毒");
         }
-        System.out.println("	^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+        else {
+            stringList.add(" 共有" + count + "个队伍感染了新冠病毒，被取消了比赛资格");
+        }
         return finalTeam;
     }
-
+    
     /**
      * 获取该过滤器的名字
      *
