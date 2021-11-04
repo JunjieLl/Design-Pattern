@@ -3,6 +3,7 @@ package olympic.main.game.pingponggame;
 import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.pingong.CallBack;
 import olympic.main.person.athlete.pingong.PlayPingpong;
+import olympic.scene.Mode;
 
 import java.util.ArrayList;
 import java.util.HashMap;

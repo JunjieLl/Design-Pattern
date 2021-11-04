@@ -3,11 +3,12 @@ package olympic.scene;
 import olympic.main.person.PersonFactory;
 import olympic.main.person.athlete.Athlete;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
 
         Director.getInstance().nextScene(() -> System.out.println("奥林匹克运动会开始了！"));
 

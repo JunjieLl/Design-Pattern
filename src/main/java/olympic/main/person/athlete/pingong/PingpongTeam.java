@@ -1,6 +1,6 @@
 package olympic.main.person.athlete.pingong;
 
-import olympic.main.game.pingponggame.Mode;
+import olympic.scene.Mode;
 import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.TeamAthlete;
 import olympic.main.person.athlete.pingong.Strategy.PingpongDefendStrategy;

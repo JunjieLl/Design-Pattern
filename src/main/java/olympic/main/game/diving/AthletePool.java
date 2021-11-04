@@ -8,9 +8,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import olympic.main.game.pingponggame.Mode;
-import olympic.main.person.PersonFactory;
 import olympic.main.person.athlete.Athlete;
+import olympic.scene.Mode;
 
 import java.util.*;
 
@@ -147,10 +146,12 @@ public class AthletePool {
      * 设置是否展示细节
      */
     public void showDetail() {
-        System.out.println("【跳水Scene】请选择是否展示细节，输入true展示细节，输入其他不展示:");
-        Scanner input = new Scanner(System.in);
-        if (input.next().equals("true")) {
-            this.viewDetail = true;
+        if (Mode.getNeedDetail()) {
+            System.out.println("【跳水Scene】请选择是否展示细节，输入true展示细节，输入其他不展示:");
+            Scanner input = new Scanner(System.in);
+            if (input.next().equals("true")) {
+                Mode.setShowDetail(true);
+            }
         }
     }
 
@@ -160,7 +161,7 @@ public class AthletePool {
      * @return viewDetail 是否展示细节指令
      */
     public boolean getDetail() {
-        return this.viewDetail;
+        return Mode.getShowDetail();
     }
 
     /**

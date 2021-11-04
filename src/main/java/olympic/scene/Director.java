@@ -1,8 +1,9 @@
 package olympic.scene;
 
-import olympic.main.game.pingponggame.Mode;
 import olympic.main.person.PersonFactory;
 
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
 import java.util.*;
 
 /**
@@ -11,7 +12,6 @@ import java.util.*;
  */
 public class Director {
     private Director() {
-//        gameNames = new ArrayList<>(PersonFactory.getInstance().getNames());
         Map<String, List<String>> tempGameNames = PersonFactory.getInstance().getCatalogueMap();
         for (String name : tempGameNames.keySet()) {
             gameNames.put(name, new ArrayList<>(tempGameNames.get(name)));
@@ -49,17 +49,32 @@ public class Director {
 
     private Scanner input = new Scanner(System.in);
 
+    private PrintStream screen = System.out;
+
+    private void changeOutputTarget(String target) {
+        if (target.equals("screen")) {
+            System.setOut(screen);
+        } else {
+            try {
+                System.setOut(new PrintStream("out.txt"));
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
     /**
      * 赛前场景顺序执行
      */
     private void startBeforeGameActivities() {
 //        new TicketCheckingScene().play(); 跳不出来死循环
-        new ProtectionFactoryScene().play();
-        new TranslateScene().play();
-        new PerformanceScene().play();
-        new OpenSpeechScene().play();
-        new EnterScene().play();
-        new FireworkScene().play();
+        nextScene(new ProtectionFactoryScene());
+        nextScene(new TranslateScene());
+        nextScene(new PerformanceScene());
+        nextScene(new OpenSpeechScene());
+        nextScene(new EnterScene());
+        nextScene(new FireworkScene());
     }
 
     /**
@@ -68,10 +83,11 @@ public class Director {
     private void startAfterGameActivities() {
 //        new PressConferenceScene().play();  //不用在main里面调
 //        new CeremonyScene().play();
-        new ChoreHandlingScene().play();
-        new MonitorSiteScene().play();
-        new ReviewQScene().play();
-        new CloseSpeechScene().play();
+        nextScene(new ChoreHandlingScene());
+        nextScene(new ChoreHandlingScene());
+        nextScene(new MonitorSiteScene());
+        nextScene(new ReviewQScene());
+        nextScene(new CloseSpeechScene());
     }
 
     private void startOneGame(String className) {
@@ -98,6 +114,21 @@ public class Director {
         }
     }
 
+    private void startRemainingGames() {
+        changeOutputTarget("file");
+        Mode.setNeedDetail(false);
+        for (List<String> nameList : gameNames.values()) {
+            for (String name : nameList) {
+                Scene scene = SceneFactory.getInstance().getScene(name);
+                if (scene != null) {
+                    scene.play();
+                }
+            }
+        }
+        changeOutputTarget("screen");
+    }
+
+
     /**
      * 比赛，用户选择
      */
@@ -110,6 +141,7 @@ public class Director {
             System.out.print("输入您想观看的大类(输入exit退出)：");
             String className = input.next();
             if (className.equals("exit")) {
+                startRemainingGames();
                 break;
             }
             List<String> names = gameNames.get(className);
