@@ -6,6 +6,7 @@ import olympic.main.person.athleteList.IndividualAthleteList;
 import olympic.main.person.athleteList.TeamAthleteList;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 访问者的父类
@@ -19,7 +20,7 @@ public abstract class Visitor {
      * @return 个人运动员数组
      */
     public abstract ArrayList<IndividualAthlete> visit(IndividualAthleteList individualAthleteList);
-
+    
     /**
      * 运动员队伍列表类的访问函数，用于对运动员队伍类做操作
      *
@@ -27,7 +28,7 @@ public abstract class Visitor {
      * @return 运动员队伍数组
      */
     public abstract ArrayList<TeamAthlete> visit(TeamAthleteList teamAthleteList);
-
+    
     /**
      * 把整数转换为字符串的函数，用语规范输出。
      *
@@ -42,5 +43,19 @@ public abstract class Visitor {
             str.insert(0, " ");
         }
         return str.toString();
+    }
+    
+    /**
+     * 用于存储输出的数据结构
+     */
+    List<String> stringList = new ArrayList<>();
+    
+    /**
+     * 用于获取输出列表
+     *
+     * @return 输出列表
+     */
+    public List<String> getStringList() {
+        return stringList;
     }
 }

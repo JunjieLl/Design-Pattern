@@ -6,8 +6,6 @@ public class SceneFactory {
     private SceneFactory() {
     }
 
-    ;
-
     private static SceneFactory instance;
 
     public static SceneFactory getInstance() {
@@ -17,7 +15,7 @@ public class SceneFactory {
         return instance;
     }
 
-    public olympic.scene.Scene getScene(String name) {
+    public Scene getScene(String name) {
         switch (name) {
             case "Relays":
             case "Marathon":

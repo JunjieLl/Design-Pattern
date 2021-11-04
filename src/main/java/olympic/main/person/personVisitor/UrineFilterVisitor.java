@@ -22,27 +22,30 @@ public class UrineFilterVisitor extends FilterVisitor {
      */
     @Override
     public ArrayList<IndividualAthlete> visit(IndividualAthleteList individualAthleteList, String game) {
+        System.out.println("classname: (UrineFilterVisitor) method: (visit) " +
+                "action: (过滤尿检不合格的运动员个人，使用了Visitor模式以及Filter模式) ");
         ArrayList<IndividualAthlete> finalAthleteList = new ArrayList<>();
-        System.out.println("	**********************************************************");
+        stringList.add("尿检结果检测");
         int count = 0;
         for (IndividualAthlete athlete : individualAthleteList.getAthletes()) {
             if (athlete.getUrineTestResult(0)) {
                 finalAthleteList.add(athlete);
-            } else {
-                System.out.println("	* 运动员" + athlete.getName() + "被检测出使用兴奋剂，参赛资格作废。");
+            }
+            else {
+                stringList.add(" 运动员" + athlete.getName() + "被检测出使用兴奋剂，参赛资格作废。");
                 count += 1;
                 athlete.setRank(game, -1);
             }
         }
         if (count == 0) {
-            System.out.println("	* 没有运动员被检测出使用兴奋剂");
+            stringList.add(" 没有运动员被检测出使用兴奋剂");
         } else {
-            System.out.println("	^ 共有" + count + "位运动员使用了兴奋剂兴奋剂，被取消了比赛资格");
+            stringList.add(" 共有" + count + "位运动员使用了兴奋剂兴奋剂，被取消了比赛资格");
         }
-        System.out.println("	**********************************************************");
+        
         return finalAthleteList;
     }
-
+    
     /**
      * 用于选择出没有使用兴奋剂的运动员队伍数组
      *
@@ -52,14 +55,16 @@ public class UrineFilterVisitor extends FilterVisitor {
      */
     @Override
     public ArrayList<TeamAthlete> visit(TeamAthleteList teamAthleteList, String game) {
+        System.out.println("classname: (UrineFilterVisitor) method: (visit) " +
+                "action: (过滤尿检不合格的运动员团队，使用了Visitor模式以及Filter模式) ");
+        stringList.add("尿检结果检测");
         ArrayList<TeamAthlete> finalTeam = new ArrayList<>();
         int count = 0;
-        System.out.println("	**********************************************************");
         for (TeamAthlete team : teamAthleteList.getAthletes()) {
-            System.out.println("	* 现在接受检查的队伍来自" + team.getNation() + "，队伍名为" + team.getName());
+            stringList.add(" 现在接受检查的队伍来自" + team.getNation() + "，队伍名为" + team.getName());
             boolean flag = true;
             for (Athlete athlete : team.getAthleteList()) {
-
+                
                 if (!((IndividualAthlete) athlete).getUrineTestResult(0)) {
                     flag = false;
                     athlete.setRank(game, -1);
@@ -67,22 +72,23 @@ public class UrineFilterVisitor extends FilterVisitor {
             }
             if (flag) {
                 finalTeam.add(team);
-                System.out.println("	* 所有队员均通过初步尿检");
-            } else {
-                count += 1;
-                System.out.println("	* 队伍中有人使用兴奋剂，该队伍参赛资格作废");
+                stringList.add(" 所有队员均通过初步尿检");
             }
-            System.out.println();
+            else {
+                count += 1;
+                stringList.add(" 队伍中有人使用兴奋剂，该队伍参赛资格作废");
+            }
+            stringList.add("");
         }
         if (count == 0) {
-            System.out.println("	^ 所有队伍均未使用兴奋剂");
-        } else {
-            System.out.println("	^ 共有" + count + "个队伍使用了兴奋剂，被取消了比赛资格");
+            stringList.add(" 所有队伍均未使用兴奋剂");
         }
-        System.out.println("	**********************************************************");
+        else {
+            stringList.add(" 共有" + count + "个队伍使用了兴奋剂，被取消了比赛资格");
+        }
         return finalTeam;
     }
-
+    
     /**
      * 获取该过滤器的名字
      *

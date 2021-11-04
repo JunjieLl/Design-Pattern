@@ -82,13 +82,8 @@ public abstract class IndividualAthlete extends Athlete implements Speechable {
 
     /**
      * 获取该运动员对应的检察员
-<<<<<<< Updated upstream:src/main/java/olympic/main/person/athlete/IndividualAthlete.java
-     *
-     * @return
-=======
      * 
      * @return 尿检检察员
->>>>>>> Stashed changes:src/olympic/main/person/athlete/IndividualAthlete.java
      */
     public UrineTestProcurator getUrineTestProcurator() {
         return urineTestProcurator;
