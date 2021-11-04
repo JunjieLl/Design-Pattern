@@ -40,7 +40,7 @@ public class Director {
      *
      * @param scene 下一个场景
      */
-    public void nextScene(Scene scene) {
+    final public void nextScene(Scene scene) {
         System.out.println("classname: (Director) method: (nextScene) action: (切换到下一场景) ");
         scene.play();
     }
