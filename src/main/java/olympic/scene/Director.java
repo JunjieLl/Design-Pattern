@@ -45,8 +45,6 @@ final public class Director {
         scene.play();
     }
 
-//    private List<String> gameNames;
-
     private Map<String, List<String>> gameNames = new HashMap<>();
 
     private Scanner input = new Scanner(System.in);
@@ -77,10 +75,12 @@ final public class Director {
     }
 
     private void startOneGame(String className) {
-        System.out.println("请输入您想观看的比赛");
+        System.out.println("请输入您想观看的比赛（输入exit重新选择大类）");
         while (true) {
             String gameName = input.next();
-            if (!gameNames.get(className).contains(gameName)) {
+            if (gameName.equals("exit")) {
+                return;
+            } else if (!gameNames.get(className).contains(gameName)) {
                 System.out.println("比赛名有误，请重新输入：");
                 continue;
             }
@@ -120,7 +120,7 @@ final public class Director {
                 }
                 startOneGame(className);
             } else {
-                System.out.print("没有此比赛，请重新选择：");
+                System.out.print("没有此比赛，请重新选择,");
             }
         }
     }
