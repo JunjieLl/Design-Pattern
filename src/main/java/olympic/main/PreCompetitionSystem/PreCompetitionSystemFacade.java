@@ -149,7 +149,7 @@ public class PreCompetitionSystemFacade {
             showMap.put(5, filterManager.getShowList(0));
             showMap.put(6, filterManager.getShowList(1));
         } else {
-            if (gameName.equals("Pingpong")) {
+            if (gameName.equals("Pingpong")||gameName.equals("Badminton")) {
                 List<String> str = new ArrayList<>();
                 str.add("新冠病毒检测");
                 str.add(" 所有运动员均未感染新冠病毒");
@@ -267,7 +267,9 @@ public class PreCompetitionSystemFacade {
      * @return 是否能对比赛gameName使用过滤器
      */
     private boolean canFilter(String gameName) {
-        return !"FootballTeam".equals(gameName) && !"Pingpong".equals(gameName) && !"PingpongTeam".equals(gameName);
+        return !"FootballTeam".equals(gameName) && !"Pingpong".equals(gameName) && !"PingpongTeam".equals(gameName)
+                && !"Badminton".equals(gameName)&& !"BadmintonTeam".equals(gameName) &&
+                !"BasketballTeam".equals(gameName) && !"VolleyballTeam".equals(gameName);
     }
     
     /**
@@ -289,7 +291,10 @@ public class PreCompetitionSystemFacade {
      * @return 如果输入的比赛是组队模式，返回true，反之返回false
      */
     private Boolean isTeamNumber(String game) {
-        return "PingpongTeam".equals(game) || "FootballTeam".equals(game) || "DivingTeam".equals(game) || "Relays".equals(game);
+        if(game.endsWith("Team")){
+            return true;
+        }
+        return "Relays".equals(game);
     }
     
     /**
