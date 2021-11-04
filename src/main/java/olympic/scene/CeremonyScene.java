@@ -19,6 +19,7 @@ import olympic.main.pressconference.questionstrategy.PressConferenceStrategy;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.Scanner;
 
 /**
  * 颁奖仪式的场景.
@@ -56,17 +57,18 @@ public class CeremonyScene implements Scene {
 
         System.out.println("\nclassname: (CeremonyScene) method: (play) action: (颁奖仪式场景开始) ");
         List<String> ceremonyInitPrintBlock = new ArrayList<>();
-        ceremonyInitPrintBlock.add("颁奖仪式总流程");
+        ceremonyInitPrintBlock.add("颁奖仪式完整流程");
         ceremonyInitPrintBlock.add("1. 展示奖牌制作过程");
-        ceremonyInitPrintBlock.add("2. 为获奖者颁发奖牌");
-        ceremonyInitPrintBlock.add("3. 升国旗奏国歌");
-        ceremonyInitPrintBlock.add("4. 展示更新后奖牌榜");
-
+        ceremonyInitPrintBlock.add("2. 赛后采访");
+        ceremonyInitPrintBlock.add("3. 新闻发布会");
+        ceremonyInitPrintBlock.add("4. 为获奖者颁发奖牌");
+        ceremonyInitPrintBlock.add("5. 升国旗奏国歌");
+        ceremonyInitPrintBlock.add("6. 展示更新后奖牌榜");
 
         PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
         printBlockFormat.printFormatMiddleScreen(ceremonyInitPrintBlock,true);
 
-        new MedalMaking();
+        showDetail();
 
         System.out.println("\nclassname: (CeremonyScene) method: (play) action: (展示奖牌场景) \n");
 
@@ -81,22 +83,8 @@ public class CeremonyScene implements Scene {
         List<String> ceremonyEndingPrintBlock = new ArrayList<>();
         ceremonyEndingPrintBlock.add("升国旗，奏国歌");
         ceremonyEndingPrintBlock.add("请全体肃立，升"+goldPlayer.getNation()+"国旗，奏"+goldPlayer.getNation()+"国歌。");
-        ceremonyEndingPrintBlock.add("本场颁奖仪式已经结束，以下是赛后采访环节。");
+        ceremonyEndingPrintBlock.add("本场颁奖仪式已经结束。");
         printBlockFormat.printFormatMiddleScreen(ceremonyEndingPrintBlock,true);
-
-        List<String> interviewInitPrintBlock = new ArrayList<>();
-        interviewInitPrintBlock.add("赛后采访");
-        interviewInitPrintBlock.add("下面是纸媒和新媒体记者对金牌得主的采访，您可以在采访后看到他们发布的报道。");
-        printBlockFormat.printFormatMiddleScreen(interviewInitPrintBlock,true);
-
-        buildInterview();
-
-        List<String> pcInitPrintBlock = new ArrayList<>();
-        pcInitPrintBlock.add("新闻发布会");
-        pcInitPrintBlock.add("下面是本场比赛的新闻发布会");
-        printBlockFormat.printFormatMiddleScreen(pcInitPrintBlock,true);
-
-        buildPressConference();
 
         List<String> medalTableInitPrintBlock = new ArrayList<>();
         medalTableInitPrintBlock.add("奖牌榜");
@@ -107,7 +95,52 @@ public class CeremonyScene implements Scene {
         System.out.println("\n");
     }
 
+    private void buildMedalMakingProcedure(){
+        new MedalMaking();
+    }
+
+    private void printHelp(){
+        List<String> strings = new ArrayList<>();
+        strings.add("请输入您的选择");
+        strings.add("1. 查看奖牌制作过程");
+        strings.add("2. 观看采访");
+        strings.add("3. 观看新闻发布会");
+        strings.add("4. 完整展示");
+        strings.add("其他输入仅观赏颁奖典礼");
+        PrintBlockFormat.getPrintFormat().printFormatLeftScreen(strings, true);
+    }
+
+    private void showDetail(){
+        printHelp();
+        Scanner scanner = new Scanner(System.in);
+        String str;
+        boolean flag = true;
+        while(flag){
+            System.out.println("[您的选择]");
+            str = scanner.nextLine();
+            if(str.equals("1")){
+                buildMedalMakingProcedure();
+            }else if(str.equals("2")){
+                buildInterview();
+            }else if(str.equals("3")){
+                buildPressConference();
+            }else if(str.equals("4")){
+                buildMedalMakingProcedure();
+                buildInterview();
+                buildPressConference();
+                flag = false;
+            }else{
+                flag = false;
+            }
+        }
+    }
+
     private void buildInterview(){
+        List<String> interviewInitPrintBlock = new ArrayList<>();
+        interviewInitPrintBlock.add("赛后采访");
+        interviewInitPrintBlock.add("下面是纸媒和新媒体记者对金牌得主的采访，您可以在采访后看到他们发布的报道。");
+        PrintBlockFormat.getPrintFormat().printFormatMiddleScreen(interviewInitPrintBlock,true);
+
         List<Interviewer> ceremonyInterviewer = PersonFactory.getInstance().getInterviews();
         List<Interviewer> goldInterviewers = new ArrayList<Interviewer>();
         int interviewerIndex = new Random().nextInt(50);
@@ -154,6 +187,11 @@ public class CeremonyScene implements Scene {
     }
 
     private void buildPressConference(){
+        List<String> pcInitPrintBlock = new ArrayList<>();
+        pcInitPrintBlock.add("新闻发布会");
+        pcInitPrintBlock.add("下面是本场比赛的新闻发布会");
+        PrintBlockFormat.getPrintFormat().printFormatMiddleScreen(pcInitPrintBlock,true);
+
         List<Interviewer> ceremonyInterviewer = PersonFactory.getInstance().getInterviews();
         List<Interviewer> pcInterviewers = new ArrayList<>();
         int interviewerIndex = new Random().nextInt(50);
