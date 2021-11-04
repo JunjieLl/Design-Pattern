@@ -1,5 +1,9 @@
 package olympic.main.postgame.review_qualification;
 
+import olympic.Utils.PrintBlockFormat;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -21,13 +25,22 @@ public class ReviewColleagueEvaluation implements ReviewColleague {
      * 为了演示效果的方便，会随机生成评估结果.
      */
     public void conductEvalution() {
-        System.out.println("\nclassname: (ReviewColleagueEvaluation) method: (conductEvalution) action: (被仲裁者传唤，评估调查结果) ");
-        System.out.println("【评估小组】正在对调查结果进行分析。");
+        List<String> evalInitPrintBlock = new ArrayList<>();
+        evalInitPrintBlock.add("评估小组");
+        evalInitPrintBlock.add("正在对调查结果进行分析。");
+        PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
+        printBlockFormat.printFormatLeftScreen(evalInitPrintBlock,true);
         if (new Random().nextBoolean()) {
-            System.out.println("【评估小组】调查结果蹊跷。");
+            List<String> evalRNGPrintBlock = new ArrayList<>();
+            evalRNGPrintBlock.add("评估小组");
+            evalRNGPrintBlock.add("调查结果蹊跷。");
+            printBlockFormat.printFormatLeftScreen(evalRNGPrintBlock,true);
             mediator.colleagueChanged("RNG"); //Result not good.
         } else {
-            System.out.println("【评估小组】调查结果很清晰。");
+            List<String> evalRGPrintBlock = new ArrayList<>();
+            evalRGPrintBlock.add("评估小组");
+            evalRGPrintBlock.add("调查结果很清晰。");
+            printBlockFormat.printFormatLeftScreen(evalRGPrintBlock,true);
             mediator.colleagueChanged("RG"); //Result good.
         }
     }

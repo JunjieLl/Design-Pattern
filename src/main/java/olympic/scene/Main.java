@@ -21,8 +21,8 @@ public class Main {
 //        Scene divingGame=new DivingGameScene("单人三米");
 //        divingGame.play();
 //        new FootballScene().play();
-//        new ChoreHandlingScene().play();
-        new TrackGameScene("Marathon").play();
+        new ChoreHandlingScene().play();
+//        new TrackGameScene("Marathon").play();
 //new TrackGameScene("Sprints").play();
 //        new TrackGameScene("Hurdling").play();
 //        new TrackGameScene("Relays").play();

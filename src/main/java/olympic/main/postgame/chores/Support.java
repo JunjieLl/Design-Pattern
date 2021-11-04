@@ -41,7 +41,7 @@ public abstract class Support {
         System.out.println("\nclassname: (Support) method: (done) action: (责任链模式和访问者模式，访问并解决杂务：解决成功) ");
         List<String> choreHandledPrintBlock = new ArrayList<String>();
         choreHandledPrintBlock.add("杂务解决成功");
-        choreHandledPrintBlock.add(choreleaf.getName()+"已被【"+name+"】解决。");
+        choreHandledPrintBlock.add("【"+choreleaf.getName()+"】"+"已被【"+name+"】解决。");
         PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
         printBlockFormat.printFormatLeftScreen(choreHandledPrintBlock,true);
     }
