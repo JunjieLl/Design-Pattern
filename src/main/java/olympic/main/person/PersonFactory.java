@@ -312,6 +312,17 @@ public class PersonFactory {
                         }
                         hMap.put(i, athleteList);
                         break;
+                    case "Badminton":
+                        athleteList = new ArrayList<>();
+                        for (int j = 0; j < a; j++) {
+                            message = nameFactory.getMessage();
+                            tempNameAthlete = new BadmintonAthlete(message.name, message.nation);
+                            athleteList.add(tempNameAthlete);
+                            nameMap.put(message.name, tempNameAthlete);
+                            addNationMap(message.nation, tempNameAthlete);
+                        }
+                        hMap.put(i, athleteList);
+                        break;
                     case "PingpongTeam":
                         for (int j = 0; j < b; j++) {
                             athleteList = new ArrayList<>();
@@ -323,6 +334,20 @@ public class PersonFactory {
                                 addNationMap(messages.get(k).nation, tempNameAthlete);
                             }
                             team.add(new PingpongTeam(messages.get(c).name, messages.get(0).nation, athleteList));
+                        }
+                        hMap.put(i, team);
+                        break;
+                    case "BadmintonTeam":
+                        for (int j = 0; j < b; j++) {
+                            athleteList = new ArrayList<>();
+                            messages = nameFactory.getMessageList(c);
+                            for (int k = 0; k < c; k++) {
+                                tempNameAthlete = new BadmintonAthlete(messages.get(k).name, messages.get(k).nation);
+                                athleteList.add(tempNameAthlete);
+                                nameMap.put(messages.get(k).name, tempNameAthlete);
+                                addNationMap(messages.get(k).nation, tempNameAthlete);
+                            }
+                            team.add(new BadmintonTeam(messages.get(c).name, messages.get(0).nation, athleteList));
                         }
                         hMap.put(i, team);
                         break;
