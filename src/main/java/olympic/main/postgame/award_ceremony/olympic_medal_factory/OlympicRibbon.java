@@ -17,7 +17,7 @@ public class OlympicRibbon extends Ribbon {
     @Override
     public void makeMedal() {
         System.out.println("\nclassname: (OlympicMedal) method: (makeMedal) action: (抽象工厂模式的具体零件类展示奥运奖牌的绶带部分) ");
-        List<String> ribbonDisplayBlock = new ArrayList<String>();
+        List<String> ribbonDisplayBlock = new ArrayList<>();
         ribbonDisplayBlock.add("缎带部分展示");
         ribbonDisplayBlock.add("这个缎带的名字是："+name);
         ribbonDisplayBlock.add("这个缎带的颜色是："+color);

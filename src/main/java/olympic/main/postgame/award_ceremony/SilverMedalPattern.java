@@ -10,7 +10,7 @@ import java.util.List;
 public class SilverMedalPattern implements MedalProduct {
     public SilverMedalPattern(){
         System.out.println("\nclassname: (SilverMedalPattern) method: (SilverMedalPattern) action: (原型模式复刻银牌的样式生成刻字奖牌) \n");
-        List<String> silverDisplayBlock = new ArrayList<String>();
+        List<String> silverDisplayBlock = new ArrayList<>();
         silverDisplayBlock.add("颁发银牌");
         silverDisplayBlock.add("这块银色的奖牌上镌刻着比赛中取得第二名选手的名字和代表队。");
         PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();

@@ -24,7 +24,7 @@ public class LeafVisitor extends ChoreVisitor {
      */
     public void visit(ChoreLeaf choreLeaf) {
         System.out.println("\nclassname: (LeafVisitor) method: (visit) action: (访问者模式访问到单个杂务) ");
-        List<String> choreVisitedPrintBlock = new ArrayList<String>();
+        List<String> choreVisitedPrintBlock = new ArrayList<>();
         choreVisitedPrintBlock.add("访问单个杂务");
         choreVisitedPrintBlock.add("下一项杂务为：");
         choreVisitedPrintBlock.add(choreLeaf.toString());

@@ -15,10 +15,10 @@ public class OlympicMedal extends Medal{
      */
     public void makeMedal(){
         System.out.println("\nclassname: (OlympicMedal) method: (makeMedal) action: (抽象工厂模式的具体零件类展示奥运奖牌的奖牌部分) ");
-        List<String> medalDisplayBlock = new ArrayList<String>();
+        List<String> medalDisplayBlock = new ArrayList<>();
         medalDisplayBlock.add("奖牌部分展示");
         medalDisplayBlock.add("这块奖牌的名字是："+name);
-        medalDisplayBlock.add("这块奖牌的材料是："+meterial);
+        medalDisplayBlock.add("这块奖牌的材料是："+ material);
         PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
         printBlockFormat.printFormatLeftScreen(medalDisplayBlock,true);
     }

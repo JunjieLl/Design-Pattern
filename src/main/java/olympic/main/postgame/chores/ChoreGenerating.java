@@ -53,7 +53,7 @@ public class ChoreGenerating {
 
     }
 
-    public ChoreComposite getGaneratedComposite() {
+    public ChoreComposite getGeneratedComposite() {
         return composite;
     }
 }

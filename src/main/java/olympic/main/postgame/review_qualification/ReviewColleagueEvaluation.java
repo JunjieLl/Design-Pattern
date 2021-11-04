@@ -24,7 +24,7 @@ public class ReviewColleagueEvaluation implements ReviewColleague {
      * 评估小组的工作函数.
      * 为了演示效果的方便，会随机生成评估结果.
      */
-    public void conductEvalution() {
+    public void conductEvaluation() {
         List<String> evalInitPrintBlock = new ArrayList<>();
         evalInitPrintBlock.add("评估小组");
         evalInitPrintBlock.add("正在对调查结果进行分析。");

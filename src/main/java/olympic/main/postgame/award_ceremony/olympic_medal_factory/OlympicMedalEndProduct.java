@@ -18,7 +18,7 @@ public class OlympicMedalEndProduct extends EndProduct {
     @Override
     public void makeMedal() {
         System.out.println("\nclassname: (OlympicMedalEndProduct) method: (makeMedal) action: (抽象工厂模式的具体产品类展示奥运奖牌的产品) ");
-        List<String> endProductDisplayBlock = new ArrayList<String>();
+        List<String> endProductDisplayBlock = new ArrayList<>();
         endProductDisplayBlock.add("奖牌成品展示");
         endProductDisplayBlock.add("每块奖牌由牌子和绶带组成，以下分别为牌子工厂和绶带工厂制作的零件。");
         PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();

@@ -54,7 +54,7 @@ public class ChoreComposite extends ChoreComponent {
      */
     @Override
     public void printList(String prefix) {
-        List<String> choreCompositePrintBlock = new ArrayList<String>();
+        List<String> choreCompositePrintBlock = new ArrayList<>();
         System.out.println("\nclassname: (ChoreComposite) method: (printList) action: (组合模式显示组合杂务项) ");
         choreCompositePrintBlock.add("展示当前杂务及其所属");
         choreCompositePrintBlock.add(prefix + "/" + this);

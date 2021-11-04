@@ -2,12 +2,9 @@ package olympic.scene;
 
 import olympic.Utils.PrintBlockFormat;
 import olympic.main.postgame.chores.*;
-import olympic.scene.Scene;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Stack;
 
 /**
  * 赛后杂务处理的场景.
@@ -29,7 +26,7 @@ public class ChoreHandlingScene implements Scene {
         ChoreComposite allTheChore;
 
         //用ChoreGenerating类来生成杂务清单.
-        allTheChore = new ChoreGenerating().getGaneratedComposite();
+        allTheChore = new ChoreGenerating().getGeneratedComposite();
         allTheChore.printList("杂务清单");
 
         System.out.println("\nclassname: (ChoreHandlingScene) method: (play) action: (开始展示杂务处理过程) ");

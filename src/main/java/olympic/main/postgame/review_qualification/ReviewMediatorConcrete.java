@@ -53,7 +53,7 @@ public class ReviewMediatorConcrete implements ReviewMediator {
             mediatorICEventPrintBlock.add("已收到调查结果，正在安排评估小组讨论评估。");
             PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
             printBlockFormat.printFormatLeftScreen(mediatorICEventPrintBlock,true);
-            rcevaluate.conductEvalution();
+            rcevaluate.conductEvaluation();
         } else if (event == "INIT") {
 
             List<String> mediatorInitEventPrintBlock = new ArrayList<>();
