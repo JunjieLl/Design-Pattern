@@ -66,7 +66,7 @@ public class GroupRound extends Round {
         for (int g = 0; g < 2; g++) {
             List<ScoreEntry> ranking = new ArrayList<>();
             for (int i = 0; i < 6; i++) {
-                BasketballTeam t = teams.get(4 * g + i);
+                BasketballTeam t = teams.get(6 * g + i);
                 ranking.add(new ScoreEntry(t, scores[t.getId()], gains[t.getId()], losses[t.getId()]));
             }
 
