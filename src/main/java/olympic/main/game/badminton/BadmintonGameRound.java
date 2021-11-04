@@ -1,9 +1,9 @@
-package olympic.main.game.pingponggame;
+package olympic.main.game.badminton;
 
+import olympic.main.director.Mode;
 import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.CallBack;
 import olympic.main.person.athlete.pingong.PlayPingpong;
-import olympic.main.director.Mode;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,7 +13,7 @@ import java.util.Random;
 /**
  * 乒乓球比赛的一轮（比pingponggame更细的粒度）
  */
-class PingpongGameRound {
+class BadmintonGameRound {
 
     private HashMap<Athlete, Integer> result = new HashMap<>();
 
@@ -46,7 +46,7 @@ class PingpongGameRound {
      * @return 获胜的运动员
      */
     public Athlete start() {
-        while (Math.max((Integer) result.values().toArray()[0], (Integer) result.values().toArray()[1]) < 11 || Math.abs((Integer) result.values().toArray()[0] - (Integer) result.values().toArray()[1]) < 2) {
+        while (Math.max((Integer) result.values().toArray()[0], (Integer) result.values().toArray()[1]) < 21 || Math.abs((Integer) result.values().toArray()[0] - (Integer) result.values().toArray()[1]) < 2) {
             startOneRound();
         }
 

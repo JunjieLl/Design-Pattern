@@ -1,18 +1,17 @@
-package olympic.main.person.athlete.pingong.Strategy;
+package olympic.main.person.athlete.badminton.Strategy;
 
 import olympic.main.director.Mode;
 import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.CallBack;
 import olympic.main.person.athlete.Strategy;
-import olympic.main.person.athlete.pingong.PlayPingpong;
+import olympic.main.person.athlete.badminton.PlayBadminton;
 
 import java.util.Random;
 
-
 /**
- * 防守策略
+ * 攻击策略
  */
-public class PingpongDefendStrategy implements Strategy {
+public class BadmintonOffenseStrategy implements Strategy {
 
     /**
      * 归属者，运动员
@@ -34,17 +33,15 @@ public class PingpongDefendStrategy implements Strategy {
     /**
      * 攻击概率
      */
-//    private Integer offenseProb;
+//    private Integer offenseProb = 70;
     @Override
     public Boolean playWith(CallBack oppoent) {
         if (Mode.getShowDetail()) {
-            System.out.println("classname: (PingpongDefendStrategy) method: (playWith) action: (策略模式中" + ((Athlete) oppoent).getName() + "运用防御策略进行比赛) ");
+            System.out.println("classname: (PingpongOffenseStrategy) method: (playWith) action: (策略模式中选手运用攻击策略) ");
         }
-
-        // 随机生成球的状态（击球难度)
-        if (random.nextInt(100) < ((PlayPingpong) ownerAthlete).getCapacity()) {
+        if (random.nextInt(100) < ((PlayBadminton) ownerAthlete).getCapacity()) {
             if (Mode.getShowDetail()) {
-                System.out.println(ownerAthlete.getName() + " 击球" + (random.nextInt(100) < 30 ? " 进攻" : " 防守"));
+                System.out.println(ownerAthlete.getName() + " 击球" + (random.nextInt(100) < 70 ? " 进攻" : " 防守"));
             }
             return !oppoent.call((CallBack) ownerAthlete);
         } else {
@@ -59,4 +56,6 @@ public class PingpongDefendStrategy implements Strategy {
     public void setOwnerAthlete(Athlete ownerAthlete) {
         this.ownerAthlete = ownerAthlete;
     }
+
+
 }

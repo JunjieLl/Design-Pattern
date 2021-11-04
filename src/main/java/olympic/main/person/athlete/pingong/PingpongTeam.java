@@ -2,10 +2,11 @@ package olympic.main.person.athlete.pingong;
 
 import olympic.main.director.Mode;
 import olympic.main.person.athlete.Athlete;
+import olympic.main.person.athlete.CallBack;
 import olympic.main.person.athlete.TeamAthlete;
 import olympic.main.person.athlete.pingong.Strategy.PingpongDefendStrategy;
 import olympic.main.person.athlete.pingong.Strategy.PingpongOffenseStrategy;
-import olympic.main.person.athlete.pingong.Strategy.Strategy;
+import olympic.main.person.athlete.Strategy;
 
 import java.util.List;
 import java.util.Random;
