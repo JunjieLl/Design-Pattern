@@ -1,6 +1,8 @@
 package olympic.main.person;
 
 import olympic.main.person.athlete.Athlete;
+import olympic.main.person.athlete.badminton.BadmintonAthlete;
+import olympic.main.person.athlete.badminton.BadmintonTeam;
 import olympic.main.person.athlete.divingathlete.DivingAthlete;
 import olympic.main.person.athlete.divingathlete.DivingTeam;
 import olympic.main.person.athlete.footballathlete.FootballTeam;
