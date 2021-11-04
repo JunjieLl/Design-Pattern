@@ -14,14 +14,14 @@ public class Main {
         /**
          * 可以把这行注释掉测试自己的东西
          */
-        //Director.getInstance().start();
+        Director.getInstance().start();
 
         //FootballStarter.start();
 
 //        Scene divingGame=new DivingGameScene("单人三米");
 //        divingGame.play();
 //        new FootballScene().play();
-        new ChoreHandlingScene().play();
+//        new ChoreHandlingScene().play();
 //        new TrackGameScene("Marathon").play();
 //new TrackGameScene("Sprints").play();
 //        new TrackGameScene("Hurdling").play();
