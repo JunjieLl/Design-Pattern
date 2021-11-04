@@ -119,7 +119,7 @@ final public class Director {
         Mode.setNeedDetail(false);
         for (List<String> nameList : gameNames.values()) {
             for (String name : nameList) {
-                Scene scene = SceneFactory.getInstance().getScene(name);
+                Scene scene = SceneFactory.getScene(name);
                 if (scene != null) {
                     scene.play();
                 }
