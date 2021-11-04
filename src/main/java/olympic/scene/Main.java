@@ -31,5 +31,11 @@ public class Main {
 //        new ReviewQScene().play();
 //          new ChoreHandlingScene().play();
 
+        if (Mode.getNeedDetail()){
+            //允许输入
+        }else{
+            //不允许输入
+        }
+
     }
 }
