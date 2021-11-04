@@ -44,25 +44,37 @@ public class Volunteer extends Person {
 	/**
 	 * 如果志愿者为新手状态，调用此函数可以把志愿者的状态从新手状态改为熟手状态。
 	 * 如果志愿者为熟手状态，调用此函数不改变运动员状态状态。
+	 *
+	 * @param isPrint 控制是否输出classname语句
+	 * @return 函数的输出语句
 	 */
-	public void changeStateToExpert() {
+	public String changeStateToExpert(boolean isPrint) {
+		if(isPrint) {
+			System.out.println("classname: (Volunteer) method: (changeStateToExpert) " + "action: (把志愿者的状态从没有经验转换为有经验，使用了State模式以及singleton模式) ");
+		}
+		String output = "";
 		if (state instanceof GreenhandState) {
-			System.out.print("，本次志愿活动为该志愿者的第一次志愿活动。本次活动结束后，" + "该志愿者的状态将从不熟练业务到熟练业务。");
+			output = "，本次志愿活动为该志愿者的第一次志愿活动。本次活动结束后，" + "该志愿者的状态将从不熟练业务到熟练业务。";
 			state = ExpertState.getInstance();
 		} else {
-			System.out.print("，本次志愿活动并非该志愿者的第一次志愿活动。本次活动结束后，" + "该志愿者的状态不改变。");
+			output = "，本次志愿活动并非该志愿者的第一次志愿活动。本次活动结束后，\" + \"该志愿者的状态不改变。";
 			setHaveTime();
 		}
-		System.out.println();
+		return output;
 	}
 	
 	/**
 	 * 为该志愿者分配工作
 	 *
+	 * @param isPrint 控制是否输出classname语句
 	 * @return 是否为该志愿者分配工作
 	 */
-	public boolean allocateWork() {
-		return state.allocateWork(this);
+	public boolean allocateWork(boolean isPrint) {
+		if(isPrint){
+			System.out.println("classname: (Volunteer) method: (allocateVolunteer) " +
+					"action: (把为志愿者分配岗位) ");
+		}
+		return state.allocateWork(this, isPrint);
 	}
 	
 	/**

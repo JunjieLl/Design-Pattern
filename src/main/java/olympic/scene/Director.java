@@ -10,7 +10,7 @@ import java.util.*;
  * 导演
  * 设计模式：Singleton
  */
-public class Director {
+final public class Director {
     private Director() {
         Map<String, List<String>> tempGameNames = PersonFactory.getInstance().getCatalogueMap();
         for (String name : tempGameNames.keySet()) {
@@ -40,7 +40,7 @@ public class Director {
      *
      * @param scene 下一个场景
      */
-    public void nextScene(Scene scene) {
+    final public void nextScene(Scene scene) {
         System.out.println("classname: (Director) method: (nextScene) action: (切换到下一场景) ");
         scene.play();
     }
@@ -100,7 +100,7 @@ public class Director {
                 System.out.println("比赛名有误，请重新输入：");
                 continue;
             }
-            Scene scene = SceneFactory.getInstance().getScene(gameName);
+            Scene scene = SceneFactory.getScene(gameName);
             if (scene != null) {
                 scene.play();
                 gameNames.get(className).remove(gameName);
@@ -140,8 +140,7 @@ public class Director {
             }
             System.out.print("输入您想观看的大类(输入exit退出)：");
             String className = input.next();
-            if (className.equals("exit")) {
-                startRemainingGames();
+            if (className.equalsIgnoreCase("exit")) {
                 break;
             }
             List<String> names = gameNames.get(className);

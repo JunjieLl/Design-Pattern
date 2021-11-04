@@ -15,32 +15,36 @@ import olympic.main.person.volunteer.VolunteerList;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * 赛前准备的视窗类，用于整合赛前准备的总流程
  * 使用了单例模式，视窗模式
  */
 public class PreCompetitionSystemFacade {
+    HashMap<Integer, List<String>> showMap = new HashMap<>();
+    
     /**
      * 视窗类的构造函数，是一个私有类，这是单例模式的一部分
      */
     private PreCompetitionSystemFacade() {
-
+    
     }
-
+    
     /**
      * 视赛前准备窗类的单例，保证所有被使用的赛前准备视窗类是一致的
      */
     final static PreCompetitionSystemFacade singleton = new PreCompetitionSystemFacade();
-
+    
     /**
      * 获取赛前准备视窗的实例
      */
     public static PreCompetitionSystemFacade getInstance() {
         return singleton;
     }
-
+    
     /**
      * 赛前准备的总流程，赛前准备流程为：生成尿检的检察员->分配监察员->运动员尿检
      * ->运动员填写《兴奋剂检查记录单》和《兴奋剂检查传送单》->检测运动员是否感染了新冠病毒
@@ -52,109 +56,191 @@ public class PreCompetitionSystemFacade {
      * @return 参赛比赛运动员的运动员列表
      */
     public ArrayList<Athlete> preCompetitionSystemFacade(String gameName) {
+        showMap.clear();
         System.out.println("classname: (PreCompetitionSystemFacade) method: (preCompetitionSystemFacade) " + "action: (赛前准备流程，使用了Facade模式以及singleton模式) ");
         AthleteList athletes;
         if (isTeamNumber(gameName)) {
             athletes = new TeamAthleteList(getAllTeam(gameName));
             System.out.println("[接下来进行" + gameName + "比赛的赛前准备环节]");
             System.out.println("[该项目为组队项目]");
-
+            
         } else {
             athletes = new IndividualAthleteList(getAllIndividualAthlete(gameName));
             System.out.println("[接下来进行" + gameName + "比赛的赛前准备环节]");
             System.out.println("[该项目为个人项目]");
-
+            
         }
+        
         printProcedure();
-
-        printlnNRowSpace(1);
-
-        System.out.println("【首先生成尿检的检察员】");
-        pressEnterToContinue();
-        printlnNRowEllipsis(2);
-        printlnNRowEllipsis(1);
-        System.out.println("【检察员生成完成】");
+        
+        System.out.println("【运动员尿检】");
+        urineTest(athletes);
+        
+        System.out.println("【筛选健康且未使用兴奋剂的运动员】");
+        filterAthletes(athletes, gameName);
+        
+        System.out.println("【确认参赛名单】");
+        confirmEntryListVisitor(athletes);
+        
+        System.out.println("【志愿者分配】");
+        volunteerAllocate();
+        
+        System.out.println("【赛前准备结束】");
+        
+        showDetail();
+        
+        if (isTeamNumber(gameName)) {
+            assert athletes instanceof TeamAthleteList;
+            return new ArrayList<>(((TeamAthleteList) athletes).getAthletes());
+            
+        } else {
+            assert athletes instanceof IndividualAthleteList;
+            return new ArrayList<>(((IndividualAthleteList) athletes).getAthletes());
+        }
+    }
+    
+    /**
+     * 尿检的流程
+     *
+     * @param athletes 参赛比赛的运动员列表类
+     */
+    private void urineTest(AthleteList athletes) {
+        UrineVisitor urineVisitor = new UrineVisitor();
+        athletes.accept(urineVisitor);
+        showMap.put(3, urineVisitor.getStringList());
         printlnNRowSpace(2);
-
-        System.out.println("【开始分配监察员】");
-        pressEnterToContinue();
-        printlnNRowEllipsis(3);
-        System.out.println("【检察员分配完成】");
+    }
+    
+    /**
+     * 志愿者分配
+     */
+    private void volunteerAllocate(){
+        VolunteerList volunteerList = VolunteerList.getInstance();
+        volunteerList.allocateVolunteer(15 + (int) (Math.random() * 10));
         printlnNRowSpace(2);
-
-        System.out.println("【接下来为运动员尿检环节】");
-        pressEnterToContinue();
-        athletes.accept(new UrineVisitor());
-        System.out.println("【尿检结束】");
-        printlnNRowSpace(2);
-
-        System.out.println("【所有运动员填写《兴奋剂检查记录单》和《兴奋剂检查传送单》】");
-        pressEnterToContinue();
-        printlnNRowEllipsis(3);
-        System.out.println("【运动员填写完成】");
-        printlnNRowSpace(2);
-
+        showMap.put(8, volunteerList.getStringList());
+    }
+    
+    /**
+     * 使用过滤器筛选运动员的过程，分别会根据新冠病毒以及是否使用兴奋剂进行筛选
+     *
+     * @param athletes 参赛比赛的运动员列表类
+     * @param gameName 比赛名
+     */
+    private void filterAthletes(AthleteList athletes, String gameName) {
         System.out.println("【接下来根据初步运动员身体状况（是否感染新冠病毒）以及尿检结果评价参赛资格】");
         FilterManager filterManager = new FilterManager();
         if (canFilter(gameName)) {
             if (isTeamNumber(gameName)) {
                 assert athletes instanceof TeamAthleteList;
                 athletes = new TeamAthleteList(filterManager.visit((TeamAthleteList) athletes, gameName));
-
+                
             } else {
-
+                
                 assert athletes instanceof IndividualAthleteList;
                 athletes = new IndividualAthleteList(filterManager.visit((IndividualAthleteList) athletes, gameName));
             }
-        }
-        System.out.println("【筛选结束，剩下的人有资格参加比赛】");
-        printlnNRowSpace(2);
-
-        System.out.println("【接下来进行确认参赛名单环节，参赛人员如下：】");
-        pressEnterToContinue();
-        athletes.accept(new ConfirmEntryListVisitor());
-        printlnNRowSpace(2);
-
-        System.out.println("【最后，为该场比赛分配志愿者以协助比赛顺利进行】");
-        pressEnterToContinue();
-        VolunteerList volunteerList = VolunteerList.getInstance();
-        volunteerList.allocateVolunteer(15 + (int) (Math.random() * 10));
-        System.out.println();
-        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
-        printlnNRowSpace(2);
-
-        System.out.println("【赛前准备结束】");
-
-        if (isTeamNumber(gameName)) {
-            assert athletes instanceof TeamAthleteList;
-            return new ArrayList<>(((TeamAthleteList) athletes).getAthletes());
-
+            showMap.put(5, filterManager.getShowList(0));
+            showMap.put(6, filterManager.getShowList(1));
         } else {
-            assert athletes instanceof IndividualAthleteList;
-            return new ArrayList<>(((IndividualAthleteList) athletes).getAthletes());
+            if (gameName.equals("Pingpong")) {
+                List<String> str = new ArrayList<>();
+                str.add("新冠病毒检测");
+                str.add(" 所有运动员均未感染新冠病毒");
+                showMap.put(5, str);
+                str.clear();
+                str.add("尿检结果检测");
+                str.add(" 没有运动员被检测出使用兴奋剂");
+                showMap.put(6, str);
+            } else {
+                List<String> str = new ArrayList<>();
+                str.add("新冠病毒检测");
+                str.add(" 所有队伍均未感染新冠病毒");
+                showMap.put(5, str);
+                str.clear();
+                str.add("尿检结果检测");
+                str.add(" 所有队伍均未使用兴奋剂");
+                showMap.put(6, str);
+            }
         }
+        
+        printlnNRowSpace(2);
     }
-
+    
     /**
-     * 打印赛前准备的流程以及查看详细输出的提示文字
+     * 确认参赛名单
+     *
+     * @param athletes 参加赛前准备的运动员
+     */
+    private void confirmEntryListVisitor(AthleteList athletes){
+        ConfirmEntryListVisitor confirmEntryListVisitor = new ConfirmEntryListVisitor();
+        athletes.accept(confirmEntryListVisitor);
+        showMap.put(7, confirmEntryListVisitor.getStringList());
+        printlnNRowSpace(2);
+    }
+    
+    /**
+     * 打印赛前准备的流程
      */
     private void printProcedure() {
         List<String> strings = new ArrayList<>();
         strings.add("赛前准备总流程");
         strings.add("1. 生成尿检的检察员");
         strings.add("2. 分配尿检的检察员");
-        strings.add("3. 运动员尿检环节");
+        strings.add("3. 运动员尿检环节（可查看）");
         strings.add("4. 运动员填写《兴奋剂检查记录单》和《兴奋剂检查传送单》");
-        strings.add("5. 新冠病毒结果检验");
-        strings.add("6. 尿检结果检验");
-        strings.add("7. 确认参赛名单");
-        strings.add("8. 分配志愿者");
+        strings.add("5. 新冠病毒结果检验（可查看）");
+        strings.add("6. 尿检结果检验（可查看）");
+        strings.add("7. 确认参赛名单（可查看）");
+        strings.add("8. 分配志愿者（可查看）");
         PrintBlockFormat.getPrintFormat().printFormatLeftScreen(strings, true);
-        PrintBlockFormat.getPrintFormat().printFormatLeftScreen(strings, true);
-        PrintBlockFormat.getPrintFormat().printFormatMiddleScreen(strings, true);
-        PrintBlockFormat.getPrintFormat().printFormatMiddleScreen(strings, true);
     }
-
+    
+    /**
+     * 输出的提示文字
+     */
+    private void printHelp() {
+        List<String> strings = new ArrayList<>();
+        strings.add("输入序号可查看具体信息");
+        strings.add("1. 输入help可查看提示信息");
+        strings.add("2. 输入3可查看运动员尿检环节");
+        strings.add("3. 输入5可查看新冠病毒结果检验");
+        strings.add("4. 输入6可查看尿检结果检验");
+        strings.add("5. 输入7可查看参赛名单");
+        strings.add("6. 输入8可查看分配志愿者状况");
+        strings.add("7. 输入1-8的其他值会提示不可显示");
+        strings.add("8. 输入其他值退出循环");
+        PrintBlockFormat.getPrintFormat().printFormatLeftScreen(strings, true);
+    }
+    
+    /**
+     * 展示某些环节的细节
+     */
+    private void showDetail() {
+        printHelp();
+        Scanner scanner = new Scanner(System.in);
+        String str;
+        boolean flag = true;
+        while (flag) {
+            System.out.println("[请输入想详细查看的环节:]");
+            str = scanner.nextLine();
+            if (str.equals("1") || str.equals("2") || str.equals("4")) {
+                System.out.println("[不提供本环节的详细展示]");
+            }
+            else if (str.equals("3") || str.equals("5") || str.equals("6") || str.equals("7") || str.equals("8")) {
+                PrintBlockFormat.getPrintFormat().printFormatLeftScreen(showMap.get(Integer.parseInt(str)), true);
+            }
+            else if(str.equals("help")){
+                    printHelp();
+                }
+                else {
+                    flag = false;
+                    System.out.println("[赛前准备展示环节结束]");
+                }
+        }
+    }
+    
+    
     /**
      * 判断是否能对一个比赛使用过滤器
      *
@@ -164,7 +250,7 @@ public class PreCompetitionSystemFacade {
     private boolean canFilter(String gameName) {
         return !"FootballTeam".equals(gameName) && !"Pingpong".equals(gameName) && !"PingpongTeam".equals(gameName);
     }
-
+    
     /**
      * 为运行中的程序提供一个停顿，当用户输入回车时继续程序
      */
@@ -176,7 +262,7 @@ public class PreCompetitionSystemFacade {
             e.printStackTrace();
         }
     }
-
+    
     /**
      * 判断输入的比赛是组队模式的比赛还是单人模式的比赛
      *
@@ -186,7 +272,7 @@ public class PreCompetitionSystemFacade {
     private Boolean isTeamNumber(String game) {
         return "PingpongTeam".equals(game) || "FootballTeam".equals(game) || "DivingTeam".equals(game) || "Relays".equals(game);
     }
-
+    
     /**
      * 输出num行的...
      *
@@ -197,7 +283,7 @@ public class PreCompetitionSystemFacade {
             System.out.println("...");
         }
     }
-
+    
     /**
      * 输出num行的空格
      *
@@ -208,7 +294,7 @@ public class PreCompetitionSystemFacade {
             System.out.println();
         }
     }
-
+    
     /**
      * 赛前子系统的测试函数
      *
@@ -216,11 +302,11 @@ public class PreCompetitionSystemFacade {
      */
     public static void main(String[] args) {
         PreCompetitionSystemFacade preCompetitionSystemFacade = new PreCompetitionSystemFacade();
-        preCompetitionSystemFacade.preCompetitionSystemFacade("Diving");
+        preCompetitionSystemFacade.preCompetitionSystemFacade("Pingpong");
         preCompetitionSystemFacade.preCompetitionSystemFacade("Relays");
         preCompetitionSystemFacade.preCompetitionSystemFacade("Sprints");
     }
-
+    
     /**
      * 获取某一个个人比赛的所有运动员
      *
@@ -236,7 +322,7 @@ public class PreCompetitionSystemFacade {
         }
         return res;
     }
-
+    
     /**
      * 获取一个比赛的所有队伍
      *

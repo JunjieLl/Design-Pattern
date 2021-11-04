@@ -32,10 +32,14 @@ public class GreenhandState implements State {
 	 * 为无工作经验的志愿者分配工作的函数，主要考虑该志愿者的体力以及英语能力等指标
 	 *
 	 * @param volunteer 志愿者类
+	 * @param isPrint 控制是否输出classname语句
 	 * @return 是否为该志愿者分配工作
 	 */
 	@Override
-	public boolean allocateWork(Volunteer volunteer) {
+	public boolean allocateWork(Volunteer volunteer, boolean isPrint) {
+		if(isPrint) {
+			System.out.println("classname: (GreenhandState) method: (allocateWork) " + "action: (对没有经验的志愿者分配工作，使用了State模式以及singleton模式) ");
+		}
 		return volunteer.getPhysicalPower() > 2 && volunteer.getEnglishLevel() > 3;
 	}
 }

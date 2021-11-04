@@ -6,9 +6,9 @@ package olympic.main.postgame.chores;
 public class AudienceSupport extends Support {
     private int unit;
 
-    public AudienceSupport(String name, int unit) {
+    public AudienceSupport(String name) {
         super(name);
-        this.unit = unit;
+        this.unit = 3;
     }
 
     @Override

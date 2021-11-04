@@ -1,6 +1,10 @@
 package olympic.main.postgame.chores;
 
+import olympic.Utils.PrintBlockFormat;
+
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * 具体的访问单项杂务的访问者类.
@@ -19,7 +23,14 @@ public class LeafVisitor extends ChoreVisitor {
      * @param choreLeaf 当前要处理的杂务
      */
     public void visit(ChoreLeaf choreLeaf) {
-        System.out.println(choreLeaf);
+        System.out.println("\nclassname: (LeafVisitor) method: (visit) action: (访问者模式访问到单个杂务) ");
+        List<String> choreVisitedPrintBlock = new ArrayList<>();
+        choreVisitedPrintBlock.add("访问单个杂务");
+        choreVisitedPrintBlock.add("下一项杂务为：");
+        choreVisitedPrintBlock.add(choreLeaf.toString());
+        PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
+        printBlockFormat.printFormatLeftScreen(choreVisitedPrintBlock,true);
+
         currentSupport.support(choreLeaf);
     }
 

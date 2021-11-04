@@ -1,5 +1,10 @@
 package olympic.main.postgame.chores;
 
+import olympic.Utils.PrintBlockFormat;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 解决问题的类.
  */
@@ -32,13 +37,20 @@ public abstract class Support {
 
     protected abstract boolean resolve(ChoreLeaf choreleaf);
 
-    protected void done(ChoreLeaf choreleaf) {
-        System.out.println("\nclassname: (Support) method: (done) action: (显示具体的杂务解决情况) ");
-        System.out.println(choreleaf.getName() + "已被【" + name + "】解决。");
+    protected void done(ChoreLeaf choreleaf){
+        System.out.println("\nclassname: (Support) method: (done) action: (责任链模式和访问者模式，访问并解决杂务：解决成功) ");
+        List<String> choreHandledPrintBlock = new ArrayList<>();
+        choreHandledPrintBlock.add("杂务解决成功");
+        choreHandledPrintBlock.add("【"+choreleaf.getName()+"】"+"已被【"+name+"】解决。");
+        PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
+        printBlockFormat.printFormatLeftScreen(choreHandledPrintBlock,true);
     }
 
-    protected void fail(ChoreLeaf choreleaf) {
-        System.out.println("\nclassname: (Support) method: (fail) action: (显示经过责任链后无法解决的杂务) ");
-        System.out.println(choreleaf.getName() + "暂不能被解决");
+    protected void fail(ChoreLeaf choreleaf){
+        System.out.println("\nclassname: (Support) method: (fail) action: (责任链模式和访问者模式，访问并解决杂务：解决失败) ");
+        List<String> choreFailedPrintBlock = new ArrayList<>();
+        choreFailedPrintBlock.add("当前杂务未能解决");
+        PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
+        printBlockFormat.printFormatLeftScreen(choreFailedPrintBlock,true);
     }
 }

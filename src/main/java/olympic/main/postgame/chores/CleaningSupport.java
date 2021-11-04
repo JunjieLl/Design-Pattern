@@ -6,9 +6,9 @@ package olympic.main.postgame.chores;
 public class CleaningSupport extends Support {
     private int unit;
 
-    public CleaningSupport(String name, int unit) {
+    public CleaningSupport(String name) {
         super(name);
-        this.unit = unit;
+        this.unit = 2;
     }
 
     @Override

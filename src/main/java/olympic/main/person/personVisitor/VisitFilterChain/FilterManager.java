@@ -9,6 +9,7 @@ import olympic.main.person.personVisitor.NovelCoronavirusFilterVisitor;
 import olympic.main.person.personVisitor.UrineFilterVisitor;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 过滤器的管理类，管理过滤器和过滤器链
@@ -46,6 +47,8 @@ public class FilterManager {
 	 * @return 过滤结束以后的个人运动员数组
 	 */
 	public ArrayList<IndividualAthlete> visit(IndividualAthleteList individualAthleteList, String gameName) {
+		System.out.println("classname: (FilterManager) method: (visit) " +
+				"action: (管理尿检、新冠等过滤器，使用了Filter模式) ");
 		return filterChain.visit(individualAthleteList, gameName);
 	}
 	
@@ -57,6 +60,18 @@ public class FilterManager {
 	 * @return 过滤结束以后的运动员队伍数组
 	 */
 	public ArrayList<TeamAthlete> visit(TeamAthleteList teamAthleteList, String gameName) {
+		System.out.println("classname: (FilterManager) method: (visit) " +
+				"action: (管理尿检、新冠等过滤器，使用了Filter模式) ");
 		return filterChain.visit(teamAthleteList, gameName);
+	}
+	
+	/**
+	 * 给出所需要的输出列表
+	 *
+	 * @param num 第num个输出列表对应着第num个过滤链
+	 * @return 第num个filter对应的输出列表
+	 */
+	public List<String> getShowList(int num){
+		return filterChain.getShowList(num);
 	}
 }

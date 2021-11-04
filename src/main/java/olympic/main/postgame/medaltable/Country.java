@@ -1,11 +1,11 @@
 package olympic.main.postgame.medaltable;
 
-public class Country implements Comparable {
+public class Country implements Comparable<Country> {
 
     private int goldMedalNum;
     private int silverMedalNum;
     private int bronzeMedalNum;
-    private String countryCode;
+    private final String countryCode;
 
     public Country(int goldMedalNum, int silverMedalNum, int bronzeMedalNum, String countryCode) {
         this.bronzeMedalNum = bronzeMedalNum;
@@ -19,29 +19,18 @@ public class Country implements Comparable {
     }
 
     @Override
-    public int compareTo(Object o) {
-        Country p = (Country) o;
+    public int compareTo(Country o) {
         int difference;
-
-        if ((difference = (p.goldMedalNum - this.goldMedalNum)) != 0) {
-            return difference;
-        } else if ((difference = (p.silverMedalNum - this.silverMedalNum)) != 0) {
-            return difference;
-        } else if ((difference = (p.bronzeMedalNum - this.bronzeMedalNum)) != 0) {
+        if ((difference = (o.goldMedalNum - goldMedalNum)) != 0
+                || (difference = (o.silverMedalNum - silverMedalNum)) != 0
+                || (difference = (o.bronzeMedalNum - bronzeMedalNum)) != 0) {
             return difference;
         }
-        return (compareTo(p.getCountryCode(), this.getCountryCode()));
+
+        return o.countryCode.compareTo(countryCode);
     }
 
-    private int compareTo(String name2, String name3) {
-        int s, i = 0;
-        if ((s = (name3.charAt(i) - name2.charAt(i))) != 0) {
-            return s;
-        } else {
-            i++;
-        }
-        return 0;
-    }
+
 
     public String getCountryCode() {
         return this.countryCode;

@@ -106,7 +106,7 @@ public class PersonFactory {
      * @return 运动员列表
      */
     public List<Athlete> getAthleteByNation(String nation) {
-        List<Athlete> A=nationMap.get(nation);
+        List<Athlete> A = nationMap.get(nation);
         return nationMap.get(nation);
     }
 
@@ -127,7 +127,15 @@ public class PersonFactory {
         }
     }
 
+    /**
+     * 获取教练，人数为3
+     *
+     * @return List<Chairman>
+     */
     public List<Chairman> getChairmans() {
+        if (3 == chairmanHashMap.size()) {
+            return new ArrayList<>(chairmanHashMap.values());
+        }
         List<Chairman> chairmanList = new ArrayList<>();
         Chairman chairman;
         Message message;
@@ -163,7 +171,7 @@ public class PersonFactory {
      *
      * @return 采访者列表
      */
-    private List<Interviewer> getInterviews() {
+    public List<Interviewer> getInterviews() {
 
         return this.interviewers;
 

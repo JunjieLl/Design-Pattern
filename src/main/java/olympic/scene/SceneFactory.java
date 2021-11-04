@@ -2,22 +2,11 @@ package olympic.scene;
 
 
 
-public class SceneFactory {
+final public class SceneFactory {
     private SceneFactory() {
     }
 
-    ;
-
-    private static SceneFactory instance;
-
-    public static SceneFactory getInstance() {
-        if (instance == null) {
-            instance = new SceneFactory();
-        }
-        return instance;
-    }
-
-    public olympic.scene.Scene getScene(String name) {
+    public static final Scene getScene(String name) {
         switch (name) {
             case "Relays":
             case "Marathon":

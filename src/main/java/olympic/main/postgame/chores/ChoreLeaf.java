@@ -1,5 +1,10 @@
 package olympic.main.postgame.chores;
 
+import olympic.Utils.PrintBlockFormat;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 表示杂务的类.
  */
@@ -35,8 +40,12 @@ public class ChoreLeaf extends ChoreComponent {
 
     @Override
     protected void printList(String prefix) {
-        System.out.println("\nclassname: (ChoreLeaf) method: (printList) action: (显示杂务项) ");
-        System.out.println(prefix + "/" + this);
+        List<String> choreLeafPrintBlock = new ArrayList<>();
+        System.out.println("\nclassname: (ChoreComposite) method: (printList) action: (组合模式显示单个杂务项) ");
+        choreLeafPrintBlock.add("展示当前杂务及其所属");
+        choreLeafPrintBlock.add(prefix + "/" + this);
+        PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
+        printBlockFormat.printFormatLeftScreen(choreLeafPrintBlock,true);
     }
 
     public void accept(ChoreVisitor v) {
@@ -48,6 +57,6 @@ public class ChoreLeaf extends ChoreComponent {
     }
 
     public String toString() {
-        return getName() + "\t" + "还剩" + getRemainTrouble() + "件事";
+        return "【"+getName()+"】" + "\t" + "还剩" + getRemainTrouble() + "件事";
     }
 }

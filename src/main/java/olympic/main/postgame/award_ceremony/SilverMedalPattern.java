@@ -1,12 +1,20 @@
 package olympic.main.postgame.award_ceremony;
 
+import olympic.Utils.PrintBlockFormat;
 import olympic.main.postgame.award_ceremony.prototype_framework.*;
 import olympic.main.postgame.award_ceremony.medal_decorator.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SilverMedalPattern implements MedalProduct {
-    public SilverMedalPattern() {
-        System.out.println("\nclassname: (SilverMedalPattern) method: (SilverMedalPattern) action: (生成银牌的原型) ");
-        System.out.println("=====奥林匹克运动会银牌=====");
+    public SilverMedalPattern(){
+        System.out.println("\nclassname: (SilverMedalPattern) method: (SilverMedalPattern) action: (原型模式复刻银牌的样式生成刻字奖牌) \n");
+        List<String> silverDisplayBlock = new ArrayList<>();
+        silverDisplayBlock.add("颁发银牌");
+        silverDisplayBlock.add("这块银色的奖牌上镌刻着比赛中取得第二名选手的名字和代表队。");
+        PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
+        printBlockFormat.printFormatLeftScreen(silverDisplayBlock,true);
     }
 
     public void use(String s) {
