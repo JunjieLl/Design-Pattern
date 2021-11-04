@@ -1,7 +1,9 @@
 package olympic.main.director;
 
 import olympic.main.person.PersonFactory;
+import olympic.picture.OutputPicture;
 import olympic.scene.*;
+import olympic.voiceover.OutputVoiceover;
 
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
@@ -69,13 +71,18 @@ final public class Director {
      * 赛前场景顺序执行
      */
     private void startBeforeGameActivities() {
+        OutputPicture.printPictureOf(1);
+        OutputVoiceover.printVoiceoverOf(1);
 //        new TicketCheckingScene().play(); 跳不出来死循环
+        OutputVoiceover.printVoiceoverOf(2);
         nextScene(new ProtectionFactoryScene());
+        OutputVoiceover.printVoiceoverOf(3);
         nextScene(new TranslateScene());
         nextScene(new PerformanceScene());
         nextScene(new OpenSpeechScene());
         nextScene(new EnterScene());
         nextScene(new FireworkScene());
+        OutputVoiceover.printVoiceoverOf(4);
     }
 
     /**
