@@ -171,7 +171,7 @@ public class PersonFactory {
      *
      * @return 采访者列表
      */
-    private List<Interviewer> getInterviews() {
+    public List<Interviewer> getInterviews() {
 
         return this.interviewers;
 
