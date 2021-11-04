@@ -1,6 +1,7 @@
 package olympic.main.PreCompetitionSystem;
 
 import olympic.Utils.PrintBlockFormat;
+import olympic.main.director.Mode;
 import olympic.main.person.PersonFactory;
 import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.IndividualAthlete;
@@ -87,7 +88,12 @@ public class PreCompetitionSystemFacade {
         
         System.out.println("【赛前准备结束】");
         
-        showDetail();
+        if(Mode.getNeedDetail()){
+           showDetail();
+        }
+        else {
+            printAll();
+        }
         
         if (isTeamNumber(gameName)) {
             assert athletes instanceof TeamAthleteList;
@@ -165,6 +171,19 @@ public class PreCompetitionSystemFacade {
         }
         
         printlnNRowSpace(2);
+    }
+    
+    /**
+     * 输出所有的赛前准备环节
+     */
+    private void printAll(){
+        System.out.println("[赛前准备的详细输出如下:]");
+        PrintBlockFormat.getPrintFormat().printFormatLeftScreen(showMap.get(3), true);
+        PrintBlockFormat.getPrintFormat().printFormatLeftScreen(showMap.get(5), true);
+        PrintBlockFormat.getPrintFormat().printFormatLeftScreen(showMap.get(6), true);
+        PrintBlockFormat.getPrintFormat().printFormatLeftScreen(showMap.get(7), true);
+        PrintBlockFormat.getPrintFormat().printFormatLeftScreen(showMap.get(8), true);
+        System.out.println("[赛前准备展示环节结束]");
     }
     
     /**
@@ -303,6 +322,8 @@ public class PreCompetitionSystemFacade {
     public static void main(String[] args) {
         PreCompetitionSystemFacade preCompetitionSystemFacade = new PreCompetitionSystemFacade();
         preCompetitionSystemFacade.preCompetitionSystemFacade("Pingpong");
+        preCompetitionSystemFacade.printAll();
+        
         preCompetitionSystemFacade.preCompetitionSystemFacade("Relays");
         preCompetitionSystemFacade.preCompetitionSystemFacade("Sprints");
     }
