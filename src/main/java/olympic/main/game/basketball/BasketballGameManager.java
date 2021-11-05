@@ -15,22 +15,53 @@ import java.util.List;
  * Pipeline模式
  */
 public class BasketballGameManager implements AbstractPipeline {
+    /**
+     * 单例实例
+     */
     private static BasketballGameManager singleton = new BasketballGameManager();
+
+    /**
+     * 前三名球队
+     */
     private ArrayList<Athlete> topThreeAthletes = new ArrayList<>();
+
+    /**
+     * 获取单例实例
+     * @return 单例实例
+     */
     public static BasketballGameManager getInstance() {
         return singleton;
     }
 
+    /**
+     * 单例类，构造函数私有
+     */
     private BasketballGameManager() {
     }
 
+    /**
+     * 本轮的参赛球队
+     */
     private List<BasketballTeam> teams = new ArrayList<>();
-    private Round first = null;   // 第一段管道
 
+    /**
+     * 第一轮比赛，即管道模式的第一段管道
+     */
+    private Round first = null;
+
+    /**
+     * 获取第一轮比赛，即管道模式的第一段管道
+     * @return 第一轮比赛
+     */
     public Round getFirst() {
         return this.first;
     }
 
+    /**
+     * 设置第一轮比赛，即管道模式的第一段管道
+     * @param first 第一轮比赛
+     * @return 第一轮比赛
+     */
     public Round setFirst(Round first) {
         this.first = first;
         return this.first;
@@ -115,6 +146,10 @@ public class BasketballGameManager implements AbstractPipeline {
         }
     }
 
+    /**
+     * 获取前三名球队名单，用于后续颁发奖牌
+     * @return 前三名球队列表
+     */
     public ArrayList<Athlete> getTopThreeAthletes() {
         return topThreeAthletes;
     }
