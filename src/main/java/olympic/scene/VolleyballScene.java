@@ -14,5 +14,6 @@ public class VolleyballScene implements Scene {
         volleyballGameManager.setTeams(PreCompetitionSystemFacade.getInstance().preCompetitionSystemFacade("VolleyballTeam"));
         volleyballGameManager.setFirst(new GroupRound()).setNext(new EliminationRound("四分之一决赛")).setNext(new EliminationRound("半决赛")).setNext(new EliminationRound("决赛"));  // 各轮比赛连接成管道
         volleyballGameManager.start();
+        new CeremonyScene(volleyballGameManager.getTopThreeAthletes()).play();
     }
 }
