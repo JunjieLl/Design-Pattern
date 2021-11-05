@@ -42,7 +42,7 @@ public class BasketballGameManager implements AbstractPipeline {
      * @param teams 所有参赛球队的列表
      */
     public void setTeams(List<Athlete> teams) {
-        for (int i = 0; i < 16; ++i) {
+        for (int i = 0; i < 12; ++i) {
             this.teams.add((BasketballTeam) (teams.get(i)));
         }
     }
@@ -64,22 +64,26 @@ public class BasketballGameManager implements AbstractPipeline {
      * 依次进行所有轮次的比赛
      */
     public void start() {
+        System.out.println("\nclassname: (BasketballGameManager) method: (play) action: (进行篮球比赛，使用了Pipeline模式以及Singleton模式) ");
         Round r = this.first;
-        int rank = teams.size();
         List<BasketballTeam> advancedTeams = teams;
+        for (int i = 0; i < advancedTeams.size(); ++i) {
+            advancedTeams.get(i).setRank("BasketballTeam", 12);
+        }
+        int rank = 8;
         while (r != null) {
             // 为每支球队写入排名，晋级后更新排名
+            r.setTeams(advancedTeams);
+            r.start();
+            advancedTeams = r.getAdvancedTeams();
             for (int i = 0; i < advancedTeams.size(); ++i) {
                 advancedTeams.get(i).setRank("BasketballTeam", rank);
             }
             rank /= 2;
-            r.setTeams(advancedTeams);
-            r.start();
-            advancedTeams = r.getAdvancedTeams();
             r = r.getNext();
         }
 
-        advancedTeams.get(0).setRank("BasketballTeam", rank);
+        advancedTeams.get(0).setRank("BasketballTeam", 1);
 
         ArrayList<Athlete> topThreeAthletes = new ArrayList<>();  // 前3名
         topThreeAthletes.add(null);
