@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Test {
     /**
      * 验票的测试函数
-     * @param args
+     * @param args main参数
      */
     public static void main(String[] args) {
         CheckingMachine c = new CheckingMachine();

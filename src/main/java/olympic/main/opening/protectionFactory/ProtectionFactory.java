@@ -34,7 +34,7 @@ public class ProtectionFactory {
 
     /**
      * 获取口罩个数
-     * @return
+     * @return 口罩个数
      */
     public int getMask_num() {
         return Mask_num;
@@ -42,23 +42,23 @@ public class ProtectionFactory {
 
     /**
      * 返回口罩个数
-     * @param mask_num
+     * @param mask_num 需要的口罩数量
      */
     public void setMask_num(int mask_num) {
         this.Mask_num = this.Mask_num - mask_num;
     }
 
     /**
-     * 获取洗手液个数
-     * @return
+     * 获取洗手液瓶数
+     * @return 洗手液瓶数
      */
     public int getHandSan_num() {
         return HandSan_num;
     }
 
     /**
-     * 返回洗手液个数
-     * @param handSan_num
+     * 返回洗手液瓶数
+     * @param handSan_num 需要的洗手液瓶数
      */
     public void setHandSan_num(int handSan_num) {
         this.HandSan_num = this.HandSan_num - handSan_num;
@@ -74,7 +74,7 @@ public class ProtectionFactory {
 
     /**
      * 设置测温枪个数
-     * @param temper_num
+     * @param temper_num 需要的测温枪个数
      */
     public void setTemper_num(int temper_num) {
         this.Temper_num = this.Temper_num - temper_num;
@@ -82,7 +82,7 @@ public class ProtectionFactory {
 
     /**
      * 获取手套个数
-     * @return
+     * @return 手套个数
      */
     public int getGlove_num() {
         return Glove_num;
@@ -90,7 +90,7 @@ public class ProtectionFactory {
 
     /**
      * 设置手套个数
-     * @param glove_num
+     * @param glove_num 需要的手套数
      */
     public void setGlove_num(int glove_num) {
         this.Glove_num = this.Glove_num - glove_num;
@@ -99,8 +99,8 @@ public class ProtectionFactory {
     /**
      * 设计模式：简单工厂模式
      *
-     * @param fac
-     * @param type
+     * @param fac 对应的生产工厂
+     * @param type 防疫品类型
      * @return 防疫品
      */
     public Protection produce(ProtectionFactory fac, String type) {

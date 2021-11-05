@@ -13,7 +13,7 @@ public class Compere extends Observable {
 
     /**
      * 获取节目数量
-     * @return
+     * @return 节目数量
      */
     public int getProgramNum() {
         return this.programNum;
@@ -21,7 +21,7 @@ public class Compere extends Observable {
 
     /**
      * 设置节目数量
-     * @param programNum
+     * @param programNum 节目数量
      */
     public void setProgramNum(int programNum) {
         this.programNum = programNum;

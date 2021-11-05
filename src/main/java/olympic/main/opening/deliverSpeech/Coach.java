@@ -22,6 +22,11 @@ public class Coach extends Interviewee implements Speechable, Listener {
         questionsToAnswers.put("现在心情怎么样？", List.of("我为我的队员们感到骄傲。"));
     }
 
+    /**
+     * Coach的构造方法
+     * @param name 教练名
+     * @param nation 教练国家
+     */
     public Coach(String name, String nation) {
         super(name, nation);
     }

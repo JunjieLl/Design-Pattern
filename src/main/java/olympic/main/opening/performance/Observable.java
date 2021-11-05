@@ -8,13 +8,16 @@ import java.util.List;
  * 设计模式：观察者模式
  */
 abstract class Observable {
-    protected List<Observer> observers = new ArrayList<Observer>();      //装观察者的容器
+    /**
+     * 装观察者的容器
+     */
+    protected List<Observer> observers = new ArrayList<Observer>();
 
     /**
      * 设计模式：观察者模式
      * 添加观察者
      *
-     * @param observer
+     * @param observer 观察者
      */
     public void add(Observer observer) {
         observers.add(observer);
@@ -22,11 +25,11 @@ abstract class Observable {
 
     /**
      * 去除观察者
-     * @param observer
+     * @param observer 观察者
      */
-    public void remove(Observer observer) {
-        observers.remove(observer);
-    }
+//    public void remove(Observer observer) {
+//        observers.remove(observer);
+//    }
 
     /**
      * 设计模式：观察者模式

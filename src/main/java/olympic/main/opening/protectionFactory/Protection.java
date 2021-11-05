@@ -14,15 +14,15 @@ public abstract class Protection {
      * 设计模式：简单工厂模式
      * 获取防疫品
      *
-     * @param num
+     * @param num 防疫品个数
      */
-    public abstract void get(int num);//策略方法，带获取的参数
+    public abstract void get(int num);
 
     /**
      * 设计模式：单例模式
      * 设置防疫品生产的工厂
      *
-     * @param factory
+     * @param factory 对应的生产工厂
      */
     public void setFactory(ProtectionFactory factory) {
         this.factory = factory;

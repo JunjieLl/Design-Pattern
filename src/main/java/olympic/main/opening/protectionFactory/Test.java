@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Test {
     /**
      * 获取防疫物资测试函数
-     * @param args
+     * @param args 主函数参数
      */
     public static void main(String[] args) {
         //单例模式控制工厂个数
