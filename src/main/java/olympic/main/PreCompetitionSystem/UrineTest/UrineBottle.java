@@ -39,14 +39,7 @@ public class UrineBottle {
             }
     }
     
-    /**
-     * 获取尿样瓶的名称
-     *
-     * @return 尿样瓶的名称
-     */
-    public char getUrineBottles() {
-        return urineBottles;
-    }
+
     
     /**
      * 获取该尿样瓶中的尿样是否为阳性
@@ -75,12 +68,5 @@ public class UrineBottle {
         return urineTestStrategy.urineTest(isPrint);
     }
     
-    /**
-     * 获取该尿样瓶的尿检策略
-     *
-     * @return 该尿样瓶的尿检策略
-     */
-    public UrineTestStrategy getUrineTestStrategy() {
-        return urineTestStrategy;
-    }
+
 }

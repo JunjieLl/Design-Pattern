@@ -12,7 +12,7 @@ public class ScheduleIterator implements Iterator {
     /**
      * 赛程表
      */
-    private Schedule schedule;
+    private final Schedule schedule;
 
     /**
      * 索引

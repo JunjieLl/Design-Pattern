@@ -10,5 +10,5 @@ public interface ReviewColleague {
      *
      * @param mediator 完成该任务对应的仲裁者.
      */
-    public abstract void setMediator(ReviewMediator mediator);
+    void setMediator(ReviewMediator mediator);
 }
