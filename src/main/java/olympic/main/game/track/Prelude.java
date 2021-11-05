@@ -35,17 +35,17 @@ public class Prelude extends ContestImpl {
 
         PrintBlockFormat.getPrintFormat().addString("Group " + (group + 1) );
         
-        PrintBlockFormat.getPrintFormat().addString(String.format("排名\t%-19s\t晋级\t","姓名"));
+        PrintBlockFormat.getPrintFormat().addString(String.format("排名\t%-20s\t晋级\t","姓名"));
 
         Collections.shuffle(runners);
         for (int i = 0; i < size; i++) {
             if (i >= 4) {
-                PrintBlockFormat.getPrintFormat().addString(String.format(i + 1 + "\t%-19s" + "\t" + "否" + "\t",runners.get(i).getName()));
+                PrintBlockFormat.getPrintFormat().addString(String.format(i + 1 + "\t\t%-20s" + "\t" + "否" + "\t",runners.get(i).getName()));
 
                 this.athletes.remove(runners.get(i));
 
             } else {
-                PrintBlockFormat.getPrintFormat().addString(String.format(i + 1 + "\t%-19s" + "\t" + "是" + "\t",runners.get(i).getName()));
+                PrintBlockFormat.getPrintFormat().addString(String.format(i + 1 + "\t\t%-20s" + "\t" + "是" + "\t",runners.get(i).getName()));
 
             }
         }
