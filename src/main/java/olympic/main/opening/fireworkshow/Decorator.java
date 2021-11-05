@@ -1,5 +1,8 @@
 package olympic.main.opening.fireworkshow;
 
+/**
+ * 装饰器
+ */
 abstract public class Decorator extends Show {
     protected Show show;
 

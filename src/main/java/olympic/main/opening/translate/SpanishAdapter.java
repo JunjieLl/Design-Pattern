@@ -1,5 +1,8 @@
 package olympic.main.opening.translate;
 
+/**
+ * 西班牙语适配器
+ */
 public class SpanishAdapter implements Translator {
     private Speaker speaker;
 
