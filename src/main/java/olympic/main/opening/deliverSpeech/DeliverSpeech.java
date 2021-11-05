@@ -2,6 +2,9 @@ package olympic.main.opening.deliverSpeech;
 
 import olympic.Utils.PrintBlockFormat;
 
+/**
+ * 演讲
+ */
 abstract class DeliverSpeech {  //抽象类
 
     /**

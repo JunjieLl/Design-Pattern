@@ -7,7 +7,6 @@ import olympic.main.person.Person;
  * 主席类
  * 主要用于开、闭幕式演讲
  */
-
 public class Chairman extends Person implements Speechable {
     /**
      * 主席构造函数

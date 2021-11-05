@@ -6,6 +6,9 @@ import olympic.main.person.athlete.TeamAthlete;
 
 import java.util.List;
 
+/**
+ * 子类改写，第32届奥运会开幕式
+ */
 public class Speech32thOpen extends DeliverSpeech {  //具体子类
 
 

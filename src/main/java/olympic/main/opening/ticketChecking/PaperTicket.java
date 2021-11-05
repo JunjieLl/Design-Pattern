@@ -1,5 +1,8 @@
 package olympic.main.opening.ticketChecking;
 
+/**
+ * 纸质票
+ */
 public class PaperTicket implements TicketChecking {
     /**
      * 纸质票的验票方法

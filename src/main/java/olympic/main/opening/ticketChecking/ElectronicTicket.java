@@ -2,6 +2,9 @@ package olympic.main.opening.ticketChecking;
 
 import olympic.Utils.PrintBlockFormat;
 
+/**
+ * 电子票
+ */
 public class ElectronicTicket implements TicketChecking {
 
     /**

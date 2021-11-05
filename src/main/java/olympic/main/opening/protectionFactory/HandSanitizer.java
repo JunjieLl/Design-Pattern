@@ -1,5 +1,8 @@
 package olympic.main.opening.protectionFactory;
 
+/**
+ * 洗手液
+ */
 class HandSanitizer extends Protection {
     /**
      * 获取洗手液瓶数方法
