@@ -8,7 +8,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 @DisplayName("足球比赛场景")
-public class FootballSceneTest {
+class FootballSceneTest {
     /**
      * 测试FootballScene.play()方法
      */

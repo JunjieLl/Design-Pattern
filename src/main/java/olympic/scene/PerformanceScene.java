@@ -1,5 +1,6 @@
 package olympic.scene;
 
+import olympic.Utils.PrintBlockFormat;
 import olympic.main.opening.performance.Compere;
 import olympic.main.opening.performance.Group;
 import olympic.main.opening.performance.Observer;
@@ -18,11 +19,13 @@ public class PerformanceScene implements Scene {
         cp.add(group_1); //迭代器
         cp.add(group_2);
         cp.add(group_3);
+        PrintBlockFormat.getPrintFormat().addString("节目表演");
         cp.setProgramNum(1);
-        System.out.println("-----------------------------");
+        PrintBlockFormat.getPrintFormat().addString("-----------------------------------------------------------------------");
         cp.setProgramNum(2);
-        System.out.println("-----------------------------");
+        PrintBlockFormat.getPrintFormat().addString("-----------------------------------------------------------------------");
         cp.setProgramNum(3);
-        System.out.println("-----------------------------");
+        PrintBlockFormat.getPrintFormat().addString("-----------------------------------------------------------------------");
+        PrintBlockFormat.getPrintFormat().printFormatLeftScreen(true);
     }
 }

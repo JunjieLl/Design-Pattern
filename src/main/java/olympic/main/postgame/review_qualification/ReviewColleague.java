@@ -4,6 +4,7 @@ package olympic.main.postgame.review_qualification;
  * 定义合作者的接口。
  */
 public interface ReviewColleague {
+
     /**
      * 为合作者注册仲裁者.
      *

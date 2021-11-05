@@ -11,8 +11,16 @@ import java.util.List;
  */
 public class LeafVisitor extends ChoreVisitor {
 
+    /**
+     * 当前访问者拥有的Supporter
+     */
     private Support currentSupport;
 
+    /**
+     * 访问者构造函数
+     *
+     * @param support 责任链的第一个Supporter
+     */
     public LeafVisitor(Support support) {
         this.currentSupport = support;
     }

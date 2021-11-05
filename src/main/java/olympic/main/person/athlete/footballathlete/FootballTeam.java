@@ -2,8 +2,6 @@ package olympic.main.person.athlete.footballathlete;
 
 import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.TeamAthlete;
-
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -46,12 +44,6 @@ public class FootballTeam extends TeamAthlete {
         return id;
     }
 
-    /**
-     * 设置球队的ID
-     * @param id 球队ID
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
+
 
 }

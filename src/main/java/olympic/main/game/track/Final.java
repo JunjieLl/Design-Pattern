@@ -1,7 +1,6 @@
 package olympic.main.game.track;
 
 import olympic.Utils.PrintBlockFormat;
-import olympic.scene.CeremonyScene;
 
 import olympic.main.person.athlete.Athlete;
 

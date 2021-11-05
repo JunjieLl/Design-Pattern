@@ -44,11 +44,5 @@ public class BasketballTeam extends TeamAthlete {
         return id;
     }
 
-    /**
-     * 设置球队的ID
-     * @param id 球队ID
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
+
 }

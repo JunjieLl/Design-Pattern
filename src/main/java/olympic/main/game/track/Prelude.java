@@ -3,7 +3,6 @@ package olympic.main.game.track;
 import olympic.Utils.PrintBlockFormat;
 import olympic.main.person.athlete.Athlete;
 
-import java.io.PrintStream;
 import java.util.Collections;
 import java.util.List;
 

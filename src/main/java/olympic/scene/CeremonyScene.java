@@ -83,7 +83,7 @@ public class CeremonyScene implements Scene {
         ceremonyInitPrintBlock.add("6. 展示更新后奖牌榜");
 
         PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
-        printBlockFormat.printFormatMiddleScreen(ceremonyInitPrintBlock,true);
+        printBlockFormat.printFormatLeftScreen(ceremonyInitPrintBlock,true);
 
         showDetail();
 
@@ -92,7 +92,7 @@ public class CeremonyScene implements Scene {
         List<String> ceremonyPresentPrintBlock = new ArrayList<>();
         ceremonyPresentPrintBlock.add("颁发奖牌");
         ceremonyPresentPrintBlock.add("让我们由衷祝贺奥林匹克奖牌获得者。");
-        printBlockFormat.printFormatMiddleScreen(ceremonyPresentPrintBlock,true);
+        printBlockFormat.printFormatLeftScreen(ceremonyPresentPrintBlock,true);
         
         Manager manager = new Manager();
         new MedalPresenting(manager, goldTitle, silverTitle, bronzeTitle);
@@ -101,12 +101,12 @@ public class CeremonyScene implements Scene {
         ceremonyEndingPrintBlock.add("升国旗，奏国歌");
         ceremonyEndingPrintBlock.add("请全体肃立，升"+NameFactory.getChineseNaitonName(goldPlayer.getNation())+"国旗，奏"+NameFactory.getChineseNaitonName(goldPlayer.getNation())+"国歌。");
         ceremonyEndingPrintBlock.add("本场颁奖仪式已经结束。");
-        printBlockFormat.printFormatMiddleScreen(ceremonyEndingPrintBlock,true);
+        printBlockFormat.printFormatLeftScreen(ceremonyEndingPrintBlock,true);
 
         List<String> medalTableInitPrintBlock = new ArrayList<>();
         medalTableInitPrintBlock.add("奖牌榜");
         medalTableInitPrintBlock.add("以下是目前的奖牌榜");
-        printBlockFormat.printFormatMiddleScreen(medalTableInitPrintBlock,true);
+        printBlockFormat.printFormatLeftScreen(medalTableInitPrintBlock,true);
 
         MedalTable.getInstance().printMedalTable();
         System.out.println("\n");
@@ -177,7 +177,7 @@ public class CeremonyScene implements Scene {
         List<String> interviewInitPrintBlock = new ArrayList<>();
         interviewInitPrintBlock.add("赛后采访");
         interviewInitPrintBlock.add("下面是纸媒和新媒体记者对金牌得主的采访，您可以在采访后看到他们发布的报道。");
-        PrintBlockFormat.getPrintFormat().printFormatMiddleScreen(interviewInitPrintBlock,true);
+        PrintBlockFormat.getPrintFormat().printFormatLeftScreen(interviewInitPrintBlock,true);
 
         List<Interviewer> ceremonyInterviewer = PersonFactory.getInstance().getInterviews();
         List<Interviewer> goldInterviewers = new ArrayList<Interviewer>();
@@ -231,7 +231,7 @@ public class CeremonyScene implements Scene {
         List<String> pcInitPrintBlock = new ArrayList<>();
         pcInitPrintBlock.add("新闻发布会");
         pcInitPrintBlock.add("下面是本场比赛的新闻发布会");
-        PrintBlockFormat.getPrintFormat().printFormatMiddleScreen(pcInitPrintBlock,true);
+        PrintBlockFormat.getPrintFormat().printFormatLeftScreen(pcInitPrintBlock,true);
 
         List<Interviewer> ceremonyInterviewer = PersonFactory.getInstance().getInterviews();
         List<Interviewer> pcInterviewers = new ArrayList<>();

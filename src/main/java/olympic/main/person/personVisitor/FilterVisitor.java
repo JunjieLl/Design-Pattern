@@ -31,13 +31,7 @@ public abstract class FilterVisitor {
      */
     public abstract ArrayList<TeamAthlete> visit(TeamAthleteList teamAthleteList, String gameName);
     
-    /**
-     * 获取该过滤器的名字
-     *
-     * @return 该过滤器的名字
-     */
-    public abstract String getFilterName();
-    
+
     /**
      * 用于存储输出的数据结构
      */
