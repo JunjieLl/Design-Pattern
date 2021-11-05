@@ -61,7 +61,6 @@ public class Prelude extends ContestImpl {
         System.out.println(gameType + "一共有" + size + "场");
         PrintBlockFormat.getPrintFormat().addString("初赛排名榜");
         for (int i = 0; i < size; i++) {
-            System.out.println("第" + (i + 1) + "场开始了");
             rank(runners.get(i), i);
         }
         PrintBlockFormat.getPrintFormat().printFormatLeftScreen(true);
