@@ -1,5 +1,6 @@
 package olympic.main.director;
 
+import olympic.Utils.PrintBlockFormat;
 import olympic.main.person.PersonFactory;
 import olympic.picture.OutputPicture;
 import olympic.scene.*;
@@ -186,10 +187,12 @@ final public class Director {
      */
     private void startGame() {
         while (gameNames.size() != 0) {
-            System.out.println("可观看的比赛有：");
+            PrintBlockFormat.getPrintFormat().addString("可观看的比赛");
+
             for (String name : gameNames.keySet()) {
-                System.out.println(name);
+                PrintBlockFormat.getPrintFormat().addString(name);
             }
+            PrintBlockFormat.getPrintFormat().printFormatLeftScreen(true);
             System.out.print("输入您想观看的大类(输入exit退出)：");
             String className = input.next();
             if (className.equalsIgnoreCase("exit")) {
@@ -198,13 +201,14 @@ final public class Director {
             }
             List<String> names = gameNames.get(className);
             if (names != null) {
-                System.out.println(className + "有以下比赛：");
+                PrintBlockFormat.getPrintFormat().addString(className + "有以下比赛");
                 for (String name : names) {
-                    System.out.println(name);
+                    PrintBlockFormat.getPrintFormat().addString(name);
                 }
+                PrintBlockFormat.getPrintFormat().printFormatLeftScreen(true);
                 startOneGame(className);
             } else {
-                System.out.print("没有此比赛，请重新选择,");
+                System.out.println("没有此比赛，请重新选择");
             }
         }
     }
