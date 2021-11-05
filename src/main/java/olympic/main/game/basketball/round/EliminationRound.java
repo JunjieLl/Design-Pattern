@@ -9,8 +9,15 @@ import olympic.main.game.basketball.Observer;
  * 淘汰赛的一轮
  */
 public class EliminationRound extends Round implements Observer {
+    /**
+     * 轮次名称，如决赛、半决赛、四分之一决赛
+     */
     private String name = null;
 
+    /**
+     * 构造函数
+     * @param name 轮次名称
+     */
     public EliminationRound(String name) {
         this.name = name;
     }

@@ -12,6 +12,12 @@ import java.util.List;
 import java.util.Random;
 
 public class PingpongTeam extends TeamAthlete implements PlayPingpong {
+    /**
+     * 构造函数
+     * @param name 姓名
+     * @param nation 国家
+     * @param athleteList 运动员列表
+     */
     public PingpongTeam(String name, String nation, List<Athlete> athleteList) {
         super(name, nation, athleteList);
         if (random.nextInt() % 2 == 0) {
@@ -44,11 +50,19 @@ public class PingpongTeam extends TeamAthlete implements PlayPingpong {
      */
     private Strategy strategy;
 
+    /**
+     * 获取实力
+     * @return 实力
+     */
     @Override
     public Integer getCapacity() {
         return capacity;
     }
 
+    /**
+     * 设置策略
+     * @param strategy 策略
+     */
     public void setStrategy(Strategy strategy) {
         this.strategy = strategy;
     }
@@ -76,7 +90,6 @@ public class PingpongTeam extends TeamAthlete implements PlayPingpong {
 
     /**
      * 回调函数，用于对打
-     *
      * @param oppoent
      * @return 是否击中球，没有击中球就输了这一小轮
      */

@@ -23,7 +23,7 @@ public class OutputPicture {
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(path));
             String str;
-            System.out.println("\033[1;" + 35+"m");
+            System.out.println("\033[1;" + 34+"m");
             while ((str = bufferedReader.readLine()) != null) {
                 System.out.println(str);
             }

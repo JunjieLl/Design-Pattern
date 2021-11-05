@@ -19,22 +19,16 @@ public class PingpongDefendStrategy implements Strategy {
      */
     private Athlete ownerAthlete;
 
+    /**
+     * 随机
+     */
     private Random random = new Random();
 
     /**
-     * 球的状态，用于模拟能不能接到球
+     * 对打
+     * @param oppoent 对手
+     * @return 是否赢了
      */
-//    private Integer ballState;
-
-    /**
-     * 用于模拟攻击或防守
-     */
-//    private Boolean offense;
-
-    /**
-     * 攻击概率
-     */
-//    private Integer offenseProb;
     @Override
     public Boolean playWith(CallBack oppoent) {
         if (Mode.getShowDetail()) {
@@ -55,6 +49,10 @@ public class PingpongDefendStrategy implements Strategy {
         }
     }
 
+    /**
+     * 设置归属者
+     * @param ownerAthlete 归属者
+     */
     @Override
     public void setOwnerAthlete(Athlete ownerAthlete) {
         this.ownerAthlete = ownerAthlete;
