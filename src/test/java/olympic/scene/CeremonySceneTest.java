@@ -1,6 +1,8 @@
 package olympic.scene;
 
+import olympic.main.director.Director;
 import olympic.main.director.Mode;
+import olympic.main.director.Sleep;
 import olympic.main.person.PersonFactory;
 import olympic.main.person.athlete.Athlete;
 import org.junit.jupiter.api.*;
@@ -55,6 +57,8 @@ class CeremonySceneTest {
     @Test
     void testPlay_case1() {
 
+        Sleep.setNeedSleep(false);
+
         Mode.setNeedDetail(false);
         //获取比赛
         PersonFactory personFactory = PersonFactory.getInstance();
@@ -82,6 +86,7 @@ class CeremonySceneTest {
      */
     @Test
     void testPlay_case2() {
+        Sleep.setNeedSleep(false);
         Mode.setNeedDetail(false);
 
         //获取比赛
@@ -110,6 +115,7 @@ class CeremonySceneTest {
      */
     @Test
     void testPlay_case3() {
+        Sleep.setNeedSleep(false);
         Mode.setNeedDetail(false);
 
         //获取比赛
@@ -138,6 +144,7 @@ class CeremonySceneTest {
      */
     @Test
     void testPlay_case4() {
+        Sleep.setNeedSleep(false);
         Mode.setNeedDetail(false);
 
         //获取比赛
@@ -166,6 +173,7 @@ class CeremonySceneTest {
      */
     @Test
     void testPlay_case_other() {
+        Sleep.setNeedSleep(false);
         Mode.setNeedDetail(false);
 
         //获取比赛

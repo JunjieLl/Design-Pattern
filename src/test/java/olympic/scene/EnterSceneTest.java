@@ -1,5 +1,6 @@
 package olympic.scene;
 
+import olympic.main.director.Sleep;
 import olympic.main.opening.enterarena.EnterIterator;
 import olympic.main.opening.enterarena.EnterManager;
 import olympic.main.person.PersonFactory;
@@ -17,6 +18,7 @@ class EnterSceneTest {
 
     @Test
     void testPlay() {
+        Sleep.setNeedSleep(false);
         EnterManager enterManager = EnterManager.getInstance();
         TeamAthlete torchBarer = new TeamAthlete("火炬传递队");
 
