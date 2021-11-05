@@ -19,7 +19,7 @@ public class GroupRound extends Round {
     /**
      * 小组赛积分榜
      */
-    private BasketballScoreBoard scoreBoard = BasketballScoreBoard.getInstance();
+    private final BasketballScoreBoard scoreBoard = BasketballScoreBoard.getInstance();
 
     /**
      * 进行所有小组赛并生成晋级名单
@@ -55,9 +55,9 @@ public class GroupRound extends Round {
 
         // 内部类，用于对各组球队进行排名
         class ScoreEntry {
-            public BasketballTeam team;
-            public int score;
-            public double rate;
+            public final BasketballTeam team;
+            public final int score;
+            public final double rate;
 
             public ScoreEntry(BasketballTeam team, int score, int gain, int loss) {
                 this.team = team;
@@ -82,19 +82,13 @@ public class GroupRound extends Round {
             }
 
             // 排序规则：先按积分排序，积分相同者，得失球率高者排名在前
-            Collections.sort(ranking, (o1, o2) -> {
+            ranking.sort((o1, o2) -> {
                 if (o1.score > o2.score) {
                     return -1;
                 } else if (o1.score < o2.score) {
                     return 1;
                 } else {
-                    if (o1.rate > o2.rate) {
-                        return -1;
-                    } else if (o1.rate < o2.rate) {
-                        return 1;
-                    } else {
-                       return 0;
-                    }
+                    return Double.compare(o2.rate, o1.rate);
                 }
             });
             PrintBlockFormat.getPrintFormat().addString("\nGroup " + (g + 1));

@@ -9,22 +9,22 @@ public class BasketballScoreBoard implements Observer {
     /**
      * 单例实例
      */
-    private static BasketballScoreBoard singleton = new BasketballScoreBoard();
+    private static final BasketballScoreBoard singleton = new BasketballScoreBoard();
 
     /**
      * 积分表
      */
-    private int[] score;
+    private final int[] score;
 
     /**
      * 得分
      */
-    private int[] gain;
+    private final int[] gain;
 
     /**
      * 失分
      */
-    private int[] loss;
+    private final int[] loss;
 
     /**
      * 获取单例实例

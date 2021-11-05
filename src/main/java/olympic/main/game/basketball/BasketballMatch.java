@@ -1,11 +1,8 @@
 package olympic.main.game.basketball;
 
 import olympic.Utils.PrintBlockFormat;
-import olympic.main.game.Game;
-import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.basketballathlete.BasketballTeam;
 
-import java.util.List;
 import java.util.Random;
 
 /**
@@ -18,7 +15,8 @@ public class BasketballMatch {
     /**
      * 双方球队
      */
-    private BasketballTeam team1, team2;
+    private final BasketballTeam team1;
+    private final BasketballTeam team2;
 
     /**
      * 双方得分
