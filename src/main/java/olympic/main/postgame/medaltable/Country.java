@@ -1,5 +1,7 @@
 package olympic.main.postgame.medaltable;
 
+import olympic.main.person.NameFactory;
+
 public class Country implements Comparable<Country> {
 
     private int goldMedalNum;
@@ -15,7 +17,7 @@ public class Country implements Comparable<Country> {
     }
 
     public String toString() {
-        return "国家：" + this.countryCode + "\t金牌数：" + this.goldMedalNum + "\t银牌数：" + this.silverMedalNum + "\t铜牌数：" + this.bronzeMedalNum + "\t奖牌数：" + (this.goldMedalNum + this.silverMedalNum + this.bronzeMedalNum);
+        return "国家：" + NameFactory.getChineseNaitonName(this.countryCode) +"("+ this.countryCode + ")" + "\t金牌数：" + this.goldMedalNum + "\t银牌数：" + this.silverMedalNum + "\t铜牌数：" + this.bronzeMedalNum + "\t奖牌数：" + (this.goldMedalNum + this.silverMedalNum + this.bronzeMedalNum);
     }
 
     @Override

@@ -7,6 +7,7 @@ import olympic.main.interview.builder.NewspaperBuilder;
 import olympic.main.interview.questionstrategy.AfterInterviewAthleteStrategy;
 import olympic.main.interview.questionstrategy.AfterInterviewCoachStrategy;
 import olympic.main.opening.deliverSpeech.Coach;
+import olympic.main.person.NameFactory;
 import olympic.main.person.PersonFactory;
 import olympic.main.person.athlete.Athlete;
 import olympic.main.person.interview.Interviewer;
@@ -83,7 +84,7 @@ public class CeremonyScene implements Scene {
 
         List<String> ceremonyEndingPrintBlock = new ArrayList<>();
         ceremonyEndingPrintBlock.add("升国旗，奏国歌");
-        ceremonyEndingPrintBlock.add("请全体肃立，升"+goldPlayer.getNation()+"国旗，奏"+goldPlayer.getNation()+"国歌。");
+        ceremonyEndingPrintBlock.add("请全体肃立，升"+NameFactory.getChineseNaitonName(goldPlayer.getNation())+"国旗，奏"+NameFactory.getChineseNaitonName(goldPlayer.getNation())+"国歌。");
         ceremonyEndingPrintBlock.add("本场颁奖仪式已经结束。");
         printBlockFormat.printFormatMiddleScreen(ceremonyEndingPrintBlock,true);
 
@@ -222,10 +223,10 @@ public class CeremonyScene implements Scene {
         coachInterviewPrintBlock.add("新闻发布会");
         coachInterviewPrintBlock.add("被提问方："+goldPlayer.getName() );
         coachInterviewPrintBlock.add("提问人：");
-        coachInterviewPrintBlock.add("1."+pcInterviewer_1.getName()+"，来自 "+pcInterviewer_1.getNation());
-        coachInterviewPrintBlock.add("2."+pcInterviewer_2.getName()+"，来自 "+pcInterviewer_2.getNation());
-        coachInterviewPrintBlock.add("3."+pcInterviewer_3.getName()+"，来自 "+pcInterviewer_3.getNation());
-        coachInterviewPrintBlock.add("4."+pcInterviewer_4.getName()+"，来自 "+pcInterviewer_4.getNation());
+        coachInterviewPrintBlock.add("1."+pcInterviewer_1.getName()+"，来自 "+NameFactory.getChineseNaitonName(pcInterviewer_1.getNation()));
+        coachInterviewPrintBlock.add("2."+pcInterviewer_2.getName()+"，来自 "+NameFactory.getChineseNaitonName(pcInterviewer_2.getNation()));
+        coachInterviewPrintBlock.add("3."+pcInterviewer_3.getName()+"，来自 "+NameFactory.getChineseNaitonName(pcInterviewer_3.getNation()));
+        coachInterviewPrintBlock.add("4."+pcInterviewer_4.getName()+"，来自 "+NameFactory.getChineseNaitonName(pcInterviewer_4.getNation()));
 
         PrintBlockFormat.getPrintFormat().printFormatLeftScreen(coachInterviewPrintBlock,true);
         PressConferenceMaker.makePressConference(goldPlayer,pcInterviewers,PersonFactory.getInstance().getAthletes("Pingpong"),10 );
