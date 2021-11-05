@@ -54,6 +54,13 @@ final public class Director {
 
     private PrintStream screen = System.out;
 
+
+    /**
+     * 出处重定向用
+     * @param target 输出到哪，两个选项
+     *               screen 输出到屏幕
+     *               其他 输出到文件
+     */
     private void changeOutputTarget(String target) {
         if (target.equals("screen")) {
             System.setOut(screen);
@@ -100,6 +107,10 @@ final public class Director {
         nextScene(new CloseSpeechScene());
     }
 
+    /**
+     * 开始一场具体比赛
+     * @param className 大类名称
+     */
     private void startOneGame(String className) {
         System.out.println("请输入您想观看的比赛（输入exit重新选择大类）");
         while (true) {
@@ -124,6 +135,10 @@ final public class Director {
         }
     }
 
+    /**
+     * 用户选择exit后将剩下的比赛比完
+     * 并且将输出重定向到out。txt中
+     */
     private void startRemainingGames() {
         changeOutputTarget("file");
         Mode.setNeedDetail(false);
