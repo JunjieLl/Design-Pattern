@@ -1,5 +1,6 @@
 package olympic.main.game.football;
 
+import olympic.Utils.PrintBlockFormat;
 import olympic.main.game.AbstractPipeline;
 import olympic.main.game.Valve;
 import olympic.main.game.football.round.Round;
@@ -99,9 +100,10 @@ public class FootballGameManager implements AbstractPipeline {
         }
 
         // 季军赛
-        System.out.println("\n【季军赛】");
+        PrintBlockFormat.getPrintFormat().addString("季军赛");
         EliminationFootballMatch thirdPlaceGame = new EliminationFootballMatch(tmp.get(0), tmp.get(1));
         thirdPlaceGame.play();
+        PrintBlockFormat.getPrintFormat().printFormatLeftScreen(true);
 
         if (thirdPlaceGame.getScore1() > thirdPlaceGame.getScore2()) {
             thirdPlaceGame.getTeam1().setRank("FootballTeam", 3);
