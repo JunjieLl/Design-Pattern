@@ -1,5 +1,6 @@
 package olympic.scene;
 
+import olympic.main.director.Mode;
 import olympic.main.person.PersonFactory;
 import olympic.main.person.athlete.Athlete;
 import org.junit.jupiter.api.*;
@@ -54,6 +55,7 @@ public class CeremonySceneTest {
     @Test
     void testPlay_case1() {
 
+        Mode.setNeedDetail(false);
         //获取比赛
         PersonFactory personFactory = PersonFactory.getInstance();
         List<String> gameNames = personFactory.getNames();
@@ -68,7 +70,7 @@ public class CeremonySceneTest {
         //创建Scene，测试play方法
         CeremonyScene ceremonyScene = new CeremonyScene(athletes);
 
-        final String testString = "1\n";
+        final String testString = "1\n\n\n";
         provideInput(testString);
         ceremonyScene.play();
         System.out.println("Test case 1 succeed.");
@@ -80,6 +82,7 @@ public class CeremonySceneTest {
      */
     @Test
     void testPlay_case2() {
+        Mode.setNeedDetail(false);
 
         //获取比赛
         PersonFactory personFactory = PersonFactory.getInstance();
@@ -95,7 +98,7 @@ public class CeremonySceneTest {
         //创建Scene，测试play方法
         CeremonyScene ceremonyScene = new CeremonyScene(athletes);
 
-        final String testString = "2\n";
+        final String testString = "2\n\n\n";
         provideInput(testString);
         ceremonyScene.play();
         System.out.println("Test case 2 succeed.");
@@ -107,6 +110,7 @@ public class CeremonySceneTest {
      */
     @Test
     void testPlay_case3() {
+        Mode.setNeedDetail(false);
 
         //获取比赛
         PersonFactory personFactory = PersonFactory.getInstance();
@@ -122,7 +126,7 @@ public class CeremonySceneTest {
         //创建Scene，测试play方法
         CeremonyScene ceremonyScene = new CeremonyScene(athletes);
 
-        final String testString = "3\n";
+        final String testString = "3\n\n\n";
         provideInput(testString);
         ceremonyScene.play();
         System.out.println("Test case 3 succeed.");
@@ -134,6 +138,7 @@ public class CeremonySceneTest {
      */
     @Test
     void testPlay_case4() {
+        Mode.setNeedDetail(false);
 
         //获取比赛
         PersonFactory personFactory = PersonFactory.getInstance();
@@ -149,7 +154,7 @@ public class CeremonySceneTest {
         //创建Scene，测试play方法
         CeremonyScene ceremonyScene = new CeremonyScene(athletes);
 
-        final String testString = "4\n";
+        final String testString = "4\n\n\n";
         provideInput(testString);
         ceremonyScene.play();
         System.out.println("Test case 4 succeed.");
@@ -161,6 +166,7 @@ public class CeremonySceneTest {
      */
     @Test
     void testPlay_case_other() {
+        Mode.setNeedDetail(false);
 
         //获取比赛
         PersonFactory personFactory = PersonFactory.getInstance();
