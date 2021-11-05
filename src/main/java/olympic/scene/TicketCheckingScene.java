@@ -13,6 +13,10 @@ import java.util.Scanner;
  * 入场检票
  */
 public class TicketCheckingScene implements Scene {
+
+    /**
+     * 运行场景
+     */
     @Override
     public void play() {
         CheckingMachine c = new CheckingMachine();

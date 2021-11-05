@@ -10,6 +10,10 @@ import olympic.main.opening.performance.Observer;
  * 节目表演
  */
 public class PerformanceScene implements Scene {
+
+    /**
+     * 运行场景
+     */
     @Override
     public void play() {
         Compere cp = new Compere(); //主持人

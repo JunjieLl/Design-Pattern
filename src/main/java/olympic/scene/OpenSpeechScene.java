@@ -8,6 +8,10 @@ import olympic.main.opening.deliverSpeech.Speech32thOpen;
  * 开幕式主席发表演讲
  */
 public class OpenSpeechScene implements Scene {
+
+    /**
+     * 运行场景
+     */
     @Override
     public void play() {
         Speech32thOpen oly32 = new Speech32thOpen();

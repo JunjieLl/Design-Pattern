@@ -6,7 +6,15 @@ import olympic.main.game.badminton.BadmintonPipeline;
 
 import java.util.Scanner;
 
+
+/**
+ * 羽毛球scene
+ */
 public class BadmintonGameScene implements Scene{
+    /**
+     * 构造函数
+     * @param name 名字
+     */
     public BadmintonGameScene(String name) {
         if (name.equals("Badminton")){
             badmintonPipeline = new BadmintonPipeline("羽毛球单人赛",
@@ -17,8 +25,14 @@ public class BadmintonGameScene implements Scene{
         }
     }
 
+    /**
+     * 羽毛球pipeline
+     */
     private BadmintonPipeline badmintonPipeline;
 
+    /**
+     * 运行场景
+     */
     @Override
     public void play() {
 
