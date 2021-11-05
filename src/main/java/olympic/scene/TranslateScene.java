@@ -7,6 +7,10 @@ import olympic.main.opening.translate.Speaker;
 
 import java.util.Scanner;
 
+
+/**
+ * 翻译场景
+ */
 public class TranslateScene implements Scene{
     /**
      * 主持人开幕式翻译
@@ -50,9 +54,9 @@ public class TranslateScene implements Scene{
 
     }
 
-    public static void main(String[] args) {
-        TranslateScene translateScene=new TranslateScene();
-        translateScene.play();
-
-    }
+//    public static void main(String[] args) {
+//        TranslateScene translateScene=new TranslateScene();
+//        translateScene.play();
+//
+//    }
 }

@@ -44,11 +44,12 @@ public class MedalTable {
      * 打印奖牌榜
      */
     public void printMedalTable() {
-        PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
-        printBlockFormat.addString("奖牌榜");
-        printBlockFormat.addString("\t"+ new SimpleDateFormat("yyyy-MM-dd HH:mm:ss a").format(new Date(System.currentTimeMillis())));
+        List<String> printBlockFormat = new ArrayList<>();
+        printBlockFormat.add("奖牌榜");
+        printBlockFormat.add("\t"+ new SimpleDateFormat("yyyy-MM-dd HH:mm:ss a").format(new Date(System.currentTimeMillis())));
         Collections.sort(countries);
-        countries.stream().map(Country::toString).forEach(printBlockFormat::addString);
+        countries.stream().map(Country::toString).forEach(printBlockFormat::add);
+        PrintBlockFormat.getPrintFormat().printFormatLeftScreen(printBlockFormat,true);
     }
 
     /**

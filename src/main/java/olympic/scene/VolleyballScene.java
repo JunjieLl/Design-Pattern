@@ -1,6 +1,6 @@
 package olympic.scene;
 
-import olympic.main.preCompetitionSystem.PreCompetitionSystemFacade;
+import olympic.main.precompetitionsystem.PreCompetitionSystemFacade;
 import olympic.main.game.volleyball.round.EliminationRound;
 import olympic.main.game.volleyball.round.GroupRound;
 import olympic.main.game.volleyball.VolleyballGameManager;

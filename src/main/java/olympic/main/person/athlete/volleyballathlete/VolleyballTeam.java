@@ -5,6 +5,9 @@ import olympic.main.person.athlete.TeamAthlete;
 
 import java.util.List;
 
+/**
+ * 排球队
+ */
 public class VolleyballTeam extends TeamAthlete {
     /**
      * 用于生成球队ID

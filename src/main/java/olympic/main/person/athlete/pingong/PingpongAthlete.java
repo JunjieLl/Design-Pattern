@@ -3,12 +3,15 @@ package olympic.main.person.athlete.pingong;
 import olympic.main.director.Mode;
 import olympic.main.person.athlete.CallBack;
 import olympic.main.person.athlete.IndividualAthlete;
-import olympic.main.person.athlete.pingong.Strategy.PingpongDefendStrategy;
-import olympic.main.person.athlete.pingong.Strategy.PingpongOffenseStrategy;
+import olympic.main.person.athlete.pingong.strategy.PingpongDefendStrategy;
+import olympic.main.person.athlete.pingong.strategy.PingpongOffenseStrategy;
 import olympic.main.person.athlete.Strategy;
 
 import java.util.Random;
 
+/**
+ * 乒乓球运动员
+ */
 public class PingpongAthlete extends IndividualAthlete implements PlayPingpong {
 
     /**

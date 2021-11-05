@@ -5,12 +5,15 @@ import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.CallBack;
 import olympic.main.person.athlete.Strategy;
 import olympic.main.person.athlete.TeamAthlete;
-import olympic.main.person.athlete.badminton.Strategy.BadmintonDefendStrategy;
-import olympic.main.person.athlete.badminton.Strategy.BadmintonOffenseStrategy;
+import olympic.main.person.athlete.badminton.strategy.BadmintonDefendStrategy;
+import olympic.main.person.athlete.badminton.strategy.BadmintonOffenseStrategy;
 
 import java.util.List;
 import java.util.Random;
 
+/**
+ * 羽毛球运动员组合
+ */
 public class BadmintonTeam extends TeamAthlete implements PlayBadminton {
     /**
      * 构造函数

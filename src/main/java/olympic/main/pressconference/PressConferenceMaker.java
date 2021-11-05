@@ -29,6 +29,7 @@ public abstract class PressConferenceMaker {
      * @param maxQuestionNum 最大问题数
      */
     public static void makePressConference(Interviewee interviewee, List<Interviewer> interviewers, List<? extends Listener> audience, int maxQuestionNum) {
+        System.out.println("classname: (PressConferenceMaker) method: (makePressConference) action: (举办一场新闻发布会，使用了Facade模式、Observer模式与Strategy模式)");
         // 添加采访者、听众
         for (Interviewer interviewer : interviewers) {
             interviewee.addListener(interviewer);

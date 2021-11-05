@@ -33,6 +33,7 @@ public abstract class InterviewMaker {
      * @param maxQuestionNum 最大问题数
      */
     public static void makeInterview(Interviewee interviewee, List<Interviewer> interviewers, List<? extends Listener> audience, int maxQuestionNum) {
+        System.out.println("classname: (InterviewMaker) method: (makeInterview) action: (举办一场采访，使用了Facade模式、Observer模式与Strategy模式)");
         // 添加采访者、听众、Stopper作为observer
         for (Interviewer interviewer : interviewers) {
             interviewee.addListener(interviewer);
@@ -70,6 +71,7 @@ public abstract class InterviewMaker {
         }
         System.out.println('\n');
 
+        System.out.println("classname: (ReportBuilder) method: (showReport) action: (攥写采访报告，使用了Builder模式)");
         // 攥写采访报告
         for (Interviewer interviewer : interviewers) {
             var reportBuilder = interviewer.getReportBuilder();

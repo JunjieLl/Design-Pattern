@@ -8,11 +8,15 @@ import olympic.main.opening.enterarena.EnterManager;
 
 import java.util.Random;
 
+/**
+ * 入场仪式场景
+ */
 public class EnterScene implements Scene {
-    @Override
+
     /**
      * 国家队入场仪式
      */
+    @Override
     public void play() {
         EnterManager enterManager = EnterManager.getInstance();
         TeamAthlete torchBarer = new TeamAthlete("火炬传递队");
@@ -54,8 +58,9 @@ public class EnterScene implements Scene {
         PrintBlockFormat.getPrintFormat().printFormatLeftScreen(true);
     }
 
-    public static void main(String[] args) {
-        EnterScene enterScene=new EnterScene();
-        enterScene.play();
-    }
+//
+//    public static void main(String[] args) {
+//        EnterScene enterScene=new EnterScene();
+//        enterScene.play();
+//    }
 }

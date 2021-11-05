@@ -7,13 +7,13 @@ import olympic.main.interview.builder.InternetReportBuilder;
 import olympic.main.interview.builder.NewspaperBuilder;
 import olympic.main.interview.questionstrategy.AfterInterviewAthleteStrategy;
 import olympic.main.interview.questionstrategy.AfterInterviewCoachStrategy;
-import olympic.main.opening.deliverSpeech.Coach;
+import olympic.main.opening.deliverspeech.Coach;
 import olympic.main.person.NameFactory;
 import olympic.main.person.PersonFactory;
 import olympic.main.person.athlete.Athlete;
 import olympic.main.person.interview.Interviewer;
-import olympic.main.postgame.award_ceremony.*;
-import olympic.main.postgame.award_ceremony.prototype_framework.Manager;
+import olympic.main.postgame.awardceremony.*;
+import olympic.main.postgame.awardceremony.prototypeframework.Manager;
 import olympic.main.postgame.medaltable.MedalTable;
 import olympic.main.pressconference.PressConferenceMaker;
 import olympic.main.pressconference.questionstrategy.PressConferenceStrategy;
@@ -28,11 +28,34 @@ import java.util.Scanner;
  * 颁奖仪式的场景.
  */
 public class CeremonyScene implements Scene {
+    /**
+     * 金牌标题
+     */
     private String goldTitle;
+
+    /**
+     * 银牌标题
+     */
     private String silverTitle;
+
+    /**
+     * 铜牌标题
+     */
     private String bronzeTitle;
+
+    /**
+     * 金牌运动员
+     */
     private Athlete goldPlayer;
+
+    /**
+     * 银牌运动员
+     */
     private Athlete silverPlayer;
+
+    /**
+     * 铜牌运动员
+     */
     private Athlete bronzePlayer;
 
     /**

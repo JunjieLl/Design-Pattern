@@ -1,10 +1,10 @@
-package olympic.main.person.personVisitor.visitFilterChain;
+package olympic.main.person.personvisitor.visitfilterchain;
 
 import olympic.main.person.athlete.IndividualAthlete;
 import olympic.main.person.athlete.TeamAthlete;
 import olympic.main.person.athleteList.IndividualAthleteList;
 import olympic.main.person.athleteList.TeamAthleteList;
-import olympic.main.person.personVisitor.FilterVisitor;
+import olympic.main.person.personvisitor.FilterVisitor;
 
 
 import java.util.ArrayList;

@@ -1,13 +1,22 @@
 package olympic.scene;
 
-import olympic.main.preCompetitionSystem.PreCompetitionSystemFacade;
+import olympic.main.precompetitionsystem.PreCompetitionSystemFacade;
 import olympic.main.director.Mode;
 import olympic.main.game.pingponggame.PingpongPipeline;
 import olympic.picture.OutputPicture;
 
 import java.util.Scanner;
 
+
+/**
+ * 乒乓球场景
+ */
 public class PingpongGameScene implements Scene {
+
+    /**
+     * 构造函数
+     * @param name 名称
+     */
     public PingpongGameScene(String name) {
         if (name.equals("Pingpong")){
             System.out.println("PingpongGameScenePingpong");
@@ -20,8 +29,15 @@ public class PingpongGameScene implements Scene {
         }
     }
 
+    /**
+     * 乒乓球比赛流水线
+     */
     private PingpongPipeline pingpongPipeline;
 
+
+    /**
+     * 运行场景
+     */
     @Override
     public void play() {
 

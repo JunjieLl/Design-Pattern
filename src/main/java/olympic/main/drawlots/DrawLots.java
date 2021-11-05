@@ -54,6 +54,7 @@ public class DrawLots {
      * 抽签开始
      */
     protected void drawLotsStart() {
+        System.out.println("classname: (DrawLots) method: (drawLotsStart) action: (抽签决定分组或出场顺序，使用了Bridge模式)");
         impl.rawDrawLotsStart(athletes);
     }
 

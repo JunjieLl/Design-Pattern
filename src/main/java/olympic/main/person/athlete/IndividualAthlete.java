@@ -1,10 +1,10 @@
 package olympic.main.person.athlete;
 
 import olympic.utils.PrintBlockFormat;
-import olympic.main.preCompetitionSystem.urineTest.UrineBottle;
-import olympic.main.opening.deliverSpeech.Speechable;
-import olympic.main.person.athleteList.urineTestProcurator.UrineTestProcurator;
-import olympic.main.person.athleteList.urineTestProcurator.UrineTestProcuratorFactory;
+import olympic.main.precompetitionsystem.urinetest.UrineBottle;
+import olympic.main.opening.deliverspeech.Speechable;
+import olympic.main.person.athleteList.urinetestprocurator.UrineTestProcurator;
+import olympic.main.person.athleteList.urinetestprocurator.UrineTestProcuratorFactory;
 
 import java.util.ArrayList;
 
@@ -107,17 +107,27 @@ public abstract class IndividualAthlete extends Athlete implements Speechable {
         return isNovelCoronavirus < 3;
     }
 
+    /**
+     * 观察者模式update
+     * @param content 通知内容
+     */
     @Override
     public void update(String content) {
         memory.add(content);
     }
 
+    /**
+     * 传递火炬
+     */
     @Override
     public void passFire() {
         PrintBlockFormat.getPrintFormat().addString("现在正在传递圣火的是来自" + nation + "的" + name + ",现在他将火炬传递给了下一位圣火传递者。");
         //System.out.println("现在正在传递圣火的是来自" + nation + "的" + name + ",现在他将火炬传递给了下一位圣火传递者。");
     }
 
+    /**
+     * 发表演讲
+     */
     public void deliverSpeech() {
         System.out.println("大家好，我是Athlete"+this.getName()+",我会遵守比赛规则！");
     }

@@ -1,9 +1,9 @@
 package olympic.scene;
 
-import olympic.main.postgame.monitor_site.Command;
-import olympic.main.postgame.monitor_site.CommandStack;
-import olympic.main.postgame.monitor_site.Monitor;
-import olympic.main.postgame.monitor_site.MonitorController;
+import olympic.main.postgame.monitorsite.Command;
+import olympic.main.postgame.monitorsite.CommandStack;
+import olympic.main.postgame.monitorsite.Monitor;
+import olympic.main.postgame.monitorsite.MonitorController;
 
 import java.util.Scanner;
 
@@ -11,9 +11,11 @@ import java.util.Scanner;
  * 设计模式：命令模式、备忘录模式
  * 场地回检
  */
-
-
 public class MonitorSiteScene implements Scene {
+
+    /**
+     * 运行场景
+     */
     @Override
     public void play() {
         /**

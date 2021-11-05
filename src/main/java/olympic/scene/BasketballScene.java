@@ -1,6 +1,6 @@
 package olympic.scene;
 
-import olympic.main.preCompetitionSystem.PreCompetitionSystemFacade;
+import olympic.main.precompetitionsystem.PreCompetitionSystemFacade;
 import olympic.main.game.basketball.BasketballGameManager;
 import olympic.main.game.basketball.round.EliminationRound;
 import olympic.main.game.basketball.round.GroupRound;

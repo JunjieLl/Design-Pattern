@@ -1,4 +1,4 @@
-package olympic.main.person.athleteList.urineTestProcurator;
+package olympic.main.person.athleteList.urinetestprocurator;
 
 /**
  * 尿检检察员的代理类，具体使用时，我们先生成代理类，只有在需要使用到check函数时，才会生成真实的尿检检察员类。
@@ -33,8 +33,7 @@ public class UrineTestProcuratorProxy extends UrineTestProcurator {
             System.out.println("classname: (UrineTestProcuratorProxy) method: (check) " + "action: (检察员代理类生成真正的检察员，并让真正的检察员检查运动员，使用了Proxy模式) ");
         }
         realize(isPrint);
-        String str = urineTestProcuratorReal.check(isPrint);
-        return str;
+        return urineTestProcuratorReal.check(isPrint);
     }
     
     /**

@@ -5,7 +5,7 @@ import olympic.main.interview.builder.InternetReportBuilder;
 import olympic.main.interview.builder.NewspaperBuilder;
 import olympic.main.interview.builder.ReportBuilder;
 import olympic.main.interview.questionstrategy.*;
-import olympic.main.opening.deliverSpeech.Coach;
+import olympic.main.opening.deliverspeech.Coach;
 import olympic.main.person.PersonFactory;
 import olympic.main.person.athlete.TeamAthlete;
 import olympic.main.person.athlete.divingathlete.DivingAthlete;
