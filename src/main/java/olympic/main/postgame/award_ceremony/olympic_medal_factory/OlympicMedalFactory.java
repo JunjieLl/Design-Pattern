@@ -2,8 +2,13 @@ package olympic.main.postgame.award_ceremony.olympic_medal_factory;
 
 import olympic.main.postgame.award_ceremony.factory.*;
 
+/**
+ * 具体的工厂类
+ */
 public class OlympicMedalFactory extends Factory {
     /**
+     * 制作奖牌
+     *
      * @param name     奖牌部分的名字.
      * @param material 奖牌部分的材料.
      * @return 具体的奖牌部分实例.
@@ -14,6 +19,8 @@ public class OlympicMedalFactory extends Factory {
     }
 
     /**
+     * 制作缎带
+     *
      * @param name  缎带部分的名字.
      * @param color 缎带的颜色.
      * @return 具体的缎带.

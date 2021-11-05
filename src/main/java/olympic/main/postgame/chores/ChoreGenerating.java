@@ -1,8 +1,17 @@
 package olympic.main.postgame.chores;
 
+/**
+ * 生成杂务的类
+ */
 public class ChoreGenerating {
+    /**
+     * 总杂务
+     */
     private ChoreComposite composite = new ChoreComposite("所有单元");
 
+    /**
+     * 构造函数
+     */
     public ChoreGenerating() {
         ChoreComposite securityIssues = new ChoreComposite("安保单元");
         ChoreComposite securityPriorityIssues = new ChoreComposite("安保应急单元");
@@ -53,6 +62,9 @@ public class ChoreGenerating {
 
     }
 
+    /**
+     * @return 返回生成好的总杂务
+     */
     public ChoreComposite getGeneratedComposite() {
         return composite;
     }
