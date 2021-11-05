@@ -9,6 +9,9 @@ out
 target
 *.class
 
+# Redirect output file
+out.txt
+
 # Log file
 *.log
 
@@ -57,5 +60,3 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
-out.txt
-out.txt
