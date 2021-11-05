@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * 一场篮球比赛
+ * 一场排球比赛
  * Observer 模式
  * Template Method 模式
  */
@@ -26,7 +26,7 @@ public class VolleyballMatch {
     }
 
     public void begin() {
-        System.out.println("\n【篮球赛事】" + team1.getName() + " vs " + team2.getName());
+        System.out.println("\n【排球赛事】" + team1.getName() + " vs " + team2.getName());
         System.out.println("比赛开始");
     }
 
