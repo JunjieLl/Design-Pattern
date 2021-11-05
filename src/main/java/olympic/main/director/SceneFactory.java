@@ -1,6 +1,7 @@
 package olympic.main.director;
 
 
+import olympic.picture.OutputPicture;
 import olympic.scene.FootballScene;
 import olympic.scene.Scene;
 
@@ -14,6 +15,7 @@ final public class SceneFactory {
             case "Marathon":
             case "Sprints":
             case "Hurdling":
+                OutputPicture.printPictureOf(14); //田径图片
             case "Breaststroke":
             case "Freestyle":
             case "Backstroke":

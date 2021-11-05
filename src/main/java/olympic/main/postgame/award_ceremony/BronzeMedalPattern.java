@@ -41,7 +41,6 @@ public class BronzeMedalPattern implements MedalProduct {
                                         )
                                 ), 'O')
                 );
-        System.out.println("\033[1;31m");
         medalPattern.show();
         System.out.println("\033[0m \n");
     }

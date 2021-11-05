@@ -23,9 +23,11 @@ public class OutputPicture {
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(path));
             String str;
+            System.out.println("\033[1;" + 35+"m");
             while ((str = bufferedReader.readLine()) != null) {
                 System.out.println(str);
             }
+            System.out.println("\033[0m \n");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
