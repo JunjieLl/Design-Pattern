@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 
 @DisplayName("入场验票测试")
-public class TicketCheckingTest {
+public class TicketCheckingSceneTest {
     /**
      * 入场验票测试函数
      */

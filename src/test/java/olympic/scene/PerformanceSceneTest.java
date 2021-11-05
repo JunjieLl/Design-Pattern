@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 
 
 @DisplayName("表演测试")
-public class PerformanceTest {
+public class PerformanceSceneTest {
     /**
      * 表演测试函数
      */
