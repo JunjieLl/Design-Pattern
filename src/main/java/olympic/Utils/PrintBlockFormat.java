@@ -1,6 +1,6 @@
 package olympic.Utils;
 
-
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -58,7 +58,9 @@ public class PrintBlockFormat {
 	 */
 	private String printLineRepeat(int num, Character cc) {
 		String str = "";
-		for (int i = 0; i < num; i++) str += cc.toString();
+		for (int i = 0; i < num; i++) {
+			str = str + cc.toString();
+		}
 		return str;
 	}
 	
@@ -114,8 +116,11 @@ public class PrintBlockFormat {
 	private int getSpace(String str) {
 		double num = 0;
 		for (int i = 0; i < str.length(); i++) {
-			if (str.charAt(i) >= 0x4E00 && str.charAt(i) <= 0x29FA5) num += 1.7;
-			else num += 1;
+			if (str.charAt(i) >= 0x4E00 && str.charAt(i) <= 0x29FA5) {
+				num += 1.7;
+			} else {
+				num += 1;
+			}
 		}
 		return (int) num;
 	}
@@ -165,7 +170,7 @@ public class PrintBlockFormat {
 			printBlock(stringList, false);
 		}
 	}
-
+	
 	/**
 	 * 打印字符串列表到屏幕中间
 	 *
@@ -177,5 +182,5 @@ public class PrintBlockFormat {
 			printBlock(stringList, true);
 		}
 	}
-
+	
 }

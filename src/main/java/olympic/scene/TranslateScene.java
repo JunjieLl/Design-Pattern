@@ -23,25 +23,25 @@ public class TranslateScene implements Scene{
             System.out.println("请问您是否需要的是[1:英文/2:法语/3:西班牙语]的翻译？");
             sc = new Scanner(System.in);
             option = sc.next();
-            switch (option) {
-                case "1":
-                    System.out.println("classname:(EnglishAdapter) method:(translate) action:(生成英语主持人适配器)");
-                    EnglishAdapter englishAdapter = new EnglishAdapter(a);
-                    englishAdapter.translate();
-                    break;
-                case "2":
-                    System.out.println("classname:(FrenchAdapter) method:(translate) action:(生成法语主持人适配器)");
-                    FrenchAdapter frenchAdapter = new FrenchAdapter(a);
-                    frenchAdapter.translate();
-                    break;
-                case "3":
-                    System.out.println("classname:(SpanishAdapter) method:(translate) action:(生成西班牙语主持人适配器)");
-                    SpanishAdapter spanishAdapter = new SpanishAdapter(a);
-                    spanishAdapter.translate();
-                    break;
-                default:
-                    System.out.println(a.speak());
-                    break;
+            if(option.equals("1")){
+                System.out.println("classname:(EnglishAdapter) method:(translate) action:(生成英语主持人适配器)");
+                EnglishAdapter englishAdapter=new EnglishAdapter(a);
+                englishAdapter.translate();
+            }
+            else if(option.equals("2"))
+            {
+                System.out.println("classname:(FrenchAdapter) method:(translate) action:(生成法语主持人适配器)");
+                FrenchAdapter frenchAdapter=new FrenchAdapter(a);
+                frenchAdapter.translate();
+            }
+            else if(option.equals("3"))
+            {
+                System.out.println("classname:(SpanishAdapter) method:(translate) action:(生成西班牙语主持人适配器)");
+                SpanishAdapter spanishAdapter=new SpanishAdapter(a);
+                spanishAdapter.translate();
+            }
+            else {
+                System.out.println(a.speak());
             }
         }
         else{

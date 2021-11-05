@@ -4,7 +4,9 @@ import olympic.main.opening.fireworkshow.*;
 
 public class FireworkScene implements Scene {
     @Override
-
+    /**
+     * 烟花表演仪式
+     */
     public void play() {
 
         Show myshow = new Firework();
