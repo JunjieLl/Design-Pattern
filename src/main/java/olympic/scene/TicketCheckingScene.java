@@ -1,6 +1,6 @@
 package olympic.scene;
 
-import olympic.Utils.PrintBlockFormat;
+import olympic.utils.PrintBlockFormat;
 import olympic.main.opening.ticketChecking.CheckingMachine;
 import olympic.main.opening.ticketChecking.ElectronicTicket;
 import olympic.main.opening.ticketChecking.PaperTicket;

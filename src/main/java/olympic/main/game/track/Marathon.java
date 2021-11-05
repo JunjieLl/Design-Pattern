@@ -15,6 +15,7 @@ public class Marathon extends TrackGame{
     public Marathon(List<Athlete> athletes) {
         super(athletes);
     }
+
     /**
      * start 方法是比赛开始
      */

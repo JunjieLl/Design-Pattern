@@ -25,18 +25,13 @@ public class EnterIterator implements Iterator {
      */
     @Override
     public boolean hasNext() {
-        if (this.index < list.getLength()) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.index < list.getLength();
     }
 
     /**
      *设计模式：迭代器模式
      * @return TeamAthlete 返回下一个队员
      */
-
     @Override
     public TeamAthlete next() {
         TeamAthlete allList = list.getTeamAt(this.index);

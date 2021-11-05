@@ -8,5 +8,5 @@ public interface Aggregate {
      * List
      * @return Iterator 返回迭代器
      */
-Iterator iterator();
+    Iterator iterator();
 }

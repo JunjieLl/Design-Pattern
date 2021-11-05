@@ -1,6 +1,6 @@
 package olympic.scene;
 
-import olympic.main.PreCompetitionSystem.PreCompetitionSystemFacade;
+import olympic.main.preCompetitionSystem.PreCompetitionSystemFacade;
 import olympic.main.game.football.FootballGameManager;
 import olympic.main.game.football.round.EliminationRound;
 import olympic.main.game.football.round.GroupRound;

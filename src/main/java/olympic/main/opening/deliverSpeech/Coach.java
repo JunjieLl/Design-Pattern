@@ -1,6 +1,6 @@
 package olympic.main.opening.deliverSpeech;
 
-import olympic.Utils.PrintBlockFormat;
+import olympic.utils.PrintBlockFormat;
 import olympic.main.person.interview.Interviewee;
 import olympic.main.person.interview.Listener;
 

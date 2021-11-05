@@ -1,6 +1,6 @@
 package olympic.main.postgame.award_ceremony;
 
-import olympic.Utils.PrintBlockFormat;
+import olympic.utils.PrintBlockFormat;
 import olympic.main.postgame.award_ceremony.medal_decorator.*;
 import olympic.main.postgame.award_ceremony.prototype_framework.*;
 

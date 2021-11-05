@@ -1,7 +1,5 @@
 package olympic.main.opening.ticketChecking;
 
-import olympic.Utils.PrintBlockFormat;
-
 public class ElectronicTicket implements TicketChecking {
 
     /**

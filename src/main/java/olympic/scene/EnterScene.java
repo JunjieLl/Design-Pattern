@@ -1,6 +1,6 @@
 package olympic.scene;
 
-import olympic.Utils.PrintBlockFormat;
+import olympic.utils.PrintBlockFormat;
 import olympic.main.person.PersonFactory;
 import olympic.main.person.athlete.TeamAthlete;
 import olympic.main.opening.enterarena.EnterIterator;

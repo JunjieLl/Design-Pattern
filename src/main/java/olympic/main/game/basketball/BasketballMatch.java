@@ -1,6 +1,6 @@
 package olympic.main.game.basketball;
 
-import olympic.Utils.PrintBlockFormat;
+import olympic.utils.PrintBlockFormat;
 import olympic.main.person.athlete.basketballathlete.BasketballTeam;
 
 import java.util.Random;

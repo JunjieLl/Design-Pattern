@@ -1,5 +1,7 @@
 package olympic.main.opening.translate;
-
+/**
+ * 法语适配器
+ */
 public class FrenchAdapter implements Translator {
     private Speaker speaker;
 

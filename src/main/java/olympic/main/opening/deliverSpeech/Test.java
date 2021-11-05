@@ -1,7 +1,5 @@
 package olympic.main.opening.deliverSpeech;
 
-import olympic.Utils.PrintBlockFormat;
-
 public class Test {
     /**
      * 发表演讲的测试函数

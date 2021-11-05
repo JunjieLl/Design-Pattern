@@ -1,6 +1,7 @@
 package olympic.picture;
 
 import olympic.main.director.Mode;
+import olympic.main.director.Sleep;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -8,6 +9,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ * 输出图片
+ */
 public class OutputPicture {
     public static void main(String[] args) {
         printPictureOf(12);
@@ -33,9 +37,10 @@ public class OutputPicture {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        if (Mode.getNeedDetail()) {
-            Scanner scanner = new Scanner(System.in);
-            scanner.nextLine();
-        }
+//        if (Mode.getNeedDetail()) {
+//            Scanner scanner = new Scanner(System.in);
+//            scanner.nextLine();
+//        }
+        Sleep.sleep("short");
     }
 }

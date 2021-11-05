@@ -6,6 +6,9 @@ import olympic.main.person.interview.Listener;
 
 import java.util.*;
 
+/**
+ * 运动员抽象类，用于存储其运动员得分、姓名、国家等信息
+ */
 public abstract class Athlete extends Interviewee implements Listener, TorchBarer {
     /**
      * 运动员问题对应的回答

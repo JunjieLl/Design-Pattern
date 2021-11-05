@@ -1,6 +1,6 @@
 package olympic.main.postgame.medaltable;
 
-import olympic.Utils.PrintBlockFormat;
+import olympic.utils.PrintBlockFormat;
 import olympic.main.person.PersonFactory;
 
 import java.text.SimpleDateFormat;

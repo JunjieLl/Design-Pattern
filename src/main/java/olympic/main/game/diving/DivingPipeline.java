@@ -12,10 +12,26 @@ import java.util.List;
  * 进行跳水比赛的管道
  */
 public class DivingPipeline implements AbstractPipeline {
+    /**
+     * 第一个要执行的阀门
+     */
     private Valve firstDivingGame;
+
+    /**
+     * 最后一个阀门
+     */
     private Valve lastDivingGame;
+
+    /**
+     * 参赛运动员组成的对象池
+     */
     private final AthletePool athletePool;
 
+    /**
+     * 初始化管道类
+     * @param context 比赛名称
+     * @param list 参赛运动员列表
+     */
     public DivingPipeline(String context, List<Athlete> list) {
         AbstractNode strategyNode = new PeopleNumberNode();
         RandomDrawLots drawLots = new RandomDrawLots(list, new PaperDrawLotsImpl(), 1, true);
@@ -54,6 +70,10 @@ public class DivingPipeline implements AbstractPipeline {
         ((DivingGame) firstDivingGame).takePlace(athletePool);
     }
 
+    /**
+     * 获取获奖的运动员列表
+     * @return 获奖运动员列表
+     */
     public List<Athlete> getWinner(){
         return athletePool.gotoCeremony(3);
     }

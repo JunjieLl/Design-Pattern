@@ -14,8 +14,6 @@ public abstract class Game {
      */
     protected List<Athlete> athletes = new ArrayList<>();
 
-
-
     /**
      * 构造函数
      */

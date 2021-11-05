@@ -1,6 +1,6 @@
 package olympic.main.game.track;
 
-import olympic.main.PreCompetitionSystem.PreCompetitionSystemFacade;
+import olympic.main.preCompetitionSystem.PreCompetitionSystemFacade;
 import olympic.main.person.PersonFactory;
 
 

@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 
-import olympic.Utils.PrintBlockFormat;
+import olympic.utils.PrintBlockFormat;
 import olympic.main.person.athlete.Athlete;
 import olympic.main.director.Mode;
 
@@ -38,6 +38,11 @@ public class AthletePool {
      */
     private List<Map.Entry<Athlete, Double>> list;
 
+    /**
+     * 初始化对象池
+     * @param strategy 使用的评分策略
+     * @param athleteList 参赛运动员列表
+     */
     public AthletePool(Strategy strategy, List<Athlete> athleteList) {
         System.out.println("classname: (AthletePool) method: (AthletePool) action: (对象池模式下获取参加比赛的运动员) ");
         this.pool = new LinkedList<>(athleteList);

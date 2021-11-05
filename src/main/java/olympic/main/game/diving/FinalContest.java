@@ -1,6 +1,6 @@
 package olympic.main.game.diving;
 
-import olympic.Utils.PrintBlockFormat;
+import olympic.utils.PrintBlockFormat;
 import olympic.main.director.Mode;
 import olympic.main.game.Valve;
 import olympic.main.person.athlete.Athlete;
@@ -18,6 +18,10 @@ public class FinalContest extends DivingGame {
      * 管道模式中下一轮比赛
      */
     private DivingGame nextDivingGame = null;
+
+    /**
+     * 参赛运动员组成的对象池
+     */
     private AthletePool athletePool = null;
 
 

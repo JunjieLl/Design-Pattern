@@ -2,6 +2,9 @@ package olympic.main.opening.fireworkshow;
 
 import java.util.Scanner;
 
+/**
+ * 灯光秀
+ */
 public class LightShow extends Decorator {
     /**
      * 设计模式：装饰器模式

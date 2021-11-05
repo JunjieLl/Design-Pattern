@@ -4,6 +4,7 @@ package olympic.main.interview.builder;
  * 报告Builder（纸质版）
  */
 public class NewspaperBuilder extends ReportBuilder {
+
     /**
      * 创建纸质报告Builder
      *

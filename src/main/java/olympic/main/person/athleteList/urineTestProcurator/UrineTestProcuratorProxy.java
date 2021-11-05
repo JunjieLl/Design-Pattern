@@ -1,4 +1,4 @@
-package olympic.main.person.athleteList.UrineTestProcurator;
+package olympic.main.person.athleteList.urineTestProcurator;
 
 /**
  * 尿检检察员的代理类，具体使用时，我们先生成代理类，只有在需要使用到check函数时，才会生成真实的尿检检察员类。

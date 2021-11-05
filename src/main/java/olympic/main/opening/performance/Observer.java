@@ -1,5 +1,8 @@
 package olympic.main.opening.performance;
 
+/**
+ * 观察者
+ */
 public interface Observer {
     /**
      * 设计模式：观察者模式
