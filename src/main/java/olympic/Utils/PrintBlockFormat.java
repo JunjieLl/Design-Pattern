@@ -120,7 +120,6 @@ public class PrintBlockFormat {
 		
 		if (isScreenMiddle) {
 			frontStr = printLineRepeat((maxStringSize - maxLength) / 2, ' ');
-			maxLength = Math.min(maxLength, maxLength - frontStr.length());
 		}
 		System.out.println(frontStr + printLineRepeat(maxLength + 8, c));
 		for (int i = 0; i < stringList.size(); i++) {
