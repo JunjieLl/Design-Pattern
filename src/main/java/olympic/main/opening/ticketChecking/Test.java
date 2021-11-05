@@ -13,10 +13,12 @@ public class Test {
                 TicketChecking s = new ElectronicTicket();
                 c.setStrategy(s);
                 c.strategyMethod();
+                break;
             } else if (type.equals("2")) {
                 TicketChecking s = new PaperTicket();
                 c.setStrategy(s);
                 c.strategyMethod();
+                break;
             } else {
                 System.out.println("输入错误，请重新输入");
             }

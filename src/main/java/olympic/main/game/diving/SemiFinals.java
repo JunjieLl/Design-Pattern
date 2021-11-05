@@ -1,7 +1,11 @@
 package olympic.main.game.diving;
 
+import olympic.Utils.PrintBlockFormat;
 import olympic.main.game.Valve;
 import olympic.main.person.athlete.Athlete;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 半决赛
@@ -35,19 +39,21 @@ public class SemiFinals extends DivingGame {
         System.out.println("\nclassname: (SemiFinals) method: (start) action: (管道模式下开始半决赛) ");
         System.out.println("【" + athletePool.getStrategy().getName() + " 半决赛】");
         for (int i = 1; i <= athletePool.getStrategy().getCycleNumber(); i++) {
-            System.out.println("【第" + i + "轮】");
+            List<String> ceremonyInitPrintBlock = new ArrayList<>();
+            ceremonyInitPrintBlock.add("第" + i + "轮");
             for (int j = 0; j < athletePool.getSize(); j++) {
                 Athlete curDivingAthlete = athletePool.appear();
                 double score = athletePool.getStrategy().decideScore();
                 if (athletePool.getDetail()) {
-                    System.out.printf("来自\t%-3s\t的%-15s\t" + "第" + i + "轮分数为\t" + "%.3f\n", curDivingAthlete.getNation(), curDivingAthlete.getName(), score);
+                    ceremonyInitPrintBlock.add(String.format("来自\t%-3s\t的%-15s\t" + "第" + i + "轮分数为\t" + "%.3f", curDivingAthlete.getNation(), curDivingAthlete.getName(), score));
                 }
                 athletePool.addScore(curDivingAthlete, score);
                 athletePool.disappear();
             }
-            System.out.println("第" + i + "轮结束\n");
+            ceremonyInitPrintBlock.add("第" + i + "轮结束\n");
+            PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
+            printBlockFormat.printFormatMiddleScreen(ceremonyInitPrintBlock,true);
         }
-        System.out.println("【半决赛积分榜】");
         athletePool.getResult("半决赛");
         athletePool.eliminate(12);
         System.out.println("让我们恭喜前12位选手进入下一轮！");

@@ -15,6 +15,7 @@ import olympic.main.postgame.award_ceremony.prototype_framework.Manager;
 import olympic.main.postgame.medaltable.MedalTable;
 import olympic.main.pressconference.PressConferenceMaker;
 import olympic.main.pressconference.questionstrategy.PressConferenceStrategy;
+import olympic.picture.OutputPicture;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -121,12 +122,16 @@ public class CeremonyScene implements Scene {
             if(str.equals("1")){
                 buildMedalMakingProcedure();
             }else if(str.equals("2")){
+                OutputPicture.printPictureOf(12);
                 buildInterview();
             }else if(str.equals("3")){
+                OutputPicture.printPictureOf(13);
                 buildPressConference();
             }else if(str.equals("4")){
                 buildMedalMakingProcedure();
+                OutputPicture.printPictureOf(12);
                 buildInterview();
+                OutputPicture.printPictureOf(13);
                 buildPressConference();
                 flag = false;
             }else{

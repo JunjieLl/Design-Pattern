@@ -13,6 +13,7 @@ import olympic.main.person.athlete.track.TrackAthlete;
 import olympic.main.person.athlete.track.TrackTeam;
 import olympic.main.opening.deliverSpeech.Chairman;
 import olympic.main.opening.deliverSpeech.Coach;
+import olympic.main.person.athlete.volleyballathlete.VolleyballTeam;
 import olympic.main.person.interview.Interviewer;
 
 
@@ -315,7 +316,7 @@ public class PersonFactory {
                                 nameMap.put(messages.get(k).name, tempNameAthlete);
                                 addNationMap(messages.get(k).nation, tempNameAthlete);
                             }
-                            team.add(new BasketballTeam(messages.get(c).name, messages.get(0).nation, athleteList));
+                            team.add(new VolleyballTeam(messages.get(c).name, messages.get(0).nation, athleteList));
                         }
                         hMap.put(i, team);
                         break;
