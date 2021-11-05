@@ -3,7 +3,7 @@ package olympic.main.opening.protectionFactory;
 class Gloves extends Protection {
     /**
      * 获取手套个数方法
-     * @param num
+     * @param num 手套个数
      */
     @Override
     public void get(int num) {

@@ -49,6 +49,13 @@ public class BasketballGameManager implements AbstractPipeline {
      */
     private Round first = null;
 
+    /**
+     * 获取第一轮比赛，即管道模式的第一段管道
+     * @return 第一轮比赛
+     */
+    public Round getFirst() {
+        return this.first;
+    }
 
     /**
      * 设置第一轮比赛，即管道模式的第一段管道
@@ -73,7 +80,7 @@ public class BasketballGameManager implements AbstractPipeline {
 
     /**
      * 向管道末尾添加比赛
-     * @param newGame 比赛名称
+     * @param newGame 要添加的比赛
      */
     @Override
     public void addContest(Valve newGame) {

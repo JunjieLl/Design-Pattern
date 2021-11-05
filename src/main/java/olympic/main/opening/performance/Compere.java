@@ -9,6 +9,18 @@ public class Compere extends Observable {
      */
     private int programNum;
 
+    /**
+     * 获取节目数量
+     * @return 节目数量
+     */
+    public int getProgramNum() {
+        return this.programNum;
+    }
+
+    /**
+     * 设置节目数量
+     * @param programNum 节目数量
+     */
     public void setProgramNum(int programNum) {
         this.programNum = programNum;
         this.notifyObserver();

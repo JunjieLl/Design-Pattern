@@ -1,19 +1,18 @@
 package olympic.scene;
 
-import olympic.main.PreCompetitionSystem.PreCompetitionSystemFacade;
 import olympic.main.game.track.*;
 import olympic.main.person.PersonFactory;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 @DisplayName("田径比赛场景")
-public class TrackGameScene {
+class TrackGameScene {
     /**
      * 测试DivingGameScene.play()方法
      */
     @Test
     void testPlay() {
-        TrackGame[]trackGames={
+        TrackGame[] trackGames = {
                 new Relays(PersonFactory.getInstance().getAthletes("Relays")),
                 new Marathon(PersonFactory.getInstance().getAthletes("Marathon")),
                 new Sprints(PersonFactory.getInstance().getAthletes("Sprints")),
@@ -23,7 +22,7 @@ public class TrackGameScene {
                 new Backstroke(PersonFactory.getInstance().getAthletes("Backstroke")),
                 new Butterflystroke(PersonFactory.getInstance().getAthletes("Butterflystroke")),
         };
-        for (TrackGame t:trackGames){
+        for (TrackGame t : trackGames) {
             t.start();
         }
 

@@ -19,8 +19,8 @@ public class Group implements Observer {
      * 设计模式：观察者模式
      * 表演组构造函数
      *
-     * @param order 1
-     * @param title 1
+     * @param order 表演顺序
+     * @param title 表演名称
      */
     public Group(int order, String title) {  //两个参数的构造函数
         this.order = order;
@@ -29,7 +29,7 @@ public class Group implements Observer {
 
     /**
      * 观察者更新状态
-     * @param arg
+     * @param arg 更新函数参数
      */
     public void update(Object arg) {
         int num = (Integer) arg;
