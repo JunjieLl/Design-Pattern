@@ -1,6 +1,8 @@
 package olympic.main.opening.deliverSpeech;
 
 import olympic.main.person.interview.Interviewee;
+import olympic.main.person.interview.Listener;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -8,7 +10,7 @@ import java.util.Map;
 /**
  * 教练类
  */
-public class Coach extends Interviewee implements Speechable {
+public class Coach extends Interviewee implements Speechable, Listener {
     private final static Map<String, List<String>> questionsToAnswers = new HashMap<>();
 
     static {

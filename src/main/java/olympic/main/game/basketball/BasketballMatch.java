@@ -1,5 +1,6 @@
 package olympic.main.game.basketball;
 
+import olympic.Utils.PrintBlockFormat;
 import olympic.main.game.Game;
 import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.basketballathlete.BasketballTeam;
@@ -26,8 +27,8 @@ public class BasketballMatch {
     }
 
     public void begin() {
-        System.out.println("\n【篮球赛事】" + team1.getName() + " vs " + team2.getName());
-        System.out.println("比赛开始");
+        PrintBlockFormat.getPrintFormat().addString("\n【篮球赛事】" + team1.getName() + " vs " + team2.getName());
+        PrintBlockFormat.getPrintFormat().addString("比赛开始");
     }
 
     public void play() {
@@ -45,7 +46,7 @@ public class BasketballMatch {
             score1 += r.nextInt(5);
             score2 += r.nextInt(5);
         }
-        System.out.println("比赛结束，比分为" + score1 + "-" + score2);
+        PrintBlockFormat.getPrintFormat().addString("比赛结束，比分为" + score1 + "-" + score2);
     }
 
     public int getScore1() {

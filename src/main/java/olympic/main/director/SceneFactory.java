@@ -5,6 +5,7 @@ import olympic.picture.OutputPicture;
 import olympic.scene.BadmintonGameScene;
 import olympic.scene.FootballScene;
 import olympic.scene.Scene;
+import olympic.scene.VolleyballScene;
 
 final public class SceneFactory {
     private SceneFactory() {
@@ -35,6 +36,8 @@ final public class SceneFactory {
             case "Badminton":
             case "BadmintonTeam":
                 return new BadmintonGameScene(name);
+            case "VolleyballTeam":
+                return new VolleyballScene();
             default:
                 return null;
         }

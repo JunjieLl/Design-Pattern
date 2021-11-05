@@ -1,5 +1,6 @@
 package olympic.main.game.basketball.round;
 
+import olympic.Utils.PrintBlockFormat;
 import olympic.main.game.basketball.ScheduleIterator;
 import olympic.main.game.basketball.BasketballMatch;
 import olympic.main.game.basketball.Observer;
@@ -28,13 +29,14 @@ public class EliminationRound extends Round implements Observer {
         }
 
         if (name != null) {
-            System.out.println("\n【" + name + "】");
+            PrintBlockFormat.getPrintFormat().addString(name);
         }
 
         ScheduleIterator it = schedule.iterator();
         while (it.hasNext()) {
             it.next().play();
         }
+        PrintBlockFormat.getPrintFormat().printFormatLeftScreen(true);
     }
 
     /**

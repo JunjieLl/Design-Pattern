@@ -20,6 +20,7 @@ import java.util.Random;
  * 1. Facade
  * 2. Strategy
  * 3. Builder
+ * 4. Observer
  */
 public abstract class InterviewMaker {
     /**
