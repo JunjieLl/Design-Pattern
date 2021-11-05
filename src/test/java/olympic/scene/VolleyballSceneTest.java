@@ -7,7 +7,7 @@ import olympic.main.person.PersonFactory;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("篮球比赛场景")
+@DisplayName("排球比赛场景")
 public class VolleyballSceneTest {
     /**
      * 测试BasketballScene.play()方法
