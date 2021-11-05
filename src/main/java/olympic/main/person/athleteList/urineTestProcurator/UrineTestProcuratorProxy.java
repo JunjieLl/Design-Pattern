@@ -33,8 +33,7 @@ public class UrineTestProcuratorProxy extends UrineTestProcurator {
             System.out.println("classname: (UrineTestProcuratorProxy) method: (check) " + "action: (检察员代理类生成真正的检察员，并让真正的检察员检查运动员，使用了Proxy模式) ");
         }
         realize(isPrint);
-        String str = urineTestProcuratorReal.check(isPrint);
-        return str;
+        return urineTestProcuratorReal.check(isPrint);
     }
     
     /**

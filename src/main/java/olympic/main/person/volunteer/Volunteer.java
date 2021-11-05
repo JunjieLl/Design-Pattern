@@ -52,7 +52,7 @@ public class Volunteer extends Person {
 		if(isPrint) {
 			System.out.println("classname: (Volunteer) method: (changeStateToExpert) " + "action: (把志愿者的状态从没有经验转换为有经验，使用了State模式以及singleton模式) ");
 		}
-		String output = "";
+		String output ;
 		if (state instanceof GreenhandState) {
 			output = "，本次志愿活动为该志愿者的第一次志愿活动。本次活动结束后，" + "该志愿者的状态将从不熟练业务到熟练业务。";
 			state = ExpertState.getInstance();

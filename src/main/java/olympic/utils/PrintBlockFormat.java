@@ -7,14 +7,6 @@ import java.util.List;
  * 定义了输出规范的类
  */
 public class PrintBlockFormat {
-	/**
-	 * 开头，结尾的最多输出多少个=（即变量c）符号
-	 */
-	private final int maxStringSize = 134;
-	/**
-	 * 组成开头，结尾的字符
-	 */
-	private final Character c = '=';
 	
 	/**
 	 * 私有构造函数
@@ -56,11 +48,7 @@ public class PrintBlockFormat {
 	 * @return 结果字符串
 	 */
 	private String printLineRepeat(int num, Character cc) {
-		String str = "";
-		for (int i = 0; i < num; i++) {
-			str = str + cc.toString();
-		}
-		return str;
+		return cc.toString().repeat(Math.max(0, num));
 	}
 	
 	/**
@@ -115,7 +103,7 @@ public class PrintBlockFormat {
 	private int getSpace(String str) {
 		double num = 0;
 		for (int i = 0; i < str.length(); i++) {
-			if (str.charAt(i) >= 0x4E00 && str.charAt(i) <= 0x29FA5) {
+			if (str.charAt(i) >= 0x4E00) {
 				num += 1.7;
 			} else {
 				num += 1;
@@ -141,11 +129,19 @@ public class PrintBlockFormat {
 			}
 		}
 		maxLength = maxLength + 4;
+		/*
+		 * 开头，结尾的最多输出多少个=（即变量c）符号
+		 */
+		int maxStringSize = 134;
 		maxLength = Math.min(maxLength, maxStringSize);
 		
 		if (isScreenMiddle) {
 			frontStr = printLineRepeat((maxStringSize - maxLength) / 2, ' ');
 		}
+		/*
+		 * 组成开头，结尾的字符
+		 */
+		Character c = '=';
 		System.out.println(frontStr + printLineRepeat(maxLength + 8, c));
 		for (int i = 0; i < stringList.size(); i++) {
 			if (i == 0) {
