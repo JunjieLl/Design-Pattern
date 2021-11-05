@@ -12,6 +12,9 @@ import java.util.List;
  */
 public class BadmintonGame {
 
+    /**
+     * 名字
+     */
     private String name;
 
     /**
@@ -20,15 +23,26 @@ public class BadmintonGame {
      */
     private final HashMap<Athlete, Integer> result = new HashMap<>();
 
+    /**
+     * 构造函数
+     * @param name 名字
+     */
     public BadmintonGame(String name) {
         this.name = name;
     }
 
-
+    /**
+     * 设置名字
+     * @param name 名字
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     * 添加运动员
+     * @param athlete 运动员
+     */
     public void addAthlete(Athlete athlete) {
         result.put(athlete, 0);
     }
@@ -38,8 +52,13 @@ public class BadmintonGame {
      */
     public void start() {
         List<Athlete> athletes = new ArrayList<>(result.keySet());
-        System.out.println(athletes.get(0).getName() + " vs " + athletes.get(1).getName());
-        System.out.println("===================================================");
+        System.out.println("===========================================================================");
+        System.out.print("                    [");
+        System.out.print("\033[1;" + 34+"m");
+        System.out.print(athletes.get(0).getName() + " vs " + athletes.get(1).getName());
+        System.out.print("\033[0m");
+        System.out.println("]");
+
 
         // 还没有一个运动员的分数到达三分的时候，需要继续比赛
         while (Math.max((Integer) result.values().toArray()[0], (Integer) result.values().toArray()[1]) < 2 ) {
@@ -69,7 +88,7 @@ public class BadmintonGame {
         ((Athlete) result.keySet().toArray()[winner]).setRank(name,1);
         ((Athlete) result.keySet().toArray()[1-winner]).setRank(name,2);
 
-        System.out.println("===================================================");
+        System.out.println("===========================================================================");
         System.out.print("【本局结束】");
         System.out.print("比分"+ result.values().toArray()[0]+":"+ result.values().toArray()[1]+" ");
         System.out.println(((Athlete) result.keySet().toArray()[winner]).getName()+" 获胜\n");

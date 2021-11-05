@@ -15,6 +15,9 @@ import java.util.Random;
  */
 class PingpongGameRound {
 
+    /**
+     * 成绩
+     */
     private HashMap<Athlete, Integer> result = new HashMap<>();
 
     /**
@@ -37,6 +40,10 @@ class PingpongGameRound {
         result.replace(athletes.get(winner), result.get(athletes.get(winner)) + 1);
     }
 
+    /**
+     * 添加运动员
+     * @param athlete 运动员
+     */
     public void addAthlete(Athlete athlete) {
         result.put(athlete, 0);
     }

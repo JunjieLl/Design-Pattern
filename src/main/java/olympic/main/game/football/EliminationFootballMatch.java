@@ -21,8 +21,8 @@ public class EliminationFootballMatch extends FootballMatch {
     @Override
     public void generateResult() {
         Random r = new Random();
-        score1 = r.nextInt(5);
-        score2 = r.nextInt(5);
+        score1 = r.nextInt(6);
+        score2 = r.nextInt(6);
         if (score1 == score2) {
             System.out.println("90分钟内双方打平，比分为" + score1 + "-" + score2);
             System.out.println("进入加时赛");
@@ -32,8 +32,8 @@ public class EliminationFootballMatch extends FootballMatch {
                 System.out.println("120分钟内双方打平，比分为" + score1 + "-" + score2);
                 System.out.println("进入点球决胜阶段");
                 while (penaltyScore1 == penaltyScore2) {
-                    penaltyScore1 += r.nextInt(5);
-                    penaltyScore2 += r.nextInt(5);
+                    penaltyScore1 += r.nextInt(6);
+                    penaltyScore2 += r.nextInt(6);
                 }
                 System.out.println("比赛结束，点球比分为" + penaltyScore1 + "-" + penaltyScore2);
             } else {

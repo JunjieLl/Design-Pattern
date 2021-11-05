@@ -11,6 +11,8 @@ public class VolleyballScoreBoard implements Observer {
     private int[] win;
     private int[] gain;
     private int[] loss;
+    private int[] pointGain;
+    private int[] pointLoss;
 
     /**
      * 获取单例实例
@@ -25,6 +27,8 @@ public class VolleyballScoreBoard implements Observer {
         this.win = new int[12];
         this.gain = new int[12];
         this.loss = new int[12];
+        this.pointGain = new int[12];
+        this.pointLoss = new int[12];
         for (int i = 0; i < 12; ++i) {
             score[i] = win[i] = gain[i] = loss[i] = 0;
         }
@@ -38,6 +42,7 @@ public class VolleyballScoreBoard implements Observer {
     @Override
     public void update(VolleyballMatch game) {
         int score1 = game.getScore1(), score2 = game.getScore2();
+        int point1 = game.getPoint1(), point2 = game.getPoint2();
         int id1 = game.getTeam1().getId(), id2 = game.getTeam2().getId();
         if (score1 > score2) {
             if (score2 == 0 || score2 == 1) {
@@ -61,6 +66,10 @@ public class VolleyballScoreBoard implements Observer {
         this.gain[id2] += score2;
         this.loss[id1] += score2;
         this.loss[id2] += score1;
+        this.pointGain[id1] += point1;
+        this.pointGain[id2] += point2;
+        this.pointLoss[id1] += point2;
+        this.pointLoss[id2] += point1;
     }
 
     public int[] getScore() {
@@ -77,5 +86,13 @@ public class VolleyballScoreBoard implements Observer {
 
     public int[] getWin() {
         return win;
+    }
+
+    public int[] getPointGain() {
+        return pointGain;
+    }
+
+    public int[] getPointLoss() {
+        return pointLoss;
     }
 }
