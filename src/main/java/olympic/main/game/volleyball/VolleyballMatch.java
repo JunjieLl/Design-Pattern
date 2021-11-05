@@ -39,11 +39,13 @@ public class VolleyballMatch {
 
     public void generateResult() {
         Random r = new Random();
-        score1 = 60 + r.nextInt(60);
-        score2 = 60 + r.nextInt(60);
-        while (score1 == score2) {
-            score1 += r.nextInt(5);
-            score2 += r.nextInt(5);
+        int w1 = 0, w2 = 0;
+        int[] point = new int[2];
+        while (w1 < 3 && w2 < 3) {
+            point[0] = point[1] = 0;
+            while ((point[0] < 24 && point[1] < 24) || Math.abs(point[0] - point[1]) < 2) {
+                point[r.nextInt(1)]++;
+            }
         }
         System.out.println("比赛结束，比分为" + score1 + "-" + score2);
     }

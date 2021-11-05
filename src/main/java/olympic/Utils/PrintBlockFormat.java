@@ -22,6 +22,19 @@ public class PrintBlockFormat {
 	 */
 	private PrintBlockFormat() {
 	}
+
+	List<String> strings = new ArrayList<>();
+
+	public void addString(String str){
+		strings.add(str);
+	}
+
+	public void printFormatLeftScreen(boolean isShow) {
+		if (isShow) {
+			printBlock(strings, false);
+		}
+		strings.clear();
+	}
 	
 	/**
 	 * 把字符cc重复num遍
