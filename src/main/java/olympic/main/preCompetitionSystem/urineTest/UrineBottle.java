@@ -10,6 +10,15 @@ public class UrineBottle {
     private final char urineBottles;
     
     /**
+     * 获取尿样瓶的名称
+     *
+     * @return 尿样瓶的名称
+     */
+    public char getUrineBottles() {
+        return urineBottles;
+    }
+    
+    /**
      * 该尿样是否为阳性
      */
     private Boolean isPositive;
@@ -39,8 +48,6 @@ public class UrineBottle {
             }
     }
     
-
-    
     /**
      * 获取该尿样瓶中的尿样是否为阳性
      *
@@ -54,6 +61,15 @@ public class UrineBottle {
      * 尿检策略，默认值为null
      */
     private UrineTestStrategy urineTestStrategy = null;
+    
+    /**
+     * 获取尿检策略
+     *
+     * @return 尿检策略
+     */
+    public UrineTestStrategy getUrineTestStrategy() {
+        return urineTestStrategy;
+    }
     
     /**
      * 为尿样瓶设置尿检策略
