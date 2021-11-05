@@ -14,17 +14,17 @@ public class FootballScoreBoard implements Observer {
     /**
      * 积分表
      */
-    private int[] score;
+    private final int[] score;
 
     /**
      * 净胜球表
      */
-    private int[] goalDifference;
+    private final int[] goalDifference;
 
     /**
      * 进球数表
      */
-    private int[] goal;
+    private final int[] goal;
 
     /**
      * 获取单例实例

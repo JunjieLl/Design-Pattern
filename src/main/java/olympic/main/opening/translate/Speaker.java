@@ -1,5 +1,8 @@
 package olympic.main.opening.translate;
 
+/**
+ * 主持人
+ */
 public class Speaker {
     /**
      * 主持人进行解说

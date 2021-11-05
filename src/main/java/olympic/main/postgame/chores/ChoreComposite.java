@@ -17,7 +17,7 @@ public class ChoreComposite extends ChoreComponent {
     /**
      * 存放当前组合杂务所有内容的列表
      */
-    private ArrayList problemDirectory = new ArrayList();
+    private List<ChoreComponent> problemDirectory = new ArrayList<>();
 
     /**
      * 组合杂务的构造函数
@@ -42,9 +42,7 @@ public class ChoreComposite extends ChoreComponent {
     @Override
     public int getRemainTrouble() {
         int remain = 0;
-        Iterator it = problemDirectory.iterator();
-        while (it.hasNext()) {
-            ChoreComponent component = (ChoreComponent) it.next();
+        for (ChoreComponent component : problemDirectory) {
             remain += component.getRemainTrouble();
         }
         return remain;
@@ -62,7 +60,7 @@ public class ChoreComposite extends ChoreComponent {
     /**
      * @return 当前的问题列表
      */
-    public ArrayList getProblemDirectory() {
+    public List<ChoreComponent> getProblemDirectory() {
         return this.problemDirectory;
     }
 
@@ -79,9 +77,7 @@ public class ChoreComposite extends ChoreComponent {
         choreCompositePrintBlock.add(prefix + "/" + this);
         PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
         printBlockFormat.printFormatLeftScreen(choreCompositePrintBlock, true);
-        Iterator it = problemDirectory.iterator();
-        while (it.hasNext()) {
-            ChoreComponent cc = (ChoreComponent) it.next();
+        for (ChoreComponent cc : problemDirectory) {
             cc.printList(prefix + "/" + name);
         }
     }
@@ -96,7 +92,7 @@ public class ChoreComposite extends ChoreComponent {
     /**
      * @return 返回当前组合杂务Arraylist的迭代器.
      */
-    public Iterator iterator() {      // 生成Iterator
+    public Iterator<ChoreComponent> iterator() {      // 生成Iterator
         return problemDirectory.iterator();
     }
 }

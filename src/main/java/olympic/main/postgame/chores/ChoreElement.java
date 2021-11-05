@@ -7,5 +7,5 @@ public interface ChoreElement {
     /**
      * @param v 当前的访问者
      */
-    public abstract void accept(ChoreVisitor v);
+    void accept(ChoreVisitor v);
 }

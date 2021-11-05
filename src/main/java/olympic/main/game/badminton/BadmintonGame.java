@@ -70,6 +70,10 @@ public class BadmintonGame {
         generateScore(result, name);
     }
 
+    /**
+     * 初始化
+     * @param result 结果
+     */
     public static void init(HashMap<Athlete, Integer> result) {
         List<Athlete> athletes = new ArrayList<>(result.keySet());
         System.out.println("===========================================================================");
@@ -80,6 +84,11 @@ public class BadmintonGame {
         System.out.println("]");
     }
 
+    /**
+     * 产生分数
+     * @param result 结果
+     * @param name 名字
+     */
     public static void generateScore(HashMap<Athlete, Integer> result, String name) {
         int winner;
         winner = getWinner(result, name);
@@ -90,6 +99,12 @@ public class BadmintonGame {
         System.out.println(((Athlete) result.keySet().toArray()[winner]).getName()+" 获胜\n");
     }
 
+    /**
+     * 获取胜者
+     * @param result 结果
+     * @param name 名字
+     * @return 赢家index
+     */
     public static int getWinner(HashMap<Athlete, Integer> result, String name) {
         int winner;
         if ((Integer) result.values().toArray()[0] > (Integer) result.values().toArray()[1]) {

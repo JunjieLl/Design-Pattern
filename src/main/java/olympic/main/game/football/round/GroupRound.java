@@ -19,7 +19,7 @@ public class GroupRound extends Round {
     /**
      * 小组赛积分榜
      */
-    private FootballScoreBoard scoreBoard = FootballScoreBoard.getInstance();
+    private final FootballScoreBoard scoreBoard = FootballScoreBoard.getInstance();
 
     /**
      * 进行所有小组赛并生成晋级名单
@@ -51,8 +51,10 @@ public class GroupRound extends Round {
 
         // 内部类，用于对各组球队进行排名
         class ScoreEntry {
-            public FootballTeam team;
-            public int score, goalDifference, goal;
+            public final FootballTeam team;
+            public final int score;
+            public final int goalDifference;
+            public final int goal;
 
             public ScoreEntry(FootballTeam team, int score, int goalDifference, int goal) {
                 this.team = team;
@@ -74,7 +76,7 @@ public class GroupRound extends Round {
             }
 
             // 排序规则：先按积分排序，积分相同者，净胜球多者排名在前；若净胜球仍相同，进球数多者在前
-            Collections.sort(ranking, (o1, o2) -> {
+            ranking.sort((o1, o2) -> {
                 if (o1.score > o2.score) {
                     return -1;
                 } else if (o1.score < o2.score) {
@@ -85,13 +87,7 @@ public class GroupRound extends Round {
                     } else if (o1.goalDifference < o2.goalDifference) {
                         return 1;
                     } else {
-                        if (o1.goal > o2.goal) {
-                            return -1;
-                        } else if (o1.goal < o2.goal) {
-                            return 1;
-                        } else {
-                            return 0;
-                        }
+                        return Integer.compare(o2.goal, o1.goal);
                     }
                 }
             });
@@ -108,7 +104,7 @@ public class GroupRound extends Round {
         // 四分之一决赛是小组第一名与另一小组第二名比赛，因此需要对晋级球队重新排序以便生成后续赛程
         int k = 0;
         while (k + 3 < tmp.size()) {
-            advancedTeams.add(tmp.get(k + 0));
+            advancedTeams.add(tmp.get(k));
             advancedTeams.add(tmp.get(k + 3));
             advancedTeams.add(tmp.get(k + 1));
             advancedTeams.add(tmp.get(k + 2));

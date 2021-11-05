@@ -1,8 +1,6 @@
 package olympic.main.game.football.round;
 
-import olympic.main.game.Game;
 import olympic.main.game.Valve;
-import olympic.main.game.football.FootballMatch;
 import olympic.main.game.football.Schedule;
 import olympic.main.person.athlete.footballathlete.FootballTeam;
 

@@ -1,5 +1,8 @@
 package olympic.main.opening.fireworkshow;
 
+/**
+ * 基础的烟花表演
+ */
 public class Firework extends Show {
     /**
      * 进行烟花表演
