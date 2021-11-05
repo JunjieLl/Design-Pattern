@@ -9,7 +9,7 @@ public class FootballScoreBoard implements Observer {
     /**
      * 单例实例
      */
-    private static FootballScoreBoard singleton = new FootballScoreBoard();
+    private static final FootballScoreBoard singleton = new FootballScoreBoard();
 
     /**
      * 积分表

@@ -1,7 +1,7 @@
 package olympic.main.game.football;
 
 import olympic.main.game.Aggregate;
-import olympic.main.game.Game;
+
 
 import java.util.ArrayList;
 import java.util.List;

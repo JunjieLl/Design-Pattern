@@ -14,15 +14,7 @@ public abstract class Game {
      */
     protected List<Athlete> athletes = new ArrayList<>();
 
-    /**
-     * 构造函数
-     * @param name 比赛名称
-     * @param athleteList 运动员列表
-     */
-    public Game(String name,List<Athlete> athleteList){
-        this.athletes=athleteList;
-        this.name = name;
-    }
+
 
     /**
      * 构造函数
@@ -41,7 +33,7 @@ public abstract class Game {
 
     /**
      * 获取比赛名称
-     * @return
+     * @return 比赛名
      */
     public String getName() {
         return name;
@@ -52,7 +44,7 @@ public abstract class Game {
      * @return 运动员列表
      */
     public List<Athlete> getAthletes() {
-        return this.getAthletes();
+        return athletes;
     }
 
 }
