@@ -45,9 +45,14 @@ public class VolleyballMatch {
         while (score1 < 3 && score2 < 3) {
             point[0] = point[1] = 0;
             while ((point[0] < 24 && point[1] < 24) || Math.abs(point[0] - point[1]) < 2) {
-                point[r.nextInt(1)]++;
+                point[r.nextInt(2)]++;
             }
             PrintBlockFormat.getPrintFormat().addString("第" + (set++) + "局结束，比分为" + point[0] + "-" + point[1]);
+            if (point[0] > point[1]) {
+                score1++;
+            } else {
+                score2++;
+            }
         }
         PrintBlockFormat.getPrintFormat().addString("比赛结束，比分为" + score1 + "-" + score2);
     }
