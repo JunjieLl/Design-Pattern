@@ -53,4 +53,8 @@ public class DivingPipeline implements AbstractPipeline {
         athletePool.showDetail();
         ((DivingGame) firstDivingGame).takePlace(athletePool);
     }
+
+    public List<Athlete> getWinner(){
+        return athletePool.gotoCeremony(3);
+    }
 }

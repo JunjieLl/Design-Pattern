@@ -4,10 +4,7 @@ import olympic.main.PreCompetitionSystem.PreCompetitionSystemFacade;
 import olympic.main.game.football.FootballGameManager;
 import olympic.main.game.football.round.EliminationRound;
 import olympic.main.game.football.round.GroupRound;
-import olympic.main.person.PersonFactory;
-import olympic.main.person.athlete.Athlete;
 
-import java.util.List;
 
 /**
  * 足球比赛启动器
@@ -22,5 +19,6 @@ public class FootballScene implements Scene {
         footballGameManager.setTeams(PreCompetitionSystemFacade.getInstance().preCompetitionSystemFacade("FootballTeam"));
         footballGameManager.setFirst(new GroupRound()).setNext(new EliminationRound("四分之一决赛")).setNext(new EliminationRound("半决赛")).setNext(new EliminationRound("决赛"));  // 各轮比赛连接成管道
         footballGameManager.start();
+        new CeremonyScene(footballGameManager.getTopThreeAthletes()).play();
     }
 }

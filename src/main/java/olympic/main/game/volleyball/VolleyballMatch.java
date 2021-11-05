@@ -1,5 +1,6 @@
 package olympic.main.game.volleyball;
 
+import olympic.Utils.PrintBlockFormat;
 import olympic.main.game.Game;
 import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.volleyballathlete.VolleyballTeam;
@@ -26,8 +27,8 @@ public class VolleyballMatch {
     }
 
     public void begin() {
-        System.out.println("\n【排球赛事】" + team1.getName() + " vs " + team2.getName());
-        System.out.println("比赛开始");
+        PrintBlockFormat.getPrintFormat().addString("\n【排球赛事】" + team1.getName() + " vs " + team2.getName());
+        PrintBlockFormat.getPrintFormat().addString("比赛开始");
     }
 
     public void play() {
@@ -39,13 +40,21 @@ public class VolleyballMatch {
 
     public void generateResult() {
         Random r = new Random();
-        score1 = 60 + r.nextInt(60);
-        score2 = 60 + r.nextInt(60);
-        while (score1 == score2) {
-            score1 += r.nextInt(5);
-            score2 += r.nextInt(5);
+        int set = 1;
+        int[] point = new int[2];
+        while (score1 < 3 && score2 < 3) {
+            point[0] = point[1] = 0;
+            while ((point[0] < 24 && point[1] < 24) || Math.abs(point[0] - point[1]) < 2) {
+                point[r.nextInt(2)]++;
+            }
+            PrintBlockFormat.getPrintFormat().addString("第" + (set++) + "局结束，比分为" + point[0] + "-" + point[1]);
+            if (point[0] > point[1]) {
+                score1++;
+            } else {
+                score2++;
+            }
         }
-        System.out.println("比赛结束，比分为" + score1 + "-" + score2);
+        PrintBlockFormat.getPrintFormat().addString("比赛结束，比分为" + score1 + "-" + score2);
     }
 
     public int getScore1() {

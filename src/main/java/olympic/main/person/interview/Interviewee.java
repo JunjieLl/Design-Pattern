@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
  * 使用的设计模式：
  * 1. Observer
  */
-public abstract class Interviewee extends Person implements Listener {
+public abstract class Interviewee extends Person {
     /**
      * 停止词：{@value}
      */

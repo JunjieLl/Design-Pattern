@@ -151,6 +151,11 @@ final public class Director {
         Mode.setNeedDetail(false);
         for (List<String> nameList : gameNames.values()) {
             for (String name : nameList) {
+
+//                changeOutputTarget("screen");
+//                System.out.println(name);
+//                changeOutputTarget("file");
+
                 Scene scene = SceneFactory.getScene(name);
                 if (scene != null) {
                     scene.play();
