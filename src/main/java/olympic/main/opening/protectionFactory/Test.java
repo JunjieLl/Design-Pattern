@@ -1,6 +1,6 @@
 package olympic.main.opening.protectionFactory;
 
-import olympic.Utils.PrintBlockFormat;
+import olympic.utils.PrintBlockFormat;
 
 import java.util.Scanner;
 

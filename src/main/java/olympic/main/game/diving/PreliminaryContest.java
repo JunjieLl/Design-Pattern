@@ -1,6 +1,6 @@
 package olympic.main.game.diving;
 
-import olympic.Utils.PrintBlockFormat;
+import olympic.utils.PrintBlockFormat;
 import olympic.main.director.Mode;
 import olympic.main.game.Valve;
 import olympic.main.person.athlete.Athlete;

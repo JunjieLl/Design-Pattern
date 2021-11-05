@@ -10,6 +10,9 @@ import java.util.*;
  * 运动员抽象类，用于存储其运动员得分、姓名、国家等信息
  */
 public abstract class Athlete extends Interviewee implements Listener, TorchBarer {
+    /**
+     * 运动员问题对应的回答
+     */
     private final static Map<String, List<String>> questionsToAnswers = new HashMap<>();
 
     static {
@@ -70,9 +73,9 @@ public abstract class Athlete extends Interviewee implements Listener, TorchBare
     }
 
     /**
-     * 获取回答
+     * 获取运动员问题的答案
      * @param content 问题
-     * @return 回答
+     * @return 运动员问题的答案
      */
     @Override
     public List<String> getAnswers(String content) {

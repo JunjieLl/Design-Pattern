@@ -1,6 +1,6 @@
 package olympic.main.game.basketball;
 
-import olympic.Utils.PrintBlockFormat;
+import olympic.utils.PrintBlockFormat;
 import olympic.main.game.AbstractPipeline;
 import olympic.main.game.Valve;
 import olympic.main.game.basketball.round.Round;

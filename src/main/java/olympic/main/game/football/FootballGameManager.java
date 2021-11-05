@@ -1,6 +1,6 @@
 package olympic.main.game.football;
 
-import olympic.Utils.PrintBlockFormat;
+import olympic.utils.PrintBlockFormat;
 import olympic.main.game.AbstractPipeline;
 import olympic.main.game.Valve;
 import olympic.main.game.football.round.Round;

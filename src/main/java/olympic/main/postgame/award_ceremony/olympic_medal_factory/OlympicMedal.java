@@ -1,5 +1,5 @@
 package olympic.main.postgame.award_ceremony.olympic_medal_factory;
-import olympic.Utils.PrintBlockFormat;
+import olympic.utils.PrintBlockFormat;
 import olympic.main.postgame.award_ceremony.factory.*;
 
 import java.util.ArrayList;

@@ -1,10 +1,10 @@
 package olympic.main.person.athlete;
 
-import olympic.Utils.PrintBlockFormat;
-import olympic.main.PreCompetitionSystem.UrineTest.UrineBottle;
+import olympic.utils.PrintBlockFormat;
+import olympic.main.preCompetitionSystem.urineTest.UrineBottle;
 import olympic.main.opening.deliverSpeech.Speechable;
-import olympic.main.person.athleteList.UrineTestProcurator.UrineTestProcurator;
-import olympic.main.person.athleteList.UrineTestProcurator.UrineTestProcuratorFactory;
+import olympic.main.person.athleteList.urineTestProcurator.UrineTestProcurator;
+import olympic.main.person.athleteList.urineTestProcurator.UrineTestProcuratorFactory;
 
 import java.util.ArrayList;
 

@@ -1,6 +1,6 @@
-package olympic.main.PreCompetitionSystem;
+package olympic.main.preCompetitionSystem;
 
-import olympic.Utils.PrintBlockFormat;
+import olympic.utils.PrintBlockFormat;
 import olympic.main.director.Mode;
 import olympic.main.person.PersonFactory;
 import olympic.main.person.athlete.Athlete;
@@ -11,10 +11,9 @@ import olympic.main.person.athleteList.IndividualAthleteList;
 import olympic.main.person.athleteList.TeamAthleteList;
 import olympic.main.person.personVisitor.ConfirmEntryListVisitor;
 import olympic.main.person.personVisitor.UrineVisitor;
-import olympic.main.person.personVisitor.VisitFilterChain.FilterManager;
+import olympic.main.person.personVisitor.visitFilterChain.FilterManager;
 import olympic.main.person.volunteer.VolunteerList;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -139,12 +138,12 @@ public class PreCompetitionSystemFacade {
         if (canFilter(gameName)) {
             if (isTeamNumber(gameName)) {
                 assert athletes instanceof TeamAthleteList;
-                athletes = new TeamAthleteList(filterManager.visit((TeamAthleteList) athletes, gameName));
+                filterManager.visit((TeamAthleteList) athletes, gameName);
                 
             } else {
                 
                 assert athletes instanceof IndividualAthleteList;
-                athletes = new IndividualAthleteList(filterManager.visit((IndividualAthleteList) athletes, gameName));
+                filterManager.visit((IndividualAthleteList) athletes, gameName);
             }
             showMap.put(5, filterManager.getShowList(0));
             showMap.put(6, filterManager.getShowList(1));
@@ -278,18 +277,6 @@ public class PreCompetitionSystemFacade {
         return !"FootballTeam".equals(gameName) && !"Pingpong".equals(gameName) && !"PingpongTeam".equals(gameName)
                 && !"Badminton".equals(gameName)&& !"BadmintonTeam".equals(gameName) &&
                 !"BasketballTeam".equals(gameName) && !"VolleyballTeam".equals(gameName);
-    }
-    
-    /**
-     * 为运行中的程序提供一个停顿，当用户输入回车时继续程序
-     */
-    private void pressEnterToContinue() {
-        System.out.print("按下回车继续:");
-        try {
-            System.in.read();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
     
     /**

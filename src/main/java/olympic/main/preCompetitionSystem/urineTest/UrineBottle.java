@@ -1,4 +1,4 @@
-package olympic.main.PreCompetitionSystem.UrineTest;
+package olympic.main.preCompetitionSystem.urineTest;
 
 /**
  * 尿检结束后获取的尿样瓶
@@ -8,6 +8,15 @@ public class UrineBottle {
      * 尿样瓶的名称（只能为‘A’或者‘B’）
      */
     private final char urineBottles;
+    
+    /**
+     * 获取尿样瓶的名称
+     *
+     * @return 尿样瓶的名称
+     */
+    public char getUrineBottles() {
+        return urineBottles;
+    }
     
     /**
      * 该尿样是否为阳性
@@ -39,8 +48,6 @@ public class UrineBottle {
             }
     }
     
-
-    
     /**
      * 获取该尿样瓶中的尿样是否为阳性
      *
@@ -54,6 +61,15 @@ public class UrineBottle {
      * 尿检策略，默认值为null
      */
     private UrineTestStrategy urineTestStrategy = null;
+    
+    /**
+     * 获取尿检策略
+     *
+     * @return 尿检策略
+     */
+    public UrineTestStrategy getUrineTestStrategy() {
+        return urineTestStrategy;
+    }
     
     /**
      * 为尿样瓶设置尿检策略

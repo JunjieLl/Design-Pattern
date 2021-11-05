@@ -1,6 +1,6 @@
 package olympic.main.game.basketball.round;
 
-import olympic.Utils.PrintBlockFormat;
+import olympic.utils.PrintBlockFormat;
 import olympic.main.game.basketball.ScheduleIterator;
 import olympic.main.game.basketball.BasketballMatch;
 import olympic.main.game.basketball.Observer;

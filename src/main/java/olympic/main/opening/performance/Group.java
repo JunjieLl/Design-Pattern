@@ -1,6 +1,6 @@
 package olympic.main.opening.performance;
 
-import olympic.Utils.PrintBlockFormat;
+import olympic.utils.PrintBlockFormat;
 
 /**
  * 观察者：表演组
