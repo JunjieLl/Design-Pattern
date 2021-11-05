@@ -46,7 +46,7 @@ public class Volunteer extends Person {
 	 * 如果志愿者为熟手状态，调用此函数不改变运动员状态状态。
 	 *
 	 * @param isPrint 控制是否输出classname语句
-	 * @return 函数的输出语句
+	 * @return 志愿者状态转换的说明
 	 */
 	public String changeStateToExpert(boolean isPrint) {
 		if(isPrint) {

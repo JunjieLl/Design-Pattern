@@ -25,6 +25,7 @@ public class UrineTestProcuratorProxy extends UrineTestProcurator {
      * 然后使用尿检检察员的真实类检查运动员
      *
      * @param isPrint 控制是否输出classname语句
+     * @return 表示检察员检查的结果
      */
     @Override
     public String  check(boolean isPrint) {
