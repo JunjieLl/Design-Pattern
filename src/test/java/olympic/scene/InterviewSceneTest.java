@@ -3,6 +3,7 @@ package olympic.scene;
 import olympic.main.interview.InterviewMaker;
 import olympic.main.interview.builder.InternetReportBuilder;
 import olympic.main.interview.builder.NewspaperBuilder;
+import olympic.main.interview.builder.ReportBuilder;
 import olympic.main.interview.questionstrategy.*;
 import olympic.main.opening.deliverSpeech.Coach;
 import olympic.main.person.PersonFactory;
@@ -156,9 +157,9 @@ class InterviewSceneTest {
      */
     @Test
     void testAddListener() {
-        Interviewee interviewee = new DivingAthlete("ljj", "中国");
-        Listener interviewer = new Interviewer("zch", "中国");
-        Listener individualAthlete = new TrackAthlete("xmx", "中国");
+        Interviewee interviewee = new DivingAthlete("李俊杰", "中国");
+        Listener interviewer = new Interviewer("翟晨昊", "中国");
+        Listener individualAthlete = new TrackAthlete("徐满心", "中国");
         Listener teamAthlete = new TeamAthlete("中国");
         interviewee.addListener(interviewer);
         interviewee.addListener(individualAthlete);
@@ -168,14 +169,34 @@ class InterviewSceneTest {
 
     @Test
     void testNotifyListeners() {
-        Interviewee interviewee = new DivingAthlete("ljj", "中国");
-        Listener interviewer = new Interviewer("zch", "中国", new PreInterviewAthleteStrategy());
-        Listener individualAthlete = new TrackAthlete("xmx", "中国");
+        Interviewee interviewee = new DivingAthlete("李俊杰", "中国");
+        Listener interviewer = new Interviewer("翟晨昊", "中国", new PreInterviewAthleteStrategy());
+        Listener individualAthlete = new TrackAthlete("徐满心", "中国");
         Listener teamAthlete = new TeamAthlete("中国");
         interviewee.addListener(interviewer);
         interviewee.addListener(individualAthlete);
         interviewee.addListener(teamAthlete);
         interviewee.notifyListeners("大家好！");
         System.out.println("Test notifyListeners() succeed.");
+    }
+
+    @Test
+    void testAsk() {
+        Interviewer interviewer1 = new Interviewer("吴杨", "英国", new PreInterviewAthleteStrategy());
+        interviewer1.update("一段测试的话");
+        System.out.println(interviewer1.ask());
+        System.out.println("Test update() succeed");
+    }
+
+    @Test
+    void testBuilder() {
+        Interviewer interviewer1 = new Interviewer("吴杨", "英国", new PreInterviewAthleteStrategy(), new InternetReportBuilder("徐满心", "李俊杰"));
+        ReportBuilder reportBuilder = interviewer1.getReportBuilder();
+        reportBuilder.makeTitle("");
+        reportBuilder.makeQuestion("问题1");
+        reportBuilder.makeAnswer("问题1的回答");
+        reportBuilder.close();
+        reportBuilder.showReport();
+        System.out.println("Test Builder succeed");
     }
 }
