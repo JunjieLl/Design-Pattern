@@ -1,4 +1,4 @@
-package olympic.main.person.personvisitor.visitFilterChain;
+package olympic.main.person.personvisitor.visitfilterchain;
 
 import olympic.main.person.athlete.IndividualAthlete;
 import olympic.main.person.athlete.TeamAthlete;
