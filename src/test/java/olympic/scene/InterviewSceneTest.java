@@ -23,7 +23,7 @@ import java.util.List;
 /*
  * 《Test写法》
  * 1. 写多少个test类？：
- * olympic.scene包中的scene类，每个scene写一个xxxSceneTest类，如InterviewSceneTest
+ * olympic.scene包中的scene类，每个scene写一个xxxSceneTest类，如InterviewSceneTest，每个人写自己负责的scene的test
  * class所处的package为olympic.scene，class前不加任何如public的修饰
  *
  * 2. 每个test类怎么写？：
