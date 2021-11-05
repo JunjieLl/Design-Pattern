@@ -18,5 +18,10 @@ public abstract class TrackGame extends Game{
         super();
         this.athletes = athletes;
     }
+    public List<Athlete> getAthletes() {
+        return this.athletes;
+    }
+
+
 
 }

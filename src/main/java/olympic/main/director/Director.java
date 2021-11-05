@@ -152,7 +152,7 @@ final public class Director {
             Integer gameNum;
             try {
                 gameNum = Integer.parseInt(gameName) - 1;
-                if (gameNum >= 0 && gameNum <= gameNameList.size()) {
+                if (gameNum >= 0 && gameNum < gameNameList.size()) {
                     gameName = gameNameList.get(gameNum);
                     Scene scene = SceneFactory.getScene(gameName);
                     if (scene != null) {
@@ -188,9 +188,9 @@ final public class Director {
         for (List<String> nameList : gameNames.values()) {
             for (String name : nameList) {
 
-//                changeOutputTarget("screen");
-//                System.out.println(name);
-//                changeOutputTarget("file");
+                changeOutputTarget("screen");
+                System.out.println(name);
+                changeOutputTarget("file");
 
                 Scene scene = SceneFactory.getScene(name);
                 if (scene != null) {
@@ -220,7 +220,7 @@ final public class Director {
             }
             try {
                 Integer classNum = Integer.parseInt(className) - 1;
-                if (classNum >= 0 && classNum <= classNames.size()) {
+                if (classNum >= 0 && classNum < classNames.size()) {
                     List<String> names = gameNames.get(classNames.get(classNum));
                     PrintBlockFormat.getPrintFormat().addString(classNames.get(classNum) + "有以下比赛");
                     for (String name : names) {
