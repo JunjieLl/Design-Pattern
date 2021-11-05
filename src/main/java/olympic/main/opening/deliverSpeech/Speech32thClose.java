@@ -74,8 +74,6 @@ public class Speech32thClose extends DeliverSpeech {   //具体子类
         } else {
             throw new UnSpeachAble();
         }
-
-
     }
 
     @Override

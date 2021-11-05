@@ -54,6 +54,13 @@ final public class Director {
 
     private PrintStream screen = System.out;
 
+
+    /**
+     * 出处重定向用
+     * @param target 输出到哪，两个选项
+     *               screen 输出到屏幕
+     *               其他 输出到文件
+     */
     private void changeOutputTarget(String target) {
         if (target.equals("screen")) {
             System.setOut(screen);
@@ -72,15 +79,20 @@ final public class Director {
      */
     private void startBeforeGameActivities() {
         OutputPicture.printPictureOf(1);
+        OutputPicture.printPictureOf(2); //flag
         OutputVoiceover.printVoiceoverOf(1);
-//        new TicketCheckingScene().play(); 跳不出来死循环
+        new TicketCheckingScene().play();
         OutputVoiceover.printVoiceoverOf(2);
         nextScene(new ProtectionFactoryScene());
+        OutputPicture.printPictureOf(3); //playground
         OutputVoiceover.printVoiceoverOf(3);
         nextScene(new TranslateScene());
+        OutputPicture.printPictureOf(7); // sing
         nextScene(new PerformanceScene());
         nextScene(new OpenSpeechScene());
+        OutputPicture.printPictureOf(8); // queue
         nextScene(new EnterScene());
+        OutputPicture.printPictureOf(9); //fire
         nextScene(new FireworkScene());
         OutputVoiceover.printVoiceoverOf(4);
     }
@@ -92,12 +104,20 @@ final public class Director {
 //        new PressConferenceScene().play();  //不用在main里面调
 //        new CeremonyScene().play();
         nextScene(new ChoreHandlingScene());
-        nextScene(new ChoreHandlingScene());
+        OutputVoiceover.printVoiceoverOf(16);
         nextScene(new MonitorSiteScene());
+        OutputVoiceover.printVoiceoverOf(17);
         nextScene(new ReviewQScene());
+        OutputVoiceover.printVoiceoverOf(18);
         nextScene(new CloseSpeechScene());
+        OutputPicture.printPictureOf(16);
+        OutputPicture.printPictureOf(1);
     }
 
+    /**
+     * 开始一场具体比赛
+     * @param className 大类名称
+     */
     private void startOneGame(String className) {
         System.out.println("请输入您想观看的比赛（输入exit重新选择大类）");
         while (true) {
@@ -122,6 +142,10 @@ final public class Director {
         }
     }
 
+    /**
+     * 用户选择exit后将剩下的比赛比完
+     * 并且将输出重定向到out。txt中
+     */
     private void startRemainingGames() {
         changeOutputTarget("file");
         Mode.setNeedDetail(false);
@@ -171,3 +195,4 @@ final public class Director {
         startAfterGameActivities();
     }
 }
+

@@ -32,6 +32,7 @@ public class UrineTestProcuratorReal extends UrineTestProcurator {
      * 尿检检察员真实类的检察院动员函数
      *
      * @param isPrint 控制是否输出classname语句
+     * @return 表示检察员检查的结果
      */
     @Override
     public String check(boolean isPrint) {
