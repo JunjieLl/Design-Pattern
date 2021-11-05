@@ -14,6 +14,9 @@ import java.util.Random;
  */
 public class ReviewQScene implements Scene {
 
+    /**
+     * 检查比赛资质的主函数
+     */
     @Override
     public void play() {
         List<String> games = PersonFactory.getInstance().getNames();
