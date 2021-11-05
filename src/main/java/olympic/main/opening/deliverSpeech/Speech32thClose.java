@@ -20,36 +20,64 @@ public class Speech32thClose extends DeliverSpeech {   //具体子类
     public Athlete athleteRepre = tempList.getFirstAthlete();
     Coach coachRepre = PersonFactory.getInstance().getCoach();
 
+    /**
+     * 重写函数，获取奥运会届数
+     * @return
+     */
     @Override
     String time() {
         return "32";
     }
 
+    /**
+     * 重写钩子方法的判断函数，设定是闭幕式
+     * @return
+     */
     @Override
     public boolean isOpen() {
         return false;
     }
 
+    /**
+     * 重写方法，获取OOCP的名字
+     * @return
+     */
     @Override
     String getOOCP() {
         return OOCP.getName();
     }
 
+    /**
+     * 重写方法，获取IOCP的名字
+     * @return
+     */
     @Override
     String getIOCP() {
         return IOCP.getName();
     }
 
+    /**
+     * 重写方法，获取HP的名字
+     * @return
+     */
     @Override
     String getHP() {
         return HP.getName();
     }
 
+    /**
+     * 重写方法，获取运动员代表的名字
+     * @return
+     */
     @Override
     String getAthleteRepre() {
         return athleteRepre.getName();
     }
 
+    /**
+     * 重写方法，获取教练员代表的名字
+     * @return
+     */
     @Override
     String getCoachRepre() {
         return coachRepre.getName();
@@ -67,6 +95,9 @@ public class Speech32thClose extends DeliverSpeech {   //具体子类
         }
     }
 
+    /**
+     * 重写函数，获取IOCP的讲话
+     */
     @Override
     void getIOCPSpeech() {
         if (IOCP instanceof Speechable) {
@@ -76,30 +107,13 @@ public class Speech32thClose extends DeliverSpeech {   //具体子类
         }
     }
 
+    /**
+     * 重写函数，获取HP的讲话
+     */
     @Override
     void getHPSpeech() {
         if (HP instanceof Speechable) {
             HP.deliverSpeech();
-        } else {
-            throw new UnSpeachAble();
-        }
-
-    }
-
-    @Override
-    void getAthleteRepreSpeech() {
-        if (athleteRepre instanceof Speechable) {
-            athleteRepre.deliverSpeech();
-        } else {
-            throw new UnSpeachAble();
-        }
-
-    }
-
-    @Override
-    void getCoachRepreSpeech() {
-        if (coachRepre instanceof Speechable) {
-            coachRepre.deliverSpeech();
         } else {
             throw new UnSpeachAble();
         }

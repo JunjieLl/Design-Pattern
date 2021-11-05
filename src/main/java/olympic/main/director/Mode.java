@@ -9,7 +9,7 @@ public class Mode {
     /**
      * 构造函数
      */
-    private Mode(){};
+    private Mode(){}
 
     /**
      * 是否需要输出细节

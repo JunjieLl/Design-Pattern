@@ -8,7 +8,7 @@ final public class SceneFactory {
     private SceneFactory() {
     }
 
-    public static final Scene getScene(String name) {
+    public static Scene getScene(String name) {
         switch (name) {
             case "Relays":
             case "Marathon":

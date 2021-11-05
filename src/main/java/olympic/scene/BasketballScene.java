@@ -8,10 +8,13 @@ import olympic.main.game.basketball.round.GroupRound;
 
 /**
  * 篮球比赛启动器
- * 调用start方法进行所有比赛
+ * 调用play方法进行所有比赛
  */
 public class BasketballScene implements Scene {
 
+    /**
+     * 进行所有比赛
+     */
     @Override
     public void play() {
         System.out.println("classname: (BasketballScene) method: (play) action: (篮球比赛开始) ");

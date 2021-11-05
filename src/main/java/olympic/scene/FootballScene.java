@@ -8,10 +8,13 @@ import olympic.main.game.football.round.GroupRound;
 
 /**
  * 足球比赛启动器
- * 调用start方法进行所有比赛
+ * 调用play方法进行所有比赛
  */
 public class FootballScene implements Scene {
 
+    /**
+     * 进行所有比赛
+     */
     @Override
     public void play() {
         System.out.println("classname: (FootballScene) method: (play) action: (足球比赛开始) ");

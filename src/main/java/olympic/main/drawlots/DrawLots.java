@@ -64,20 +64,6 @@ public class DrawLots {
         impl.rawDrawLotsEnd(athletes, groupSize);
     }
 
-    /**
-     * 执行保持原顺序的抽签
-     *
-     * @return 抽签完毕后排好序的athlete列表
-     */
-    public List<Athlete> drawLot() {
-        if (showDetail) {
-            drawLotsStart();
-        }
-        if (showDetail) {
-            drawLotsEnd();
-        }
-        return athletes;
-    }
 
     /**
      * DrawLots（抽签）功能的使用示例

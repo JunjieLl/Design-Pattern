@@ -5,11 +5,19 @@ import olympic.main.person.athlete.footballathlete.FootballTeam;
 import java.util.Random;
 
 /**
- * 淘汰赛
+ * 足球淘汰赛
  */
 public class EliminationFootballMatch extends FootballMatch {
+    /**
+     * 双方点球得分
+     */
     private int penaltyScore1, penaltyScore2;
 
+    /**
+     * 构造函数
+     * @param team1 球队1
+     * @param team2 球队2
+     */
     public EliminationFootballMatch(FootballTeam team1, FootballTeam team2) {
         super(team1, team2);
     }
@@ -46,7 +54,6 @@ public class EliminationFootballMatch extends FootballMatch {
 
     /**
      * 设置观察者
-     *
      * @param o 观察者
      */
     public void setObserver(Observer o) {
@@ -55,7 +62,7 @@ public class EliminationFootballMatch extends FootballMatch {
 
     /**
      * 获取球队1的点球得分
-     * @return
+     * @return 球队1的点球得分
      */
     public int getPenaltyScore1() {
         return penaltyScore1;
@@ -63,7 +70,7 @@ public class EliminationFootballMatch extends FootballMatch {
 
     /**
      * 获取球队2的点球得分
-     * @return
+     * @return 球队2的点球得分
      */
     public int getPenaltyScore2() {
         return penaltyScore2;

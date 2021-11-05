@@ -7,7 +7,7 @@ import olympic.main.person.PersonFactory;
 public class MaInTest {
     public static void main(String[] args) {
 
-//        Relays relays=new Relays(PersonFactory.getInstance().getAthletes("Relays"));
+
 
         Relays relays=new Relays(PreCompetitionSystemFacade.getInstance().preCompetitionSystemFacade("Relays"));
         relays.start();
