@@ -240,7 +240,7 @@ final public class Director {
      * 对外接口，启动运动会
      */
     public void start() {
-//        startBeforeGameActivities();
+        startBeforeGameActivities();
         startGame();
         startAfterGameActivities();
     }
