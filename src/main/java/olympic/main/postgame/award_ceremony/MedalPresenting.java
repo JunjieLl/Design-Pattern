@@ -8,10 +8,6 @@ import olympic.picture.OutputPicture;
  * 颁发奖牌的Client类
  */
 public class MedalPresenting {
-    private Manager manager;
-    private String titleGoldMedal;
-    private String titleSilverMedal;
-    private String titleBronzeMedal;
 
     /**
      * 构造函数
@@ -22,10 +18,6 @@ public class MedalPresenting {
      * @param titleBronzeMedal 铜牌获得者、团队名称.
      */
     public MedalPresenting(Manager manager, String titleGoldMedal, String titleSilverMedal, String titleBronzeMedal) {
-        this.manager = manager;
-        this.titleGoldMedal = titleGoldMedal;
-        this.titleSilverMedal = titleSilverMedal;
-        this.titleBronzeMedal = titleBronzeMedal;
 
         OutputPicture.printPictureOf(15);
 
