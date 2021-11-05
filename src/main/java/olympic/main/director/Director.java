@@ -79,15 +79,20 @@ final public class Director {
      */
     private void startBeforeGameActivities() {
         OutputPicture.printPictureOf(1);
+        OutputPicture.printPictureOf(2); //flag
         OutputVoiceover.printVoiceoverOf(1);
 //        new TicketCheckingScene().play(); 跳不出来死循环
         OutputVoiceover.printVoiceoverOf(2);
         nextScene(new ProtectionFactoryScene());
+        OutputPicture.printPictureOf(3); //playground
         OutputVoiceover.printVoiceoverOf(3);
         nextScene(new TranslateScene());
+        OutputPicture.printPictureOf(7); // sing
         nextScene(new PerformanceScene());
         nextScene(new OpenSpeechScene());
+        OutputPicture.printPictureOf(8); // queue
         nextScene(new EnterScene());
+        OutputPicture.printPictureOf(9); //fire
         nextScene(new FireworkScene());
         OutputVoiceover.printVoiceoverOf(4);
     }
@@ -105,6 +110,8 @@ final public class Director {
         nextScene(new ReviewQScene());
         OutputVoiceover.printVoiceoverOf(18);
         nextScene(new CloseSpeechScene());
+        OutputPicture.printPictureOf(16);
+        OutputPicture.printPictureOf(1);
     }
 
     /**
@@ -188,3 +195,4 @@ final public class Director {
         startAfterGameActivities();
     }
 }
+
