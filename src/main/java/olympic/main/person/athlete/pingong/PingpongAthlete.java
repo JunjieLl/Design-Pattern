@@ -10,26 +10,28 @@ import olympic.main.person.athlete.Strategy;
 import java.util.Random;
 
 public class PingpongAthlete extends IndividualAthlete implements PlayPingpong {
+
+    /**
+     * 构造函数
+     * @param name 姓名
+     * @param nation 国家
+     */
     public PingpongAthlete(String name, String nation) {
         super(name, nation);
+
+        Random random = new Random();
         if (random.nextInt() % 2 == 0) {
             this.strategy = new PingpongOffenseStrategy();
-            strategy.setOwnerAthlete(this);
         } else {
             this.strategy = new PingpongDefendStrategy();
-            strategy.setOwnerAthlete(this);
         }
-        if (nation == "CHN") {
+        strategy.setOwnerAthlete(this);
+        if (nation.equals("CHN")) {
             capacity = 99;
         } else {
             capacity = random.nextInt(8) + 90;
         }
     }
-
-    /**
-     * 随机数用于模拟一些概率
-     */
-    private Random random = new Random();
 
     /**
      * 运动员的实力
@@ -42,11 +44,19 @@ public class PingpongAthlete extends IndividualAthlete implements PlayPingpong {
      */
     private Strategy strategy;
 
+    /**
+     * 获取实力
+     * @return 实力
+     */
     @Override
     public Integer getCapacity() {
         return capacity;
     }
 
+    /**
+     * 设置策略
+     * @param strategy 策略
+     */
     public void setStrategy(Strategy strategy) {
         this.strategy = strategy;
     }
@@ -74,8 +84,7 @@ public class PingpongAthlete extends IndividualAthlete implements PlayPingpong {
 
     /**
      * 回调函数，用于对打
-     *
-     * @param oppoent
+     * @param oppoent 1
      * @return 是否击中球，没有击中球就输了这一小轮
      */
     @Override
@@ -83,6 +92,6 @@ public class PingpongAthlete extends IndividualAthlete implements PlayPingpong {
         if (Mode.getShowDetail()) {
             System.out.println("classname: (PingpongAthlete) method: (call) action: (回调模式中选手运用回调函数进行对打) ");
         }
-        return this.playWith((PingpongAthlete) oppoent);
+        return this.playWith(oppoent);
     }
 }

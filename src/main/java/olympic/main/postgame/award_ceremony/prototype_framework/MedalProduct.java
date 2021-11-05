@@ -1,6 +1,18 @@
 package olympic.main.postgame.award_ceremony.prototype_framework;
 
+/**
+ * 原型产品的接口
+ */
 public interface MedalProduct extends Cloneable {
-    public abstract void use(String s);
-    public abstract MedalProduct createClone();
+    /**
+     * 使用原型展示奖牌
+     * @param s 奖牌上展示的信息
+     */
+    void use(String s);
+
+    /**
+     * 克隆一个包含奖牌样式的原型
+     * @return 相应原型的克隆
+     */
+    MedalProduct createClone();
 }

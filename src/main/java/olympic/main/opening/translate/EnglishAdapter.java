@@ -1,5 +1,8 @@
 package olympic.main.opening.translate;
 
+/**
+ * 英文适配器
+ */
 public class EnglishAdapter implements Translator {
     private Speaker speaker;
 
@@ -13,7 +16,7 @@ public class EnglishAdapter implements Translator {
      */
     @Override
     public void translate() {
-        String result = speaker.speak();
+        speaker.speak();
         String englishResult = "主持人说话内容为：Welcome to the Olympic Games! ";
         System.out.println(englishResult);
     }

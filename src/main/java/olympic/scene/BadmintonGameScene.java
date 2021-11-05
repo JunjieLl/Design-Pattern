@@ -1,6 +1,6 @@
 package olympic.scene;
 
-import olympic.main.PreCompetitionSystem.PreCompetitionSystemFacade;
+import olympic.main.preCompetitionSystem.PreCompetitionSystemFacade;
 import olympic.main.director.Mode;
 import olympic.main.game.badminton.BadmintonPipeline;
 
@@ -29,6 +29,6 @@ public class BadmintonGameScene implements Scene{
             Mode.setShowDetail(input.next().equals("true"));
         }
         badmintonPipeline.start();
-
+        new CeremonyScene(badmintonPipeline.getTopThreeAthletes()).play();
     }
 }

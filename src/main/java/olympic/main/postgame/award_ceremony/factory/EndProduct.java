@@ -1,21 +1,36 @@
 package olympic.main.postgame.award_ceremony.factory;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 /**
  * 抽象地表示奖牌产品的类.
  */
 public abstract class EndProduct {
-    protected String productName;
-    protected ArrayList content = new ArrayList();
 
+    /**
+     * 产品名
+     */
+    protected String productName;
+
+    /**
+     * 产品的零件列表
+     */
+    protected final List<Part> content = new ArrayList<>();
+
+    /**
+     * 产品构造函数
+     *
+     * @param productName 产品名
+     */
     public EndProduct(String productName) {
         this.productName = productName;
     }
 
-
     /**
+     * 产品组装零件
+     *
      * @param part 需要添加给产品的零件
      */
     public void add(Part part) {

@@ -1,5 +1,7 @@
 package olympic.main.opening.translate;
-
+/**
+ * 法语适配器
+ */
 public class FrenchAdapter implements Translator {
     private Speaker speaker;
 
@@ -13,7 +15,7 @@ public class FrenchAdapter implements Translator {
      */
     @Override
     public void translate() {
-        String result = speaker.speak();
+        speaker.speak();
         String frenchResult = "主持人说话内容为：Bienvenue aux Jeux olympiques!";
         System.out.println(frenchResult);
     }

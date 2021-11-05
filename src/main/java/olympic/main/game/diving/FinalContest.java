@@ -1,10 +1,10 @@
 package olympic.main.game.diving;
 
-import olympic.Utils.PrintBlockFormat;
+import olympic.utils.PrintBlockFormat;
 import olympic.main.director.Mode;
 import olympic.main.game.Valve;
 import olympic.main.person.athlete.Athlete;
-import olympic.scene.CeremonyScene;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +18,10 @@ public class FinalContest extends DivingGame {
      * 管道模式中下一轮比赛
      */
     private DivingGame nextDivingGame = null;
+
+    /**
+     * 参赛运动员组成的对象池
+     */
     private AthletePool athletePool = null;
 
 
@@ -59,7 +63,6 @@ public class FinalContest extends DivingGame {
         }
         athletePool.getResult("决赛");
         System.out.println("让我们恭喜最后获奖的运动员！");
-        new CeremonyScene(athletePool.gotoCeremony(3)).play();
     }
 
     /**

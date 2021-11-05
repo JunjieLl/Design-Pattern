@@ -5,20 +5,19 @@ package olympic.main.postgame.monitor_site;
  * 命令调用者：显示屏幕遥控器
  */
 public class MonitorController {
-
+    /**
+     * 记录当前命令
+     */
     private Command currentCommand;
 
+    /**
+     * 更换命令的执行
+     * @param com 1
+     */
     public void switchCommand(Command com) {
-        /**
-         * currentCommand：当前命令
-         * 具体的命令实现
-         */
+
         currentCommand = com;
         com.execute();
-    }
-
-    public Command getCommand() {
-        return currentCommand;
     }
 
     /**
@@ -49,7 +48,7 @@ public class MonitorController {
                 break;
             default: {
             }
-            ;
+
             break;
         }
 

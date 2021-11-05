@@ -1,6 +1,6 @@
 package olympic.main.postgame.review_qualification;
 
-import olympic.Utils.PrintBlockFormat;
+import olympic.utils.PrintBlockFormat;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +9,10 @@ import java.util.List;
  * 取证小组，负责收集证据.
  */
 public class ReviewColleagueEvidence implements ReviewColleague {
+
+    /**
+     * 该工作小组拥有的仲裁者
+     */
     private ReviewMediator mediator;
 
     /**

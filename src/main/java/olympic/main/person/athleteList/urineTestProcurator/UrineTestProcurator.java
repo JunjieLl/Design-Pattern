@@ -1,4 +1,4 @@
-package olympic.main.person.athleteList.UrineTestProcurator;
+package olympic.main.person.athleteList.urineTestProcurator;
 
 import olympic.main.person.Person;
 

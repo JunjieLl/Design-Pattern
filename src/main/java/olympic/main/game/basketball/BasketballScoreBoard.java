@@ -6,10 +6,25 @@ package olympic.main.game.basketball;
  */
 public class BasketballScoreBoard implements Observer {
 
-    private static BasketballScoreBoard singleton = new BasketballScoreBoard();
-    private int[] score;
-    private int[] gain;
-    private int[] loss;
+    /**
+     * 单例实例
+     */
+    private static final BasketballScoreBoard singleton = new BasketballScoreBoard();
+
+    /**
+     * 积分表
+     */
+    private final int[] score;
+
+    /**
+     * 得分
+     */
+    private final int[] gain;
+
+    /**
+     * 失分
+     */
+    private final int[] loss;
 
     /**
      * 获取单例实例
@@ -19,6 +34,9 @@ public class BasketballScoreBoard implements Observer {
         return singleton;
     }
 
+    /**
+     * 单例类，构造函数私有
+     */
     private BasketballScoreBoard() {
         this.score = new int[12];
         this.gain = new int[12];
@@ -52,14 +70,26 @@ public class BasketballScoreBoard implements Observer {
         this.loss[id2] += score1;
     }
 
+    /**
+     * 获取各球队积分表
+     * @return 积分表
+     */
     public int[] getScore() {
         return score;
     }
 
+    /**
+     * 获取各球队得分表
+     * @return 得分表
+     */
     public int[] getGain() {
         return gain;
     }
 
+    /**
+     * 获取各球队失分表
+     * @return 失分表
+     */
     public int[] getLoss() {
         return loss;
     }

@@ -16,6 +16,7 @@ public class Relays extends TrackGame {
     public Relays(List<Athlete> athletes) {
         super(athletes);
     }
+
     /**
      * start 方法是比赛开始
      */

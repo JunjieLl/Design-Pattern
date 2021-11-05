@@ -12,26 +12,27 @@ import java.util.List;
 import java.util.Random;
 
 public class BadmintonTeam extends TeamAthlete implements PlayBadminton {
+    /**
+     * 构造函数
+     * @param name 姓名
+     * @param nation 国家
+     * @param athleteList 运动员列表
+     */
     public BadmintonTeam(String name, String nation, List<Athlete> athleteList) {
         super(name, nation, athleteList);
+        Random random = new Random();
         if (random.nextInt() % 2 == 0) {
             this.strategy = new BadmintonOffenseStrategy();
-            strategy.setOwnerAthlete(this);
         } else {
             this.strategy = new BadmintonDefendStrategy();
-            strategy.setOwnerAthlete(this);
         }
-        if (nation == "CHN") {
+        strategy.setOwnerAthlete(this);
+        if (nation.equals("CHN")) {
             capacity = 99;
         } else {
             capacity = random.nextInt(8) + 90;
         }
     }
-
-    /**
-     * 随机数用于模拟一些概率
-     */
-    private Random random = new Random();
 
     /**
      * 运动员的实力
@@ -44,11 +45,19 @@ public class BadmintonTeam extends TeamAthlete implements PlayBadminton {
      */
     private Strategy strategy;
 
+    /**
+     * 获取实力
+     * @return 实力
+     */
     @Override
     public Integer getCapacity() {
         return capacity;
     }
 
+    /**
+     * 设置策略
+     * @param strategy 策略
+     */
     public void setStrategy(Strategy strategy) {
         this.strategy = strategy;
     }
@@ -70,14 +79,14 @@ public class BadmintonTeam extends TeamAthlete implements PlayBadminton {
     @Override
     public void serve() {
         if (Mode.getShowDetail()) {
-            System.out.println(this.getName() + " 发乒乓球");
+            System.out.println(this.getName() + " 发羽毛球");
         }
     }
 
     /**
      * 回调函数，用于对打
      *
-     * @param oppoent
+     * @param oppoent 1
      * @return 是否击中球，没有击中球就输了这一小轮
      */
     @Override

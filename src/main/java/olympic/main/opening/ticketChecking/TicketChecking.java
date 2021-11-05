@@ -5,5 +5,5 @@ package olympic.main.opening.ticketChecking;
  * 自动验票机
  */
 public interface TicketChecking {
-    public void checkMethod();
+void checkMethod();
 }

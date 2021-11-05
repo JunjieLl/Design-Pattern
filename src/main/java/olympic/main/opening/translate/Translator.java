@@ -1,6 +1,11 @@
 package olympic.main.opening.translate;
 
-
+/**
+ * 翻译接口
+ */
 interface Translator {
-    public void translate();
+    /**
+     * 翻译
+     */
+    void translate();
 }

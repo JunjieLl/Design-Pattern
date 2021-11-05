@@ -1,6 +1,6 @@
 package olympic.scene;
 
-import olympic.Utils.PrintBlockFormat;
+import olympic.utils.PrintBlockFormat;
 import olympic.main.postgame.chores.*;
 
 import java.util.ArrayList;
@@ -11,6 +11,9 @@ import java.util.List;
  */
 public class ChoreHandlingScene implements Scene {
 
+    /**
+     * 杂务处理的主函数
+     */
     @Override
     public void play() {
         System.out.println("\nclassname: (ChoreHandlingScene) method: (play) action: (赛后杂务处理场景) ");
@@ -22,7 +25,7 @@ public class ChoreHandlingScene implements Scene {
         choreInitPrintBlock.add("3. 查看处理后杂务");
 
         PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
-        printBlockFormat.printFormatMiddleScreen(choreInitPrintBlock,true);
+        printBlockFormat.printFormatLeftScreen(choreInitPrintBlock,true);
         ChoreComposite allTheChore;
 
         //用ChoreGenerating类来生成杂务清单.
@@ -35,7 +38,7 @@ public class ChoreHandlingScene implements Scene {
         choreHandlingPrintBlock.add("使用责任链处理杂务");
         choreHandlingPrintBlock.add("责任链的顺序为：观众辅助小组->保洁小组->安保小组->机动小组");
 
-        printBlockFormat.printFormatMiddleScreen(choreHandlingPrintBlock,true);
+        printBlockFormat.printFormatLeftScreen(choreHandlingPrintBlock,true);
         System.out.println("正在利用责任链处理杂务...");
         Support security = new SecuritySupport("安保小组");
         Support cleaning = new CleaningSupport("保洁小组");

@@ -12,6 +12,5 @@ public class OpenSpeechScene implements Scene {
     public void play() {
         Speech32thOpen oly32 = new Speech32thOpen();
         oly32.deliverSpeech();
-        System.out.println("-----------------");
     }
 }

@@ -9,6 +9,9 @@ import java.util.Random;
  */
 public class SingleTenMetreStrategy extends Strategy {
 
+    /**
+     * 初始化策略
+     */
     SingleTenMetreStrategy() {
         name = "跳水单人十米跳台";
         scores = new ArrayList<>();

@@ -1,7 +1,12 @@
 package olympic.main.opening.performance;
 
-public class Test {
+import olympic.utils.PrintBlockFormat;
 
+public class Test {
+    /**
+     * 表演的测试函数
+     * @param args 主函数参数
+     */
     public static void main(String[] args) {
         // TODO Auto-generated method stub
         Compere cp = new Compere(); //主持人
@@ -11,11 +16,13 @@ public class Test {
         cp.add(group_1); //迭代器
         cp.add(group_2);
         cp.add(group_3);
+        PrintBlockFormat.getPrintFormat().addString("节目表演");
         cp.setProgramNum(1);
-        System.out.println("-----------------------------");
+        PrintBlockFormat.getPrintFormat().addString("-----------------------------------------------------------------------");
         cp.setProgramNum(2);
-        System.out.println("-----------------------------");
+        PrintBlockFormat.getPrintFormat().addString("-----------------------------------------------------------------------");
         cp.setProgramNum(3);
-        System.out.println("-----------------------------");
+        PrintBlockFormat.getPrintFormat().addString("-----------------------------------------------------------------------");
+        PrintBlockFormat.getPrintFormat().printFormatLeftScreen(true);
     }
 }

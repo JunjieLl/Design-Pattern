@@ -1,5 +1,6 @@
 package olympic.main.game.basketball.round;
 
+import olympic.utils.PrintBlockFormat;
 import olympic.main.game.basketball.ScheduleIterator;
 import olympic.main.game.basketball.BasketballMatch;
 import olympic.main.game.basketball.Observer;
@@ -8,8 +9,15 @@ import olympic.main.game.basketball.Observer;
  * 淘汰赛的一轮
  */
 public class EliminationRound extends Round implements Observer {
-    private String name = null;
+    /**
+     * 轮次名称，如决赛、半决赛、四分之一决赛
+     */
+    private final String name;
 
+    /**
+     * 构造函数
+     * @param name 轮次名称
+     */
     public EliminationRound(String name) {
         this.name = name;
     }
@@ -28,13 +36,14 @@ public class EliminationRound extends Round implements Observer {
         }
 
         if (name != null) {
-            System.out.println("\n【" + name + "】");
+            PrintBlockFormat.getPrintFormat().addString(name);
         }
 
         ScheduleIterator it = schedule.iterator();
         while (it.hasNext()) {
             it.next().play();
         }
+        PrintBlockFormat.getPrintFormat().printFormatLeftScreen(true);
     }
 
     /**
@@ -44,11 +53,10 @@ public class EliminationRound extends Round implements Observer {
      */
     @Override
     public void update(BasketballMatch game) {
-        BasketballMatch e = (BasketballMatch) game;
-        if (e.getScore1() > e.getScore2()) {
-            advancedTeams.add(e.getTeam1());
+        if (game.getScore1() > game.getScore2()) {
+            advancedTeams.add(game.getTeam1());
         } else {
-            advancedTeams.add(e.getTeam2());
+            advancedTeams.add(game.getTeam2());
         }
     }
 

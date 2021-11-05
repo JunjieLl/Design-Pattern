@@ -17,6 +17,7 @@ public class Sprints extends TrackGame {
     public Sprints(List<Athlete> athletes) {
         super(athletes);
     }
+
     /**
      * start 方法是比赛开始
      */

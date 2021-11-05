@@ -17,6 +17,7 @@ public class Hurdling extends TrackGame {
         super(athletes);
 
     }
+
     /**
      * start 方法是比赛开始
      */
@@ -31,6 +32,7 @@ public class Hurdling extends TrackGame {
             athletes.get(i).setRank("Hurdling",i+1);
         }
     }
+
     /**
      * 获取比赛名称
      * @return 比赛名称

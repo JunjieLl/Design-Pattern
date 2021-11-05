@@ -1,6 +1,6 @@
 package olympic.scene;
 
-import olympic.main.PreCompetitionSystem.PreCompetitionSystemFacade;
+import olympic.main.preCompetitionSystem.PreCompetitionSystemFacade;
 import olympic.main.director.Mode;
 import olympic.main.game.pingponggame.PingpongPipeline;
 import olympic.picture.OutputPicture;
@@ -34,6 +34,7 @@ public class PingpongGameScene implements Scene {
         }
         OutputPicture.printPictureOf(10);
         pingpongPipeline.start();
+        new CeremonyScene(pingpongPipeline.getTopThreeAthletes()).play();
 
     }
 }

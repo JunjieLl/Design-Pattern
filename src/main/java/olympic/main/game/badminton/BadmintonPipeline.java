@@ -14,13 +14,45 @@ import java.util.List;
  */
 public class BadmintonPipeline implements AbstractPipeline {
 
+    /**
+     * 第一个过滤器
+     */
     private BadmintonFilter firstGame;
+
+    /**
+     * 最后一个过滤器
+     */
     private BadmintonFilter lastGame;
 
+    /**
+     * 名字
+     */
     private String name;
 
+    /**
+     * 运动员列表
+     */
     private List<Athlete> athletes;
 
+
+    /**
+     * 比赛的前三名
+     */
+    private List<Athlete> topThreeAthletes = new ArrayList<>();
+
+    /**
+     * 获取前三名
+     * @return 前三名
+     */
+    public List<Athlete> getTopThreeAthletes() {
+        return topThreeAthletes;
+    }
+
+    /**
+     * 构造函数
+     * @param name 名字
+     * @param athleteList 运动员列表
+     */
     public BadmintonPipeline(String name, List<Athlete> athleteList) {
         this.name = name;
         this.athletes = athleteList;
@@ -35,23 +67,13 @@ public class BadmintonPipeline implements AbstractPipeline {
         firstGame.setAthletes(athletes);
     }
 
-//    public void setName(String name) {
-//        this.name = name;
-//    }
-
+    /**
+     * 获取名字
+     * @return 名字
+     */
     public String getName() {
         return name;
     }
-
-//    public void addFilter(PingpongFilter filter) {
-//        if (firstGame == null) {
-//            firstGame = filter;
-//            lastGame = filter;
-//        } else {
-//            lastGame.setNextFilter(filter);
-//            lastGame = filter;
-//        }
-//    }
 
     /**
      * 季军赛
@@ -71,11 +93,13 @@ public class BadmintonPipeline implements AbstractPipeline {
                 return athlete;
             }
         }
-//        thirdGame
         return null;
     }
 
-
+    /**
+     * 添加比赛
+     * @param newGame 比赛
+     */
     @Override
     public void addContest(Valve newGame) {
         if (firstGame == null) {
@@ -87,13 +111,14 @@ public class BadmintonPipeline implements AbstractPipeline {
         }
     }
 
+    /**
+     * 对外接口，开始比赛
+     */
     @Override
     public void start() {
         System.out.println("【"+name+"开始】");
 
         firstGame.start();  // 管道模式的开始比赛，实际上跑了整个比赛
-
-        List<Athlete> topThreeAthletes = new ArrayList<>();
 
         // 打印比赛结果
         for (Athlete athlete:athletes){
@@ -109,6 +134,5 @@ public class BadmintonPipeline implements AbstractPipeline {
             }
         }
         topThreeAthletes.add(thirdGame());
-        new CeremonyScene(topThreeAthletes).play();
     }
 }

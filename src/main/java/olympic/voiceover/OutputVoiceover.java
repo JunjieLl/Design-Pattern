@@ -1,10 +1,15 @@
 package olympic.voiceover;
 
+import olympic.main.director.Sleep;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
+/**
+ * 旁白
+ */
 public class OutputVoiceover {
     public static void main(String[] args) {
         /**
@@ -35,6 +40,6 @@ public class OutputVoiceover {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+        Sleep.sleep("short");
     }
 }

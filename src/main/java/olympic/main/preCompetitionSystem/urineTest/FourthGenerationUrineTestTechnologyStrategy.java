@@ -1,4 +1,4 @@
-package olympic.main.PreCompetitionSystem.UrineTest;
+package olympic.main.preCompetitionSystem.urineTest;
 
 /**
  * 第四代尿检技术

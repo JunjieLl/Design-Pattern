@@ -1,5 +1,6 @@
 package olympic.main.opening.deliverSpeech;
 
+import olympic.utils.PrintBlockFormat;
 import olympic.main.person.Person;
 
 /**
@@ -8,7 +9,11 @@ import olympic.main.person.Person;
  */
 
 public class Chairman extends Person implements Speechable {
-
+    /**
+     * 主席构造函数
+     * @param name 主席名
+     * @param nation 主席国家
+     */
     public Chairman(String name, String nation) {
         super(name, nation);
     }
@@ -17,7 +22,7 @@ public class Chairman extends Person implements Speechable {
      * 开/闭幕式发言
      */
     public void deliverSpeech(){
-        System.out.println("大家好，我是chairman"+this.getName()+",圣火点燃激情,奥运传递梦想!");
+        PrintBlockFormat.getPrintFormat().addString("大家好，我是chairman"+this.getName()+",圣火点燃激情,奥运传递梦想!");
     }
 
 }
