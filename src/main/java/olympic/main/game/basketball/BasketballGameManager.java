@@ -1,5 +1,6 @@
 package olympic.main.game.basketball;
 
+import olympic.Utils.PrintBlockFormat;
 import olympic.main.game.AbstractPipeline;
 import olympic.main.game.Valve;
 import olympic.main.game.basketball.round.Round;
@@ -16,7 +17,7 @@ import java.util.List;
  */
 public class BasketballGameManager implements AbstractPipeline {
     private static BasketballGameManager singleton = new BasketballGameManager();
-
+    private ArrayList<Athlete> topThreeAthletes = new ArrayList<>();
     public static BasketballGameManager getInstance() {
         return singleton;
     }
@@ -85,7 +86,6 @@ public class BasketballGameManager implements AbstractPipeline {
 
         advancedTeams.get(0).setRank("BasketballTeam", 1);
 
-        ArrayList<Athlete> topThreeAthletes = new ArrayList<>();  // 前3名
         topThreeAthletes.add(null);
         topThreeAthletes.add(null);
         topThreeAthletes.add(null);
@@ -102,9 +102,10 @@ public class BasketballGameManager implements AbstractPipeline {
         }
 
         // 季军赛
-        System.out.println("\n【季军赛】");
+        PrintBlockFormat.getPrintFormat().addString("季军赛");
         BasketballMatch thirdPlaceGame = new BasketballMatch(tmp.get(0), tmp.get(1));
         thirdPlaceGame.play();
+        PrintBlockFormat.getPrintFormat().printFormatLeftScreen(true);
 
         if (thirdPlaceGame.getScore1() > thirdPlaceGame.getScore2()) {
             thirdPlaceGame.getTeam1().setRank("BasketballTeam", 3);
@@ -113,7 +114,9 @@ public class BasketballGameManager implements AbstractPipeline {
             thirdPlaceGame.getTeam2().setRank("BasketballTeam", 3);
             topThreeAthletes.set(2, thirdPlaceGame.getTeam2());
         }
+    }
 
-        new CeremonyScene(topThreeAthletes).play();
+    public ArrayList<Athlete> getTopThreeAthletes() {
+        return topThreeAthletes;
     }
 }

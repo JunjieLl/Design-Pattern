@@ -40,13 +40,19 @@ public class TranslateScene implements Scene{
                 SpanishAdapter spanishAdapter=new SpanishAdapter(a);
                 spanishAdapter.translate();
             }
+            else {
+                System.out.println(a.speak());
+            }
+        }
+        else{
+            System.out.println(a.speak());
         }
 
     }
 
-//    public static void main(String[] args) {
-//        TranslateScene translateScene=new TranslateScene();
-//        translateScene.play();
-//
-//    }
+    public static void main(String[] args) {
+        TranslateScene translateScene=new TranslateScene();
+        translateScene.play();
+
+    }
 }

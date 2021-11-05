@@ -19,5 +19,6 @@ public class BasketballScene implements Scene {
         basketballGameManager.setTeams(PreCompetitionSystemFacade.getInstance().preCompetitionSystemFacade("BasketballTeam"));
         basketballGameManager.setFirst(new GroupRound()).setNext(new EliminationRound("四分之一决赛")).setNext(new EliminationRound("半决赛")).setNext(new EliminationRound("决赛"));  // 各轮比赛连接成管道
         basketballGameManager.start();
+        new CeremonyScene(basketballGameManager.getTopThreeAthletes()).play();
     }
 }
