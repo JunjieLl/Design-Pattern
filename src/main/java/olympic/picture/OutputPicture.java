@@ -18,7 +18,7 @@ public class OutputPicture {
      * @param index 图片编号 1- 16
      */
     public static void printPictureOf(int index) {
-        String template = "./src/picture/%d.txt";
+        String template = "./src/main/resources/picture/%d.txt";
         String path = String.format(template, index);
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(path));
