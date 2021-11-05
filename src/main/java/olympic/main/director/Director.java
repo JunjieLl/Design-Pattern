@@ -188,9 +188,9 @@ final public class Director {
         for (List<String> nameList : gameNames.values()) {
             for (String name : nameList) {
 
-                changeOutputTarget("screen");
-                System.out.println(name);
-                changeOutputTarget("file");
+//                changeOutputTarget("screen");
+//                System.out.println(name);
+//                changeOutputTarget("file");
 
                 Scene scene = SceneFactory.getScene(name);
                 if (scene != null) {
@@ -242,7 +242,7 @@ final public class Director {
      * 对外接口，启动运动会
      */
     public void start() {
-//        startBeforeGameActivities();
+        startBeforeGameActivities();
         startGame();
         startAfterGameActivities();
     }

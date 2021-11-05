@@ -36,6 +36,20 @@ public class PingpongPipeline implements AbstractPipeline {
     private List<Athlete> athletes;
 
     /**
+     * 获取前三名
+     * @return 前三名
+     */
+    public List<Athlete> getTopThreeAthletes() {
+        return topThreeAthletes;
+    }
+
+    /**
+     * 比赛的前三名
+     */
+    private List<Athlete> topThreeAthletes = new ArrayList<>();
+
+
+    /**
      * 构造函数
      * @param name 名字
      * @param athleteList 运动员列表
@@ -107,8 +121,6 @@ public class PingpongPipeline implements AbstractPipeline {
 
         firstGame.start();  // 管道模式的开始比赛，实际上跑了整个比赛
 
-        List<Athlete> topThreeAthletes = new ArrayList<>();
-
         // 打印比赛结果
         for (Athlete athlete:athletes){
             if (athlete.getRank("决赛") == 1){
@@ -123,6 +135,6 @@ public class PingpongPipeline implements AbstractPipeline {
             }
         }
         topThreeAthletes.add(thirdGame());
-        new CeremonyScene(topThreeAthletes).play();
+//        new CeremonyScene(topThreeAthletes).play();
     }
 }

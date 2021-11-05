@@ -29,6 +29,6 @@ public class BadmintonGameScene implements Scene{
             Mode.setShowDetail(input.next().equals("true"));
         }
         badmintonPipeline.start();
-
+        new CeremonyScene(badmintonPipeline.getTopThreeAthletes()).play();
     }
 }
