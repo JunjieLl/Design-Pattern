@@ -19,7 +19,7 @@ class BadmintonGameRound {
     /**
      * 成绩
      */
-    private HashMap<Athlete, Integer> result = new HashMap<>();
+    private final HashMap<Athlete, Integer> result = new HashMap<>();
 
     /**
      * 比赛的一轮

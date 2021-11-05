@@ -28,7 +28,7 @@ public class BadmintonFilter extends Valve {
 
     /**
      * 构造函数
-     * @param name
+     * @param name 过滤器名字
      */
     public BadmintonFilter(String name) {
         this.name = name;
@@ -36,7 +36,7 @@ public class BadmintonFilter extends Valve {
 
     /**
      *
-     * @param athletes
+     * @param athletes 运动员
      */
     public void setAthletes(List<Athlete> athletes){
         RandomDrawLots drawLots = new RandomDrawLots(athletes, new PaperDrawLotsImpl(), 2, true);

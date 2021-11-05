@@ -6,7 +6,7 @@ package olympic.main.game.basketball;
  */
 public class BasketballScoreBoard implements Observer {
 
-    private static BasketballScoreBoard singleton = new BasketballScoreBoard();
+    private static final BasketballScoreBoard singleton = new BasketballScoreBoard();
     private int[] score;
     private int[] gain;
     private int[] loss;

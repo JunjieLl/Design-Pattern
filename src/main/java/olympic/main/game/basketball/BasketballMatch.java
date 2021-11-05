@@ -1,11 +1,10 @@
 package olympic.main.game.basketball;
 
 import olympic.Utils.PrintBlockFormat;
-import olympic.main.game.Game;
-import olympic.main.person.athlete.Athlete;
+
 import olympic.main.person.athlete.basketballathlete.BasketballTeam;
 
-import java.util.List;
+
 import java.util.Random;
 
 /**

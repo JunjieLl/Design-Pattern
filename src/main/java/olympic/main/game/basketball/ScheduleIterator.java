@@ -1,15 +1,15 @@
 package olympic.main.game.basketball;
 
-import olympic.main.game.Game;
+
 import olympic.main.game.Iterator;
-import olympic.main.game.basketball.Schedule;
+
 
 /**
  * 赛程迭代器
  * Iterator模式
  */
 public class ScheduleIterator implements Iterator {
-    private Schedule schedule;
+    private final Schedule schedule;
     private int index;
 
     public ScheduleIterator(Schedule schedule) {
@@ -23,11 +23,7 @@ public class ScheduleIterator implements Iterator {
      */
     @Override
     public boolean hasNext() {
-        if (this.index < schedule.getLength()) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.index < schedule.getLength();
     }
 
     /**

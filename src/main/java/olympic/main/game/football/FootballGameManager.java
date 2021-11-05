@@ -18,7 +18,7 @@ public class FootballGameManager implements AbstractPipeline {
     /**
      * 单例实例
      */
-    private static FootballGameManager singleton = new FootballGameManager();
+    private static final FootballGameManager singleton = new FootballGameManager();
 
     /**
      * 前三名球队
