@@ -74,9 +74,24 @@ public class PersonFactory {
     }
 
     /**
-     * 获得所有比赛名字
+     * 获得所有单人比赛名字
      *
      * @return List<String> 比赛名字
+     */
+    public List<String> getSingalGameNames() {
+        List<String> temp = new ArrayList<>();
+        for(String s:gamesName){
+            if(s.indexOf("Team")==-1&&s.indexOf("Relays")==-1){
+                temp.add(s);
+            }
+        }
+        return temp;
+    }
+
+    /**
+     * 获得所有国家
+     *
+     * @return List<String> 国家
      */
     public List<String> getNations() {
         return nations;

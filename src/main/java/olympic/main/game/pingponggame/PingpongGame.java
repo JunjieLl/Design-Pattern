@@ -1,5 +1,6 @@
 package olympic.main.game.pingponggame;
 
+import olympic.main.game.badminton.BadmintonGame;
 import olympic.main.person.athlete.Athlete;
 import java.util.ArrayList;
 import java.util.HashMap;
