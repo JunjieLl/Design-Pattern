@@ -1,6 +1,5 @@
 package olympic.main.person;
 
-import olympic.main.person.interview.Interviewer;
 
 import java.io.UnsupportedEncodingException;
 import java.util.*;
@@ -804,16 +803,16 @@ public class NameFactory {
     /**
      * 名字set
      */
-    private HashSet<String> sites = new HashSet<String>();
+    private final HashSet<String> sites = new HashSet<>();
     /**
      * 国家队set
      */
-    private HashSet<String> nationSites = new HashSet<String>();
+    private final HashSet<String> nationSites = new HashSet<>();
 
     /**
      * random种子
      */
-    private Random random = new Random();
+    private final Random random = new Random();
 
     /**
      * 使用数组的方式存储姓氏
@@ -912,7 +911,7 @@ public class NameFactory {
      */
     public static String getChineseNaitonName(String n){
         for(int i=0;i<nation.length;i++){
-            if(nation[i]==n){
+            if(nation[i].equals(n)){
                 return nationChinese[i];
             }
         }

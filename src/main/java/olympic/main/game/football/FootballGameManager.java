@@ -23,7 +23,7 @@ public class FootballGameManager implements AbstractPipeline {
     /**
      * 前三名球队
      */
-    private ArrayList<Athlete> topThreeAthletes = new ArrayList<>();
+    private final ArrayList<Athlete> topThreeAthletes = new ArrayList<>();
 
     /**
      * 获取单例类实例
@@ -42,25 +42,19 @@ public class FootballGameManager implements AbstractPipeline {
     /**
      * 本轮参赛球队
      */
-    private List<FootballTeam> teams = new ArrayList<>();
+    private final List<FootballTeam> teams = new ArrayList<>();
 
     /**
      * 第一轮比赛，即管道模式的第一段管道
      */
     private Round first = null;
 
-    /**
-     * 获取第一轮比赛，即管道模式中的第一段管道
-     * @return
-     */
-    public Round getFirst() {
-        return this.first;
-    }
+
 
     /**
      * 设置第一轮比赛，即管道模式的第一段管道
-     * @param first
-     * @return
+     * @param first 第一段管道
+     * @return 轮
      */
     public Round setFirst(Round first) {
         this.first = first;
@@ -80,7 +74,7 @@ public class FootballGameManager implements AbstractPipeline {
 
     /**
      * 向管道末尾添加比赛
-     * @param newGame
+     * @param newGame 比赛名
      */
     @Override
     public void addContest(Valve newGame) {
@@ -101,8 +95,8 @@ public class FootballGameManager implements AbstractPipeline {
         List<FootballTeam> advancedTeams = teams;
         while (r != null) {
             // 为每支球队写入排名，晋级后更新排名
-            for (int i = 0; i < advancedTeams.size(); ++i) {
-                advancedTeams.get(i).setRank("FootballTeam", rank);
+            for (FootballTeam advancedTeam : advancedTeams) {
+                advancedTeam.setRank("FootballTeam", rank);
             }
             rank /= 2;
             r.setTeams(advancedTeams);
@@ -119,12 +113,12 @@ public class FootballGameManager implements AbstractPipeline {
 
         ArrayList<FootballTeam> tmp = new ArrayList<>();  // 需要打季军赛的2支球队
 
-        for (int i = 0; i < teams.size(); ++i) {
-            int k = teams.get(i).getRank("FootballTeam");
+        for (FootballTeam team : teams) {
+            int k = team.getRank("FootballTeam");
             if (k == 4) {
-                tmp.add(teams.get(i));
+                tmp.add(team);
             } else if (k < 4) {
-                topThreeAthletes.set(k - 1, teams.get(i));
+                topThreeAthletes.set(k - 1, team);
             }
         }
 

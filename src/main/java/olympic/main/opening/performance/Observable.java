@@ -20,6 +20,10 @@ abstract class Observable {
         observers.add(observer);
     }
 
+    /**
+     * 去除观察者
+     * @param observer
+     */
     public void remove(Observer observer) {
         observers.remove(observer);
     }

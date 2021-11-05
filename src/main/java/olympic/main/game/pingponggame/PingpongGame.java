@@ -2,9 +2,9 @@ package olympic.main.game.pingponggame;
 
 import olympic.main.game.badminton.BadmintonGame;
 import olympic.main.person.athlete.Athlete;
-import java.util.ArrayList;
+
 import java.util.HashMap;
-import java.util.List;
+
 
 
 /**
@@ -21,7 +21,7 @@ public class PingpongGame {
      * 仅用于暂存这场比赛的成绩
      * 与最终athlele中的成绩无关
      */
-    private HashMap<Athlete, Integer> result = new HashMap<>();
+    private final HashMap<Athlete, Integer> result = new HashMap<>();
 
     /**
      * 构造函数
@@ -65,7 +65,7 @@ public class PingpongGame {
         }
 
         // 比赛结束，为运动员设计成绩
-        Integer winner;
+
         int winner = BadmintonGame.getWinner(result, name);
 
         System.out.print("【本局结束】");

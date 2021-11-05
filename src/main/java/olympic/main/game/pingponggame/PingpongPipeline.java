@@ -1,7 +1,7 @@
 package olympic.main.game.pingponggame;
 
 import olympic.main.game.AbstractPipeline;
-import olympic.main.game.Game;
+
 import olympic.main.game.Valve;
 import olympic.main.person.athlete.Athlete;
 import olympic.scene.CeremonyScene;
