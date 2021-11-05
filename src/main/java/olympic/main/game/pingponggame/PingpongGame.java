@@ -12,7 +12,7 @@ import java.util.List;
 public class PingpongGame {
 
     /**
-     *
+     * 名字
      */
     private String name;
 
@@ -23,24 +23,24 @@ public class PingpongGame {
     private HashMap<Athlete, Integer> result = new HashMap<>();
 
     /**
-     *
-     * @param name
+     * 构造函数
+     * @param name 名字
      */
     public PingpongGame(String name) {
         this.name = name;
     }
 
     /**
-     *
-     * @param name
+     * 设置名字
+     * @param name 名字
      */
     public void setName(String name) {
         this.name = name;
     }
 
     /**
-     *
-     * @param athlete
+     * 添加运动员
+     * @param athlete 运动员
      */
     public void addAthlete(Athlete athlete) {
         result.put(athlete, 0);

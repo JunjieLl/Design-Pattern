@@ -45,7 +45,7 @@ public class PingpongFilter extends Valve {
     }
 
     /**
-     *
+     * 添加比赛
      */
     private void addGame(){
         for (int i=0;i<athletes.size()/2;i++){
@@ -58,9 +58,9 @@ public class PingpongFilter extends Valve {
     }
 
     /**
-     *
-     * @param valve
-     * @return
+     * 设置下一个过滤器
+     * @param valve 过滤器
+     * @return this
      */
     @Override
     public Valve setNext(Valve valve) {

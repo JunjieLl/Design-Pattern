@@ -22,6 +22,7 @@ final public class Director {
         Map<String, List<String>> tempGameNames = PersonFactory.getInstance().getCatalogueMap();
         for (String name : tempGameNames.keySet()) {
             gameNames.put(name, new ArrayList<>(tempGameNames.get(name)));
+            classNames.add(name);
         }
     }
 
@@ -56,9 +57,14 @@ final public class Director {
     }
 
     /**
-     * 比赛大类列表
+     * 比赛大类Map
      */
     private Map<String, List<String>> gameNames = new HashMap<>();
+
+    /**
+     * 比赛大类列表
+     */
+    private List<String> classNames = new ArrayList<>();
 
     /**
      * 输入
@@ -73,6 +79,7 @@ final public class Director {
 
     /**
      * 出处重定向用
+     *
      * @param target 输出到哪，两个选项
      *               screen 输出到屏幕
      *               其他 输出到文件
@@ -132,28 +139,41 @@ final public class Director {
 
     /**
      * 开始一场具体比赛
+     *
      * @param className 大类名称
      */
-    private void startOneGame(String className) {
+    private void startOneGame(String className, List<String> gameNameList) {
         System.out.println("请输入您想观看的比赛（输入exit重新选择大类）");
         while (true) {
             String gameName = input.next();
             if (gameName.equals("exit")) {
                 return;
-            } else if (!gameNames.get(className).contains(gameName)) {
+            }
+            Integer gameNum;
+            try {
+                gameNum = Integer.parseInt(gameName) - 1;
+                if (gameNum >= 0 && gameNum <= gameNameList.size()) {
+                    gameName = gameNameList.get(gameNum);
+                    Scene scene = SceneFactory.getScene(gameName);
+                    if (scene != null) {
+                        scene.play();
+                        gameNames.get(className).remove(gameName);
+                        if (gameNames.get(className).size() == 0) {
+                            gameNames.remove(className);
+                            classNames.remove(className);
+                        }
+                        break;
+                    } else {
+                        System.out.println("比赛名有误，请重新输入：");
+                    }
+                } else {
+                    System.out.println("比赛名有误，请重新输入：");
+                    continue;
+                }
+            } catch (NumberFormatException e) {
+//                e.printStackTrace();
                 System.out.println("比赛名有误，请重新输入：");
                 continue;
-            }
-            Scene scene = SceneFactory.getScene(gameName);
-            if (scene != null) {
-                scene.play();
-                gameNames.get(className).remove(gameName);
-                if (gameNames.get(className).size() == 0) {
-                    gameNames.remove(className);
-                }
-                break;
-            } else {
-                System.out.println("比赛名有误，请重新输入：");
             }
         }
     }
@@ -188,26 +208,31 @@ final public class Director {
     private void startGame() {
         while (gameNames.size() != 0) {
             PrintBlockFormat.getPrintFormat().addString("可观看的比赛");
-
             for (String name : gameNames.keySet()) {
-                PrintBlockFormat.getPrintFormat().addString(name);
+                PrintBlockFormat.getPrintFormat().addString(classNames.indexOf(name) + 1 + ". " + name);
             }
             PrintBlockFormat.getPrintFormat().printFormatLeftScreen(true);
-            System.out.print("输入您想观看的大类(输入exit退出)：");
+            System.out.print("输入您想观看的大类序号(输入exit退出)：");
             String className = input.next();
             if (className.equalsIgnoreCase("exit")) {
                 startRemainingGames();
                 break;
             }
-            List<String> names = gameNames.get(className);
-            if (names != null) {
-                PrintBlockFormat.getPrintFormat().addString(className + "有以下比赛");
-                for (String name : names) {
-                    PrintBlockFormat.getPrintFormat().addString(name);
+            try {
+                Integer classNum = Integer.parseInt(className) - 1;
+                if (classNum >= 0 && classNum <= classNames.size()) {
+                    List<String> names = gameNames.get(classNames.get(classNum));
+                    PrintBlockFormat.getPrintFormat().addString(classNames.get(classNum) + "有以下比赛");
+                    for (String name : names) {
+                        PrintBlockFormat.getPrintFormat().addString(names.indexOf(name) + 1 + ". " + name);
+                    }
+                    PrintBlockFormat.getPrintFormat().printFormatLeftScreen(true);
+                    startOneGame(classNames.get(classNum), names);
+                } else {
+                    System.out.println("没有此比赛，请重新选择");
                 }
-                PrintBlockFormat.getPrintFormat().printFormatLeftScreen(true);
-                startOneGame(className);
-            } else {
+            }catch (NumberFormatException e) {
+//                e.printStackTrace();
                 System.out.println("没有此比赛，请重新选择");
             }
         }
@@ -217,7 +242,7 @@ final public class Director {
      * 对外接口，启动运动会
      */
     public void start() {
-        startBeforeGameActivities();
+//        startBeforeGameActivities();
         startGame();
         startAfterGameActivities();
     }

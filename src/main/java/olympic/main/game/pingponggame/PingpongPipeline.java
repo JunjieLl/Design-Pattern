@@ -16,29 +16,29 @@ import java.util.List;
 public class PingpongPipeline implements AbstractPipeline {
 
     /**
-     *
+     * 第一个过滤器
      */
     private PingpongFilter firstGame;
 
     /**
-     *
+     * 最后一个过滤器
      */
     private PingpongFilter lastGame;
 
     /**
-     *
+     * 名字
      */
     private String name;
 
     /**
-     *
+     * 运动员列表
      */
     private List<Athlete> athletes;
 
     /**
-     *
-     * @param name
-     * @param athleteList
+     * 构造函数
+     * @param name 名字
+     * @param athleteList 运动员列表
      */
     public PingpongPipeline(String name, List<Athlete> athleteList) {
         this.name = name;
@@ -55,8 +55,8 @@ public class PingpongPipeline implements AbstractPipeline {
     }
 
     /**
-     *
-     * @return
+     * 获取名字
+     * @return 名字
      */
     public String getName() {
         return name;
@@ -84,8 +84,8 @@ public class PingpongPipeline implements AbstractPipeline {
     }
 
     /**
-     *
-     * @param newGame
+     * 添加比赛
+     * @param newGame 比赛
      */
     @Override
     public void addContest(Valve newGame) {
@@ -99,7 +99,7 @@ public class PingpongPipeline implements AbstractPipeline {
     }
 
     /**
-     *
+     * 对外接口，开始比赛
      */
     @Override
     public void start() {
