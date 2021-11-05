@@ -4,7 +4,7 @@ import olympic.main.director.Mode;
 import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.CallBack;
 import olympic.main.person.athlete.badminton.PlayBadminton;
-import olympic.main.person.athlete.pingong.PlayPingpong;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,11 +12,14 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * 乒乓球比赛的一轮（比pingponggame更细的粒度）
+ * 乒乓球比赛的一轮（比badmintongame更细的粒度）
  */
 class BadmintonGameRound {
 
-    private HashMap<Athlete, Integer> result = new HashMap<>();
+    /**
+     * 成绩
+     */
+    private final HashMap<Athlete, Integer> result = new HashMap<>();
 
     /**
      * 比赛的一轮
@@ -28,16 +31,20 @@ class BadmintonGameRound {
             System.out.println("===========================================");
         }
         //可以添加决定发球的方式（如抽签）
-        Integer server = new Random().nextInt(2);
+        int server = new Random().nextInt(2);
         ((PlayBadminton)athletes.get(server)).serve();
         Boolean win = ((PlayBadminton)athletes.get((server + 1) % 2)).playWith((CallBack) athletes.get(server));
-        Integer winner = (win ? ((server + 1) % 2) : server);
+        int winner = (win ? ((server + 1) % 2) : server);
         if (Mode.getShowDetail()) {
             System.out.println("本轮结束," + athletes.get(winner).getName() + "赢了");
         }
         result.replace(athletes.get(winner), result.get(athletes.get(winner)) + 1);
     }
 
+    /**
+     * 添加运动员
+     * @param athlete 运动员
+     */
     public void addAthlete(Athlete athlete) {
         result.put(athlete, 0);
     }

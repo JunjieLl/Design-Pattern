@@ -19,8 +19,16 @@ public class BadmintonDefendStrategy implements Strategy {
      */
     private Athlete ownerAthlete;
 
+    /**
+     * 随机
+     */
     private Random random = new Random();
 
+    /**
+     * 对打
+     * @param oppoent 对手
+     * @return 是否赢了
+     */
     @Override
     public Boolean playWith(CallBack oppoent) {
         if (Mode.getShowDetail()) {
@@ -41,6 +49,10 @@ public class BadmintonDefendStrategy implements Strategy {
         }
     }
 
+    /**
+     * 设置归属者
+     * @param ownerAthlete 归属者
+     */
     @Override
     public void setOwnerAthlete(Athlete ownerAthlete) {
         this.ownerAthlete = ownerAthlete;

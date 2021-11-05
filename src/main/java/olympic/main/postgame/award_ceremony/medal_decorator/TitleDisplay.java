@@ -6,7 +6,14 @@ import java.util.ArrayList;
  * 用于显示多行奖牌上打印内容的类.
  */
 public class TitleDisplay extends Display {
+    /**
+     * 要显示的一系列字符串
+     */
     private ArrayList body = new ArrayList();
+
+    /**
+     * 当前显示内容的列数
+     */
     private int columns = 0;
 
     /**

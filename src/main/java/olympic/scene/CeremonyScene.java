@@ -1,6 +1,7 @@
 package olympic.scene;
 
 import olympic.Utils.PrintBlockFormat;
+import olympic.main.director.Mode;
 import olympic.main.interview.InterviewMaker;
 import olympic.main.interview.builder.InternetReportBuilder;
 import olympic.main.interview.builder.NewspaperBuilder;
@@ -25,7 +26,6 @@ import java.util.Scanner;
 
 /**
  * 颁奖仪式的场景.
- * todo: 该场景是添加到比赛中的子场景，后续合并时将提供一个由参数构造函数，参数为获奖者.
  */
 public class CeremonyScene implements Scene {
     private String goldTitle;
@@ -35,12 +35,24 @@ public class CeremonyScene implements Scene {
     private Athlete silverPlayer;
     private Athlete bronzePlayer;
 
+    /**
+     * 测试用Constructor
+     *
+     * @param gold 金牌上刻的字
+     * @param silver 银牌上刻的字
+     * @param bronze 铜牌上刻的字
+     */
     public CeremonyScene(String gold, String silver, String bronze){
         this.goldTitle = gold;
         this.silverTitle = silver;
         this.bronzeTitle = bronze;
     }
 
+    /**
+     * 颁奖典礼的构造函数
+     *
+     * @param athletes 某场决赛的Top3选手
+     */
     public CeremonyScene(List<Athlete> athletes){
         goldPlayer = athletes.get(0);
         silverPlayer = athletes.get(1);
@@ -54,6 +66,9 @@ public class CeremonyScene implements Scene {
         MedalTable.getInstance().addBronze(bronzePlayer.getNation());
     }
 
+    /**
+     * 颁奖典礼的主函数
+     */
     @Override
     public void play() {
 
@@ -68,7 +83,7 @@ public class CeremonyScene implements Scene {
         ceremonyInitPrintBlock.add("6. 展示更新后奖牌榜");
 
         PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
-        printBlockFormat.printFormatMiddleScreen(ceremonyInitPrintBlock,true);
+        printBlockFormat.printFormatLeftScreen(ceremonyInitPrintBlock,true);
 
         showDetail();
 
@@ -77,7 +92,7 @@ public class CeremonyScene implements Scene {
         List<String> ceremonyPresentPrintBlock = new ArrayList<>();
         ceremonyPresentPrintBlock.add("颁发奖牌");
         ceremonyPresentPrintBlock.add("让我们由衷祝贺奥林匹克奖牌获得者。");
-        printBlockFormat.printFormatMiddleScreen(ceremonyPresentPrintBlock,true);
+        printBlockFormat.printFormatLeftScreen(ceremonyPresentPrintBlock,true);
         
         Manager manager = new Manager();
         new MedalPresenting(manager, goldTitle, silverTitle, bronzeTitle);
@@ -86,21 +101,27 @@ public class CeremonyScene implements Scene {
         ceremonyEndingPrintBlock.add("升国旗，奏国歌");
         ceremonyEndingPrintBlock.add("请全体肃立，升"+NameFactory.getChineseNaitonName(goldPlayer.getNation())+"国旗，奏"+NameFactory.getChineseNaitonName(goldPlayer.getNation())+"国歌。");
         ceremonyEndingPrintBlock.add("本场颁奖仪式已经结束。");
-        printBlockFormat.printFormatMiddleScreen(ceremonyEndingPrintBlock,true);
+        printBlockFormat.printFormatLeftScreen(ceremonyEndingPrintBlock,true);
 
         List<String> medalTableInitPrintBlock = new ArrayList<>();
         medalTableInitPrintBlock.add("奖牌榜");
         medalTableInitPrintBlock.add("以下是目前的奖牌榜");
-        printBlockFormat.printFormatMiddleScreen(medalTableInitPrintBlock,true);
+        printBlockFormat.printFormatLeftScreen(medalTableInitPrintBlock,true);
 
         MedalTable.getInstance().printMedalTable();
         System.out.println("\n");
     }
 
+    /**
+     * 显示奖牌制作过程
+     */
     private void buildMedalMakingProcedure(){
         new MedalMaking();
     }
 
+    /**
+     * 打印选择菜单
+     */
     private void printHelp(){
         List<String> strings = new ArrayList<>();
         strings.add("请输入您的选择");
@@ -112,22 +133,30 @@ public class CeremonyScene implements Scene {
         PrintBlockFormat.getPrintFormat().printFormatLeftScreen(strings, true);
     }
 
+    /**
+     * 让用户输入选择
+     */
     private void showDetail(){
         printHelp();
         Scanner scanner = new Scanner(System.in);
-        String str;
+        String str = new String();
         boolean flag = true;
         while(flag){
-            System.out.println("[您的选择]");
-            str = scanner.nextLine();
+            if (Mode.getNeedDetail()==true) {
+                System.out.println("[您的选择]");
+                str = scanner.nextLine();
+            }
             if(str.equals("1")){
                 buildMedalMakingProcedure();
+                flag = false;
             }else if(str.equals("2")){
                 OutputPicture.printPictureOf(12);
                 buildInterview();
+                flag = false;
             }else if(str.equals("3")){
                 OutputPicture.printPictureOf(13);
                 buildPressConference();
+                flag = false;
             }else if(str.equals("4")){
                 buildMedalMakingProcedure();
                 OutputPicture.printPictureOf(12);
@@ -141,11 +170,14 @@ public class CeremonyScene implements Scene {
         }
     }
 
+    /**
+     * 显示采访子场景
+     */
     private void buildInterview(){
         List<String> interviewInitPrintBlock = new ArrayList<>();
         interviewInitPrintBlock.add("赛后采访");
         interviewInitPrintBlock.add("下面是纸媒和新媒体记者对金牌得主的采访，您可以在采访后看到他们发布的报道。");
-        PrintBlockFormat.getPrintFormat().printFormatMiddleScreen(interviewInitPrintBlock,true);
+        PrintBlockFormat.getPrintFormat().printFormatLeftScreen(interviewInitPrintBlock,true);
 
         List<Interviewer> ceremonyInterviewer = PersonFactory.getInstance().getInterviews();
         List<Interviewer> goldInterviewers = new ArrayList<Interviewer>();
@@ -192,11 +224,14 @@ public class CeremonyScene implements Scene {
         InterviewMaker.makeInterview(intervieweeCoach, coachInterviewers, PersonFactory.getInstance().getAthletes("Marathon"),10);
     }
 
+    /**
+     * 显示新闻发布会子场景
+     */
     private void buildPressConference(){
         List<String> pcInitPrintBlock = new ArrayList<>();
         pcInitPrintBlock.add("新闻发布会");
         pcInitPrintBlock.add("下面是本场比赛的新闻发布会");
-        PrintBlockFormat.getPrintFormat().printFormatMiddleScreen(pcInitPrintBlock,true);
+        PrintBlockFormat.getPrintFormat().printFormatLeftScreen(pcInitPrintBlock,true);
 
         List<Interviewer> ceremonyInterviewer = PersonFactory.getInstance().getInterviews();
         List<Interviewer> pcInterviewers = new ArrayList<>();

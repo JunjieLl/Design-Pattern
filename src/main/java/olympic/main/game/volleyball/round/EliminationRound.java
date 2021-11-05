@@ -1,5 +1,6 @@
 package olympic.main.game.volleyball.round;
 
+import olympic.Utils.PrintBlockFormat;
 import olympic.main.game.volleyball.ScheduleIterator;
 import olympic.main.game.volleyball.VolleyballMatch;
 import olympic.main.game.volleyball.Observer;
@@ -8,8 +9,15 @@ import olympic.main.game.volleyball.Observer;
  * 淘汰赛的一轮
  */
 public class EliminationRound extends Round implements Observer {
+    /**
+     * 轮次名称，如决赛、半决赛、四分之一决赛
+     */
     private String name = null;
 
+    /**
+     * 构造函数
+     * @param name 轮次名称
+     */
     public EliminationRound(String name) {
         this.name = name;
     }
@@ -28,13 +36,14 @@ public class EliminationRound extends Round implements Observer {
         }
 
         if (name != null) {
-            System.out.println("\n【" + name + "】");
+            PrintBlockFormat.getPrintFormat().addString(name);
         }
 
         ScheduleIterator it = schedule.iterator();
         while (it.hasNext()) {
             it.next().play();
         }
+        PrintBlockFormat.getPrintFormat().printFormatLeftScreen(true);
     }
 
     /**

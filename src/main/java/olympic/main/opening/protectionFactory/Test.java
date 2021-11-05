@@ -1,17 +1,28 @@
 package olympic.main.opening.protectionFactory;
 
+import olympic.Utils.PrintBlockFormat;
+
 import java.util.Scanner;
 
 public class Test {
+    /**
+     * 获取防疫物资测试函数
+     * @param args
+     */
     public static void main(String[] args) {
         //单例模式控制工厂个数
         ProtectionFactory factory1 = ProtectionFactory.getInstance();
         ProtectionFactory factory2 = ProtectionFactory.getInstance();
-        String key = "1";
+
+        test(factory1, factory2);
+    }
+
+    public static void test(ProtectionFactory factory1, ProtectionFactory factory2) {
+        String key;
         do {
             System.out.print("请输入需要的口罩个数(各个物资100件)：");
             Scanner sc = new Scanner(System.in);
-            Integer number = Integer.parseInt(sc.next());
+            int number = Integer.parseInt(sc.next());
             if(number>factory1.getMask_num())
             {
                 number=factory1.getMask_num();
@@ -48,10 +59,12 @@ public class Test {
                 System.out.println("超过手套剩余数，您还可以领取"+number+"件手套");
             }
             factory2.produce(factory2, "Gloves").get(number);
-
-            System.out.println("口罩个数剩:" + factory1.getMask_num() + "\n" + "洗手液瓶数剩：" + factory1.getHandSan_num());
-            System.out.println("测温枪个数剩:" + factory2.getTemper_num() + "\n" + "手套个数剩：" + factory1.getGlove_num());
-
+            PrintBlockFormat.getPrintFormat().addString("剩余物资");
+            PrintBlockFormat.getPrintFormat().addString("口罩个数剩:" + factory1.getMask_num() );
+            PrintBlockFormat.getPrintFormat().addString( "洗手液瓶数剩：" + factory1.getHandSan_num());
+            PrintBlockFormat.getPrintFormat().addString("测温枪个数剩:" + factory2.getTemper_num() );
+            PrintBlockFormat.getPrintFormat().addString( "手套个数剩：" + factory1.getGlove_num());
+            PrintBlockFormat.getPrintFormat().printFormatLeftScreen(true);
             System.out.println("是否要继续领取防疫物资？[1:继续,其他:退出]");
             sc = new Scanner(System.in);
             key = sc.next();

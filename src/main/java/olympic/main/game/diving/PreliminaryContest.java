@@ -1,6 +1,7 @@
 package olympic.main.game.diving;
 
 import olympic.Utils.PrintBlockFormat;
+import olympic.main.director.Mode;
 import olympic.main.game.Valve;
 import olympic.main.person.athlete.Athlete;
 
@@ -52,7 +53,7 @@ public class PreliminaryContest extends DivingGame {
             }
             ceremonyInitPrintBlock.add("第" + i + "轮结束\n");
             PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
-            printBlockFormat.printFormatMiddleScreen(ceremonyInitPrintBlock,true);
+            printBlockFormat.printFormatLeftScreen(ceremonyInitPrintBlock, Mode.getShowDetail());
         }
         athletePool.getResult("预赛");
         athletePool.eliminate(18);

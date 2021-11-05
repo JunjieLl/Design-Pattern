@@ -1,9 +1,10 @@
 package olympic.main.game.pingponggame;
 
+import olympic.main.game.badminton.BadmintonGame;
 import olympic.main.person.athlete.Athlete;
-import java.util.ArrayList;
+
 import java.util.HashMap;
-import java.util.List;
+
 
 
 /**
@@ -11,23 +12,37 @@ import java.util.List;
  */
 public class PingpongGame {
 
+    /**
+     * 名字
+     */
     private String name;
 
     /**
      * 仅用于暂存这场比赛的成绩
      * 与最终athlele中的成绩无关
      */
-    private HashMap<Athlete, Integer> result = new HashMap<>();
+    private final HashMap<Athlete, Integer> result = new HashMap<>();
 
+    /**
+     * 构造函数
+     * @param name 名字
+     */
     public PingpongGame(String name) {
         this.name = name;
     }
 
-
+    /**
+     * 设置名字
+     * @param name 名字
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     * 添加运动员
+     * @param athlete 运动员
+     */
     public void addAthlete(Athlete athlete) {
         result.put(athlete, 0);
     }
@@ -36,9 +51,7 @@ public class PingpongGame {
      * 对外接口，开始比赛
      */
     public void start() {
-        List<Athlete> athletes = new ArrayList<>(result.keySet());
-        System.out.println(athletes.get(0).getName() + " vs " + athletes.get(1).getName());
-        System.out.println("===================================================");
+        BadmintonGame.init(result);
 
         // 还没有一个运动员的分数到达三分的时候，需要继续比赛
         while (Math.max((Integer) result.values().toArray()[0], (Integer) result.values().toArray()[1]) < 3 ) {
@@ -52,20 +65,13 @@ public class PingpongGame {
         }
 
         // 比赛结束，为运动员设计成绩
-        Integer winner;
-        if ((Integer) result.values().toArray()[0] > (Integer) result.values().toArray()[1]) {
-            winner = 0;
-            ((Athlete)result.keySet().toArray()[0]).setRank(name,0);
-        } else {
-            winner = 1;
-            ((Athlete)result.keySet().toArray()[0]).setRank(name,1);
-        }
-        ((Athlete)result.keySet().toArray()[winner]).setRank(name,1);
-        ((Athlete)result.keySet().toArray()[1-winner]).setRank(name,2);
 
-        System.out.println("===================================================");
+        int winner = BadmintonGame.getWinner(result, name);
+
         System.out.print("【本局结束】");
         System.out.print("比分"+result.values().toArray()[0]+":"+result.values().toArray()[1]+" ");
-        System.out.println(((Athlete)result.keySet().toArray()[winner]).getName()+" 获胜\n");
+        System.out.println(((Athlete)result.keySet().toArray()[winner]).getName()+" 获胜");
+        System.out.println("===========================================================================\n");
+
     }
 }

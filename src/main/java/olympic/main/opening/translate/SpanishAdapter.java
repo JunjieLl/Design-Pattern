@@ -13,7 +13,7 @@ public class SpanishAdapter implements Translator {
      */
     @Override
     public void translate() {
-        String result = speaker.speak();
+        speaker.speak();
         String spanishResult = "主持人说话内容为：Bienvenidos a los Juegos Olímpicos";
         System.out.println(spanishResult);
     }

@@ -4,9 +4,10 @@ package olympic.main.opening.enterarena;
 import olympic.main.person.PersonFactory;
 import olympic.main.person.athlete.TeamAthlete;
 
-/***
- * 两支国家队：美国队、中国队；每支队伍两名队员
- * 一支护送奥运圣火队伍：传递者一、二、三
+/**
+ *
+ * 入场以及传递圣火
+ *
  */
 
 public class EnterLightPattern {
@@ -14,11 +15,10 @@ public class EnterLightPattern {
         EnterManager enterManager = EnterManager.getInstance();
         TeamAthlete torchBarer = new TeamAthlete("火炬传递队");
 
-        String[] country = new String[48];
-        country = PersonFactory.getInstance().getNations().toArray(new String[0]);
+        String[] country = PersonFactory.getInstance().getNations().toArray(new String[0]);
 
         for (int i = 0; i < 10; i++) {
-            int ran = 0 + (int) (Math.random() * (47 - 0 + 1));
+            int ran = (int) (Math.random() * (47 + 1));
 
             TeamAthlete tempList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation(country[ran]), country[ran]);
             if (tempList.getNumber() > 0) {
@@ -27,7 +27,7 @@ public class EnterLightPattern {
             }
 
         }
-        ;
+
 
         EnterIterator et = enterManager.iterator();
         while (et.hasNext()) {

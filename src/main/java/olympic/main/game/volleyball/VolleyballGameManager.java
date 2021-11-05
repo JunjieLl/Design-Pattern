@@ -1,5 +1,6 @@
 package olympic.main.game.volleyball;
 
+import olympic.Utils.PrintBlockFormat;
 import olympic.main.game.AbstractPipeline;
 import olympic.main.game.Valve;
 import olympic.main.game.volleyball.round.Round;
@@ -15,22 +16,53 @@ import java.util.List;
  * Pipeline模式
  */
 public class VolleyballGameManager implements AbstractPipeline {
+    /**
+     * 单例实例
+     */
     private static VolleyballGameManager singleton = new VolleyballGameManager();
 
+    /**
+     * 前三名球队
+     */
+    private ArrayList<Athlete> topThreeAthletes = new ArrayList<>();
+
+    /**
+     * 获取单例类实例
+     * @return 单例实例
+     */
     public static VolleyballGameManager getInstance() {
         return singleton;
     }
 
+    /**
+     * 单例类，构造函数私有
+     */
     private VolleyballGameManager() {
     }
 
+    /**
+     * 本轮参赛球队
+     */
     private List<VolleyballTeam> teams = new ArrayList<>();
-    private Round first = null;   // 第一段管道
 
+    /**
+     * 第一轮比赛，即管道模式的第一段管道
+     */
+    private Round first = null;
+
+    /**
+     * 获取第一轮比赛，即管道模式中的第一段管道
+     * @return
+     */
     public Round getFirst() {
         return this.first;
     }
 
+    /**
+     * 设置第一轮比赛，即管道模式的第一段管道
+     * @param first
+     * @return
+     */
     public Round setFirst(Round first) {
         this.first = first;
         return this.first;
@@ -85,7 +117,6 @@ public class VolleyballGameManager implements AbstractPipeline {
 
         advancedTeams.get(0).setRank("VolleyballTeam", 1);
 
-        ArrayList<Athlete> topThreeAthletes = new ArrayList<>();  // 前3名
         topThreeAthletes.add(null);
         topThreeAthletes.add(null);
         topThreeAthletes.add(null);
@@ -102,7 +133,7 @@ public class VolleyballGameManager implements AbstractPipeline {
         }
 
         // 季军赛
-        System.out.println("\n【季军赛】");
+        PrintBlockFormat.getPrintFormat().addString("季军赛");
         VolleyballMatch thirdPlaceGame = new VolleyballMatch(tmp.get(0), tmp.get(1));
         thirdPlaceGame.play();
 
@@ -113,7 +144,14 @@ public class VolleyballGameManager implements AbstractPipeline {
             thirdPlaceGame.getTeam2().setRank("VolleyballTeam", 3);
             topThreeAthletes.set(2, thirdPlaceGame.getTeam2());
         }
+        PrintBlockFormat.getPrintFormat().printFormatLeftScreen(true);
+    }
 
-        new CeremonyScene(topThreeAthletes).play();
+    /**
+     * 获取前三名球队名单，用于后续颁发奖牌
+     * @return 前三名球队列表
+     */
+    public ArrayList<Athlete> getTopThreeAthletes() {
+        return topThreeAthletes;
     }
 }

@@ -1,6 +1,7 @@
 package olympic.main.opening.ticketChecking;
 
 public class CheckingMachine {
+
     private TicketChecking strategy;
 
     /**
@@ -13,6 +14,10 @@ public class CheckingMachine {
         return strategy;
     }
 
+    /**
+     * 设置策略
+     * @param strategy
+     */
     public void setStrategy(TicketChecking strategy) {
         this.strategy = strategy;
     }

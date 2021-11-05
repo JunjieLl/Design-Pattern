@@ -1,6 +1,5 @@
 package olympic.main.opening.deliverSpeech;
 
-import olympic.main.person.athlete.IndividualAthlete;
 
 abstract class DeliverSpeech {  //抽象类
 
@@ -19,25 +18,27 @@ abstract class DeliverSpeech {  //抽象类
         if (isOpen()) {
             state = "开幕";
         }
-        System.out.println("classname: (DeliverSpeech) method: (deliverSpeech) action: (" + state + "式演讲流程开始)");
-        System.out.println("本次第" + time() + "届奥运会");
+        PrintBlockFormat.getPrintFormat().addString(state+"式演讲");
+        PrintBlockFormat.getPrintFormat().addString("classname: (DeliverSpeech) method: (deliverSpeech) action: (" + state + "式演讲流程开始)");
+        PrintBlockFormat.getPrintFormat().addString("本次第" + time() + "届奥运会");
 
         if (isOpen()) {
-            System.out.println("运动员代表" + getAthleteRepre() + "进场宣誓");
+            PrintBlockFormat.getPrintFormat().addString("运动员代表" + getAthleteRepre() + "进场宣誓");
             getAthleteRepreSpeech();
-            System.out.println("裁判员代表" + getCoachRepre() + "进场宣誓");
+            PrintBlockFormat.getPrintFormat().addString("裁判员代表" + getCoachRepre() + "进场宣誓");
             getCoachRepreSpeech();
         }
 
-        System.out.println("首先，由本届奥运会组委会主席" + getOOCP() + "讲话");
+        PrintBlockFormat.getPrintFormat().addString("首先，由本届奥运会组委会主席" + getOOCP() + "讲话");
         getOOCPSpeech();
-        System.out.println(getOOCP() + "退场，落座");
-        System.out.println("再由国际奥委会主席" + getIOCP() + "讲话");
+        PrintBlockFormat.getPrintFormat().addString(getOOCP() + "退场，落座");
+        PrintBlockFormat.getPrintFormat().addString("再由国际奥委会主席" + getIOCP() + "讲话");
         getIOCPSpeech();
-        System.out.println(getIOCP() + "退场，落座");
-        System.out.println("最后由东道主国家元首" + getHP() + "宣布奥运会" + state);
+        PrintBlockFormat.getPrintFormat().addString(getIOCP() + "退场，落座");
+        PrintBlockFormat.getPrintFormat().addString("最后由东道主国家元首" + getHP() + "宣布奥运会" + state);
         getHPSpeech();
-        System.out.println(getHP() + "退场，落座");
+        PrintBlockFormat.getPrintFormat().addString(getHP() + "退场，落座");
+        PrintBlockFormat.getPrintFormat().printFormatLeftScreen(true);
 
     }
 
@@ -77,14 +78,34 @@ abstract class DeliverSpeech {  //抽象类
     abstract String getCoachRepre();
 
     /**
-     * 获取发言抽象方法
+     * 获取奥运会组委会主席发言方法
      */
     abstract void getOOCPSpeech();
-    abstract void getIOCPSpeech();
-    abstract void getHPSpeech();
-    abstract void getAthleteRepreSpeech();
-    abstract void getCoachRepreSpeech();
 
+    /**
+     * 获取国际奥委会主席发言方法
+     */
+    abstract void getIOCPSpeech();
+
+    /**
+     * 获取东道主国家元首发言方法
+     */
+    abstract void getHPSpeech();
+
+    /**
+     * 获取运动员代表发言方法
+     */
+    void getAthleteRepreSpeech()
+    {
+
+    };
+
+    /**
+     * 获取裁判员代表发言方法
+     */
+    void getCoachRepreSpeech(){
+
+    };
 
 
 }

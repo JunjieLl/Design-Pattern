@@ -1,6 +1,10 @@
 package olympic.main.opening.protectionFactory;
 
 class Gloves extends Protection {
+    /**
+     * 获取手套个数方法
+     * @param num
+     */
     @Override
     public void get(int num) {
         factory.setGlove_num(num);

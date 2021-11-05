@@ -4,6 +4,7 @@ package olympic.main.postgame.review_qualification;
  * 定义仲裁者的接口.
  */
 public interface ReviewMediator {
+
     /**
      * 生成Mediator要管理的组员.
      */

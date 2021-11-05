@@ -10,13 +10,27 @@ import java.util.List;
  * 表示组合杂务的类.
  */
 public class ChoreComposite extends ChoreComponent {
+    /**
+     * 该组合杂务的名字
+     */
     private String name;
+    /**
+     * 存放当前组合杂务所有内容的列表
+     */
     private ArrayList problemDirectory = new ArrayList();
 
+    /**
+     * 组合杂务的构造函数
+     *
+     * @param name 组合杂务名字
+     */
     public ChoreComposite(String name) {
         this.name = name;
     }
 
+    /**
+     * @return 获取杂务项的名字
+     */
     @Override
     public String getName() {
         return name;
@@ -37,12 +51,17 @@ public class ChoreComposite extends ChoreComponent {
     }
 
     /**
+     * 像当前组合杂务添加杂务项
+     *
      * @param component 添加到组合杂务的对象，可以是新的组合杂务，也可以直接是杂务.
      */
     public void add(ChoreComponent component) {
         problemDirectory.add(component);
     }
 
+    /**
+     * @return 当前的问题列表
+     */
     public ArrayList getProblemDirectory() {
         return this.problemDirectory;
     }
@@ -59,7 +78,7 @@ public class ChoreComposite extends ChoreComponent {
         choreCompositePrintBlock.add("展示当前杂务及其所属");
         choreCompositePrintBlock.add(prefix + "/" + this);
         PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
-        printBlockFormat.printFormatLeftScreen(choreCompositePrintBlock,true);
+        printBlockFormat.printFormatLeftScreen(choreCompositePrintBlock, true);
         Iterator it = problemDirectory.iterator();
         while (it.hasNext()) {
             ChoreComponent cc = (ChoreComponent) it.next();

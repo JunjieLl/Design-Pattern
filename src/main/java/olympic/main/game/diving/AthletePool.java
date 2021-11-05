@@ -2,11 +2,10 @@ package olympic.main.game.diving;
 
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
+
 
 import olympic.Utils.PrintBlockFormat;
 import olympic.main.person.athlete.Athlete;
@@ -28,10 +27,6 @@ public class AthletePool {
      */
     private final Strategy strategy;
 
-    /**
-     * 选择是否要展示细节
-     */
-    private boolean viewDetail = false;
 
     /**
      * 保存每位运动员正在进行轮次的分数
@@ -112,14 +107,9 @@ public class AthletePool {
      * @param game 本次比赛名字
      */
     public void getResult(String game) {
-        list = new ArrayList<Map.Entry<Athlete, Double>>(allScore.entrySet());
-        list.sort(new Comparator<Entry<Athlete, Double>>() {
-            //降序排序
-            @Override
-            public int compare(Entry<Athlete, Double> o1, Entry<Athlete, Double> o2) {
-                return o2.getValue().compareTo(o1.getValue());
-            }
-        });
+        list = new ArrayList<>(allScore.entrySet());
+        //降序排序
+        list.sort((o1, o2) -> o2.getValue().compareTo(o1.getValue()));
         List<String> ceremonyInitPrintBlock = new ArrayList<>();
         ceremonyInitPrintBlock.add(game + "积分榜");
         ceremonyInitPrintBlock.add(String.format("排名\t\t%-16s\t%-10s", "姓名", "分数"));
@@ -128,7 +118,7 @@ public class AthletePool {
             list.get(i).getKey().setRank(game, i + 1);
         }
         PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
-        printBlockFormat.printFormatMiddleScreen(ceremonyInitPrintBlock,true);
+        printBlockFormat.printFormatLeftScreen(ceremonyInitPrintBlock,Mode.getShowDetail());
     }
 
     /**
