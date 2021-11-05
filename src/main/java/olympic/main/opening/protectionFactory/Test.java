@@ -7,11 +7,16 @@ public class Test {
         //单例模式控制工厂个数
         ProtectionFactory factory1 = ProtectionFactory.getInstance();
         ProtectionFactory factory2 = ProtectionFactory.getInstance();
-        String key = "1";
+
+        test(factory1, factory2);
+    }
+
+    public static void test(ProtectionFactory factory1, ProtectionFactory factory2) {
+        String key;
         do {
             System.out.print("请输入需要的口罩个数(各个物资100件)：");
             Scanner sc = new Scanner(System.in);
-            Integer number = Integer.parseInt(sc.next());
+            int number = Integer.parseInt(sc.next());
             if(number>factory1.getMask_num())
             {
                 number=factory1.getMask_num();

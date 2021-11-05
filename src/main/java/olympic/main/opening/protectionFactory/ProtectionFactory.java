@@ -14,7 +14,7 @@ public class ProtectionFactory {
     /**
      * 单例内部实例化
      */
-    private static ProtectionFactory ourInstance = new ProtectionFactory();
+    private static final ProtectionFactory ourInstance = new ProtectionFactory();
 
     /**
      * 设计模式：单例模式
@@ -67,8 +67,8 @@ public class ProtectionFactory {
     /**
      * 设计模式：简单工厂模式
      *
-     * @param fac
-     * @param type
+     * @param fac 1
+     * @param type 1
      * @return 防疫品
      */
     public Protection produce(ProtectionFactory fac, String type) {
