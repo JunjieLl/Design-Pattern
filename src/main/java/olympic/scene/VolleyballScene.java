@@ -5,8 +5,15 @@ import olympic.main.game.volleyball.round.EliminationRound;
 import olympic.main.game.volleyball.round.GroupRound;
 import olympic.main.game.volleyball.VolleyballGameManager;
 
+/**
+ * 排球比赛启动器
+ * 调用play方法进行所有比赛
+ */
 public class VolleyballScene implements Scene {
 
+    /**
+     * 进行所有比赛
+     */
     @Override
     public void play() {
         System.out.println("classname: (VolleyballScene) method: (play) action: (排球比赛开始) ");

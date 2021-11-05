@@ -54,7 +54,6 @@ public class EliminationFootballMatch extends FootballMatch {
 
     /**
      * 设置观察者
-     *
      * @param o 观察者
      */
     public void setObserver(Observer o) {

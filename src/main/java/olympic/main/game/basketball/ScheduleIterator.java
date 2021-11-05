@@ -9,9 +9,20 @@ import olympic.main.game.basketball.Schedule;
  * Iterator模式
  */
 public class ScheduleIterator implements Iterator {
+    /**
+     * 赛程表
+     */
     private Schedule schedule;
+
+    /**
+     * 索引
+     */
     private int index;
 
+    /**
+     * 构造函数
+     * @param schedule 赛程表
+     */
     public ScheduleIterator(Schedule schedule) {
         this.schedule = schedule;
         this.index = 0;
