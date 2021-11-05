@@ -15,7 +15,7 @@ public class OutputPicture {
 
     /**
      *
-     * @param index 图片编号 1- 16
+     * @param index 图片编号 1-16
      */
     public static void printPictureOf(int index) {
         String template = "./src/main/resources/picture/%d.txt";
