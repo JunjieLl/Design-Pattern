@@ -16,7 +16,9 @@ import java.util.List;
  */
 public class GroupRound extends Round {
 
-    // 小组赛积分榜
+    /**
+     * 小组赛积分榜
+     */
     private BasketballScoreBoard scoreBoard = BasketballScoreBoard.getInstance();
 
     /**
@@ -70,7 +72,7 @@ public class GroupRound extends Round {
 
         List<BasketballTeam> tmp = new ArrayList<>();  // 晋级名单
 
-        // 打印小组赛积分榜
+        // 调用格式化打印接口，打印小组赛积分榜
         PrintBlockFormat.getPrintFormat().addString("小组赛积分榜");
         for (int g = 0; g < 2; g++) {
             List<ScoreEntry> ranking = new ArrayList<>();
@@ -79,6 +81,7 @@ public class GroupRound extends Round {
                 ranking.add(new ScoreEntry(t, scores[t.getId()], gains[t.getId()], losses[t.getId()]));
             }
 
+            // 排序规则：先按积分排序，积分相同者，得失球率高者排名在前
             Collections.sort(ranking, (o1, o2) -> {
                 if (o1.score > o2.score) {
                     return -1;

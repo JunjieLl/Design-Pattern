@@ -2,10 +2,7 @@ package olympic.main.director;
 
 
 import olympic.picture.OutputPicture;
-import olympic.scene.BadmintonGameScene;
-import olympic.scene.FootballScene;
-import olympic.scene.Scene;
-import olympic.scene.VolleyballScene;
+import olympic.scene.*;
 
 final public class SceneFactory {
     private SceneFactory() {
@@ -38,6 +35,8 @@ final public class SceneFactory {
                 return new BadmintonGameScene(name);
             case "VolleyballTeam":
                 return new VolleyballScene();
+            case "BasketballTeam":
+                return new BasketballScene();
             default:
                 return null;
         }

@@ -19,8 +19,6 @@ public abstract class Game {
     public String getName() {
         return name;
     }
-    public List<Athlete> getAthletes() {
-        return this.getAthletes();
-    }
+
 
 }

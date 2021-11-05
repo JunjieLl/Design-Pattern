@@ -12,10 +12,13 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * 乒乓球比赛的一轮（比pingponggame更细的粒度）
+ * 乒乓球比赛的一轮（比badmintongame更细的粒度）
  */
 class BadmintonGameRound {
 
+    /**
+     * 成绩
+     */
     private HashMap<Athlete, Integer> result = new HashMap<>();
 
     /**
@@ -38,6 +41,10 @@ class BadmintonGameRound {
         result.replace(athletes.get(winner), result.get(athletes.get(winner)) + 1);
     }
 
+    /**
+     * 添加运动员
+     * @param athlete 运动员
+     */
     public void addAthlete(Athlete athlete) {
         result.put(athlete, 0);
     }
