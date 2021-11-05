@@ -1,6 +1,6 @@
 package olympic.main.postgame.review_qualification;
 
-import olympic.Utils.PrintBlockFormat;
+import olympic.utils.PrintBlockFormat;
 
 import java.util.ArrayList;
 import java.util.List;

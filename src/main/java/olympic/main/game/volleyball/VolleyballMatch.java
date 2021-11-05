@@ -1,6 +1,6 @@
 package olympic.main.game.volleyball;
 
-import olympic.Utils.PrintBlockFormat;
+import olympic.utils.PrintBlockFormat;
 import olympic.main.person.athlete.volleyballathlete.VolleyballTeam;
 
 import java.util.Random;

@@ -1,6 +1,6 @@
 package olympic.main.game.football.round;
 
-import olympic.Utils.PrintBlockFormat;
+import olympic.utils.PrintBlockFormat;
 import olympic.main.game.football.ScheduleIterator;
 import olympic.main.game.football.GroupFootballMatch;
 import olympic.main.game.football.FootballScoreBoard;

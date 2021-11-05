@@ -1,6 +1,5 @@
-package olympic.Utils;
+package olympic.utils;
 
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,10 +1,7 @@
 package olympic.scene;
 
-import olympic.Utils.PrintBlockFormat;
 import olympic.main.opening.protectionFactory.ProtectionFactory;
 import olympic.main.opening.protectionFactory.Test;
-
-import java.util.Scanner;
 
 /**
  * 设计模式：工厂模式、单例模式

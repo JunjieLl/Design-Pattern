@@ -1,7 +1,5 @@
 package olympic.main.opening.ticketChecking;
 
-import olympic.Utils.PrintBlockFormat;
-
 import java.util.Scanner;
 
 public class Test {

@@ -1,6 +1,6 @@
 package olympic.scene;
 
-import olympic.Utils.PrintBlockFormat;
+import olympic.utils.PrintBlockFormat;
 import olympic.main.postgame.chores.*;
 
 import java.util.ArrayList;

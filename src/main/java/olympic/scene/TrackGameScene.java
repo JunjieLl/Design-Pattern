@@ -1,6 +1,6 @@
 package olympic.scene;
 
-import olympic.main.PreCompetitionSystem.PreCompetitionSystemFacade;
+import olympic.main.preCompetitionSystem.PreCompetitionSystemFacade;
 import olympic.main.game.track.*;
 
 /**

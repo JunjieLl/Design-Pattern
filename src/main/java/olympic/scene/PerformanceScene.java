@@ -1,6 +1,6 @@
 package olympic.scene;
 
-import olympic.Utils.PrintBlockFormat;
+import olympic.utils.PrintBlockFormat;
 import olympic.main.opening.performance.Compere;
 import olympic.main.opening.performance.Group;
 import olympic.main.opening.performance.Observer;

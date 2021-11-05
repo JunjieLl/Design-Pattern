@@ -1,4 +1,4 @@
-package olympic.main.PreCompetitionSystem.UrineTest;
+package olympic.main.preCompetitionSystem.urineTest;
 
 /**
  * 空尿检策略，当用户想要的尿检方式不存在时返回这个值

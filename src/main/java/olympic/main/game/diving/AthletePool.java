@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 
-import olympic.Utils.PrintBlockFormat;
+import olympic.utils.PrintBlockFormat;
 import olympic.main.person.athlete.Athlete;
 import olympic.main.director.Mode;
 

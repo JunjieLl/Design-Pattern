@@ -1,6 +1,6 @@
-package olympic.main.PreCompetitionSystem;
+package olympic.main.preCompetitionSystem;
 
-import olympic.Utils.PrintBlockFormat;
+import olympic.utils.PrintBlockFormat;
 import olympic.main.director.Mode;
 import olympic.main.person.PersonFactory;
 import olympic.main.person.athlete.Athlete;
@@ -11,7 +11,7 @@ import olympic.main.person.athleteList.IndividualAthleteList;
 import olympic.main.person.athleteList.TeamAthleteList;
 import olympic.main.person.personVisitor.ConfirmEntryListVisitor;
 import olympic.main.person.personVisitor.UrineVisitor;
-import olympic.main.person.personVisitor.VisitFilterChain.FilterManager;
+import olympic.main.person.personVisitor.visitFilterChain.FilterManager;
 import olympic.main.person.volunteer.VolunteerList;
 
 import java.io.IOException;
