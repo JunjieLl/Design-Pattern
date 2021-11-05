@@ -92,9 +92,11 @@ final public class Director {
 //        new PressConferenceScene().play();  //不用在main里面调
 //        new CeremonyScene().play();
         nextScene(new ChoreHandlingScene());
-        nextScene(new ChoreHandlingScene());
+        OutputVoiceover.printVoiceoverOf(16);
         nextScene(new MonitorSiteScene());
+        OutputVoiceover.printVoiceoverOf(17);
         nextScene(new ReviewQScene());
+        OutputVoiceover.printVoiceoverOf(18);
         nextScene(new CloseSpeechScene());
     }
 
