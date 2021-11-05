@@ -33,6 +33,7 @@ public class Speech32thOpen extends DeliverSpeech {  //具体子类
     String time() {
         return "32";
     }
+
     /**
      * 重写方法，获取OOCP的名字
      * @return 奥运会组委会主席名字
@@ -78,10 +79,11 @@ public class Speech32thOpen extends DeliverSpeech {  //具体子类
         return coachRepre.getName();
     }
 
-    @Override
+
     /**
      * 标记接口模式，用于检查是否能够发言
      */
+    @Override
     void getOOCPSpeech() {
         if (OOCP instanceof Speechable) {
             OOCP.deliverSpeech();

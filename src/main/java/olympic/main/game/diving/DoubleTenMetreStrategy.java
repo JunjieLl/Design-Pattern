@@ -9,6 +9,9 @@ import java.util.Random;
  */
 public class DoubleTenMetreStrategy extends Strategy {
 
+    /**
+     * 初始化策略
+     */
     DoubleTenMetreStrategy() {
         name = "跳水双人十米跳台";
         scores = new ArrayList<>();

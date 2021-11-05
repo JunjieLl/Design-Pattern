@@ -12,6 +12,10 @@ import java.util.List;
 public class EnterManager implements Aggregate {
     private final static EnterManager singleton = new EnterManager();
 
+
+    /**
+     * 构造函数
+     */
     private EnterManager() {
     }
 
@@ -23,6 +27,9 @@ public class EnterManager implements Aggregate {
         return singleton;
     }
 
+    /**
+     * 所有队伍
+     */
     private final List<TeamAthlete> allteams = new ArrayList<>();
 
     /**

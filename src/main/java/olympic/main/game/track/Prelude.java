@@ -21,14 +21,12 @@ public class Prelude extends ContestImpl {
         gameType = "初赛";
     }
 
-
     /**
      * 对场上的运动员成绩做一个比较
      *
      * @param runners 比赛场上运动员们
      * @param group   第几场小组赛
      */
-
     private void rank(List<Athlete> runners, int group) {
         int size = runners.size();
         PrintBlockFormat.getPrintFormat().addString("");

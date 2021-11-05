@@ -9,7 +9,6 @@ import java.util.List;
 /**
  * 子类改写，第32届奥运会闭幕式
  */
-
 public class Speech32thClose extends DeliverSpeech {   //具体子类
 
     List<Chairman> chairmans = PersonFactory.getInstance().getChairmans();

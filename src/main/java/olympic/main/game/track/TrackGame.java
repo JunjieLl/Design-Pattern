@@ -18,10 +18,12 @@ public abstract class TrackGame extends Game{
         super();
         this.athletes = athletes;
     }
+
+    /**
+     * 获取运动员列表
+     * @return 运动员列表
+     */
     public List<Athlete> getAthletes() {
         return this.athletes;
     }
-
-
-
 }

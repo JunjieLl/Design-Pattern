@@ -42,8 +42,6 @@ public class Final extends ContestImpl {
         PrintBlockFormat.getPrintFormat().printFormatLeftScreen(true);
     }
 
-
-
     /**
      * 得到决赛的成果
      */

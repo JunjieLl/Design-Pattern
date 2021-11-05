@@ -3,7 +3,6 @@ package olympic.main.game;
 /**
  * Iterator模式
  */
-
 public interface Iterator {
     /**
      * 当前位置是否存在下一个元素

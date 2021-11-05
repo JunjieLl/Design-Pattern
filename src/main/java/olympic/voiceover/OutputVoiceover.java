@@ -5,6 +5,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
+/**
+ * 旁白
+ */
 public class OutputVoiceover {
     public static void main(String[] args) {
         /**

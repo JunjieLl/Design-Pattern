@@ -18,6 +18,10 @@ public class FinalContest extends DivingGame {
      * 管道模式中下一轮比赛
      */
     private DivingGame nextDivingGame = null;
+
+    /**
+     * 参赛运动员组成的对象池
+     */
     private AthletePool athletePool = null;
 
 

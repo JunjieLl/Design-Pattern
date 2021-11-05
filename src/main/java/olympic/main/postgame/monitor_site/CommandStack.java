@@ -33,7 +33,7 @@ public class CommandStack {
 
     /**
      * 弹出当前命令，返回上一条命令，进行备忘录的撤销功能
-     * @return
+     * @return 返回上一条命令
      */
     public Command pop() {
         if (top <= 0) {

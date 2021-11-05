@@ -5,11 +5,8 @@ import olympic.main.person.PersonFactory;
 import olympic.main.person.athlete.TeamAthlete;
 
 /**
- *
  * 入场以及传递圣火
- *
  */
-
 public class EnterLightPattern {
     public static void main(String[] args) {
         EnterManager enterManager = EnterManager.getInstance();
