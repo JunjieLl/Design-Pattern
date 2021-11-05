@@ -15,11 +15,10 @@ public class EnterLightPattern {
         EnterManager enterManager = EnterManager.getInstance();
         TeamAthlete torchBarer = new TeamAthlete("火炬传递队");
 
-        String[] country = new String[48];
-        country = PersonFactory.getInstance().getNations().toArray(new String[0]);
+        String[] country = PersonFactory.getInstance().getNations().toArray(new String[0]);
 
         for (int i = 0; i < 10; i++) {
-            int ran = 0 + (int) (Math.random() * (47 - 0 + 1));
+            int ran = (int) (Math.random() * (47 + 1));
 
             TeamAthlete tempList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation(country[ran]), country[ran]);
             if (tempList.getNumber() > 0) {
@@ -28,7 +27,7 @@ public class EnterLightPattern {
             }
 
         }
-        ;
+
 
         EnterIterator et = enterManager.iterator();
         while (et.hasNext()) {

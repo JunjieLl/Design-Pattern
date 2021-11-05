@@ -10,6 +10,9 @@ import java.util.Random;
  * 评估小组，负责对调查结果进行评估和判断.
  */
 public class ReviewColleagueEvaluation implements ReviewColleague {
+    /**
+     * 该工作小组拥有的仲裁者
+     */
     private ReviewMediator mediator;
 
     /**

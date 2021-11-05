@@ -37,14 +37,7 @@ public abstract class Interviewee extends Person {
         super(name, nation);
     }
 
-    /**
-     * 获取观察者
-     *
-     * @return 观察者列表
-     */
-    public List<Listener> getListeners() {
-        return listeners;
-    }
+
 
     /**
      * 添加观察者
@@ -55,14 +48,7 @@ public abstract class Interviewee extends Person {
         listeners.add(listener);
     }
 
-    /**
-     * 删除观察者
-     *
-     * @param listener 删除的观察者
-     */
-    public void deleteListener(Listener listener) {
-        listeners.remove(listener);
-    }
+
 
     /**
      * 根据问题回答问题

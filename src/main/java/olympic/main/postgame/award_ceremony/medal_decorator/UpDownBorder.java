@@ -4,8 +4,17 @@ package olympic.main.postgame.award_ceremony.medal_decorator;
  * 一种具体的装饰边框，用来在被装饰物的上下添加花纹.
  */
 public class UpDownBorder extends Border {
+    /**
+     * 装饰字符
+     */
     private char borderChar;
 
+    /**
+     * 上下边框构造函数
+     *
+     * @param display    被装饰的内容
+     * @param borderChar 装饰字符
+     */
     public UpDownBorder(Display display, char borderChar) {
         super(display);
         this.borderChar = borderChar;
@@ -28,6 +37,8 @@ public class UpDownBorder extends Border {
     }
 
     /**
+     * 返回某一行的内容
+     *
      * @param row 某一行的索引
      * @return 返回该行的文字字符串.
      */
@@ -42,6 +53,8 @@ public class UpDownBorder extends Border {
     }
 
     /**
+     * 构造一整行相同字符
+     *
      * @param ch    要重复显示的字符.
      * @param count 重复显示的次数.
      * @return 返回将该字符重复显示指定次数后的字符串.

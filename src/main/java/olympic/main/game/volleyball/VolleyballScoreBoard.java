@@ -6,12 +6,39 @@ package olympic.main.game.volleyball;
  */
 public class VolleyballScoreBoard implements Observer {
 
+    /**
+     * 单例实例
+     */
     private static VolleyballScoreBoard singleton = new VolleyballScoreBoard();
+
+    /**
+     * 积分表
+     */
     private int[] score;
+
+    /**
+     * 胜场数
+     */
     private int[] win;
+
+    /**
+     * 胜局数
+     */
     private int[] gain;
+
+    /**
+     * 负局数
+     */
     private int[] loss;
+
+    /**
+     * 得分数
+     */
     private int[] pointGain;
+
+    /**
+     * 失分数
+     */
     private int[] pointLoss;
 
     /**
@@ -22,6 +49,9 @@ public class VolleyballScoreBoard implements Observer {
         return singleton;
     }
 
+    /**
+     * 单例类，构造函数私有
+     */
     private VolleyballScoreBoard() {
         this.score = new int[12];
         this.win = new int[12];
@@ -72,26 +102,50 @@ public class VolleyballScoreBoard implements Observer {
         this.pointLoss[id2] += point1;
     }
 
+    /**
+     * 获取各球队的积分
+     * @return 积分表
+     */
     public int[] getScore() {
         return score;
     }
 
+    /**
+     * 获取各球队的胜局数
+     * @return 胜局数表
+     */
     public int[] getGain() {
         return gain;
     }
 
+    /**
+     * 获取各球队的负局数
+     * @return 负局数表
+     */
     public int[] getLoss() {
         return loss;
     }
 
+    /**
+     * 获取各球队的胜场数
+     * @return 胜场数表
+     */
     public int[] getWin() {
         return win;
     }
 
+    /**
+     * 获取各球队的总得分
+     * @return 总得分表
+     */
     public int[] getPointGain() {
         return pointGain;
     }
 
+    /**
+     * 获取各球队的总失分
+     * @return 总失分表
+     */
     public int[] getPointLoss() {
         return pointLoss;
     }
