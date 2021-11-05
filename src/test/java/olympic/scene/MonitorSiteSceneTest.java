@@ -10,13 +10,16 @@ import org.junit.jupiter.api.Test;
 import java.util.Scanner;
 
 @DisplayName("检查场地")
-public class MonitorSiteTest {
+public class MonitorSiteSceneTest {
+
     /**
      * 检查场地函数
      */
     @Test
     void test()
     {
+        String[] testString = new String[] {"1","1","1","0","1","1","1","1"};
+
         /**
          * 创建监视器、遥控器、栈
          */
@@ -25,10 +28,10 @@ public class MonitorSiteTest {
         CommandStack stack = new CommandStack();
 
         System.out.println("是否要继续检查下一个场地？[-1:退出，0:返回，1:继续]");
-        Scanner sc = new Scanner(System.in);
         int cur = 1;
-        String key = sc.next();
-
+        int i =0;
+        String key;
+        key = testString[0];
         while (!(key.equals("-1")) && cur <= 6) {
             if (cur == 6 && key.equals("1"))
                 break;
@@ -55,8 +58,8 @@ public class MonitorSiteTest {
             }
 
             System.out.println("是否要继续检查下一个场地？[-1:退出，0:返回，1:继续]");
-            sc = new Scanner(System.in);
-            key = sc.next();
+            i+=1;
+            key = testString[i];
         }
         System.out.println("检查场地完毕！");
     }
