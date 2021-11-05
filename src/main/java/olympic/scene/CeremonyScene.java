@@ -1,6 +1,7 @@
 package olympic.scene;
 
 import olympic.Utils.PrintBlockFormat;
+import olympic.main.director.Mode;
 import olympic.main.interview.InterviewMaker;
 import olympic.main.interview.builder.InternetReportBuilder;
 import olympic.main.interview.builder.NewspaperBuilder;
@@ -115,19 +116,24 @@ public class CeremonyScene implements Scene {
     private void showDetail(){
         printHelp();
         Scanner scanner = new Scanner(System.in);
-        String str;
+        String str = new String();
         boolean flag = true;
         while(flag){
-            System.out.println("[您的选择]");
-            str = scanner.nextLine();
+            if (Mode.getNeedDetail()==true) {
+                System.out.println("[您的选择]");
+                str = scanner.nextLine();
+            }
             if(str.equals("1")){
                 buildMedalMakingProcedure();
+                flag = false;
             }else if(str.equals("2")){
                 OutputPicture.printPictureOf(12);
                 buildInterview();
+                flag = false;
             }else if(str.equals("3")){
                 OutputPicture.printPictureOf(13);
                 buildPressConference();
+                flag = false;
             }else if(str.equals("4")){
                 buildMedalMakingProcedure();
                 OutputPicture.printPictureOf(12);

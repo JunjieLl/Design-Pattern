@@ -6,6 +6,7 @@
 ### Java
 # Compiled class file
 out
+target
 *.class
 
 # Log file
@@ -56,3 +57,5 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+out.txt
+out.txt
