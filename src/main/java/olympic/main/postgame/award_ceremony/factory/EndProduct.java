@@ -1,6 +1,7 @@
 package olympic.main.postgame.award_ceremony.factory;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -16,7 +17,7 @@ public abstract class EndProduct {
     /**
      * 产品的零件列表
      */
-    protected ArrayList content = new ArrayList();
+    protected final List<Part> content = new ArrayList<>();
 
     /**
      * 产品构造函数

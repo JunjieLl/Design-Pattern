@@ -1,6 +1,8 @@
 package olympic.main.opening.deliverSpeech;
 
 
+import olympic.Utils.PrintBlockFormat;
+
 abstract class DeliverSpeech {  //抽象类
 
     /**
@@ -15,9 +17,7 @@ abstract class DeliverSpeech {  //抽象类
      */
     public void deliverSpeech() {
         String state = "闭幕";
-        if (isOpen()) {
-            state = "开幕";
-        }
+        if (isOpen()) state = "开幕";
         PrintBlockFormat.getPrintFormat().addString(state+"式演讲");
         PrintBlockFormat.getPrintFormat().addString("classname: (DeliverSpeech) method: (deliverSpeech) action: (" + state + "式演讲流程开始)");
         PrintBlockFormat.getPrintFormat().addString("本次第" + time() + "届奥运会");
