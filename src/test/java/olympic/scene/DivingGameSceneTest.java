@@ -13,9 +13,9 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 @DisplayName("跳水比赛场景")
-class DivingGameScene {
+class DivingGameSceneTest {
     /**
-     * 测试DivingGameScene.play()方法
+     * 测试DivingGameSceneTest.play()方法
      */
     @Test
     void testPlay() {
