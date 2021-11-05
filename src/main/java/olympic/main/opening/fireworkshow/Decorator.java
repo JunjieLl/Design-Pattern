@@ -5,7 +5,7 @@ abstract public class Decorator extends Show {
 
     /**
      * 装饰器构造函数
-     * @param show
+     * @param show 烟花表演
      */
     public Decorator(Show show) {
         this.show = show;
