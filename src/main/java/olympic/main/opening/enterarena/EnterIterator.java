@@ -12,7 +12,7 @@ public class EnterIterator implements Iterator {
 
     /**
      * 入场迭代器构造函数
-     * @param list
+     * @param list 添加所有国家队
      */
     public EnterIterator(EnterManager list) {
         this.list = list;
@@ -21,8 +21,7 @@ public class EnterIterator implements Iterator {
 
     /**
      * 设计模式：迭代器模式
-     * 判断是否有下一个队员
-     * @return boolean
+     * @return boolean 判断是否有下一个队员
      */
     @Override
     public boolean hasNext() {
@@ -35,8 +34,7 @@ public class EnterIterator implements Iterator {
 
     /**
      *设计模式：迭代器模式
-     *返回下一个队员
-     * @return TeamAthlete
+     * @return TeamAthlete 返回下一个队员
      */
 
     @Override

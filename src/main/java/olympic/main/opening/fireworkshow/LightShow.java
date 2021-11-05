@@ -6,7 +6,7 @@ public class LightShow extends Decorator {
     /**
      * 设计模式：装饰器模式
      * 灯光秀构造函数
-     * @param show
+     * @param show 添加烟花表演
      */
     public LightShow(Show show) {
         super(show);

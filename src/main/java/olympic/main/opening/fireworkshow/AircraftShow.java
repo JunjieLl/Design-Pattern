@@ -6,7 +6,7 @@ public class AircraftShow extends Decorator {
     /**
      * 设计模式：装饰器模式
      * 无人机表演构造函数
-     * @param show
+     * @param show 添加烟花表演
      */
     public AircraftShow(Show show) {
         super(show);
