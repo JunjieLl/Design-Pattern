@@ -8,6 +8,10 @@ import java.util.Scanner;
  */
 
 public class Test {
+    /**
+     * 检查场地的测试函数
+     * @param args
+     */
     public static void main(String[] args) {
         /**
          * 创建监视器、遥控器、栈
