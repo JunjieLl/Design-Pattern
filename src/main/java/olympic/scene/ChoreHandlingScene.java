@@ -11,6 +11,9 @@ import java.util.List;
  */
 public class ChoreHandlingScene implements Scene {
 
+    /**
+     * 杂务处理的主函数
+     */
     @Override
     public void play() {
         System.out.println("\nclassname: (ChoreHandlingScene) method: (play) action: (赛后杂务处理场景) ");

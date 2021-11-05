@@ -26,7 +26,6 @@ import java.util.Scanner;
 
 /**
  * 颁奖仪式的场景.
- * todo: 该场景是添加到比赛中的子场景，后续合并时将提供一个由参数构造函数，参数为获奖者.
  */
 public class CeremonyScene implements Scene {
     private String goldTitle;
@@ -36,12 +35,24 @@ public class CeremonyScene implements Scene {
     private Athlete silverPlayer;
     private Athlete bronzePlayer;
 
+    /**
+     * 测试用Constructor
+     *
+     * @param gold 金牌上刻的字
+     * @param silver 银牌上刻的字
+     * @param bronze 铜牌上刻的字
+     */
     public CeremonyScene(String gold, String silver, String bronze){
         this.goldTitle = gold;
         this.silverTitle = silver;
         this.bronzeTitle = bronze;
     }
 
+    /**
+     * 颁奖典礼的构造函数
+     *
+     * @param athletes 某场决赛的Top3选手
+     */
     public CeremonyScene(List<Athlete> athletes){
         goldPlayer = athletes.get(0);
         silverPlayer = athletes.get(1);
@@ -55,6 +66,9 @@ public class CeremonyScene implements Scene {
         MedalTable.getInstance().addBronze(bronzePlayer.getNation());
     }
 
+    /**
+     * 颁奖典礼的主函数
+     */
     @Override
     public void play() {
 
@@ -98,10 +112,16 @@ public class CeremonyScene implements Scene {
         System.out.println("\n");
     }
 
+    /**
+     * 显示奖牌制作过程
+     */
     private void buildMedalMakingProcedure(){
         new MedalMaking();
     }
 
+    /**
+     * 打印选择菜单
+     */
     private void printHelp(){
         List<String> strings = new ArrayList<>();
         strings.add("请输入您的选择");
@@ -113,6 +133,9 @@ public class CeremonyScene implements Scene {
         PrintBlockFormat.getPrintFormat().printFormatLeftScreen(strings, true);
     }
 
+    /**
+     * 让用户输入选择
+     */
     private void showDetail(){
         printHelp();
         Scanner scanner = new Scanner(System.in);
@@ -147,6 +170,9 @@ public class CeremonyScene implements Scene {
         }
     }
 
+    /**
+     * 显示采访子场景
+     */
     private void buildInterview(){
         List<String> interviewInitPrintBlock = new ArrayList<>();
         interviewInitPrintBlock.add("赛后采访");
@@ -198,6 +224,9 @@ public class CeremonyScene implements Scene {
         InterviewMaker.makeInterview(intervieweeCoach, coachInterviewers, PersonFactory.getInstance().getAthletes("Marathon"),10);
     }
 
+    /**
+     * 显示新闻发布会子场景
+     */
     private void buildPressConference(){
         List<String> pcInitPrintBlock = new ArrayList<>();
         pcInitPrintBlock.add("新闻发布会");
