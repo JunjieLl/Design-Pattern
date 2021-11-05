@@ -33,13 +33,12 @@ public abstract class Visitor {
      * 把整数转换为字符串的函数，用语规范输出。
      *
      * @param num   被转换的整数
-     * @param space 转换结束的字符串共占用的空格数，如果该整数的的大小小于space，则在数字前用空格填充
      * @return 转换结束后的字符串
      */
-    protected String intToString(int num, int space) {
+    protected String intToString(int num) {
         StringBuilder str = new StringBuilder(((Integer) num).toString());
         int count = (int) StrictMath.log10(num) + 1;
-        for (int i = 0; i < space - count; i++) {
+        for (int i = 0; i < 3 - count; i++) {
             str.insert(0, " ");
         }
         return str.toString();

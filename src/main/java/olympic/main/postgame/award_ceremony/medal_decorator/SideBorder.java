@@ -7,7 +7,7 @@ public class SideBorder extends Border {
     /**
      * 装饰字符
      */
-    private char borderChar;
+    private final char borderChar;
 
     /**
      * 测边框构造函数

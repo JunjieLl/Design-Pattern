@@ -11,8 +11,8 @@ import olympic.main.person.Person;
 public class Chairman extends Person implements Speechable {
     /**
      * 主席构造函数
-     * @param name
-     * @param nation
+     * @param name 主席名
+     * @param nation 主席国家
      */
     public Chairman(String name, String nation) {
         super(name, nation);

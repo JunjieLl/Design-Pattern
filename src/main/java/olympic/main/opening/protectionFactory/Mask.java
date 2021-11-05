@@ -3,7 +3,7 @@ package olympic.main.opening.protectionFactory;
 class Mask extends Protection {
     /**
      * 获取口罩个数方法
-     * @param num
+     * @param num 口罩个数
      */
     @Override
     public void get(int num) {
