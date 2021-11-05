@@ -196,10 +196,3 @@ final public class Director {
     }
 }
 
-
-/**
- *
- * 旁白黄色
- * 图片粉色
- *
- */

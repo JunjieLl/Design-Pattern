@@ -2,6 +2,7 @@ package olympic.main.director;
 
 
 import olympic.picture.OutputPicture;
+import olympic.scene.BadmintonGameScene;
 import olympic.scene.FootballScene;
 import olympic.scene.Scene;
 
@@ -31,6 +32,9 @@ final public class SceneFactory {
             case "Three-Meter-Board-DivingTeam":
             case "Ten-Meter-Board-DivingTeam":
                 return new olympic.scene.DivingGameScene(name);
+            case "Badminton":
+            case "BadmintonTeam":
+                return new BadmintonGameScene(name);
             default:
                 return null;
         }
