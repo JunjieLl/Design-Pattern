@@ -32,7 +32,7 @@ public class Prelude extends ContestImpl {
 
     private void rank(List<Athlete> runners, int group) {
         int size = runners.size();
-
+        PrintBlockFormat.getPrintFormat().addString("");
         PrintBlockFormat.getPrintFormat().addString("Group " + (group + 1) );
         
         PrintBlockFormat.getPrintFormat().addString(String.format("排名\t%-20s\t晋级\t","姓名"));

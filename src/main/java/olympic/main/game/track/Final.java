@@ -1,5 +1,6 @@
 package olympic.main.game.track;
 
+import olympic.Utils.PrintBlockFormat;
 import olympic.scene.CeremonyScene;
 
 import olympic.main.person.athlete.Athlete;
@@ -31,18 +32,18 @@ public class Final extends ContestImpl {
         int size = runners.size();
 //        RandomDrawLots drawLots = new RandomDrawLots(runners, new PaperDrawLotsImpl(), 1);
 //        runners = drawLots.randomDrawLots();
+        PrintBlockFormat.getPrintFormat().addString("决赛排名榜");
         System.out.println("【决赛排名榜】");
-        System.out.println("排名\t姓名\t");
+        PrintBlockFormat.getPrintFormat().addString(String.format("排名\t%-20s\t", "姓名"));
+
         Collections.shuffle(runners);
-
-
         for (int i = 0; i < size; i++) {
-            System.out.println(i + 1 + "\t" + runners.get(i).getName() + "\t");
+            PrintBlockFormat.getPrintFormat().addString(String.format(i + 1 + "\t\t%-20s" + "\t" , runners.get(i).getName()));
         }
-
-
-        System.out.println("\n");
+        PrintBlockFormat.getPrintFormat().printFormatLeftScreen(true);
     }
+
+
 
     /**
      * 得到决赛的成果

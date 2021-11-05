@@ -1,5 +1,6 @@
 package olympic.main.game.track;
 
+import olympic.Utils.PrintBlockFormat;
 import olympic.main.person.athlete.Athlete;
 
 import java.util.Collections;
@@ -25,25 +26,25 @@ public class SemiFinals  extends ContestImpl{
      * @param group 第几场小组赛
      */
     private void rank(List<Athlete> runners,int group){
-//        System.out.println("现在上场的运动员有：");
-        int size=runners.size();
-//        for(Athlete temp : runners){
-//            System.out.print("目前没有他的名字"+temp+" ");
-//        }
-        System.out.println("【半决赛赛排名榜】");
-        System.out.println("Group "+(group+1)+"\n" +
-                "排名\t姓名\t晋级\t");
-        Collections.shuffle(runners);
-        for(int i=0;i<size;i++){
+        int size = runners.size();
+        PrintBlockFormat.getPrintFormat().addString("");
+        PrintBlockFormat.getPrintFormat().addString("Group " + (group + 1) );
 
-            if(i>=4){
-                System.out.println(i+1+"\t"+runners.get(i).getName()+"\t"+"否"+"\t");
+        PrintBlockFormat.getPrintFormat().addString(String.format("排名\t%-20s\t晋级\t","姓名"));
+
+        Collections.shuffle(runners);
+        for (int i = 0; i < size; i++) {
+            if (i >= 4) {
+                PrintBlockFormat.getPrintFormat().addString(String.format(i + 1 + "\t\t%-20s" + "\t" + "否" + "\t",runners.get(i).getName()));
+
                 this.athletes.remove(runners.get(i));
-            }else{
-                System.out.println(i+1+"\t"+runners.get(i).getName()+"\t"+"是"+"\t");
+
+            } else {
+                PrintBlockFormat.getPrintFormat().addString(String.format(i + 1 + "\t\t%-20s" + "\t" + "是" + "\t",runners.get(i).getName()));
+
             }
+
         }
-        System.out.println("\n");
     }
 
     /**
@@ -53,10 +54,12 @@ public class SemiFinals  extends ContestImpl{
         List<List<Athlete>> runners=group();
         int size=runners.size();
         System.out.println(gameType+"一共有"+size+"场");
+        PrintBlockFormat.getPrintFormat().addString("半决赛排名榜");
         for(int i=0;i<size;i++){
             System.out.println("第"+(i+1)+"场开始了");
             rank(runners.get(i),i);
         }
+        PrintBlockFormat.getPrintFormat().printFormatLeftScreen(true);
 
     }
 }
