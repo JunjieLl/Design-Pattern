@@ -1,8 +1,9 @@
 package olympic.main.person.athlete.pingong.Strategy;
 
-import olympic.main.game.pingponggame.Mode;
+import olympic.main.director.Mode;
 import olympic.main.person.athlete.Athlete;
-import olympic.main.person.athlete.pingong.CallBack;
+import olympic.main.person.athlete.CallBack;
+import olympic.main.person.athlete.Strategy;
 import olympic.main.person.athlete.pingong.PlayPingpong;
 
 import java.util.Random;

@@ -1,6 +1,7 @@
 package olympic.main.person.athlete;
 
 import olympic.main.PreCompetitionSystem.UrineTest.UrineBottle;
+import olympic.main.opening.deliverSpeech.Speechable;
 import olympic.main.person.athleteList.UrineTestProcurator.UrineTestProcurator;
 import olympic.main.person.athleteList.UrineTestProcurator.UrineTestProcuratorFactory;
 
@@ -9,7 +10,7 @@ import java.util.ArrayList;
 /**
  * 个人运动员类
  */
-public abstract class IndividualAthlete extends Athlete {
+public abstract class IndividualAthlete extends Athlete implements Speechable {
     /**
      * 个人运动员类的构造函数
      *
@@ -44,9 +45,11 @@ public abstract class IndividualAthlete extends Athlete {
      *
      * @param num               需要修改的尿样瓶下标
      * @param urineTestStrategy 尿检策略
+     * @param isPrint 控制是否输出classname语句
+     * @return 尿检策略的详情
      */
-    public void setUrineTestStrategy(int num, int urineTestStrategy) {
-        urineBottles.get(num).setUrineTestStrategy(urineTestStrategy);
+    public String setUrineTestStrategy(int num, int urineTestStrategy, boolean isPrint) {
+        return urineBottles.get(num).setUrineTestStrategy(urineTestStrategy, isPrint);
     }
 
     /**
@@ -66,19 +69,21 @@ public abstract class IndividualAthlete extends Athlete {
 
     /**
      * 为运动员设置检察员
+     *
+     * @param isPrint 控制是否输出classname语句
      */
-    public void setUrineTestProcurator() {
+    public void setUrineTestProcurator(boolean isPrint) {
         if (urineTestProcurator == null) {
             int num = (int) (Math.random() * 100);
-            UrineTestProcuratorFactory urineTestProcuratorFactory = UrineTestProcuratorFactory.getInstance();
+            UrineTestProcuratorFactory urineTestProcuratorFactory = UrineTestProcuratorFactory.getInstance(isPrint);
             urineTestProcurator = urineTestProcuratorFactory.getUrineTestProcurator(num);
         }
     }
 
     /**
      * 获取该运动员对应的检察员
-     *
-     * @return
+     * 
+     * @return 尿检检察员
      */
     public UrineTestProcurator getUrineTestProcurator() {
         return urineTestProcurator;
@@ -109,6 +114,10 @@ public abstract class IndividualAthlete extends Athlete {
     @Override
     public void passFire() {
         System.out.println("现在正在传递圣火的是来自" + nation + "的" + name + ",现在他将火炬传递给了下一位圣火传递者。");
+    }
+
+    public void deliverSpeech() {
+        System.out.println("大家好，我是Athlete"+this.getName()+",我会遵守比赛规则！");
     }
 
 }

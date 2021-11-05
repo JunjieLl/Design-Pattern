@@ -10,7 +10,7 @@ import java.util.Random;
 public class GroupFootballMatch extends FootballMatch {
     public GroupFootballMatch(FootballTeam team1, FootballTeam team2) {
         super(team1, team2);
-        this.observer = ScoreBoard.getInstance();
+        this.observer = FootballScoreBoard.getInstance();
     }
 
     /**

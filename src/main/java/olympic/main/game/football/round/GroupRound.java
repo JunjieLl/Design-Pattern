@@ -2,7 +2,7 @@ package olympic.main.game.football.round;
 
 import olympic.main.game.football.ScheduleIterator;
 import olympic.main.game.football.GroupFootballMatch;
-import olympic.main.game.football.ScoreBoard;
+import olympic.main.game.football.FootballScoreBoard;
 import olympic.main.person.athlete.footballathlete.FootballTeam;
 
 import java.util.ArrayList;
@@ -16,7 +16,7 @@ import java.util.List;
 public class GroupRound extends Round {
 
     // 小组赛积分榜
-    private ScoreBoard scoreBoard = ScoreBoard.getInstance();
+    private FootballScoreBoard scoreBoard = FootballScoreBoard.getInstance();
 
     /**
      * 进行所有小组赛并生成晋级名单

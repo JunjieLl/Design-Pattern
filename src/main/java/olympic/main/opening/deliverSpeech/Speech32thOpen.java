@@ -54,4 +54,54 @@ public class Speech32thOpen extends DeliverSpeech {  //具体子类
     String getCoachRepre() {
         return coachRepre.getName();
     }
+
+    @Override
+    void getOOCPSpeech() {
+        if (OOCP instanceof Speechable) {
+            OOCP.deliverSpeech();
+        } else {
+            throw new UnSpeachAble();
+        }
+    }
+
+    @Override
+    void getIOCPSpeech() {
+        if (IOCP instanceof Speechable) {
+            IOCP.deliverSpeech();
+        } else {
+            throw new UnSpeachAble();
+        }
+
+
+    }
+
+    @Override
+    void getHPSpeech() {
+        if (HP instanceof Speechable) {
+            HP.deliverSpeech();
+        } else {
+            throw new UnSpeachAble();
+        }
+
+    }
+
+    @Override
+    void getAthleteRepreSpeech() {
+        if (athleteRepre instanceof Speechable) {
+            athleteRepre.deliverSpeech();
+        } else {
+            throw new UnSpeachAble();
+        }
+
+    }
+
+    @Override
+    void getCoachRepreSpeech() {
+        if (coachRepre instanceof Speechable) {
+            coachRepre.deliverSpeech();
+        } else {
+            throw new UnSpeachAble();
+        }
+
+    }
 }

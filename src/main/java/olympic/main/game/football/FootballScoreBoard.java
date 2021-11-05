@@ -4,9 +4,9 @@ package olympic.main.game.football;
  * Observer模式
  * Singleton模式
  */
-public class ScoreBoard implements Observer {
+public class FootballScoreBoard implements Observer {
 
-    private static ScoreBoard singleton = new ScoreBoard();
+    private static FootballScoreBoard singleton = new FootballScoreBoard();
     private int[] score;
     private int[] goalDifference;
     private int[] goal;
@@ -15,14 +15,17 @@ public class ScoreBoard implements Observer {
      * 获取单例实例
      * @return singleton
      */
-    public static ScoreBoard getInstance() {
+    public static FootballScoreBoard getInstance() {
         return singleton;
     }
 
-    private ScoreBoard() {
+    private FootballScoreBoard() {
         this.score = new int[16];
         this.goalDifference = new int[16];
         this.goal = new int[16];
+        for (int i = 0; i < 12; ++i) {
+            score[i] = goalDifference[i] = goal[i] = 0;
+        }
     }
 
     /**

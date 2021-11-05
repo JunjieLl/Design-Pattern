@@ -7,8 +7,4 @@ package olympic.scene;
  */
 public interface Scene {
     public abstract void play();
-
-    default public void addChild(Scene scene) {
-        throw new UnsupportedOperationException();
-    }
 }

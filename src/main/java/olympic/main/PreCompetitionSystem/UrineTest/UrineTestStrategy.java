@@ -7,9 +7,12 @@ package olympic.main.PreCompetitionSystem.UrineTest;
 public interface UrineTestStrategy {
     /**
      * 尿检策略方法，用于进行具体的尿检
+     *
+     * @param isPrint 控制是否输出classname语句
+     * @return 尿检策略详情
      */
-    void urineTest();
-
+    String urineTest(boolean isPrint);
+    
     /**
      * 检测该类是否为空对象
      *

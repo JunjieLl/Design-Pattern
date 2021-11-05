@@ -21,7 +21,7 @@ public class ReviewQScene implements Scene {
         ArrayList<Integer> TeamIndex = new ArrayList<>();
         for (String game : games) {
             if (!game.endsWith("Team")) {
-                individualGames.add(new String(game));
+                individualGames.add(game);
             }
         }
 

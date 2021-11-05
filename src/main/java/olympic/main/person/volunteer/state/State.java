@@ -11,7 +11,8 @@ public interface State {
 	 * 用于为志愿者分配工作
 	 *
 	 * @param volunteer 志愿者类
-	 * @return 是否为为该志愿者分配工作
+	 * @param isPrint 控制是否输出classname语句
+	 * @return 是否为该志愿者分配工作
 	 */
-	boolean allocateWork(Volunteer volunteer);
+	boolean allocateWork(Volunteer volunteer, boolean isPrint);
 }

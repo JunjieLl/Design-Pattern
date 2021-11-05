@@ -48,7 +48,7 @@ public abstract class Athlete extends Interviewee implements Listener, TorchBare
         if (questionsToAnswers.containsKey(content)) {
             return questionsToAnswers.get(content);
         } else {
-            return List.of("这个问题不知道如何回答");
+            return List.of("这个问题应该由我的教练回答");
         }
     }
 

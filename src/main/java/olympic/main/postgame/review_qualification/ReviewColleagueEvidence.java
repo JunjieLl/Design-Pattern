@@ -1,5 +1,10 @@
 package olympic.main.postgame.review_qualification;
 
+import olympic.Utils.PrintBlockFormat;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 取证小组，负责收集证据.
  */
@@ -19,8 +24,15 @@ public class ReviewColleagueEvidence implements ReviewColleague {
      */
     public void collectEvidence() {
         System.out.println("\nclassname: (ReviewColleagueEvidence) method: (collectEvidence) action: (被仲裁者传唤，收集证据) ");
-        System.out.println("【取证小组】已经接到指令，正在取证...");
-        System.out.println("【取证小组】已经收集证据。");
+
+
+        List<String> evidencePrintBlock = new ArrayList<>();
+        evidencePrintBlock.add("取证小组");
+        evidencePrintBlock.add("已经接到指令，正在取证。");
+        evidencePrintBlock.add("已经收集证据。");
+
+        PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
+        printBlockFormat.printFormatLeftScreen(evidencePrintBlock,true);
         mediator.colleagueChanged("EC"); //Evidence collected
     }
 

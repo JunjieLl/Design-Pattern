@@ -1,6 +1,9 @@
 package olympic.main.person;
 
 import olympic.main.person.athlete.Athlete;
+import olympic.main.person.athlete.badminton.BadmintonAthlete;
+import olympic.main.person.athlete.badminton.BadmintonTeam;
+import olympic.main.person.athlete.basketballathlete.BasketballTeam;
 import olympic.main.person.athlete.divingathlete.DivingAthlete;
 import olympic.main.person.athlete.divingathlete.DivingTeam;
 import olympic.main.person.athlete.footballathlete.FootballTeam;
@@ -106,7 +109,7 @@ public class PersonFactory {
      * @return 运动员列表
      */
     public List<Athlete> getAthleteByNation(String nation) {
-        List<Athlete> A=nationMap.get(nation);
+        List<Athlete> A = nationMap.get(nation);
         return nationMap.get(nation);
     }
 
@@ -127,7 +130,15 @@ public class PersonFactory {
         }
     }
 
+    /**
+     * 获取教练，人数为3
+     *
+     * @return List<Chairman>
+     */
     public List<Chairman> getChairmans() {
+        if (3 == chairmanHashMap.size()) {
+            return new ArrayList<>(chairmanHashMap.values());
+        }
         List<Chairman> chairmanList = new ArrayList<>();
         Chairman chairman;
         Message message;
@@ -163,7 +174,7 @@ public class PersonFactory {
      *
      * @return 采访者列表
      */
-    private List<Interviewer> getInterviews() {
+    public List<Interviewer> getInterviews() {
 
         return this.interviewers;
 
@@ -293,11 +304,51 @@ public class PersonFactory {
                         }
                         hMap.put(i, team);
                         break;
+
+                    case "VolleyballTeam":
+                        for (int j = 0; j < b; j++) {
+                            athleteList = new ArrayList<>();
+                            messages = nameFactory.getMessageList(c);
+                            for (int k = 0; k < c; k++) {
+                                tempNameAthlete = new TrackAthlete(messages.get(k).name, messages.get(k).nation);
+                                athleteList.add(tempNameAthlete);
+                                nameMap.put(messages.get(k).name, tempNameAthlete);
+                                addNationMap(messages.get(k).nation, tempNameAthlete);
+                            }
+                            team.add(new BasketballTeam(messages.get(c).name, messages.get(0).nation, athleteList));
+                        }
+                        hMap.put(i, team);
+                        break;
+                    case "BasketballTeam":
+                        for (int j = 0; j < b; j++) {
+                            athleteList = new ArrayList<>();
+                            messages = nameFactory.getMessageList(c);
+                            for (int k = 0; k < c; k++) {
+                                tempNameAthlete = new TrackAthlete(messages.get(k).name, messages.get(k).nation);
+                                athleteList.add(tempNameAthlete);
+                                nameMap.put(messages.get(k).name, tempNameAthlete);
+                                addNationMap(messages.get(k).nation, tempNameAthlete);
+                            }
+                            team.add(new BasketballTeam(messages.get(c).name, messages.get(0).nation, athleteList));
+                        }
+                        hMap.put(i, team);
+                        break;
                     case "Pingpong":
                         athleteList = new ArrayList<>();
                         for (int j = 0; j < a; j++) {
                             message = nameFactory.getMessage();
                             tempNameAthlete = new PingpongAthlete(message.name, message.nation);
+                            athleteList.add(tempNameAthlete);
+                            nameMap.put(message.name, tempNameAthlete);
+                            addNationMap(message.nation, tempNameAthlete);
+                        }
+                        hMap.put(i, athleteList);
+                        break;
+                    case "Badminton":
+                        athleteList = new ArrayList<>();
+                        for (int j = 0; j < a; j++) {
+                            message = nameFactory.getMessage();
+                            tempNameAthlete = new BadmintonAthlete(message.name, message.nation);
                             athleteList.add(tempNameAthlete);
                             nameMap.put(message.name, tempNameAthlete);
                             addNationMap(message.nation, tempNameAthlete);
@@ -315,6 +366,20 @@ public class PersonFactory {
                                 addNationMap(messages.get(k).nation, tempNameAthlete);
                             }
                             team.add(new PingpongTeam(messages.get(c).name, messages.get(0).nation, athleteList));
+                        }
+                        hMap.put(i, team);
+                        break;
+                    case "BadmintonTeam":
+                        for (int j = 0; j < b; j++) {
+                            athleteList = new ArrayList<>();
+                            messages = nameFactory.getMessageList(c);
+                            for (int k = 0; k < c; k++) {
+                                tempNameAthlete = new BadmintonAthlete(messages.get(k).name, messages.get(k).nation);
+                                athleteList.add(tempNameAthlete);
+                                nameMap.put(messages.get(k).name, tempNameAthlete);
+                                addNationMap(messages.get(k).nation, tempNameAthlete);
+                            }
+                            team.add(new BadmintonTeam(messages.get(c).name, messages.get(0).nation, athleteList));
                         }
                         hMap.put(i, team);
                         break;

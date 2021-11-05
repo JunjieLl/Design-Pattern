@@ -1,8 +1,6 @@
 package olympic.main.person.athlete.pingong;
 
-import olympic.main.person.athlete.Athlete;
-
-import java.security.PublicKey;
+import olympic.main.person.athlete.CallBack;
 
 /**
  * Pingpongathlete和PingpongTeam继承

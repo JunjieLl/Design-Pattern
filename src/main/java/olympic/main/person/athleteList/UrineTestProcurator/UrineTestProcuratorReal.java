@@ -11,7 +11,7 @@ public class UrineTestProcuratorReal extends UrineTestProcurator {
      * 尿检检察员等级
      */
     private final String grade;
-
+    
     /**
      * 尿检检察员真实类的构造函数
      *
@@ -27,12 +27,19 @@ public class UrineTestProcuratorReal extends UrineTestProcurator {
         ArrayList<String> gradeList = new ArrayList<>(Arrays.asList("初级", "中级", "副高级", "高级"));
         grade = gradeList.get(num);
     }
-
+    
     /**
      * 尿检检察员真实类的检察院动员函数
+     *
+     * @param isPrint 控制是否输出classname语句
+     * @return 表示检察员检查的结果
      */
     @Override
-    public void check() {
-        System.out.println("检察员名为" + name + "，" + "是一位" + grade + "的检察员。");
+    public String check(boolean isPrint) {
+        if(isPrint) {
+            System.out.println("classname: (UrineTestProcuratorReal) method: (check) " +
+                    "action: (检察员真实类对运动员做检查，使用了Proxy模式) ");
+        }
+        return "检察员名为" + name + "，" + "是一位" + grade + "的检察员。";
     }
 }

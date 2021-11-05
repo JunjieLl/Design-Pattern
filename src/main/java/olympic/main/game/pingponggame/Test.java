@@ -5,6 +5,7 @@ import olympic.main.person.PersonFactory;
 import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.pingong.PingpongAthlete;
 import olympic.main.person.athlete.pingong.PingpongTeam;
+import olympic.main.director.Mode;
 
 import java.util.ArrayList;
 import java.util.List;

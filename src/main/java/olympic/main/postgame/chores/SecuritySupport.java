@@ -6,9 +6,9 @@ package olympic.main.postgame.chores;
 public class SecuritySupport extends Support {
     private int unit;
 
-    public SecuritySupport(String name, int unit) {
+    public SecuritySupport(String name) {
         super(name);
-        this.unit = unit;
+        this.unit = 1;
     }
 
     @Override
