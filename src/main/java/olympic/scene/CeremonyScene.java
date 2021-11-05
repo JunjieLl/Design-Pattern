@@ -122,12 +122,15 @@ public class CeremonyScene implements Scene {
             str = scanner.nextLine();
             if(str.equals("1")){
                 buildMedalMakingProcedure();
+                flag = false;
             }else if(str.equals("2")){
                 OutputPicture.printPictureOf(12);
                 buildInterview();
+                flag = false;
             }else if(str.equals("3")){
                 OutputPicture.printPictureOf(13);
                 buildPressConference();
+                flag = false;
             }else if(str.equals("4")){
                 buildMedalMakingProcedure();
                 OutputPicture.printPictureOf(12);
