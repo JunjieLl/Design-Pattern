@@ -13,9 +13,9 @@ public class DivingGameScene implements Scene {
 
     @Override
     public void play() {
-
         DivingPipeline divingGame=new DivingPipeline(game,PreCompetitionSystemFacade.getInstance().preCompetitionSystemFacade(game));
         OutputPicture.printPictureOf(11);
         divingGame.start();
+        new CeremonyScene(divingGame.getWinner()).play();
     }
 }

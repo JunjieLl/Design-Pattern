@@ -5,7 +5,6 @@ import olympic.main.game.Valve;
 import olympic.main.game.football.round.Round;
 import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.footballathlete.FootballTeam;
-import olympic.scene.CeremonyScene;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +15,8 @@ import java.util.List;
  */
 public class FootballGameManager implements AbstractPipeline {
     private static FootballGameManager singleton = new FootballGameManager();
+
+    private ArrayList<Athlete> topThreeAthletes = new ArrayList<>();
 
     public static FootballGameManager getInstance() {
         return singleton;
@@ -82,7 +83,6 @@ public class FootballGameManager implements AbstractPipeline {
 
         advancedTeams.get(0).setRank("FootballTeam", rank);
 
-        ArrayList<Athlete> topThreeAthletes = new ArrayList<>();  // 前3名
         topThreeAthletes.add(null);
         topThreeAthletes.add(null);
         topThreeAthletes.add(null);
@@ -116,7 +116,9 @@ public class FootballGameManager implements AbstractPipeline {
             thirdPlaceGame.getTeam2().setRank("FootballTeam", 3);
             topThreeAthletes.set(2, thirdPlaceGame.getTeam2());
         }
+    }
 
-        new CeremonyScene(topThreeAthletes).play();
+    public ArrayList<Athlete> getTopThreeAthletes() {
+        return topThreeAthletes;
     }
 }
