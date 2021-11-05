@@ -8,7 +8,6 @@ import olympic.main.person.athlete.pingong.PlayPingpong;
 
 import java.util.Random;
 
-
 /**
  * 防守策略
  */

@@ -10,6 +10,9 @@ import olympic.main.person.athlete.badminton.Strategy.BadmintonOffenseStrategy;
 import java.util.Objects;
 import java.util.Random;
 
+/**
+ * 羽毛球运动员
+ */
 public class BadmintonAthlete extends IndividualAthlete implements PlayBadminton {
     /**
      * 构造函数

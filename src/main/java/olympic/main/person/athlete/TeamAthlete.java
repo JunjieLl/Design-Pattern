@@ -3,6 +3,9 @@ package olympic.main.person.athlete;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 团队运动员类
+ */
 public class TeamAthlete extends Athlete {
     protected List<Athlete> athleteList = new ArrayList<>();
 

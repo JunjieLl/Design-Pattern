@@ -11,6 +11,9 @@ import olympic.main.person.athlete.badminton.Strategy.BadmintonOffenseStrategy;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * 羽毛球运动员组合
+ */
 public class BadmintonTeam extends TeamAthlete implements PlayBadminton {
     /**
      * 构造函数
