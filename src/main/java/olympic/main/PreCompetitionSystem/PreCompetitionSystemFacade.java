@@ -326,7 +326,8 @@ public class PreCompetitionSystemFacade {
      */
     public static void main(String[] args) {
         PreCompetitionSystemFacade preCompetitionSystemFacade = new PreCompetitionSystemFacade();
-        preCompetitionSystemFacade.preCompetitionSystemFacade("Pingpong");
+        preCompetitionSystemFacade.preCompetitionSystemFacade("Badminton");
+        preCompetitionSystemFacade.preCompetitionSystemFacade("BadmintonTeam");
         preCompetitionSystemFacade.printAll();
         
         preCompetitionSystemFacade.preCompetitionSystemFacade("Relays");

@@ -9,10 +9,12 @@ import java.util.Scanner;
 
 public class PingpongGameScene implements Scene {
     public PingpongGameScene(String name) {
-        if (name == "Pingpong"){
+        if (name.equals("Pingpong")){
+            System.out.println("PingpongGameScenePingpong");
             pingpongPipeline = new PingpongPipeline("乒乓球单人赛",
                     PreCompetitionSystemFacade.getInstance().preCompetitionSystemFacade("Pingpong"));
         } else {
+            System.out.println("PingpongGameScenePingpongTeam");
             pingpongPipeline = new PingpongPipeline("乒乓球混双",
                     PreCompetitionSystemFacade.getInstance().preCompetitionSystemFacade("PingpongTeam"));
         }
