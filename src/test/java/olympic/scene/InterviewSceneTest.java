@@ -165,4 +165,17 @@ class InterviewSceneTest {
         interviewee.addListener(teamAthlete);
         System.out.println("Test addListener() succeed.");
     }
+
+    @Test
+    void testNotifyListeners() {
+        Interviewee interviewee = new DivingAthlete("ljj", "中国");
+        Listener interviewer = new Interviewer("zch", "中国", new PreInterviewAthleteStrategy());
+        Listener individualAthlete = new TrackAthlete("xmx", "中国");
+        Listener teamAthlete = new TeamAthlete("中国");
+        interviewee.addListener(interviewer);
+        interviewee.addListener(individualAthlete);
+        interviewee.addListener(teamAthlete);
+        interviewee.notifyListeners("大家好！");
+        System.out.println("Test notifyListeners() succeed.");
+    }
 }
