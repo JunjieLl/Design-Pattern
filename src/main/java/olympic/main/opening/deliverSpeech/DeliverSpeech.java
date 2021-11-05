@@ -1,7 +1,5 @@
 package olympic.main.opening.deliverSpeech;
 
-import olympic.Utils.PrintBlockFormat;
-import olympic.main.person.athlete.IndividualAthlete;
 
 abstract class DeliverSpeech {  //抽象类
 

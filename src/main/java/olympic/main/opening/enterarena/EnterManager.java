@@ -10,7 +10,7 @@ import java.util.List;
  * 入场管理者
  */
 public class EnterManager implements Aggregate {
-    private static EnterManager singleton = new EnterManager();
+    private final static EnterManager singleton = new EnterManager();
 
     private EnterManager() {
     }
@@ -23,7 +23,7 @@ public class EnterManager implements Aggregate {
         return singleton;
     }
 
-    private List<TeamAthlete> allteams = new ArrayList<>();
+    private final List<TeamAthlete> allteams = new ArrayList<>();
 
     /**
      * 添加成员
