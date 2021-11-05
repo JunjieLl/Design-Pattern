@@ -49,7 +49,7 @@ class EnterSceneTest {
 
         EnterScene enterScene=new EnterScene();
         enterScene.play();
-        
+
     }
 
 }
