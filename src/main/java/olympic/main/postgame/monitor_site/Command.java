@@ -11,6 +11,10 @@ public abstract class Command {
      */
     protected Monitor monitor;
 
+    /**
+     * 命令构造函数
+     * @param monitor
+     */
     public Command(Monitor monitor) {
         this.monitor = monitor;
     }
@@ -21,6 +25,10 @@ public abstract class Command {
      */
     abstract void execute();
 
+    /**
+     * 获取命令
+     * @return this
+     */
     public Command getCommand() {
         return this;
     }
@@ -28,14 +36,20 @@ public abstract class Command {
 }
 
 /**
- * 检查1号场地的命令
+ * 检查1号场地的命令封装
  */
-
 class Site1Command extends Command {
+    /**
+     * 1号场地监视命令
+     * @param monitor
+     */
     public Site1Command(Monitor monitor) {
         super(monitor);
     }
 
+    /**
+     * 命令执行函数
+     */
     @Override
     void execute() {
         monitor.playSite1();
@@ -43,13 +57,19 @@ class Site1Command extends Command {
 }
 
 /**
- * 检查2号场地的命令
+ * 检查2号场地的命令封装
  */
 class Site2Command extends Command {
+    /**
+     * 2号场地监视命令
+     * @param monitor
+     */
     public Site2Command(Monitor monitor) {
         super(monitor);
     }
-
+    /**
+     * 命令执行函数
+     */
     @Override
     void execute() {
         monitor.playSite2();
@@ -57,13 +77,19 @@ class Site2Command extends Command {
 }
 
 /**
- * 检查3号场地的命令
+ * 检查3号场地的命令封装
  */
 class Site3Command extends Command {
+    /**
+     * 3号场地监视命令
+     * @param monitor
+     */
     public Site3Command(Monitor monitor) {
         super(monitor);
     }
-
+    /**
+     * 命令执行函数
+     */
     @Override
     void execute() {
         monitor.playSite3();
@@ -71,13 +97,19 @@ class Site3Command extends Command {
 }
 
 /**
- * 检查4号场地的命令
+ * 检查4号场地的命令封装
  */
 class Site4Command extends Command {
+    /**
+     * 4号场地监视命令
+     * @param monitor
+     */
     public Site4Command(Monitor monitor) {
         super(monitor);
     }
-
+    /**
+     * 命令执行函数
+     */
     @Override
     void execute() {
         monitor.playSite4();
@@ -85,13 +117,19 @@ class Site4Command extends Command {
 }
 
 /**
- * 检查5号场地的命令
+ * 检查5号场地的命令封装
  */
 class Site5Command extends Command {
+    /**
+     * 5号场地监视命令
+     * @param monitor
+     */
     public Site5Command(Monitor monitor) {
         super(monitor);
     }
-
+    /**
+     * 命令执行函数
+     */
     @Override
     void execute() {
         monitor.playSite5();
