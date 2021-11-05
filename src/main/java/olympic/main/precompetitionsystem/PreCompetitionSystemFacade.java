@@ -11,7 +11,7 @@ import olympic.main.person.athleteList.IndividualAthleteList;
 import olympic.main.person.athleteList.TeamAthleteList;
 import olympic.main.person.personvisitor.ConfirmEntryListVisitor;
 import olympic.main.person.personvisitor.UrineVisitor;
-import olympic.main.person.personvisitor.visitFilterChain.FilterManager;
+import olympic.main.person.personvisitor.visitfilterchain.FilterManager;
 import olympic.main.person.volunteer.VolunteerList;
 
 import java.util.ArrayList;

@@ -23,7 +23,7 @@ public class PressConferenceScene implements Scene {
     /**
      * 观众
      */
-    private final List<Listener> audience;
+    private final List<? extends Listener> audience;
 
     /**
      * 最大问题数
@@ -38,7 +38,7 @@ public class PressConferenceScene implements Scene {
      * @param audience 观众
      * @param maxQuestionNum 最大问题数
      */
-    public PressConferenceScene(Interviewee interviewee, List<Interviewer> interviewers, List<Listener> audience, int maxQuestionNum) {
+    public PressConferenceScene(Interviewee interviewee, List<Interviewer> interviewers, List<? extends Listener> audience, int maxQuestionNum) {
         this.interviewee = interviewee;
         this.interviewers = interviewers;
         this.audience = audience;
