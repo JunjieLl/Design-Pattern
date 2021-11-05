@@ -34,11 +34,11 @@ public class Final extends ContestImpl {
 //        runners = drawLots.randomDrawLots();
         PrintBlockFormat.getPrintFormat().addString("决赛排名榜");
         System.out.println("【决赛排名榜】");
-        PrintBlockFormat.getPrintFormat().addString(String.format("排名\t%-20s\t", "姓名"));
+        PrintBlockFormat.getPrintFormat().addString(String.format("排名\t\t%-20s\t", "姓名"));
 
         Collections.shuffle(runners);
         for (int i = 0; i < size; i++) {
-            PrintBlockFormat.getPrintFormat().addString(String.format(i + 1 + "\t\t%-20s" + "\t" , runners.get(i).getName()));
+            PrintBlockFormat.getPrintFormat().addString(String.format( "%-2s\t\t%-19s" + "\t" , i + 1,runners.get(i).getName()));
         }
         PrintBlockFormat.getPrintFormat().printFormatLeftScreen(true);
     }

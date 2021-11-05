@@ -6,7 +6,6 @@ import olympic.main.game.Valve;
 import olympic.main.game.basketball.round.Round;
 import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.basketballathlete.BasketballTeam;
-import olympic.scene.CeremonyScene;
 
 import java.util.ArrayList;
 import java.util.List;

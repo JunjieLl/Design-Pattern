@@ -17,6 +17,7 @@ public class VolleyballMatch {
 
     private VolleyballTeam team1, team2;
     private int score1, score2;
+    private int point1, point2;
     private Observer observer = null;
 
     public VolleyballMatch(VolleyballTeam team1, VolleyballTeam team2) {
@@ -24,6 +25,7 @@ public class VolleyballMatch {
         this.team1 = team1;
         this.team2 = team2;
         this.score1 = this.score2 = 0;
+        this.point1 = this.point2 = 0;
     }
 
     public void begin() {
@@ -53,6 +55,8 @@ public class VolleyballMatch {
             } else {
                 score2++;
             }
+            point1 += point[0];
+            point2 += point[1];
         }
         PrintBlockFormat.getPrintFormat().addString("比赛结束，比分为" + score1 + "-" + score2);
     }
@@ -71,6 +75,14 @@ public class VolleyballMatch {
 
     public VolleyballTeam getTeam2() {
         return team2;
+    }
+
+    public int getPoint1() {
+        return point1;
+    }
+
+    public int getPoint2() {
+        return point2;
     }
 
     /**
