@@ -81,9 +81,14 @@ public abstract class DrawLotsImpl {
      *
      * @param spaceNum 输出的空格数
      */
-    protected void printSpaces(int spaceNum) {
+    protected static void printSpaces(int spaceNum) {
         for (int i = 0; i < spaceNum; i++) {
             System.out.print(' ');
         }
+    }
+
+    protected  static void printBlue(String str) {
+        str = '[' + "\033[1;34m" + str + "\033[0m" + ']';
+        System.out.println(str);
     }
 }

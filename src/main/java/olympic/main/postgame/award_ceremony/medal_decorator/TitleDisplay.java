@@ -1,6 +1,7 @@
 package olympic.main.postgame.award_ceremony.medal_decorator;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 用于显示多行奖牌上打印内容的类.
@@ -9,7 +10,7 @@ public class TitleDisplay extends Display {
     /**
      * 要显示的一系列字符串
      */
-    private ArrayList body = new ArrayList();
+    private final List<String> body = new ArrayList<>();
 
     /**
      * 当前显示内容的列数
@@ -25,9 +26,8 @@ public class TitleDisplay extends Display {
         if (msg.getBytes().length != msg.length()) {
             int numChineseChar = (msg.getBytes().length - msg.length()) / 2;
             //sb.append(spaces(numChineseChar));
-            String sb = msg +
+            msg = msg +
                     spaces(numChineseChar * 2);
-            msg = sb;
         }
         body.add(msg);
         updateColumn(msg);
@@ -55,7 +55,7 @@ public class TitleDisplay extends Display {
      */
     @Override
     public String getRowText(int row) {
-        return (String) body.get(row);
+        return body.get(row);
     }
 
     /**
@@ -69,7 +69,7 @@ public class TitleDisplay extends Display {
                 columns = msg.getBytes().length;
             }
             for (int row = 0; row < body.size(); row++) {
-                int fills = columns - ((String) body.get(row)).getBytes().length;
+                int fills = columns - body.get(row).getBytes().length;
                 if (fills > 0) {
                     body.set(row, body.get(row) + spaces(fills));
                 }
@@ -79,13 +79,13 @@ public class TitleDisplay extends Display {
                 columns = msg.getBytes().length - (msg.getBytes().length - msg.length());
             }
             for (int row = 0; row < body.size(); row++) {
-                if (((String) body.get(row)).getBytes().length == ((String) body.get(row)).length()) {
-                    int fills = columns - ((String) body.get(row)).getBytes().length;
+                if (body.get(row).getBytes().length == body.get(row).length()) {
+                    int fills = columns - body.get(row).getBytes().length;
                     if (fills > 0) {
                         body.set(row, body.get(row) + spaces(fills));
                     }
                 } else {
-                    int fills = columns - (((String) body.get(row)).getBytes().length + (((String) body.get(row)).getBytes().length - ((String) body.get(row)).length()));
+                    int fills = columns - (body.get(row).getBytes().length + (body.get(row).getBytes().length - body.get(row).length()));
                     if (fills > 0) {
                         body.set(row, body.get(row) + spaces(fills));
                     }

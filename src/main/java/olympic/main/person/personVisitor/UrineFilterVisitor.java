@@ -89,13 +89,5 @@ public class UrineFilterVisitor extends FilterVisitor {
         return finalTeam;
     }
     
-    /**
-     * 获取该过滤器的名字
-     *
-     * @return 该过滤器的名称
-     */
-    @Override
-    public String getFilterName() {
-        return "	【2. 现在进行尿样A瓶的检测】";
-    }
+
 }

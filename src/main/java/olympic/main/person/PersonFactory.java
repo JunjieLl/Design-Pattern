@@ -109,15 +109,6 @@ public class PersonFactory {
         return hMap.get(game);
     }
 
-    /**
-     * 通过名字获取运动员
-     *
-     * @param name 运动员名字
-     * @return 运动员
-     */
-    public Athlete getAthleteByName(String name) {
-        return nameMap.get(name);
-    }
 
     /**
      * 通过国家获取运动员

@@ -27,7 +27,7 @@ public class ConfirmEntryListVisitor extends Visitor {
         int count = 0;
         for (Person athlete : individualAthleteList.getAthletes()) {
             count += 1;
-            stringList.add(" 第" + intToString(count, 3) + "位运动员的名字是" + athlete.getName() + "，来自" + athlete.getNation());
+            stringList.add(" 第" + intToString(count) + "位运动员的名字是" + athlete.getName() + "，来自" + athlete.getNation());
         }
         return individualAthleteList.getAthletes();
     }
@@ -50,7 +50,7 @@ public class ConfirmEntryListVisitor extends Visitor {
             stringList.add(" 第" + countTeam + "出场的队伍是" + team.getName() + "，来自" + team.getNation());
             for (Person athlete : team.getAthleteList()) {
                 count += 1;
-                stringList.add("     该队第" + intToString(count, 3) + "位运动员的名字是" + athlete.getName());
+                stringList.add("     该队第" + intToString(count) + "位运动员的名字是" + athlete.getName());
             }
             stringList.add("");
         }
