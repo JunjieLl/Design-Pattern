@@ -9,6 +9,9 @@ import olympic.main.person.athlete.Strategy;
 
 import java.util.Random;
 
+/**
+ * 乒乓球运动员
+ */
 public class PingpongAthlete extends IndividualAthlete implements PlayPingpong {
 
     /**

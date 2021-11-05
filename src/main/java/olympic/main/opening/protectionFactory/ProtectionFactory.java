@@ -1,5 +1,8 @@
 package olympic.main.opening.protectionFactory;
 
+/**
+ * 防疫物资工厂
+ */
 public class ProtectionFactory {
 
     /**

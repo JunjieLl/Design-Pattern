@@ -8,6 +8,10 @@ import olympic.main.opening.protectionFactory.Test;
  * 领取防疫物资
  */
 public class ProtectionFactoryScene implements Scene {
+
+    /**
+     * 运行场景
+     */
     @Override
     public void play() {
         ProtectionFactory factory1 = ProtectionFactory.getInstance();

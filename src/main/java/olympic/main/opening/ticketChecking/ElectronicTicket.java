@@ -1,5 +1,9 @@
 package olympic.main.opening.ticketChecking;
 
+
+/**
+ * 电子票
+ */
 public class ElectronicTicket implements TicketChecking {
 
     /**

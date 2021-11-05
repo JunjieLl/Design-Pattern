@@ -1,5 +1,8 @@
 package olympic.main.opening.ticketChecking;
 
+/**
+ * 自动验票机
+ */
 public class CheckingMachine {
 
     private TicketChecking strategy;
@@ -7,7 +10,6 @@ public class CheckingMachine {
     /**
      * 设计模式：策略模式
      * 自动验票机
-     *
      * @return 策略对象
      */
     public TicketChecking getStrategy() {

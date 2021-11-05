@@ -1,5 +1,8 @@
 package olympic.main.opening.protectionFactory;
 
+/**
+ * 手套
+ */
 class Gloves extends Protection {
     /**
      * 获取手套个数方法

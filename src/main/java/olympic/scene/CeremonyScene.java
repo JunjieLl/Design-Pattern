@@ -28,11 +28,34 @@ import java.util.Scanner;
  * 颁奖仪式的场景.
  */
 public class CeremonyScene implements Scene {
+    /**
+     * 金牌标题
+     */
     private String goldTitle;
+
+    /**
+     * 银牌标题
+     */
     private String silverTitle;
+
+    /**
+     * 铜牌标题
+     */
     private String bronzeTitle;
+
+    /**
+     * 金牌运动员
+     */
     private Athlete goldPlayer;
+
+    /**
+     * 银牌运动员
+     */
     private Athlete silverPlayer;
+
+    /**
+     * 铜牌运动员
+     */
     private Athlete bronzePlayer;
 
     /**

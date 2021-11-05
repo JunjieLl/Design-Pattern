@@ -11,6 +11,9 @@ import olympic.main.person.athlete.Strategy;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * 乒乓球运动员组合
+ */
 public class PingpongTeam extends TeamAthlete implements PlayPingpong {
     /**
      * 构造函数

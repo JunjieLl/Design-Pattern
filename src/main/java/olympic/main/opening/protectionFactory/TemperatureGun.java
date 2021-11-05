@@ -1,5 +1,8 @@
 package olympic.main.opening.protectionFactory;
 
+/**
+ * 测温枪
+ */
 class TemperatureGun extends Protection {
     /**
      * 获取测温枪个数

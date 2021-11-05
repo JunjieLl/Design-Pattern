@@ -4,7 +4,9 @@ import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.TeamAthlete;
 import java.util.List;
 
-
+/**
+ * 足球队
+ */
 public class FootballTeam extends TeamAthlete {
 
     /**

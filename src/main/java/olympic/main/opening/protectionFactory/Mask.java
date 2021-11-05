@@ -1,5 +1,8 @@
 package olympic.main.opening.protectionFactory;
 
+/**
+ * 口罩
+ */
 class Mask extends Protection {
     /**
      * 获取口罩个数方法
