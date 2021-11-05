@@ -5,7 +5,6 @@ import olympic.main.person.PersonFactory;
 import olympic.main.person.athlete.TeamAthlete;
 
 /**
- *
  * 入场以及传递圣火
  *
  */

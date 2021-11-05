@@ -2,6 +2,9 @@ package olympic.main.opening.translate;
 
 import java.util.Scanner;
 
+/**
+ * 测试翻译
+ */
 public class TransLatePattern {
     public static void main(String[] args) {
 

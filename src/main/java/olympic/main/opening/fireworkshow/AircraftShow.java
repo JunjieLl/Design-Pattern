@@ -2,6 +2,9 @@ package olympic.main.opening.fireworkshow;
 
 import java.util.Scanner;
 
+/**
+ * 无人机表演
+ */
 public class AircraftShow extends Decorator {
     /**
      * 设计模式：装饰器模式
