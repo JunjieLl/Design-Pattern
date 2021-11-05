@@ -42,8 +42,6 @@ public class TrackGameScene implements Scene {
                 break;
 
             case "Breaststroke":
-                track = new Freestyle(PreCompetitionSystemFacade.getInstance().preCompetitionSystemFacade(game));
-                break;
             case "Freestyle":
                 track = new Freestyle(PreCompetitionSystemFacade.getInstance().preCompetitionSystemFacade(game));
                 break;

@@ -3,7 +3,7 @@ package olympic.scene;
 import olympic.main.person.PersonFactory;
 import olympic.main.person.athlete.Athlete;
 import olympic.main.postgame.review_qualification.ReviewMediatorConcrete;
-import olympic.scene.Scene;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +19,7 @@ public class ReviewQScene implements Scene {
      */
     @Override
     public void play() {
-        List<String> games = PersonFactory.getInstance().getNames();
+
 
         List<String> individualGames = PersonFactory.getInstance().getSingalGameNames();
 

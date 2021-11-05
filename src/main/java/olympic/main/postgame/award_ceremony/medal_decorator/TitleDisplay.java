@@ -1,20 +1,12 @@
 package olympic.main.postgame.award_ceremony.medal_decorator;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * 用于显示多行奖牌上打印内容的类.
  */
 public class TitleDisplay extends Display {
-    /**
-     * 要显示的一系列字符串
-     */
-    private final List<String> body = new ArrayList<>();
-
-    /**
-     * 当前显示内容的列数
-     */
+    private ArrayList body = new ArrayList();
     private int columns = 0;
 
     /**
@@ -25,9 +17,11 @@ public class TitleDisplay extends Display {
     public void add(String msg) {
         if (msg.getBytes().length != msg.length()) {
             int numChineseChar = (msg.getBytes().length - msg.length()) / 2;
+            StringBuffer sb = new StringBuffer();
             //sb.append(spaces(numChineseChar));
-            msg = msg +
-                    spaces(numChineseChar * 2);
+            sb.append(msg);
+            sb.append(spaces(numChineseChar * 2));
+            msg = sb.toString();
         }
         body.add(msg);
         updateColumn(msg);
@@ -55,7 +49,7 @@ public class TitleDisplay extends Display {
      */
     @Override
     public String getRowText(int row) {
-        return body.get(row);
+        return (String) body.get(row);
     }
 
     /**
@@ -69,7 +63,7 @@ public class TitleDisplay extends Display {
                 columns = msg.getBytes().length;
             }
             for (int row = 0; row < body.size(); row++) {
-                int fills = columns - body.get(row).getBytes().length;
+                int fills = columns - ((String) body.get(row)).getBytes().length;
                 if (fills > 0) {
                     body.set(row, body.get(row) + spaces(fills));
                 }
@@ -79,13 +73,13 @@ public class TitleDisplay extends Display {
                 columns = msg.getBytes().length - (msg.getBytes().length - msg.length());
             }
             for (int row = 0; row < body.size(); row++) {
-                if (body.get(row).getBytes().length == body.get(row).length()) {
-                    int fills = columns - body.get(row).getBytes().length;
+                if (((String) body.get(row)).getBytes().length == ((String) body.get(row)).length()) {
+                    int fills = columns - ((String) body.get(row)).getBytes().length;
                     if (fills > 0) {
                         body.set(row, body.get(row) + spaces(fills));
                     }
                 } else {
-                    int fills = columns - (body.get(row).getBytes().length + (body.get(row).getBytes().length - body.get(row).length()));
+                    int fills = columns - (((String) body.get(row)).getBytes().length + (((String) body.get(row)).getBytes().length - ((String) body.get(row)).length()));
                     if (fills > 0) {
                         body.set(row, body.get(row) + spaces(fills));
                     }
@@ -101,6 +95,10 @@ public class TitleDisplay extends Display {
      * @return 一个具有对应个数的空格的字符串.
      */
     private String spaces(int count) {
-        return " ".repeat(Math.max(0, count));
+        StringBuffer buf = new StringBuffer();
+        for (int i = 0; i < count; i++) {
+            buf.append(" ");
+        }
+        return buf.toString();
     }
 }

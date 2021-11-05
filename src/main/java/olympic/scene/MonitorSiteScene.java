@@ -16,9 +16,7 @@ import java.util.Scanner;
 public class MonitorSiteScene implements Scene {
     @Override
     public void play() {
-        /**
-         * 创建监视器、遥控器、栈
-         */
+
         Monitor tv = new Monitor();
         MonitorController teleController = new MonitorController();
         CommandStack stack = new CommandStack();
@@ -34,9 +32,7 @@ public class MonitorSiteScene implements Scene {
             if (key.equals("0")) {
 
                 if (cur > 1) {
-                    /**
-                     * 恢复状态
-                     */
+
                     teleController.restoreMemento(stack.pop());
                     if (cur > 2)
                         cur -= 1;

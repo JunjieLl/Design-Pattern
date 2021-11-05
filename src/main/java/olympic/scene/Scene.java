@@ -6,5 +6,5 @@ package olympic.scene;
  * 场景中可能有子场景
  */
 public interface Scene {
-    public abstract void play();
+    void play();
 }

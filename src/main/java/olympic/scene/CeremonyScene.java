@@ -139,33 +139,39 @@ public class CeremonyScene implements Scene {
     private void showDetail(){
         printHelp();
         Scanner scanner = new Scanner(System.in);
-        String str = new String();
+        String str = "";
         boolean flag = true;
         while(flag){
-            if (Mode.getNeedDetail()==true) {
+            if (Mode.getNeedDetail()) {
                 System.out.println("[您的选择]");
                 str = scanner.nextLine();
             }
-            if(str.equals("1")){
-                buildMedalMakingProcedure();
-                flag = false;
-            }else if(str.equals("2")){
-                OutputPicture.printPictureOf(12);
-                buildInterview();
-                flag = false;
-            }else if(str.equals("3")){
-                OutputPicture.printPictureOf(13);
-                buildPressConference();
-                flag = false;
-            }else if(str.equals("4")){
-                buildMedalMakingProcedure();
-                OutputPicture.printPictureOf(12);
-                buildInterview();
-                OutputPicture.printPictureOf(13);
-                buildPressConference();
-                flag = false;
-            }else{
-                flag = false;
+            switch (str) {
+                case "1":
+                    buildMedalMakingProcedure();
+                    flag = false;
+                    break;
+                case "2":
+                    OutputPicture.printPictureOf(12);
+                    buildInterview();
+                    flag = false;
+                    break;
+                case "3":
+                    OutputPicture.printPictureOf(13);
+                    buildPressConference();
+                    flag = false;
+                    break;
+                case "4":
+                    buildMedalMakingProcedure();
+                    OutputPicture.printPictureOf(12);
+                    buildInterview();
+                    OutputPicture.printPictureOf(13);
+                    buildPressConference();
+                    flag = false;
+                    break;
+                default:
+                    flag = false;
+                    break;
             }
         }
     }
@@ -180,7 +186,7 @@ public class CeremonyScene implements Scene {
         PrintBlockFormat.getPrintFormat().printFormatLeftScreen(interviewInitPrintBlock,true);
 
         List<Interviewer> ceremonyInterviewer = PersonFactory.getInstance().getInterviews();
-        List<Interviewer> goldInterviewers = new ArrayList<Interviewer>();
+        List<Interviewer> goldInterviewers = new ArrayList<>();
         int interviewerIndex = new Random().nextInt(50);
 
         Interviewer goldInterviewerNewpaper = ceremonyInterviewer.get(interviewerIndex);
@@ -204,7 +210,7 @@ public class CeremonyScene implements Scene {
 
         Coach intervieweeCoach = PersonFactory.getInstance().getCoach();
 
-        List<Interviewer> coachInterviewers = new ArrayList<Interviewer>();
+        List<Interviewer> coachInterviewers = new ArrayList<>();
         Interviewer coachInterviewerNewspaper = ceremonyInterviewer.get(interviewerIndex+2);
         coachInterviewerNewspaper.setStrategy(new AfterInterviewCoachStrategy());
         coachInterviewerNewspaper.setReportBuilder(new NewspaperBuilder(coachInterviewerNewspaper.getName(),intervieweeCoach.getName()));
