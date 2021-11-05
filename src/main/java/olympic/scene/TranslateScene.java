@@ -8,6 +8,9 @@ import olympic.main.opening.translate.Speaker;
 import java.util.Scanner;
 
 public class TranslateScene implements Scene{
+    /**
+     * 主持人开幕式翻译
+     */
     @Override
     public void play() {
         System.out.println("classname:(TranslateScene) method:(Speaker) action:(生成主持人)");
