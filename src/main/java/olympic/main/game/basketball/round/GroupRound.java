@@ -31,7 +31,9 @@ public class GroupRound extends Round {
         for (int g = 0; g < 2; g++) {
             for (int i = 0; i < 6; i++) {
                 for (int j = i + 1; j < 6; j++) {
-                    schedule.addMatch(new BasketballMatch(teams.get(4 * g + i), teams.get(4 * g + j)));
+                    BasketballMatch match = new BasketballMatch(teams.get(6 * g + i), teams.get(6 * g + j));
+                    match.setObserver(BasketballScoreBoard.getInstance());
+                    schedule.addMatch(match);
                 }
             }
         }
@@ -55,7 +57,11 @@ public class GroupRound extends Round {
             public ScoreEntry(BasketballTeam team, int score, int gain, int loss) {
                 this.team = team;
                 this.score = score;
-                this.rate = ((double)gain) / loss;
+                if (loss != 0) {
+                    rate = ((double)gain) / loss;
+                } else {
+                    rate = Integer.MAX_VALUE;
+                }
             }
         }
 
@@ -88,7 +94,7 @@ public class GroupRound extends Round {
             System.out.println("\nGroup " + (g + 1));
             System.out.println("排名\t球队\t\t积分\t\t得失球率");
             for (int i = 0; i < 6; i++) {
-                System.out.printf("%d\t%s\t\t%d\t\t%d\t\t%d\n", i + 1, ranking.get(i).team.getNation(), ranking.get(i).score, ranking.get(i).rate);
+                System.out.printf("%d\t%s\t\t%d\t\t%f\n", i + 1, ranking.get(i).team.getNation(), ranking.get(i).score, ranking.get(i).rate);
             }
             for (int i = 0; i < 6; i++) {
                 tmp.add(ranking.get(i).team);
