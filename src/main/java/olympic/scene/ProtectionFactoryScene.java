@@ -1,5 +1,6 @@
 package olympic.scene;
 
+import olympic.Utils.PrintBlockFormat;
 import olympic.main.opening.protectionFactory.ProtectionFactory;
 import olympic.main.opening.protectionFactory.Test;
 

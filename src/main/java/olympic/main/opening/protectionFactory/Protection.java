@@ -5,6 +5,9 @@ package olympic.main.opening.protectionFactory;
  * 防疫品类
  */
 public abstract class Protection {
+    /**
+     * 单例的防疫工厂
+     */
     protected ProtectionFactory factory;
 
     /**
