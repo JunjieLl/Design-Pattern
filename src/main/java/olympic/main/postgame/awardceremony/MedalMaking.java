@@ -10,7 +10,7 @@ public class MedalMaking {
      * 与原型交互类的构造函数
      */
     public MedalMaking() {
-        Factory factory = Factory.getFactory("olympic.main.postgame.award_ceremony.olympic_medal_factory.OlympicMedalFactory");
+        Factory factory = Factory.getFactory("olympic.main.postgame.awardceremony.olympicmedalfactory.OlympicMedalFactory");
         Medal goldMedal = factory.createMedal("奥运金牌", "金1.35%、银92.5%、铜6.15%");
         Medal silverMedal = factory.createMedal("奥运银牌", "银100%");
         Medal bronzeMedal = factory.createMedal("奥运铜牌", "铜97%、锌2.5%、锡0.5%");
