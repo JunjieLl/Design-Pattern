@@ -5,6 +5,8 @@ package olympic.main.postgame.award_ceremony.medal_decorator;
  */
 public class FullBorder extends Border {
     /**
+     * 全边框的构造函数
+     *
      * @param display 被装饰物.
      */
     public FullBorder(Display display) {
@@ -27,9 +29,12 @@ public class FullBorder extends Border {
         return 1 + display.getRows() + 1;
     }
 
+
     /**
-     * @param row 某一行的索引
-     * @return 返回该行的文字字符串.
+     * 返回某一行的内容
+     *
+     * @param row 行的索引
+     * @return  对应行显示的内容
      */
     @Override
     public String getRowText(int row) {
@@ -44,6 +49,8 @@ public class FullBorder extends Border {
     }
 
     /**
+     * 构造一行重复的符号
+     *
      * @param ch    要重复显示的字符.
      * @param count 重复显示的次数.
      * @return 返回将该字符重复显示指定次数后的字符串.
