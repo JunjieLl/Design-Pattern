@@ -43,16 +43,16 @@ final public class Director {
      *
      * @param scene 下一个场景
      */
-    final public void nextScene(Scene scene) {
+    public void nextScene(Scene scene) {
         System.out.println("classname: (Director) method: (nextScene) action: (切换到下一场景) ");
         scene.play();
     }
 
-    private Map<String, List<String>> gameNames = new HashMap<>();
+    private final Map<String, List<String>> gameNames = new HashMap<>();
 
-    private Scanner input = new Scanner(System.in);
+    private final Scanner input = new Scanner(System.in);
 
-    private PrintStream screen = System.out;
+    private final PrintStream screen = System.out;
 
 
     /**
@@ -101,8 +101,6 @@ final public class Director {
      * 赛后活动顺序
      */
     private void startAfterGameActivities() {
-//        new PressConferenceScene().play();  //不用在main里面调
-//        new CeremonyScene().play();
         nextScene(new ChoreHandlingScene());
         OutputVoiceover.printVoiceoverOf(16);
         nextScene(new MonitorSiteScene());
@@ -151,11 +149,6 @@ final public class Director {
         Mode.setNeedDetail(false);
         for (List<String> nameList : gameNames.values()) {
             for (String name : nameList) {
-
-//                changeOutputTarget("screen");
-//                System.out.println(name);
-//                changeOutputTarget("file");
-
                 Scene scene = SceneFactory.getScene(name);
                 if (scene != null) {
                     scene.play();

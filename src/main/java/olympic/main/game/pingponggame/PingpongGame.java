@@ -1,5 +1,6 @@
 package olympic.main.game.pingponggame;
 
+import olympic.main.game.badminton.BadmintonGame;
 import olympic.main.person.athlete.Athlete;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -53,19 +54,6 @@ public class PingpongGame {
 
         // 比赛结束，为运动员设计成绩
         Integer winner;
-        if ((Integer) result.values().toArray()[0] > (Integer) result.values().toArray()[1]) {
-            winner = 0;
-            ((Athlete)result.keySet().toArray()[0]).setRank(name,0);
-        } else {
-            winner = 1;
-            ((Athlete)result.keySet().toArray()[0]).setRank(name,1);
-        }
-        ((Athlete)result.keySet().toArray()[winner]).setRank(name,1);
-        ((Athlete)result.keySet().toArray()[1-winner]).setRank(name,2);
-
-        System.out.println("===================================================");
-        System.out.print("【本局结束】");
-        System.out.print("比分"+result.values().toArray()[0]+":"+result.values().toArray()[1]+" ");
-        System.out.println(((Athlete)result.keySet().toArray()[winner]).getName()+" 获胜\n");
+        BadmintonGame.generateScore(result, name);
     }
 }

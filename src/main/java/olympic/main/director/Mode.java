@@ -6,7 +6,10 @@ package olympic.main.director;
  * 只有静态方法，类似单例
  */
 public class Mode {
-    private Mode(){};
+    private Mode() {
+    }
+
+
 
     /**
      * 是否需要输出细节
