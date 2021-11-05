@@ -2,11 +2,15 @@ package olympic.scene;
 
 import olympic.main.opening.fireworkshow.*;
 
+/**
+ * 烟花表演场景
+ */
 public class FireworkScene implements Scene {
-    @Override
+
     /**
      * 烟花表演仪式
      */
+    @Override
     public void play() {
 
         Show myshow = new Firework();
@@ -19,9 +23,9 @@ public class FireworkScene implements Scene {
         myairwork.operation();
     }
 
-    public static void main(String[] args) {
-        FireworkScene fireworkScene=new FireworkScene();
-        fireworkScene.play();
-    }
+//    public static void main(String[] args) {
+//        FireworkScene fireworkScene=new FireworkScene();
+//        fireworkScene.play();
+//    }
 }
 

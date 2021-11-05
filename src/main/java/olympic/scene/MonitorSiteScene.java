@@ -11,9 +11,11 @@ import java.util.Scanner;
  * 设计模式：命令模式、备忘录模式
  * 场地回检
  */
-
-
 public class MonitorSiteScene implements Scene {
+
+    /**
+     * 运行场景
+     */
     @Override
     public void play() {
         /**
