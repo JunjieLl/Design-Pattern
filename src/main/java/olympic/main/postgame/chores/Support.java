@@ -90,7 +90,7 @@ public abstract class Support {
     protected void fail(ChoreLeaf choreleaf) {
         System.out.println("\nclassname: (Support) method: (fail) action: (责任链模式和访问者模式，访问并解决杂务：解决失败) ");
         List<String> choreFailedPrintBlock = new ArrayList<>();
-        choreFailedPrintBlock.add("当前杂务未能解决");
+        choreFailedPrintBlock.add("当前杂务 "+choreleaf+" 未能解决");
         PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
         printBlockFormat.printFormatLeftScreen(choreFailedPrintBlock, true);
     }

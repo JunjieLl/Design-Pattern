@@ -7,8 +7,6 @@ import olympic.picture.OutputPicture;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.Scanner;
-
 @DisplayName("乒乓球比赛场景")
 class PingpongGameSceneTest {
 

@@ -4,14 +4,18 @@ import olympic.Utils.PrintBlockFormat;
 import olympic.main.opening.performance.Compere;
 import olympic.main.opening.performance.Group;
 import olympic.main.opening.performance.Observer;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
-/**
- * 设计模式：观察者模式、迭代器模式
- * 节目表演
- */
-public class PerformanceScene implements Scene {
-    @Override
-    public void play() {
+
+@DisplayName("表演测试")
+public class PerformanceTest {
+    /**
+     * 表演测试函数
+     */
+    @Test
+    void testPlay()
+    {
         Compere cp = new Compere(); //主持人
         Observer group_1 = new Group(1, "敦煌飞天");
         Observer group_2 = new Group(2, "天女散花");

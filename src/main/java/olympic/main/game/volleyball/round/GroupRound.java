@@ -19,7 +19,7 @@ public class GroupRound extends Round {
     /**
      * 小组赛积分榜
      */
-    private VolleyballScoreBoard scoreBoard = VolleyballScoreBoard.getInstance();
+    private final VolleyballScoreBoard scoreBoard = VolleyballScoreBoard.getInstance();
 
     /**
      * 进行所有小组赛并生成晋级名单
@@ -58,11 +58,11 @@ public class GroupRound extends Round {
 
         // 内部类，用于对各组球队进行排名
         class ScoreEntry {
-            public VolleyballTeam team;
-            public int score;
-            public int win;
-            public double rate;
-            public double pointRate;
+            public final VolleyballTeam team;
+            public final int score;
+            public final int win;
+            public final double rate;
+            public final double pointRate;
 
             public ScoreEntry(VolleyballTeam team, int score, int win, int gain, int loss, int pointGain, int pointLoss) {
                 this.team = team;
@@ -97,7 +97,7 @@ public class GroupRound extends Round {
             }
 
             // 排序规则：先按积分排序，积分相同者，胜场数多者排名在前；若胜场数仍相同，胜负局比高者排名在前；若胜负局比仍相同，则比较小分得失分比，得失分比高者排名在前
-            Collections.sort(ranking, (o1, o2) -> {
+            ranking.sort((o1, o2) -> {
                 if (o1.score > o2.score) {
                     return -1;
                 } else if (o1.score < o2.score) {
@@ -113,13 +113,7 @@ public class GroupRound extends Round {
                         } else if (o1.rate < o2.rate) {
                             return 1;
                         } else {
-                            if (o1.pointRate > o2.pointRate) {
-                                return -1;
-                            } else if (o1.pointRate < o2.pointRate) {
-                                return 1;
-                            } else {
-                                return 0;
-                            }
+                            return Double.compare(o2.pointRate, o1.pointRate);
                         }
                     }
                 }
