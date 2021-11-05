@@ -24,11 +24,10 @@ public class TitleDisplay extends Display {
     public void add(String msg) {
         if (msg.getBytes().length != msg.length()) {
             int numChineseChar = (msg.getBytes().length - msg.length()) / 2;
-            StringBuffer sb = new StringBuffer();
             //sb.append(spaces(numChineseChar));
-            sb.append(msg);
-            sb.append(spaces(numChineseChar * 2));
-            msg = sb.toString();
+            String sb = msg +
+                    spaces(numChineseChar * 2);
+            msg = sb;
         }
         body.add(msg);
         updateColumn(msg);
