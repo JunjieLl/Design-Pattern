@@ -19,8 +19,9 @@ public class PaperDrawLotsImpl extends DrawLotsImpl {
         System.out.println("《纸质抽签开始》");
         printPaperSeparator();
         printSpaces(DrawLotsImpl.BEFORE_SEPARATOR_LENGTH);
-        System.out.println("参与抽签的运动员或团队：");
+        printBlue("参与抽签的运动员或团队");
         showBeforeAthletes(athletes);
+        printPaperSeparator();
         System.out.println();
     }
 
@@ -33,7 +34,7 @@ public class PaperDrawLotsImpl extends DrawLotsImpl {
     @Override
     public void rawDrawLotsEnd(List<Athlete> athletes, int groupSize) {
         printSpaces(DrawLotsImpl.RESULT_SEPARATOR_LENGTH);
-        System.out.println("纸质抽签结果：");
+        printBlue("纸质抽签结果");
         showAfterAthletes(athletes, groupSize);
         printPaperSeparator();
         printSpaces(DrawLotsImpl.START_END_SEPARATOR_LENGTH);

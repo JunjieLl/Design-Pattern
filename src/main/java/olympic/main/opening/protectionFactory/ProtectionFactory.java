@@ -14,7 +14,7 @@ public class ProtectionFactory {
     /**
      * 单例内部实例化
      */
-    private static ProtectionFactory ourInstance = new ProtectionFactory();
+    private static final ProtectionFactory ourInstance = new ProtectionFactory();
 
     /**
      * 设计模式：单例模式

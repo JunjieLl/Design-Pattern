@@ -32,7 +32,7 @@ public class Group implements Observer {
      * @param arg 更新函数参数
      */
     public void update(Object arg) {
-        int num = ((Integer) arg).intValue();
+        int num = (Integer) arg;
         if (num == order) {
             PrintBlockFormat.getPrintFormat().addString("classname: (Group) method: (update) action: (现在由第" + order + "表演组带来" + title + "节目)");
         } else if (num == order - 1) {

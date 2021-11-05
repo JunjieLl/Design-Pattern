@@ -7,6 +7,7 @@ import olympic.main.person.athlete.Strategy;
 import olympic.main.person.athlete.badminton.Strategy.BadmintonDefendStrategy;
 import olympic.main.person.athlete.badminton.Strategy.BadmintonOffenseStrategy;
 
+import java.util.Objects;
 import java.util.Random;
 
 public class BadmintonAthlete extends IndividualAthlete implements PlayBadminton {
@@ -17,24 +18,19 @@ public class BadmintonAthlete extends IndividualAthlete implements PlayBadminton
      */
     public BadmintonAthlete(String name, String nation) {
         super(name, nation);
+        Random random = new Random();
         if (random.nextInt() % 2 == 0) {
             this.strategy = new BadmintonOffenseStrategy();
-            strategy.setOwnerAthlete(this);
         } else {
             this.strategy = new BadmintonDefendStrategy();
-            strategy.setOwnerAthlete(this);
         }
-        if (nation == "CHN") {
+        strategy.setOwnerAthlete(this);
+        if (Objects.equals(nation, "CHN")) {
             capacity = 99;
         } else {
             capacity = random.nextInt(8) + 90;
         }
     }
-
-    /**
-     * 随机数用于模拟一些概率
-     */
-    private Random random = new Random();
 
     /**
      * 运动员的实力
@@ -88,7 +84,7 @@ public class BadmintonAthlete extends IndividualAthlete implements PlayBadminton
     /**
      * 回调函数，用于对打
      *
-     * @param oppoent
+     * @param oppoent 1
      * @return 是否击中球，没有击中球就输了这一小轮
      */
     @Override
@@ -96,6 +92,6 @@ public class BadmintonAthlete extends IndividualAthlete implements PlayBadminton
         if (Mode.getShowDetail()) {
             System.out.println("classname: (PingpongAthlete) method: (call) action: (回调模式中选手运用回调函数进行对打) ");
         }
-        return this.playWith((BadmintonAthlete) oppoent);
+        return this.playWith(oppoent);
     }
 }

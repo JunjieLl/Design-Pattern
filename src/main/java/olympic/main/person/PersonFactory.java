@@ -26,13 +26,19 @@ import java.util.*;
  */
 public class PersonFactory {
 
-    private static PersonFactory singleton = new PersonFactory();
+    private static final PersonFactory singleton = new PersonFactory();
 
     /**
      * PersonFactory是单例的私有构造函数
      */
     private PersonFactory() {
         System.out.println("classname: (PersonFactory) method: (PersonFactory) action: (singleton method模式中生成所有人员) ");
+        prop = new Properties();
+        nations = new ArrayList<>();
+        hMap = new HashMap<>();
+       nameMap = new HashMap<>();
+        nationMap =new HashMap<>();
+        catalogueMap =new HashMap<>();
         this.springUtil();
     }
 
@@ -46,23 +52,19 @@ public class PersonFactory {
     }
 
 
-    private Properties prop = new Properties();
+    private final Properties prop ;
     private List<String> gamesName;
     /**
      * 所有国家的名字,不能重复
      */
-    private List<String> nations = new ArrayList<>();
+    private final List<String> nations ;
     /**
      * 比赛和人员的映射表
      */
-    private HashMap<String, List<Athlete>> hMap =
-            new HashMap<String, List<Athlete>>();
-    private HashMap<String, Athlete> nameMap =
-            new HashMap<String, Athlete>();
-    private HashMap<String, List<Athlete>> nationMap =
-            new HashMap<String, List<Athlete>>();
-    private HashMap<String, List<String>> catalogueMap =
-            new HashMap<String, List<String>>();
+    private final HashMap<String, List<Athlete>> hMap;
+    private final HashMap<String, Athlete> nameMap;
+    private final HashMap<String, List<Athlete>> nationMap;
+    private final HashMap<String, List<String>> catalogueMap;
 
     /**
      * 获得所有比赛名字
@@ -81,7 +83,7 @@ public class PersonFactory {
     public List<String> getSingalGameNames() {
         List<String> temp = new ArrayList<>();
         for(String s:gamesName){
-            if(s.indexOf("Team")==-1&&s.indexOf("Relays")==-1){
+            if(!s.contains("Team")&&!s.contains("Relays")){
                 temp.add(s);
             }
         }
@@ -104,28 +106,17 @@ public class PersonFactory {
      * @return List<Athlete> 运动员列表
      */
     public List<Athlete> getAthletes(String game) {
-        List<Athlete> a = hMap.get(game);
         return hMap.get(game);
     }
 
-    /**
-     * 通过名字获取运动员
-     *
-     * @param name
-     * @return 运动员
-     */
-    public Athlete getAthleteByName(String name) {
-        return nameMap.get(name);
-    }
 
     /**
      * 通过国家获取运动员
      *
-     * @param nation
+     * @param nation 国家名
      * @return 运动员列表
      */
     public List<Athlete> getAthleteByNation(String nation) {
-        List<Athlete> A = nationMap.get(nation);
         return nationMap.get(nation);
     }
 
@@ -196,10 +187,10 @@ public class PersonFactory {
 
     }
 
-    private HashMap<String, Chairman> chairmanHashMap = new HashMap<>();
+    private final HashMap<String, Chairman> chairmanHashMap = new HashMap<>();
 
     private Coach coach;
-    private NameFactory nameFactory = new NameFactory();
+    private final NameFactory nameFactory = new NameFactory();
     private List<Interviewer> interviewers;
 
     /**
@@ -212,7 +203,7 @@ public class PersonFactory {
         message = nameFactory.getMessage();
         this.coach = new Coach(message.name, message.nation);
         //生成采访者
-        this.interviewers = new ArrayList<Interviewer>();
+        this.interviewers = new ArrayList<>();
         for (int i = 0; i < 100; i++) {
             message = nameFactory.getMessage();//100
             this.interviewers.add(new Interviewer(message.name, message.nation));
@@ -223,11 +214,11 @@ public class PersonFactory {
 
             InputStream in = new BufferedInputStream(new FileInputStream("./src/main/java/olympic/main/person/message.properties"));
             this.prop.load(in);     ///加载属性列表
-            Iterator<String> it = this.prop.stringPropertyNames().iterator();
+
             //生成所有比赛
             gamesName = Arrays.asList(((String) this.prop.get("AllGames")).split(","));
             //生成所有比赛小项目
-            List<String> catalogue = Arrays.asList(((String) this.prop.get("BigGameClass")).split(","));
+            String[] catalogue =((String) this.prop.get("BigGameClass")).split(",");
             for (String i : catalogue) {
                 catalogueMap.put(i, Arrays.asList(((String) this.prop.get("BigGameClass." + i)).split(",")));
             }
@@ -403,7 +394,7 @@ public class PersonFactory {
             }
             in.close();
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
     }
 

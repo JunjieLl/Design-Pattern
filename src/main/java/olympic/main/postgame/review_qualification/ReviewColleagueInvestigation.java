@@ -9,6 +9,10 @@ import java.util.List;
  * 调查小组，负责根据证据进行调查.
  */
 public class ReviewColleagueInvestigation implements ReviewColleague {
+
+    /**
+     * 该工作小组拥有的仲裁者
+     */
     private ReviewMediator mediator;
 
     /**
