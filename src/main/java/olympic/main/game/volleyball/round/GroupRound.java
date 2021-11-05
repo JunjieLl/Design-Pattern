@@ -1,9 +1,9 @@
-package olympic.main.game.basketball.round;
+package olympic.main.game.volleyball.round;
 
-import olympic.main.game.basketball.BasketballMatch;
-import olympic.main.game.basketball.BasketballScoreBoard;
-import olympic.main.game.basketball.ScheduleIterator;
-import olympic.main.person.athlete.basketballathlete.BasketballTeam;
+import olympic.main.game.volleyball.VolleyballMatch;
+import olympic.main.game.volleyball.VolleyballScoreBoard;
+import olympic.main.game.volleyball.ScheduleIterator;
+import olympic.main.person.athlete.volleyballathlete.VolleyballTeam;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -16,7 +16,7 @@ import java.util.List;
 public class GroupRound extends Round {
 
     // 小组赛积分榜
-    private BasketballScoreBoard scoreBoard = BasketballScoreBoard.getInstance();
+    private VolleyballScoreBoard scoreBoard = VolleyballScoreBoard.getInstance();
 
     /**
      * 进行所有小组赛并生成晋级名单
@@ -24,15 +24,15 @@ public class GroupRound extends Round {
     @Override
     public void start() {
         advancedTeams.clear();
-        System.out.println("\nclassname: (GroupRound) method: (play) action: (进行篮球小组赛，使用了Observer模式、Singleton模式以及Iterator模式) ");
+        System.out.println("\nclassname: (GroupRound) method: (play) action: (进行排球小组赛，使用了Observer模式、Singleton模式以及Iterator模式) ");
         System.out.println("\n【小组赛】");
         // 打乱顺序，分组
         Collections.shuffle(teams);
         for (int g = 0; g < 2; g++) {
             for (int i = 0; i < 6; i++) {
                 for (int j = i + 1; j < 6; j++) {
-                    BasketballMatch match = new BasketballMatch(teams.get(6 * g + i), teams.get(6 * g + j));
-                    match.setObserver(BasketballScoreBoard.getInstance());
+                    VolleyballMatch match = new VolleyballMatch(teams.get(6 * g + i), teams.get(6 * g + j));
+                    match.setObserver(VolleyballScoreBoard.getInstance());
                     schedule.addMatch(match);
                 }
             }
@@ -50,11 +50,11 @@ public class GroupRound extends Round {
 
         // 内部类，用于对各组球队进行排名
         class ScoreEntry {
-            public BasketballTeam team;
+            public VolleyballTeam team;
             public int score;
             public double rate;
 
-            public ScoreEntry(BasketballTeam team, int score, int gain, int loss) {
+            public ScoreEntry(VolleyballTeam team, int score, int gain, int loss) {
                 this.team = team;
                 this.score = score;
                 if (loss != 0) {
@@ -65,14 +65,14 @@ public class GroupRound extends Round {
             }
         }
 
-        List<BasketballTeam> tmp = new ArrayList<>();  // 晋级名单
+        List<VolleyballTeam> tmp = new ArrayList<>();  // 晋级名单
 
         // 打印小组赛积分榜
         System.out.println("\n【小组赛积分榜】");
         for (int g = 0; g < 2; g++) {
             List<ScoreEntry> ranking = new ArrayList<>();
             for (int i = 0; i < 6; i++) {
-                BasketballTeam t = teams.get(6 * g + i);
+                VolleyballTeam t = teams.get(6 * g + i);
                 ranking.add(new ScoreEntry(t, scores[t.getId()], gains[t.getId()], losses[t.getId()]));
             }
 
