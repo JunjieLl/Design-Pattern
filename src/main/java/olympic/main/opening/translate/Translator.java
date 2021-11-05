@@ -5,5 +5,5 @@ interface Translator {
     /**
      * 翻译接口
      */
-    public void translate();
+    void translate();
 }

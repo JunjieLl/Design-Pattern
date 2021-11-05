@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
  * 测试杂物处理场景
  */
 @DisplayName("杂务处理场景")
-public class ChoreHandlingSceneTest {
+class ChoreHandlingSceneTest {
     /**
      * 测试ChoreHandlingScene.play()方法
      */

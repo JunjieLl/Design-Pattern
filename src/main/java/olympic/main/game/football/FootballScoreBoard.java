@@ -6,10 +6,25 @@ package olympic.main.game.football;
  */
 public class FootballScoreBoard implements Observer {
 
-    private static FootballScoreBoard singleton = new FootballScoreBoard();
-    private int[] score;
-    private int[] goalDifference;
-    private int[] goal;
+    /**
+     * 单例实例
+     */
+    private static final FootballScoreBoard singleton = new FootballScoreBoard();
+
+    /**
+     * 积分表
+     */
+    private final int[] score;
+
+    /**
+     * 净胜球表
+     */
+    private final int[] goalDifference;
+
+    /**
+     * 进球数表
+     */
+    private final int[] goal;
 
     /**
      * 获取单例实例
@@ -19,6 +34,9 @@ public class FootballScoreBoard implements Observer {
         return singleton;
     }
 
+    /**
+     * 单例类，构造函数私有
+     */
     private FootballScoreBoard() {
         this.score = new int[16];
         this.goalDifference = new int[16];
@@ -55,14 +73,26 @@ public class FootballScoreBoard implements Observer {
         this.goal[id2] += score2;
     }
 
+    /**
+     * 获取各球队的积分
+     * @return 积分表
+     */
     public int[] getScore() {
         return score;
     }
 
+    /**
+     * 获取各球队的净胜球
+     * @return 净胜球表
+     */
     public int[] getGoalDifference() {
         return goalDifference;
     }
 
+    /**
+     * 获取各球队的进球数
+     * @return 进球数表
+     */
     public int[] getGoal() {
         return goal;
     }

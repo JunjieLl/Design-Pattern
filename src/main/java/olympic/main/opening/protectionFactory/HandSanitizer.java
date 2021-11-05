@@ -1,7 +1,10 @@
 package olympic.main.opening.protectionFactory;
 
 class HandSanitizer extends Protection {
-
+    /**
+     * 获取洗手液瓶数方法
+     * @param num 洗手液瓶数
+     */
     @Override
     public void get(int num) {
         factory.setHandSan_num(num);

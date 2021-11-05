@@ -4,11 +4,22 @@ package olympic.main.director;
 import olympic.picture.OutputPicture;
 import olympic.scene.*;
 
+/**
+ * 场景工厂
+ */
 final public class SceneFactory {
+    /**
+     * 私有构造函数
+     */
     private SceneFactory() {
     }
 
-    public static final Scene getScene(String name) {
+    /**
+     * 静态方法，获得场景
+     * @param name 场景名称
+     * @return 场景
+     */
+    public static Scene getScene(String name) {
         switch (name) {
             case "Relays":
             case "Marathon":

@@ -18,12 +18,12 @@ public class BasketballGameManager implements AbstractPipeline {
     /**
      * 单例实例
      */
-    private static BasketballGameManager singleton = new BasketballGameManager();
+    private static final BasketballGameManager singleton = new BasketballGameManager();
 
     /**
      * 前三名球队
      */
-    private ArrayList<Athlete> topThreeAthletes = new ArrayList<>();
+    private final ArrayList<Athlete> topThreeAthletes = new ArrayList<>();
 
     /**
      * 获取单例实例
@@ -42,7 +42,7 @@ public class BasketballGameManager implements AbstractPipeline {
     /**
      * 本轮的参赛球队
      */
-    private List<BasketballTeam> teams = new ArrayList<>();
+    private final List<BasketballTeam> teams = new ArrayList<>();
 
     /**
      * 第一轮比赛，即管道模式的第一段管道
@@ -80,7 +80,7 @@ public class BasketballGameManager implements AbstractPipeline {
 
     /**
      * 向管道末尾添加比赛
-     * @param newGame
+     * @param newGame 要添加的比赛
      */
     @Override
     public void addContest(Valve newGame) {
@@ -98,8 +98,8 @@ public class BasketballGameManager implements AbstractPipeline {
         System.out.println("\nclassname: (BasketballGameManager) method: (play) action: (进行篮球比赛，使用了Pipeline模式以及Singleton模式) ");
         Round r = this.first;
         List<BasketballTeam> advancedTeams = teams;
-        for (int i = 0; i < advancedTeams.size(); ++i) {
-            advancedTeams.get(i).setRank("BasketballTeam", 12);
+        for (BasketballTeam advancedTeam : advancedTeams) {
+            advancedTeam.setRank("BasketballTeam", 12);
         }
         int rank = 8;
         while (r != null) {
@@ -107,8 +107,8 @@ public class BasketballGameManager implements AbstractPipeline {
             r.setTeams(advancedTeams);
             r.start();
             advancedTeams = r.getAdvancedTeams();
-            for (int i = 0; i < advancedTeams.size(); ++i) {
-                advancedTeams.get(i).setRank("BasketballTeam", rank);
+            for (BasketballTeam advancedTeam : advancedTeams) {
+                advancedTeam.setRank("BasketballTeam", rank);
             }
             rank /= 2;
             r = r.getNext();
@@ -122,12 +122,12 @@ public class BasketballGameManager implements AbstractPipeline {
 
         ArrayList<BasketballTeam> tmp = new ArrayList<>();  // 需要打季军赛的2支球队
 
-        for (int i = 0; i < teams.size(); ++i) {
-            int k = teams.get(i).getRank("BasketballTeam");
+        for (BasketballTeam team : teams) {
+            int k = team.getRank("BasketballTeam");
             if (k == 4) {
-                tmp.add(teams.get(i));
+                tmp.add(team);
             } else if (k < 4) {
-                topThreeAthletes.set(k - 1, teams.get(i));
+                topThreeAthletes.set(k - 1, team);
             }
         }
 

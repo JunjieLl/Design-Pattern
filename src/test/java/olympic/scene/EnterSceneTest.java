@@ -9,25 +9,24 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Random;
 
-@DisplayName("入场仪式")
+@DisplayName("入场仪式场景")
 class EnterSceneTest {
     /**
      * 测试EnterScene.play()方法
      */
 
     @Test
-    void testPlay(){
+    void testPlay() {
         EnterManager enterManager = EnterManager.getInstance();
         TeamAthlete torchBarer = new TeamAthlete("火炬传递队");
 
-        String[] country = new String[48];
+        String[] country;
         country = PersonFactory.getInstance().getNations().toArray(new String[0]);
 
 
-        for(int i=0;i<10;i++)
-        {
+        for (int i = 0; i < 10; i++) {
 //            int ran= 0+(int)(Math.random()*(country.length-1+1));
-            int ran= new Random().nextInt(country.length);
+            int ran = new Random().nextInt(country.length);
 
             TeamAthlete tempList = new TeamAthlete(PersonFactory.getInstance().getAthleteByNation(country[ran]), country[ran]);
             if (tempList.getNumber() > 0) {
@@ -36,7 +35,6 @@ class EnterSceneTest {
             }
 
         }
-        ;
 
         EnterIterator et = enterManager.iterator();
         while (et.hasNext()) {
@@ -47,9 +45,8 @@ class EnterSceneTest {
         torchBarer.passFire();
         System.out.println("最后一位使者点燃了奥运圣火！");
 
-        EnterScene enterScene=new EnterScene();
+        EnterScene enterScene = new EnterScene();
         enterScene.play();
 
     }
-
 }

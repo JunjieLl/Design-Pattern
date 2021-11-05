@@ -6,7 +6,7 @@ import olympic.main.person.athleteList.IndividualAthleteList;
 import olympic.main.person.athleteList.TeamAthleteList;
 import olympic.main.person.personVisitor.FilterVisitor;
 
-import java.io.IOException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,17 +39,7 @@ public class FilterChain extends FilterVisitor {
 	public void addFilter(FilterVisitor filterVisitor) {
 		filters.add(filterVisitor);
 	}
-	
-	/**
-	 * 获取过滤器的名字
-	 *
-	 * @return 因为这个类为过滤器链，没有特定的名字，故返回null
-	 */
-	@Override
-	public String getFilterName() {
-		return null;
-	}
-	
+
 	/**
 	 * 个人运动员列表类的访问函数，用于按顺序对个人运动员列表做多次过滤
 	 *

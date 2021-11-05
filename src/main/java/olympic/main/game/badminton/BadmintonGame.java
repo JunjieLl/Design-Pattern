@@ -21,7 +21,7 @@ public class BadmintonGame {
      * 仅用于暂存这场比赛的成绩
      * 与最终athlele中的成绩无关
      */
-    private HashMap<Athlete, Integer> result = new HashMap<>();
+    private final HashMap<Athlete, Integer> result = new HashMap<>();
 
     /**
      * 构造函数
@@ -51,13 +51,7 @@ public class BadmintonGame {
      * 对外接口，开始比赛
      */
     public void start() {
-        List<Athlete> athletes = new ArrayList<>(result.keySet());
-        System.out.println("===========================================================================");
-        System.out.print("                    [");
-        System.out.print("\033[1;" + 34+"m");
-        System.out.print(athletes.get(0).getName() + " vs " + athletes.get(1).getName());
-        System.out.print("\033[0m");
-        System.out.println("]");
+        init(result);
 
 
         // 还没有一个运动员的分数到达三分的时候，需要继续比赛
@@ -72,20 +66,41 @@ public class BadmintonGame {
         }
 
         // 比赛结束，为运动员设计成绩
-        Integer winner;
-        if ((Integer) result.values().toArray()[0] > (Integer) result.values().toArray()[1]) {
-            winner = 0;
-            ((Athlete)result.keySet().toArray()[0]).setRank(name,0);
-        } else {
-            winner = 1;
-            ((Athlete)result.keySet().toArray()[0]).setRank(name,1);
-        }
-        ((Athlete)result.keySet().toArray()[winner]).setRank(name,1);
-        ((Athlete)result.keySet().toArray()[1-winner]).setRank(name,2);
+
+        generateScore(result, name);
+    }
+
+    public static void init(HashMap<Athlete, Integer> result) {
+        List<Athlete> athletes = new ArrayList<>(result.keySet());
+        System.out.println("===========================================================================");
+        System.out.print("                    [");
+        System.out.print("\033[1;" + 34+"m");
+        System.out.print(athletes.get(0).getName() + " vs " + athletes.get(1).getName());
+        System.out.print("\033[0m");
+        System.out.println("]");
+    }
+
+    public static void generateScore(HashMap<Athlete, Integer> result, String name) {
+        int winner;
+        winner = getWinner(result, name);
 
         System.out.println("===========================================================================");
         System.out.print("【本局结束】");
-        System.out.print("比分"+result.values().toArray()[0]+":"+result.values().toArray()[1]+" ");
-        System.out.println(((Athlete)result.keySet().toArray()[winner]).getName()+" 获胜\n");
+        System.out.print("比分"+ result.values().toArray()[0]+":"+ result.values().toArray()[1]+" ");
+        System.out.println(((Athlete) result.keySet().toArray()[winner]).getName()+" 获胜\n");
+    }
+
+    public static int getWinner(HashMap<Athlete, Integer> result, String name) {
+        int winner;
+        if ((Integer) result.values().toArray()[0] > (Integer) result.values().toArray()[1]) {
+            winner = 0;
+            ((Athlete) result.keySet().toArray()[0]).setRank(name,0);
+        } else {
+            winner = 1;
+            ((Athlete) result.keySet().toArray()[0]).setRank(name,1);
+        }
+        ((Athlete) result.keySet().toArray()[winner]).setRank(name,1);
+        ((Athlete) result.keySet().toArray()[1-winner]).setRank(name,2);
+        return winner;
     }
 }

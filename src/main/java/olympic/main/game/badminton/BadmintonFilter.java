@@ -19,7 +19,7 @@ public class BadmintonFilter extends Valve {
      * 包含的比赛
      * 比如预赛会有很多场比赛
      */
-    private List<BadmintonGame> games = new ArrayList<>();
+    private final List<BadmintonGame> games = new ArrayList<>();
 
     /**
      * 下一个Filter
@@ -28,7 +28,7 @@ public class BadmintonFilter extends Valve {
 
     /**
      * 构造函数
-     * @param name
+     * @param name 过滤器名字
      */
     public BadmintonFilter(String name) {
         this.name = name;
@@ -36,7 +36,7 @@ public class BadmintonFilter extends Valve {
 
     /**
      *
-     * @param athletes
+     * @param athletes 运动员
      */
     public void setAthletes(List<Athlete> athletes){
         RandomDrawLots drawLots = new RandomDrawLots(athletes, new PaperDrawLotsImpl(), 2, true);
@@ -51,8 +51,8 @@ public class BadmintonFilter extends Valve {
         for (int i=0;i<athletes.size()/2;i++){
             BadmintonGame game = new BadmintonGame(this.name);
             // 为比赛添加运动员
-            game.addAthlete(athletes.get(2*i));
-            game.addAthlete(athletes.get(2*i+1));
+            game.addAthlete(athletes.get(2 * i));
+            game.addAthlete(athletes.get(2 * i + 1));
             games.add(game);
         }
     }
@@ -64,7 +64,7 @@ public class BadmintonFilter extends Valve {
      */
     @Override
     public Valve setNext(Valve valve) {
-        this.nextFilter = (BadmintonFilter)valve;
+        this.nextFilter = (BadmintonFilter) valve;
         return this;
     }
 

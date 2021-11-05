@@ -4,10 +4,17 @@ import olympic.Utils.PrintBlockFormat;
 import olympic.main.postgame.award_ceremony.factory.*;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
+/**
+ * 具体的产品类
+ */
 public class OlympicMedalEndProduct extends EndProduct {
+    /**
+     * 具体产品的名字
+     *
+     * @param productName 产品名
+     */
     public OlympicMedalEndProduct(String productName) {
         super(productName);
     }
@@ -22,13 +29,10 @@ public class OlympicMedalEndProduct extends EndProduct {
         endProductDisplayBlock.add("奖牌成品展示");
         endProductDisplayBlock.add("每块奖牌由牌子和绶带组成，以下分别为牌子工厂和绶带工厂制作的零件。");
         PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
-        printBlockFormat.printFormatLeftScreen(endProductDisplayBlock,true);
+        printBlockFormat.printFormatLeftScreen(endProductDisplayBlock, true);
 
-        Iterator it = content.iterator();
-        while (it.hasNext()) {
-            Part part = (Part) it.next();
+        for (Part part : content) {
             part.makeMedal();
         }
     }
-
 }

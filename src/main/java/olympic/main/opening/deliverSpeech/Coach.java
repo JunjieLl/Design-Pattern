@@ -1,5 +1,6 @@
 package olympic.main.opening.deliverSpeech;
 
+import olympic.Utils.PrintBlockFormat;
 import olympic.main.person.interview.Interviewee;
 import olympic.main.person.interview.Listener;
 
@@ -21,6 +22,11 @@ public class Coach extends Interviewee implements Speechable, Listener {
         questionsToAnswers.put("现在心情怎么样？", List.of("我为我的队员们感到骄傲。"));
     }
 
+    /**
+     * Coach的构造方法
+     * @param name 教练名
+     * @param nation 教练国家
+     */
     public Coach(String name, String nation) {
         super(name, nation);
     }
@@ -43,7 +49,7 @@ public class Coach extends Interviewee implements Speechable, Listener {
      * 开/闭幕式发言方法
      */
     public void deliverSpeech(){
-        System.out.println("大家好，我是Coach"+this.getName()+",我会严格遵循竞赛规则和裁判员纪律！");
+        PrintBlockFormat.getPrintFormat().addString("大家好，我是Coach"+this.getName()+",我会严格遵循竞赛规则和裁判员纪律！");
     }
 
 

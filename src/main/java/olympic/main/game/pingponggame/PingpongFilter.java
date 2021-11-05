@@ -2,7 +2,7 @@ package olympic.main.game.pingponggame;
 
 import olympic.main.drawlots.PaperDrawLotsImpl;
 import olympic.main.drawlots.RandomDrawLots;
-import olympic.main.game.Game;
+
 import olympic.main.game.Valve;
 import olympic.main.person.athlete.Athlete;
 
@@ -19,7 +19,7 @@ public class PingpongFilter extends Valve {
      * 包含的比赛
      * 比如预赛会有很多场比赛
      */
-    private List<PingpongGame> games = new ArrayList<>();
+    private final List<PingpongGame> games = new ArrayList<>();
 
     /**
      * 下一个Filter
@@ -28,7 +28,7 @@ public class PingpongFilter extends Valve {
 
     /**
      * 构造函数
-     * @param name
+     * @param name 管道名
      */
     public PingpongFilter(String name) {
         this.name = name;
@@ -36,7 +36,7 @@ public class PingpongFilter extends Valve {
 
     /**
      *
-     * @param athletes
+     * @param athletes 运动员列表
      */
     public void setAthletes(List<Athlete> athletes){
         RandomDrawLots drawLots = new RandomDrawLots(athletes, new PaperDrawLotsImpl(), 2, true);

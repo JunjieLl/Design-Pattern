@@ -20,24 +20,19 @@ public class BadmintonTeam extends TeamAthlete implements PlayBadminton {
      */
     public BadmintonTeam(String name, String nation, List<Athlete> athleteList) {
         super(name, nation, athleteList);
+        Random random = new Random();
         if (random.nextInt() % 2 == 0) {
             this.strategy = new BadmintonOffenseStrategy();
-            strategy.setOwnerAthlete(this);
         } else {
             this.strategy = new BadmintonDefendStrategy();
-            strategy.setOwnerAthlete(this);
         }
-        if (nation == "CHN") {
+        strategy.setOwnerAthlete(this);
+        if (nation.equals("CHN")) {
             capacity = 99;
         } else {
             capacity = random.nextInt(8) + 90;
         }
     }
-
-    /**
-     * 随机数用于模拟一些概率
-     */
-    private Random random = new Random();
 
     /**
      * 运动员的实力
@@ -91,7 +86,7 @@ public class BadmintonTeam extends TeamAthlete implements PlayBadminton {
     /**
      * 回调函数，用于对打
      *
-     * @param oppoent
+     * @param oppoent 1
      * @return 是否击中球，没有击中球就输了这一小轮
      */
     @Override

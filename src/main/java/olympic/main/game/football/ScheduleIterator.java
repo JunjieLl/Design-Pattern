@@ -1,17 +1,28 @@
 package olympic.main.game.football;
 
-import olympic.main.game.Game;
+
 import olympic.main.game.Iterator;
-import olympic.main.game.football.Schedule;
+
 
 /**
  * 赛程迭代器
  * Iterator模式
  */
 public class ScheduleIterator implements Iterator {
-    private Schedule schedule;
+    /**
+     * 赛程表
+     */
+    private final Schedule schedule;
+
+    /**
+     * 索引
+     */
     private int index;
 
+    /**
+     * 构造函数
+     * @param schedule 赛程表
+     */
     public ScheduleIterator(Schedule schedule) {
         this.schedule = schedule;
         this.index = 0;
@@ -23,11 +34,7 @@ public class ScheduleIterator implements Iterator {
      */
     @Override
     public boolean hasNext() {
-        if (this.index < schedule.getLength()) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.index < schedule.getLength();
     }
 
     /**

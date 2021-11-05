@@ -5,7 +5,10 @@ package olympic.main.postgame.monitor_site;
  * 管理者：命令栈
  */
 public class CommandStack {
-    private Command command[];
+    /**
+     * 命令数组、栈顶指针
+     */
+    private Command[] command;
     private int top;
 
     public CommandStack() {
@@ -13,6 +16,11 @@ public class CommandStack {
         top = -1;
     }
 
+    /**
+     * 增添命令，体现备忘录的记录功能
+     * @param p 1
+     * @return 1
+     */
     public boolean push(Command p) {
         if (top >= 100) {
             System.out.println("classname: (CommandStack) method: (push) action: (命令过多，输入错误！)");
@@ -23,6 +31,10 @@ public class CommandStack {
         }
     }
 
+    /**
+     * 弹出当前命令，返回上一条命令，进行备忘录的撤销功能
+     * @return
+     */
     public Command pop() {
         if (top <= 0) {
             System.out.println("classname: (CommandStack) method: (pop) action: (Warning:没有上一条命令，继续检查当前场地)");

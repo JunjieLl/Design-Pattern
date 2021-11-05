@@ -1,6 +1,10 @@
 package olympic.main.opening.protectionFactory;
 
 class TemperatureGun extends Protection {
+    /**
+     * 获取测温枪个数
+     * @param num 测温枪个数
+     */
     @Override
     public void get(int num) {
         factory.setTemper_num(num);
