@@ -76,6 +76,9 @@ abstract class DeliverSpeech {  //抽象类
      */
     abstract String getCoachRepre();
 
+    /**
+     * 获取发言抽象方法
+     */
     abstract void getOOCPSpeech();
     abstract void getIOCPSpeech();
     abstract void getHPSpeech();
