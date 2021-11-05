@@ -25,7 +25,7 @@ public class Butterflystroke extends TrackGame {
     public void start() {
         System.out.println("【"+getName()+"】");
         System.out.println("classname: (Butterflystroke) method: (start) action: (template method模式中运动员参与蝶泳比赛) ");
-        ContestDirector contestDirector=new ContestDirector(2,athletes);
+        ContestDirector contestDirector=new ContestDirector(3,athletes);
         contestDirector.construct();
 
         for(int i=0;i<athletes.size();i++){

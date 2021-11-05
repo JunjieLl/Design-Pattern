@@ -1,27 +1,23 @@
 package olympic.scene;
 
-import olympic.main.PreCompetitionSystem.PreCompetitionSystemFacade;
 import olympic.main.game.basketball.BasketballGameManager;
+
 import olympic.main.game.basketball.round.EliminationRound;
 import olympic.main.game.basketball.round.GroupRound;
+import olympic.main.person.PersonFactory;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
-
-/**
- * 篮球比赛启动器
- * 调用play方法进行所有比赛
- */
-public class BasketballScene implements Scene {
-
+@DisplayName("篮球比赛场景")
+public class BasketballSceneTest {
     /**
-     * 进行所有比赛
+     * 测试BasketballScene.play()方法
      */
-    @Override
-    public void play() {
-        System.out.println("classname: (BasketballScene) method: (play) action: (篮球比赛开始) ");
+    @Test
+    void testPlay() {
         BasketballGameManager basketballGameManager = BasketballGameManager.getInstance();  // Singleton获取实例
-        basketballGameManager.setTeams(PreCompetitionSystemFacade.getInstance().preCompetitionSystemFacade("BasketballTeam"));
+        basketballGameManager.setTeams(PersonFactory.getInstance().getAthletes("BasketballTeam"));
         basketballGameManager.setFirst(new GroupRound()).setNext(new EliminationRound("四分之一决赛")).setNext(new EliminationRound("半决赛")).setNext(new EliminationRound("决赛"));  // 各轮比赛连接成管道
         basketballGameManager.start();
-        new CeremonyScene(basketballGameManager.getTopThreeAthletes()).play();
     }
 }

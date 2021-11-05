@@ -10,6 +10,11 @@ import olympic.main.person.athlete.badminton.Strategy.BadmintonOffenseStrategy;
 import java.util.Random;
 
 public class BadmintonAthlete extends IndividualAthlete implements PlayBadminton {
+    /**
+     * 构造函数
+     * @param name 姓名
+     * @param nation 国家
+     */
     public BadmintonAthlete(String name, String nation) {
         super(name, nation);
         if (random.nextInt() % 2 == 0) {
@@ -42,11 +47,19 @@ public class BadmintonAthlete extends IndividualAthlete implements PlayBadminton
      */
     private Strategy strategy;
 
+    /**
+     * 获取实力
+     * @return 实力
+     */
     @Override
     public Integer getCapacity() {
         return capacity;
     }
 
+    /**
+     * 设置策略
+     * @param strategy 策略
+     */
     public void setStrategy(Strategy strategy) {
         this.strategy = strategy;
     }
@@ -68,7 +81,7 @@ public class BadmintonAthlete extends IndividualAthlete implements PlayBadminton
     @Override
     public void serve() {
         if (Mode.getShowDetail()) {
-            System.out.println(this.getName() + " 发乒乓球");
+            System.out.println(this.getName() + " 发羽毛球");
         }
     }
 

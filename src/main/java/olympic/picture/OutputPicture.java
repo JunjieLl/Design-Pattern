@@ -1,9 +1,12 @@
 package olympic.picture;
 
+import olympic.main.director.Mode;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class OutputPicture {
     public static void main(String[] args) {
@@ -23,7 +26,7 @@ public class OutputPicture {
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(path));
             String str;
-            System.out.println("\033[1;" + 35+"m");
+            System.out.println("\033[1;" + 34+"m");
             while ((str = bufferedReader.readLine()) != null) {
                 System.out.println(str);
             }
@@ -33,6 +36,9 @@ public class OutputPicture {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+        if (Mode.getNeedDetail()) {
+            Scanner scanner = new Scanner(System.in);
+            scanner.nextLine();
+        }
     }
 }

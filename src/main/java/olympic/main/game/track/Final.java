@@ -50,7 +50,6 @@ public class Final extends ContestImpl {
      */
     public void getResult() {
         rank(athletes);
-        CeremonyScene ceremonyScene = new CeremonyScene(athletes);
-        ceremonyScene.play();
+
     }
 }

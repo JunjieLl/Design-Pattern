@@ -8,6 +8,11 @@ import java.util.Random;
  * 足球小组赛
  */
 public class GroupFootballMatch extends FootballMatch {
+    /**
+     * 构造函数
+     * @param team1 球队1
+     * @param team2 球队2
+     */
     public GroupFootballMatch(FootballTeam team1, FootballTeam team2) {
         super(team1, team2);
         this.observer = FootballScoreBoard.getInstance();

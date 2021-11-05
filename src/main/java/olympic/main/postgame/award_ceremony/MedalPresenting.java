@@ -32,21 +32,18 @@ public class MedalPresenting {
         BronzeMedalPattern bmp = new BronzeMedalPattern();
         manager.register("B", bmp);
         MedalProduct productBronzeMedal = manager.create("B");
-        System.out.println("\033[1;31m");
         OutputPicture.printPictureOf(6);
         productBronzeMedal.use(titleBronzeMedal);
 
         SilverMedalPattern smp = new SilverMedalPattern();
         manager.register("S", smp);
         MedalProduct productSilverMedal = manager.create("S");
-        System.out.println("\033[1;37m");
         OutputPicture.printPictureOf(5);
         productSilverMedal.use(titleSilverMedal);
 
         GoldMedalPattern gmp = new GoldMedalPattern();
         manager.register("G", gmp);
         MedalProduct productGoldMedal = manager.create("G");
-        System.out.println("\033[1;33m");
         OutputPicture.printPictureOf(4);
         productGoldMedal.use(titleGoldMedal);
     }
