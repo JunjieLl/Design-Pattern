@@ -104,7 +104,7 @@ final public class Director {
         OutputPicture.printPictureOf(1);
         OutputPicture.printPictureOf(2); //flag
         OutputVoiceover.printVoiceoverOf(1);
-        new TicketCheckingScene().play();
+        nextScene(new TicketCheckingScene());
         OutputVoiceover.printVoiceoverOf(2);
         nextScene(new ProtectionFactoryScene());
         OutputPicture.printPictureOf(3); //playground
@@ -181,6 +181,7 @@ final public class Director {
      * 并且将输出重定向到out。txt中
      */
     private void startRemainingGames() {
+        Sleep.setNeedSleep(false);
         changeOutputTarget("file");
         Mode.setNeedDetail(false);
         for (List<String> nameList : gameNames.values()) {
@@ -197,6 +198,7 @@ final public class Director {
             }
         }
         changeOutputTarget("screen");
+        Sleep.setNeedSleep(true);
     }
 
 
