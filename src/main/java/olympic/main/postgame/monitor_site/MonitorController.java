@@ -12,7 +12,7 @@ public class MonitorController {
 
     /**
      * 更换命令的执行
-     * @param com
+     * @param com 1
      */
     public void switchCommand(Command com) {
 
@@ -48,7 +48,7 @@ public class MonitorController {
                 break;
             default: {
             }
-            ;
+
             break;
         }
 
