@@ -1,10 +1,9 @@
 package olympic.main.game.football;
 
-import olympic.main.game.Game;
-import olympic.main.person.athlete.Athlete;
+
 import olympic.main.person.athlete.footballathlete.FootballTeam;
 
-import java.util.List;
+
 
 /**
  * 一场足球比赛

@@ -18,7 +18,7 @@ class PingpongGameRound {
     /**
      * 成绩
      */
-    private HashMap<Athlete, Integer> result = new HashMap<>();
+    private final HashMap<Athlete, Integer> result = new HashMap<>();
 
     /**
      * 比赛的一轮
@@ -30,10 +30,10 @@ class PingpongGameRound {
             System.out.println("===========================================");
         }
         //可以添加决定发球的方式（如抽签）
-        Integer server = new Random().nextInt(2);
+        int server = new Random().nextInt(2);
         ((PlayPingpong)athletes.get(server)).serve();
         Boolean win = ((PlayPingpong)athletes.get((server + 1) % 2)).playWith((CallBack) athletes.get(server));
-        Integer winner = (win ? ((server + 1) % 2) : server);
+        int winner = (win ? ((server + 1) % 2) : server);
         if (Mode.getShowDetail()) {
             System.out.println("本轮结束," + athletes.get(winner).getName() + "赢了");
         }

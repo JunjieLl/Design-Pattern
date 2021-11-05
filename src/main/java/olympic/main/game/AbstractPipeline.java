@@ -1,7 +1,5 @@
 package olympic.main.game;
 
-import olympic.main.game.Game;
-import olympic.main.game.Valve;
 
 /**
  * 抽象管道类

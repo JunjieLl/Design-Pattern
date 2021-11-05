@@ -1,8 +1,8 @@
 package olympic.main.game.football;
 
-import olympic.main.game.Game;
+
 import olympic.main.game.Iterator;
-import olympic.main.game.football.Schedule;
+
 
 /**
  * 赛程迭代器
@@ -34,11 +34,7 @@ public class ScheduleIterator implements Iterator {
      */
     @Override
     public boolean hasNext() {
-        if (this.index < schedule.getLength()) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.index < schedule.getLength();
     }
 
     /**
