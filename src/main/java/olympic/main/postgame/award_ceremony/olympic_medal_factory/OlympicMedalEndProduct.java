@@ -4,7 +4,6 @@ import olympic.Utils.PrintBlockFormat;
 import olympic.main.postgame.award_ceremony.factory.*;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -32,9 +31,7 @@ public class OlympicMedalEndProduct extends EndProduct {
         PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
         printBlockFormat.printFormatLeftScreen(endProductDisplayBlock, true);
 
-        Iterator it = content.iterator();
-        while (it.hasNext()) {
-            Part part = (Part) it.next();
+        for (Part part : content) {
             part.makeMedal();
         }
     }

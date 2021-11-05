@@ -1,8 +1,6 @@
 package olympic.main.game.basketball.round;
 
-import olympic.main.game.Game;
 import olympic.main.game.Valve;
-import olympic.main.game.basketball.BasketballMatch;
 import olympic.main.game.basketball.Schedule;
 import olympic.main.person.athlete.basketballathlete.BasketballTeam;
 

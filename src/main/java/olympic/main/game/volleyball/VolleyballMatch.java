@@ -1,11 +1,8 @@
 package olympic.main.game.volleyball;
 
 import olympic.Utils.PrintBlockFormat;
-import olympic.main.game.Game;
-import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.volleyballathlete.VolleyballTeam;
 
-import java.util.List;
 import java.util.Random;
 
 /**
@@ -18,7 +15,8 @@ public class VolleyballMatch {
     /**
      * 双方球队
      */
-    private VolleyballTeam team1, team2;
+    private final VolleyballTeam team1;
+    private final VolleyballTeam team2;
 
     /**
      * 双方得分（获胜局数）

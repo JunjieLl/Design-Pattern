@@ -9,37 +9,37 @@ public class VolleyballScoreBoard implements Observer {
     /**
      * 单例实例
      */
-    private static VolleyballScoreBoard singleton = new VolleyballScoreBoard();
+    private static final VolleyballScoreBoard singleton = new VolleyballScoreBoard();
 
     /**
      * 积分表
      */
-    private int[] score;
+    private final int[] score;
 
     /**
      * 胜场数
      */
-    private int[] win;
+    private final int[] win;
 
     /**
      * 胜局数
      */
-    private int[] gain;
+    private final int[] gain;
 
     /**
      * 负局数
      */
-    private int[] loss;
+    private final int[] loss;
 
     /**
      * 得分数
      */
-    private int[] pointGain;
+    private final int[] pointGain;
 
     /**
      * 失分数
      */
-    private int[] pointLoss;
+    private final int[] pointLoss;
 
     /**
      * 获取单例实例

@@ -1,6 +1,5 @@
 package olympic.main.opening.deliverSpeech;
 
-
 import olympic.Utils.PrintBlockFormat;
 
 abstract class DeliverSpeech {  //抽象类
@@ -95,18 +94,14 @@ abstract class DeliverSpeech {  //抽象类
     /**
      * 获取运动员代表发言方法
      */
-    void getAthleteRepreSpeech()
-    {
+    void getAthleteRepreSpeech() {
 
-    };
-
+    }
     /**
      * 获取裁判员代表发言方法
      */
-    void getCoachRepreSpeech(){
+    void getCoachRepreSpeech() {
 
-    };
-
-
+    }
 }
 

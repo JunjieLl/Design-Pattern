@@ -7,7 +7,7 @@ public class ChoreGenerating {
     /**
      * 总杂务
      */
-    private ChoreComposite composite = new ChoreComposite("所有单元");
+    private final ChoreComposite composite = new ChoreComposite("所有单元");
 
     /**
      * 构造函数

@@ -10,9 +10,6 @@ import java.util.Scanner;
 
 public class OutputPicture {
     public static void main(String[] args) {
-        /**
-         *  demo
-         */
         printPictureOf(12);
     }
 

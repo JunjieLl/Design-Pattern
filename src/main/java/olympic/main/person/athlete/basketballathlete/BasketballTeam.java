@@ -23,7 +23,7 @@ public class BasketballTeam extends TeamAthlete {
     /**
      * 球队ID
      */
-    private int id;
+    private final int id;
 
     /**
      * 构造函数

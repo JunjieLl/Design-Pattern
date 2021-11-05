@@ -1,19 +1,25 @@
-package olympic.main.postgame.monitor_site;
+package olympic.scene;
+
+import olympic.main.postgame.monitor_site.Command;
+import olympic.main.postgame.monitor_site.CommandStack;
+import olympic.main.postgame.monitor_site.Monitor;
+import olympic.main.postgame.monitor_site.MonitorController;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 import java.util.Scanner;
 
-/**
- * 设计模式：命令模式、备忘录模式
- * 检查场地
- */
-
-public class Test {
+@DisplayName("检查场地")
+public class MonitorSiteTest {
     /**
-     * 检查场地的测试函数
-     * @param args 1
+     * 检查场地函数
      */
-    public static void main(String[] args) {
-
+    @Test
+    void test()
+    {
+        /**
+         * 创建监视器、遥控器、栈
+         */
         Monitor tv = new Monitor();
         MonitorController teleController = new MonitorController();
         CommandStack stack = new CommandStack();
@@ -29,7 +35,9 @@ public class Test {
             if (key.equals("0")) {
 
                 if (cur > 1) {
-
+                    /**
+                     * 恢复状态
+                     */
                     teleController.restoreMemento(stack.pop());
                     if (cur > 2)
                         cur -= 1;
@@ -37,7 +45,7 @@ public class Test {
                     System.out.println("Error:没有上一条命令，输入错误!");
                 }
             }
-                if (key.equals("1")) {
+            if (key.equals("1")) {
                 Command now_command = teleController.createMemento(cur, tv);
                 teleController.switchCommand(now_command);
                 stack.push(now_command);
@@ -52,5 +60,4 @@ public class Test {
         }
         System.out.println("检查场地完毕！");
     }
-
 }
