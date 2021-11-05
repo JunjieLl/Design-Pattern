@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import olympic.Utils.PrintBlockFormat;
 import olympic.main.person.athlete.Athlete;
 import olympic.main.director.Mode;
 
@@ -119,11 +120,15 @@ public class AthletePool {
                 return o2.getValue().compareTo(o1.getValue());
             }
         });
-        System.out.printf("排名\t\t%-16s\t%-10s\n", "姓名", "分数");
+        List<String> ceremonyInitPrintBlock = new ArrayList<>();
+        ceremonyInitPrintBlock.add(game + "积分榜");
+        ceremonyInitPrintBlock.add(String.format("排名\t\t%-16s\t%-10s", "姓名", "分数"));
         for (int i = 0; i < list.size(); i++) {
-            System.out.printf("第%d名\t%-16s\t%.3f\n", i + 1, list.get(i).getKey().getName(), list.get(i).getValue());
+            ceremonyInitPrintBlock.add(String.format("第%d名\t\t%-16s\t%.3f", i + 1, list.get(i).getKey().getName(), list.get(i).getValue()));
             list.get(i).getKey().setRank(game, i + 1);
         }
+        PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
+        printBlockFormat.printFormatMiddleScreen(ceremonyInitPrintBlock,true);
     }
 
     /**
