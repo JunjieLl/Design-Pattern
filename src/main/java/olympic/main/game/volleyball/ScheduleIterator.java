@@ -1,8 +1,6 @@
 package olympic.main.game.volleyball;
 
-import olympic.main.game.Game;
 import olympic.main.game.Iterator;
-import olympic.main.game.volleyball.Schedule;
 
 /**
  * 赛程迭代器
@@ -12,7 +10,7 @@ public class ScheduleIterator implements Iterator {
     /**
      * 赛程表
      */
-    private Schedule schedule;
+    private final Schedule schedule;
 
     /**
      * 索引
@@ -34,11 +32,7 @@ public class ScheduleIterator implements Iterator {
      */
     @Override
     public boolean hasNext() {
-        if (this.index < schedule.getLength()) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.index < schedule.getLength();
     }
 
     /**

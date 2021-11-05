@@ -15,7 +15,8 @@ public abstract class FootballMatch {
     /**
      * 双方球队
      */
-    private FootballTeam team1, team2;
+    private final FootballTeam team1;
+    private final FootballTeam team2;
 
     /**
      * 双方得分

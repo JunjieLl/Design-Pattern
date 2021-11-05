@@ -12,7 +12,7 @@ public class EliminationRound extends Round implements Observer {
     /**
      * 轮次名称，如决赛、半决赛、四分之一决赛
      */
-    private String name = null;
+    private final String name;
 
     /**
      * 构造函数
@@ -53,11 +53,10 @@ public class EliminationRound extends Round implements Observer {
      */
     @Override
     public void update(VolleyballMatch game) {
-        VolleyballMatch e = (VolleyballMatch) game;
-        if (e.getScore1() > e.getScore2()) {
-            advancedTeams.add(e.getTeam1());
+        if (game.getScore1() > game.getScore2()) {
+            advancedTeams.add(game.getTeam1());
         } else {
-            advancedTeams.add(e.getTeam2());
+            advancedTeams.add(game.getTeam2());
         }
     }
 
