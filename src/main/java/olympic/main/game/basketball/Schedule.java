@@ -10,8 +10,15 @@ import java.util.List;
  * Iterator模式
  */
 public class Schedule implements Aggregate {
+    /**
+     * 赛程表
+     */
     protected List<BasketballMatch> schedule = new ArrayList<>();
 
+    /**
+     * 向赛程表添加比赛
+     * @param match 要添加的比赛
+     */
     public void addMatch(BasketballMatch match) {
         schedule.add(match);
     }
