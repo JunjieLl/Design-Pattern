@@ -64,7 +64,6 @@ public class FootballGameManager implements AbstractPipeline {
      * 依次进行所有轮次的比赛
      */
     public void start() {
-        System.out.println("\nclassname: (FootballGameManager) method: (play) action: (进行足球比赛，使用了Pipeline模式、Singleton模式以及Template Method模式) ");
         Round r = this.first;
         int rank = teams.size();
         List<FootballTeam> advancedTeams = teams;

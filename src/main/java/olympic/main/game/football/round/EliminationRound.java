@@ -25,7 +25,7 @@ public class EliminationRound extends Round implements Observer {
     @Override
     public void start() {
         advancedTeams.clear();
-        System.out.println("\nclassname: (EliminationRound) method: (play) action: (进行足球淘汰赛，使用了Observer模式以及Iterator模式) ");
+        System.out.println("classname: (EliminationRound) method: (play) action: (进行足球淘汰赛) ");
         for (int i = 0; i < teams.size(); i += 2) {
             EliminationFootballMatch g = new EliminationFootballMatch(teams.get(i), teams.get(i + 1));
             g.setObserver(this);

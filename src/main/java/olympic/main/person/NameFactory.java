@@ -722,13 +722,6 @@ public class NameFactory {
             "EST", "BLR", "RUS", "POL", "CZE", "SVK", "HUN", "GER", "AUT", "SUI", "GBR", "IRL",
             "NED", "BEL", "LUX", "FRA", "MLT", "ESP", "POR", "USA", "AUS", "NZL"
     };
-    static String[] nationChinese={
-            "中国","蒙古","朝鲜","韩国","日本","菲律宾","越南","老挝","缅甸","泰国","马来西亚","新加坡","印度尼西亚",
-            "尼泊尔","印度","巴基斯坦","斯里兰卡",
-            "哈萨克斯坦","塔吉克斯坦","乌兹别克斯坦","伊拉克","约旦","黎巴嫩","以色列","巴勒斯坦","沙特阿拉伯",
-            "爱沙尼亚","白俄罗斯","俄罗斯","波兰","捷克","斯洛伐克","匈牙利","德国","奥地利","瑞士","英国","爱尔兰",
-            "荷兰","比利时","卢森堡","法国","马耳他","西班牙","葡萄牙","美国","澳大利亚","新西兰"
-    };
     static String[] firstNameInside = {
             "赵", "钱", "孙", "李", "周", "吴", "郑", "王",
             "冯", "陈", "楮", "卫", "蒋", "沈", "韩", "杨",
@@ -903,20 +896,6 @@ public class NameFactory {
             message.name = getEnglishName();
         }
         return message;
-    }
-
-    /**
-     * 通过三字码找到中文国家名
-     * @param n 三字码
-     * @return 中文国家吗
-     */
-    public static String getChineseNaitonName(String n){
-        for(int i=0;i<nation.length;i++){
-            if(nation[i]==n){
-                return nationChinese[i];
-            }
-        }
-        return "";
     }
 
     /**

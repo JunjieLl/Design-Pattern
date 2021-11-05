@@ -24,7 +24,7 @@ public class GroupRound extends Round {
     @Override
     public void start() {
         advancedTeams.clear();
-        System.out.println("\nclassname: (GroupRound) method: (play) action: (进行足球小组赛，使用了Observer模式、Singleton模式以及Iterator模式) ");
+        System.out.println("classname: (GroupRound) method: (play) action: (进行足球小组赛) ");
         System.out.println("\n【小组赛】");
         // 打乱顺序，分组
         Collections.shuffle(teams);

@@ -64,7 +64,6 @@ public class BasketballGameManager implements AbstractPipeline {
      * 依次进行所有轮次的比赛
      */
     public void start() {
-        System.out.println("\nclassname: (BasketballGameManager) method: (play) action: (进行篮球比赛，使用了Pipeline模式以及Singleton模式) ");
         Round r = this.first;
         List<BasketballTeam> advancedTeams = teams;
         for (int i = 0; i < advancedTeams.size(); ++i) {
