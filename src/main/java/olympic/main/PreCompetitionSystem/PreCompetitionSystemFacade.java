@@ -243,19 +243,27 @@ public class PreCompetitionSystemFacade {
         while (flag) {
             System.out.println("[请输入想详细查看的环节:]");
             str = scanner.nextLine();
-            if (str.equals("1") || str.equals("2") || str.equals("4")) {
-                System.out.println("[不提供本环节的详细展示]");
-            }
-            else if (str.equals("3") || str.equals("5") || str.equals("6") || str.equals("7") || str.equals("8")) {
-                PrintBlockFormat.getPrintFormat().printFormatLeftScreen(showMap.get(Integer.parseInt(str)), true);
-            }
-            else if(str.equals("help")){
+            switch (str) {
+                case "1":
+                case "2":
+                case "4":
+                    System.out.println("[不提供本环节的详细展示]");
+                    break;
+                case "3":
+                case "5":
+                case "6":
+                case "7":
+                case "8":
+                    PrintBlockFormat.getPrintFormat().printFormatLeftScreen(showMap.get(Integer.parseInt(str)), true);
+                    break;
+                case "help":
                     printHelp();
-                }
-                else {
+                    break;
+                default:
                     flag = false;
                     System.out.println("[赛前准备展示环节结束]");
-                }
+                    break;
+            }
         }
     }
     
@@ -297,16 +305,7 @@ public class PreCompetitionSystemFacade {
         return "Relays".equals(game);
     }
     
-    /**
-     * 输出num行的...
-     *
-     * @param num 输出"..."的行数
-     */
-    private void printlnNRowEllipsis(int num) {
-        for (int i = 0; i < num; i++) {
-            System.out.println("...");
-        }
-    }
+
     
     /**
      * 输出num行的空格

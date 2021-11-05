@@ -75,73 +75,84 @@ public class ReviewMediatorConcrete implements ReviewMediator {
     @Override
     public void colleagueChanged(String event) {
         System.out.println("\nclassname: (ReviewMediatorConcrete) method: (colleagueChanged) action: (仲裁者模式仲裁者响应各小组汇报，安排新的任务) ");
-        if (event == "EC") {
-            rcinvestigate.conductInvestigation();
-        } else if (event == "IC") {
-            List<String> mediatorICEventPrintBlock = new ArrayList<>();
-            mediatorICEventPrintBlock.add("调查管理员");
-            mediatorICEventPrintBlock.add("已收到调查结果，正在安排评估小组讨论评估。");
-            PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
-            printBlockFormat.printFormatLeftScreen(mediatorICEventPrintBlock, true);
-            rcevaluate.conductEvaluation();
-        } else if (event == "INIT") {
-            List<String> mediatorInitEventPrintBlock = new ArrayList<>();
-            mediatorInitEventPrintBlock.add("调查管理员");
-            mediatorInitEventPrintBlock.add("本委员会即将对在 " + targetGame + " 比赛中，该运动员：" + badAthlete.getName() + "的违纪检察");
-            mediatorInitEventPrintBlock.add("比赛获奖资质调查已经启动，已经向取证小组发送指令。");
-            PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
-            printBlockFormat.printFormatLeftScreen(mediatorInitEventPrintBlock, true);
-            rcevidence.collectEvidence();
-        } else if (event == "RNG") {
-            round += 1;
-            if (round < 2) {
-                List<String> mediatorRNGEventPrintBlock1 = new ArrayList<>();
-                mediatorRNGEventPrintBlock1.add("调查管理员");
-                mediatorRNGEventPrintBlock1.add("针对当前结果，本委员会即将安排新一轮取证和调查。");
-
+        switch (event) {
+            case "EC":
+                rcinvestigate.conductInvestigation();
+                break;
+            case "IC": {
+                List<String> mediatorICEventPrintBlock = new ArrayList<>();
+                mediatorICEventPrintBlock.add("调查管理员");
+                mediatorICEventPrintBlock.add("已收到调查结果，正在安排评估小组讨论评估。");
                 PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
-                printBlockFormat.printFormatLeftScreen(mediatorRNGEventPrintBlock1, true);
-
+                printBlockFormat.printFormatLeftScreen(mediatorICEventPrintBlock, true);
+                rcevaluate.conductEvaluation();
+                break;
+            }
+            case "INIT": {
+                List<String> mediatorInitEventPrintBlock = new ArrayList<>();
+                mediatorInitEventPrintBlock.add("调查管理员");
+                mediatorInitEventPrintBlock.add("本委员会即将对在 " + targetGame + " 比赛中，该运动员：" + badAthlete.getName() + "的违纪检察");
+                mediatorInitEventPrintBlock.add("比赛获奖资质调查已经启动，已经向取证小组发送指令。");
+                PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
+                printBlockFormat.printFormatLeftScreen(mediatorInitEventPrintBlock, true);
                 rcevidence.collectEvidence();
-            } else {
-                List<String> mediatorRNGEventPrintBlock2 = new ArrayList<>();
-                mediatorRNGEventPrintBlock2.add("调查管理员");
-                mediatorRNGEventPrintBlock2.add("根据我们掌握的证据、严谨的调查和审慎的评估，在 " + targetGame + " 比赛中，该运动员：");
-                mediatorRNGEventPrintBlock2.add(badAthlete.getName() + ", " + "来自：" + badAthlete.getNation());
-                mediatorRNGEventPrintBlock2.add("有严重违纪行为，我们将会取消其奖牌资格。奥林匹克委员会坚决维护比赛的公平公正性。");
+                break;
+            }
+            case "RNG":
+                round += 1;
+                if (round < 2) {
+                    List<String> mediatorRNGEventPrintBlock1 = new ArrayList<>();
+                    mediatorRNGEventPrintBlock1.add("调查管理员");
+                    mediatorRNGEventPrintBlock1.add("针对当前结果，本委员会即将安排新一轮取证和调查。");
 
-                PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
-                printBlockFormat.printFormatLeftScreen(mediatorRNGEventPrintBlock2, true);
+                    PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
+                    printBlockFormat.printFormatLeftScreen(mediatorRNGEventPrintBlock1, true);
 
-
-                ArrayList<String> PingpongDiving = new ArrayList<>();
-                PingpongDiving.add("Pingpong");
-                PingpongDiving.add("Diving");
-
-                if (PingpongDiving.contains(targetGame)) {
-                    MedalTable.getInstance().penalty(badAthlete.getNation(), badAthlete.getRank("决赛"));
-                    badAthlete.setRank("决赛", -1);
+                    rcevidence.collectEvidence();
                 } else {
-                    MedalTable.getInstance().penalty(badAthlete.getNation(), badAthlete.getRank(targetGame));
-                    badAthlete.setRank(targetGame, -1);
+                    List<String> mediatorRNGEventPrintBlock2 = new ArrayList<>();
+                    mediatorRNGEventPrintBlock2.add("调查管理员");
+                    mediatorRNGEventPrintBlock2.add("根据我们掌握的证据、严谨的调查和审慎的评估，在 " + targetGame + " 比赛中，该运动员：");
+                    mediatorRNGEventPrintBlock2.add(badAthlete.getName() + ", " + "来自：" + badAthlete.getNation());
+                    mediatorRNGEventPrintBlock2.add("有严重违纪行为，我们将会取消其奖牌资格。奥林匹克委员会坚决维护比赛的公平公正性。");
+
+                    PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
+                    printBlockFormat.printFormatLeftScreen(mediatorRNGEventPrintBlock2, true);
+
+
+                    ArrayList<String> PingpongDiving = new ArrayList<>();
+                    PingpongDiving.add("Pingpong");
+                    PingpongDiving.add("Diving");
+
+                    if (PingpongDiving.contains(targetGame)) {
+                        MedalTable.getInstance().penalty(badAthlete.getNation(), badAthlete.getRank("决赛"));
+                        badAthlete.setRank("决赛", -1);
+                    } else {
+                        MedalTable.getInstance().penalty(badAthlete.getNation(), badAthlete.getRank(targetGame));
+                        badAthlete.setRank(targetGame, -1);
+                    }
+
+                    MedalTable.getInstance().printMedalTable();
                 }
 
-                MedalTable.getInstance().printMedalTable();
+                break;
+            case "RG": {
+                List<String> mediatorRGEventPrintBlock = new ArrayList<>();
+                mediatorRGEventPrintBlock.add("调查管理员");
+                mediatorRGEventPrintBlock.add("调查完毕，未发现异常。感谢您对奥运比赛公正性的关注。");
+                PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
+                printBlockFormat.printFormatLeftScreen(mediatorRGEventPrintBlock, true);
+
+                break;
             }
-
-        } else if (event == "RG") {
-            List<String> mediatorRGEventPrintBlock = new ArrayList<>();
-            mediatorRGEventPrintBlock.add("调查管理员");
-            mediatorRGEventPrintBlock.add("调查完毕，未发现异常。感谢您对奥运比赛公正性的关注。");
-            PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
-            printBlockFormat.printFormatLeftScreen(mediatorRGEventPrintBlock, true);
-
-        } else {
-            List<String> mediatorReadyEventPrintBlock = new ArrayList<>();
-            mediatorReadyEventPrintBlock.add("调查管理员");
-            mediatorReadyEventPrintBlock.add("调查管理员处于待命状态。");
-            PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
-            printBlockFormat.printFormatLeftScreen(mediatorReadyEventPrintBlock, true);
+            default: {
+                List<String> mediatorReadyEventPrintBlock = new ArrayList<>();
+                mediatorReadyEventPrintBlock.add("调查管理员");
+                mediatorReadyEventPrintBlock.add("调查管理员处于待命状态。");
+                PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
+                printBlockFormat.printFormatLeftScreen(mediatorReadyEventPrintBlock, true);
+                break;
+            }
         }
     }
 }

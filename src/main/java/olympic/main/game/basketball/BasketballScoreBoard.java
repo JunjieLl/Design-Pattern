@@ -6,18 +6,25 @@ package olympic.main.game.basketball;
  */
 public class BasketballScoreBoard implements Observer {
 
+    /**
+     * 单例实例
+     */
     private static final BasketballScoreBoard singleton = new BasketballScoreBoard();
-    private int[] score;
+
+    /**
+     * 积分表
+     */
+    private final int[] score;
 
     /**
      * 得分
      */
-    private int[] gain;
+    private final int[] gain;
 
     /**
      * 失分
      */
-    private int[] loss;
+    private final int[] loss;
 
     /**
      * 获取单例实例

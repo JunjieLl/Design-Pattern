@@ -1,13 +1,9 @@
 package olympic.main.game.football.round;
 
-import olympic.main.game.football.ScheduleIterator;
 import olympic.main.game.football.EliminationFootballMatch;
 import olympic.main.game.football.FootballMatch;
 import olympic.main.game.football.Observer;
-import olympic.main.person.athlete.footballathlete.FootballTeam;
-
-import java.util.ArrayList;
-import java.util.List;
+import olympic.main.game.football.ScheduleIterator;
 
 /**
  * 淘汰赛的一轮
@@ -16,7 +12,7 @@ public class EliminationRound extends Round implements Observer {
     /**
      * 轮次名称，如决赛、半决赛、四分之一决赛
      */
-    private String name = null;
+    private final String name;
 
     /**
      * 构造函数

@@ -8,7 +8,7 @@ public class CommandStack {
     /**
      * 命令数组、栈顶指针
      */
-    private Command command[];
+    private Command[] command;
     private int top;
 
     public CommandStack() {
@@ -18,8 +18,8 @@ public class CommandStack {
 
     /**
      * 增添命令，体现备忘录的记录功能
-     * @param p
-     * @return
+     * @param p 1
+     * @return 1
      */
     public boolean push(Command p) {
         if (top >= 100) {

@@ -22,7 +22,7 @@ public class VolleyballTeam extends TeamAthlete {
     /**
      * 球队ID
      */
-    private int id;
+    private final int id;
 
     /**
      * 构造函数
@@ -41,13 +41,5 @@ public class VolleyballTeam extends TeamAthlete {
      */
     public int getId() {
         return id;
-    }
-
-    /**
-     * 设置球队的ID
-     * @param id 球队ID
-     */
-    public void setId(int id) {
-        this.id = id;
     }
 }

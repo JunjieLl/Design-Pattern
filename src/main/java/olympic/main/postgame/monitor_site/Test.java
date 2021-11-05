@@ -10,12 +10,10 @@ import java.util.Scanner;
 public class Test {
     /**
      * 检查场地的测试函数
-     * @param args
+     * @param args 1
      */
     public static void main(String[] args) {
-        /**
-         * 创建监视器、遥控器、栈
-         */
+
         Monitor tv = new Monitor();
         MonitorController teleController = new MonitorController();
         CommandStack stack = new CommandStack();
@@ -31,9 +29,7 @@ public class Test {
             if (key.equals("0")) {
 
                 if (cur > 1) {
-                    /**
-                     * 恢复状态
-                     */
+
                     teleController.restoreMemento(stack.pop());
                     if (cur > 2)
                         cur -= 1;
