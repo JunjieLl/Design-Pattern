@@ -128,7 +128,7 @@ public class AthletePool {
             list.get(i).getKey().setRank(game, i + 1);
         }
         PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
-        printBlockFormat.printFormatMiddleScreen(ceremonyInitPrintBlock,true);
+        printBlockFormat.printFormatLeftScreen(ceremonyInitPrintBlock,Mode.getShowDetail());
     }
 
     /**
