@@ -11,9 +11,9 @@ import java.util.List;
 /**
  * 测试CeremonyScene场景
  */
-@DisplayName("颁奖典礼")
+@DisplayName("颁奖典礼场景")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class CeremonySceneTest {
+class CeremonySceneTest {
 
     /**
      * 用于替换System.in的InputStream
