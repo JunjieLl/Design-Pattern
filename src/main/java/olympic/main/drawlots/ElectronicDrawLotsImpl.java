@@ -19,8 +19,9 @@ public class ElectronicDrawLotsImpl extends DrawLotsImpl {
         System.out.println("^电子抽签开始^");
         printElectronicSeparator();
         printSpaces(DrawLotsImpl.BEFORE_SEPARATOR_LENGTH);
-        System.out.println("参与抽签的运动员或团队：");
+        printBlue("[参与抽签的运动员或团队]");
         showBeforeAthletes(athletes);
+        printElectronicSeparator();
         System.out.println();
     }
 
@@ -33,7 +34,7 @@ public class ElectronicDrawLotsImpl extends DrawLotsImpl {
     @Override
     public void rawDrawLotsEnd(List<Athlete> athletes, int groupSize) {
         printSpaces(DrawLotsImpl.RESULT_SEPARATOR_LENGTH);
-        System.out.println("电子抽签结果：");
+        printBlue("[纸质抽签结果]");
         showAfterAthletes(athletes, groupSize);
         printElectronicSeparator();
         printSpaces(DrawLotsImpl.START_END_SEPARATOR_LENGTH);
