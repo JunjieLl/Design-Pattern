@@ -60,10 +60,6 @@ public class UpDownBorder extends Border {
      * @return 返回将该字符重复显示指定次数后的字符串.
      */
     private String makeLine(char ch, int count) {
-        StringBuffer buf = new StringBuffer();
-        for (int i = 0; i < count; i++) {
-            buf.append(ch);
-        }
-        return buf.toString();
+        return String.valueOf(ch).repeat(Math.max(0, count));
     }
 }

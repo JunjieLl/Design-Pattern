@@ -13,7 +13,7 @@ public abstract class Command {
 
     /**
      * 命令构造函数
-     * @param monitor
+     * @param monitor 1
      */
     public Command(Monitor monitor) {
         this.monitor = monitor;
@@ -41,7 +41,7 @@ public abstract class Command {
 class Site1Command extends Command {
     /**
      * 1号场地监视命令
-     * @param monitor
+     * @param monitor 1
      */
     public Site1Command(Monitor monitor) {
         super(monitor);
@@ -62,7 +62,7 @@ class Site1Command extends Command {
 class Site2Command extends Command {
     /**
      * 2号场地监视命令
-     * @param monitor
+     * @param monitor 1
      */
     public Site2Command(Monitor monitor) {
         super(monitor);
@@ -82,7 +82,7 @@ class Site2Command extends Command {
 class Site3Command extends Command {
     /**
      * 3号场地监视命令
-     * @param monitor
+     * @param monitor 1
      */
     public Site3Command(Monitor monitor) {
         super(monitor);
@@ -102,7 +102,7 @@ class Site3Command extends Command {
 class Site4Command extends Command {
     /**
      * 4号场地监视命令
-     * @param monitor
+     * @param monitor 1
      */
     public Site4Command(Monitor monitor) {
         super(monitor);
@@ -122,7 +122,7 @@ class Site4Command extends Command {
 class Site5Command extends Command {
     /**
      * 5号场地监视命令
-     * @param monitor
+     * @param monitor 1
      */
     public Site5Command(Monitor monitor) {
         super(monitor);
