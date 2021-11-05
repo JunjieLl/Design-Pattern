@@ -55,6 +55,6 @@ public class FullBorder extends Border {
      * @return 返回将该字符重复显示指定次数后的字符串.
      */
     private String makeLine(int count) {
-        return "-".repeat(Math.max(0, count));
+        return String.valueOf('-').repeat(Math.max(0, count));
     }
 }
