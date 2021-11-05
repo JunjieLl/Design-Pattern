@@ -34,6 +34,7 @@ public class PingpongGameScene implements Scene {
         }
         OutputPicture.printPictureOf(10);
         pingpongPipeline.start();
+        new CeremonyScene(pingpongPipeline.getTopThreeAthletes()).play();
 
     }
 }

@@ -22,7 +22,7 @@ public class Speech32thClose extends DeliverSpeech {   //具体子类
 
     /**
      * 重写函数，获取奥运会届数
-     * @return
+     * @return 运动会届数
      */
     @Override
     String time() {
@@ -31,7 +31,7 @@ public class Speech32thClose extends DeliverSpeech {   //具体子类
 
     /**
      * 重写钩子方法的判断函数，设定是闭幕式
-     * @return
+     * @return true为开幕式，false为闭幕式
      */
     @Override
     public boolean isOpen() {
@@ -40,7 +40,7 @@ public class Speech32thClose extends DeliverSpeech {   //具体子类
 
     /**
      * 重写方法，获取OOCP的名字
-     * @return
+     * @return 奥运会组委会主席名字
      */
     @Override
     String getOOCP() {
@@ -49,7 +49,7 @@ public class Speech32thClose extends DeliverSpeech {   //具体子类
 
     /**
      * 重写方法，获取IOCP的名字
-     * @return
+     * @return 国际奥委会主席名字
      */
     @Override
     String getIOCP() {
@@ -58,7 +58,7 @@ public class Speech32thClose extends DeliverSpeech {   //具体子类
 
     /**
      * 重写方法，获取HP的名字
-     * @return
+     * @return 东道主国家元首名字
      */
     @Override
     String getHP() {
@@ -67,7 +67,7 @@ public class Speech32thClose extends DeliverSpeech {   //具体子类
 
     /**
      * 重写方法，获取运动员代表的名字
-     * @return
+     * @return 运动员代表名字
      */
     @Override
     String getAthleteRepre() {
@@ -76,7 +76,7 @@ public class Speech32thClose extends DeliverSpeech {   //具体子类
 
     /**
      * 重写方法，获取教练员代表的名字
-     * @return
+     * @return 裁判员代表名字
      */
     @Override
     String getCoachRepre() {

@@ -101,10 +101,6 @@ public class TitleDisplay extends Display {
      * @return 一个具有对应个数的空格的字符串.
      */
     private String spaces(int count) {
-        StringBuffer buf = new StringBuffer();
-        for (int i = 0; i < count; i++) {
-            buf.append(" ");
-        }
-        return buf.toString();
+        return " ".repeat(Math.max(0, count));
     }
 }

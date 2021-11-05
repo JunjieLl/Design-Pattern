@@ -16,7 +16,7 @@ public class CheckingMachine {
 
     /**
      * 设置策略
-     * @param strategy
+     * @param strategy 策略
      */
     public void setStrategy(TicketChecking strategy) {
         this.strategy = strategy;
