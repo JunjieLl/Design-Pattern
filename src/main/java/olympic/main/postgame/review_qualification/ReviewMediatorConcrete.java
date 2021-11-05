@@ -11,13 +11,41 @@ import java.util.List;
  * 具体的仲裁者，继承自仲裁者接口.
  */
 public class ReviewMediatorConcrete implements ReviewMediator {
+    /**
+     * 该仲裁者管理的取证小组
+     */
     private ReviewColleagueEvidence rcevidence;
+
+    /**
+     * 该仲裁者管理的调查小组
+     */
     private ReviewColleagueInvestigation rcinvestigate;
+
+    /**
+     * 该仲裁者管理的评估小组
+     */
     private ReviewColleagueEvaluation rcevaluate;
-    private Athlete badAthlete;
-    private String targetGame;
+
+    /**
+     * 调查的对象
+     */
+    private final Athlete badAthlete;
+
+    /**
+     * 出现问题的比赛
+     */
+    private final String targetGame;
+
+
+    /**
+     * 取证和调查的轮次
+     */
     private int round;
 
+    /**
+     * @param badAthlete 调查对象
+     * @param game       出现问题的比赛名
+     */
     public ReviewMediatorConcrete(Athlete badAthlete, String game) {
         round = 0;
         this.badAthlete = badAthlete;
@@ -26,6 +54,9 @@ public class ReviewMediatorConcrete implements ReviewMediator {
         colleagueChanged("INIT");
     }
 
+    /**
+     * 生成各个工作小组
+     */
     @Override
     public void createColleagues() {
         rcevidence = new ReviewColleagueEvidence();
@@ -51,17 +82,15 @@ public class ReviewMediatorConcrete implements ReviewMediator {
             mediatorICEventPrintBlock.add("调查管理员");
             mediatorICEventPrintBlock.add("已收到调查结果，正在安排评估小组讨论评估。");
             PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
-            printBlockFormat.printFormatLeftScreen(mediatorICEventPrintBlock,true);
+            printBlockFormat.printFormatLeftScreen(mediatorICEventPrintBlock, true);
             rcevaluate.conductEvaluation();
         } else if (event == "INIT") {
-
             List<String> mediatorInitEventPrintBlock = new ArrayList<>();
             mediatorInitEventPrintBlock.add("调查管理员");
             mediatorInitEventPrintBlock.add("本委员会即将对在 " + targetGame + " 比赛中，该运动员：" + badAthlete.getName() + "的违纪检察");
             mediatorInitEventPrintBlock.add("比赛获奖资质调查已经启动，已经向取证小组发送指令。");
-
             PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
-            printBlockFormat.printFormatLeftScreen(mediatorInitEventPrintBlock,true);
+            printBlockFormat.printFormatLeftScreen(mediatorInitEventPrintBlock, true);
             rcevidence.collectEvidence();
         } else if (event == "RNG") {
             round += 1;
@@ -71,11 +100,10 @@ public class ReviewMediatorConcrete implements ReviewMediator {
                 mediatorRNGEventPrintBlock1.add("针对当前结果，本委员会即将安排新一轮取证和调查。");
 
                 PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
-                printBlockFormat.printFormatLeftScreen(mediatorRNGEventPrintBlock1,true);
+                printBlockFormat.printFormatLeftScreen(mediatorRNGEventPrintBlock1, true);
 
                 rcevidence.collectEvidence();
             } else {
-
                 List<String> mediatorRNGEventPrintBlock2 = new ArrayList<>();
                 mediatorRNGEventPrintBlock2.add("调查管理员");
                 mediatorRNGEventPrintBlock2.add("根据我们掌握的证据、严谨的调查和审慎的评估，在 " + targetGame + " 比赛中，该运动员：");
@@ -83,7 +111,7 @@ public class ReviewMediatorConcrete implements ReviewMediator {
                 mediatorRNGEventPrintBlock2.add("有严重违纪行为，我们将会取消其奖牌资格。奥林匹克委员会坚决维护比赛的公平公正性。");
 
                 PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
-                printBlockFormat.printFormatLeftScreen(mediatorRNGEventPrintBlock2,true);
+                printBlockFormat.printFormatLeftScreen(mediatorRNGEventPrintBlock2, true);
 
 
                 ArrayList<String> PingpongDiving = new ArrayList<>();
@@ -106,14 +134,14 @@ public class ReviewMediatorConcrete implements ReviewMediator {
             mediatorRGEventPrintBlock.add("调查管理员");
             mediatorRGEventPrintBlock.add("调查完毕，未发现异常。感谢您对奥运比赛公正性的关注。");
             PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
-            printBlockFormat.printFormatLeftScreen(mediatorRGEventPrintBlock,true);
+            printBlockFormat.printFormatLeftScreen(mediatorRGEventPrintBlock, true);
 
         } else {
             List<String> mediatorReadyEventPrintBlock = new ArrayList<>();
             mediatorReadyEventPrintBlock.add("调查管理员");
             mediatorReadyEventPrintBlock.add("调查管理员处于待命状态。");
             PrintBlockFormat printBlockFormat = PrintBlockFormat.getPrintFormat();
-            printBlockFormat.printFormatLeftScreen(mediatorReadyEventPrintBlock,true);
+            printBlockFormat.printFormatLeftScreen(mediatorReadyEventPrintBlock, true);
         }
     }
 }
