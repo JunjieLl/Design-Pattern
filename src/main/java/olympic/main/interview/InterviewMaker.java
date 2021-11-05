@@ -121,7 +121,7 @@ public abstract class InterviewMaker {
      * @param interviewers 采访者列表
      * @return 挑选出的采访者
      */
-    private static Interviewer pickOneInterviewer(List<Interviewer> interviewers) {
+    public static Interviewer pickOneInterviewer(List<Interviewer> interviewers) {
         boolean haveQuestion = false;
         for (Interviewer interviewer :
                 interviewers) {

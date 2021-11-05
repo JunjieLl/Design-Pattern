@@ -8,8 +8,16 @@ package olympic.main.director;
 public class Mode {
     private Mode(){};
 
+    /**
+     * 是否需要输出细节
+     * 用户选择
+     */
     private static Boolean showDetail = false;
 
+    /**
+     * 是否需要输出细节
+     * 用于director的输出重定向
+     */
     private static Boolean needDetail = true;
 
     public static void setNeedDetail(Boolean needDetail) {

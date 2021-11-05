@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class BadmintonGameScene implements Scene{
     public BadmintonGameScene(String name) {
-        if (name == "Badminton"){
+        if (name.equals("Badminton")){
             badmintonPipeline = new BadmintonPipeline("羽毛球单人赛",
                     PreCompetitionSystemFacade.getInstance().preCompetitionSystemFacade("Badminton"));
         } else {
