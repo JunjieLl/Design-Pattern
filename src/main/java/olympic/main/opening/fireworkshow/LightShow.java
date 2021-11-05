@@ -15,7 +15,7 @@ public class LightShow extends Decorator {
     /**
      * 新增灯光秀
      */
-    private void lightShow() {
+    public void lightShow() {
 
         System.out.println("class:(LightShow) methods: (lightShow) action:(运动场外进行烟花表演，并且新增加了灯光秀表演)");
 //        System.out.println("运动场外新增加了灯光秀表演");
