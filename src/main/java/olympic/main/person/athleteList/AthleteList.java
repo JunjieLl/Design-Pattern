@@ -1,6 +1,6 @@
 package olympic.main.person.athleteList;
 
-import olympic.main.person.personVisitor.Visitor;
+import olympic.main.person.personvisitor.Visitor;
 
 /**
  * 运动员列表的抽象接口

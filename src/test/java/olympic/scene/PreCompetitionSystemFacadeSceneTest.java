@@ -1,9 +1,6 @@
 package olympic.scene;
 
 import olympic.main.director.Mode;
-import olympic.main.game.pingponggame.PingpongPipeline;
-import olympic.main.preCompetitionSystem.PreCompetitionSystemFacade;
-import olympic.picture.OutputPicture;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

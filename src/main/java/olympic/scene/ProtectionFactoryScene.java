@@ -1,7 +1,7 @@
 package olympic.scene;
 
-import olympic.main.opening.protectionFactory.ProtectionFactory;
-import olympic.main.opening.protectionFactory.Test;
+import olympic.main.opening.protectionfactory.ProtectionFactory;
+import olympic.main.opening.protectionfactory.Test;
 
 /**
  * 设计模式：工厂模式、单例模式

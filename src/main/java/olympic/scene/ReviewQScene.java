@@ -2,8 +2,7 @@ package olympic.scene;
 
 import olympic.main.person.PersonFactory;
 import olympic.main.person.athlete.Athlete;
-import olympic.main.postgame.review_qualification.ReviewMediatorConcrete;
-import olympic.scene.Scene;
+import olympic.main.postgame.reviewqualification.ReviewMediatorConcrete;
 
 import java.util.ArrayList;
 import java.util.List;

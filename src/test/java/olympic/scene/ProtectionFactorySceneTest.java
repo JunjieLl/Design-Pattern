@@ -1,11 +1,9 @@
 package olympic.scene;
 
 import olympic.utils.PrintBlockFormat;
-import olympic.main.opening.protectionFactory.ProtectionFactory;
+import olympic.main.opening.protectionfactory.ProtectionFactory;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import java.util.Scanner;
 
 
 @DisplayName("领取防疫物资测试")

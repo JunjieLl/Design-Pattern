@@ -2,7 +2,7 @@ package olympic.scene;
 
 import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.pingong.PingpongAthlete;
-import olympic.main.postgame.review_qualification.ReviewMediatorConcrete;
+import olympic.main.postgame.reviewqualification.ReviewMediatorConcrete;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

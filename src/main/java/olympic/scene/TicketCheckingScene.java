@@ -1,10 +1,10 @@
 package olympic.scene;
 
 import olympic.utils.PrintBlockFormat;
-import olympic.main.opening.ticketChecking.CheckingMachine;
-import olympic.main.opening.ticketChecking.ElectronicTicket;
-import olympic.main.opening.ticketChecking.PaperTicket;
-import olympic.main.opening.ticketChecking.TicketChecking;
+import olympic.main.opening.ticketchecking.CheckingMachine;
+import olympic.main.opening.ticketchecking.ElectronicTicket;
+import olympic.main.opening.ticketchecking.PaperTicket;
+import olympic.main.opening.ticketchecking.TicketChecking;
 
 import java.util.Scanner;
 

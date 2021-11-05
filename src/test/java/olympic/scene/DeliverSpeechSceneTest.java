@@ -1,7 +1,7 @@
 package olympic.scene;
 
-import olympic.main.opening.deliverSpeech.Speech32thClose;
-import olympic.main.opening.deliverSpeech.Speech32thOpen;
+import olympic.main.opening.deliverspeech.Speech32thClose;
+import olympic.main.opening.deliverspeech.Speech32thOpen;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

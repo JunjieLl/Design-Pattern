@@ -1,6 +1,6 @@
 package olympic.scene;
 
-import olympic.main.preCompetitionSystem.PreCompetitionSystemFacade;
+import olympic.main.precompetitionsystem.PreCompetitionSystemFacade;
 import olympic.main.director.Mode;
 import olympic.main.game.pingponggame.PingpongPipeline;
 import olympic.picture.OutputPicture;
