@@ -2,10 +2,7 @@ package olympic.main.game.track;
 
 import olympic.main.PreCompetitionSystem.PreCompetitionSystemFacade;
 import olympic.main.person.PersonFactory;
-import olympic.main.person.athlete.Athlete;
 
-import java.util.Arrays;
-import java.util.List;
 
 public class MaInTest {
     public static void main(String[] args) {
