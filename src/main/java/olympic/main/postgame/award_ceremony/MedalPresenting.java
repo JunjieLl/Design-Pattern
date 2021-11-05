@@ -4,6 +4,9 @@ import olympic.main.postgame.award_ceremony.prototype_framework.Manager;
 import olympic.main.postgame.award_ceremony.prototype_framework.MedalProduct;
 import olympic.picture.OutputPicture;
 
+/**
+ * 颁发奖牌的Client类
+ */
 public class MedalPresenting {
     private Manager manager;
     private String titleGoldMedal;
@@ -11,6 +14,8 @@ public class MedalPresenting {
     private String titleBronzeMedal;
 
     /**
+     * 构造函数
+     *
      * @param manager          管理奖牌原型的Manager.
      * @param titleGoldMedal   金牌获得者、团队名称.
      * @param titleSilverMedal 银牌获得者、团队名称.

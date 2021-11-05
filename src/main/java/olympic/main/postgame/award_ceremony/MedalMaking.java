@@ -2,9 +2,12 @@ package olympic.main.postgame.award_ceremony;
 
 import olympic.main.postgame.award_ceremony.factory.*;
 
+/**
+ * 与抽象工厂交互的类
+ */
 public class MedalMaking {
     /**
-     * 装饰奖牌的类.
+     * 与原型交互类的构造函数
      */
     public MedalMaking() {
         Factory factory = Factory.getFactory("olympic.main.postgame.award_ceremony.olympic_medal_factory.OlympicMedalFactory");
@@ -33,6 +36,5 @@ public class MedalMaking {
         silverMedalEndProduct.present();
         bronzeMedalEndProduct.present();
     }
-
 
 }
