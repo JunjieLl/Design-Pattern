@@ -27,6 +27,9 @@ public abstract class Athlete extends Interviewee implements Listener, TorchBare
         questionsToAnswers.put("现在心情怎么样？", List.of("我感到很平静。"));
     }
 
+    /**
+     * 排名
+     */
     protected HashMap<String, Integer> rank = new HashMap<>();
 
     /**
