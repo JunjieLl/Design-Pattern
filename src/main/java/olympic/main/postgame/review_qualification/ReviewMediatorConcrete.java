@@ -24,7 +24,6 @@ public class ReviewMediatorConcrete implements ReviewMediator {
         this.targetGame = game;
         createColleagues();
         colleagueChanged("INIT");
-
     }
 
     @Override

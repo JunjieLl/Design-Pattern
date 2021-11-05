@@ -17,7 +17,7 @@ public class Country implements Comparable<Country> {
     }
 
     public String toString() {
-        return String.format(("国家：%-19s"  + "\t金牌数：" + this.goldMedalNum + "\t银牌数：" + this.silverMedalNum + "\t铜牌数：" + this.bronzeMedalNum + "\t奖牌数：" + (this.goldMedalNum + this.silverMedalNum + this.bronzeMedalNum)),NameFactory.getChineseNaitonName(this.countryCode) + "(" + this.countryCode + ")");
+        return String.format(("国家：%-22s"  + "\t金牌数：" + this.goldMedalNum + "\t银牌数：" + this.silverMedalNum + "\t铜牌数：" + this.bronzeMedalNum + "\t奖牌数：" + (this.goldMedalNum + this.silverMedalNum + this.bronzeMedalNum)),NameFactory.getChineseNaitonName(this.countryCode) + "(" + this.countryCode + ")");
     }
 
     @Override

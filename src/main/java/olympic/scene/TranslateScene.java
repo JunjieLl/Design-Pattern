@@ -15,37 +15,44 @@ public class TranslateScene implements Scene{
     public void play() {
         System.out.println("classname:(TranslateScene) method:(Speaker) action:(生成主持人)");
         Speaker a = new Speaker();
-        System.out.println("请问您是否需要外文翻译[是/否]？");
+        System.out.println("请问您是否需要外文翻译[1:是/2:否]？");
         Scanner sc = new Scanner(System.in);
         String option = sc.next();
-        if (option.equals("是")) {
+        if (option.equals("1")) {
 
-            System.out.println("请问您是否需要的是[英文/法语/西班牙语]的翻译？");
+            System.out.println("请问您是否需要的是[1:英文/2:法语/3:西班牙语]的翻译？");
             sc = new Scanner(System.in);
             option = sc.next();
-            if(option.equals("英文")){
+            if(option.equals("1")){
                 System.out.println("classname:(EnglishAdapter) method:(translate) action:(生成英语主持人适配器)");
                 EnglishAdapter englishAdapter=new EnglishAdapter(a);
                 englishAdapter.translate();
             }
-            else if(option.equals("法语"))
+            else if(option.equals("2"))
             {
                 System.out.println("classname:(FrenchAdapter) method:(translate) action:(生成法语主持人适配器)");
                 FrenchAdapter frenchAdapter=new FrenchAdapter(a);
                 frenchAdapter.translate();
             }
-            else if(option.equals("西班牙语"))
+            else if(option.equals("3"))
             {
                 System.out.println("classname:(SpanishAdapter) method:(translate) action:(生成西班牙语主持人适配器)");
                 SpanishAdapter spanishAdapter=new SpanishAdapter(a);
                 spanishAdapter.translate();
             }
+            else {
+                System.out.println(a.speak());
+            }
         }
+        else{
+            System.out.println(a.speak());
+        }
+
     }
 
-//    public static void main(String[] args) {
-//        TranslateScene translateScene=new TranslateScene();
-//        translateScene.play();
-//
-//    }
+    public static void main(String[] args) {
+        TranslateScene translateScene=new TranslateScene();
+        translateScene.play();
+
+    }
 }

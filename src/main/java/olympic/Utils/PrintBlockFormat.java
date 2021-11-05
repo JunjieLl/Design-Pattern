@@ -22,13 +22,26 @@ public class PrintBlockFormat {
 	 */
 	private PrintBlockFormat() {
 	}
-
+	
+	/**
+	 * 输入字符串列表的缓存
+	 */
 	List<String> strings = new ArrayList<>();
-
-	public void addString(String str){
+	
+	/**
+	 * 把新的字符串加入该类的字符串列表
+	 *
+	 * @param str 新加入的字符串
+	 */
+	public void addString(String str) {
 		strings.add(str);
 	}
-
+	
+	/**
+	 * 把本类的字符串缓存列表输出并清空
+	 *
+	 * @param isShow 是否要把该列表展示出来
+	 */
 	public void printFormatLeftScreen(boolean isShow) {
 		if (isShow) {
 			printBlock(strings, false);
@@ -168,25 +181,6 @@ public class PrintBlockFormat {
 		if (isShow) {
 			printBlock(stringList, true);
 		}
-	}
-	
-	/**
-	 * 用于测试该类
-	 *
-	 * @param args 测试参数
-	 */
-	public static void main(String[] args) {
-		List<String> strings = new ArrayList<>();
-		strings.add("title");
-		strings.add("asdas");
-		strings.add("dasdasfdasdass");
-		strings.add("ascxas13");
-		PrintBlockFormat printBlockFormat = new PrintBlockFormat();
-		printBlockFormat.printFormatLeftScreen(strings, true);
-		printBlockFormat.printFormatLeftScreen(strings, true);
-		printBlockFormat.printFormatMiddleScreen(strings, true);
-		printBlockFormat.printFormatMiddleScreen(strings, true);
-		;
 	}
 	
 }

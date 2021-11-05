@@ -58,5 +58,7 @@ public class TrackGameScene implements Scene {
                 throw new IllegalStateException("Unexpected value: " + game);
         }
         track.start();
+        CeremonyScene ceremonyScene = new CeremonyScene(track.getAthletes());
+        ceremonyScene.play();
     }
 }

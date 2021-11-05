@@ -1,5 +1,6 @@
 package olympic.main.game.volleyball.round;
 
+import olympic.Utils.PrintBlockFormat;
 import olympic.main.game.volleyball.VolleyballMatch;
 import olympic.main.game.volleyball.VolleyballScoreBoard;
 import olympic.main.game.volleyball.ScheduleIterator;
@@ -25,7 +26,7 @@ public class GroupRound extends Round {
     public void start() {
         advancedTeams.clear();
         System.out.println("\nclassname: (GroupRound) method: (play) action: (进行排球小组赛，使用了Observer模式、Singleton模式以及Iterator模式) ");
-        System.out.println("\n【小组赛】");
+        PrintBlockFormat.getPrintFormat().addString("小组赛");
         // 打乱顺序，分组
         Collections.shuffle(teams);
         for (int g = 0; g < 2; g++) {
@@ -44,23 +45,40 @@ public class GroupRound extends Round {
             it.next().play();
         }
 
+        PrintBlockFormat.getPrintFormat().printFormatLeftScreen(true);
+
         int[] scores = scoreBoard.getScore();
-        int[] gains = scoreBoard.getGain();
-        int[] losses = scoreBoard.getLoss();
+        int[] win = scoreBoard.getWin();
+        int[] gain = scoreBoard.getGain();
+        int[] loss = scoreBoard.getLoss();
+        int[] pointGain = scoreBoard.getPointGain();
+        int[] pointLoss = scoreBoard.getPointLoss();
 
         // 内部类，用于对各组球队进行排名
         class ScoreEntry {
             public VolleyballTeam team;
             public int score;
+            public int win;
             public double rate;
+            public double pointRate;
 
-            public ScoreEntry(VolleyballTeam team, int score, int gain, int loss) {
+            public ScoreEntry(VolleyballTeam team, int score, int win, int gain, int loss, int pointGain, int pointLoss) {
                 this.team = team;
                 this.score = score;
+                this.win = win;
+
+                // 胜负局比
                 if (loss != 0) {
-                    rate = ((double)gain) / loss;
+                    rate = ((double) gain) / loss;
                 } else {
                     rate = Integer.MAX_VALUE;
+                }
+
+                // 得失分比
+                if (pointLoss != 0) {
+                    pointRate = ((double) pointGain) / pointLoss;
+                } else {
+                    pointRate = Integer.MAX_VALUE;
                 }
             }
         }
@@ -68,12 +86,12 @@ public class GroupRound extends Round {
         List<VolleyballTeam> tmp = new ArrayList<>();  // 晋级名单
 
         // 打印小组赛积分榜
-        System.out.println("\n【小组赛积分榜】");
+        PrintBlockFormat.getPrintFormat().addString("小组赛积分榜");
         for (int g = 0; g < 2; g++) {
             List<ScoreEntry> ranking = new ArrayList<>();
             for (int i = 0; i < 6; i++) {
                 VolleyballTeam t = teams.get(6 * g + i);
-                ranking.add(new ScoreEntry(t, scores[t.getId()], gains[t.getId()], losses[t.getId()]));
+                ranking.add(new ScoreEntry(t, scores[t.getId()], win[t.getId()], gain[t.getId()], loss[t.getId()], pointGain[t.getId()], pointLoss[t.getId()]));
             }
 
             Collections.sort(ranking, (o1, o2) -> {
@@ -82,24 +100,38 @@ public class GroupRound extends Round {
                 } else if (o1.score < o2.score) {
                     return 1;
                 } else {
-                    if (o1.rate > o2.rate) {
+                    if (o1.win > o2.win) {
                         return -1;
-                    } else if (o1.rate < o2.rate) {
+                    } else if (o1.win < o2.win) {
                         return 1;
                     } else {
-                       return 0;
+                        if (o1.rate > o2.rate) {
+                            return -1;
+                        } else if (o1.rate < o2.rate) {
+                            return 1;
+                        } else {
+                            if (o1.pointRate > o2.pointRate) {
+                                return -1;
+                            } else if (o1.pointRate < o2.pointRate) {
+                                return 1;
+                            } else {
+                                return 0;
+                            }
+                        }
                     }
                 }
             });
-            System.out.println("\nGroup " + (g + 1));
-            System.out.println("排名\t球队\t\t积分\t\t得失球率");
+            PrintBlockFormat.getPrintFormat().addString("\nGroup " + (g + 1));
+            PrintBlockFormat.getPrintFormat().addString("排名\t球队\t\t积分\t\t胜场\t\t胜负局比\t\t得失分比");
             for (int i = 0; i < 6; i++) {
-                System.out.printf("%d\t%s\t\t%d\t\t%f\n", i + 1, ranking.get(i).team.getNation(), ranking.get(i).score, ranking.get(i).rate);
+                PrintBlockFormat.getPrintFormat().addString(String.format("%d\t%s\t\t%d\t\t%d\t\t%.2f\t\t%.2f", i + 1, ranking.get(i).team.getNation(), ranking.get(i).score, ranking.get(i).win, ranking.get(i).rate, ranking.get(i).pointRate));
             }
             for (int i = 0; i < 6; i++) {
                 tmp.add(ranking.get(i).team);
             }
         }
+
+        PrintBlockFormat.getPrintFormat().printFormatLeftScreen(true);
 
         // 按四分之一决赛顺序排列
         for (int k = 0; k < 4; ++k) {
