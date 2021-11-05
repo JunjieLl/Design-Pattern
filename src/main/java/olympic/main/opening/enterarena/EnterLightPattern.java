@@ -4,9 +4,10 @@ package olympic.main.opening.enterarena;
 import olympic.main.person.PersonFactory;
 import olympic.main.person.athlete.TeamAthlete;
 
-/***
- * 两支国家队：美国队、中国队；每支队伍两名队员
- * 一支护送奥运圣火队伍：传递者一、二、三
+/**
+ *
+ * 入场以及传递圣火
+ *
  */
 
 public class EnterLightPattern {

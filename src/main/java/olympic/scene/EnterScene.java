@@ -9,6 +9,9 @@ import java.util.Random;
 
 public class EnterScene implements Scene {
     @Override
+    /**
+     * 国家队入场仪式
+     */
     public void play() {
         EnterManager enterManager = EnterManager.getInstance();
         TeamAthlete torchBarer = new TeamAthlete("火炬传递队");
