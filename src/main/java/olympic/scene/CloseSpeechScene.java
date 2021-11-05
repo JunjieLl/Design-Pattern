@@ -1,6 +1,6 @@
 package olympic.scene;
 
-import olympic.main.opening.deliverSpeech.Speech32thClose;
+import olympic.main.opening.deliverspeech.Speech32thClose;
 
 /**
  * 设计模式：模板方法模式

@@ -1,12 +1,12 @@
-package olympic.main.person.personVisitor.visitFilterChain;
+package olympic.main.person.personvisitor.visitFilterChain;
 
 import olympic.main.person.athlete.IndividualAthlete;
 import olympic.main.person.athlete.TeamAthlete;
 import olympic.main.person.athleteList.IndividualAthleteList;
 import olympic.main.person.athleteList.TeamAthleteList;
-import olympic.main.person.personVisitor.FilterVisitor;
-import olympic.main.person.personVisitor.NovelCoronavirusFilterVisitor;
-import olympic.main.person.personVisitor.UrineFilterVisitor;
+import olympic.main.person.personvisitor.FilterVisitor;
+import olympic.main.person.personvisitor.NovelCoronavirusFilterVisitor;
+import olympic.main.person.personvisitor.UrineFilterVisitor;
 
 import java.util.ArrayList;
 import java.util.List;

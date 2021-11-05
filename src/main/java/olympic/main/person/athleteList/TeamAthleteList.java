@@ -1,7 +1,7 @@
 package olympic.main.person.athleteList;
 
 import olympic.main.person.athlete.TeamAthlete;
-import olympic.main.person.personVisitor.Visitor;
+import olympic.main.person.personvisitor.Visitor;
 
 import java.util.ArrayList;
 

@@ -1,5 +1,6 @@
 package olympic.scene;
 
+import olympic.main.director.Sleep;
 import olympic.main.game.basketball.BasketballGameManager;
 
 import olympic.main.game.basketball.round.EliminationRound;
@@ -15,6 +16,7 @@ class BasketballSceneTest {
      */
     @Test
     void testPlay() {
+        Sleep.setNeedSleep(false);
         BasketballGameManager basketballGameManager = BasketballGameManager.getInstance();  // Singleton获取实例
         basketballGameManager.setTeams(PersonFactory.getInstance().getAthletes("BasketballTeam"));
         basketballGameManager.setFirst(new GroupRound()).setNext(new EliminationRound("四分之一决赛")).setNext(new EliminationRound("半决赛")).setNext(new EliminationRound("决赛"));  // 各轮比赛连接成管道

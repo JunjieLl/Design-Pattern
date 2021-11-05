@@ -4,8 +4,8 @@ import olympic.main.director.Mode;
 import olympic.main.person.athlete.CallBack;
 import olympic.main.person.athlete.IndividualAthlete;
 import olympic.main.person.athlete.Strategy;
-import olympic.main.person.athlete.badminton.Strategy.BadmintonDefendStrategy;
-import olympic.main.person.athlete.badminton.Strategy.BadmintonOffenseStrategy;
+import olympic.main.person.athlete.badminton.strategy.BadmintonDefendStrategy;
+import olympic.main.person.athlete.badminton.strategy.BadmintonOffenseStrategy;
 
 import java.util.Objects;
 import java.util.Random;

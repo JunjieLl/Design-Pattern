@@ -11,8 +11,8 @@ import olympic.main.person.athlete.pingong.PingpongAthlete;
 import olympic.main.person.athlete.pingong.PingpongTeam;
 import olympic.main.person.athlete.track.TrackAthlete;
 import olympic.main.person.athlete.track.TrackTeam;
-import olympic.main.opening.deliverSpeech.Chairman;
-import olympic.main.opening.deliverSpeech.Coach;
+import olympic.main.opening.deliverspeech.Chairman;
+import olympic.main.opening.deliverspeech.Coach;
 import olympic.main.person.athlete.volleyballathlete.VolleyballTeam;
 import olympic.main.person.interview.Interviewer;
 

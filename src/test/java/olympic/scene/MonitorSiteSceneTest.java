@@ -1,13 +1,11 @@
 package olympic.scene;
 
-import olympic.main.postgame.monitor_site.Command;
-import olympic.main.postgame.monitor_site.CommandStack;
-import olympic.main.postgame.monitor_site.Monitor;
-import olympic.main.postgame.monitor_site.MonitorController;
+import olympic.main.postgame.monitorsite.Command;
+import olympic.main.postgame.monitorsite.CommandStack;
+import olympic.main.postgame.monitorsite.Monitor;
+import olympic.main.postgame.monitorsite.MonitorController;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import java.util.Scanner;
 
 @DisplayName("检查场地")
 public class MonitorSiteSceneTest {

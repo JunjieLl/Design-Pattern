@@ -1,5 +1,6 @@
 package olympic.scene;
 
+import olympic.main.director.Sleep;
 import olympic.main.game.football.FootballGameManager;
 import olympic.main.game.football.round.EliminationRound;
 import olympic.main.game.football.round.GroupRound;
@@ -14,6 +15,7 @@ class FootballSceneTest {
      */
     @Test
     void testPlay() {
+        Sleep.setNeedSleep(false);
         FootballGameManager footballGameManager = FootballGameManager.getInstance();  // Singleton获取实例
         footballGameManager.setTeams(PersonFactory.getInstance().getAthletes("FootballTeam"));
         footballGameManager.setFirst(new GroupRound()).setNext(new EliminationRound("四分之一决赛")).setNext(new EliminationRound("半决赛")).setNext(new EliminationRound("决赛"));  // 各轮比赛连接成管道

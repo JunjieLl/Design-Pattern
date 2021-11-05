@@ -1,8 +1,8 @@
 package olympic.main.person.athlete;
 
 import olympic.utils.PrintBlockFormat;
-import olympic.main.preCompetitionSystem.urineTest.UrineBottle;
-import olympic.main.opening.deliverSpeech.Speechable;
+import olympic.main.precompetitionsystem.urinetest.UrineBottle;
+import olympic.main.opening.deliverspeech.Speechable;
 import olympic.main.person.athleteList.urineTestProcurator.UrineTestProcurator;
 import olympic.main.person.athleteList.urineTestProcurator.UrineTestProcuratorFactory;
 

@@ -1,13 +1,11 @@
 package olympic.scene;
 
-import olympic.main.opening.ticketChecking.CheckingMachine;
-import olympic.main.opening.ticketChecking.ElectronicTicket;
-import olympic.main.opening.ticketChecking.PaperTicket;
-import olympic.main.opening.ticketChecking.TicketChecking;
+import olympic.main.opening.ticketchecking.CheckingMachine;
+import olympic.main.opening.ticketchecking.ElectronicTicket;
+import olympic.main.opening.ticketchecking.PaperTicket;
+import olympic.main.opening.ticketchecking.TicketChecking;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import java.util.Scanner;
 
 
 @DisplayName("入场验票测试")
