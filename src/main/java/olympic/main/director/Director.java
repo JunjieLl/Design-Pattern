@@ -14,6 +14,9 @@ import java.util.*;
  * 设计模式：Singleton
  */
 final public class Director {
+    /**
+     * 构造函数
+     */
     private Director() {
         Map<String, List<String>> tempGameNames = PersonFactory.getInstance().getCatalogueMap();
         for (String name : tempGameNames.keySet()) {
@@ -21,6 +24,9 @@ final public class Director {
         }
     }
 
+    /**
+     * 导演实例
+     */
     private static Director director;
 
     /**
@@ -48,10 +54,19 @@ final public class Director {
         scene.play();
     }
 
+    /**
+     * 比赛大类列表
+     */
     private Map<String, List<String>> gameNames = new HashMap<>();
 
+    /**
+     * 输入
+     */
     private Scanner input = new Scanner(System.in);
 
+    /**
+     * 屏幕输出流
+     */
     private PrintStream screen = System.out;
 
 
@@ -194,6 +209,9 @@ final public class Director {
         }
     }
 
+    /**
+     * 对外接口，启动运动会
+     */
     public void start() {
         startBeforeGameActivities();
         startGame();

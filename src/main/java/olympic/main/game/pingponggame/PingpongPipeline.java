@@ -15,13 +15,31 @@ import java.util.List;
  */
 public class PingpongPipeline implements AbstractPipeline {
 
+    /**
+     *
+     */
     private PingpongFilter firstGame;
+
+    /**
+     *
+     */
     private PingpongFilter lastGame;
 
+    /**
+     *
+     */
     private String name;
 
+    /**
+     *
+     */
     private List<Athlete> athletes;
 
+    /**
+     *
+     * @param name
+     * @param athleteList
+     */
     public PingpongPipeline(String name, List<Athlete> athleteList) {
         this.name = name;
         this.athletes = athleteList;
@@ -36,23 +54,13 @@ public class PingpongPipeline implements AbstractPipeline {
         firstGame.setAthletes(athletes);
     }
 
-//    public void setName(String name) {
-//        this.name = name;
-//    }
-
+    /**
+     *
+     * @return
+     */
     public String getName() {
         return name;
     }
-
-//    public void addFilter(PingpongFilter filter) {
-//        if (firstGame == null) {
-//            firstGame = filter;
-//            lastGame = filter;
-//        } else {
-//            lastGame.setNextFilter(filter);
-//            lastGame = filter;
-//        }
-//    }
 
     /**
      * 季军赛
@@ -72,11 +80,13 @@ public class PingpongPipeline implements AbstractPipeline {
                 return athlete;
             }
         }
-//        thirdGame
         return null;
     }
 
-
+    /**
+     *
+     * @param newGame
+     */
     @Override
     public void addContest(Valve newGame) {
         if (firstGame == null) {
@@ -88,6 +98,9 @@ public class PingpongPipeline implements AbstractPipeline {
         }
     }
 
+    /**
+     *
+     */
     @Override
     public void start() {
         System.out.println("【"+name+"开始】");

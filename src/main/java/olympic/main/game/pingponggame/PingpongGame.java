@@ -11,6 +11,9 @@ import java.util.List;
  */
 public class PingpongGame {
 
+    /**
+     *
+     */
     private String name;
 
     /**
@@ -19,15 +22,26 @@ public class PingpongGame {
      */
     private HashMap<Athlete, Integer> result = new HashMap<>();
 
+    /**
+     *
+     * @param name
+     */
     public PingpongGame(String name) {
         this.name = name;
     }
 
-
+    /**
+     *
+     * @param name
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     *
+     * @param athlete
+     */
     public void addAthlete(Athlete athlete) {
         result.put(athlete, 0);
     }
@@ -37,8 +51,12 @@ public class PingpongGame {
      */
     public void start() {
         List<Athlete> athletes = new ArrayList<>(result.keySet());
-        System.out.println(athletes.get(0).getName() + " vs " + athletes.get(1).getName());
-        System.out.println("===================================================");
+        System.out.println("===========================================================================");
+        System.out.print("                    [");
+        System.out.print("\033[1;" + 34+"m");
+        System.out.print(athletes.get(0).getName() + " vs " + athletes.get(1).getName());
+        System.out.print("\033[0m");
+        System.out.println("]");
 
         // 还没有一个运动员的分数到达三分的时候，需要继续比赛
         while (Math.max((Integer) result.values().toArray()[0], (Integer) result.values().toArray()[1]) < 3 ) {
@@ -63,9 +81,10 @@ public class PingpongGame {
         ((Athlete)result.keySet().toArray()[winner]).setRank(name,1);
         ((Athlete)result.keySet().toArray()[1-winner]).setRank(name,2);
 
-        System.out.println("===================================================");
         System.out.print("【本局结束】");
         System.out.print("比分"+result.values().toArray()[0]+":"+result.values().toArray()[1]+" ");
-        System.out.println(((Athlete)result.keySet().toArray()[winner]).getName()+" 获胜\n");
+        System.out.println(((Athlete)result.keySet().toArray()[winner]).getName()+" 获胜");
+        System.out.println("===========================================================================\n");
+
     }
 }

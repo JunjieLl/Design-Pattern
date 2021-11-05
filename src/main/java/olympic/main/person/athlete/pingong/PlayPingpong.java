@@ -9,7 +9,6 @@ public interface PlayPingpong extends CallBack {
 
     /**
      * 对打
-     *
      * @param oppoent 对手
      * @return 是否打赢
      */
@@ -22,8 +21,7 @@ public interface PlayPingpong extends CallBack {
 
     /**
      * 返回运动员的实力
-     *
-     * @return
+     * @return 实力
      */
     public Integer getCapacity();
 

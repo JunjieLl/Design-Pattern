@@ -68,7 +68,7 @@ public class BadmintonAthlete extends IndividualAthlete implements PlayBadminton
     @Override
     public void serve() {
         if (Mode.getShowDetail()) {
-            System.out.println(this.getName() + " 发乒乓球");
+            System.out.println(this.getName() + " 发羽毛球");
         }
     }
 

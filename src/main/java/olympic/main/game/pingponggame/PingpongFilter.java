@@ -15,32 +15,38 @@ import java.util.List;
  * 可以实例化为 乒乓球男单预赛、乒乓球男单复赛、乒乓球男单决赛
  */
 public class PingpongFilter extends Valve {
-//    private String name;
-//
-//    private List<Athlete> athletes;
-
     /**
      * 包含的比赛
      * 比如预赛会有很多场比赛
      */
     private List<PingpongGame> games = new ArrayList<>();
 
+    /**
+     * 下一个Filter
+     */
     private PingpongFilter nextFilter;
 
+    /**
+     * 构造函数
+     * @param name
+     */
     public PingpongFilter(String name) {
         this.name = name;
     }
 
-//    public void setNextFilter(PingpongFilter nextFilter) {
-//        this.nextFilter = nextFilter;
-//    }
-
+    /**
+     *
+     * @param athletes
+     */
     public void setAthletes(List<Athlete> athletes){
         RandomDrawLots drawLots = new RandomDrawLots(athletes, new PaperDrawLotsImpl(), 2, true);
         this.athletes = drawLots.randomDrawLots();
         addGame();
     }
 
+    /**
+     *
+     */
     private void addGame(){
         for (int i=0;i<athletes.size()/2;i++){
             PingpongGame game = new PingpongGame(this.name);
@@ -51,6 +57,11 @@ public class PingpongFilter extends Valve {
         }
     }
 
+    /**
+     *
+     * @param valve
+     * @return
+     */
     @Override
     public Valve setNext(Valve valve) {
         this.nextFilter = (PingpongFilter)valve;
