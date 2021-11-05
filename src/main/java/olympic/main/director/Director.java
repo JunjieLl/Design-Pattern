@@ -81,7 +81,7 @@ final public class Director {
         OutputPicture.printPictureOf(1);
         OutputPicture.printPictureOf(2); //flag
         OutputVoiceover.printVoiceoverOf(1);
-//        new TicketCheckingScene().play(); 跳不出来死循环
+        new TicketCheckingScene().play();
         OutputVoiceover.printVoiceoverOf(2);
         nextScene(new ProtectionFactoryScene());
         OutputPicture.printPictureOf(3); //playground

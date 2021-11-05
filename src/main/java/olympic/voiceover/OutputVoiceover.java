@@ -18,7 +18,7 @@ public class OutputVoiceover {
      * @param index 旁白 1- 18
      */
     public static void printVoiceoverOf(int index) {
-        String template = "./src/voiceover/%d.txt";
+        String template = "./src/main/resources/voiceover/%d.txt";
         String path = String.format(template, index);
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(path));
