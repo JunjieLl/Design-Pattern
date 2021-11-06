@@ -24,7 +24,7 @@ public class MonitorSiteScene implements Scene {
         Monitor tv = new Monitor();
         MonitorController teleController = new MonitorController();
         CommandStack stack = new CommandStack();
-//        System.out.println("classname:(PaperTicket) method:(checkMethod) action:(使用纸质检票口)");
+
         System.out.println("是否要继续检查下一个场地？[-1:退出，0:返回，1:继续]");
         Scanner sc = new Scanner(System.in);
         int cur = 1;
@@ -36,16 +36,15 @@ public class MonitorSiteScene implements Scene {
             if (key.equals("0")) {
 
                 if (cur > 1) {
-                    /**
-                     * 恢复状态
-                     */
+
                     teleController.restoreMemento(stack.pop());
                     if (cur > 2)
                         cur -= 1;
                 } else {
                     System.out.println("Error:没有上一条命令，输入错误!");
                 }
-            } else if (key.equals("1")) {
+            }
+            else if (key.equals("1")) {
                 Command now_command = teleController.createMemento(cur, tv);
                 teleController.switchCommand(now_command);
                 stack.push(now_command);
