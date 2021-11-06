@@ -11,13 +11,6 @@ import java.io.IOException;
  * 旁白
  */
 public class OutputVoiceover {
-    public static void main(String[] args) {
-        /**
-         *  demo
-         */
-        printVoiceoverOf(1);
-    }
-
     /**
      *
      * @param index 旁白 1- 18
