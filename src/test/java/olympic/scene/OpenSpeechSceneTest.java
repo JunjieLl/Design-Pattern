@@ -5,7 +5,7 @@ import olympic.main.opening.deliverspeech.Speech32thOpen;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("开幕式演讲")
+@DisplayName("开幕式演讲场景")
 public class OpenSpeechSceneTest {
     /**
      * 开幕式发表演讲测试函数

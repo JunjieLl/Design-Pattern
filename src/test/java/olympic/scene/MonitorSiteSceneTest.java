@@ -7,7 +7,7 @@ import olympic.main.postgame.monitorsite.MonitorController;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("检查场地")
+@DisplayName("检查场地场景")
 public class MonitorSiteSceneTest {
 
     /**
