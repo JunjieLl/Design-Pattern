@@ -96,7 +96,7 @@ public class GroupRound extends Round {
             PrintBlockFormat.getPrintFormat().addString("\nGroup " + (g + 1));
             PrintBlockFormat.getPrintFormat().addString("排名\t球队\t\t积分\t\t净胜球\t进球");
             for (int i = 0; i < 4; i++) {
-                PrintBlockFormat.getPrintFormat().addString(String.format("%d\t%s\t\t%d\t\t%d\t\t%d", i + 1, ranking.get(i).team.getNation(), ranking.get(i).score, ranking.get(i).goalDifference, ranking.get(i).goal));
+                PrintBlockFormat.getPrintFormat().addString(String.format("%d\t\t%s\t\t%d\t\t%d\t\t%d", i + 1, ranking.get(i).team.getNation(), ranking.get(i).score, ranking.get(i).goalDifference, ranking.get(i).goal));
             }
             tmp.add(ranking.get(0).team);
             tmp.add(ranking.get(1).team);
