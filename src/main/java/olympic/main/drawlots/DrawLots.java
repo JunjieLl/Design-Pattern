@@ -64,28 +64,4 @@ public class DrawLots {
     protected void drawLotsEnd() {
         impl.rawDrawLotsEnd(athletes, groupSize);
     }
-
-
-    /**
-     * DrawLots（抽签）功能的使用示例
-     *
-     * @param args 无需指定
-     */
-    public static void main(String[] args) {
-        // 获取待抽签的运动员列表
-        PersonFactory personFactory = PersonFactory.getInstance();
-        List<String> gameNames = personFactory.getNames();
-        System.out.println(gameNames);
-        String gameName = gameNames.get(0);
-        List<Athlete> athletes = personFactory.getAthletes(gameName);
-
-        // 随机抽签test
-        RandomDrawLots drawLots = new RandomDrawLots(athletes, new PaperDrawLotsImpl(), 2, false);
-        List<Athlete> randomSortedAthletes = drawLots.randomDrawLots();
-
-        // 固定次序抽签test
-        FixedDrawLots fixedDrawLots = new FixedDrawLots(randomSortedAthletes, new ElectronicDrawLotsImpl(), 1, true);
-        List<Integer> orders = List.of(2, 1, 3, 4, 5, 6, 7, 8, 9, 14, 12, 13, 17, 0, 11, 10, 15, 16);
-        List<Athlete> fixedSortedAthletes = fixedDrawLots.fixedDrawLots(orders);
-    }
 }
