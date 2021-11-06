@@ -4,6 +4,7 @@ import olympic.main.game.football.EliminationFootballMatch;
 import olympic.main.game.football.FootballMatch;
 import olympic.main.game.football.Observer;
 import olympic.main.game.football.ScheduleIterator;
+import olympic.utils.PrintBlockFormat;
 
 /**
  * 淘汰赛的一轮
@@ -36,13 +37,15 @@ public class EliminationRound extends Round implements Observer {
         }
 
         if (name != null) {
-            System.out.println("\n【" + name + "】");
+            PrintBlockFormat.getPrintFormat().addString(name);
         }
 
         ScheduleIterator it = schedule.iterator();
         while (it.hasNext()) {
             it.next().play();
         }
+
+        PrintBlockFormat.getPrintFormat().printFormatLeftScreen(true);
     }
 
     /**
