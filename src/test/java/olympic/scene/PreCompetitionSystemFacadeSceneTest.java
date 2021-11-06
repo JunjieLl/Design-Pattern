@@ -9,26 +9,15 @@ import org.junit.jupiter.api.Test;
  */
 @DisplayName("赛前准备场景")
 public class PreCompetitionSystemFacadeSceneTest {
-	
-	/**
-	 * 测试个人比赛的项目
-	 */
-	@Test
-	void testIndividualGamePreCompetitionSystemFacadeScene() {
-		Mode.setNeedDetail(false);
-		PreCompetitionSystemFacadeScene preCompetitionSystemFacadeScene = new PreCompetitionSystemFacadeScene();
-		preCompetitionSystemFacadeScene.setGameName("Pingpong");
-		preCompetitionSystemFacadeScene.play();
-	}
-	
-	/**
-	 * 测试团队比赛的项目
-	 */
-	@Test
-	void testTeamGamePreCompetitionSystemFacadeScene() {
-		Mode.setNeedDetail(false);
-		PreCompetitionSystemFacadeScene preCompetitionSystemFacadeScene = new PreCompetitionSystemFacadeScene();
-		preCompetitionSystemFacadeScene.setGameName("Relays");
-		preCompetitionSystemFacadeScene.play();
-	}
+
+    /**
+     * 测试团队比赛的项目
+     */
+    @Test
+    void testTeamGamePreCompetitionSystemFacadeScene() {
+        Mode.setNeedDetail(false);
+        PreCompetitionSystemFacadeScene preCompetitionSystemFacadeScene = new PreCompetitionSystemFacadeScene();
+        preCompetitionSystemFacadeScene.setGameName("Relays");
+        preCompetitionSystemFacadeScene.play();
+    }
 }
