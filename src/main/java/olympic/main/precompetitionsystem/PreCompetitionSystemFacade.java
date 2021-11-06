@@ -171,10 +171,6 @@ public class PreCompetitionSystemFacade {
 		printlnNRowSpace(2);
 	}
 	
-	public static void main(String[] args) {
-		PreCompetitionSystemFacade.getInstance().preCompetitionSystemFacade("Relays");
-	}
-	
 	/**
 	 * 输出所有的赛前准备环节
 	 */
