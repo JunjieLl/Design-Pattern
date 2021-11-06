@@ -2,8 +2,8 @@ package olympic.main.person.personvisitor.visitfilterchain;
 
 import olympic.main.person.athlete.IndividualAthlete;
 import olympic.main.person.athlete.TeamAthlete;
-import olympic.main.person.athleteList.IndividualAthleteList;
-import olympic.main.person.athleteList.TeamAthleteList;
+import olympic.main.person.athletelist.IndividualAthleteList;
+import olympic.main.person.athletelist.TeamAthleteList;
 import olympic.main.person.personvisitor.FilterVisitor;
 import olympic.main.person.personvisitor.NovelCoronavirusFilterVisitor;
 import olympic.main.person.personvisitor.UrineFilterVisitor;
