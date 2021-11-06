@@ -2,11 +2,9 @@ package olympic.picture;
 
 import olympic.main.director.Mode;
 import olympic.main.director.Sleep;
+import olympic.voiceover.OutputVoiceover;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.Scanner;
 
 /**
@@ -16,16 +14,16 @@ public class OutputPicture {
 
 
     /**
-     *
      * @param index 图片编号 1-16
      */
     public static void printPictureOf(int index) {
-        String template = "./src/main/resources/picture/%d.txt";
+        String template = "/picture/%d.txt";
         String path = String.format(template, index);
+        InputStream inputStream = OutputVoiceover.class.getResourceAsStream(path);
         try {
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(path));
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
             String str;
-            System.out.println("\033[1;" + 34+"m");
+            System.out.println("\033[1;" + 34 + "m");
             while ((str = bufferedReader.readLine()) != null) {
                 System.out.println(str);
             }

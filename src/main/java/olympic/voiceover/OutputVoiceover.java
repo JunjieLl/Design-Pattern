@@ -2,24 +2,21 @@ package olympic.voiceover;
 
 import olympic.main.director.Sleep;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 /**
  * 旁白
  */
 public class OutputVoiceover {
     /**
-     *
      * @param index 旁白 1- 18
      */
     public static void printVoiceoverOf(int index) {
-        String template = "./src/main/resources/voiceover/%d.txt";
+        String template = "/voiceover/%d.txt";
         String path = String.format(template, index);
+        InputStream inputStream = OutputVoiceover.class.getResourceAsStream(path);
         try {
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(path));
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
             String str;
 //            System.out.println("\033[1;" + 33);
             System.out.println("\033[1;33m");
