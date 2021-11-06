@@ -20,7 +20,6 @@ public class TicketCheckingScene implements Scene {
     @Override
     public void play() {
         CheckingMachine c = new CheckingMachine();
-        PrintBlockFormat.getPrintFormat().addString("入场检票");
         while (true) {
             System.out.println("请输入您的票类：(1:电子票，2:纸质票)");
             Scanner sc = new Scanner(System.in);
