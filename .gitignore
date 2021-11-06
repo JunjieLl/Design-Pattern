@@ -6,7 +6,11 @@
 ### Java
 # Compiled class file
 out
+target
 *.class
+
+# Redirect output file
+out.txt
 
 # Log file
 *.log
