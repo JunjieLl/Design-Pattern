@@ -38,15 +38,6 @@ class EnterSceneTest {
 
         }
 
-        EnterIterator et = enterManager.iterator();
-        while (et.hasNext()) {
-            TeamAthlete myList = et.next();
-            System.out.println("现在向我们走来的是" + myList.getNation() + "队，让我们欢迎他们！");
-        }
-        System.out.println('\n');
-        torchBarer.passFire();
-        System.out.println("最后一位使者点燃了奥运圣火！");
-
         EnterScene enterScene = new EnterScene();
         enterScene.play();
 
