@@ -18,10 +18,6 @@
 
 2. 运行测试
 
-### 在命令行环境下正常运行
-
-### 在 IntelliJ IDEA 中正常运行
-
 ### 在命令行环境下运行测试
 
 1. 获取项目源码。
@@ -35,7 +31,27 @@
 
 ### 在 IntelliJ IDEA 中运行测试
 
+![image-20211106204059594](https://tva1.sinaimg.cn/large/008i3skNly1gw5ppyu4a3j31k60u0wkw.jpg)
 
+
+
+### 在 IntelliJ IDEA 中正常运行
+
+在`src/main/java/olympic/director/Main`中运行main方法。
+
+![image-20211106203120733](https://tva1.sinaimg.cn/large/008i3skNgy1gw5pg2dqaej31c00u0wjk.jpg)
+
+### 在命令行正常运行
+
+在项目根目录下使用命令`mvn exec:java  -Dexec.mainClass=olympic.main.director.Main`。
+
+![image-20211106203458617](https://tva1.sinaimg.cn/large/008i3skNgy1gw5pjpeelwj31dk0t6n2t.jpg)
+
+### 使用jar包正常运行
+
+使用命令`java -jar jarAddress`。
+
+![image-20211106203643096](https://tva1.sinaimg.cn/large/008i3skNly1gw5plhyshij31dk0t6gr2.jpg)
 
 ## 项目结构
 
