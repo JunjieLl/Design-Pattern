@@ -32,7 +32,7 @@ public class NovelCoronavirusFilterVisitor extends FilterVisitor {
                 finalAthleteList.add(athlete);
             }
             else {
-                stringList.add(" 运动员\" + athlete.getName() + \"被检测出了新冠病毒，取消此次比赛资格。");
+                stringList.add(" 运动员" + athlete.getName() + "被检测出了新冠病毒，取消此次比赛资格。");
                 count += 1;
                 athlete.setRank(game, -1);
             }
