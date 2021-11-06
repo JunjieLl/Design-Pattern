@@ -81,44 +81,6 @@ public abstract class InterviewMaker {
     }
 
     /**
-     * 安排采访功能的使用示例
-     *
-     * @param args 无需指定
-     */
-    public static void main(String[] args) {
-        // 获取听众
-        PersonFactory personFactory = PersonFactory.getInstance();
-        List<String> gameNames = personFactory.getNames();
-        System.out.println(gameNames);
-        String gameName = gameNames.get(1);
-        List<? extends Listener> audience = personFactory.getAthletes(gameName);
-
-        // 赛前采访
-        // 获取被采访者、采访者
-        System.out.println("赛前采访开始：");
-        Interviewee preInterviewee = new TrackAthlete("徐满心", "中国");
-        List<Interviewer> beforeInterviewers = new ArrayList<>();
-        beforeInterviewers.add(new Interviewer("Junjie Li", "美国", new PreInterviewAthleteStrategy(), new NewspaperBuilder("Junjie Li", "Manxin Xu")));
-        beforeInterviewers.add(new Interviewer("Chenhao Zhai", "英国", new PreInterviewAthleteStrategy(), new InternetReportBuilder("Chenhao Zhai", "Manxin Xu")));
-        beforeInterviewers.add(new Interviewer("Even", "法国", new PreInterviewAthleteStrategy(), new InternetReportBuilder("Even", "Manxin Xu")));
-        // 采访
-        makeInterview(preInterviewee, beforeInterviewers, audience, 10);
-        System.out.println("赛前采访结束\n");
-
-        // 赛后采访
-        // 获取被采访者、采访者
-        System.out.println("赛后采访开始：");
-        Interviewee afterInterviewee = new TrackAthlete("徐满心", "中国");
-        List<Interviewer> afterInterviewers = new ArrayList<>();
-        afterInterviewers.add(new Interviewer("YangWanting Wu", "美国", new AfterInterviewAthleteStrategy(), new InternetReportBuilder("YangWanting Wu", "Manxin Xu")));
-        afterInterviewers.add(new Interviewer("Ziyu Zhao", "英国", new AfterInterviewAthleteStrategy(), new InternetReportBuilder("Ziyu Zhao", "Manxin Xu")));
-        afterInterviewers.add(new Interviewer("Lixin Luo", "法国", new AfterInterviewAthleteStrategy(), new InternetReportBuilder("Lixin Luo", "Manxin Xu")));
-        // 采访
-        makeInterview(afterInterviewee, afterInterviewers, audience, 10);
-        System.out.println("赛后采访结束\n");
-    }
-
-    /**
      * 随机挑选一个采访者提问
      *
      * @param interviewers 采访者列表

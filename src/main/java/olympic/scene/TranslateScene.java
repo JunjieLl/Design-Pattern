@@ -53,9 +53,4 @@ public class TranslateScene implements Scene{
 
     }
 
-//    public static void main(String[] args) {
-//        TranslateScene translateScene=new TranslateScene();
-//        translateScene.play();
-//
-//    }
 }

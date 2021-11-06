@@ -240,7 +240,7 @@ public class CeremonyScene implements Scene {
         coachInterviewers.add(coachInterviewerNewspaper);
 
         List<String> coachInterviewPrintBlock = new ArrayList<>();
-        coachInterviewPrintBlock.add("裁判员采访");
+        coachInterviewPrintBlock.add("教练采访");
         coachInterviewPrintBlock.add("被采访者："+intervieweeCoach.getName() +" | 采访人：纸媒记者"+ coachInterviewerNewspaper.getName()+ "、新媒体记者"+ coachInterviewerInternet.getName());
         printBlockFormat.printFormatLeftScreen(coachInterviewPrintBlock,true);
 

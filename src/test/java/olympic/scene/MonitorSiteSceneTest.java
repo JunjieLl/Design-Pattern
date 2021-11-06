@@ -46,7 +46,7 @@ public class MonitorSiteSceneTest {
                     System.out.println("Error:没有上一条命令，输入错误!");
                 }
             }
-            if (key.equals("1")) {
+            else if (key.equals("1")) {
                 Command now_command = teleController.createMemento(cur, tv);
                 teleController.switchCommand(now_command);
                 stack.push(now_command);
