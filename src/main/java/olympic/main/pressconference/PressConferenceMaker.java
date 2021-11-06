@@ -68,27 +68,6 @@ public abstract class PressConferenceMaker {
         }
     }
 
-    public static void main(String[] args) {
-        // 获取听众
-        PersonFactory personFactory = PersonFactory.getInstance();
-        List<String> gameNames = personFactory.getNames();
-        System.out.println(gameNames);
-        String gameName = gameNames.get(2);
-        List<? extends Listener> audience = personFactory.getAthletes(gameName);
-
-        // 获取被采访者、采访者
-        Interviewee interviewee = new TrackAthlete("徐满心", "中国");
-        ArrayList<Interviewer> interviewers = new ArrayList<>();
-        interviewers.add(new Interviewer("Junjie Li", "美国", new PressConferenceStrategy()));
-        interviewers.add(new Interviewer("Chenhao Zhai", "英国", new PressConferenceStrategy()));
-        interviewers.add(new Interviewer("Even", "法国", new PressConferenceStrategy()));
-
-        // 新闻发布会
-        System.out.println("新闻发布会开始：");
-        makePressConference(interviewee, interviewers, audience, 10);
-        System.out.println("新闻发布会结束\n");
-    }
-
     /**
      * 判断采访者笔记是否为空（无问题可问）
      *
