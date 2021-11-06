@@ -28,7 +28,7 @@ public class LightShow extends Decorator {
      * 灯光秀表演
      */
     public void operation() {
-        System.out.println("您想要增加灯光表演吗? [1:是/2:否]");
+        System.out.println("您想要增加灯光表演吗? [1:是/2:否/其余输入：默认不添加]");
         Scanner sc = new Scanner(System.in);
         String option = sc.next();
         if (option.equals("1")) {

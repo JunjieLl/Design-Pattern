@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 /**
  * 测试赛后检查资质场景
  */
-@DisplayName("赛后检查资质测试场景")
+@DisplayName("赛后检查资质场景")
 class ReviewQSceneTest {
 
     @Test

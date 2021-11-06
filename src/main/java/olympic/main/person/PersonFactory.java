@@ -15,6 +15,7 @@ import olympic.main.opening.deliverspeech.Chairman;
 import olympic.main.opening.deliverspeech.Coach;
 import olympic.main.person.athlete.volleyballathlete.VolleyballTeam;
 import olympic.main.person.interview.Interviewer;
+import olympic.voiceover.OutputVoiceover;
 
 
 import java.io.*;
@@ -211,8 +212,7 @@ public class PersonFactory {
 
 
         try {
-
-            InputStream in = new BufferedInputStream(new FileInputStream("./src/main/java/olympic/main/person/message.properties"));
+            InputStream in = OutputVoiceover.class.getResourceAsStream("/person/message.properties");
             this.prop.load(in);     ///加载属性列表
 
             //生成所有比赛
