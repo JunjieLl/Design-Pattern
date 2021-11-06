@@ -152,23 +152,27 @@ public class PreCompetitionSystemFacade {
 				str.add("新冠病毒检测");
 				str.add(" 所有运动员均未感染新冠病毒");
 				showMap.put(5, str);
-				str.clear();
-				str.add("尿检结果检测");
-				str.add(" 没有运动员被检测出使用兴奋剂");
-				showMap.put(6, str);
+				List<String> strs = new ArrayList<>();
+				strs.add("尿检结果检测");
+				strs.add(" 没有运动员被检测出使用兴奋剂");
+				showMap.put(6, strs);
 			} else {
 				List<String> str = new ArrayList<>();
 				str.add("新冠病毒检测");
 				str.add(" 所有队伍均未感染新冠病毒");
 				showMap.put(5, str);
-				str.clear();
-				str.add("尿检结果检测");
-				str.add(" 所有队伍均未使用兴奋剂");
-				showMap.put(6, str);
+				List<String> strs = new ArrayList<>();
+				strs.add("尿检结果检测");
+				strs.add(" 没有运动员被检测出使用兴奋剂");
+				showMap.put(6, strs);
 			}
 		}
 		
 		printlnNRowSpace(2);
+	}
+	
+	public static void main(String[] args) {
+		PreCompetitionSystemFacade.getInstance().preCompetitionSystemFacade("Relays");
 	}
 	
 	/**

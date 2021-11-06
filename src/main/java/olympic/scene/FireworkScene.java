@@ -23,9 +23,5 @@ public class FireworkScene implements Scene {
         myairwork.operation();
     }
 
-//    public static void main(String[] args) {
-//        FireworkScene fireworkScene=new FireworkScene();
-//        fireworkScene.play();
-//    }
 }
 
