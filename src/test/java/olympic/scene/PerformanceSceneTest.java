@@ -8,7 +8,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 
-@DisplayName("表演测试")
+@DisplayName("表演场景")
 public class PerformanceSceneTest {
     /**
      * 表演测试函数

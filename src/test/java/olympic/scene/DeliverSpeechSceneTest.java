@@ -6,7 +6,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 
-@DisplayName("发表演讲测试")
+@DisplayName("发表演讲场景")
 public class DeliverSpeechSceneTest {
     /**
      * 发表演讲测试函数
