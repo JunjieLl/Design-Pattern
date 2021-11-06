@@ -6,7 +6,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 @DisplayName("田径比赛场景")
-class TrackGameScene {
+class TrackGameSceneTest {
     /**
      * 测试DivingGameScene.play()方法
      */

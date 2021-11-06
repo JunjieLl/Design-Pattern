@@ -7,7 +7,6 @@ import olympic.main.opening.translate.Speaker;
 
 import java.util.Scanner;
 
-
 /**
  * 翻译场景
  */
@@ -19,12 +18,12 @@ public class TranslateScene implements Scene{
     public void play() {
         System.out.println("classname:(TranslateScene) method:(Speaker) action:(生成主持人)");
         Speaker a = new Speaker();
-        System.out.println("请问您是否需要外文翻译[1:是/2:否]？");
+        System.out.println("请问您是否需要外文翻译[1:是/2:否]？（其余输入，默认不添加翻译）");
         Scanner sc = new Scanner(System.in);
         String option = sc.next();
         if (option.equals("1")) {
 
-            System.out.println("请问您是否需要的是[1:英文/2:法语/3:西班牙语]的翻译？");
+            System.out.println("请问您是否需要的是[1:英文/2:法语/3:西班牙语]的翻译？（其余输入，默认不添加翻译）");
             sc = new Scanner(System.in);
             option = sc.next();
             if(option.equals("1")){

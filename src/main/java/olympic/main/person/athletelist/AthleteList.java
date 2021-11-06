@@ -1,4 +1,4 @@
-package olympic.main.person.athleteList;
+package olympic.main.person.athletelist;
 
 import olympic.main.person.personvisitor.Visitor;
 

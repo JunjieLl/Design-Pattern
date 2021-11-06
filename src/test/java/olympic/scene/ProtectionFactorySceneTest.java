@@ -6,7 +6,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 
-@DisplayName("领取防疫物资测试")
+@DisplayName("领取防疫物资场景")
 public class ProtectionFactorySceneTest {
     /**
      * 领取防疫物资测试函数
