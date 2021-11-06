@@ -27,7 +27,7 @@ public class AircraftShow extends Decorator {
      *无人机表演
      */
     public void operation() {
-        System.out.println("您想要增加无人机表演吗? [1:是/2:否]");
+        System.out.println("您想要增加无人机表演吗? [1:是/2:否/其余输入：默认不添加]");
         Scanner sc = new Scanner(System.in);
         String option = sc.next();
         if (option.equals("1")) {
