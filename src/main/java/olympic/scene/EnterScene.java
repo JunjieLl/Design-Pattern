@@ -58,7 +58,7 @@ public class EnterScene implements Scene {
         PrintBlockFormat.getPrintFormat().printFormatLeftScreen(true);
     }
 
-//
+
 //    public static void main(String[] args) {
 //        EnterScene enterScene=new EnterScene();
 //        enterScene.play();

@@ -3,8 +3,8 @@ package olympic.main.person.personvisitor;
 import olympic.main.person.athlete.Athlete;
 import olympic.main.person.athlete.IndividualAthlete;
 import olympic.main.person.athlete.TeamAthlete;
-import olympic.main.person.athleteList.IndividualAthleteList;
-import olympic.main.person.athleteList.TeamAthleteList;
+import olympic.main.person.athletelist.IndividualAthleteList;
+import olympic.main.person.athletelist.TeamAthleteList;
 
 import java.util.ArrayList;
 
@@ -32,7 +32,7 @@ public class NovelCoronavirusFilterVisitor extends FilterVisitor {
                 finalAthleteList.add(athlete);
             }
             else {
-                stringList.add(" 运动员\" + athlete.getName() + \"被检测出了新冠病毒，取消此次比赛资格。");
+                stringList.add(" 运动员" + athlete.getName() + "被检测出了新冠病毒，取消此次比赛资格。");
                 count += 1;
                 athlete.setRank(game, -1);
             }

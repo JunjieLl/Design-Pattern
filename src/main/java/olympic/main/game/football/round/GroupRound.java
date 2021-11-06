@@ -28,7 +28,7 @@ public class GroupRound extends Round {
     public void start() {
         advancedTeams.clear();
         System.out.println("\nclassname: (GroupRound) method: (play) action: (进行足球小组赛，使用了Observer模式、Singleton模式以及Iterator模式) ");
-        System.out.println("\n【小组赛】");
+        PrintBlockFormat.getPrintFormat().addString("小组赛");
         // 打乱顺序，分组
         Collections.shuffle(teams);
         for (int g = 0; g < 4; g++) {
@@ -44,6 +44,8 @@ public class GroupRound extends Round {
         while (it.hasNext()) {
             it.next().play();
         }
+
+        PrintBlockFormat.getPrintFormat().printFormatLeftScreen(true);
 
         int[] scores = scoreBoard.getScore();
         int[] goalDifferences = scoreBoard.getGoalDifference();
@@ -94,7 +96,7 @@ public class GroupRound extends Round {
             PrintBlockFormat.getPrintFormat().addString("\nGroup " + (g + 1));
             PrintBlockFormat.getPrintFormat().addString("排名\t球队\t\t积分\t\t净胜球\t进球");
             for (int i = 0; i < 4; i++) {
-                PrintBlockFormat.getPrintFormat().addString(String.format("%d\t%s\t\t%d\t\t%d\t\t%d\n", i + 1, ranking.get(i).team.getNation(), ranking.get(i).score, ranking.get(i).goalDifference, ranking.get(i).goal));
+                PrintBlockFormat.getPrintFormat().addString(String.format("%d\t\t%s\t\t%d\t\t%d\t\t%d", i + 1, ranking.get(i).team.getNation(), ranking.get(i).score, ranking.get(i).goalDifference, ranking.get(i).goal));
             }
             tmp.add(ranking.get(0).team);
             tmp.add(ranking.get(1).team);

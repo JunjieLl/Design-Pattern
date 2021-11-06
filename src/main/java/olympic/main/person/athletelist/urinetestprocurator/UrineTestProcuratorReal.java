@@ -1,4 +1,4 @@
-package olympic.main.person.athleteList.urinetestprocurator;
+package olympic.main.person.athletelist.urinetestprocurator;
 
 import java.util.ArrayList;
 import java.util.Arrays;
