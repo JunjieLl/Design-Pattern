@@ -1,6 +1,7 @@
 package olympic.main.game.football;
 
 import olympic.main.person.athlete.footballathlete.FootballTeam;
+import olympic.utils.PrintBlockFormat;
 
 import java.util.Random;
 
@@ -32,23 +33,23 @@ public class EliminationFootballMatch extends FootballMatch {
         score1 = r.nextInt(6);
         score2 = r.nextInt(6);
         if (score1 == score2) {
-            System.out.println("90分钟内双方打平，比分为" + score1 + "-" + score2);
-            System.out.println("进入加时赛");
+            PrintBlockFormat.getPrintFormat().addString("90分钟内双方打平，比分为" + score1 + "-" + score2);
+            PrintBlockFormat.getPrintFormat().addString("进入加时赛");
             score1 += r.nextInt(3);
             score2 += r.nextInt(3);
             if (score1 == score2) {
-                System.out.println("120分钟内双方打平，比分为" + score1 + "-" + score2);
-                System.out.println("进入点球决胜阶段");
+                PrintBlockFormat.getPrintFormat().addString("120分钟内双方打平，比分为" + score1 + "-" + score2);
+                PrintBlockFormat.getPrintFormat().addString("进入点球决胜阶段");
                 while (penaltyScore1 == penaltyScore2) {
                     penaltyScore1 += r.nextInt(6);
                     penaltyScore2 += r.nextInt(6);
                 }
-                System.out.println("比赛结束，点球比分为" + penaltyScore1 + "-" + penaltyScore2);
+                PrintBlockFormat.getPrintFormat().addString("比赛结束，点球比分为" + penaltyScore1 + "-" + penaltyScore2);
             } else {
-                System.out.println("比赛结束，比分为" + score1 + "-" + score2);
+                PrintBlockFormat.getPrintFormat().addString("比赛结束，比分为" + score1 + "-" + score2);
             }
         } else {
-            System.out.println("比赛结束，比分为" + score1 + "-" + score2);
+            PrintBlockFormat.getPrintFormat().addString("比赛结束，比分为" + score1 + "-" + score2);
         }
     }
 

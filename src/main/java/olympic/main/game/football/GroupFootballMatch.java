@@ -1,6 +1,7 @@
 package olympic.main.game.football;
 
 import olympic.main.person.athlete.footballathlete.FootballTeam;
+import olympic.utils.PrintBlockFormat;
 
 import java.util.Random;
 
@@ -27,6 +28,6 @@ public class GroupFootballMatch extends FootballMatch {
         Random r = new Random();
         score1 = r.nextInt(5);
         score2 = r.nextInt(5);
-        System.out.println("比赛结束，比分为" + score1 + "-" + score2);
+        PrintBlockFormat.getPrintFormat().addString("比赛结束，比分为" + score1 + "-" + score2);
     }
 }

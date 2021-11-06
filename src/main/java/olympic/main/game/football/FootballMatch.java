@@ -2,7 +2,7 @@ package olympic.main.game.football;
 
 
 import olympic.main.person.athlete.footballathlete.FootballTeam;
-
+import olympic.utils.PrintBlockFormat;
 
 
 /**
@@ -44,8 +44,8 @@ public abstract class FootballMatch {
      * 开始比赛
      */
     public void begin() {
-        System.out.println("\n【足球赛事】" + team1.getName() + " vs " + team2.getName());
-        System.out.println("比赛开始");
+        PrintBlockFormat.getPrintFormat().addString("\n【足球赛事】" + team1.getName() + " vs " + team2.getName());
+        PrintBlockFormat.getPrintFormat().addString("比赛开始");
     }
 
     /**
