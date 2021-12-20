@@ -1,5 +1,7 @@
 # Design-Pattern
 
+[![run test](https://github.com/JunjieLl/Design-Pattern/actions/workflows/run%20test.yml/badge.svg)](https://github.com/JunjieLl/Design-Pattern/actions/workflows/run%20test.yml)
+
 同济大学软件学院 2021-2022 学年第 1 学期设计模式课程小组项目
 
 
