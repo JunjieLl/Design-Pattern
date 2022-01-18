@@ -59,7 +59,7 @@
         <repository>
             <id>github</id>
             <name>Design Pattern</name>
-            <url>https://github.com/JunjieLl/Design-Pattern</url>
+            <url>https://maven.pkg.github.com//JunjieLl/Design-Pattern</url>
         </repository>
     </distributionManagement>
 </project>
